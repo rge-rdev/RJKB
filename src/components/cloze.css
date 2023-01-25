@@ -1,0 +1,11 @@
+.cloze {
+  color: #000;
+}
+
+.cloze--hidden {
+  color: #2a2a2a;
+}
+
+.cloze--reveal {
+  color: #9a9a9a;
+}
