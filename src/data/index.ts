@@ -1,6 +1,6 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
-import { get_rem_list } from "../utility"
+// import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB
 // console.log(JSON.stringify(rem).length);
@@ -9,6 +9,7 @@ export const rem: Rem_DB = rem_json as Rem_DB
     Object.keys(doc).forEach((key: string) => {
       if (
         // delete every prop not being used to save speed!
+        key !== "forget" &&
         key !== "key" &&
         key !== "value" &&
         key !== "_id" &&

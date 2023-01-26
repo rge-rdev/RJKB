@@ -1,18 +1,16 @@
+import React from "react"
+
 interface Props {
-  path: string[];
-  setMode: Function;
-  set_db_chunk: Function;
+  path: string[]
+  setMode: Function
+  set_db_chunk: Function
 }
 
 // set_db_chunk(get_rem_list([_id]))
 
-export default function Breadcrumbs({
-  path,
-  setMode,
-  set_db_chunk,
-}: Props) {
+export default function Breadcrumbs({ path, setMode, set_db_chunk }: Props) {
   function onClick(e: any) {
-    alert(e.target.textContent);
+    alert(e.target.textContent)
 
     // set_db_chunk(get_rem_list(e.target.id));
   }
@@ -22,19 +20,23 @@ export default function Breadcrumbs({
       <button
         style={{ display: "inline" }}
         onClick={() => setMode("tree")}
+        key="root_key"
       >
         Root
       </button>,
 
       path.map((x: string) => (
-        <>
+        <React.Fragment key={x}>
           <span>➡</span>
-          <button style={{ display: "inline" }} onClick={onClick}>
+          <button
+            style={{ display: "inline" }}
+            onClick={onClick}
+          >
             {x.slice(0, 9)}
           </button>
-        </>
+        </React.Fragment>
       )),
-    ];
+    ]
   }
   return (
     <div
@@ -46,5 +48,5 @@ export default function Breadcrumbs({
     >
       {renderBreadcrumbs(path)}
     </div>
-  );
+  )
 }

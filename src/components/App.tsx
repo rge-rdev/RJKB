@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect, memo } from "react"
+import React, { useState, useLayoutEffect, memo } from "react"
 import { lazy, Suspense } from "react"
 import { DebugProvider } from "../contexts/DebugContext"
 import { make_str } from "../utility"
@@ -22,17 +22,17 @@ export function render_chunk(
   return db_chunk.map((doc, i) => {
     let text_key: string = ""
     let text_val: string = ""
-    let card_type = 0
+    // let card_type = 0
     if (!doc["key"].length) return null // skip empty rem
     if (doc["key"].length > 0) text_key += make_str(doc["key"])
-    if (!doc["value"]) card_type = 0
+    // if (!doc["value"]) card_type = 0
     if (doc["value"]) {
       text_val += make_str(doc["value"])
 
-      if (doc["enableBackSR"] === true) card_type = 1
-      if (doc["enableBackSR"] === false) card_type = 2 // 2/3
+      // if (doc["enableBackSR"] === true) card_type = 1
+      // if (doc["enableBackSR"] === false) card_type = 2 // 2/3
     }
-    if (doc["enableBackSR"] === null) card_type = 0
+    // if (doc["enableBackSR"] === null) card_type = 0
     if (doc["parent"]) parent = doc["parent"]
 
     //new card arrow logic
@@ -40,11 +40,12 @@ export function render_chunk(
     if (doc["type"] === 1) {
       card_arrow = "↔"
     }
-    if (doc["type"] === 2) {
+    if (doc["type"] === 2 && !doc["forget"]) {
       if (doc["enableBackSR"] === true) card_arrow = "⬅"
-      if (doc["enableBackSR"] === false) card_arrow = "➡" // 2/3
-      if (doc["enableBackSR"] === null) card_arrow = "➖"
+      if (doc["enableBackSR"] === false || null) card_arrow = "➡" // 2/3
+      // if (doc["enableBackSR"] === null) card_arrow = "➖" // null is also forwards only?!
     }
+    if (doc["forget"]) card_arrow = "➖"
 
     const _id = doc["_id"]
     const childDocList = doc?.["children"]
