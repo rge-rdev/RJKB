@@ -1,18 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from "react"
 
-const DebugContext = createContext({});
+const DebugContext = createContext({})
 
-export default DebugContext;
+export default DebugContext
 
 interface ProviderProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 export function DebugProvider({ children }: ProviderProps) {
-  const [mode, setMode] = useState("tree");
-  const [debug, setDebug] = useState(true);
-  const [console, setConsole] = useState(true);
-  const [renderCount, setRenderCount] = useState(true);
+  const [mode, setMode] = useState("tree")
+  const [debug, setDebug] = useState(true)
+  const [console, setConsole] = useState(true)
+  const [renderCount, setRenderCount] = useState(true)
 
   return (
     <DebugContext.Provider
@@ -29,5 +29,5 @@ export function DebugProvider({ children }: ProviderProps) {
     >
       {children}
     </DebugContext.Provider>
-  );
+  )
 }

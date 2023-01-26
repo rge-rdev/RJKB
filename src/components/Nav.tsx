@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useDbChunk } from "../hooks"
 import { rem } from "../data"
-// import DebugContext from "../contexts/DebugContext";
 import Breadcrumbs from "../components/Breadcrumbs"
 
 interface NavProps {
@@ -12,8 +11,7 @@ interface NavProps {
 export default function Nav({ mode, setMode }: NavProps) {
   const [load, setLoad, step, max_size, db_chunk, set_db_chunk] =
     useDbChunk(mode)
-  const [radio, setRadio] = useState("tree")
-  const [debug, setDebug] = useState("off")
+  const [debug, setDebug] = useState("on")
 
   const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (load + step > max_size) {
@@ -55,7 +53,6 @@ export default function Nav({ mode, setMode }: NavProps) {
         <>
           <fieldset
             onChange={(e: any) => {
-              setRadio(e.target.value)
               setMode(e.target.value)
             }}
           >
@@ -63,14 +60,14 @@ export default function Nav({ mode, setMode }: NavProps) {
             <input
               type="radio"
               value="chunk"
-              checked={radio === "chunk"}
+              checked={mode === "chunk"}
               readOnly
             />
             Chunk
             <input
               type="radio"
               value="tree"
-              checked={radio === "tree"}
+              checked={mode === "tree"}
               readOnly
             />
             Tree
@@ -79,7 +76,7 @@ export default function Nav({ mode, setMode }: NavProps) {
                 <input
                   type="radio"
                   value="zoom"
-                  checked={radio === "zoom"}
+                  checked={mode === "zoom"}
                   readOnly
                 />
                 Zoom
@@ -104,8 +101,10 @@ export default function Nav({ mode, setMode }: NavProps) {
           {mode === "zoom" ? (
             <>
               {" "}
-              <button onClick={() => setMode("tree")}>Go root</button>
-            </>
+              <button onClick={() => setMode("tree")}>
+                Go Back to root level
+              </button>
+            </> // more descriptive button info
           ) : null}
           {debug ? (
             <code
@@ -117,6 +116,10 @@ export default function Nav({ mode, setMode }: NavProps) {
               <pre>{load} Chunks loaded!</pre>
               <pre>Debug Mode set to {debug}</pre>
               <pre>Render Mode set to {mode}</pre>
+              <pre>
+                You are viewing from {mode !== "zoom" ? "Root " : "_Zoomed "}
+                level
+              </pre>
             </code>
           ) : null}
         </>
@@ -129,3 +132,7 @@ export default function Nav({ mode, setMode }: NavProps) {
     </div>
   )
 }
+
+/**
+ * Removed [radio, setRadio] - redundant; works same as [mode, setMode]
+ */
