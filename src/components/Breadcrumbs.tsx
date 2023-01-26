@@ -4,39 +4,53 @@ interface Props {
   path: string[]
   setMode: Function
   set_db_chunk: Function
+  target: string
+  setTarget: Function
+  setAlreadyClicked: Function
 }
 
 // set_db_chunk(get_rem_list([_id]))
 
-export default function Breadcrumbs({ path, setMode, set_db_chunk }: Props) {
+export default function Breadcrumbs({
+  path,
+  setMode,
+  // set_db_chunk,
+  target,
+  setTarget,
+  setAlreadyClicked,
+}: Props) {
   function onClick(e: any) {
-    alert(e.target.textContent)
-
+    if (e.target.textContent !== target) {
+      const target = e.target.textContent
+      setTarget(target)
+      target === "root" ? setMode("tree") : setMode("zoom")
+      setAlreadyClicked(false)
+    } else {
+      setAlreadyClicked(true)
+    }
     // set_db_chunk(get_rem_list(e.target.id));
   }
 
   function renderBreadcrumbs(path: string[]) {
-    return [
-      <button
-        style={{ display: "inline" }}
-        onClick={() => setMode("tree")}
-        key="root_key"
-      >
-        Root
-      </button>,
-
-      path.map((x: string) => (
-        <React.Fragment key={x}>
-          <span>➡</span>
+    return path.map((x: string, index: number) => (
+      <React.Fragment key={x}>
+        {index === 0 ? (
           <button
             style={{ display: "inline" }}
             onClick={onClick}
           >
-            {x.slice(0, 9)}
+            root
           </button>
-        </React.Fragment>
-      )),
-    ]
+        ) : null}
+        <span>➡</span>
+        <button
+          style={{ display: "inline" }}
+          onClick={onClick}
+        >
+          {x.slice(0, 9)}
+        </button>
+      </React.Fragment>
+    ))
   }
   return (
     <div

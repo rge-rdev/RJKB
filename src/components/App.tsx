@@ -91,6 +91,7 @@ function App() {
   const [db_chunk, set_db_chunk] = useState(
     rem.docs.slice(load, load + step_size - 1)
   )
+  const [target, setTarget] = useState("root")
 
   useLayoutEffect(() => {
     setLoad((load) => load + step_size)
@@ -123,6 +124,8 @@ function App() {
         <Nav
           mode={mode}
           setMode={setMode}
+          target={target}
+          setTarget={setTarget}
         />
         <div>
           {load

@@ -1,32 +1,33 @@
-import { memo, useState } from "react";
-import { get_rem_list } from "../utility/";
-import { render_chunk } from "./App";
+import { memo, useState } from "react"
+import { get_rem_list } from "../utility/"
+import { render_chunk } from "./App"
 
 interface RemType {
-  i?: number; // TODO counter
-  hide?: boolean | undefined;
-  text_key: string;
-  text_val: string;
-  _id: string;
+  i?: number // TODO counter
+  hide?: boolean | undefined
+  text_key: string
+  text_val: string
+  _id: string
   // style?: object; // TODO: pass custom CSS per cell?
-  card_arrow: string;
+  card_arrow: string
   // collapsed?: boolean; // TODO: set cell to minimise children
-  children?: string[];
-  set_db_chunk?: Function;
-  n?: number;
-  path?: string[]; // array of IDs
-  parent?: string;
-  debug?: "on" | "off";
-  mode?: string;
-  setMode?: Function;
+  children?: string[]
+  set_db_chunk?: Function
+  n?: number
+  path?: string[] // array of IDs
+  parent?: string
+  debug?: "on" | "off"
+  mode?: string
+  setMode?: Function
+  setTarget?: Function
 } //((Rem_obj & deleted_rem & portal_rem) | undefined)[];
 
 const InlineBlock = {
   display: "inline-block",
   width: "21.6px",
-};
+}
 
-const debug = false;
+const debug = false
 
 function Rem({
   i,
@@ -42,29 +43,30 @@ function Rem({
   path = [_id],
   mode,
   setMode,
+  setTarget,
 }: RemType) {
-  const [collapse, setCollapse] = useState(false);
-  const [draggable, setDraggable] = useState(false);
-  const [zoom, setZoom] = useState(false);
-  const [dragIcon, setDragIcon] = useState(false);
-  const [minIcon, setMinIcon] = useState(false);
-  const [bulletIcon, setBulletIcon] = useState(false);
-  const rem_doc_list = get_rem_list(children);
+  const [collapse, setCollapse] = useState(false)
+  const [draggable, setDraggable] = useState(false)
+  const [zoom, setZoom] = useState(false)
+  const [dragIcon, setDragIcon] = useState(false)
+  const [minIcon, setMinIcon] = useState(false)
+  const [bulletIcon, setBulletIcon] = useState(false)
+  const rem_doc_list = get_rem_list(children)
 
   if (n === 1) {
-    parent = _id;
-    path = [_id];
+    parent = _id
+    path = [_id]
   }
   if (n && n > 1) {
-    parent = _id;
-    path.push(parent);
-    n = path.length;
+    parent = _id
+    path.push(parent)
+    n = path.length
   } /*?.*/
 
   function setIcons(flag: boolean) {
-    setDragIcon(flag);
-    setMinIcon(flag);
-    setBulletIcon(flag);
+    setDragIcon(flag)
+    setMinIcon(flag)
+    setBulletIcon(flag)
   }
 
   return (
@@ -105,10 +107,10 @@ function Rem({
                   draggable
                   style={InlineBlock}
                   onDragStart={() => {
-                    setDraggable(true);
+                    setDraggable(true)
                   }}
                   onDragEnd={() => {
-                    setDraggable(false);
+                    setDraggable(false)
                   }}
                 >
                   {dragIcon ? "🟦" : null}
@@ -122,16 +124,14 @@ function Rem({
                 <span
                   style={InlineBlock}
                   onClick={() => {
-                    if (_id) children = [_id];
-                    setZoom(!zoom);
-                    setMode!("zoom");
-                    document
-                      .getElementById(_id)
-                      ?.scrollIntoView(true);
+                    if (_id) children = [_id]
+                    setZoom(!zoom)
+                    setMode!("zoom")
+                    document.getElementById(_id)?.scrollIntoView(true)
 
                     if (set_db_chunk)
                       //@ts-ignore
-                      set_db_chunk(get_rem_list([_id]));
+                      set_db_chunk(get_rem_list([_id]))
                   }}
                 >
                   {bulletIcon ? "🔵" : "⚫"}
@@ -173,7 +173,7 @@ function Rem({
         </div>
       )}
     </>
-  );
+  )
 }
 
-export default memo(Rem);
+export default memo(Rem)

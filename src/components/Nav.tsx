@@ -6,12 +6,15 @@ import Breadcrumbs from "../components/Breadcrumbs"
 interface NavProps {
   mode: string
   setMode: Function
+  target: string
+  setTarget: Function
 }
 
-export default function Nav({ mode, setMode }: NavProps) {
-  const [load, setLoad, step, max_size, db_chunk, set_db_chunk] =
-    useDbChunk(mode)
+// db_chunk
+export default function Nav({ mode, setMode, target, setTarget }: NavProps) {
+  const [load, setLoad, step, max_size, set_db_chunk] = useDbChunk(mode)
   const [debug, setDebug] = useState("on")
+  const [alreadyClicked, setAlreadyClicked] = useState(false)
 
   const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (load + step > max_size) {
@@ -117,22 +120,27 @@ export default function Nav({ mode, setMode }: NavProps) {
               <pre>Debug Mode set to {debug}</pre>
               <pre>Render Mode set to {mode}</pre>
               <pre>
-                You are viewing from {mode !== "zoom" ? "Root " : "_Zoomed "}
-                level
+                You are {alreadyClicked ? "already" : "now"} viewing from{" "}
+                {target} level
               </pre>
+              {<pre></pre>}
             </code>
           ) : null}
         </>
       ) : null}
       <Breadcrumbs
-        path={["abc", "xyz"]}
+        path={["abc", "xyz"]} //
         setMode={setMode}
         set_db_chunk={set_db_chunk}
+        target={target}
+        setTarget={setTarget}
+        setAlreadyClicked={setAlreadyClicked}
       />
     </div>
   )
 }
 
 /**
- * Removed [radio, setRadio] - redundant; works same as [mode, setMode]
+ * Del [radio, setRadio] - redundant; works same as [mode, setMode]
+ * add [alreadyClicked, setAlreadyClicked] to flag if already at target (for console log)
  */
