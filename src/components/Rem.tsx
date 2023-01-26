@@ -20,6 +20,7 @@ interface RemType {
   mode?: string
   setMode?: Function
   setTarget?: Function
+  setPath?: Function
 } //((Rem_obj & deleted_rem & portal_rem) | undefined)[];
 
 const InlineBlock = {
@@ -44,6 +45,7 @@ function Rem({
   mode,
   setMode,
   setTarget,
+  setPath,
 }: RemType) {
   const [collapse, setCollapse] = useState(false)
   const [draggable, setDraggable] = useState(false)
@@ -59,7 +61,8 @@ function Rem({
   }
   if (n && n > 1) {
     parent = _id
-    path.push(parent)
+    path.unshift(parent)
+    if (setPath) setPath(path)
     n = path.length
   } /*?.*/
 
@@ -104,13 +107,13 @@ function Rem({
               >
                 <span
                   className="drag-container"
-                  draggable
+                  draggable={true}
                   style={InlineBlock}
                   onDragStart={() => {
                     setDraggable(true)
                   }}
                   onDragEnd={() => {
-                    setDraggable(false)
+                    setDraggable(draggable)
                   }}
                 >
                   {dragIcon ? "🟦" : null}
@@ -153,18 +156,16 @@ function Rem({
               </span>
             </span>
 
-            {
-              children && !collapse
-                ? render_chunk(
-                    rem_doc_list,
-                    set_db_chunk,
-                    parent,
-                    path,
-                    mode,
-                    setMode
-                  )
-                : null /*?.*/
-            }
+            {children && !collapse
+              ? render_chunk(
+                  rem_doc_list,
+                  set_db_chunk,
+                  parent,
+                  path,
+                  mode,
+                  setMode
+                )
+              : null}
           </ul>
         </div>
       ) : (

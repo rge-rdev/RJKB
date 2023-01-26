@@ -43,6 +43,7 @@ export const root = rem.docs.filter((doc) => doc.n)
 export const root_child_map = new Map(
   root.map((doc) => [doc._id, doc.children])
 )
+
 //TODO: try nest map within map? How affect speed?
 /*
 export const db_map = new Map(

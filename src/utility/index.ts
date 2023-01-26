@@ -3,7 +3,7 @@ import { RemData } from "../rem-json"
 import { map, root_child_map } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { render_chunk } from "../components/App"
-import Cloze from "../components/Cloze"
+// import Cloze from "../components/Cloze"
 
 export function get_rem_list(list: string[] = []) {
   return list.map((id) => map.get(id)!)

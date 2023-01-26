@@ -1,6 +1,6 @@
-import React, { useState, useLayoutEffect, memo } from "react"
+import React, { useState, useLayoutEffect, memo, useContext } from "react"
 import { lazy, Suspense } from "react"
-import { DebugProvider } from "../contexts/DebugContext"
+import DebugContext from "../contexts/DebugContext"
 import { make_str } from "../utility"
 import { rem, root } from "../data"
 import { Rem_obj } from "../rem-json"
@@ -15,7 +15,8 @@ export function render_chunk(
   parent?: string,
   path?: string[],
   mode?: string,
-  setMode?: Function
+  setMode?: Function,
+  setPath?: Function
 ) {
   if (typeof db_chunk === "undefined") return
   if (!db_chunk) return
@@ -77,6 +78,7 @@ export function render_chunk(
           path={path}
           mode={mode}
           setMode={setMode}
+          setPath={setPath}
         ></Rem>
       </Suspense>
     )
@@ -92,6 +94,7 @@ function App() {
     rem.docs.slice(load, load + step_size - 1)
   )
   const [target, setTarget] = useState("root")
+  const { path, setPath } = useContext(DebugContext)
 
   useLayoutEffect(() => {
     setLoad((load) => load + step_size)
@@ -120,29 +123,28 @@ function App() {
 
   return (
     <Suspense fallback={<progress />}>
-      <DebugProvider>
-        <Nav
-          mode={mode}
-          setMode={setMode}
-          target={target}
-          setTarget={setTarget}
-        />
-        <div>
-          {load
-            ? render_chunk(
-                db_chunk,
-                set_db_chunk,
-                undefined,
-                undefined,
-                mode,
-                setMode
-              )
-            : null}
-          {load < max_size ? (
-            <button onClick={onClickMore}>Load more</button>
-          ) : null}
-        </div>
-      </DebugProvider>
+      <Nav
+        mode={mode}
+        setMode={setMode}
+        target={target}
+        setTarget={setTarget}
+      />
+      <div>
+        {load
+          ? render_chunk(
+              db_chunk,
+              set_db_chunk,
+              undefined,
+              undefined,
+              mode,
+              setMode,
+              setPath
+            )
+          : null}
+        {load < max_size ? (
+          <button onClick={onClickMore}>Load more</button>
+        ) : null}
+      </div>
     </Suspense>
   )
 }
