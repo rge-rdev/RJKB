@@ -1,6 +1,6 @@
 import _ from "lodash"
 import { RemData } from "../rem-json"
-import { map, root_child_map } from "../data"
+import { map, root_child_map, map_all_parents } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { render_chunk } from "../components/App"
 // import Cloze from "../components/Cloze"
@@ -88,3 +88,15 @@ export function obj_to_str(el: RemData, input_str = ""): string {
 
   return output_str
 }
+
+/**to get string_ID[] from current node ID position
+ *
+ * @param id input ID to start parent search
+ * @returns id_string[] - 0 index from leaf node - going up index to root parent
+ */
+
+export function getParentPathIDsArray(id: string) {
+  return map_all_parents.get(id)
+  //? map_all_parents.get(id) : undefined
+}
+// console.log(getParentPathIDsArray("T7aDaHT9qwQDRrAHZ"))

@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useDbChunk } from "../hooks"
 import { rem } from "../data"
 import Breadcrumbs from "../components/Breadcrumbs"
+import DebugContext from "../contexts/DebugContext"
 
 interface NavProps {
   mode: string
@@ -15,6 +16,7 @@ export default function Nav({ mode, setMode, target, setTarget }: NavProps) {
   const [load, setLoad, step, max_size, set_db_chunk] = useDbChunk(mode)
   const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
+  const { path } = useContext(DebugContext)
 
   const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (load + step > max_size) {
@@ -123,13 +125,13 @@ export default function Nav({ mode, setMode, target, setTarget }: NavProps) {
                 You are {alreadyClicked ? "already" : "now"} viewing from{" "}
                 {target} level
               </pre>
-              {<pre></pre>}
+              {<pre>path = {path}</pre>}
             </code>
           ) : null}
         </>
       ) : null}
       <Breadcrumbs
-        path={["abc", "xyz"]} //
+        path={["abc", "xyz"]} //TODO replace path placeholder
         setMode={setMode}
         set_db_chunk={set_db_chunk}
         target={target}

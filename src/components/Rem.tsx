@@ -1,5 +1,5 @@
 import { memo, useState } from "react"
-import { get_rem_list } from "../utility/"
+import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { render_chunk } from "./App"
 
 interface RemType {
@@ -55,22 +55,23 @@ function Rem({
   const [bulletIcon, setBulletIcon] = useState(false)
   const rem_doc_list = get_rem_list(children)
 
-  if (n === 1) {
-    parent = _id
-    path = [_id]
-  }
-  if (n && n > 1) {
-    parent = _id
-    path.unshift(parent)
-    if (setPath) setPath(path)
-    n = path.length
-  } /*?.*/
+  // if (n === 1) {
+  //   parent = _id
+  //   path = [_id]
+  // }
+  // if (n && n > 1) {
+  //   parent = _id
+  //   path.unshift(parent)
+  //   if (setPath) setPath(path)
+  //   n = path.length
+  // }
 
   function setIcons(flag: boolean) {
     setDragIcon(flag)
     setMinIcon(flag)
     setBulletIcon(flag)
   }
+  // console.log(...path) //!SPAM logs to check path is outputing correct = should be no undefined or null!
 
   return (
     <>
@@ -128,6 +129,7 @@ function Rem({
                   style={InlineBlock}
                   onClick={() => {
                     if (_id) children = [_id]
+                    getParentPathIDsArray(_id)
                     setZoom(!zoom)
                     setMode!("zoom")
                     document.getElementById(_id)?.scrollIntoView(true)

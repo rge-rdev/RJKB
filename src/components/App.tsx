@@ -1,9 +1,10 @@
 import React, { useState, useLayoutEffect, memo, useContext } from "react"
 import { lazy, Suspense } from "react"
 import DebugContext from "../contexts/DebugContext"
-import { make_str } from "../utility"
-import { rem, root } from "../data"
+import { make_str, getParentPathIDsArray } from "../utility"
+import { rem, root, root_main_topics } from "../data"
 import { Rem_obj } from "../rem-json"
+
 // import Cloze from "./components/Cloze";
 
 import Nav from "./Nav"
@@ -52,6 +53,7 @@ export function render_chunk(
     const childDocList = doc?.["children"]
     // use n to track depth level of note tree
     let n: undefined | number = doc["n"] ? doc["n"] : undefined
+    path = getParentPathIDsArray(_id)
 
     return (
       <Suspense
