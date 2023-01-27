@@ -26,8 +26,6 @@ export default function Nav({
 
   useEffect(() => {
     setAlreadyClicked(false)
-    path = path.filter((x) => x !== null && x !== undefined) //! YUCK WTF is causing null to appear - TODO: trace where null is being inserted to remove this extra filter step!
-    console.log(path)
   }, [path])
 
   // DISABLED Chunk Loading mode and click more btn

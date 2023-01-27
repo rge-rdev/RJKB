@@ -29,6 +29,7 @@ const InlineBlock = {
 }
 
 const debug = false
+// const debug = true
 
 function Rem({
   i,
@@ -123,7 +124,11 @@ function Rem({
                     getParentPathIDsArray(_id)
                     setZoom(!zoom)
                     setMode!("zoom")
-                    document.getElementById(_id)?.scrollIntoView(true)
+                    document.getElementById(_id)?.scrollIntoView({
+                      behavior: "smooth",
+                      // block: "nearest",
+                      // inline: "nearest",
+                    })
                     /**
                      * get_rem_list([_id]) to get target doc node
                      * set_db_chunk() to recursively render target node DFS by children

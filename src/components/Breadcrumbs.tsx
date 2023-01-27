@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { getParentIDsArray } from "../data"
 import { get_rem_list } from "../utility"
 
@@ -27,11 +27,6 @@ export default function Breadcrumbs({
   const [tooltip, setTooltip] = useState("")
   //TODO tooltip is cur placeholder for key textContent of Doc
 
-  useEffect(() => {
-    path = path.filter((x) => x !== null && x !== undefined) //! YUCK WTF is causing null to appear - TODO: trace where null is being inserted to remove this extra filter step!
-    console.log("path from Breadcrumbs is now=", path)
-  }, [path])
-
   function onClick(e: any) {
     if (e.target.textContent !== target) {
       const target = e.target.textContent
@@ -40,10 +35,7 @@ export default function Breadcrumbs({
       const path_IDs_array = getParentIDsArray(target).filter(
         (x) => x !== null && x !== undefined
       )
-      console.log("onClick path=", path_IDs_array)
       setPath(path_IDs_array)
-      // console.log(target, typeof target, [target], typeof [target])
-      // console.log("get_rem_list([target])=", get_rem_list([target]))
 
       if (target !== "root") {
         const _path = get_rem_list([target])
@@ -54,7 +46,7 @@ export default function Breadcrumbs({
 
       if (target === "root") {
         setMode("tree")
-        // setPath(["root"])
+        setPath(["root"])
       }
     } else {
       setAlreadyClicked(true)
@@ -65,13 +57,6 @@ export default function Breadcrumbs({
   function renderBreadcrumbs(path: string[]) {
     return path.map((x: string, index: number) => (
       <span key={x}>
-        {/* {index === 0 ? (
-          <button
-            style={{ display: "inline" }}
-            onClick={onClick}
-          >
-            root
-        ) : null} */}
         {index > 0 && <span>➡</span>}
 
         <button

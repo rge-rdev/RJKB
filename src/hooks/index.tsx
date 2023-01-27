@@ -1,8 +1,12 @@
 import { useState, useLayoutEffect } from "react"
 import { rem, root } from "../data"
-// import { make_str } from "../utility"
-// import { Rem_obj } from "../rem-json"
-// import Rem from "../components/Rem"
+
+/**
+ * del @arg step from exports since unused
+ *
+ * @param mode
+ * @returns
+ */
 
 export function useDbChunk(mode: string): any {
   const step = 500
@@ -27,7 +31,7 @@ export function useDbChunk(mode: string): any {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [max_size, mode])
 
-  return [load, setLoad, step, max_size, db_chunk, set_db_chunk]
+  return [load, setLoad, max_size, db_chunk, set_db_chunk]
 }
 
 //TODO: convert setMode to hook
@@ -38,7 +42,10 @@ export function useMode(cur: string = "tree") {
   return mode
 }
 
-// TODO: convert render_chunk to hook
+/**
+ *
+ * @returns path as string[] & setPath()
+ */
 
 export function usePath() {
   const [path, setPath]: [
@@ -48,6 +55,7 @@ export function usePath() {
   return { path, setPath }
 }
 
+// TODO: WIP to refactor render_chunk or decide if necessary
 // export function useChunk(
 //   db_chunk: Rem_obj[],
 //   set_db_chunk?: Function
