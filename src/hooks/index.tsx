@@ -1,8 +1,8 @@
-import { useState, useLayoutEffect, createRef, useRef, Suspense } from "react"
+import { useState, useLayoutEffect } from "react"
 import { rem, root } from "../data"
-import { make_str } from "../utility"
-import { Rem_obj } from "../rem-json"
-import Rem from "../components/Rem"
+// import { make_str } from "../utility"
+// import { Rem_obj } from "../rem-json"
+// import Rem from "../components/Rem"
 
 export function useDbChunk(mode: string): any {
   const step = 500
@@ -39,6 +39,14 @@ export function useMode(cur: string = "tree") {
 }
 
 // TODO: convert render_chunk to hook
+
+export function usePath() {
+  const [path, setPath]: [
+    string[],
+    React.Dispatch<React.SetStateAction<string[]>>
+  ] = useState(["root"])
+  return { path, setPath }
+}
 
 // export function useChunk(
 //   db_chunk: Rem_obj[],

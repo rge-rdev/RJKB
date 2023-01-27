@@ -9,8 +9,6 @@ interface DebugContextProps {
   setConsole?: Function
   renderCount: boolean
   setRenderCount?: Function
-  path?: string[]
-  setPath?: Function
 }
 
 const DebugContext = createContext<DebugContextProps>({
@@ -22,8 +20,6 @@ const DebugContext = createContext<DebugContextProps>({
   setConsole: undefined,
   renderCount: true,
   setRenderCount: undefined,
-  path: ["root"],
-  setPath: undefined,
 })
 
 export default DebugContext
@@ -37,7 +33,6 @@ export function DebugProvider({ children }: ProviderProps) {
   const [debug, setDebug] = useState(true)
   const [console, setConsole] = useState(true)
   const [renderCount, setRenderCount] = useState(true)
-  const [path, setPath] = useState(["root"])
 
   return (
     <DebugContext.Provider
@@ -50,8 +45,6 @@ export function DebugProvider({ children }: ProviderProps) {
         setConsole,
         renderCount,
         setRenderCount,
-        path,
-        setPath,
       }}
     >
       {children}

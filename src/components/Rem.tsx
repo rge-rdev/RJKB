@@ -1,4 +1,5 @@
-import { memo, useState } from "react"
+import { memo, useState, useContext } from "react"
+import DebugContext from "../contexts/DebugContext"
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { render_chunk } from "./App"
 
@@ -20,7 +21,7 @@ interface RemType {
   mode?: string
   setMode?: Function
   setTarget?: Function
-  setPath?: Function
+  setPath: Function
 } //((Rem_obj & deleted_rem & portal_rem) | undefined)[];
 
 const InlineBlock = {
@@ -128,11 +129,15 @@ function Rem({
                 <span
                   style={InlineBlock}
                   onClick={() => {
+                    setPath(["root", ...path])
+                    console.log("path from NODE=", path)
                     if (_id) children = [_id]
                     getParentPathIDsArray(_id)
                     setZoom(!zoom)
                     setMode!("zoom")
                     document.getElementById(_id)?.scrollIntoView(true)
+                    // console.dir(path)
+                    // console.dir(["root", ...path])
 
                     if (set_db_chunk)
                       //@ts-ignore
@@ -165,7 +170,8 @@ function Rem({
                   parent,
                   path,
                   mode,
-                  setMode
+                  setMode,
+                  setPath
                 )
               : null}
           </ul>

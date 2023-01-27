@@ -34,20 +34,21 @@ export default function Breadcrumbs({
   function renderBreadcrumbs(path: string[]) {
     return path.map((x: string, index: number) => (
       <React.Fragment key={x}>
-        {index === 0 ? (
+        {/* {index === 0 ? (
           <button
             style={{ display: "inline" }}
             onClick={onClick}
           >
             root
           </button>
-        ) : null}
+        ) : null} */}
         <span>➡</span>
         <button
           style={{ display: "inline" }}
           onClick={onClick}
+          onMouseOver={() => {}}
         >
-          {x.slice(0, 9)}
+          {x?.length >= 10 ? x.slice(0, 9) : x}
         </button>
       </React.Fragment>
     ))

@@ -1,22 +1,31 @@
-import { useState, useContext } from "react"
+import { useEffect, useState } from "react"
 import { useDbChunk } from "../hooks"
 import { rem } from "../data"
 import Breadcrumbs from "../components/Breadcrumbs"
-import DebugContext from "../contexts/DebugContext"
 
 interface NavProps {
   mode: string
   setMode: Function
   target: string
   setTarget: Function
+  path: string[]
 }
 
 // db_chunk
-export default function Nav({ mode, setMode, target, setTarget }: NavProps) {
+export default function Nav({
+  mode,
+  setMode,
+  target,
+  setTarget,
+  path,
+}: NavProps) {
   const [load, setLoad, step, max_size, set_db_chunk] = useDbChunk(mode)
   const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
-  const { path } = useContext(DebugContext)
+
+  useEffect(() => {
+    console.log("path from Nav", path)
+  }, [path])
 
   const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (load + step > max_size) {
@@ -30,7 +39,7 @@ export default function Nav({ mode, setMode, target, setTarget }: NavProps) {
 
   return (
     <div>
-      <h1>My Rem DB</h1>
+      <h1>My Rem DB {path.length > 1 ? path.join(" ➡ ") : path}</h1>
 
       <fieldset
         name="debug toggle"
@@ -125,13 +134,13 @@ export default function Nav({ mode, setMode, target, setTarget }: NavProps) {
                 You are {alreadyClicked ? "already" : "now"} viewing from{" "}
                 {target} level
               </pre>
-              {<pre>path = {path}</pre>}
+              <div>{path.length > 1 ? path.join(" ➡ ") : path}</div>
             </code>
           ) : null}
         </>
       ) : null}
       <Breadcrumbs
-        path={["abc", "xyz"]} //TODO replace path placeholder
+        path={path} //TODO replace path placeholder
         setMode={setMode}
         set_db_chunk={set_db_chunk}
         target={target}

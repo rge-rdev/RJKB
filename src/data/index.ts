@@ -1,7 +1,5 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
-import _ from "lodash"
-import { isEqual } from "lodash"
 // import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB

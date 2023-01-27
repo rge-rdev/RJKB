@@ -1,8 +1,13 @@
-import React, { useState, useLayoutEffect, memo, useContext } from "react"
+import React, {
+  useState,
+  // useLayoutEffect,
+  useEffect,
+  memo,
+} from "react"
 import { lazy, Suspense } from "react"
-import DebugContext from "../contexts/DebugContext"
 import { make_str, getParentPathIDsArray } from "../utility"
-import { rem, root, root_main_topics } from "../data"
+import { rem, root_main_topics } from "../data"
+// import { root } from "../data"
 import { Rem_obj } from "../rem-json"
 
 // import Cloze from "./components/Cloze";
@@ -54,6 +59,7 @@ export function render_chunk(
     // use n to track depth level of note tree
     let n: undefined | number = doc["n"] ? doc["n"] : undefined
     path = getParentPathIDsArray(_id)
+    if (!setPath) setPath = () => null
 
     return (
       <Suspense
@@ -96,9 +102,11 @@ function App() {
     rem.docs.slice(load, load + step_size - 1)
   )
   const [target, setTarget] = useState("root")
-  const { path, setPath } = useContext(DebugContext)
 
-  useLayoutEffect(() => {
+  const [path, setPath] = useState([""])
+
+  useEffect(() => {
+    console.log("path from APP", path)
     setLoad((load) => load + step_size)
     if (mode === "chunk") {
       if (load + step_size > max_size) {
@@ -109,9 +117,11 @@ function App() {
         setLoad((load) => load + step_size)
       }
     }
-    if (mode === "tree") set_db_chunk(root)
+    if (mode === "tree") {
+      set_db_chunk(root_main_topics)
+    }
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [max_size, mode])
+  }, [max_size, mode, path])
 
   const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (load + step_size > max_size) {
@@ -130,6 +140,7 @@ function App() {
         setMode={setMode}
         target={target}
         setTarget={setTarget}
+        path={path}
       />
       <div>
         {load
