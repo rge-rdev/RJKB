@@ -64,7 +64,7 @@ export const map_parent = new Map(rem.docs.map((doc) => [doc._id, doc.parent]))
 export const map_all_parents = new Map(
   rem.docs.map((doc) => [
     doc._id,
-    [...getParentIDsArray(doc.parent as string), doc._id], // TARGET NODE TO LAST INDEX
+    [...calcParentIDsArray(doc.parent as string), doc._id], // TARGET NODE TO LAST INDEX
   ])
 )
 
@@ -96,22 +96,27 @@ function getParentStr(id?: string) {
   return map_parent.get(id)
 }
 
-/**Recursive func to UNSHIFT parent ID onto string[] while one exists
+/**Recursive func to get ID_STTRING[] from SINGLE ID string
+ * will UNSHIFT parent ID onto string[] while one exists
  * //BAD IDEA TO PUSH from 0 leaf to end node
  *
  * @param id string ID for one direct parent to initiate search
  * @returns string_ID[] EXCLUDING the original node
  */
 
-function getParentIDsArray(id: string) {
+function calcParentIDsArray(id: string) {
   const array_out = [id]
   let new_parent_id = getParentStr(id)
-  while (new_parent_id) {
+  while (new_parent_id !== null && new_parent_id !== undefined) {
     if (typeof new_parent_id === "string") array_out.unshift(new_parent_id)
     new_parent_id = getParentStr(new_parent_id)
   }
 
-  return array_out
+  return ["root", ...array_out]
+}
+
+export function getParentIDsArray(id: string) {
+  return map_all_parents.get(id) || []
 }
 
 //TODO: try nest map within map? How affect speed?

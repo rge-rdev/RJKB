@@ -111,6 +111,6 @@ export function obj_to_str(el: RemData, input_str = ""): string {
 
 export function getParentPathIDsArray(id: string) {
   return map_all_parents.get(id)
-  //? map_all_parents.get(id) : undefined
 }
 // console.log(getParentPathIDsArray("T7aDaHT9qwQDRrAHZ"))
+// console.log("CSS ID=", get_rem_list(["35nBdhDNJLwCCyz6A"]))

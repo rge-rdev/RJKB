@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Breadcrumbs from "../components/Breadcrumbs"
 
 interface NavProps {
@@ -7,6 +7,7 @@ interface NavProps {
   target: string
   setTarget: Function
   path: string[]
+  setPath: Function
   set_db_chunk: Function
 }
 
@@ -17,10 +18,17 @@ export default function Nav({
   target,
   setTarget,
   path,
+  setPath,
   set_db_chunk,
 }: NavProps) {
   const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
+
+  useEffect(() => {
+    setAlreadyClicked(false)
+    path = path.filter((x) => x !== null && x !== undefined) //! YUCK WTF is causing null to appear - TODO: trace where null is being inserted to remove this extra filter step!
+    console.log(path)
+  }, [path])
 
   // DISABLED Chunk Loading mode and click more btn
   // const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -35,7 +43,10 @@ export default function Nav({
 
   return (
     <div>
-      <h1>My Rem DB {path.length > 1 ? path.join(" ➡ ") : path}</h1>
+      <h1>
+        My Rem DB{" "}
+        {debug === "on" ? (path.length > 1 ? path.join(" ➡ ") : path) : null}
+      </h1>
 
       <fieldset
         name="debug toggle"
@@ -58,7 +69,13 @@ export default function Nav({
           readOnly
         />
         Off
+        {debug === "on" && (
+          <span style={{ marginLeft: "20px" }}>
+            <em>Toggle Debug OFF if this looks too ugly for you!</em>
+          </span>
+        )}
       </fieldset>
+
       {debug === "on" ? (
         <>
           <fieldset
@@ -124,11 +141,11 @@ export default function Nav({
               }}
             >
               {/* <pre>{load} Chunks loaded!</pre> */}
-              <pre>Debug Mode set to {debug}</pre>
-              <pre>Render Mode set to {mode}</pre>
+              <pre>Debug Mode set to {debug.toUpperCase()}</pre>
+              <pre>Render Mode set to {mode.toUpperCase()}</pre>
               <pre>
-                You are {alreadyClicked ? "already" : "now"} viewing from{" "}
-                {target} level
+                You are {alreadyClicked ? "already" : "now"} viewing from
+                {" " + target} level
               </pre>
               <div>{path.length > 1 ? path.join(" ➡ ") : path}</div>
             </code>
@@ -136,7 +153,8 @@ export default function Nav({
         </>
       ) : null}
       <Breadcrumbs
-        path={path} //TODO replace path placeholder
+        path={path}
+        setPath={setPath}
         setMode={setMode}
         set_db_chunk={set_db_chunk}
         target={target}

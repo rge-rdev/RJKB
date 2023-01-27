@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getParentIDsArray } from "../data"
 import { get_rem_list } from "../utility"
 
 interface Props {
   path: string[]
+  setPath: Function
   setMode: Function
   set_db_chunk: Function
   target: string
@@ -15,6 +17,7 @@ interface Props {
 
 export default function Breadcrumbs({
   path,
+  setPath,
   setMode,
   set_db_chunk,
   target,
@@ -22,16 +25,37 @@ export default function Breadcrumbs({
   setAlreadyClicked,
 }: Props) {
   const [tooltip, setTooltip] = useState("")
+  //TODO tooltip is cur placeholder for key textContent of Doc
+
+  useEffect(() => {
+    path = path.filter((x) => x !== null && x !== undefined) //! YUCK WTF is causing null to appear - TODO: trace where null is being inserted to remove this extra filter step!
+    console.log("path from Breadcrumbs is now=", path)
+  }, [path])
 
   function onClick(e: any) {
     if (e.target.textContent !== target) {
       const target = e.target.textContent
       setTarget(target)
       setAlreadyClicked(false)
+      const path_IDs_array = getParentIDsArray(target).filter(
+        (x) => x !== null && x !== undefined
+      )
+      console.log("onClick path=", path_IDs_array)
+      setPath(path_IDs_array)
       // console.log(target, typeof target, [target], typeof [target])
       // console.log("get_rem_list([target])=", get_rem_list([target]))
-      if (target !== "root") set_db_chunk(get_rem_list([target]))
-      target === "root" ? setMode("tree") : setMode("zoom")
+
+      if (target !== "root") {
+        const _path = get_rem_list([target])
+        set_db_chunk(_path)
+        // setPath(_path)
+        setMode("zoom")
+      }
+
+      if (target === "root") {
+        setMode("tree")
+        // setPath(["root"])
+      }
     } else {
       setAlreadyClicked(true)
     }

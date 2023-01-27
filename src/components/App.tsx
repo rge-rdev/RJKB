@@ -30,24 +30,15 @@ export function render_chunk(
   return db_chunk.map((doc, i) => {
     let text_key: string = ""
     let text_val: string = ""
-    // let card_type = 0
     if (!doc["key"].length) return null // skip empty rem
     if (doc["key"].length > 0) text_key += make_str(doc["key"])
-    // if (!doc["value"]) card_type = 0
-    if (doc["value"]) {
-      text_val += make_str(doc["value"])
-
-      // if (doc["enableBackSR"] === true) card_type = 1
-      // if (doc["enableBackSR"] === false) card_type = 2 // 2/3
-    }
-    // if (doc["enableBackSR"] === null) card_type = 0
+    if (doc["value"]) text_val += make_str(doc["value"])
     if (doc["parent"]) parent = doc["parent"]
 
     //new card arrow logic
     let card_arrow = ""
-    if (doc["type"] === 1) {
-      card_arrow = "↔"
-    }
+    if (doc["type"] === 1) card_arrow = "↔"
+
     if (doc["type"] === 2 && !doc["forget"]) {
       if (doc["enableBackSR"] === true) card_arrow = "⬅"
       if (doc["enableBackSR"] === false || null) card_arrow = "➡" // 2/3
@@ -59,8 +50,8 @@ export function render_chunk(
     const childDocList = doc?.["children"]
     // use n to track depth level of note tree
     let n: undefined | number = doc["n"] ? doc["n"] : undefined
-    path = getParentPathIDsArray(_id)
-    if (!setPath) setPath = () => null
+    path = getParentPathIDsArray(_id) || []
+    if (!setPath) throw new Error("no setPath fn pass into render_chunk!")
 
     return (
       <Suspense
@@ -110,10 +101,10 @@ function App() {
 
   const [target, setTarget] = useState("root")
 
-  const [path, setPath] = useState([""])
+  const [path, setPath] = useState(["root"])
 
   useEffect(() => {
-    // console.log("path from APP", path)
+    console.log("path from APP", path)
     setLoad((load: number) => load + step_size)
     if (mode === "chunk") {
       if (load + step_size > max_size) {
@@ -149,6 +140,7 @@ function App() {
         target={target}
         setTarget={setTarget}
         path={path}
+        setPath={setPath}
         set_db_chunk={set_db_chunk}
       />
       <div>

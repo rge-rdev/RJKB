@@ -117,8 +117,8 @@ function Rem({
                 <span
                   style={InlineBlock}
                   onClick={() => {
-                    setPath(["root", ...path])
-                    // console.log("path from NODE=", path)
+                    path = path.filter((x) => x !== null && x !== undefined) //! YUCK WTF is causing null to appear - TODO: trace where null is being inserted to remove this extra filter step!
+                    setPath([...path])
                     if (_id) children = [_id]
                     getParentPathIDsArray(_id)
                     setZoom(!zoom)
