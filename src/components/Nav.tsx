@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react"
-import { useDbChunk } from "../hooks"
-import { rem } from "../data"
+import { useState } from "react"
 import Breadcrumbs from "../components/Breadcrumbs"
 
 interface NavProps {
@@ -9,6 +7,7 @@ interface NavProps {
   target: string
   setTarget: Function
   path: string[]
+  set_db_chunk: Function
 }
 
 // db_chunk
@@ -18,24 +17,21 @@ export default function Nav({
   target,
   setTarget,
   path,
+  set_db_chunk,
 }: NavProps) {
-  const [load, setLoad, step, max_size, set_db_chunk] = useDbChunk(mode)
   const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
 
-  useEffect(() => {
-    console.log("path from Nav", path)
-  }, [path])
-
-  const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (load + step > max_size) {
-      set_db_chunk(rem.docs.slice(0, max_size))
-      setLoad(max_size)
-    } else {
-      set_db_chunk(rem.docs.slice(0, load + step))
-      setLoad((load: any) => load + step)
-    }
-  }
+  // DISABLED Chunk Loading mode and click more btn
+  // const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  //   if (load + step > max_size) {
+  //     set_db_chunk(rem.docs.slice(0, max_size))
+  //     setLoad(max_size)
+  //   } else {
+  //     set_db_chunk(rem.docs.slice(0, load + step))
+  //     setLoad((load: any) => load + step)
+  //   }
+  // }
 
   return (
     <div>
@@ -97,14 +93,14 @@ export default function Nav({
               </>
             ) : null}
           </fieldset>
-          {mode === "chunk" ? (
+          {/* {mode === "chunk" ? (
             <>
               <button onClick={() => setMode("tree")}>
                 Switch to tree mode
               </button>
               <button onClick={onClickMore}>Load more</button>
             </>
-          ) : null}
+          ) : null} */}
           {mode === "tree" ? (
             <>
               <button onClick={() => setMode("chunk")}>
@@ -127,7 +123,7 @@ export default function Nav({
                 backgroundColor: "blanchedalmond",
               }}
             >
-              <pre>{load} Chunks loaded!</pre>
+              {/* <pre>{load} Chunks loaded!</pre> */}
               <pre>Debug Mode set to {debug}</pre>
               <pre>Render Mode set to {mode}</pre>
               <pre>

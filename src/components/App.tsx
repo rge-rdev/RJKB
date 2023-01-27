@@ -13,6 +13,7 @@ import { Rem_obj } from "../rem-json"
 // import Cloze from "./components/Cloze";
 
 import Nav from "./Nav"
+import { useDbChunk } from "../hooks"
 const Rem = lazy(() => import("./Rem"))
 
 export function render_chunk(
@@ -94,31 +95,38 @@ export function render_chunk(
 }
 
 function App() {
-  const max_size = rem.docs.length // 11827-1
+  // const max_size = rem.docs.length // 11827-1
   const step_size = 500
   const [mode, setMode] = useState("tree")
-  const [load, setLoad] = useState(0)
-  const [db_chunk, set_db_chunk] = useState(
-    rem.docs.slice(load, load + step_size - 1)
-  )
+  // const [load, setLoad] = useState(0)
+  /**
+   * set_db_chunk to set doc_nodes[]
+   */
+  // const [db_chunk, set_db_chunk] = useState(
+  //   rem.docs.slice(load, load + step_size - 1)
+  // )
+  const [load, setLoad, step, max_size, db_chunk, set_db_chunk] =
+    useDbChunk(mode)
+
   const [target, setTarget] = useState("root")
 
   const [path, setPath] = useState([""])
 
   useEffect(() => {
-    console.log("path from APP", path)
-    setLoad((load) => load + step_size)
+    // console.log("path from APP", path)
+    setLoad((load: number) => load + step_size)
     if (mode === "chunk") {
       if (load + step_size > max_size) {
         set_db_chunk(rem.docs.slice(0, max_size))
         setLoad(max_size)
       } else {
         set_db_chunk(rem.docs.slice(0, load + step_size))
-        setLoad((load) => load + step_size)
+        setLoad((load: number) => load + step_size)
       }
     }
     if (mode === "tree") {
       set_db_chunk(root_main_topics)
+      // set_db_chunk(root) // to load EVERYTHING including tags, links & orphans
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [max_size, mode, path])
@@ -129,7 +137,7 @@ function App() {
       setLoad(max_size)
     } else {
       set_db_chunk(rem.docs.slice(0, load + step_size))
-      setLoad((load) => load + step_size)
+      setLoad((load: number) => load + step_size)
     }
   }
 
@@ -141,6 +149,7 @@ function App() {
         target={target}
         setTarget={setTarget}
         path={path}
+        set_db_chunk={set_db_chunk}
       />
       <div>
         {load

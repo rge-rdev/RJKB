@@ -1,5 +1,4 @@
-import { memo, useState, useContext } from "react"
-import DebugContext from "../contexts/DebugContext"
+import { memo, useState } from "react"
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { render_chunk } from "./App"
 
@@ -55,17 +54,6 @@ function Rem({
   const [minIcon, setMinIcon] = useState(false)
   const [bulletIcon, setBulletIcon] = useState(false)
   const rem_doc_list = get_rem_list(children)
-
-  // if (n === 1) {
-  //   parent = _id
-  //   path = [_id]
-  // }
-  // if (n && n > 1) {
-  //   parent = _id
-  //   path.unshift(parent)
-  //   if (setPath) setPath(path)
-  //   n = path.length
-  // }
 
   function setIcons(flag: boolean) {
     setDragIcon(flag)
@@ -130,18 +118,18 @@ function Rem({
                   style={InlineBlock}
                   onClick={() => {
                     setPath(["root", ...path])
-                    console.log("path from NODE=", path)
+                    // console.log("path from NODE=", path)
                     if (_id) children = [_id]
                     getParentPathIDsArray(_id)
                     setZoom(!zoom)
                     setMode!("zoom")
                     document.getElementById(_id)?.scrollIntoView(true)
-                    // console.dir(path)
-                    // console.dir(["root", ...path])
+                    /**
+                     * get_rem_list([_id]) to get target doc node
+                     * set_db_chunk() to recursively render target node DFS by children
+                     */
 
-                    if (set_db_chunk)
-                      //@ts-ignore
-                      set_db_chunk(get_rem_list([_id]))
+                    if (set_db_chunk) set_db_chunk(get_rem_list([_id])) // to rerender whole page as subtree from node
                   }}
                 >
                   {bulletIcon ? "🔵" : "⚫"}

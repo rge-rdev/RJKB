@@ -64,7 +64,7 @@ export const map_parent = new Map(rem.docs.map((doc) => [doc._id, doc.parent]))
 export const map_all_parents = new Map(
   rem.docs.map((doc) => [
     doc._id,
-    [doc._id, ...getParentIDsArray(doc.parent as string)], // TODO WTF FIX
+    [...getParentIDsArray(doc.parent as string), doc._id], // TARGET NODE TO LAST INDEX
   ])
 )
 
@@ -96,7 +96,8 @@ function getParentStr(id?: string) {
   return map_parent.get(id)
 }
 
-/**Recursive func to PUSH parent ID onto string[] while one exists
+/**Recursive func to UNSHIFT parent ID onto string[] while one exists
+ * //BAD IDEA TO PUSH from 0 leaf to end node
  *
  * @param id string ID for one direct parent to initiate search
  * @returns string_ID[] EXCLUDING the original node
@@ -106,7 +107,7 @@ function getParentIDsArray(id: string) {
   const array_out = [id]
   let new_parent_id = getParentStr(id)
   while (new_parent_id) {
-    if (typeof new_parent_id === "string") array_out.push(new_parent_id)
+    if (typeof new_parent_id === "string") array_out.unshift(new_parent_id)
     new_parent_id = getParentStr(new_parent_id)
   }
 

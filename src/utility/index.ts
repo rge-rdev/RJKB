@@ -5,9 +5,22 @@ import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { render_chunk } from "../components/App"
 // import Cloze from "../components/Cloze"
 
+/**
+ * Fn to get DOCS_OBJECT[] from DOCS_ID_STRING[]
+ *
+ * Del ! assertion & add new error catch when fail to match ID
+ * TODO FIX ! assertion
+ *
+ * @param list doc_id_string[]
+ * @returns REM_OBJ[]
+ */
+
 export function get_rem_list(list: string[] = []) {
-  return list.map((id) => map.get(id)!)
+  const output = list.map((id) => map.get(id)!)
+  if (!output) throw new Error(`Fail to find doc for ID in ${list}`)
+  return output
 }
+// console.log(get_rem_list(["u4Xs622rawka7t4D3"])) // [{REM_OBJ}]
 
 export function getChildDocList(_id: string): Rem_obj[] {
   const child_list = root_child_map.get(_id) // child_str[]
@@ -92,7 +105,8 @@ export function obj_to_str(el: RemData, input_str = ""): string {
 /**to get string_ID[] from current node ID position
  *
  * @param id input ID to start parent search
- * @returns id_string[] - 0 index from leaf node - going up index to root parent
+ * @returns id_string[] - 0 index - root up to leaf
+ * // BAD IDEA 0 index from leaf node - going up index to root parent
  */
 
 export function getParentPathIDsArray(id: string) {

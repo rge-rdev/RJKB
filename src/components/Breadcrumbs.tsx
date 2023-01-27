@@ -1,4 +1,5 @@
-import React from "react"
+import { useState } from "react"
+import { get_rem_list } from "../utility"
 
 interface Props {
   path: string[]
@@ -10,21 +11,27 @@ interface Props {
 }
 
 // set_db_chunk(get_rem_list([_id]))
+//TODO Rename to something better than "Breadcrumbs"!
 
 export default function Breadcrumbs({
   path,
   setMode,
-  // set_db_chunk,
+  set_db_chunk,
   target,
   setTarget,
   setAlreadyClicked,
 }: Props) {
+  const [tooltip, setTooltip] = useState("")
+
   function onClick(e: any) {
     if (e.target.textContent !== target) {
       const target = e.target.textContent
       setTarget(target)
-      target === "root" ? setMode("tree") : setMode("zoom")
       setAlreadyClicked(false)
+      // console.log(target, typeof target, [target], typeof [target])
+      // console.log("get_rem_list([target])=", get_rem_list([target]))
+      if (target !== "root") set_db_chunk(get_rem_list([target]))
+      target === "root" ? setMode("tree") : setMode("zoom")
     } else {
       setAlreadyClicked(true)
     }
@@ -33,24 +40,27 @@ export default function Breadcrumbs({
 
   function renderBreadcrumbs(path: string[]) {
     return path.map((x: string, index: number) => (
-      <React.Fragment key={x}>
+      <span key={x}>
         {/* {index === 0 ? (
           <button
             style={{ display: "inline" }}
             onClick={onClick}
           >
             root
-          </button>
         ) : null} */}
-        <span>➡</span>
+        {index > 0 && <span>➡</span>}
+
         <button
           style={{ display: "inline" }}
           onClick={onClick}
-          onMouseOver={() => {}}
+          onMouseOver={(e) => setTooltip(String(e.currentTarget.textContent))}
+          onMouseLeave={(e) => setTooltip("")}
         >
-          {x?.length >= 10 ? x.slice(0, 9) : x}
+          {/* Slicing UID can PAINFUL bugs with doc search*/}
+          {x}
+          {/* {x?.length >= 16 ? x.slice(0, 15) : x} */}
         </button>
-      </React.Fragment>
+      </span>
     ))
   }
   return (
@@ -61,6 +71,13 @@ export default function Breadcrumbs({
         margin: "10px",
       }}
     >
+      <div style={{ visibility: `${tooltip ? "visible" : "hidden"}` }}>
+        {tooltip ? (
+          <b>{tooltip}</b>
+        ) : (
+          "invisible placeholder to stop the annoying flashing!!"
+        )}
+      </div>
       {renderBreadcrumbs(path)}
     </div>
   )
