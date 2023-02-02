@@ -2,11 +2,12 @@ import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../store"
 
-interface CountState {
-  value: number
-}
+// interface CountState {
+//   value: number
+// }
+// pointless can infer just fine! Add interface for more complex types
 
-const initialState: CountState = {
+const initialState = {
   value: 0,
 }
 
