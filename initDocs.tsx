@@ -1,13 +1,21 @@
-import { existsSync, mkdirSync } from "fs"
-// import { root_main_topics } from "./src/data/"
+// import { existsSync, mkdirSync } from "fs"
+import fs from "fs-extra"
+import { root_main_topics } from "./src/data/"
 
 console.log("this starts before Docusaurus!")
 
-// console.log(root_main_topics.keys)
+// generate root dirs for each main topic (root_main_topics) map to docs/_TOPIC
 
-const dir =
-  "docs/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems/alongerdirnamemaycauseproblems"
-
-if (!existsSync(dir)) {
-  mkdirSync(dir, { recursive: true })
-} else console.log("dir already exists!")
+const main_doc_dirs = root_main_topics.map((obj) => {
+  return `docs/${obj.key.toString().replace("/", "-")}/${obj.key
+    .toString()
+    .replace("/", "-")}.md`
+})
+main_doc_dirs.forEach(async (doc) => {
+  console.log("Intializing Root Docs Folders")
+  try {
+    await fs.ensureFile(doc).then(() => console.log(`${doc} was created`))
+  } catch (err) {
+    console.log(err)
+  }
+})
