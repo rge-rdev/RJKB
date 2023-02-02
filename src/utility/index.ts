@@ -36,11 +36,25 @@ export function getChildJSX(
   return child_jsx
 }
 
+/**
+ *
+ * @param input aray of remData_objects to map over and
+ * @returns array of
+ */
+
 export function make_str(input: RemData[] | []): string {
   let output_arr = input?.map((el: RemData) => obj_to_str(el))
   if (Array.isArray(output_arr)) return output_arr.join("")
   return output_arr
 }
+
+/**
+ * refactor this to export JSX
+ *
+ * @param el
+ * @param input_str
+ * @returns RAW_JSX_STRING to dangerously insert into HTML!!
+ */
 
 export function obj_to_str(el: RemData, input_str = ""): string {
   let output_str: string = input_str

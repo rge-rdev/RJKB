@@ -84,6 +84,8 @@ export const root_main_topics = root.filter(
     doc._id === "5jxvqtuiTvhdhxys7"
 )
 
+// export const map_doc_to_key = new Map(rem.docs.map((doc) => [doc._id, __RAW_KEY_TEXT))
+
 // console.log(map_all_parents)
 /**
  *

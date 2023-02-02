@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Breadcrumbs from "../components/Breadcrumbs"
+import { Counter } from "./Counter"
 
 interface NavProps {
   mode: string
@@ -141,6 +142,7 @@ export default function Nav({
               {/* <pre>{load} Chunks loaded!</pre> */}
               <pre>Debug Mode set to {debug.toUpperCase()}</pre>
               <pre>Render Mode set to {mode.toUpperCase()}</pre>
+              Redux working? <Counter />
               <pre>
                 You are {alreadyClicked ? "already" : "now"} viewing from
                 {" " + target} level

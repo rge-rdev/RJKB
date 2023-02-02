@@ -1,6 +1,17 @@
 import { useState, useLayoutEffect } from "react"
 import { rem, root } from "../data"
 
+import { useDispatch, useSelector } from "react-redux"
+import type { TypedUseSelectorHook } from "react-redux"
+import type { RootState, AppDispatch } from "../state/store"
+
+/**
+ * Redux Hooks with types
+ */
+
+export const useAppDispatch: () => AppDispatch = useDispatch
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
 /**
  * del @arg step from exports since unused
  *

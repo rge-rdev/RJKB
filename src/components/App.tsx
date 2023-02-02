@@ -15,6 +15,20 @@ import Nav from "./Nav"
 import { useDbChunk } from "../hooks"
 const Rem = lazy(() => import("./Rem"))
 
+/**
+ * TODO: refactor getKeyText
+ * TODO: refactor getValueText
+ *
+ * @param db_chunk
+ * @param set_db_chunk
+ * @param parent
+ * @param path
+ * @param mode
+ * @param setMode
+ * @param setPath
+ * @returns
+ */
+
 export function render_chunk(
   db_chunk: Rem_obj[],
   set_db_chunk?: Function,
@@ -133,6 +147,7 @@ function App() {
         setPath={setPath}
         set_db_chunk={set_db_chunk}
       />
+
       <div>
         {load
           ? render_chunk(
