@@ -1,5 +1,6 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
+import { make_mdx } from "../utility"
 // import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB
@@ -128,6 +129,53 @@ function calcParentIDsArray(id: string) {
 export function getParentIDsArray(id: string) {
   return map_all_parents.get(id) || []
 }
+
+let array_output: any = []
+
+map_all_parents.forEach((id) => {
+  const ID_strings_array = id
+  const final_ID =
+    ID_strings_array.toString().split(",")[
+      ID_strings_array.toString().split(",").length - 1
+    ] //! disgusting repetition! why can't JS have negative indexing!
+  // console.log(final_ID)
+  // let output_key_text_strings_array = ["root"]
+  const output = ID_strings_array.filter(
+    (x) => x !== null && x !== undefined
+  ).map((id: string) => {
+    if (id === "root") return `${final_ID}`
+    const key_doc = map.get(id)?.["key"] || null //|| map.get(id)?.["value"]
+    // if (!key_doc) console.log(id, "still does not have key or value")
+    if (key_doc)
+      try {
+        const output = make_mdx(key_doc) //slugify .toLowerCase().split(" ").join("-") || null
+        // console.log(output)
+        return output
+      } catch (err) {
+        return null
+        //!DUMB ignore it and let it silently fail?!
+      }
+    // const text_key = make_mdx(key_doc)
+  })
+
+  // console.log(output)
+
+  if (output) array_output.push(output)
+})
+
+export const map_to_mdx = new Map(
+  array_output.map((x: string[]) => [x[0], x.slice(1)])
+)
+
+console.log(map_to_mdx)
+
+/*
+  const path_IDs_array = getParentIDsArray(id).filter(
+    (x) => x !== null && x !== undefined
+  )
+  */
+
+// console.log(array_output)
 
 //TODO: try nest map within map? How affect speed?
 /*
