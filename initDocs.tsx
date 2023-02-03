@@ -1,6 +1,6 @@
 // import { existsSync, mkdirSync } from "fs"
 import fs from "fs-extra"
-import { root_main_topics } from "./src/data/"
+import { root_main_topics, map_to_mdx } from "./src/data/"
 
 console.log("this starts before Docusaurus!")
 
@@ -19,3 +19,6 @@ main_doc_dirs.forEach(async (doc) => {
     console.log(err)
   }
 })
+
+// map_to_mdx.forEach((key, id) => console.log(`id: ${id} =`, key))
+console.log(map_to_mdx)

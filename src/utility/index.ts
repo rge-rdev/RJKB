@@ -183,9 +183,14 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       if (el["i"] === "m") {
         if (el["qId"]) {
           const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
+          output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
           output_str += `${
-            el["qId"] ? `<a href=${qId_href}>${_.escape(el["text"])}</a>` : ""
+            el["qId"]
+              ? `\nimport Link from '@docusaurus/Link';
+            \n<Link to=${qId_href}>${_.escape(el["text"])}</Link>`
+              : ""
           }`
+          output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
         }
         // href found at el["qId"] = _id at crt.b.s
         output_str += `${el["q"] ? "`" : ""}` // Ref Rem

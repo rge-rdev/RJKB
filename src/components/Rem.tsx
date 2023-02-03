@@ -1,4 +1,4 @@
-import { memo, useState } from "react"
+import { memo, useState, useEffect } from "react"
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { render_chunk } from "./App"
 
@@ -16,7 +16,7 @@ interface RemType {
   n?: number
   path?: string[] // array of IDs
   parent?: string
-  debug?: "on" | "off"
+  debug?: boolean //"on" | "off"
   mode?: string
   setMode?: Function
   setTarget?: Function
@@ -62,6 +62,10 @@ function Rem({
     setBulletIcon(flag)
   }
   // console.log(...path) //!SPAM logs to check path is outputing correct = should be no undefined or null!
+
+  useEffect(() => {
+    if (debug) console.log([_id, text_key, card_arrow, text_val])
+  }, [])
 
   return (
     <>

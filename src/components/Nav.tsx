@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { Counter } from "./Counter"
+import { selectDebug, toggle_debug } from "../state/reducers/debugSlice"
+import { useAppSelector, useAppDispatch } from "../hooks"
 
 interface NavProps {
   mode: string
@@ -22,8 +24,11 @@ export default function Nav({
   setPath,
   set_db_chunk,
 }: NavProps) {
-  const [debug, setDebug] = useState("on")
+  // const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
+
+  const debug = useAppSelector((state) => state?.debug?.debug_mode)
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     setAlreadyClicked(false)
@@ -43,39 +48,39 @@ export default function Nav({
   return (
     <div>
       <h1>
-        My Rem DB{" "}
-        {debug === "on" ? (path.length > 1 ? path.join(" ➡ ") : path) : null}
+        My Rem DB {debug ? (path.length > 1 ? path.join(" ➡ ") : path) : null}
       </h1>
 
       <fieldset
         name="debug toggle"
         onChange={(e: any) => {
-          setDebug(e.target.value)
+          // setDebug(e.target.value)
+          dispatch(toggle_debug())
         }}
       >
         <legend>Debug Mode</legend>
         <input
           type="radio"
           value="on"
-          checked={debug === "on"}
+          checked={debug}
           readOnly
         />
         On
         <input
           type="radio"
           value="off"
-          checked={debug === "off"}
+          checked={!debug}
           readOnly
         />
         Off
-        {debug === "on" && (
+        {debug && (
           <span style={{ marginLeft: "20px" }}>
             <em>Toggle Debug OFF if this looks too ugly for you!</em>
           </span>
         )}
       </fieldset>
 
-      {debug === "on" ? (
+      {debug ? (
         <>
           <fieldset
             onChange={(e: any) => {
@@ -140,7 +145,7 @@ export default function Nav({
               }}
             >
               {/* <pre>{load} Chunks loaded!</pre> */}
-              <pre>Debug Mode set to {debug.toUpperCase()}</pre>
+              <pre>Debug Mode set to {debug ? "ON" : "OFF"}</pre>
               <pre>Render Mode set to {mode.toUpperCase()}</pre>
               Redux working? <Counter />
               <pre>

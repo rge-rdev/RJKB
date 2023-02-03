@@ -130,7 +130,10 @@ export function getParentIDsArray(id: string) {
   return map_all_parents.get(id) || []
 }
 
-let array_output: any = []
+const array_output = [[""]]
+//! Ugly fix to get TSC to infer type
+//! Also, recall that const array can mutate
+array_output.pop()
 
 map_all_parents.forEach((id) => {
   const ID_strings_array = id
@@ -148,26 +151,39 @@ map_all_parents.forEach((id) => {
     // if (!key_doc) console.log(id, "still does not have key or value")
     if (key_doc)
       try {
-        const output = make_mdx(key_doc) //slugify .toLowerCase().split(" ").join("-") || null
+        const output = make_mdx(key_doc) || "__UNDEFINED__@_@__" //slugify .toLowerCase().split(" ").join("-") || null
         // console.log(output)
         return output
       } catch (err) {
-        return null
+        return "__ERROR__@_@__"
         //!DUMB ignore it and let it silently fail?!
       }
+    if (typeof key_doc === "undefined") return "__UNDEFINED__@_@__"
+    return "__NULL__@_@__"
+    // if (typeof key_doc === "null") return "__NULL__@_@__"
     // const text_key = make_mdx(key_doc)
   })
 
   // console.log(output)
 
   if (output) array_output.push(output)
+  // if (typeof output === "undefined") array_output.push("__UNDEFINED__@_@__")
 })
 
-export const map_to_mdx = new Map(
-  array_output.map((x: string[]) => [x[0], x.slice(1)])
+console.log(array_output)
+console.log("array_output=", array_output)
+
+export const map_to_mdx = new Map(array_output.map((x) => [x[0], x.slice(1)]))
+
+function slugify_mdx(str: string) {
+  return str.replace(/[:space:]/g, "-")
+}
+
+export const map_to_mdx_slug = new Map(
+  array_output.map((x) => [x[0], x.slice(1).map((str) => str)])
 )
 
-console.log(map_to_mdx)
+console.log("map_to_mdx_slug=", map_to_mdx_slug)
 
 /*
   const path_IDs_array = getParentIDsArray(id).filter(
