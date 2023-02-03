@@ -4,6 +4,8 @@ import { Rem_DB, Rem_obj } from "../rem-json"
 
 export const rem: Rem_DB = rem_json as Rem_DB
 // console.log(JSON.stringify(rem).length);
+// import fs from "fs-extra"
+
 /**
  * IIFE on app load to del unused props from JSON to save space
  * TODO: benchmark diff in speed after deleting unused
@@ -21,7 +23,9 @@ export const rem: Rem_DB = rem_json as Rem_DB
         key !== "enableBackSR" &&
         key !== "children" &&
         key !== "parent" &&
-        key !== "crt"
+        key !== "crt" //&&
+        // key !== "createdAt"&&
+        // key !== "references"
       )
         //@ts-ignore
         delete doc[key]
@@ -40,6 +44,10 @@ export const rem: Rem_DB = rem_json as Rem_DB
     //   delete doc["preMigrationPortalsIn"];
   })
 })()
+
+//! Permanently overwrite and delete original JSON w/o crap data fields!
+//! Execute only when close to publishing or exposing original JSON!
+// fs.writeJSON("./src/data/new.JSON", rem)
 
 /**
  * map = ID hash to document JSON

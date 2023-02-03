@@ -31,6 +31,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  plugins: ["@docusaurus/theme-live-codeblock"],
 
   presets: [
     [
@@ -58,7 +59,7 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
@@ -72,11 +73,13 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Concepts",
+            label: "Docs",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/blog", label: "Dev Log", position: "left" },
+          { to: "/features", label: "Tour", position: "left" },
+          { to: "/CV", label: "CV", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/rgerdev/myeventual/release/build",
             label: "GitHub",
             position: "right",
           },
@@ -132,7 +135,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
+      //add new liveCodeBlock theme here
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: "bottom",
+      },
+    },
 }
 
 module.exports = config
