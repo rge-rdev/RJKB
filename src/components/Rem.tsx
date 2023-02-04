@@ -2,6 +2,12 @@ import { memo, useState, useEffect } from "react"
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { render_chunk } from "./App"
 
+import { useDispatch, useSelector } from "../hooks"
+import {
+  select_debug_render_mode,
+  set_render_mode,
+} from "../state/reducers/debugSlice"
+
 interface RemType {
   i?: number // TODO counter
   hide?: boolean | undefined
@@ -17,8 +23,6 @@ interface RemType {
   path?: string[] // array of IDs
   parent?: string
   debug?: boolean //"on" | "off"
-  mode?: string
-  setMode?: Function
   setTarget?: Function
   setPath: Function
 } //((Rem_obj & deleted_rem & portal_rem) | undefined)[];
@@ -43,8 +47,6 @@ function Rem({
   n,
   parent,
   path = [_id],
-  mode,
-  setMode,
   setTarget,
   setPath,
 }: RemType) {
@@ -55,6 +57,8 @@ function Rem({
   const [minIcon, setMinIcon] = useState(false)
   const [bulletIcon, setBulletIcon] = useState(false)
   const rem_doc_list = get_rem_list(children)
+
+  const dispatch = useDispatch()
 
   function setIcons(flag: boolean) {
     setDragIcon(flag)
@@ -127,7 +131,7 @@ function Rem({
                     if (_id) children = [_id]
                     getParentPathIDsArray(_id)
                     setZoom(!zoom)
-                    setMode!("zoom")
+                    dispatch(set_render_mode("zoom"))
                     document.getElementById(_id)?.scrollIntoView({
                       behavior: "smooth",
                       // block: "nearest",
@@ -161,15 +165,7 @@ function Rem({
             </span>
 
             {children && !collapse
-              ? render_chunk(
-                  rem_doc_list,
-                  set_db_chunk,
-                  parent,
-                  path,
-                  mode,
-                  setMode,
-                  setPath
-                )
+              ? render_chunk(rem_doc_list, set_db_chunk, parent, path, setPath)
               : null}
           </ul>
         </div>

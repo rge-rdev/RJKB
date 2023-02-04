@@ -1,13 +1,19 @@
 // import React, { useState } from "react"
 
-import { useAppSelector, useAppDispatch } from "../hooks"
+import { useSelector, useDispatch } from "../hooks"
 
-import { decrement, increment } from "../state/reducers/countSlice"
+import { decrement, increment, selectCount } from "../state/reducers/countSlice"
+
+/**
+ * BAD RTK doc snippet suggests
+ * const count = useAppSelector((state) => state?.count?.value)
+ */
 
 export function Counter() {
   // The `state` arg is correctly typed as `RootState` already
-  const count = useAppSelector((state) => state?.count?.value)
-  const dispatch = useAppDispatch()
+  // const count = useAppSelector((state) => state?.count?.value)
+  const count = useSelector(selectCount)
+  const dispatch = useDispatch()
 
   return (
     <div>

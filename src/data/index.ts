@@ -170,8 +170,7 @@ map_all_parents.forEach((id) => {
   // if (typeof output === "undefined") array_output.push("__UNDEFINED__@_@__")
 })
 
-console.log(array_output)
-console.log("array_output=", array_output)
+// console.log("array_output=", array_output)
 
 export const map_to_mdx = new Map(array_output.map((x) => [x[0], x.slice(1)]))
 
@@ -183,7 +182,7 @@ export const map_to_mdx_slug = new Map(
   array_output.map((x) => [x[0], x.slice(1).map((str) => str)])
 )
 
-console.log("map_to_mdx_slug=", map_to_mdx_slug)
+// console.log("map_to_mdx_slug=", map_to_mdx_slug)
 
 /*
   const path_IDs_array = getParentIDsArray(id).filter(

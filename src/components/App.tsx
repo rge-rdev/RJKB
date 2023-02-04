@@ -9,6 +9,9 @@ import { make_str, getParentPathIDsArray } from "../utility"
 import { rem, root_main_topics } from "../data"
 import { Rem_obj } from "../rem-json"
 
+import { useSelector } from "../hooks"
+import { select_debug_render_mode } from "../state/reducers/debugSlice"
+
 // import Cloze from "./components/Cloze";
 
 import Nav from "./Nav"
@@ -24,7 +27,7 @@ const Rem = lazy(() => import("./Rem"))
  * @param parent
  * @param path
  * @param mode
- * @param setMode
+ * @param set_render_mode
  * @param setPath
  * @returns
  */
@@ -34,8 +37,6 @@ export function render_chunk(
   set_db_chunk?: Function,
   parent?: string,
   path?: string[],
-  mode?: string,
-  setMode?: Function,
   setPath?: Function
 ) {
   if (typeof db_chunk === "undefined") return
@@ -69,7 +70,8 @@ export function render_chunk(
         fallback={
           <div>
             <sub>
-              <em>{mode} mode</em> chunk #{i} loading...{" "}
+              {/* <em>{mode} mode</em> chunk #{i} loading...{" "} */}
+              chunk #{i} loading...{" "}
             </sub>
           </div>
         }
@@ -86,8 +88,6 @@ export function render_chunk(
           n={n}
           parent={parent}
           path={path}
-          mode={mode}
-          setMode={setMode}
           setPath={setPath}
         ></Rem>
       </Suspense>
@@ -97,7 +97,8 @@ export function render_chunk(
 
 function App() {
   const step_size = 500
-  const [mode, setMode] = useState("tree")
+  // const [mode, set_render_mode] = useState("tree")
+  const mode = useSelector(select_debug_render_mode) //? "chunk" : "tree"
 
   /**
    * @function set_db_chunk to set doc_nodes[] to render with @function render_chunk()
@@ -139,8 +140,6 @@ function App() {
   return (
     <Suspense fallback={<progress />}>
       <Nav
-        mode={mode}
-        setMode={setMode}
         target={target}
         setTarget={setTarget}
         path={path}
@@ -150,15 +149,7 @@ function App() {
 
       <div>
         {load
-          ? render_chunk(
-              db_chunk,
-              set_db_chunk,
-              undefined,
-              undefined,
-              mode,
-              setMode,
-              setPath
-            )
+          ? render_chunk(db_chunk, set_db_chunk, undefined, undefined, setPath)
           : null}
         {load < max_size ? (
           <button onClick={onClickMore}>Load more</button>
@@ -169,3 +160,10 @@ function App() {
 }
 
 export default memo(App)
+
+/**
+ *  rename setMode to set_render_mode from RTK debugSlice reducer
+ *
+ *  extract const [mode, set_render_mode] = useState("tree") to RTK
+ *    mode should be app-wide and not drilled
+ */

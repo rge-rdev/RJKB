@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { Counter } from "./Counter"
-import { selectDebug, toggle_debug } from "../state/reducers/debugSlice"
-import { useAppSelector, useAppDispatch } from "../hooks"
+import {
+  select_debug_mode,
+  toggle_debug,
+  set_render_mode,
+  select_debug_render_mode,
+  toggle_mdx,
+  select_debug_mdx_mode,
+  toggle_log,
+  select_debug_log,
+} from "../state/reducers/debugSlice"
+import { useSelector, useDispatch } from "../hooks"
 
 interface NavProps {
-  mode: string
-  setMode: Function
   target: string
   setTarget: Function
   path: string[]
@@ -16,8 +23,6 @@ interface NavProps {
 
 // db_chunk
 export default function Nav({
-  mode,
-  setMode,
   target,
   setTarget,
   path,
@@ -26,9 +31,13 @@ export default function Nav({
 }: NavProps) {
   // const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
+  const [chunkTooltip, setChunkTooltip] = useState(false)
 
-  const debug = useAppSelector((state) => state?.debug?.debug_mode)
-  const dispatch = useAppDispatch()
+  const debug = useSelector(select_debug_mode)
+  const mode = useSelector(select_debug_render_mode)
+  const mdx = useSelector(select_debug_mdx_mode)
+  const log = useSelector(select_debug_log)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     setAlreadyClicked(false)
@@ -48,119 +57,170 @@ export default function Nav({
   return (
     <div>
       <h1>
-        My Rem DB {debug ? (path.length > 1 ? path.join(" ➡ ") : path) : null}
+        My Rem DB
+        {debug
+          ? path.length > 1
+            ? " Path: " + path.join(" ➡ ")
+            : " Path at root"
+          : null}
       </h1>
-
-      <fieldset
-        name="debug toggle"
-        onChange={(e: any) => {
-          // setDebug(e.target.value)
-          dispatch(toggle_debug())
-        }}
-      >
-        <legend>Debug Mode</legend>
-        <input
-          type="radio"
-          value="on"
-          checked={debug}
-          readOnly
-        />
-        On
-        <input
-          type="radio"
-          value="off"
-          checked={!debug}
-          readOnly
-        />
-        Off
-        {debug && (
-          <span style={{ marginLeft: "20px" }}>
-            <em>Toggle Debug OFF if this looks too ugly for you!</em>
-          </span>
-        )}
-      </fieldset>
-
-      {debug ? (
-        <>
+      <div>
+        <div
+          style={{
+            display: "inline-block",
+            width: `${debug ? "30%" : "100%"}`,
+            backgroundColor: `${debug ? "lightsalmon" : "revert"}`,
+          }}
+        >
           <fieldset
+            name="debug toggle"
             onChange={(e: any) => {
-              setMode(e.target.value)
+              // setDebug(e.target.value)
+              dispatch(toggle_debug())
             }}
           >
-            <legend>Set Render Mode</legend>
+            <legend>Debug Mode</legend>
             <input
               type="radio"
-              value="chunk"
-              checked={mode === "chunk"}
+              value="on"
+              checked={debug}
               readOnly
             />
-            Chunk
+            {/* <button onClick={() => dispatch(toggle_debug())}>ON</button> */}
+            ON
             <input
               type="radio"
-              value="tree"
-              checked={mode === "tree"}
+              value="off"
+              checked={!debug}
               readOnly
             />
-            Tree
-            {mode === "zoom" ? (
-              <>
+            {/* <button onClick={() => dispatch(toggle_debug())}>OFF</button> */}
+            OFF
+            {debug && (
+              <span style={{ marginLeft: "20px" }}>
+                <em>Toggle Debug OFF if this looks too ugly for you!</em>
+              </span>
+            )}
+          </fieldset>
+
+          {debug ? (
+            <div>
+              <fieldset
+                onChange={(e: any) => {
+                  // setMode(e.target.value)
+                  dispatch(set_render_mode(e.target.value))
+                }}
+              >
+                <legend>Set Render Mode</legend>
                 <input
                   type="radio"
-                  value="zoom"
-                  checked={mode === "zoom"}
+                  value="chunk"
+                  checked={mode === "chunk"}
                   readOnly
                 />
-                Zoom
-              </>
+                <span
+                  onMouseOver={() => setChunkTooltip(!chunkTooltip)}
+                  onMouseLeave={() =>
+                    setTimeout(() => setChunkTooltip(false), 1000)
+                  }
+                >
+                  <button onClick={() => dispatch(set_render_mode("chunk"))}>
+                    ⚠ Chunk
+                  </button>
+                </span>
+                <input
+                  type="radio"
+                  value="tree"
+                  checked={mode === "tree"}
+                  readOnly
+                />
+                <button onClick={() => dispatch(set_render_mode("tree"))}>
+                  Tree
+                </button>
+                {mode === "zoom" ? (
+                  <>
+                    <input
+                      type="radio"
+                      value="zoom"
+                      checked={mode === "zoom"}
+                      readOnly
+                    />
+                    Zoom
+                  </>
+                ) : null}
+              </fieldset>
+              <div
+                style={{
+                  visibility: `${chunkTooltip ? "visible" : "collapse"}`,
+                }}
+              >
+                WARNING: Prepare for some serious lag with Chunk rendering mode!
+              </div>
+              <div style={{ display: "flex" }}>
+                <button
+                  style={{ backgroundColor: `${mdx ? "royalblue" : "revert"}` }}
+                  onClick={() => dispatch(toggle_mdx())}
+                >
+                  Toggle MDX
+                </button>
+                <button
+                  style={{ backgroundColor: `${log ? "royalblue" : "revert"}` }}
+                  onClick={() => dispatch(toggle_log())}
+                >
+                  Toggle LOG
+                </button>
+                <button>Toggle B</button>
+                <button>Toggle C</button>
+              </div>
+            </div>
+          ) : null}
+        </div>
+
+        {debug ? (
+          <div
+            style={{
+              display: "inline-block",
+              width: `${debug ? "70%" : "100%"}`,
+            }}
+          >
+            {mode === "zoom" ? (
+              <>
+                {" "}
+                <button onClick={() => dispatch(set_render_mode("tree"))}>
+                  FORCE reset to root view
+                </button>
+              </> // more descriptive button info
             ) : null}
-          </fieldset>
-          {/* {mode === "chunk" ? (
-            <>
-              <button onClick={() => setMode("tree")}>
-                Switch to tree mode
-              </button>
-              <button onClick={onClickMore}>Load more</button>
-            </>
-          ) : null} */}
-          {mode === "tree" ? (
-            <>
-              <button onClick={() => setMode("chunk")}>
-                Switch to Chunk Mode
-              </button>
-            </>
-          ) : null}
-          {mode === "zoom" ? (
-            <>
-              {" "}
-              <button onClick={() => setMode("tree")}>
-                Go Back to root level
-              </button>
-            </> // more descriptive button info
-          ) : null}
-          {debug ? (
-            <code
-              style={{
-                display: "block",
-                backgroundColor: "blanchedalmond",
-              }}
-            >
-              {/* <pre>{load} Chunks loaded!</pre> */}
-              <pre>Debug Mode set to {debug ? "ON" : "OFF"}</pre>
-              <pre>Render Mode set to {mode.toUpperCase()}</pre>
-              Redux working? <Counter />
-              <pre>
-                You are {alreadyClicked ? "already" : "now"} viewing from
-                {" " + target} level
-              </pre>
-              <div>{path.length > 1 ? path.join(" ➡ ") : path}</div>
-            </code>
-          ) : null}
-        </>
-      ) : null}
+            {debug ? (
+              <code
+                style={{
+                  display: "block",
+                  backgroundColor: "blanchedalmond",
+                }}
+              >
+                {/* <pre>{load} Chunks loaded!</pre> */}
+                <pre>
+                  Debug Mode {mdx ? "& MDX Mode" : ""}
+                  {log ? " & Extra Logs Mode" : ""} set to{" "}
+                  {debug ? "ON" : "OFF"}
+                </pre>
+                <pre>Render Mode set to {mode.toUpperCase()}</pre>
+                Redux working? <Counter />
+                <pre>
+                  You are {alreadyClicked ? "already" : "now"} viewing from
+                  {" " + target} level
+                </pre>
+                <div>{path.length > 1 ? path.join(" ➡ ") : path}</div>
+              </code>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+
       <Breadcrumbs
         path={path}
         setPath={setPath}
-        setMode={setMode}
+        setMode={set_render_mode}
         set_db_chunk={set_db_chunk}
         target={target}
         setTarget={setTarget}

@@ -1,16 +1,21 @@
 import { useState, useLayoutEffect } from "react"
 import { rem, root } from "../data"
 
-import { useDispatch, useSelector } from "react-redux"
+import {
+  useDispatch as __renameDispatch,
+  useSelector as __renameSelector,
+} from "react-redux"
 import type { TypedUseSelectorHook } from "react-redux"
 import type { RootState, AppDispatch } from "../state/store"
 
 /**
  * Redux Hooks with types
+ * Not going to use the confusing RTK suggested naming convetion of useAppDispatch or useAppSelector - keep it like the old redux pattern!
+
  */
 
-export const useAppDispatch: () => AppDispatch = useDispatch
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+export const useDispatch: () => AppDispatch = __renameDispatch
+export const useSelector: TypedUseSelectorHook<RootState> = __renameSelector
 
 /**
  * del @arg step from exports since unused
