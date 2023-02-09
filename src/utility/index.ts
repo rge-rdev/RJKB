@@ -49,7 +49,6 @@ export function getKeyFromID(id?: string, mdx = true) {
   return doc_key_mdx
   // if (doc) return mdx ? make_mdx(doc) : make_str(doc)
 }
-getKeyFromID("mC58T8gYLamzNB996")
 /**
  *
  * @param input aray of remData_objects to map over and
@@ -70,6 +69,18 @@ export function make_str(input: RemData[] | []): string {
 
 export function make_mdx(input: RemData[] | []): string {
   let output_arr = input?.map((el: RemData) => obj_to_mdx(el))
+  if (Array.isArray(output_arr)) return output_arr.join("")
+  return output_arr
+}
+
+/** PLAINTEXT version of make_str
+ *
+ * @param input aray of remData_objects to map over and
+ * @returns array of
+ */
+
+export function make_plaintext(input: RemData[] | []): string {
+  let output_arr = input?.map((el: RemData) => obj_to_plaintext(el))
   if (Array.isArray(output_arr)) return output_arr.join("")
   return output_arr
 }
@@ -136,6 +147,55 @@ export function obj_to_str(el: RemData, input_str = ""): string {
           el["width"] * el["percent"] * 0.01
         } loading="lazy"/>`
       }
+    }
+  }
+
+  return output_str
+}
+
+/**
+ *
+ * @param el
+ * @param input_str
+ * @returns string of plaintext = guard clause returns "" empty string
+ */
+
+export function obj_to_plaintext(el: RemData, input_str = ""): string {
+  let output_str: string = input_str
+
+  if (typeof el === "string") output_str += el
+  if (typeof el === "object") {
+    if (el["i"]) {
+      if (el["i"] === "o") return "" // if code
+      if (el["i"] === "m") {
+        if (el["qId"]) {
+          // const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
+          output_str += `${el["qId"] ? `${_.escape(el["text"])}` : ""}` // just show plaintext for reference link
+        }
+        // output_str += `${el["q"] ? "<code>" : ""}` // ignore code styling
+        // output_str += `${el["b"] ? "<b>" : ""}` // ignore bold style
+        // output_str += `${el["u"] ? "<u>" : ""}` // ignore underline style
+        // output_str += `${el["l"] ? "<i>" : ""}` // ignore italic style
+        // output_str += `${el["cId"] ? `{{<mark id=#${el["cId"]}>` : ""}` // ignore Cloze/mark style
+        output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
+        // output_str += `${el["cId"] ? "</mark>}}" : ""}`
+        // output_str += `${el["l"] ? "</i>" : ""}`
+        // output_str += `${el["u"] ? "</u>" : ""}`
+        // output_str += `${el["b"] ? "</b>" : ""}`
+        // output_str += `${el["q"] ? "</code>" : ""}`
+      }
+      if (el["i"] === "q") {
+        if (!el["textOfDeletedRem"]) {
+          const find_doc = map.get(el["_id"])
+          const find_key = find_doc?.key!
+
+          output_str += `${make_plaintext(find_key)}` // ignore link - just show text
+        }
+        if (el["textOfDeletedRem"]) {
+          output_str += `${make_plaintext(el["textOfDeletedRem"])}` // show plaintext of deleted doc
+        }
+      }
+      if (el["i"] === "i") return "" // ignore iamges
     }
   }
 

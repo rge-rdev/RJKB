@@ -1,6 +1,6 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
-import { make_mdx } from "../utility"
+import { make_mdx, make_plaintext } from "../utility"
 // import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB
@@ -93,6 +93,8 @@ export const root_main_topics = root.filter(
     doc._id === "5jxvqtuiTvhdhxys7"
 )
 
+export const root_main_topic_ids = root_main_topics.map((doc) => doc._id)
+
 // export const map_doc_to_key = new Map(rem.docs.map((doc) => [doc._id, __RAW_KEY_TEXT))
 
 // console.log(map_all_parents)
@@ -104,9 +106,42 @@ export const root_main_topics = root.filter(
  */
 
 export function getDoc(id: string) {
+  if (!map.get(id)) return console.log(`ID: ${id} could not be found!`)
   return map.get(id)
 }
 
+export function getDocKey(id: string, val?: "key" | "value") {
+  const doc = getDoc(id)
+  if (!doc) return
+  val = val ? "value" : "key"
+
+  const text_array = doc[val]
+  if (!text_array) return
+  const text = make_plaintext(text_array)
+  return text
+}
+
+/**
+ *
+ * @param id
+ * @returns
+ */
+
+export function id_to_key_slug(id: string) {
+  const text = getDocKey(id)
+    ?.replace(/[/\\@\[\\^{}|]`~]/g, "-")
+    .replace(" ", "-")
+  if (!text) return
+  // console.log(text)
+  return text.split("/").join("-")
+}
+
+// id_to_key_slug("F3pfGC5FmxkDPhLeW") // data structure with persistent versioning making copies of state to keep track of changes over time
+// id_to_key_slug("F3XGCTu8hZW9Nc2QT") // UR
+// id_to_key_slug("HWLTjZrhernsLocy7") //JS
+id_to_key_slug("5jxvqtuiTvhdhxys7") // AI/ML
+getDocKey("65wxDaND8qaAd8G4g") // yarn add PKG@latest
+id_to_key_slug("65wxDaND8qaAd8G4g") // yarn add PKG@latest
 /**
  *
  * @param id string ID for direct parent to search (or return undefined early if no string input)

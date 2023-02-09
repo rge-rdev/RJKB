@@ -12,7 +12,7 @@ export interface Rem_DB {
  */
 
 export interface Rem_obj {
-  key: RemData[] | []
+  key: Array<RemData> //RemData[] | []
   owner?: Owner_ID // local-iKhHKzSKkJiQy2yNb
   children: RemID[] | [] // direct children?
   subBlocks?: RemID[] | []
