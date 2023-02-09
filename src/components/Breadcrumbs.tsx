@@ -120,3 +120,8 @@ export default function Breadcrumbs({
     </div>
   )
 }
+
+/**
+ * TODO: clean mdx || html from key_text for breadcrumb => output as "clean_text_key"
+ * TODO: slugify clean_text_key for routing
+ */

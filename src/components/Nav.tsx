@@ -57,6 +57,13 @@ export default function Nav({
   //   }
   // }
 
+  function toggle_btn_props(toggle: boolean) {
+    return {
+      style: { backgroundColor: `${toggle ? "royalblue" : "revert"}` },
+      onMouseLeave: () => setTimeout(() => setTooltip(null), 2000),
+    }
+  }
+
   return (
     <div>
       <h1
@@ -75,7 +82,7 @@ export default function Nav({
       <div id="debugPanel">
         <div
           style={{
-            display: "inline-block",
+            display: "inline-table",
             width: `${debug ? "30%" : "100%"}`,
             backgroundColor: `${debug ? "lightsalmon" : "revert"}`,
             height: `${debug ? "15em" : ""}`,
@@ -176,39 +183,35 @@ export default function Nav({
                 style={{ display: "flex" }}
               >
                 <button
-                  style={{ backgroundColor: `${mdx ? "royalblue" : "revert"}` }}
+                  {...toggle_btn_props(mdx)}
                   onClick={() => dispatch(toggle_mdx())}
                   onMouseOver={() =>
                     setTooltip(
                       "Set doc text render mode to MDX instead of HTML"
                     )
                   }
-                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   Toggle MDX
                 </button>
                 <button
-                  style={{ backgroundColor: `${uid ? "royalblue" : "revert"}` }}
+                  {...toggle_btn_props(uid)}
                   onClick={() => dispatch(toggle_uid())}
                   onMouseOver={() =>
                     setTooltip(
                       "Toggle UID vs text (as HTML or MDX) to render for breadcrumbs"
                     )
                   }
-                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   Toggle UID
                 </button>
-                <button>Toggle C</button>
                 <button
-                  style={{ backgroundColor: `${log ? "royalblue" : "revert"}` }}
+                  {...toggle_btn_props(log)}
                   onClick={() => dispatch(toggle_log())}
                   onMouseOver={() =>
                     setTooltip(
                       "Toggle extra console.log() to spam string[] for doc text output per node"
                     )
                   }
-                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   Toggle LOG
                 </button>
@@ -216,11 +219,11 @@ export default function Nav({
               <div
                 id="btn_tooltip"
                 style={{
-                  position: "fixed",
+                  position: "sticky",
                   visibility: `${tooltip ? "visible" : "collapse"}`,
                   backgroundColor: "paleturquoise",
                   height: "3.5em",
-                  width: "inherit",
+                  // width: "inherit",
                 }}
               >
                 {tooltip ? tooltip : ""}
@@ -233,8 +236,9 @@ export default function Nav({
           <div
             id="debugConsole"
             style={{
-              display: "inline-block",
+              display: "inline-table",
               width: `${debug ? "70%" : "100%"}`,
+              height: "15em",
             }}
           >
             {debug ? (

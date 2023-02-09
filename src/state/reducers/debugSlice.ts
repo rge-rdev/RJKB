@@ -9,8 +9,8 @@ export const debugSlice = createSlice({
     debug_mode: true,
     render_mode: "tree", // set legacy chunk loading mode to showcase terrible performance of synchronous React with loops with loops with loops with ...
     mdx_mode: true, // toggle new MDX render mode (for docusaurus) or switch to legacy HTML equivalent
-    log: false, // toggle console log spam for debug text rendering for every node
-    uid: true, // toggle showing UID for breadcrumbs || paths
+    log_mode: false, // toggle console log spam for debug text rendering for every node
+    uid_mode: false, // toggle showing UID for breadcrumbs || paths
   },
   reducers: {
     toggle_debug: (state) => {
@@ -23,10 +23,10 @@ export const debugSlice = createSlice({
       state.mdx_mode = !state.mdx_mode
     },
     toggle_log: (state) => {
-      state.log = !state.log
+      state.log_mode = !state.log_mode
     },
     toggle_uid: (state) => {
-      state.uid = !state.uid
+      state.uid_mode = !state.uid_mode
     },
   },
 })
@@ -45,7 +45,7 @@ export const select_debug_mode = (state: RootState) => state.debug.debug_mode
 export const select_debug_render_mode = (state: RootState) =>
   state.debug.render_mode
 export const select_debug_mdx_mode = (state: RootState) => state.debug.mdx_mode
-export const select_debug_log = (state: RootState) => state.debug.log
-export const select_debug_uid = (state: RootState) => state.debug.uid
+export const select_debug_log = (state: RootState) => state.debug.log_mode
+export const select_debug_uid = (state: RootState) => state.debug.uid_mode
 
 export default debugSlice.reducer

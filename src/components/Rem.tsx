@@ -1,4 +1,6 @@
 import { memo, useState, useEffect } from "react"
+
+
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { Render_Docs_BFS } from "./App"
 
@@ -162,6 +164,11 @@ function Rem({
                     }`,
                   }}
                 ></article>
+                {/* <ReactMarkdown
+                  remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
+                >
+                  {text_key + card_arrow + text_val}
+                </ReactMarkdown> */}
               </span>
             </span>
 
