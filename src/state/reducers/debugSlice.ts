@@ -1,5 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
-import type { PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../store"
 
 export const debugSlice = createSlice({
@@ -11,6 +10,7 @@ export const debugSlice = createSlice({
     render_mode: "tree", // set legacy chunk loading mode to showcase terrible performance of synchronous React with loops with loops with loops with ...
     mdx_mode: true, // toggle new MDX render mode (for docusaurus) or switch to legacy HTML equivalent
     log: false, // toggle console log spam for debug text rendering for every node
+    uid: true, // toggle showing UID for breadcrumbs || paths
   },
   reducers: {
     toggle_debug: (state) => {
@@ -25,11 +25,19 @@ export const debugSlice = createSlice({
     toggle_log: (state) => {
       state.log = !state.log
     },
+    toggle_uid: (state) => {
+      state.uid = !state.uid
+    },
   },
 })
 
-export const { toggle_debug, set_render_mode, toggle_mdx, toggle_log } =
-  debugSlice.actions
+export const {
+  toggle_debug,
+  set_render_mode,
+  toggle_mdx,
+  toggle_log,
+  toggle_uid,
+} = debugSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectDebug = (state: RootState) => state.debug.debug_mode
@@ -38,5 +46,6 @@ export const select_debug_render_mode = (state: RootState) =>
   state.debug.render_mode
 export const select_debug_mdx_mode = (state: RootState) => state.debug.mdx_mode
 export const select_debug_log = (state: RootState) => state.debug.log
+export const select_debug_uid = (state: RootState) => state.debug.uid
 
 export default debugSlice.reducer

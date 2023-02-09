@@ -5,12 +5,16 @@ import React, {
   memo,
 } from "react"
 import { lazy, Suspense } from "react"
-import { make_str, getParentPathIDsArray } from "../utility"
+import { make_str, getParentPathIDsArray, make_mdx } from "../utility"
 import { rem, root_main_topics } from "../data"
 import { Rem_obj } from "../rem-json"
 
 import { useSelector } from "../hooks"
-import { select_debug_render_mode } from "../state/reducers/debugSlice"
+import {
+  select_debug_render_mode,
+  select_debug_mdx_mode,
+  select_debug_mode,
+} from "../state/reducers/debugSlice"
 
 // import Cloze from "./components/Cloze";
 
@@ -21,6 +25,7 @@ const Rem = lazy(() => import("./Rem"))
 /**
  * TODO: refactor getKeyText
  * TODO: refactor getValueText
+ * !Changed render_chunk into FC Render_Docs_BFS to reflect it as recursive fn to render FC
  *
  * @param db_chunk
  * @param set_db_chunk
@@ -32,12 +37,15 @@ const Rem = lazy(() => import("./Rem"))
  * @returns
  */
 
-export function render_chunk(
+export function Render_Docs_BFS(
   db_chunk: Rem_obj[],
   set_db_chunk?: Function,
   parent?: string,
   path?: string[],
-  setPath?: Function
+  setPath?: Function,
+  mode?: string,
+  mdx?: boolean,
+  debug?: boolean
 ) {
   if (typeof db_chunk === "undefined") return
   if (!db_chunk) return
@@ -45,8 +53,10 @@ export function render_chunk(
     let text_key: string = ""
     let text_val: string = ""
     if (!doc["key"].length) return null // skip empty rem
-    if (doc["key"].length > 0) text_key += make_str(doc["key"])
-    if (doc["value"]) text_val += make_str(doc["value"])
+    if (doc["key"].length > 0)
+      text_key += mdx ? make_mdx(doc["key"]) : make_str(doc["key"])
+    if (doc["value"])
+      text_val += mdx ? make_mdx(doc["value"]) : make_str(doc["value"])
     if (doc["parent"]) parent = doc["parent"]
 
     let card_arrow = ""
@@ -71,7 +81,7 @@ export function render_chunk(
           <div>
             <sub>
               {/* <em>{mode} mode</em> chunk #{i} loading...{" "} */}
-              chunk #{i} loading...{" "}
+              chunk #{i} loading {debug ? `for UID: ${_id}` : ""}
             </sub>
           </div>
         }
@@ -89,6 +99,8 @@ export function render_chunk(
           parent={parent}
           path={path}
           setPath={setPath}
+          mode={mode}
+          mdx={mdx}
         ></Rem>
       </Suspense>
     )
@@ -99,6 +111,8 @@ function App() {
   const step_size = 500
   // const [mode, set_render_mode] = useState("tree")
   const mode = useSelector(select_debug_render_mode) //? "chunk" : "tree"
+  const mdx = useSelector(select_debug_mdx_mode)
+  const debug = useSelector(select_debug_mode)
 
   /**
    * @function set_db_chunk to set doc_nodes[] to render with @function render_chunk()
@@ -125,7 +139,7 @@ function App() {
       // set_db_chunk(root) // to load EVERYTHING including tags, links & orphans
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [max_size, mode, path])
+  }, [max_size, mode, path, target])
 
   const onClickMore = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (load + step_size > max_size) {
@@ -149,7 +163,16 @@ function App() {
 
       <div>
         {load
-          ? render_chunk(db_chunk, set_db_chunk, undefined, undefined, setPath)
+          ? Render_Docs_BFS(
+              db_chunk,
+              set_db_chunk,
+              undefined,
+              undefined,
+              setPath,
+              mode,
+              mdx,
+              debug
+            )
           : null}
         {load < max_size ? (
           <button onClick={onClickMore}>Load more</button>

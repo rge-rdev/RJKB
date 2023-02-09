@@ -1,12 +1,9 @@
 import { memo, useState, useEffect } from "react"
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
-import { render_chunk } from "./App"
+import { Render_Docs_BFS } from "./App"
 
-import { useDispatch, useSelector } from "../hooks"
-import {
-  select_debug_render_mode,
-  set_render_mode,
-} from "../state/reducers/debugSlice"
+import { useDispatch } from "../hooks"
+import { set_render_mode } from "../state/reducers/debugSlice"
 
 interface RemType {
   i?: number // TODO counter
@@ -25,6 +22,8 @@ interface RemType {
   debug?: boolean //"on" | "off"
   setTarget?: Function
   setPath: Function
+  mode?: string
+  mdx?: boolean
 } //((Rem_obj & deleted_rem & portal_rem) | undefined)[];
 
 const InlineBlock = {
@@ -49,6 +48,8 @@ function Rem({
   path = [_id],
   setTarget,
   setPath,
+  mode,
+  mdx,
 }: RemType) {
   const [collapse, setCollapse] = useState(false)
   const [draggable, setDraggable] = useState(false)
@@ -165,7 +166,15 @@ function Rem({
             </span>
 
             {children && !collapse
-              ? render_chunk(rem_doc_list, set_db_chunk, parent, path, setPath)
+              ? Render_Docs_BFS(
+                  rem_doc_list,
+                  set_db_chunk,
+                  parent,
+                  path,
+                  setPath,
+                  mode,
+                  mdx
+                )
               : null}
           </ul>
         </div>

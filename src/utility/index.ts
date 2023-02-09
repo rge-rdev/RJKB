@@ -1,8 +1,8 @@
 import _ from "lodash"
 import { RemData } from "../rem-json"
-import { map, root_child_map, map_all_parents } from "../data"
+import { map, root_child_map, map_all_parents, getDoc } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
-import { render_chunk } from "../components/App"
+import { Render_Docs_BFS } from "../components/App"
 // import Cloze from "../components/Cloze"
 
 /**
@@ -32,10 +32,24 @@ export function getChildDocList(_id: string): Rem_obj[] {
 export function getChildJSX(
   child_doc_list: (Rem_obj & deleted_rem & portal_rem)[]
 ) {
-  const child_jsx = render_chunk(child_doc_list)
+  const child_jsx = Render_Docs_BFS(child_doc_list)
   return child_jsx
 }
 
+export function getKeyFromID(id?: string, mdx = true) {
+  if (id === "root") return "root"
+  if (!id) return "__NO_ID_MATCH_DB"
+  const doc = getDoc(id)
+  const doc_key = doc?.["key"] || []
+  const doc_key_mdx = make_mdx(doc_key)
+  // console.dir("doc=", doc)
+  // console.log("doc['key']=", doc_key)
+  // console.log("make_mdx(doc_key)=", doc_key_mdx)
+  if (!doc) return "__NO_DOC_FOUND"
+  return doc_key_mdx
+  // if (doc) return mdx ? make_mdx(doc) : make_str(doc)
+}
+getKeyFromID("mC58T8gYLamzNB996")
 /**
  *
  * @param input aray of remData_objects to map over and
@@ -158,8 +172,13 @@ export function resolve_lang_mdx(lang: string) {
       return "markup"
     case "yaml":
       return "tsx"
+    case "go":
+      return "go"
   }
-  return alert(lang)
+
+  //! alert which lang is missing - cut from final build
+
+  return alert(`FAIL to resolve lang for: ${lang}`)
 }
 
 /**
@@ -198,9 +217,9 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         // output_str += `${el["b"] ? "**" : ""}`; // bold md
         output_str += `${el["u"] ? "__" : ""}` // underline
         output_str += `${el["l"] ? "*" : ""}`
-        output_str += `${el["cId"] ? `{{<mark id=#${el["cId"]}>` : ""}` // Cloze
+        output_str += `${el["cId"] ? `<mark id=#${el["cId"]}>` : ""}` // id to Cloze cId
         output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
-        output_str += `${el["cId"] ? "</mark>}}" : ""}`
+        output_str += `${el["cId"] ? "</mark>" : ""}`
         output_str += `${el["l"] ? "*" : ""}`
         output_str += `${el["u"] ? "__" : ""}`
         output_str += `${el["b"] ? "**" : ""}`
@@ -208,10 +227,12 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       }
       if (el["i"] === "q") {
         if (el["aliasId"]) {
-          const aliasId = el["aliasId"]
+          const aliasId = el["aliasId"] // look up alternative key for aliasId
+          const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
+          output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId
         }
-        if (el["_id"] === "2n8Gw7PvXGPcFQm7i") output_str += "Aliases"
+        if (el["_id"] === "2n8Gw7PvXGPcFQm7i") output_str += "__Aliases"
         // if (!el["textOfDeletedRem"]) {
         if (el["_id"] !== "2n8Gw7PvXGPcFQm7i") {
           const find_doc = map.get(el["_id"]) // return doc obj for link

@@ -96,13 +96,24 @@ export const root_main_topics = root.filter(
 // export const map_doc_to_key = new Map(rem.docs.map((doc) => [doc._id, __RAW_KEY_TEXT))
 
 // console.log(map_all_parents)
+
+/**start to refactor map.get(id) => doc logic here
+ *
+ * @param id UID for doc in JSON DB
+ * @returns doc object
+ */
+
+export function getDoc(id: string) {
+  return map.get(id)
+}
+
 /**
  *
  * @param id string ID for direct parent to search (or return undefined early if no string input)
  * @returns undefined || string for one direct parent ID
  */
 
-function getParentStr(id?: string) {
+export function getParentStr(id?: string) {
   if (!id) return
   return map_parent.get(id)
 }
@@ -174,7 +185,7 @@ map_all_parents.forEach((id) => {
 
 export const map_to_mdx = new Map(array_output.map((x) => [x[0], x.slice(1)]))
 
-function slugify_mdx(str: string) {
+export function slugify_mdx(str: string) {
   return str.replace(/[:space:]/g, "-")
 }
 

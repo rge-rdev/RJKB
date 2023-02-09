@@ -10,6 +10,8 @@ import {
   select_debug_mdx_mode,
   toggle_log,
   select_debug_log,
+  toggle_uid,
+  select_debug_uid,
 } from "../state/reducers/debugSlice"
 import { useSelector, useDispatch } from "../hooks"
 
@@ -31,12 +33,13 @@ export default function Nav({
 }: NavProps) {
   // const [debug, setDebug] = useState("on")
   const [alreadyClicked, setAlreadyClicked] = useState(false)
-  const [chunkTooltip, setChunkTooltip] = useState(false)
+  const [tooltip, setTooltip] = useState<null | string>(null)
 
   const debug = useSelector(select_debug_mode)
   const mode = useSelector(select_debug_render_mode)
   const mdx = useSelector(select_debug_mdx_mode)
   const log = useSelector(select_debug_log)
+  const uid = useSelector(select_debug_uid)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -56,20 +59,26 @@ export default function Nav({
 
   return (
     <div>
-      <h1>
+      <h1
+        style={{
+          display: "inline-block",
+          height: "2em",
+        }}
+      >
         My Rem DB
-        {debug
+        {debug && log
           ? path.length > 1
             ? " Path: " + path.join(" ➡ ")
             : " Path at root"
           : null}
       </h1>
-      <div>
+      <div id="debugPanel">
         <div
           style={{
             display: "inline-block",
             width: `${debug ? "30%" : "100%"}`,
             backgroundColor: `${debug ? "lightsalmon" : "revert"}`,
+            height: `${debug ? "15em" : ""}`,
           }}
         >
           <fieldset
@@ -79,7 +88,9 @@ export default function Nav({
               dispatch(toggle_debug())
             }}
           >
-            <legend>Debug Mode</legend>
+            <legend>
+              <b>Debug Mode</b>
+            </legend>
             <input
               type="radio"
               value="on"
@@ -104,14 +115,16 @@ export default function Nav({
           </fieldset>
 
           {debug ? (
-            <div>
+            <>
               <fieldset
                 onChange={(e: any) => {
                   // setMode(e.target.value)
                   dispatch(set_render_mode(e.target.value))
                 }}
               >
-                <legend>Set Render Mode</legend>
+                <legend>
+                  <b>Set Render Mode</b>
+                </legend>
                 <input
                   type="radio"
                   value="chunk"
@@ -119,10 +132,12 @@ export default function Nav({
                   readOnly
                 />
                 <span
-                  onMouseOver={() => setChunkTooltip(!chunkTooltip)}
-                  onMouseLeave={() =>
-                    setTimeout(() => setChunkTooltip(false), 1000)
+                  onMouseOver={() =>
+                    setTooltip(
+                      "WARNING: Prepare for some serious lag with Chunk rendering mode!"
+                    )
                   }
+                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   <button onClick={() => dispatch(set_render_mode("chunk"))}>
                     ⚠ Chunk
@@ -134,7 +149,13 @@ export default function Nav({
                   checked={mode === "tree"}
                   readOnly
                 />
-                <button onClick={() => dispatch(set_render_mode("tree"))}>
+                <button
+                  onClick={() => dispatch(set_render_mode("tree"))}
+                  onMouseOver={() =>
+                    setTooltip("Force reset to root view with tree render mode")
+                  }
+                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
+                >
                   Tree
                 </button>
                 {mode === "zoom" ? (
@@ -149,58 +170,93 @@ export default function Nav({
                   </>
                 ) : null}
               </fieldset>
+
               <div
-                style={{
-                  visibility: `${chunkTooltip ? "visible" : "collapse"}`,
-                }}
+                id="debug_btn_container"
+                style={{ display: "flex" }}
               >
-                WARNING: Prepare for some serious lag with Chunk rendering mode!
-              </div>
-              <div style={{ display: "flex" }}>
                 <button
                   style={{ backgroundColor: `${mdx ? "royalblue" : "revert"}` }}
                   onClick={() => dispatch(toggle_mdx())}
+                  onMouseOver={() =>
+                    setTooltip(
+                      "Set doc text render mode to MDX instead of HTML"
+                    )
+                  }
+                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   Toggle MDX
                 </button>
                 <button
+                  style={{ backgroundColor: `${uid ? "royalblue" : "revert"}` }}
+                  onClick={() => dispatch(toggle_uid())}
+                  onMouseOver={() =>
+                    setTooltip(
+                      "Toggle UID vs text (as HTML or MDX) to render for breadcrumbs"
+                    )
+                  }
+                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
+                >
+                  Toggle UID
+                </button>
+                <button>Toggle C</button>
+                <button
                   style={{ backgroundColor: `${log ? "royalblue" : "revert"}` }}
                   onClick={() => dispatch(toggle_log())}
+                  onMouseOver={() =>
+                    setTooltip(
+                      "Toggle extra console.log() to spam string[] for doc text output per node"
+                    )
+                  }
+                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   Toggle LOG
                 </button>
-                <button>Toggle B</button>
-                <button>Toggle C</button>
               </div>
-            </div>
+              <div
+                id="btn_tooltip"
+                style={{
+                  position: "fixed",
+                  visibility: `${tooltip ? "visible" : "collapse"}`,
+                  backgroundColor: "paleturquoise",
+                  height: "3.5em",
+                  width: "inherit",
+                }}
+              >
+                {tooltip ? tooltip : ""}
+              </div>
+            </>
           ) : null}
         </div>
 
         {debug ? (
           <div
+            id="debugConsole"
             style={{
               display: "inline-block",
               width: `${debug ? "70%" : "100%"}`,
             }}
           >
-            {mode === "zoom" ? (
-              <>
-                {" "}
-                <button onClick={() => dispatch(set_render_mode("tree"))}>
-                  FORCE reset to root view
-                </button>
-              </> // more descriptive button info
-            ) : null}
             {debug ? (
               <code
                 style={{
                   display: "block",
                   backgroundColor: "blanchedalmond",
+                  height: "inherit",
                 }}
               >
+                {mode === "zoom" ? (
+                  <>
+                    {" "}
+                    <button onClick={() => dispatch(set_render_mode("tree"))}>
+                      FORCE reset to root view
+                    </button>
+                  </> // more descriptive button info
+                ) : null}
                 {/* <pre>{load} Chunks loaded!</pre> */}
                 <pre>
-                  Debug Mode {mdx ? "& MDX Mode" : ""}
+                  Debug Mode{mdx ? "& MDX Mode" : ""}
+                  {uid ? " & UID Mode" : ""}
                   {log ? " & Extra Logs Mode" : ""} set to{" "}
                   {debug ? "ON" : "OFF"}
                 </pre>
