@@ -57,12 +57,30 @@ export const rem: Rem_DB = rem_json as Rem_DB
  */
 
 export const map = new Map(rem.docs.map((doc) => [doc._id, doc]))
+export const map_all = new Map(
+  rem.docs.map((doc) => [
+    doc._id,
+    {
+      key: doc.key,
+      value: doc.value,
+      children: doc.children,
+      parent: doc.parent,
+    },
+  ])
+)
 export const root = rem.docs.filter((doc) => doc.n)
 export const root_child_map = new Map(
   root.map((doc) => [doc._id, doc.children])
 )
 
 // export const map_parent = new Map(map.map((doc) => [id, doc.parent]))
+
+export function getChildren(id: string) {
+  const children = map_all.get(id)?.children
+  // console.log(children)
+  return children
+}
+// getChildren("6CexCG2iqE2PMEtRW") // [ "wSpuzHZAcmcDRsogo","kJhdZnTW7hZvdkQi3","7rrTRyYMQCtb2Sr2J","MDkQBLiqe4h2LMbQp","wsze9LrGuNubTX4Zq",]
 
 /**
  * map_parent = hash map each doc ID to ONE direct parent
@@ -129,28 +147,39 @@ export function getDocKey(id: string, val?: "key" | "value") {
 
 export function id_to_key_slug(id: string) {
   const text = getDocKey(id)
-    ?.replace(/[/\\@\[\\^{}|]`~]/g, "-")
-    .replace(" ", "-")
+    ?.replace(/[?/\\@[\\^{}\]|`~:;,=+ ]/g, "-")
+    ?.replace(/[![\]"'*()<>]/g, "")
+    ?.replace(/[-]{2,}/g, "-")
+    ?.replace(/[^A-z0-9_-]/g, "") // clear anything not approved
   if (!text) return
   // console.log(text)
+  if (text.length > 24)
+    return (
+      text
+        // .slice(0, 24)
+        .split("/")
+        .map((str) => str.slice(0, 9))
+        .join("-")
+    ) // ignore super-long
   return text.split("/").join("-")
 }
 
 // id_to_key_slug("F3pfGC5FmxkDPhLeW") // data structure with persistent versioning making copies of state to keep track of changes over time
 // id_to_key_slug("F3XGCTu8hZW9Nc2QT") // UR
 // id_to_key_slug("HWLTjZrhernsLocy7") //JS
-id_to_key_slug("5jxvqtuiTvhdhxys7") // AI/ML
-getDocKey("65wxDaND8qaAd8G4g") // yarn add PKG@latest
-id_to_key_slug("65wxDaND8qaAd8G4g") // yarn add PKG@latest
+// id_to_key_slug("5jxvqtuiTvhdhxys7") // AI/ML
+// getDocKey("65wxDaND8qaAd8G4g") // yarn add PKG@latest
+// id_to_key_slug("65wxDaND8qaAd8G4g") // yarn add PKG@latest
 /**
  *
  * @param id string ID for direct parent to search (or return undefined early if no string input)
  * @returns undefined || string for one direct parent ID
  */
 
-export function getParentStr(id?: string) {
+export function getParentId(id?: string) {
   if (!id) return
-  return map_parent.get(id)
+  const parent = map_all.get(id)?.parent
+  return parent
 }
 
 /**Recursive func to get ID_STTRING[] from SINGLE ID string
@@ -163,10 +192,10 @@ export function getParentStr(id?: string) {
 
 function calcParentIDsArray(id: string) {
   const array_out = [id]
-  let new_parent_id = getParentStr(id)
+  let new_parent_id = getParentId(id)
   while (new_parent_id !== null && new_parent_id !== undefined) {
     if (typeof new_parent_id === "string") array_out.unshift(new_parent_id)
-    new_parent_id = getParentStr(new_parent_id)
+    new_parent_id = getParentId(new_parent_id)
   }
 
   return ["root", ...array_out]

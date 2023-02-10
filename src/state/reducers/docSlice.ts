@@ -4,7 +4,7 @@ import { RootState } from "../store"
 export const docSlice = createSlice({
   name: "doc",
   initialState: {
-    target: "root",
+    target: "root", // "target" to set doc UID string to control which doc to render. "root" for top-level
   },
   reducers: {
     set_target: (state, action: PayloadAction<string>) => {

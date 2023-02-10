@@ -57,10 +57,13 @@ export default function Nav({
   //   }
   // }
 
-  function toggle_btn_props(toggle: boolean) {
+  function toggle_btn_props(toggle?: boolean) {
     return {
-      style: { backgroundColor: `${toggle ? "royalblue" : "revert"}` },
-      onMouseLeave: () => setTimeout(() => setTooltip(null), 2000),
+      style: {
+        backgroundColor: `${toggle ? "royalblue" : "revert"}`,
+        color: `${toggle ? "white" : "revert"}`,
+      },
+      onMouseLeave: () => setTimeout(() => setTooltip(null), 3000),
     }
   }
 
@@ -139,12 +142,12 @@ export default function Nav({
                   readOnly
                 />
                 <span
+                  {...toggle_btn_props()}
                   onMouseOver={() =>
                     setTooltip(
                       "WARNING: Prepare for some serious lag with Chunk rendering mode!"
                     )
                   }
-                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   <button onClick={() => dispatch(set_render_mode("chunk"))}>
                     ⚠ Chunk
@@ -157,11 +160,11 @@ export default function Nav({
                   readOnly
                 />
                 <button
+                  {...toggle_btn_props()}
                   onClick={() => dispatch(set_render_mode("tree"))}
                   onMouseOver={() =>
                     setTooltip("Force reset to root view with tree render mode")
                   }
-                  onMouseLeave={() => setTimeout(() => setTooltip(null), 2000)}
                 >
                   Tree
                 </button>

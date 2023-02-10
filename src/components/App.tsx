@@ -37,18 +37,38 @@ const Rem = lazy(() => import("./Rem"))
  * @returns
  */
 
-export function Render_Docs_BFS(
-  db_chunk: Rem_obj[],
-  set_db_chunk?: Function,
-  parent?: string,
-  path?: string[],
-  setPath?: Function,
-  mode?: string,
-  mdx?: boolean,
+interface Render_BFS_Props {
+  db_chunk: Rem_obj[]
+  set_db_chunk?: Function
+  parent?: string
+  path?: string[]
+  setPath?: Function
+  mode?: string
+  mdx?: boolean
   debug?: boolean
-) {
-  if (typeof db_chunk === "undefined") return
-  if (!db_chunk) return
+}
+
+/**
+ * ✅ Fixed Render_Docs_BFS into proper FC by convert params to props
+ * TODO: Refactor db_chunk & set_db_chunk into RTK to stop drilling
+ * @interface Render_BFS_Props
+ *
+ * @param param0
+ * @returns
+ */
+
+export function Render_Docs_BFS({
+  db_chunk,
+  set_db_chunk,
+  parent,
+  path,
+  setPath,
+  mode,
+  mdx,
+  debug,
+}: Render_BFS_Props) {
+  if (typeof db_chunk === "undefined") return [null]
+  if (!db_chunk) return [null]
   return db_chunk.map((doc, i) => {
     let text_key: string = ""
     let text_val: string = ""
@@ -162,17 +182,25 @@ function App() {
       />
 
       <div>
+        {/* {load ? (
+          <Render_Docs_BFS
+            db_chunk={db_chunk}
+            set_db_chunk={set_db_chunk}
+            setPath={setPath}
+            mode={mode}
+            mdx={mdx}
+            debug={debug}
+          />
+        ) : null} */}
         {load
-          ? Render_Docs_BFS(
+          ? Render_Docs_BFS({
               db_chunk,
               set_db_chunk,
-              undefined,
-              undefined,
               setPath,
               mode,
               mdx,
-              debug
-            )
+              debug,
+            })
           : null}
         {load < max_size ? (
           <button onClick={onClickMore}>Load more</button>

@@ -1,6 +1,5 @@
 import { memo, useState, useEffect } from "react"
 
-
 import { get_rem_list, getParentPathIDsArray } from "../utility/"
 import { Render_Docs_BFS } from "./App"
 
@@ -122,9 +121,17 @@ function Rem({
                 </span>
                 <span
                   style={InlineBlock}
-                  onClick={() => setCollapse(!collapse)}
+                  onClick={() => {
+                    if (children?.length) setCollapse(!collapse)
+                  }}
                 >
-                  {minIcon ? (collapse ? "🔽" : "🔼") : null}
+                  {children?.length //! this is some epic ternary spaghetti!
+                    ? minIcon
+                      ? collapse
+                        ? "🔽"
+                        : "🔼"
+                      : null
+                    : minIcon && "⏩"}
                 </span>
                 <span
                   style={InlineBlock}
@@ -171,17 +178,16 @@ function Rem({
                 </ReactMarkdown> */}
               </span>
             </span>
-
             {children && !collapse
-              ? Render_Docs_BFS(
-                  rem_doc_list,
+              ? Render_Docs_BFS({
+                  db_chunk: rem_doc_list,
                   set_db_chunk,
                   parent,
                   path,
                   setPath,
                   mode,
-                  mdx
-                )
+                  mdx,
+                })
               : null}
           </ul>
         </div>

@@ -32,7 +32,7 @@ export function getChildDocList(_id: string): Rem_obj[] {
 export function getChildJSX(
   child_doc_list: (Rem_obj & deleted_rem & portal_rem)[]
 ) {
-  const child_jsx = Render_Docs_BFS(child_doc_list)
+  const child_jsx = Render_Docs_BFS({ db_chunk: child_doc_list })
   return child_jsx
 }
 
@@ -59,6 +59,13 @@ export function make_str(input: RemData[] | []): string {
   let output_arr = input?.map((el: RemData) => obj_to_str(el))
   if (Array.isArray(output_arr)) return output_arr.join("")
   return output_arr
+}
+
+export function id_to_mdx(id: string, key_type: "key" | "value") {
+  const doc = getDoc(id)
+  if (!doc) return
+  if (key_type === "key") return make_mdx(doc.key)
+  if (key_type === "value") return make_mdx(doc.value!) // TODO: fix assertion here
 }
 
 /**MDX version of make_str
@@ -170,14 +177,14 @@ export function obj_to_plaintext(el: RemData, input_str = ""): string {
       if (el["i"] === "m") {
         if (el["qId"]) {
           // const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
-          output_str += `${el["qId"] ? `${_.escape(el["text"])}` : ""}` // just show plaintext for reference link
+          output_str += `${el["qId"] ? `${el["text"]}` : ""}` // just show plaintext for reference link
         }
         // output_str += `${el["q"] ? "<code>" : ""}` // ignore code styling
         // output_str += `${el["b"] ? "<b>" : ""}` // ignore bold style
         // output_str += `${el["u"] ? "<u>" : ""}` // ignore underline style
         // output_str += `${el["l"] ? "<i>" : ""}` // ignore italic style
         // output_str += `${el["cId"] ? `{{<mark id=#${el["cId"]}>` : ""}` // ignore Cloze/mark style
-        output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
+        output_str += `${el["q"] ? `${el["text"]}` : `${el["text"]}`}`
         // output_str += `${el["cId"] ? "</mark>}}" : ""}`
         // output_str += `${el["l"] ? "</i>" : ""}`
         // output_str += `${el["u"] ? "</u>" : ""}`

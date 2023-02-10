@@ -5,14 +5,17 @@ import {
   getDoc,
   id_to_key_slug,
   root_main_topics,
+  getChildren,
 } from "./src/data/"
+import { id_to_mdx } from "./src/utility"
 
-console.log("this starts before Docusaurus!")
+// console.log("this starts before Docusaurus!")
 
 // generate root dirs for each main topic (root_main_topics) map to docs/_TOPIC
 
 const main_root_filepaths = root_main_topic_ids.map((id) => {
   const doc_slug = id_to_key_slug(id)
+
   return `docs/${doc_slug}/${doc_slug}.md`
 })
 
@@ -26,21 +29,44 @@ const main_root_filepaths = root_main_topic_ids.map((id) => {
  **       -> 4. doc["children"]? => doc[]
  **         -> 5. repeat step 3
  */
+async function generate_mdx_page_from_id(id: string) {
+  const key_mdx = id_to_mdx(id, "key")
+  const value_mdx = id_to_mdx(id, "value")
+
+  const output_mdx = `
+  # ${key_mdx}
+  ## ${value_mdx}
+  ## References
+  `
+  return output_mdx
+}
 
 async function loop_docs_mkdir(path: string, children: string[]) {
   children.forEach(async (id) => {
     // console.log("Intializing dir for docs")
+
     const doc = getDoc(id)
     if (!doc) return
     // const slug_key = doc_to_slugify_key(doc)
     const slug_key = id_to_key_slug(id)
-    path += `/${slug_key}`
-    const filepath = path + ".md"
-    const file = filepath.split("/").slice(-1)
-    console.log(`create new file: ${file} at "${path}" for ID: ${id}`)
+
+    // console.log("path before split=", path)
+
+    const file = `${slug_key}.md`
+    const filepath = `${path}/${slug_key}/${slug_key}.md`
+    const dirpath = `${path}/${slug_key}`
+    // console.log(`create new file: ${filepath} at "${dirpath}" for ID: ${id}`)
+    // console.log("filepath=", filepath)
+    // console.log("dirpath=", dirpath)
     try {
       await fs.ensureFile(filepath).then(() => {
-        console.log(`created ${id} is child of ${path}`)
+        console.log(`created ${file} at ${dirpath}`)
+        // write_to_md(filepath, )
+        // const full_mdx = ""
+        // fs.writeFile(filepath, full_mdx)
+        const children = getChildren(id)
+        if (!children) return
+        loop_docs_mkdir(dirpath, children)
 
         // console.log(`${id} was created`)
       })
@@ -54,7 +80,7 @@ async function loop_docs_mkdir(path: string, children: string[]) {
       //   loop_docs_mkdir(child_docs)
       // })
     } catch (err) {
-      console.log(err)
+      console.log("err:", filepath, err)
     }
   })
 }
@@ -64,10 +90,10 @@ async function loop_docs_mkdir(path: string, children: string[]) {
  */
 
 main_root_filepaths.forEach(async (path: string, i: number) => {
-  console.log("Intializing Root Docs Folders")
+  // console.log("Intializing Root Docs Folders")
   try {
     await fs.ensureFile(path).then(() => {
-      console.log(`${path} was created`)
+      // console.log(`${path} was created`)
       /**
        * lookup children and repeat
        *
@@ -75,12 +101,21 @@ main_root_filepaths.forEach(async (path: string, i: number) => {
        */
       const doc = root_main_topics[i]
       // console.log("doc=", doc)
+
       const child_docs = doc?.["children"]
       // console.log("child_docs=", child_docs)
       if (!child_docs)
         return console.log(`${path} is leaf node - no children found.`)
-      console.log(`Now recursively looping over children from ${path}`)
-      loop_docs_mkdir(path, child_docs)
+      // console.log(`Now recursively looping over children from ${path}`)
+      const dirpath = String(path.split("/").slice(0, -1).join("/"))
+      /**
+       * FUCK - forgot to cut off _doc.md from end!
+       * AND DON'T FORGET TO assign it FFS!!should be slice(0, -1)
+       * AND DON'T FORGET TO JOIN IT BACK UP AGAIN !!
+       * console.log("path after split=", path)
+       * MUTATE path OUTSIDE .forEach loop!!
+       */
+      loop_docs_mkdir(dirpath, child_docs)
     })
   } catch (err) {
     console.log(err)

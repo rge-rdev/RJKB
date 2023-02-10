@@ -35,7 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "docstest": "ts-node C:\\Users\\Z\\react-dev\\rjdb-map\\src\\data\\index.ts & ts-node initDocs.tsx",
-    "docs": "node initDocs.tsx & docusaurus start"
+    "docs": "ts-node initDocs.tsx & docusaurus start"
   },
   "eslintConfig": {
     "extends": [
