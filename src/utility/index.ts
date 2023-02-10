@@ -61,11 +61,17 @@ export function make_str(input: RemData[] | []): string {
   return output_arr
 }
 
-export function id_to_mdx(id: string, key_type: "key" | "value") {
+export function id_to_mdx(id: string, key_type?: "key" | "value") {
   const doc = getDoc(id)
   if (!doc) return
-  if (key_type === "key") return make_mdx(doc.key)
+  if (!key_type || key_type === "key") return make_mdx(doc.key)
   if (key_type === "value") return make_mdx(doc.value!) // TODO: fix assertion here
+}
+export function id_to_plaintext(id: string, key_type?: "key" | "value") {
+  const doc = getDoc(id)
+  if (!doc) return
+  if (!key_type || key_type === "key") return make_plaintext(doc.key)
+  if (key_type === "value") return make_plaintext(doc.value!) // TODO: fix assertion here
 }
 
 /**MDX version of make_str

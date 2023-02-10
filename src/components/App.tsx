@@ -15,6 +15,7 @@ import {
   select_debug_mdx_mode,
   select_debug_mode,
 } from "../state/reducers/debugSlice"
+import { select_doc_target, set_target } from "../state/reducers/docSlice"
 
 // import Cloze from "./components/Cloze";
 
