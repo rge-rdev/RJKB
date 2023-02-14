@@ -53,9 +53,17 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        // ADDED sitemap-plugin
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+          ignorePatterns: ["/tags/**"],
+          filename: "sitemap.xml",
+        },
       }),
     ],
   ],
+  themes: ["docusaurus-theme-search-typesense"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -135,13 +143,34 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      //add new liveCodeBlock theme here
+      //! add new liveCodeBlock theme here
       liveCodeBlock: {
         /**
          * The position of the live playground, above or under the editor
          * Possible values: "top" | "bottom"
          */
         playgroundPosition: "bottom",
+      },
+      //! ADD typesense-search theme here
+      typesense: {
+        typesenseCollectionName: "rjkb", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: "localhost",
+              port: 8108,
+              protocol: "http",
+            },
+          ],
+          apiKey: "xyz",
+        },
+
+        // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
+        typesenseSearchParameters: {},
+
+        // Optional
+        contextualSearch: true,
       },
     },
 }

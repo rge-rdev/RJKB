@@ -11,6 +11,8 @@
 
 # production
 /build
+/docs
+/typesense
 
 # Generated files
 .docusaurus
@@ -26,3 +28,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env
