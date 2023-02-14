@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Fullstack KB",
-  tagline: "my portfolio project",
+  title: "RJ's Fullstack KB",
+  tagline: "Showcase of my fullstack skills",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "rgerdev", // Usually your GitHub org/user name.
-  projectName: "My Fullstack KB", // Usually your repo name.
+  projectName: "RJKB", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -32,6 +32,8 @@ const config = {
     locales: ["en"],
   },
   plugins: ["@docusaurus/theme-live-codeblock"],
+
+  staticDirectories: ["public", "static"], // add access to public dir
 
   presets: [
     [
@@ -71,7 +73,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "KB Portfolio Demo",
+        title: "RJKB",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
@@ -85,7 +87,8 @@ const config = {
           },
           { to: "/blog", label: "Dev Log", position: "left" },
           { to: "/features", label: "Tour", position: "left" },
-          { to: "/CV", label: "CV", position: "left" },
+          { to: "/about", label: "About", position: "right" },
+
           {
             href: "https://github.com/rgerdev/myeventual/release/build",
             label: "GitHub",
@@ -98,16 +101,25 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "RJKB",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "Docs",
+                to: "/docs",
+              },
+              {
+                label: "Dev Log",
+                to: "/blog",
+              },
+              {
+                label: "Tour",
+                to: "/features",
               },
             ],
           },
+
           {
-            title: "Community",
+            title: "Contact",
             items: [
               {
                 label: "Stack Overflow",
@@ -127,12 +139,12 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "About Me",
+                to: "/about",
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/rgerdev",
               },
             ],
           },
