@@ -159,18 +159,30 @@ const FeatureList: FeatureItem[] = [
   },
 ]
 
+/**
+ * 
+ * @param param0   display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+ * @returns 
+ */
+
 function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx("col col--4")}>
-      <div className="text--center">
+    <div
+      id={title}
+      className="col col--4"
+    >
+      <div className="flex justify-center bg-gradient-to-bl  from-cyan-100 to-gray-100 dark:bg-gradient-to-bl  dark:from-cyan-900 dark:to-gray-800 transition-all m-1">
         <Svg
-          className={styles.featureSvg}
+          className="items-center h-48 w-48"
           role="img"
         />
       </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+      <div className="padding-horiz--md text-center">
+        <h3 className="shadow-lg">{title}</h3>
+        <p className="text-cyan-800">{description}</p>
       </div>
     </div>
   )
@@ -180,10 +192,10 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
+        <div className="flex flex-wrap my-0 justify-center">
+          {FeatureList.map((props) => (
             <Feature
-              key={idx}
+              key={props.title}
               {...props}
             />
           ))}

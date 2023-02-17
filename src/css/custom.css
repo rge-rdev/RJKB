@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -15,6 +19,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  scroll-behavior: smooth;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -29,6 +34,14 @@
   /* --MYCOLORPICKER: #8ef396; */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
-/* @tailwind base; */
-@tailwind components;
-@tailwind utilities;
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.hover\:animate-\[ping_3s_linear_infinite\]:hover {
+  animation: ping 3s linear normal;
+}
