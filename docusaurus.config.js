@@ -1,11 +1,47 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+const { EsbuildPlugin } = require("esbuild-loader")
 
 const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
+function RJ_WEBPACK_PLUGIN(context, options) {
+  return {
+    name: "rj-webpack-fixes",
+    configureWebpack(config, isServer, utils, content) {
+      return {
+        optimization: {
+          // mergeDuplicateChunks: false, // skip client optimizating step to speed up build
+          // removeEmptyChunks: false, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
+          removeAvailableModules: false, // disable duplicate module check for extra build speed
+          minimize: false, // disable Webpack minimizer in favor of swc-loader as set up below
+          // minimizer: [new EsbuildPlugin({ target: "esnext" })],
+        },
+      }
+    },
+  }
+}
+
+async function RJ_TAILWIND_PLUGIN(context, options) {
+  return {
+    name: "rj-tailwind-addon",
+    configurePostCss(postcssOptions) {
+      // Appends TailwindCSS and AutoPrefixer.
+      postcssOptions.plugins.push(require("tailwindcss"))
+      postcssOptions.plugins.push(require("autoprefixer"))
+      return postcssOptions
+    },
+  }
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  // plugins: ["@docusaurus/theme-live-codeblock"],
+  plugins: [
+    "@docusaurus/theme-live-codeblock",
+    RJ_WEBPACK_PLUGIN,
+    RJ_TAILWIND_PLUGIN,
+  ],
   title: "RJ's Fullstack KB",
   tagline: "Showcase of my fullstack skills",
   favicon: "img/favicon.ico",
@@ -31,9 +67,51 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: ["@docusaurus/theme-live-codeblock"],
 
   staticDirectories: ["public", "static"], // add access to public dir
+
+  //FIX PAINFUL HOURS LONG BUILD TIMES BY SWITCHING FROM CRAPPY WEBPACK TO ESBUILD!#
+  //! ESBuild loader
+  /*
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve("esbuild-loader"),
+
+      options: {
+        loader: "tsx",
+        format: isServer ? "cjs" : undefined,
+        //format: isServer ? "cjs" : undefined,
+        //es2017 4.23m
+        target: isServer ? "node12" : "esnext",
+      },
+    }),
+  },
+  */
+  // /*
+  //! swc-loader is worse than esbuild!
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve("swc-loader"),
+      options: {
+        jsc: {
+          parser: {
+            syntax: "typescript",
+            tsx: true,
+            minify: {
+              compress: true,
+            },
+          },
+          target: "esnext",
+        },
+        module: {
+          type: isServer ? "commonjs" : "es6",
+        },
+        minify: true,
+      },
+    }),
+  },
+
+  // */
 
   presets: [
     [

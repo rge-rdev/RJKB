@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import Layout from "@theme/Layout"
 import HomepageFeatures from "../components/HomepageFeatures"
+import LogoSlider from "../components/LogoSlider"
 
 import styles from "./index.module.css"
 
@@ -22,6 +23,7 @@ function HomepageHeader() {
             Feature Walkthrough
           </Link>
         </div>
+        <LogoSlider />
       </div>
     </header>
   )

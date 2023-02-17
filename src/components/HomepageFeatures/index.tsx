@@ -13,7 +13,13 @@ const FeatureList: FeatureItem[] = [
   {
     title: "Docusaurus",
     Svg: require("@site/static/img/icon-docusaurus-color.svg").default,
-    description: <>SSG Routing Darkmode Extended plugins: live-code</>,
+    description: (
+      <>
+        Pre-baked solutions for SSG, Routing, Darkmode. Extra Plugins:
+        <code>@docusaurus/theme-live-codeblock</code>
+        <code>docusaurus-theme-search-typesense</code>
+      </>
+    ),
   },
   {
     title: "Typesense",
@@ -32,8 +38,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/icon-typescript-color.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Fully-typed top-down for Client-side KB app & all other portfolio
+        projects
         <Link to="./docs/features#typescript">Typescript</Link>
       </>
     ),
@@ -43,8 +49,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/icon-react-color.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Latest React 18 features in client-side apps including{" "}
+        <code>Suspense</code>
       </>
     ),
   },
@@ -76,7 +82,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "RJNote IDE Plugin",
-    Svg: require("@site/static/img/icon-code-editor-diamond-color.svg").default,
+    Svg: require("@site/static/img/icon-rjnote-code-editor-color.svg").default,
     description: <>Esbuild/Go + WebAssembly publish separately on NPM</>,
   },
   {
@@ -125,6 +131,26 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>Transform JSON DB from Remnote into MDX, plaintext slugs, </>
     ),
+  },
+  {
+    title: "test",
+    Svg: require("@site/static/img/logo-docker-name-black.svg").default,
+    description: <>RJ's KB </>,
+  },
+  {
+    title: "tsnodesvg?",
+    Svg: require("@site/static/img/logo-ts-node-black.svg").default,
+    description: <>RJ's KB </>,
+  },
+  {
+    title: "TS-black?",
+    Svg: require("@site/static/img/logo+text-typescript-black.svg").default,
+    description: <>RJ's KB </>,
+  },
+  {
+    title: "TS-blue?",
+    Svg: require("@site/static/img/logo+text-typescript-color.svg").default,
+    description: <>RJ's KB </>,
   },
   {
     title: "__",
