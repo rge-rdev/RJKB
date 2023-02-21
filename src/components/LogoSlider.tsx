@@ -4,7 +4,7 @@ import TS_SVG from "../../static/img/icon-typescript-black.svg"
 import REACT_SVG from "../../static/img/icon-react-black.svg"
 import NODEJS_SVG from "../../static/img/icon-node.js-black.svg"
 import DOCUSAURUS_SVG from "../../static/img/icon-docusaurus-black.svg"
-import DOCKER_SVG from "../../static/img/docker-working.svg"
+// import DOCKER_SVG from "../../static/img/docker-working.svg"
 import TSNODE_SVG from "../../static/img/logo-ts-node-black.svg"
 import HTML5_SVG from "../../static/img/icon-html5-grey.svg"
 import TAIL_SVG from "../../static/img/icon-tailwindcss-color.svg"
@@ -21,17 +21,17 @@ const rect = {
   height: 60,
 }
 const top = [
-  <REACT_SVG {...square} />,
+  // <REACT_SVG {...square} />,
   <TAIL_SVG {...square} />,
   <NODEJS_SVG {...square} />,
   <DOCUSAURUS_SVG {...square} />,
   <TSNODE_SVG {...rect} />,
-  <DOCKER_SVG {...rect} />,
+  // <DOCKER_SVG {...rect} />,
   <HTML5_SVG {...square} />,
 ]
 const bot = [
   <HTML5_SVG {...square} />,
-  <DOCKER_SVG {...rect} />,
+  // <DOCKER_SVG {...rect} />,
   <TSNODE_SVG {...rect} />,
   <DOCUSAURUS_SVG {...square} />,
   <NODEJS_SVG {...square} />,

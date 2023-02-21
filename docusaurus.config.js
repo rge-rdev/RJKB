@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const { EsbuildPlugin } = require("esbuild-loader")
 
 const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
@@ -16,6 +15,18 @@ function RJ_WEBPACK_PLUGIN(context, options) {
           removeAvailableModules: false, // disable duplicate module check for extra build speed
           minimize: false, // disable Webpack minimizer in favor of swc-loader as set up below
           // minimizer: [new EsbuildPlugin({ target: "esnext" })],
+        },
+        module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules)/,
+              use: {
+                // `.swcrc` can be used to configure swc
+                loader: "swc-loader",
+              },
+            },
+          ],
         },
       }
     },
@@ -33,7 +44,6 @@ async function RJ_TAILWIND_PLUGIN(context, options) {
     },
   }
 }
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   // plugins: ["@docusaurus/theme-live-codeblock"],
@@ -53,11 +63,9 @@ const config = {
   baseUrl: "/",
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: "rgerdev", // Usually your GitHub org/user name.
   projectName: "RJKB", // Usually your repo name.
-
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -68,7 +76,8 @@ const config = {
     locales: ["en"],
   },
 
-  staticDirectories: ["public", "static"], // add access to public dir
+  //! staticDirectories causes MAJOR BUG in Dcosaurus - build renders a blank homepage for some dumb confusing reason?!
+  // staticDirectories: ["public", "static"], // add access to public dir
 
   //FIX PAINFUL HOURS LONG BUILD TIMES BY SWITCHING FROM CRAPPY WEBPACK TO ESBUILD!#
   //! ESBuild loader
@@ -88,7 +97,6 @@ const config = {
   },
   */
   // /*
-  //! swc-loader is worse than esbuild!
   webpack: {
     jsLoader: (isServer) => ({
       loader: require.resolve("swc-loader"),
@@ -111,8 +119,6 @@ const config = {
     }),
   },
 
-  // */
-
   presets: [
     [
       "classic",
@@ -122,13 +128,15 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/rgerdev/setupmyawesomerepolater",
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/rgerdev/setupmyawesomerepolater/shared/",
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -147,11 +155,12 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    {
+    ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "RJKB",
+
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
@@ -166,9 +175,8 @@ const config = {
           { to: "/blog", label: "Dev Log", position: "left" },
           { to: "/features", label: "Tour", position: "left" },
           { to: "/about", label: "About", position: "right" },
-
           {
-            href: "https://github.com/rgerdev/myeventual/release/build",
+            href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
             position: "right",
           },
@@ -195,7 +203,6 @@ const config = {
               },
             ],
           },
-
           {
             title: "Contact",
             items: [
@@ -262,7 +269,7 @@ const config = {
         // Optional
         contextualSearch: true,
       },
-    },
+    }),
 }
 
 module.exports = config

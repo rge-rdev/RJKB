@@ -6,27 +6,6 @@ import HomepageFeatures from "../components/HomepageFeatures"
 import LogoSlider from "../components/LogoSlider"
 import DArrow from "../../static/img/icon-down-button-docusaurus-green.svg"
 
-// import styles from "./index.module.css"
-
-/**
- * 
- * @returns 
- * .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
- */
-
-/**
- *   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  clsx("hero hero--primary", styles.heroBanner
- */
-
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
   return (
@@ -35,18 +14,26 @@ function HomepageHeader() {
         <h1 className="hero__title shadow-lg rounded-full w-1/2 mt-2 mb-5">
           {siteConfig.title}
         </h1>
-        <h2 className="w-fit flex flex-col justify-center items-center shadow-lg rounded-full mb-5">
+        <h2
+          className="w-fit flex flex-col justify-center items-center shadow-lg rounded-full mb-10"
+          id="aa"
+        >
           {siteConfig.tagline}
         </h2>
-
         <LogoSlider />
-        <Link
-          // className="button button--secondary button--lg hover:shadow-2xl"
-          className="animate-pulse"
-          to="#features"
-        >
-          <DArrow height="4em" />
-        </Link>
+
+        <div className="">
+          <Link
+            // className="button button--secondary button--lg hover:shadow-2xl"
+            className="animate-pulse"
+            to="#aa"
+          >
+            <DArrow
+              height="4em"
+              className=""
+            />
+          </Link>
+        </div>
       </div>
     </header>
   )
