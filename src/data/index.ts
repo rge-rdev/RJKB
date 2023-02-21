@@ -1,19 +1,40 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
 import { make_mdx, make_plaintext } from "../utility"
+import { uptime } from "process"
 // import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB
 // console.log(JSON.stringify(rem).length);
 // import fs from "fs-extra"
 
+process.stdout.write(
+  "\x1b[36mRJ Begin NODE SCRIPTS to MAP JSON DB TO MDX\x1b[89m\n"
+)
+
 /**
  * IIFE on app load to del unused props from JSON to save space
  * TODO: benchmark diff in speed after deleting unused
  */
 ;(function Load() {
-  rem.docs.forEach((doc: Rem_obj) => {
-    Object.keys(doc).forEach((key: string) => {
+  console.log(`INIT JSON DB Filter unused props\n`)
+  const length = rem.docs.length
+  const json_cleanup_init_time = uptime()
+
+  rem.docs.forEach((doc: Rem_obj, i) => {
+    process.stdout.write(
+      `${i < length - 1 ? "⏳ MAPPING" : "✅ COMPLETED MAPPING"}: ${(
+        (100 * (i + 1)) /
+        length
+      ).toPrecision(3)}% docs of JSON to remove unused props  ${
+        i === length - 1
+          ? `in ${(uptime() - json_cleanup_init_time).toPrecision(3)}s\n\n`
+          : ""
+      }`
+    )
+    process.stdout.clearLine(1)
+    process.stdout.cursorTo(0)
+    Object.keys(doc).forEach((key) => {
       if (
         key !== "forget" &&
         key !== "key" &&
@@ -24,9 +45,9 @@ export const rem: Rem_DB = rem_json as Rem_DB
         key !== "enableBackSR" &&
         key !== "children" &&
         key !== "parent" &&
-        key !== "crt" //&&
+        key !== "crt" &&
+        key !== "references"
         // key !== "createdAt"&&
-        // key !== "references"
       )
         //@ts-ignore
         delete doc[key]
@@ -56,7 +77,28 @@ export const rem: Rem_DB = rem_json as Rem_DB
  * root_child_map = adjacency list of ID map to direct children (IDs)
  */
 
-export const map = new Map(rem.docs.map((doc) => [doc._id, doc]))
+const docs_length = rem.docs.length
+const init_json_map_time = process.uptime()
+export const map = new Map(
+  rem.docs.map((doc, i) => {
+    process.stdout.write(
+      `${i < docs_length - 1 ? "⏳ MAPPING" : "✅ COMPLETED MAPPING"}: ${(
+        (100 * (i + 1)) /
+        docs_length
+      ).toPrecision(3)}% of JSON to HASH table ${
+        i === docs_length - 1
+          ? `in ${(uptime() - init_json_map_time).toPrecision(3)}s\n\n`
+          : ""
+      }`
+    )
+    process.stdout.clearLine(1)
+    process.stdout.cursorTo(0)
+
+    return [doc._id, doc]
+  })
+)
+
+export const map_size = 13592 // map.size includes also non-main topics + children which were filtered out for docusaurus build
 export const map_all = new Map(
   rem.docs.map((doc) => [
     doc._id,
@@ -88,11 +130,27 @@ export function getChildren(id: string) {
  */
 
 export const map_parent = new Map(rem.docs.map((doc) => [doc._id, doc.parent]))
+const map_all_parents_init_time = uptime()
 export const map_all_parents = new Map(
-  rem.docs.map((doc) => [
-    doc._id,
-    [...calcParentIDsArray(doc.parent as string), doc._id], // TARGET NODE TO LAST INDEX
-  ])
+  rem.docs.map((doc, i) => {
+    process.stdout.write(
+      `${i < docs_length - 1 ? "⏳ MAPPING" : "✅ COMPLETED MAPPING"}: ${(
+        (100 * (i + 1)) /
+        docs_length
+      ).toPrecision(3)}% of IDs to Adjancency List of Parent IDs ${
+        i === docs_length - 1
+          ? `in ${(uptime() - map_all_parents_init_time).toPrecision(3)}s\n\n`
+          : ""
+      }`
+    )
+    process.stdout.clearLine(1)
+    process.stdout.cursorTo(0)
+
+    return [
+      doc._id,
+      [...calcParentIDsArray(doc.parent as string), doc._id], // TARGET NODE TO LAST INDEX
+    ]
+  })
 )
 
 /**
@@ -210,6 +268,9 @@ const array_output = [[""]]
 //! Also, recall that const array can mutate
 array_output.pop()
 
+let l = 0
+const max = map_all_parents.size + 1
+const init_breadcrumb_time = uptime()
 map_all_parents.forEach((id) => {
   const ID_strings_array = id
   const final_ID =
@@ -218,6 +279,20 @@ map_all_parents.forEach((id) => {
     ] //! disgusting repetition! why can't JS have negative indexing!
   // console.log(final_ID)
   // let output_key_text_strings_array = ["root"]
+  l += 1
+  process.stdout.write(
+    `${l < max - 1 ? "⏳ GENERATING" : "✅ COMPLETED GENERATING for"}: ${(
+      (100 * (l + 1)) /
+      max
+    ).toPrecision(3)}% of Breadcrumbs ARRAY generated ${
+      l === max - 1
+        ? `in ${(uptime() - init_breadcrumb_time).toPrecision(3)}s\n\n`
+        : ""
+    }`
+  )
+  process.stdout.clearLine(1)
+  process.stdout.clearLine(1)
+  process.stdout.cursorTo(0)
   const output = ID_strings_array.filter(
     (x) => x !== null && x !== undefined
   ).map((id: string) => {
@@ -292,3 +367,5 @@ console.table(db_map);
 //   child_list.forEach((id) => console.log(id));
 // });
 // console.log(map.get("2n8Gw7PvXGPcFQm7i"));
+
+process.stdout.write(`\n\nCOMPLETE: All JSON mapping scripts in ${uptime()}`)

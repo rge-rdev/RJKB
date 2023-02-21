@@ -52,7 +52,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docstest": "ts-node C:\\Users\\Z\\react-dev\\rjdb-map\\src\\data\\index.ts & ts-node initDocs.tsx",
+    "dt": "rm -r ./docs/* && ts-node C:\\Users\\Z\\react-dev\\rjdb-map\\src\\data\\index.ts && ts-node initDocs.tsx",
     "d": "docusaurus start",
     "db": "setx NODE_OPTIONS \"--max-old-space-size=16383\" &&  docusaurus build",
     "build": "docusaurus build",

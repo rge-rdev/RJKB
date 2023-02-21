@@ -73,6 +73,56 @@ export function id_to_plaintext(id: string, key_type?: "key" | "value") {
   if (!key_type || key_type === "key") return make_plaintext(doc.key)
   if (key_type === "value") return make_plaintext(doc.value!) // TODO: fix assertion here
 }
+export function id_to_tags(id: string) {
+  const doc = getDoc(id)
+  if (!doc) return
+  const key = make_plaintext(doc.key)
+  let output = [key]
+  if (!doc.value) return [key]
+  const value = doc.value
+  if (typeof value === "string") return output.push(value)
+  let link_ids = [""]
+  link_ids.pop()
+  if (typeof value === "object") {
+    const links = value.forEach((el) => {
+      if (
+        typeof el !== "string" &&
+        el["i"] === "q" &&
+        el["_id"] &&
+        el["_id"] !== "2n8Gw7PvXGPcFQm7i" &&
+        el["aliasId"]
+      ) {
+        // add aliases
+        const link_id = el["_id"]
+        const link_plaintext = id_to_plaintext(link_id)
+        if (!link_plaintext) return
+        link_ids.push(link_plaintext)
+      }
+    })
+    return link_ids
+  }
+}
+// export function id_to_refs(id: string) {
+//   const doc = getDoc(id)
+//   if (!doc) return
+//   const key = make_plaintext(doc.key)
+//   let output = [key]
+//   if (!doc.value) return [key]
+//   const value = doc.value
+//   if (typeof value === "string") return output.push(value)
+//   let link_ids = []
+//   if (typeof value === "object") {
+//     const links = value.forEach((el) => {
+//       if (
+//         typeof el !== "string" &&
+//         el["i"] === "m" &&
+//         el["qId"]?.crt?.b?.u?.s
+//       ) {
+//         link_ids.push()
+//       }
+//     })
+//   }
+// }
 
 /**MDX version of make_str
  *
@@ -275,7 +325,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       if (el["i"] === "m") {
         if (el["qId"]) {
           const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
-          output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
+          output_str += `${el["i"] === "m" ? "`" : ""}` // Ref HYPERLINKS
           output_str += `${
             el["qId"]
               ? `\nimport Link from '@docusaurus/Link';
