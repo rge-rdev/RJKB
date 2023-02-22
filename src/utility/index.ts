@@ -3,6 +3,8 @@ import { RemData } from "../rem-json"
 import { map, root_child_map, map_all_parents, getDoc } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
+import { uptime } from "process"
+
 // import Cloze from "../components/Cloze"
 
 /**
@@ -180,7 +182,7 @@ export function obj_to_str(el: RemData, input_str = ""): string {
         // output_str += `${el["b"] ? "**" : ""}`; // bold md
         output_str += `${el["u"] ? "<u>" : ""}` // underline
         output_str += `${el["l"] ? "<i>" : ""}`
-        output_str += `${el["cId"] ? `{{<mark id=#${el["cId"]}>` : ""}` // Cloze
+        output_str += `${el["cId"] ? `{{<mark id='#${el["cId"]}'>` : ""}` // Cloze
         output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
         output_str += `${el["cId"] ? "</mark>}}" : ""}`
         output_str += `${el["l"] ? "</i>" : ""}`
@@ -239,7 +241,7 @@ export function obj_to_plaintext(el: RemData, input_str = ""): string {
         // output_str += `${el["b"] ? "<b>" : ""}` // ignore bold style
         // output_str += `${el["u"] ? "<u>" : ""}` // ignore underline style
         // output_str += `${el["l"] ? "<i>" : ""}` // ignore italic style
-        // output_str += `${el["cId"] ? `{{<mark id=#${el["cId"]}>` : ""}` // ignore Cloze/mark style
+        // output_str += `${el["cId"] ? `{{<mark id='#${el["cId"]}'>` : ""}` // ignore Cloze/mark style
         output_str += `${el["q"] ? `${el["text"]}` : `${el["text"]}`}`
         // output_str += `${el["cId"] ? "</mark>}}" : ""}`
         // output_str += `${el["l"] ? "</i>" : ""}`
@@ -307,6 +309,8 @@ export function resolve_lang_mdx(lang: string) {
 /**
  * MDX output version of obj_to_str
  *
+ * FATAL missing string wrap over id of <mark> spotted from Docusaurus build throw
+ *
  */
 
 // export const Aliases_UID = "2n8Gw7PvXGPcFQm7i"
@@ -340,7 +344,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         // output_str += `${el["b"] ? "**" : ""}`; // bold md
         output_str += `${el["u"] ? "__" : ""}` // underline
         output_str += `${el["l"] ? "*" : ""}`
-        output_str += `${el["cId"] ? `<mark id=#${el["cId"]}>` : ""}` // id to Cloze cId
+        output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // id to Cloze cId
         output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
         output_str += `${el["cId"] ? "</mark>" : ""}`
         output_str += `${el["l"] ? "*" : ""}`
@@ -361,7 +365,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           const find_doc = map.get(el["_id"]) // return doc obj for link
           const find_key = find_doc?.key!
 
-          output_str += `[${el["_id"]}](${make_mdx(find_key)})`
+          output_str += `[${make_mdx(find_key)}](${el["_id"]})`
           // output_str += `[[<a href="#${el["_id"]}">${make_mdx(find_key)}</a>]]`
         }
         if (el["textOfDeletedRem"]) {
@@ -391,6 +395,8 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
   return output_str
 }
 
+// KWSN4xHJXyvxWX2Px = Sources
+
 /**to get string_ID[] from current node ID position
  *
  * @param id input ID to start parent search
@@ -403,3 +409,23 @@ export function getParentPathIDsArray(id: string) {
 }
 // console.log(getParentPathIDsArray("T7aDaHT9qwQDRrAHZ"))
 // console.log("CSS ID=", get_rem_list(["35nBdhDNJLwCCyz6A"]))
+
+export function LOG_CLI_PROGRESS(
+  i: number,
+  length: number,
+  task: string,
+  progress: string,
+  completed: string,
+  init_time: number
+) {
+  process.stdout.write(
+    `${i < length - 1 ? progress : completed}: ${(
+      (100 * (i + 1)) /
+      length
+    ).toPrecision(3)}% of ${i} for ${task} ${
+      i === length - 1 ? `in ${(uptime() - init_time).toPrecision(3)}s\n\n` : ""
+    }`
+  )
+  process.stdout.clearLine(1)
+  process.stdout.cursorTo(0)
+}

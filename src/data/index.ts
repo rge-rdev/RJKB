@@ -1,7 +1,8 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
-import { make_mdx, make_plaintext } from "../utility"
+import { make_mdx, make_plaintext, LOG_CLI_PROGRESS } from "../utility"
 import { uptime } from "process"
+import { exec } from "child_process"
 // import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB
@@ -9,31 +10,44 @@ export const rem: Rem_DB = rem_json as Rem_DB
 // import fs from "fs-extra"
 
 process.stdout.write(
-  "\x1b[36mRJ Begin NODE SCRIPTS to MAP JSON DB TO MDX\x1b[89m\n"
+  "\x1b[36m================================================\nINIT: ROGER JIANG JSON TO SSG MDX SCRIPTS © 2023\n================================================\n\x1b[89m\n\n"
 )
+// export let docs_wiped = false
+// ;(function wipe_docs_dir() {
+//   const wipe_init_time = uptime()
+//   process.stdout.write(`🧹 Wiping Docusuaurus docs dir (.\\docs\\*)...`)
+//   try {
+//     exec("rm -r ./docs/*")
+//   } catch (err) {
+//     console.log(err)
+//   }
+//   process.stdout.clearLine(1)
+//   process.stdout.cursorTo(0)
+//   process.stdout.write(
+//     `✅ WIPE COMPLETE: ..\\docs\\* CLEARED in ${(
+//       uptime() - wipe_init_time
+//     ).toFixed(2)}s`
+//   )
+// })
 
 /**
  * IIFE on app load to del unused props from JSON to save space
  * TODO: benchmark diff in speed after deleting unused
  */
 ;(function Load() {
-  console.log(`INIT JSON DB Filter unused props\n`)
-  const length = rem.docs.length
+  const docs_length = rem.docs.length
   const json_cleanup_init_time = uptime()
 
   rem.docs.forEach((doc: Rem_obj, i) => {
-    process.stdout.write(
-      `${i < length - 1 ? "⏳ MAPPING" : "✅ COMPLETED MAPPING"}: ${(
-        (100 * (i + 1)) /
-        length
-      ).toPrecision(3)}% docs of JSON to remove unused props  ${
-        i === length - 1
-          ? `in ${(uptime() - json_cleanup_init_time).toPrecision(3)}s\n\n`
-          : ""
-      }`
+    LOG_CLI_PROGRESS(
+      i,
+      docs_length,
+      "JSON trim unused props",
+      "🧹 CLEANING",
+      "✅ CLEAN COMPLETE",
+      json_cleanup_init_time
     )
-    process.stdout.clearLine(1)
-    process.stdout.cursorTo(0)
+
     Object.keys(doc).forEach((key) => {
       if (
         key !== "forget" &&
@@ -81,24 +95,20 @@ const docs_length = rem.docs.length
 const init_json_map_time = process.uptime()
 export const map = new Map(
   rem.docs.map((doc, i) => {
-    process.stdout.write(
-      `${i < docs_length - 1 ? "⏳ MAPPING" : "✅ COMPLETED MAPPING"}: ${(
-        (100 * (i + 1)) /
-        docs_length
-      ).toPrecision(3)}% of JSON to HASH table ${
-        i === docs_length - 1
-          ? `in ${(uptime() - init_json_map_time).toPrecision(3)}s\n\n`
-          : ""
-      }`
+    LOG_CLI_PROGRESS(
+      i,
+      docs_length,
+      "JSON to HASH table",
+      "⏳ MAPPING",
+      "✅ MAP COMPLETE",
+      init_json_map_time
     )
-    process.stdout.clearLine(1)
-    process.stdout.cursorTo(0)
 
     return [doc._id, doc]
   })
 )
 
-export const map_size = 13592 // map.size includes also non-main topics + children which were filtered out for docusaurus build
+export const map_size = 13592 + 1 // map.size includes also non-main topics + children which were filtered out for docusaurus build
 export const map_all = new Map(
   rem.docs.map((doc) => [
     doc._id,
@@ -133,18 +143,14 @@ export const map_parent = new Map(rem.docs.map((doc) => [doc._id, doc.parent]))
 const map_all_parents_init_time = uptime()
 export const map_all_parents = new Map(
   rem.docs.map((doc, i) => {
-    process.stdout.write(
-      `${i < docs_length - 1 ? "⏳ MAPPING" : "✅ COMPLETED MAPPING"}: ${(
-        (100 * (i + 1)) /
-        docs_length
-      ).toPrecision(3)}% of IDs to Adjancency List of Parent IDs ${
-        i === docs_length - 1
-          ? `in ${(uptime() - map_all_parents_init_time).toPrecision(3)}s\n\n`
-          : ""
-      }`
+    LOG_CLI_PROGRESS(
+      i,
+      docs_length,
+      "IDs to Adjancency List of Parent IDs",
+      "⏳ MAPPING",
+      "✅ MAP COMPLETE",
+      map_all_parents_init_time
     )
-    process.stdout.clearLine(1)
-    process.stdout.cursorTo(0)
 
     return [
       doc._id,
@@ -281,10 +287,10 @@ map_all_parents.forEach((id) => {
   // let output_key_text_strings_array = ["root"]
   l += 1
   process.stdout.write(
-    `${l < max - 1 ? "⏳ GENERATING" : "✅ COMPLETED GENERATING for"}: ${(
+    `${l < max - 1 ? "⏳ GENERATING" : "✅ GENERATION COMPLETE for"}: ${(
       (100 * (l + 1)) /
       max
-    ).toPrecision(3)}% of Breadcrumbs ARRAY generated ${
+    ).toPrecision(3)}% of ${l} for Breadcrumbs ARRAY generated ${
       l === max - 1
         ? `in ${(uptime() - init_breadcrumb_time).toPrecision(3)}s\n\n`
         : ""
@@ -368,4 +374,6 @@ console.table(db_map);
 // });
 // console.log(map.get("2n8Gw7PvXGPcFQm7i"));
 
-process.stdout.write(`\n\nCOMPLETE: All JSON mapping scripts in ${uptime()}`)
+process.stdout.write(
+  `================================================\nCOMPLETE: All JSON mapping scripts in ${uptime()}\n================================================\n\n`
+)

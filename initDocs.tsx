@@ -1,5 +1,6 @@
 // import { existsSync, mkdirSync } from "fs"
 import fs from "fs-extra"
+import { uptime } from "process"
 import {
   root_main_topic_ids,
   getDoc,
@@ -8,18 +9,24 @@ import {
   getChildren,
   map_size,
 } from "./src/data/"
-import { id_to_mdx, id_to_plaintext, id_to_tags } from "./src/utility"
+import {
+  id_to_mdx,
+  id_to_plaintext,
+  id_to_tags,
+  LOG_CLI_PROGRESS,
+} from "./src/utility"
+import _ from "lodash"
 
 // console.log("this starts before Docusaurus!")
 
 // generate root dirs for each main topic (root_main_topics) map to docs/_TOPIC
 // console.log("map size = ", map_size)
 
-const main_root_filepaths = root_main_topic_ids.map((id) => {
-  const doc_slug = id_to_key_slug(id)
+// const main_root_filepaths = root_main_topic_ids.map((id) => {
+//   const doc_slug = id_to_key_slug(id)
 
-  return `docs/${doc_slug}/${doc_slug}.md`
-})
+//   return `docs/${doc_slug}/${doc_slug}.mdx`
+// })
 
 /**
  * recursive dir & md docs init loop
@@ -31,26 +38,85 @@ const main_root_filepaths = root_main_topic_ids.map((id) => {
  **       -> 4. doc["children"]? => doc[]
  **         -> 5. repeat step 3
  */
+
 async function generate_mdx_page_from_id(id: string) {
   const key_mdx = id_to_mdx(id, "key")
-  const value_mdx = id_to_mdx(id, "value")
-  const tags = id_to_tags(id)
-  // const keywords = [id_to_tags(id)]
+  const title = id_to_plaintext(id)?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
+  const value_mdx = id_to_mdx(id, "value")?.replace(/"/g, `'`)
+  const tags = ["TAG1", "TAG2", "TAG3"] //id_to_tags(id)
+  const aliases = ["ALIAS1", "ALIAS2", "ALIAS3"]
   const description = id_to_plaintext(id, "value")
+    ?.replace(/"/g, `'`)
+    .replace(/\\/g, `&#92;`)
 
-  const output_mdx = `
-  ---
-  id: ${id}
-  tags: [${tags}]
-  keywords: [${tags}]
-  description: ${description}
-  ---
-  # ${key_mdx}
-  ## ${value_mdx}
-  ## References
-  `
+  const references = ["REF_ID1", "REF_ID2", "REF_ID3"]
+
+  const child_text_array = getChildren(id)?.map((id) => {
+    // const k = _.escape(id_to_mdx(id, "key"))
+    // const v = _.escape(id_to_mdx(id, "value"))
+    const k = id_to_mdx(id, "key")
+    const v = id_to_mdx(id, "value")
+    if (k && v) return `## ${_.unescape(k)}\n\n${_.unescape(v)}\n\n`
+    if (k && !v) return `## ${_.unescape(k)}\n\n`
+  })
+
+  /**
+ keywords: [${tags.join(", ")}]
+aliases: [${aliases.join(", ")}]
+description: "${description}"
+references: [${references.join(", ")}]
+title: "${key_plaintext}"
+tags: [${tags.join(", ")}]
+# ${key_mdx}
+
+## ${value_mdx}
+
+${children_value ? `${children_value}\n\n` : ""}
+ */
+
+  const output_mdx = `---
+${title && title !== null && title !== undefined ? `title: "${title}"\n` : ""}${
+    description && description !== null && description !== undefined
+      ? `description: "${description}"\n`
+      : ""
+  }keywords: [${tags.join(", ")}]
+tags: [${tags.join(", ")}]
+aliases: [${aliases.join(", ")}]
+references: [${references.join(", ")}]
+id: ${id}
+uid: ${id}
+---
+
+# [${title}](./) ↔ ${value_mdx}${
+    child_text_array ? "\n\n" + child_text_array.join("") : ""
+  }
+
+## References
+
+${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}`
   return output_mdx
 }
+/**
+ * PAINFUL: to find fix for the extra commas in array map to string in MDX - need to use .join("") instead of .toString()!!
+ * !MUST postfix .map with .join("") to prevent docusaurus/mdx-loader1.0 to inject extra annoyingly unhelpful commas!
+ *
+ * PAINFUL: for some stupid reason arrays get turn back into comma separated lists by Docusaurus MDX loader?!
+ * !MUST double wrap string[] for docusaurus/mdx-loader1.0 to properly render front matter as string[]
+ *
+ * PAINFUL: every single string[] needs to be rejoined by ", " to add extra space separater else docusaurus/mdx-loader dumb parser will throw without extra space (which for some reason it removes by itself!)
+ * !MUST .join(", ") every string[] for front matter!
+ *
+ * PAINFUL: Docusaurus/MDX-Loader1.0 will throw if title or description doesn't have double quotes wrapping them in the final front matter!
+ * ?!MUST wrap title & description with double quotes in front matter!
+ *
+ * NOW: THIS - WTF?!
+ * [ERROR] Error while parsing Markdown front matter.
+ * This can happen if you use special characters in front matter values (try using double quotes around that value).
+ *
+ * !ID over-rides sidebar route generation
+ * Adding "UID" frontmatter attribute to track original JSON DB ID
+ */
+
 let num = 0
 
 const template_mdx = `
@@ -91,7 +157,7 @@ async function loop_docs_mkdir(path: string, children: string[]) {
 
     // console.log("path before split=", path)
 
-    const file = `${slug_key}.mdx`
+    // const file = `${slug_key}.mdx`
     const filepath = `${path}/${slug_key}/${slug_key}.mdx`
     const dirpath = `${path}/${slug_key}`
     // console.log(`create new file: ${filepath} at "${dirpath}" for ID: ${id}`)
@@ -99,14 +165,16 @@ async function loop_docs_mkdir(path: string, children: string[]) {
     // console.log("dirpath=", dirpath)
     num += 1
     // process.stdout.write(`#${num} Writing ${file} to ${dirpath}`)
-    process.stdout.write(
-      `Generating MDX from JSON: ${Math.trunc((100 * num) / map_size)}%`
+    LOG_CLI_PROGRESS(
+      num,
+      map_size,
+      "Convert JSON to MDX",
+      "✍ Generating MDX",
+      "✅ MDX COMPLETE",
+      init_mdx_map_time
     )
-    process.stdout.clearLine(1)
-    process.stdout.cursorTo(0)
-    try {
-      // await fs.ensureFile(filepath).then(() => {
 
+    try {
       await fs
         .outputFile(filepath, await generate_mdx_page_from_id(id))
         .then(() => {
@@ -126,38 +194,49 @@ async function loop_docs_mkdir(path: string, children: string[]) {
 }
 
 /**
+ * REFACTOR
+ *  const main_root_filepaths = root_main_topic_ids.map((id) => {
+ *  const doc_slug = id_to_key_slug(id)
+ *     return `docs/${doc_slug}/${doc_slug}.mdx`
+ *  })
+ *
+ *
  * @param main_doc_dirs === string[] of dir path to write to NOT IDs!!
  */
+const init_mdx_map_time = uptime()
 
-main_root_filepaths.forEach(async (path: string, i: number) => {
-  // console.log("Intializing Root Docs Folders")
+root_main_topic_ids.forEach(async (id: string, i: number) => {
+  const doc_slug = id_to_key_slug(id)
+  const filepath = `docs/${doc_slug}/${doc_slug}.mdx`
   try {
-    await fs.ensureFile(path).then(() => {
-      num += 1
-      // console.log(`${path} was created`)
-      /**
-       * lookup children and repeat
-       *
-       * map each index in @param main_doc_dirs to @param root_main_topics for doc object
-       */
-      const doc = root_main_topics[i]
-      // console.log("doc=", doc)
+    await fs
+      .outputFile(filepath, await generate_mdx_page_from_id(id))
+      .then(() => {
+        num += 1
 
-      const child_docs = doc?.["children"]
-      // console.log("child_docs=", child_docs)
-      if (!child_docs)
-        return console.log(`${path} is leaf node - no children found.`)
-      // console.log(`Now recursively looping over children from ${path}`)
-      const dirpath = String(path.split("/").slice(0, -1).join("/"))
-      /**
-       * FUCK - forgot to cut off _doc.md from end!
-       * AND DON'T FORGET TO assign it FFS!!should be slice(0, -1)
-       * AND DON'T FORGET TO JOIN IT BACK UP AGAIN !!
-       * console.log("path after split=", path)
-       * MUTATE path OUTSIDE .forEach loop!!
-       */
-      loop_docs_mkdir(dirpath, child_docs)
-    })
+        /**
+         * lookup children and repeat
+         *
+         * map each index in @param main_doc_dirs to @param root_main_topics for doc object
+         */
+        const doc = root_main_topics[i]
+        // console.log("doc=", doc)
+
+        const child_docs = doc?.["children"]
+        // console.log("child_docs=", child_docs)
+        if (!child_docs)
+          return console.log(`${filepath} is leaf node - no children found.`)
+        // console.log(`Now recursively looping over children from ${path}`)
+        const dirpath = String(filepath.split("/").slice(0, -1).join("/"))
+        /**
+         * FUCK - forgot to cut off _doc.md from end!
+         * AND DON'T FORGET TO assign it FFS!!should be slice(0, -1)
+         * AND DON'T FORGET TO JOIN IT BACK UP AGAIN !!
+         * console.log("path after split=", path)
+         * MUTATE path OUTSIDE .forEach loop!!
+         */
+        loop_docs_mkdir(dirpath, child_docs)
+      })
   } catch (err) {
     console.log(err)
   }
