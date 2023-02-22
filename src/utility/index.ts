@@ -4,6 +4,7 @@ import { map, root_child_map, map_all_parents, getDoc } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
+import { get_path_from_id } from "../../initDocs"
 
 // import Cloze from "../components/Cloze"
 
@@ -311,6 +312,8 @@ export function resolve_lang_mdx(lang: string) {
  *
  * FATAL missing string wrap over id of <mark> spotted from Docusaurus build throw
  *
+ * if "i" === "q"
+ *
  */
 
 // export const Aliases_UID = "2n8Gw7PvXGPcFQm7i"
@@ -365,7 +368,9 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           const find_doc = map.get(el["_id"]) // return doc obj for link
           const find_key = find_doc?.key!
 
-          output_str += `[${make_mdx(find_key)}](${el["_id"]})`
+          output_str += `[\`${make_mdx(find_key)}\`](${get_path_from_id(
+            el["_id"]
+          )})`
           // output_str += `[[<a href="#${el["_id"]}">${make_mdx(find_key)}</a>]]`
         }
         if (el["textOfDeletedRem"]) {
@@ -376,19 +381,11 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       }
       //`files/`
       if (el["i"] === "i") {
-        output_str += `\n![](${(el["url"] as string).replace(
+        output_str += `\n![Image](${(el["url"] as string).replace(
           `%LOCAL_FILE%`,
-          `files/`
+          `@site/files/`
         )})\n`
       }
-      // if (el["i"] === "i") {
-      //   output_str += `<img src=${(el["url"] as string).replace(
-      //     `%LOCAL_FILE%`,
-      //     `files/`
-      //   )} height=${el["height"] * el["percent"] * 0.01} width=${
-      //     el["width"] * el["percent"] * 0.01
-      //   } loading="lazy"/>`
-      // }
     }
   }
 
@@ -410,9 +407,116 @@ export function getParentPathIDsArray(id: string) {
 // console.log(getParentPathIDsArray("T7aDaHT9qwQDRrAHZ"))
 // console.log("CSS ID=", get_rem_list(["35nBdhDNJLwCCyz6A"]))
 
-export function LOG_CLI_PROGRESS(
+const colors = {
+  blue: [34, 89],
+  yellow: [33, 89],
+  red: [31, 89],
+  cyan: [36, 89],
+  green: [32, 89],
+  magenta: [35, 89],
+  white: [37, 89],
+  gray: [30, 89],
+  redBright: [91, 39],
+  greenBright: [92, 39],
+  yellowBright: [93, 39],
+  blueBright: [94, 39],
+  magentaBright: [95, 39],
+  cyanBright: [96, 39],
+  whiteBright: [97, 39],
+}
+
+type colorType =
+  | "blue"
+  | "yellow"
+  | "red"
+  | "cyan"
+  | "green"
+  | "magenta"
+  | "white"
+  | "gray"
+  | "redBright"
+  | "greenBright"
+  | "yellowBright"
+  | "blueBright"
+  | "magentaBright"
+  | "cyanBright"
+  | "whiteBright"
+
+/**Custom CLI color text formatter
+ * will map to colors object
+ *
+ * @param text
+ * @param c
+ * @returns
+ */
+
+export function colorText(text: string, c: colorType) {
+  const a = colors[c][0] + "m"
+  const b = colors[c][1] + "m"
+  return `\x1b[${a}${text}\x1b[${b}`
+}
+
+export async function LOG_CLI_PROGRESS_RAW( //RAW COLOR TEXT
   i: number,
   length: number,
+  element: string,
+  task: string,
+  progress: string,
+  completed: string,
+  init_time: number
+) {
+  process.stdout.write(
+    `\x1b[95m${i < length - 1 ? progress : completed}:\x1b[39m \x1b[96m${(
+      (100 * (i + 1)) /
+      length
+    ).toPrecision(
+      3
+    )}%\x1b[39m of \x1b[93m${task}\x1b[39m for \x1b[92m${i}\x1b[39m \x1b[95m${element}\x1b[39m ${
+      i === length - 1
+        ? `in \x1b[91m${(uptime() - init_time).toPrecision(3)}s\x1b[39m ⏱\n\n`
+        : ""
+    }`
+  )
+
+  process.stdout.clearLine(1)
+  process.stdout.cursorTo(0)
+}
+export async function LOG_CLI_PROGRESS_SLOW( //SLOWEST
+  i: number,
+  length: number,
+  element: string,
+  task: string,
+  progress: string,
+  completed: string,
+  init_time: number
+) {
+  element = colorText(element, "magentaBright")
+  task = colorText(task, "yellow")
+  progress = colorText(progress, "magenta")
+  completed = colorText(completed, "greenBright")
+  process.stdout.write(
+    `${i < length - 1 ? progress : completed}: ${colorText(
+      ((100 * (i + 1)) / length).toPrecision(3) + "%",
+      "cyanBright"
+    )} of ${task} for ${colorText(i + "", "greenBright")} ${element} ${
+      i === length - 1
+        ? "in " +
+          colorText(
+            `${(uptime() - init_time).toPrecision(3)}s ⏱\n\n`,
+            "redBright"
+          )
+        : ""
+    }`
+  )
+
+  process.stdout.clearLine(1)
+  process.stdout.cursorTo(0)
+}
+
+export function LOG_CLI_PROGRESS( //ORIGINAL SIMPLE FAST
+  i: number,
+  length: number,
+  element: string,
   task: string,
   progress: string,
   completed: string,
@@ -422,10 +526,14 @@ export function LOG_CLI_PROGRESS(
     `${i < length - 1 ? progress : completed}: ${(
       (100 * (i + 1)) /
       length
-    ).toPrecision(3)}% of ${i} for ${task} ${
-      i === length - 1 ? `in ${(uptime() - init_time).toPrecision(3)}s\n\n` : ""
+    ).toPrecision(3)}% of ${task} for ${i} ${element}${
+      i === length - 1
+        ? ` in ${(uptime() - init_time).toPrecision(3)}s\n\n`
+        : ""
     }`
   )
   process.stdout.clearLine(1)
   process.stdout.cursorTo(0)
 }
+//!   process.stdout.clearScreenDown() DESTROYS performance whereas process.stdout.clearLine() doesn't?!
+//! Adding terminal colors adds latency!

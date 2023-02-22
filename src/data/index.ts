@@ -2,33 +2,12 @@ import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
 import { make_mdx, make_plaintext, LOG_CLI_PROGRESS } from "../utility"
 import { uptime } from "process"
-import { exec } from "child_process"
-// import { get_rem_list } from "../utility"
 
 export const rem: Rem_DB = rem_json as Rem_DB
-// console.log(JSON.stringify(rem).length);
-// import fs from "fs-extra"
 
 process.stdout.write(
   "\x1b[36m================================================\nINIT: ROGER JIANG JSON TO SSG MDX SCRIPTS © 2023\n================================================\n\x1b[89m\n\n"
 )
-// export let docs_wiped = false
-// ;(function wipe_docs_dir() {
-//   const wipe_init_time = uptime()
-//   process.stdout.write(`🧹 Wiping Docusuaurus docs dir (.\\docs\\*)...`)
-//   try {
-//     exec("rm -r ./docs/*")
-//   } catch (err) {
-//     console.log(err)
-//   }
-//   process.stdout.clearLine(1)
-//   process.stdout.cursorTo(0)
-//   process.stdout.write(
-//     `✅ WIPE COMPLETE: ..\\docs\\* CLEARED in ${(
-//       uptime() - wipe_init_time
-//     ).toFixed(2)}s`
-//   )
-// })
 
 /**
  * IIFE on app load to del unused props from JSON to save space
@@ -42,8 +21,9 @@ process.stdout.write(
     LOG_CLI_PROGRESS(
       i,
       docs_length,
+      "doc objects",
       "JSON trim unused props",
-      "🧹 CLEANING",
+      "✂ CLEANING",
       "✅ CLEAN COMPLETE",
       json_cleanup_init_time
     )
@@ -98,6 +78,7 @@ export const map = new Map(
     LOG_CLI_PROGRESS(
       i,
       docs_length,
+      "doc entries",
       "JSON to HASH table",
       "⏳ MAPPING",
       "✅ MAP COMPLETE",
@@ -146,6 +127,7 @@ export const map_all_parents = new Map(
     LOG_CLI_PROGRESS(
       i,
       docs_length,
+      "doc entries",
       "IDs to Adjancency List of Parent IDs",
       "⏳ MAPPING",
       "✅ MAP COMPLETE",
@@ -191,41 +173,63 @@ export function getDoc(id: string) {
   if (!map.get(id)) return console.log(`ID: ${id} could not be found!`)
   return map.get(id)
 }
-
-export function getDocKey(id: string, val?: "key" | "value") {
+// added overload to fix type error on return type not being possibly both string and string[] - which prevented string chaining methods
+export function get_doc_plaintext(
+  id: string,
+  val?: "key" | "value"
+): string | undefined
+export function get_doc_plaintext(id: string, val?: "key" | "value" | "both") {
   const doc = getDoc(id)
   if (!doc) return
-  val = val ? "value" : "key"
+  if (!val) val = "key"
 
-  const text_array = doc[val]
-  if (!text_array) return
-  const text = make_plaintext(text_array)
-  return text
+  if (val === "key" || val === "value") {
+    const text_array = doc[val]
+    if (!text_array) return
+    const text = make_plaintext(text_array)
+    return text
+  }
+  if (val === "both") {
+    const key_array = doc["key"]
+    const value_array = doc["value"]
+    if (!key_array && !value_array) return
+    if (key_array && !value_array) return make_plaintext(key_array)
+    if (key_array && value_array)
+      return [make_plaintext(key_array), make_plaintext(value_array)]
+  }
 }
 
 /**
+ * KEEP _ as part of plaintext to retain for special terms such as __proto__
+ * - separaters when next to _, ie delete -_ and _-
  *
  * @param id
  * @returns
  */
 
 export function id_to_key_slug(id: string) {
-  const text = getDocKey(id)
-    ?.replace(/[?/\\@[\\^{}\]|`~:;,=+ ]/g, "-")
-    ?.replace(/[![\]"'*()<>]/g, "")
-    ?.replace(/[-]{2,}/g, "-")
-    ?.replace(/[^A-z0-9_-]/g, "") // clear anything not approved
+  const text = get_doc_plaintext(id, "key")
+    ?.replace(/[?/\\@[\\^{}\]|`~:;,=+ ]+/g, "-")
+    ?.replace(/[![\]"'*()<>]+/g, "")
+    ?.replace(/-{2,}/g, "-")
+    ?.replace(/[^A-z0-9-]/g, "") // clear anything not approved
+  // ignore _ to allow for plaintext keys such as __proto__
   if (!text) return
   // console.log(text)
-  if (text.length > 24)
-    return (
-      text
-        // .slice(0, 24)
-        .split("/")
-        .map((str) => str.slice(0, 9))
-        .join("-")
-    ) // ignore super-long
-  return text.split("/").join("-")
+  if (text.length <= 30) text.split("/").join("-")
+  if (text.length > 30)
+    text
+      .split("/")
+      .map((str) => str.slice(0, 9))
+      .join("-")
+
+  return text
+    .replace(/-{2,}/g, "-")
+    .replace(/^-|-$|^_|_$/g, "")
+    .replace(/-_|_-/g, "_")
+
+  // !ligatures make - | - && _ | _ confusing! -|- _|_
+  // remove any text that begins with - or _ && end with - or _
 }
 
 // id_to_key_slug("F3pfGC5FmxkDPhLeW") // data structure with persistent versioning making copies of state to keep track of changes over time
@@ -337,42 +341,6 @@ export function slugify_mdx(str: string) {
 export const map_to_mdx_slug = new Map(
   array_output.map((x) => [x[0], x.slice(1).map((str) => str)])
 )
-
-// console.log("map_to_mdx_slug=", map_to_mdx_slug)
-
-/*
-  const path_IDs_array = getParentIDsArray(id).filter(
-    (x) => x !== null && x !== undefined
-  )
-  */
-
-// console.log(array_output)
-
-//TODO: try nest map within map? How affect speed?
-/*
-export const db_map = new Map(
-  root.map((doc) => [
-    doc._id,
-    new Map(
-      doc.children.map((id) => [
-        id,
-        new Map(
-          map
-            .get(id)
-            ?.children.map((id) => [id, map.get(id)?.children])
-        ),
-      ])
-    ),
-  ])
-);
-console.table(db_map);
-*/
-
-// export const db_map = root_child_map.forEach((child_list) => {
-//   if (!child_list) return;
-//   child_list.forEach((id) => console.log(id));
-// });
-// console.log(map.get("2n8Gw7PvXGPcFQm7i"));
 
 process.stdout.write(
   `================================================\nCOMPLETE: All JSON mapping scripts in ${uptime()}\n================================================\n\n`

@@ -9,6 +9,9 @@
 # testing
 /coverage
 /test
+src/pages/redirect
+src/pages/debug
+static/files
 
 # production
 /build
