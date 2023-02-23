@@ -1,10 +1,15 @@
 import _ from "lodash"
 import { RemData } from "../rem-json"
-import { map, root_child_map, map_all_parents, getDoc } from "../data"
+import {
+  map,
+  root_child_map,
+  map_all_parents,
+  getDoc,
+  get_path_from_id,
+} from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
-import { get_path_from_id } from "../../initDocs"
 
 // import Cloze from "../components/Cloze"
 
@@ -145,10 +150,25 @@ export function make_mdx(input: RemData[] | []): string {
  * @returns array of
  */
 
-export function make_plaintext(input: RemData[] | []): string {
+export function make_plaintext_OLD(input: RemData[] | []) {
   let output_arr = input?.map((el: RemData) => obj_to_plaintext(el))
   if (Array.isArray(output_arr)) return output_arr.join("")
   return output_arr
+}
+export function make_plaintext(input: RemData[] | []) {
+  let output_arr = input?.map((el: RemData) => obj_to_plaintext(el))
+  if (Array.isArray(output_arr)) return output_arr.join("")
+  if (!output_arr) return ""
+}
+export function make_plaintext_BROKE(input: RemData[] | []) {
+  let output_arr = input?.map((el: RemData) => obj_to_plaintext(el)) || ""
+  if (output_arr.length > 0) {
+    const output_str = output_arr.join("")
+    if (output_str.search(/[A-z]/g)) return output_str // Rmove empty strings
+    return ""
+  }
+  if (typeof output_arr === "string") return output_arr
+  return output_arr.join("AAAAAAAAAAAA")
 }
 
 /**
@@ -226,7 +246,7 @@ export function obj_to_str(el: RemData, input_str = ""): string {
  * @returns string of plaintext = guard clause returns "" empty string
  */
 
-export function obj_to_plaintext(el: RemData, input_str = ""): string {
+export function obj_to_plaintext(el: RemData, input_str = "") {
   let output_str: string = input_str
 
   if (typeof el === "string") output_str += el
@@ -235,20 +255,11 @@ export function obj_to_plaintext(el: RemData, input_str = ""): string {
       if (el["i"] === "o") return "" // if code
       if (el["i"] === "m") {
         if (el["qId"]) {
+          // OMIT LINKS FOR PLAINTEXT
           // const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
-          output_str += `${el["qId"] ? `${el["text"]}` : ""}` // just show plaintext for reference link
+          output_str += "" //`${el["qId"] ? `${el["text"]}` : ""}` // just show plaintext for reference link
         }
-        // output_str += `${el["q"] ? "<code>" : ""}` // ignore code styling
-        // output_str += `${el["b"] ? "<b>" : ""}` // ignore bold style
-        // output_str += `${el["u"] ? "<u>" : ""}` // ignore underline style
-        // output_str += `${el["l"] ? "<i>" : ""}` // ignore italic style
-        // output_str += `${el["cId"] ? `{{<mark id='#${el["cId"]}'>` : ""}` // ignore Cloze/mark style
         output_str += `${el["q"] ? `${el["text"]}` : `${el["text"]}`}`
-        // output_str += `${el["cId"] ? "</mark>}}" : ""}`
-        // output_str += `${el["l"] ? "</i>" : ""}`
-        // output_str += `${el["u"] ? "</u>" : ""}`
-        // output_str += `${el["b"] ? "</b>" : ""}`
-        // output_str += `${el["q"] ? "</code>" : ""}`
       }
       if (el["i"] === "q") {
         if (!el["textOfDeletedRem"]) {
@@ -312,7 +323,11 @@ export function resolve_lang_mdx(lang: string) {
  *
  * FATAL missing string wrap over id of <mark> spotted from Docusaurus build throw
  *
+ * MOVE MDX import statements to global MDX scope
+ *
  * if "i" === "q"
+ *
+ * Adding internal check to see if < > is used
  *
  */
 
@@ -325,24 +340,34 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
   if (typeof el === "object") {
     if (el["i"]) {
       if (el["i"] === "o") {
+        // "o" for Object | Outside Code?
         output_str += `\n\`\`\`${resolve_lang_mdx(el["language"])}\n
         ${_.escape(el["text"])}\n
         \`\`\`\n`
       }
       if (el["i"] === "m") {
+        // "m" for MarkDown?
         if (el["qId"]) {
           const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
           output_str += `${el["i"] === "m" ? "`" : ""}` // Ref HYPERLINKS
           output_str += `${
-            el["qId"]
-              ? `\nimport Link from '@docusaurus/Link';
-            \n<Link to=${qId_href}>${_.escape(el["text"])}</Link>`
-              : ""
+            el["qId"] ? `\n<a href=${qId_href}>${_.escape(el["text"])}</a>` : ""
           }`
           output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
         }
+        //check if el["text"] contains angle brackets <> and does not have el["q"] set true
+
+        const dumb_that_js_cant_add_negative_indexes =
+          (el["text"] as string).length - 1
+        let force_q = false
+        if (
+          !el["q"] &&
+          el["text"][0] === "<" &&
+          el["text"][dumb_that_js_cant_add_negative_indexes]
+        )
+          force_q = true
         // href found at el["qId"] = _id at crt.b.s
-        output_str += `${el["q"] ? "`" : ""}` // Ref Rem
+        output_str += `${el["q"] || force_q ? "`" : ""}` // Ref Rem
         output_str += `${el["b"] ? "**" : ""}` // bold
         // output_str += `${el["b"] ? "**" : ""}`; // bold md
         output_str += `${el["u"] ? "__" : ""}` // underline
@@ -353,7 +378,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         output_str += `${el["l"] ? "*" : ""}`
         output_str += `${el["u"] ? "__" : ""}`
         output_str += `${el["b"] ? "**" : ""}`
-        output_str += `${el["q"] ? "`" : ""}`
+        output_str += `${el["q"] || force_q ? "`" : ""}`
       }
       if (el["i"] === "q") {
         if (el["aliasId"]) {
@@ -368,9 +393,10 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           const find_doc = map.get(el["_id"]) // return doc obj for link
           const find_key = find_doc?.key!
 
-          output_str += `[\`${make_mdx(find_key)}\`](${get_path_from_id(
-            el["_id"]
-          )})`
+          const path = get_path_from_id(el["_id"])
+          if (!path) return "" // early return for empty string - to eliminate linked TAGS or "powerups" from non-main DB
+
+          output_str += `[\`${make_mdx(find_key)}\`](${path})`
           // output_str += `[[<a href="#${el["_id"]}">${make_mdx(find_key)}</a>]]`
         }
         if (el["textOfDeletedRem"]) {
@@ -383,7 +409,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       if (el["i"] === "i") {
         output_str += `\n![Image](${(el["url"] as string).replace(
           `%LOCAL_FILE%`,
-          `@site/files/`
+          `@site/static/files/`
         )})\n`
       }
     }
@@ -528,7 +554,7 @@ export function LOG_CLI_PROGRESS( //ORIGINAL SIMPLE FAST
       length
     ).toPrecision(3)}% of ${task} for ${i} ${element}${
       i === length - 1
-        ? ` in ${(uptime() - init_time).toPrecision(3)}s\n\n`
+        ? ` in ${(uptime() - init_time).toPrecision(3)}s ⏱\n\n`
         : ""
     }`
   )

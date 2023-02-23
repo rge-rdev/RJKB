@@ -8,6 +8,7 @@ import {
   root_main_topics,
   getChildren,
   map_size,
+  path_map,
 } from "./src/data/"
 import {
   id_to_mdx,
@@ -16,6 +17,11 @@ import {
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
+
+// const entries = path_map.entries()
+// const array = [...entries]
+// const path_map_string = array.join("\n\n")
+// fs.outputFile("test/paths_map.mdx", path_map_string)
 
 // console.log("this starts before Docusaurus!")
 
@@ -50,28 +56,16 @@ async function generate_mdx_page_from_id(id: string) {
 
   const references = ["REF_ID1", "REF_ID2", "REF_ID3"]
   const child_text_array = getChildren(id)?.map((id) => {
-    // const k = _.escape(id_to_mdx(id, "key"))
-    // const v = _.escape(id_to_mdx(id, "value"))
-    const k = id_to_mdx(id, "key")
-    const v = id_to_mdx(id, "value")
-    if (k && v) return `## ${_.unescape(k)}\n\n${_.unescape(v)}\n\n`
-    if (k && !v) return `## ${_.unescape(k)}\n\n`
+    const k = _.escape(id_to_mdx(id, "key"))
+    const v = _.escape(id_to_mdx(id, "value"))
+    // const k = id_to_plaintext(id, "key")
+    // const v = id_to_plaintext(id, "value")
+    // if (k && v) return `## ${_.unescape(k)}\n\n${_.unescape(v)}\n\n`
+    // if (k && !v) return `## ${_.unescape(k)}\n\n`
+    if (k && v) return `## ${k}\n\n${v}\n\n`
+    if (k && !v) return `## ${k}\n\n`
+    return ""
   })
-  // if (title && title[0] === "<" && title[title.length] === ">") title
-
-  /**
- keywords: [${tags.join(", ")}]
-aliases: [${aliases.join(", ")}]
-description: "${description}"
-references: [${references.join(", ")}]
-title: "${key_plaintext}"
-tags: [${tags.join(", ")}]
-# ${key_mdx}
-
-## ${value_mdx}
-
-${children_value ? `${children_value}\n\n` : ""}
- */
 
   const output_mdx = `---
 ${title && title !== null && title !== undefined ? `title: "${title}"\n` : ""}${
@@ -86,7 +80,7 @@ id: ${id}
 uid: ${id}
 ---
 
-# [${title}](./) ↔ ${value_mdx}${
+# [\`${title}\`](./) ${value_mdx ? `↔ ${value_mdx}` : ""}${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }
 
@@ -142,12 +136,35 @@ tags: [Hello, TS, React]
 - [link to \`/docs/intro\`](/docs/intro)
 - [link to \`/docs/JS/JS-Definition\`](/docs/JS/JS-Definition)
 
+## Load from \`docusaurus.png\` from \`@site/static/img/docusaurus.png\`
+
+![random puppy](@site/static/img/docusaurus.png)
+
+## A random puppy avatar from Unsplash!
+
+![random puppy](https://source.unsplash.com/300x300/?puppy)
 
 # TITLE - H1 will not appear in TOC
 
 ## Only H2 (and H3) will appear in TOC
 
 ### Only H3 (and H2) will appear in TOC
+
+## ADD ALL global exports to \`src/theme/MDXComponents.tsx\`
+
+\`\`\`
+import React from "react"
+import MDXComponents from "@theme-original/MDXComponents"
+import { Redirect } from "@docusaurus/router"
+
+export default {
+  ...MDXComponents,
+  Redirect,
+}
+
+\`\`\`
+
+### Now just Add \`<Redirect to"\\whatever" />\` to mdx!
 
 ## References
 
@@ -167,6 +184,14 @@ export default function RedirectTo() {
   `
 }
 
+/**
+ * !Find alternative way to redirect aliases - instead of <Redirect />
+
+*
+ * @param id
+ * @param dirpath
+ */
+
 async function generate_id_redirect(id: string, dirpath: string) {
   const redirect_filepath = `src/pages/redirect/${id}.tsx`
   // NOT const redirect_filepath = `src/pages/redirect/${id}/${id}.tsx` - don't need extra /${id}/ for pages since Docusaurus renders /pages differently!
@@ -178,28 +203,21 @@ async function generate_id_redirect(id: string, dirpath: string) {
 // push arrays to debug & keep track of appended slugs & paths
 let slug_key_arr = [""]
 slug_key_arr.pop()
-
-const path_map: Map<string, string> = new Map()
-/**
- * @function get_path_from_id
- *
- * will keep this helper here instead of utilities or data
- * since path_map is set from this folder
- *
- * @param id
- * @returns
- */
-export function get_path_from_id(id: string) {
-  return path_map.get(id)
-}
+let __plaintext__id_array = [""]
+__plaintext__id_array.pop()
 
 /**
- * @emits slug_key_arr to write to @see slug-keys.mdx
+ * @function loop_docs_mkdir to @function fs.outputFile()
  *
- * @param path
- * @param children
+ * @param parent_path to pass parent dir as props
+ * @param children to pass child_id_string[] to loop over
  */
-async function loop_docs_mkdir(path: string, children: string[]) {
+
+async function loop_docs_mkdir(
+  parent_path: string,
+  children: string[],
+  skip?: boolean
+) {
   children.forEach(async (id) => {
     // console.log("Intializing dir for docs")
 
@@ -207,9 +225,8 @@ async function loop_docs_mkdir(path: string, children: string[]) {
     if (!doc) return
     const slug_key = id_to_key_slug(id)
 
-    const filepath = `${path}/${slug_key}/${slug_key}.mdx`
-    const dirpath = `${path}/${slug_key}`
-    path_map.set(id, `/${dirpath}`)
+    const filepath = `${parent_path}/${slug_key}/${slug_key}.mdx`
+    const dirpath = `${parent_path}/${slug_key}`
     // console.log(`create new file: ${filepath} at "${dirpath}" for ID: ${id}`)
     // console.log("filepath=", filepath)
     // console.log("dirpath=", dirpath)
@@ -218,53 +235,70 @@ async function loop_docs_mkdir(path: string, children: string[]) {
     LOG_CLI_PROGRESS(
       num,
       map_size,
-      "filepaths",
-      "Convert JSON to MDX",
-      "✍ Generating MDX",
-      "✅ MDX COMPLETE",
+      "files",
+      "SSG MDX",
+      "⏳ ✍ ",
+      "✅ MDX",
       init_mdx_map_time
     )
 
-    if (slug_key) slug_key_arr.push(slug_key)
-    if (num === 13592) {
+    const debug_slug = false
+    if (slug_key && debug_slug) slug_key_arr.push(slug_key)
+    if (num === 13592 && debug_slug) {
       try {
         // console.table(slug_key_arr)
         const slug_key_mdx = slug_key_arr.join("\n\n# ")
-        await fs.outputFile(`src/pages/debug/slug-keys.mdx`, slug_key_mdx)
+        await fs.outputFile(`test/slug-keys.mdx`, slug_key_mdx)
       } catch (error) {}
+    }
+    const omit_check = true
+    let skip_next =
+      slug_key === "Aliases" ||
+      slug_key === "Color" ||
+      slug_key === "Status" ||
+      slug_key === "Sources" ||
+      slug_key === "Size"
+    if (omit_check && slug_key && !skip_next)
+      __plaintext__id_array.push(`__${slug_key}__${id}`)
+    if (num === 13592 && omit_check) {
       try {
-        console.log(path_map.entries())
+        // console.table(slug_key_arr)
+        const plaintext_id_mdx = __plaintext__id_array.join("\n\n# ")
+        await fs.outputFile(`test/omit-check.mdx`, plaintext_id_mdx)
       } catch (error) {}
     }
 
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
-    try {
-      await fs
-        .outputFile(filepath, await generate_mdx_page_from_id(id))
-        .then(() => {
-          generate_id_redirect(id, dirpath)
-          // write_to_md(filepath, )
-          // const full_mdx = ""
-          // fs.writeFile(filepath, full_mdx)
-          const children = getChildren(id)
-          if (!children) return
-          loop_docs_mkdir(dirpath, children)
-
-          // console.log(`${id} was created`)
-        })
-    } catch (err) {
-      console.log("err:", filepath, err)
+    if (!skip_next && !skip && slug_key)
+      try {
+        await fs
+          .outputFile(filepath, await generate_mdx_page_from_id(id))
+          .then(() => {
+            // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
+            // write_to_md(filepath, )
+            // const full_mdx = ""
+            // fs.writeFile(filepath, full_mdx)
+            const children = getChildren(id)
+            if (!children) return
+            loop_docs_mkdir(dirpath, children)
+            // console.log(`${id} was created`)
+          })
+      } catch (err) {
+        console.log("err:", filepath, err)
+      }
+    if (skip_next || skip || !slug_key) {
+      const children = getChildren(id)
+      if (!children) return
+      loop_docs_mkdir(dirpath, children, skip_next)
     }
-
+    // if (slug_key === "Aliases") {
+    //   const children = getChildren(id)
+    //   if (!children) return
+    //   loop_docs_mkdir(dirpath, children)
+    // }
     // after final mdx generated - output slug_key report mdx at /debug/slug-keys.mdx
   })
 }
-
-/**
-     if (num === map_size - 1) {
-
-    }
- */
 
 /**
  * REFACTOR
@@ -281,9 +315,9 @@ const init_mdx_map_time = uptime()
 ;(function () {
   root_main_topic_ids.forEach(async (id: string, i: number) => {
     const doc_slug = id_to_key_slug(id)
-    const dirpath = `docs/${doc_slug}/${doc_slug}`
+    const dirpath = `docs/${doc_slug}`
     const filepath = `docs/${doc_slug}/${doc_slug}.mdx`
-    path_map.set(id, `/${dirpath}`)
+
     try {
       await fs
         .outputFile(filepath, await generate_mdx_page_from_id(id))
@@ -295,10 +329,8 @@ const init_mdx_map_time = uptime()
            *
            * map each index in @param main_doc_dirs to @param root_main_topics for doc object
            */
-          const doc = root_main_topics[i]
-          // console.log("doc=", doc)
 
-          const child_docs = doc?.["children"]
+          const child_docs = getChildren(id)
           // console.log("child_docs=", child_docs)
           if (!child_docs)
             return console.log(`${filepath} is leaf node - no children found.`)
@@ -318,5 +350,3 @@ const init_mdx_map_time = uptime()
     }
   })
 })()
-// map_to_mdx.forEach((key, id) => console.log(`id: ${id} =`, key))
-// console.log(map_to_mdx)

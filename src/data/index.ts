@@ -21,10 +21,10 @@ process.stdout.write(
     LOG_CLI_PROGRESS(
       i,
       docs_length,
-      "doc objects",
-      "JSON trim unused props",
-      "✂ CLEANING",
-      "✅ CLEAN COMPLETE",
+      "docs",
+      "trim JSON",
+      "⏳ ✂ ",
+      "✅ CLEAN",
       json_cleanup_init_time
     )
 
@@ -78,10 +78,10 @@ export const map = new Map(
     LOG_CLI_PROGRESS(
       i,
       docs_length,
-      "doc entries",
-      "JSON to HASH table",
-      "⏳ MAPPING",
-      "✅ MAP COMPLETE",
+      "docs",
+      "HASH JSON to map",
+      "⏳ 🔎 ",
+      "✅ MAP",
       init_json_map_time
     )
 
@@ -127,10 +127,10 @@ export const map_all_parents = new Map(
     LOG_CLI_PROGRESS(
       i,
       docs_length,
-      "doc entries",
-      "IDs to Adjancency List of Parent IDs",
-      "⏳ MAPPING",
-      "✅ MAP COMPLETE",
+      "docs",
+      "Map ID to Parent",
+      "⏳ 🔎 ",
+      "✅ MAP",
       map_all_parents_init_time
     )
 
@@ -291,7 +291,7 @@ map_all_parents.forEach((id) => {
   // let output_key_text_strings_array = ["root"]
   l += 1
   process.stdout.write(
-    `${l < max - 1 ? "⏳ GENERATING" : "✅ GENERATION COMPLETE for"}: ${(
+    `${l < max - 1 ? "⏳ GEN" : "✅ GENERATION for"}: ${(
       (100 * (l + 1)) /
       max
     ).toPrecision(3)}% of ${l} for Breadcrumbs ARRAY generated ${
@@ -341,6 +341,69 @@ export function slugify_mdx(str: string) {
 export const map_to_mdx_slug = new Map(
   array_output.map((x) => [x[0], x.slice(1).map((str) => str)])
 )
+
+export const path_map: Map<string, string> = new Map()
+/**
+ * @function get_path_from_id
+ *
+ * will keep this helper here instead of utilities or data
+ * since path_map is set from this folder
+ *
+ * @param id
+ * @returns
+ */
+export function get_path_from_id(id: string) {
+  return path_map.get(id)
+}
+
+const map_path_to_id_time = uptime()
+let num_paths_mapped_to_id = 0
+
+;(function loop_dirs_to_make_sure_path_maps_set_up_first() {
+  root_main_topic_ids.forEach((id: string, i: number) => {
+    const doc_slug = id_to_key_slug(id)
+    const dirpath = `/docs/${doc_slug}`
+    path_map.set(id, dirpath)
+    num_paths_mapped_to_id += 1
+    LOG_CLI_PROGRESS(
+      num_paths_mapped_to_id,
+      map_size,
+      "slugs",
+      "MAP ID PATH",
+      "⏳ 🔎 ",
+      "✅ MAP",
+      map_path_to_id_time
+    )
+    const children = getChildren(id)
+    if (children)
+      loop_child_to_make_sure_path_maps_set_up_first(dirpath, children)
+  })
+})()
+
+function loop_child_to_make_sure_path_maps_set_up_first(
+  parent_path: string,
+  children: string[]
+) {
+  children.forEach((id) => {
+    const slug_key = id_to_key_slug(id)
+    const dirpath = `${parent_path}/${slug_key}`
+    path_map.set(id, dirpath)
+    num_paths_mapped_to_id += 1
+    LOG_CLI_PROGRESS(
+      num_paths_mapped_to_id,
+      map_size,
+      "slugs",
+      "MAP ID to PATH",
+      "⏳ 🔎 ",
+      "✅ MAP",
+      map_path_to_id_time
+    )
+    // FUCK - dont' forget the RECURSION layer!!
+    const children = getChildren(id)
+    if (children)
+      loop_child_to_make_sure_path_maps_set_up_first(dirpath, children)
+  })
+}
 
 process.stdout.write(
   `================================================\nCOMPLETE: All JSON mapping scripts in ${uptime()}\n================================================\n\n`
