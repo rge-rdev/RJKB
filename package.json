@@ -7,8 +7,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-scripts": "^5.0.1",
-    "svgo": "^3.0.2"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@docusaurus/core": "^2.3.1",
@@ -44,6 +43,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1",
     "swc-loader": "^0.2.3",
+    "svgo": "^3.0.2",
     "tailwindcss": "^3.2.7",
     "thread-loader": "^3.0.4",
     "typescript": "^4.8.3",
@@ -55,7 +55,8 @@
     "eject": "react-scripts eject",
     "dt": "rm -r ./docs/* & ts-node initDocs.tsx",
     "id": "ts-node initDocs.tsx",
-    "d": "setx NODE_OPTIONS \"--max-old-space-size=16383\" && docusaurus start",
+    "d": "setx NODE_OPTIONS \"--max-old-space-size=16383\" && yarn --offline docusaurus start --no-open --no-minify",
+    "bd": "setx NODE_OPTIONS \"--max-old-space-size=16383\" && yarn --offline docusaurus build --no-minify",
     "db": "setx NODE_OPTIONS \"--max-old-space-size=16383\" &&  docusaurus build && docusaurus serve",
     "build": "docusaurus build",
     "clear": "rm -r ./docs/* && docusaurus clear",

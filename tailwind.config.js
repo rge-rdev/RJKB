@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "slide-100": "shift 100s linear infinite",
-        "slide-80": "shift 80s linear infinite",
+        "slide-slow": "shift 200s linear infinite",
+        "slide-fast": "shift 150s linear infinite",
       },
       keyframes: {
         shift: {

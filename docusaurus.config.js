@@ -158,6 +158,20 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
+      /*
+      announcementBar: {
+        id: "TEST_BAR",
+        content: "Check out the self-hosted Typesense Search Engine ->",
+        backgroundColor: "#fafbfc",
+        textColor: "#091E42",
+        isCloseable: true,
+      },
+      */
       navbar: {
         title: "RJKB",
 

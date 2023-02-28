@@ -2,16 +2,18 @@
 
 # dependencies
 /node_modules
-/public
 /.pnp
 .pnp.js
+
+# static folder
+public
+static
 
 # testing
 /coverage
 /test
 src/pages/redirect
 src/pages/debug
-static/files
 
 # production
 /build
@@ -33,3 +35,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .env
+.vscode

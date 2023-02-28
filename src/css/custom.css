@@ -34,14 +34,3 @@
   /* --MYCOLORPICKER: #8ef396; */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-.hover\:animate-\[ping_3s_linear_infinite\]:hover {
-  animation: ping 3s linear normal;
-}
