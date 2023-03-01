@@ -52,8 +52,8 @@ const config = {
     RJ_WEBPACK_PLUGIN,
     RJ_TAILWIND_PLUGIN,
   ],
-  title: "RJ's Fullstack KB",
-  tagline: "Showcase of my fullstack skills",
+  title: "RJ KB",
+  tagline: "A Fullstack Showcase",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -139,6 +139,7 @@ const config = {
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
+          // update theme to resolve SCSS now instead of css
           customCss: require.resolve("./src/css/custom.css"),
         },
         // ADDED sitemap-plugin
