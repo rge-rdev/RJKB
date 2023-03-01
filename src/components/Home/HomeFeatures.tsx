@@ -255,7 +255,7 @@ function Feature({ title, SVG: Svg, VIDEO, description }: FeatureItem) {
         <h3 className="shadow-teal-400 shadow-inner text-sky-900 dark:text-cyan-100 rounded-t-full font-extrabold">
           {title}
         </h3>
-        <p className="text-cyan-900 dark:text-cyan-200 rounded-b-full font-bold">
+        <p className="text-cyan-900 dark:text-cyan-100 rounded-b-full font-bold">
           {description}
         </p>
       </div>

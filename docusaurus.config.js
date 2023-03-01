@@ -1,8 +1,13 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+//@ts-ignore
 const lightCodeTheme = require("prism-react-renderer/themes/github")
+//@ts-ignore
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
+
+//@ts-ignore
+/** @type {import('@docusaurus/types').Plugin} */
 
 function RJ_WEBPACK_PLUGIN(context, options) {
   return {
@@ -44,6 +49,7 @@ async function RJ_TAILWIND_PLUGIN(context, options) {
     },
   }
 }
+//@ts-ignore
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   // plugins: ["@docusaurus/theme-live-codeblock"],
@@ -51,6 +57,20 @@ const config = {
     "@docusaurus/theme-live-codeblock",
     RJ_WEBPACK_PLUGIN,
     RJ_TAILWIND_PLUGIN,
+    "docusaurus-plugin-sass",
+    [
+      "ideal-image",
+      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      ({
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      }),
+    ],
+    // "plugin-image-zoom",
   ],
   title: "RJ KB",
   tagline: "A Fullstack Showcase",
@@ -132,11 +152,18 @@ const config = {
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
+          path: "blog",
+          blogTitle: "RJ's Dev logs",
+          blogDescription: "Blog for Fullstack Engineers",
+          blogSidebarCount: 20,
+          blogSidebarTitle: "RJ's Dev Logs",
+          tagsBasePath: "tags",
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          //! disable editURL to hide "edit this page" link showing
+          // editUrl:"https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          // postsPerPage: 3,
         },
         theme: {
           // update theme to resolve SCSS now instead of css
@@ -284,6 +311,21 @@ const config = {
         // Optional
         contextualSearch: true,
       },
+      //! Add Image Zoom Plugin here
+      //! buggy - requires 2 clicks - not pretty - bad plugin!
+      // imageZoom: {
+      //   // CSS selector to apply the plugin to, defaults to '.markdown img'
+      //   selector: ".markdown img",
+      //   // Optional medium-zoom options
+      //   // see: https://www.npmjs.com/package/medium-zoom#options
+      //   options: {
+      //     margin: 24,
+      //     background: "#BADA55",
+      //     scrollOffset: 0,
+      //     container: "#zoom-container",
+      //     template: "#zoom-template",
+      //   },
+      // },
     }),
 }
 

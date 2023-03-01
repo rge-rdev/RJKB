@@ -17,7 +17,11 @@ module.exports = {
         "slide-slow": "shift 200s linear infinite",
         "slide-fast": "shift 150s linear infinite",
         "fade-in-out": "fade-flash 7s linear 1",
-        "fade-in": "fadein 1s cubic-bezier(.2,2,1,-1) 2 1",
+        "fade-in": "fadein 1s cubic-bezier(.2,2,1,-1) 1",
+        "fade-in-md-50": "fadein50 1s linear 1",
+        "fade-in-slow-75": "fadein75 2s linear 1",
+        "fade-out-fast-75": "fadeout75 0.1s linear 1",
+        "fade-out-md-50": "fadeout50 0.5s linear 1",
         "pulse-2x": "pulse 2s linear 2",
       },
       keyframes: {
@@ -38,6 +42,26 @@ module.exports = {
         fadein: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
+        },
+        fadein50: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 0.5 },
+        },
+        fadein75: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 0.75 },
+        },
+        fadeout: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        fadeout: {
+          "0%": { opacity: 0.75 },
+          "100%": { opacity: 0 },
+        },
+        fadeout50: {
+          "0%": { opacity: 0.5 },
+          "100%": { opacity: 0 },
         },
       },
     },
