@@ -9,6 +9,9 @@ import {
   getChildren,
   map_size,
   path_map,
+  getAliasIDs,
+  getAliasSlugs,
+  getParentId,
 } from "./src/data/"
 import {
   id_to_mdx,
@@ -17,6 +20,14 @@ import {
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
+
+let debug_keywords: any[] = []
+let debug_tags: any[] = []
+
+let num_docs = 0
+let num_skipped = 0
+let num_links = 0
+let num_alias_redirect_mdx = 0
 
 // const entries = path_map.entries()
 // const array = [...entries]
@@ -40,30 +51,70 @@ import _ from "lodash"
  * @function generate_mdx_page_from_id used to @effect
  *
  *
+ *
+ * !YUCK - need to clean bad input of illegal reserved JS characters for compat with mdx-loader AND handle broken chunks
+ *  ✅ fixed @function id_to_tags to .replace unescaped " & ' in middle of string
+ *  ✅ fixed @function id_to_mdx with extra @param config.safe to refactor extra string - important to allow non-safe escaping since  I still need the raw unescaped JSX/code snippets to render elsewhere
+ *
  * @param id
  * @returns
  */
-
-async function generate_mdx_page_from_id(id: string) {
+async function generate_mdx_page_from_id(id: string, slug_key: string) {
   // const key_mdx = id_to_mdx(id, "key")
   const title = id_to_plaintext(id)?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
-  const value_mdx = id_to_mdx(id, "value")?.replace(/"/g, `'`)
-  const tags = ["TAG1", "TAG2", "TAG3"] //id_to_tags(id)
-  const aliases = ["ALIAS1", "ALIAS2", "ALIAS3"]
+  const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
+  const value_mdx = id_to_mdx(id, "value")
+    ?.replace(/"/g, `'`)
+    ?.replace(/(?<!```.*)^import /gms, "\\`import\\` ")
+    ?.replace(
+      /(?<!```.*)^export default function /gms,
+      "\\`export default function\\` "
+    )
+    ?.replace(/(?<!```.*)^export const /gms, "\\`export const\\` ")
+    ?.replace(/(?<!```.*)^module/gms, "\\`module\\` ")
+
+  const title_safe = slug_key.replace(/-+/g, " ")
+  const hasTags = Boolean(id_to_tags(id)?.length)
+  let init_tags = hasTags
+    ? [id_to_tags(id) as string[], title_safe]
+    : [title_safe]
+  const tags = _.uniq(
+    init_tags
+      .concat(slug_key.replace(/-/g, " ")) // add de-slug key as safe title
+      .filter((tag) => tag.length > 0)
+  )
+  // .filter((tag) => tag.length < 15)
+
+  // const aliases = ["ALIAS1", "ALIAS2", "ALIAS3"] // PLACEHOLDER ALIAS KEYS
+  const alias_ids = getAliasIDs(id) // return string[] | []
+  const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0) // return string[] | []
+  let keywords = [...tags, ...alias_slugs].filter(
+    (s) => typeof s !== undefined && s && s.length > 0
+  ) // add extra duplicate aliases for SEO keywords and avoid clutter within tags
+  debug_keywords.push(keywords || "___NOTHING")
+  debug_tags.push(tags)
   const description = id_to_plaintext(id, "value")
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
 
   const references = ["REF_ID1", "REF_ID2", "REF_ID3"]
   const child_text_array = getChildren(id)?.map((id) => {
-    const k = _.escape(id_to_mdx(id, "key"))
-    const v = _.escape(id_to_mdx(id, "value"))
-    // const k = id_to_plaintext(id, "key")
-    // const v = id_to_plaintext(id, "value")
-    // if (k && v) return `## ${_.unescape(k)}\n\n${_.unescape(v)}\n\n`
-    // if (k && !v) return `## ${_.unescape(k)}\n\n`
-    if (k && v) return `## ${k}\n\n${v}\n\n`
-    if (k && !v) return `## ${k}\n\n`
+    // const k = _.unescape(id_to_mdx(id, "key"))
+    const k = id_to_mdx(id, "key", { safe: true })
+    const v = id_to_mdx(id, "value", { safe: true })
+
+    const k_code = k?.match(/^(\`\`\`)/)?.length
+    const v_code = v?.match(/^(\`\`\`)/)?.length
+
+    const k_newLine = k?.match(/[\\\n]+/g)
+    const v_newLine = v?.match(/[\\\n]+/g)
+
+    if (k && v)
+      return `${k_code || k_newLine ? "" : "## "}${k}\n\n${
+        v_code ? "" : "## "
+      }${v}\n\n`
+    if (k && !v) return `${k_code || k_newLine ? "" : "## "}${k}\n\n`
+    if (!k && v) return `\n\n${v}`
     return ""
   })
 
@@ -72,15 +123,25 @@ ${title && title !== null && title !== undefined ? `title: "${title}"\n` : ""}${
     description && description !== null && description !== undefined
       ? `description: "${description}"\n`
       : ""
-  }keywords: [${tags.join(", ")}]
-tags: [${tags.join(", ")}]
-aliases: [${aliases.join(", ")}]
+  }
+tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
+    keywords.length > 0
+      ? `\nkeywords: [${keywords.map((w) => `\"${w}\"`).join(", ")}]`
+      : ""
+  }
+alias IDs: [${alias_ids.join(", ")}]
+aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${references.join(", ")}]
 id: ${id}
-uid: ${id}
 ---
 
-# [\`${title}\`](./) ${value_mdx ? `↔ ${value_mdx}` : ""}${
+ID_FOR_DEBUGGING = ${id}
+
+${
+  title_has_line_breaks
+    ? `${title}${value_mdx ? `\n\n${value_mdx}` : ""}`
+    : `# [\`${title}\`](./) ${value_mdx ? `↔ ${value_mdx}` : ""}`
+}${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }
 
@@ -115,8 +176,73 @@ let num = 0
 const template_mdx = `---
 aliases: [abc, def]
 description: My template for mdx
+keywords: [123,345]
 tags: [Hello, TS, React]
 ---
+
+:::danger
+Through painful trial and error - the following are examples of SSG rendered front matter that breaks yaml loading
+
+Most of illegal characters can be fixed with extra quotes - APART from extra quotes being themselves!
+
+\`\`\`yaml title="illegal characters for YAML Front Matter"
+tags: ["contains:'Extra' unescaped quotes inside"]
+keywords: ["contains:'Extra' unescaped quotes inside"]
+keywords: []
+keywords: [\`wasd\`]
+keywords: [123]
+keywords: [!_wordsbeginngingwith_!]
+keywords: [>_RIGHT_ANGLE_BRACK_IS_NOT_FINE]
+
+\`\`\`
+
+:::
+
+:::important
+This is how the FINAL yaml should appear inside mdx - so it needs DOUBLE escaping to render correctly within SSG!
+That means to output \`\\\\\` it needs to be sent as \`\\\\\\\\\`!
+
+\`\`\`yaml title="SAFE characters for YAML Front Matter"
+tags: []
+keywords: [\`wasd\`]
+keywords: [123]
+keywords: ["!_exclamation_in_quotes_is_fine"]
+keywords: [<_LEFT_ANGLE_BRACKET_IS_FINE]
+keywords: [">_RIGHT_ANGLE_BRACKET_IN_QUOTES_IS_FINE"]
+tags: ['contains:\\\\"Extra\\\\" escaped quotes inside']
+keywords: ['contains:\\\\"Extra\\\\" escaped quotes inside']
+\`\`\`
+
+:::
+
+# List of safe JS keywords to start new lines with in mdx:
+
+module
+
+module.exports
+
+module.exports =
+
+module.exports = {}
+
+require
+
+require()
+
+var
+
+Import < NOT CASE SENSITIVE!
+
+IMPORT
+
+
+# LISS OF BAD
+
+\`\`\`tsx
+import
+export
+<anyanglebracketswithoutterminating>
+\`\`\`
 
 - [link back to home](/)
 \`\`\`
@@ -152,19 +278,27 @@ tags: [Hello, TS, React]
 
 ## ADD ALL global exports to \`src/theme/MDXComponents.tsx\`
 
-\`\`\`
+\`\`\`tsx
 import React from "react"
+// highlight-next-line
 import MDXComponents from "@theme-original/MDXComponents"
 import { Redirect } from "@docusaurus/router"
 
 export default {
+  // highlight-next-line
   ...MDXComponents,
   Redirect,
 }
-
 \`\`\`
 
 ### Now just Add \`<Redirect to"\\whatever" />\` to mdx!
+
+## Tables
+
+| Col1 | Col2 |
+| ---- | ---- |
+| A    | B    |
+| C    | D    |
 
 ## References
 
@@ -173,6 +307,18 @@ export default {
 3. wasd2`
 
 fs.outputFile("docs/intro.mdx", template_mdx)
+
+function RedirectMDX(parent_path: string) {
+  return `<Redirect to="${parent_path}" />
+  `
+}
+// function RedirectMDX(parent_path: string) {
+//   return `
+// export default function RedirectTo() {
+//   return <Redirect to="${parent_path}" />
+// }
+//   `
+// }
 
 function RedirectFCTSX_textdata(dirpath: string) {
   return `
@@ -192,7 +338,14 @@ export default function RedirectTo() {
  * @param dirpath
  */
 
-async function generate_id_redirect(id: string, dirpath: string) {
+async function generate_id_redirect(alias_path: string, redirect_path: string) {
+  const redirect_mdx = RedirectMDX(redirect_path)
+  try {
+    await fs.outputFile(alias_path, redirect_mdx)
+    num_alias_redirect_mdx += 1
+  } catch (error) {}
+}
+async function generate_id_redirect_OLD(id: string, dirpath: string) {
   const redirect_filepath = `src/pages/redirect/${id}.tsx`
   // NOT const redirect_filepath = `src/pages/redirect/${id}/${id}.tsx` - don't need extra /${id}/ for pages since Docusaurus renders /pages differently!
   try {
@@ -220,10 +373,15 @@ async function loop_docs_mkdir(
 ) {
   children.forEach(async (id) => {
     // console.log("Intializing dir for docs")
+    const title = id_to_plaintext(id)
+      ?.replace(/"/g, `'`)
+      .replace(/\\/g, `&#92;`)
+    const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
 
     const doc = getDoc(id)
     if (!doc) return
     const slug_key = id_to_key_slug(id)
+    if (!slug_key) return
 
     const filepath = `${parent_path}/${slug_key}/${slug_key}.mdx`
     const dirpath = `${parent_path}/${slug_key}`
@@ -239,7 +397,9 @@ async function loop_docs_mkdir(
       "SSG MDX",
       "⏳ ✍ ",
       "✅ MDX",
-      init_mdx_map_time
+      init_mdx_map_time,
+      num_alias_redirect_mdx,
+      "Alias Redirect MDX"
     )
 
     const debug_slug = false
@@ -252,12 +412,33 @@ async function loop_docs_mkdir(
       } catch (error) {}
     }
     const omit_check = true
+    const pop_parent_path = parent_path
+    const parent_slug = pop_parent_path.split("/").pop()
+    if (slug_key === "Aliases") {
+      const parent_id = getParentId(id) || ""
+
+      const alias_slugs = getAliasSlugs(parent_id)
+      // console.log(`parent_slug: ${parent_slug} alias_slugs:${alias_slugs}`)
+
+      alias_slugs.forEach((alias_slug) => {
+        const alias_filepath = `${parent_path}/${alias_slug}.mdx`
+        // console.log(alias_filepath)
+        //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
+        if (alias_slug.toLowerCase() !== parent_slug?.toLowerCase())
+          generate_id_redirect(alias_filepath, parent_path)
+        //! Forgot to avoid duplicate alias slug overriting parent!
+      })
+    }
+
     let skip_next =
-      slug_key === "Aliases" ||
+      slug_key === "Aliases" || //! Defer Aliases logic to parent role during @function generate_mdx_page_from_id
       slug_key === "Color" ||
       slug_key === "Status" ||
       slug_key === "Sources" ||
-      slug_key === "Size"
+      slug_key === "Size" ||
+      Boolean(slug_key.match(/^contains-/)) //! Shave off 180 "contains:" type docs //!recall that : was swapped for - by slugify!
+    // slug_key.length > 15 //! BEFORE: 7187 Files, 6418 Folders --> AFTER >20: 4,522 Files, 3,970 Folders --> <15 3,574 Files, 3,167 Folders
+    //? How to embed template literal inside regex experssion ?    Boolean(slug_key.match(/^contains:${parent_slug}/))
     if (omit_check && slug_key && !skip_next)
       __plaintext__id_array.push(`__${slug_key}__${id}`)
     if (num === 13592 && omit_check) {
@@ -267,12 +448,15 @@ async function loop_docs_mkdir(
         await fs.outputFile(`test/omit-check.mdx`, plaintext_id_mdx)
       } catch (error) {}
     }
-
+    if (num === 13592) {
+      fs.outputFile("test/debug_keywords.mdx", debug_keywords.join("\n"))
+      fs.outputFile("test/debug_Tags.mdx", debug_keywords.join("\n"))
+    }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
-    if (!skip_next && !skip && slug_key)
+    if (!skip_next && !skip && slug_key && !title_has_line_breaks)
       try {
         await fs
-          .outputFile(filepath, await generate_mdx_page_from_id(id))
+          .outputFile(filepath, await generate_mdx_page_from_id(id, slug_key))
           .then(() => {
             // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
             // write_to_md(filepath, )
@@ -317,10 +501,10 @@ const init_mdx_map_time = uptime()
     const doc_slug = id_to_key_slug(id)
     const dirpath = `docs/${doc_slug}`
     const filepath = `docs/${doc_slug}/${doc_slug}.mdx`
-
+    if (!doc_slug) return
     try {
       await fs
-        .outputFile(filepath, await generate_mdx_page_from_id(id))
+        .outputFile(filepath, await generate_mdx_page_from_id(id, doc_slug))
         .then(() => {
           num += 1
 
@@ -335,7 +519,7 @@ const init_mdx_map_time = uptime()
           if (!child_docs)
             return console.log(`${filepath} is leaf node - no children found.`)
           // console.log(`Now recursively looping over children from ${path}`)
-          const dirpath = String(filepath.split("/").slice(0, -1).join("/"))
+          // const dirpath = String(filepath.split("/").slice(0, -1).join("/"))
           /**
            * FUCK - forgot to cut off _doc.md from end!
            * AND DON'T FORGET TO assign it FFS!!should be slice(0, -1)

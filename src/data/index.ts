@@ -1,12 +1,17 @@
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
-import { make_mdx, make_plaintext, LOG_CLI_PROGRESS } from "../utility"
+import {
+  make_mdx,
+  make_plaintext,
+  LOG_CLI_PROGRESS,
+  id_to_plaintext,
+} from "../utility"
 import { uptime } from "process"
 
 export const rem: Rem_DB = rem_json as Rem_DB
 
 process.stdout.write(
-  "\x1b[36m================================================\nINIT: ROGER JIANG JSON TO SSG MDX SCRIPTS © 2023\n================================================\n\x1b[89m\n\n"
+  "\x1b[36m================================================\nINIT: JSON TO SSG MDX SCRIPTS © ROGER JIANG 2023\n================================================\x1b[89m\nSTEP 1: CONVERT JSON TO HASH MAPS"
 )
 
 /**
@@ -16,6 +21,7 @@ process.stdout.write(
 ;(function Load() {
   const docs_length = rem.docs.length
   const json_cleanup_init_time = uptime()
+  let deleted_props = 0
 
   rem.docs.forEach((doc: Rem_obj, i) => {
     LOG_CLI_PROGRESS(
@@ -25,7 +31,9 @@ process.stdout.write(
       "trim JSON",
       "⏳ ✂ ",
       "✅ CLEAN",
-      json_cleanup_init_time
+      json_cleanup_init_time,
+      deleted_props,
+      "unused prop deleted"
     )
 
     Object.keys(doc).forEach((key) => {
@@ -45,6 +53,7 @@ process.stdout.write(
       )
         //@ts-ignore
         delete doc[key]
+      deleted_props += 1
     })
     //   delete doc["owner"];
     //   delete doc["subBlocks"];
@@ -73,8 +82,10 @@ process.stdout.write(
 
 const docs_length = rem.docs.length
 const init_json_map_time = process.uptime()
+let num_docs_mapped = 0
 export const map = new Map(
   rem.docs.map((doc, i) => {
+    num_docs_mapped += 1
     LOG_CLI_PROGRESS(
       i,
       docs_length,
@@ -82,7 +93,9 @@ export const map = new Map(
       "HASH JSON to map",
       "⏳ 🔎 ",
       "✅ MAP",
-      init_json_map_time
+      init_json_map_time,
+      num_docs_mapped,
+      "docs mapped to ID"
     )
 
     return [doc._id, doc]
@@ -113,6 +126,11 @@ export function getChildren(id: string) {
   // console.log(children)
   return children
 }
+
+export function getChildIDs(id: string) {
+  const childIDs = map_all.get(id)?.children
+  return childIDs
+}
 // getChildren("6CexCG2iqE2PMEtRW") // [ "wSpuzHZAcmcDRsogo","kJhdZnTW7hZvdkQi3","7rrTRyYMQCtb2Sr2J","MDkQBLiqe4h2LMbQp","wsze9LrGuNubTX4Zq",]
 
 /**
@@ -128,7 +146,7 @@ export const map_all_parents = new Map(
       i,
       docs_length,
       "docs",
-      "Map ID to Parent",
+      "Map ID to Parent ID",
       "⏳ 🔎 ",
       "✅ MAP",
       map_all_parents_init_time
@@ -281,54 +299,55 @@ array_output.pop()
 let l = 0
 const max = map_all_parents.size + 1
 const init_breadcrumb_time = uptime()
-map_all_parents.forEach((id) => {
-  const ID_strings_array = id
-  const final_ID =
-    ID_strings_array.toString().split(",")[
-      ID_strings_array.toString().split(",").length - 1
-    ] //! disgusting repetition! why can't JS have negative indexing!
-  // console.log(final_ID)
-  // let output_key_text_strings_array = ["root"]
-  l += 1
-  process.stdout.write(
-    `${l < max - 1 ? "⏳ GEN" : "✅ GENERATION for"}: ${(
-      (100 * (l + 1)) /
-      max
-    ).toPrecision(3)}% of ${l} for Breadcrumbs ARRAY generated ${
-      l === max - 1
-        ? `in ${(uptime() - init_breadcrumb_time).toPrecision(3)}s\n\n`
-        : ""
-    }`
-  )
-  process.stdout.clearLine(1)
-  process.stdout.clearLine(1)
-  process.stdout.cursorTo(0)
-  const output = ID_strings_array.filter(
-    (x) => x !== null && x !== undefined
-  ).map((id: string) => {
-    if (id === "root") return `${final_ID}`
-    const key_doc = map.get(id)?.["key"] || null //|| map.get(id)?.["value"]
-    // if (!key_doc) console.log(id, "still does not have key or value")
-    if (key_doc)
-      try {
-        const output = make_mdx(key_doc) || "__UNDEFINED__@_@__" //slugify .toLowerCase().split(" ").join("-") || null
-        // console.log(output)
-        return output
-      } catch (err) {
-        return "__ERROR__@_@__"
-        //!DUMB ignore it and let it silently fail?!
-      }
-    if (typeof key_doc === "undefined") return "__UNDEFINED__@_@__"
-    return "__NULL__@_@__"
-    // if (typeof key_doc === "null") return "__NULL__@_@__"
-    // const text_key = make_mdx(key_doc)
+false &&
+  map_all_parents.forEach((id) => {
+    const ID_strings_array = id
+    const final_ID =
+      ID_strings_array.toString().split(",")[
+        ID_strings_array.toString().split(",").length - 1
+      ] //! disgusting repetition! why can't JS have negative indexing!
+    // console.log(final_ID)
+    // let output_key_text_strings_array = ["root"]
+    l += 1
+    process.stdout.write(
+      `${l < max - 1 ? "⏳ GEN" : "✅ GENERATION for"}: ${(
+        (100 * (l + 1)) /
+        max
+      ).toPrecision(3)}% of ${l} for Breadcrumbs ARRAY generated ${
+        l === max - 1
+          ? `in ${(uptime() - init_breadcrumb_time).toPrecision(3)}s ⏱\n\n`
+          : ""
+      }`
+    )
+    process.stdout.clearLine(1)
+    process.stdout.clearLine(1)
+    process.stdout.cursorTo(0)
+    const output = ID_strings_array.filter(
+      (x) => x !== null && x !== undefined
+    ).map((id: string) => {
+      if (id === "root") return `${final_ID}`
+      const key_doc = map.get(id)?.["key"] || null //|| map.get(id)?.["value"]
+      // if (!key_doc) console.log(id, "still does not have key or value")
+      if (key_doc)
+        try {
+          const output = make_mdx(key_doc) || "__UNDEFINED__@_@__" //slugify .toLowerCase().split(" ").join("-") || null
+          // console.log(output)
+          return output
+        } catch (err) {
+          return "__ERROR__@_@__"
+          //!DUMB ignore it and let it silently fail?!
+        }
+      if (typeof key_doc === "undefined") return "__UNDEFINED__@_@__"
+      return "__NULL__@_@__"
+      // if (typeof key_doc === "null") return "__NULL__@_@__"
+      // const text_key = make_mdx(key_doc)
+    })
+
+    // console.log(output)
+
+    if (output) array_output.push(output)
+    // if (typeof output === "undefined") array_output.push("__UNDEFINED__@_@__")
   })
-
-  // console.log(output)
-
-  if (output) array_output.push(output)
-  // if (typeof output === "undefined") array_output.push("__UNDEFINED__@_@__")
-})
 
 // console.log("array_output=", array_output)
 
@@ -356,8 +375,20 @@ export function get_path_from_id(id: string) {
   return path_map.get(id)
 }
 
+export const map_alias_ids: Map<string, string[]> = new Map()
+export const map_alias_slugs: Map<string, string[]> = new Map()
+export function getAliasIDs(id: string) {
+  return map_alias_ids.get(id) || []
+}
+export function getAliasSlugs(id: string) {
+  return map_alias_slugs.get(id) || []
+}
+
+let num_aliases = 0
+
 const map_path_to_id_time = uptime()
 let num_paths_mapped_to_id = 0
+let num_child_slugs = 0
 
 ;(function loop_dirs_to_make_sure_path_maps_set_up_first() {
   root_main_topic_ids.forEach((id: string, i: number) => {
@@ -370,9 +401,11 @@ let num_paths_mapped_to_id = 0
       map_size,
       "slugs",
       "MAP ID PATH",
-      "⏳ 🔎 ",
+      "⏳",
       "✅ MAP",
-      map_path_to_id_time
+      map_path_to_id_time,
+      num_aliases,
+      "Aliases found"
     )
     const children = getChildren(id)
     if (children)
@@ -394,10 +427,14 @@ function loop_child_to_make_sure_path_maps_set_up_first(
       map_size,
       "slugs",
       "MAP ID to PATH",
-      "⏳ 🔎 ",
+      "⏳",
       "✅ MAP",
-      map_path_to_id_time
+      map_path_to_id_time,
+      `${num_aliases} keys mapped to ${num_child_slugs} aliases`
     )
+    // Add push_alias_to_parent step to map out IDs to aliases
+    if (slug_key === "Aliases") push_alias_to_parent(id)
+
     // FUCK - dont' forget the RECURSION layer!!
     const children = getChildren(id)
     if (children)
@@ -405,6 +442,35 @@ function loop_child_to_make_sure_path_maps_set_up_first(
   })
 }
 
+function push_alias_to_parent(id: string) {
+  num_aliases += 1
+  // process.stdout.write(`Aliases Found: ${num_aliases}\n`)
+  // process.stdout.clearLine(1)
+  // process.stdout.cursorTo(0)
+
+  const parent_id = getParentId(id)
+  const children_ids = getChildIDs(id)
+  if (!parent_id || !children_ids) return
+
+  map_alias_ids.set(parent_id, children_ids)
+  const children_slugs = children_ids.map((id) => {
+    num_child_slugs += 1
+    return id_to_key_slug(id)?.replace(/[ ]$/g, "")
+    //! Don't use id_to_plaintext - it will output illegal chars that break mdx-loader!
+    //! USE id_to_key_slug for now - which guarantees mdx-loader safe chars!
+    // REPLACE WHITESPACE AT END
+    //! "wasd .mdx" not allowed to have empty space!
+  })
+  const children_slugs_again_to_please_typescript = children_slugs.filter(
+    (child) => child !== undefined
+  ) as string[]
+  // .filter((child) => child !== undefined) //! Typescript doesn't infer .filter() ?!
+  map_alias_slugs.set(parent_id, children_slugs_again_to_please_typescript)
+}
+
+// console.table(map_alias_slugs)
+// console.log("early exit")
+
 process.stdout.write(
-  `================================================\nCOMPLETE: All JSON mapping scripts in ${uptime()}\n================================================\n\n`
+  `\n\n================================================\nCOMPLETE: JSON MAP scripts in ${uptime()} \n================================================\n\nNEXT STEP: MDX SSG Scripts \n================================================\n\n`
 )

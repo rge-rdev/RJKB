@@ -69,7 +69,44 @@ export function make_str(input: RemData[] | []): string {
   return output_arr
 }
 
-export function id_to_mdx(id: string, key_type?: "key" | "value") {
+export function id_to_mdx(
+  id: string,
+  key_type?: "key" | "value",
+  config?: { safe: true }
+) {
+  const doc = getDoc(id)
+  if (!doc) return
+  const output = make_mdx(doc[key_type || "key"]!)
+
+  if (!config) return output //! UNSAFE for mdx-loader & may cause docusaurus to go extinct! 🐱‍🐉😭
+  if (!output) return
+  const output_startsAsCodeblock = Boolean(
+    output.match(/^\\n\\`\\`\\`/)?.length
+  )
+  const output_hasRegexLineBreaks = Boolean(output.match(/[\\n]+/)?.length)
+  const output_startsIllegalJSKeywords = Boolean(
+    output.match(/^(import|export) .+/gm)?.length
+  )
+  // <([A-z_0-9]+).*> Valid JSX starting tag
+  // <([A-z_0-9]+).*>.*<\1( )+/> Valid JSX with Closing
+  const output_hasValidJSXTags = Boolean(
+    output.match(/<(.*)>.*<\1.*>/s)?.length
+  )
+  const output_hasAnyHTMLtags = Boolean(
+    output.match(/\<[A-z{}[]= 1-9]*\>/)?.length
+  )
+  if (
+    config.safe &&
+    output_startsIllegalJSKeywords &&
+    !output_startsAsCodeblock
+  ) {
+    if (output_hasRegexLineBreaks) return `\`\`\`tsx\n${output}\n\n\`\`\``
+    if (!output_hasRegexLineBreaks) return `\`${output}\``
+    // assume & force tsx code block on codeblocks that omitted codeblock declaration
+    // single quote escape for single liners with import/export JS code snippet
+  }
+}
+export function id_to_mdx_old(id: string, key_type?: "key" | "value") {
   const doc = getDoc(id)
   if (!doc) return
   if (!key_type || key_type === "key") return make_mdx(doc.key)
@@ -85,12 +122,24 @@ export function id_to_tags(id: string) {
   const doc = getDoc(id)
   if (!doc) return
   const key = make_plaintext(doc.key)
+    ?.replace(/(?<!\\)"/g, "\\\\'") // MAKE EVERYTHING INSIDE SINGLE QUOTE
+    .replace(/(?<!\\)'/g, "\\\\'")
+  if (!key) return
   let output = [key]
-  if (!doc.value) return [key]
+  if (!doc.value) return output
   const value = doc.value
-  if (typeof value === "string") return output.push(value)
-  let link_ids = [""]
-  link_ids.pop()
+  // if (value.length === 1) {
+  //   const single_value = value
+  //     .pop()
+  //     ?.replace(/(?<!\\)"/g, '\\\\"')
+  //     .replace(/(?<!\\)'/g, "\\\\'")
+  //   if (typeof single_value === "string") {
+  //     const final_string = output.concat(single_value)
+  //     return final_string
+  //   }
+  // }
+  // output.push(value) //! mistake .push returns a NUMBER!
+  let link_ids: string[] = []
   if (typeof value === "object") {
     const links = value.forEach((el) => {
       if (
@@ -103,6 +152,10 @@ export function id_to_tags(id: string) {
         // add aliases
         const link_id = el["_id"]
         const link_plaintext = id_to_plaintext(link_id)
+          ?.replace(/\\"/g, '\\"')
+          .replace(/\\'/g, "\\'")
+
+        //! replace any unescaped single or double quotes with \ (via \\)! to avoid tag breaking yaml tags & keywords
         if (!link_plaintext) return
         link_ids.push(link_plaintext)
       }
@@ -140,7 +193,17 @@ export function id_to_tags(id: string) {
 
 export function make_mdx(input: RemData[] | []): string {
   let output_arr = input?.map((el: RemData) => obj_to_mdx(el))
-  if (Array.isArray(output_arr)) return output_arr.join("")
+  if (Array.isArray(output_arr)) {
+    const output_str = output_arr.join("")
+    // fix raw strings that contain import are START - which is illegal for mdx-loader
+    // ^ to match illegal reserved keywords
+    // if (output_str.match(/^import /g))
+    //   return `\`\`\`tsx\n ${output_str}\n\`\`\``
+    // if (output_str.match(/^export default |^export const |^export function /g))
+    //   return `\`\`\`tsx\n ${output_str}\n\`\`\``
+    // output_str.match(/(?<!\\n\\`\\`\\`.*\n)/g)
+    return output_str
+  }
   return output_arr
 }
 
@@ -351,7 +414,9 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
           output_str += `${el["i"] === "m" ? "`" : ""}` // Ref HYPERLINKS
           output_str += `${
-            el["qId"] ? `\n<a href=${qId_href}>${_.escape(el["text"])}</a>` : ""
+            el["qId"]
+              ? `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
+              : ""
           }`
           output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
         }
@@ -361,9 +426,11 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           (el["text"] as string).length - 1
         let force_q = false
         if (
-          !el["q"] &&
-          el["text"][0] === "<" &&
-          el["text"][dumb_that_js_cant_add_negative_indexes]
+          (!el["q"] &&
+            el["text"][0] === "<" &&
+            el["text"][dumb_that_js_cant_add_negative_indexes]) ||
+          // !escape reserved JS operators - which ends up breaking MDX!!
+          el["text"] === "import"
         )
           force_q = true
         // href found at el["qId"] = _id at crt.b.s
@@ -372,7 +439,8 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         // output_str += `${el["b"] ? "**" : ""}`; // bold md
         output_str += `${el["u"] ? "__" : ""}` // underline
         output_str += `${el["l"] ? "*" : ""}`
-        output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // id to Cloze cId
+        // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
+        output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
         output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
         output_str += `${el["cId"] ? "</mark>" : ""}`
         output_str += `${el["l"] ? "*" : ""}`
@@ -383,8 +451,12 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       if (el["i"] === "q") {
         if (el["aliasId"]) {
           const aliasId = el["aliasId"] // look up alternative key for aliasId
+          // const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
           const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
+          const alias_id = el["_id"]
+          const alias_mdx = make_mdx(alias_id)
           output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
+          // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId
         }
         if (el["_id"] === "2n8Gw7PvXGPcFQm7i") output_str += "__Aliases"
@@ -538,28 +610,63 @@ export async function LOG_CLI_PROGRESS_SLOW( //SLOWEST
   process.stdout.clearLine(1)
   process.stdout.cursorTo(0)
 }
-
-export function LOG_CLI_PROGRESS( //ORIGINAL SIMPLE FAST
+export function LOG_CLI_PROGRESS( //NO LOGS FOR MAX SPEED
   i: number,
   length: number,
   element: string,
   task: string,
   progress: string,
   completed: string,
-  init_time: number
+  init_time: number,
+  ...more: (string | number)[]
+) {}
+
+export function LOG_CLI_PROGRESS_NEW( //ORIGINAL SIMPLE FAST
+  i: number,
+  length: number,
+  element: string,
+  task: string,
+  progress: string,
+  completed: string,
+  init_time: number,
+  ...more: (string | number)[]
 ) {
+  if (i === 0) process.stdout.write("\n\n\n")
+
   process.stdout.write(
     `${i < length - 1 ? progress : completed}: ${(
       (100 * (i + 1)) /
       length
     ).toPrecision(3)}% of ${task} for ${i} ${element}${
       i === length - 1
-        ? ` in ${(uptime() - init_time).toPrecision(3)}s ⏱\n\n`
+        ? ` in ${(uptime() - init_time).toPrecision(3)}s ⏱\n`
         : ""
-    }`
+    }${more ? `\n${more.join(" ")}` : ""}`
   )
-  process.stdout.clearLine(1)
-  process.stdout.cursorTo(0)
+  if (!more) {
+    process.stdout.cursorTo(0, 0)
+    process.stdout.clearLine(1)
+    // if (i === length - 1) process.stdout.write("\n")
+  }
+  if (more) {
+    process.stdout.moveCursor(-999, -1)
+    process.stdout.clearLine(1)
+    process.stdout.cursorTo(0)
+  }
 }
 //!   process.stdout.clearScreenDown() DESTROYS performance whereas process.stdout.clearLine() doesn't?!
 //! Adding terminal colors adds latency!
+const clearLines = (n: number) => {
+  if (n === 1) {
+    process.stdout.clearLine(1)
+    process.stdout.cursorTo(0)
+  } else {
+    for (let i = 0; i < n; i++) {
+      //first clear the current line, then clear the previous line
+      const y = i === 0 ? 0 : -1
+      process.stdout.moveCursor(0, y)
+      process.stdout.clearLine(1)
+    }
+    process.stdout.cursorTo(0)
+  }
+}
