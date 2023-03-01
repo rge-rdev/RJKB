@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        "prism-dark": "url('/static/img/bg-prism-dark.svg')",
-        "prism-light": "url('/static/img/bg-prism-light.svg')",
-        "circuit-light": "url('/static/img/bg-circuit-light.svg')",
-        "hex-blue": "url('/static/img/bg-hex-blue.svg')",
+        "prism-dark": "url('/static/img/BgPrismDark.svg')",
+        "prism-light": "url('/static/img/BgPrismLight.svg')",
+        "circuit-light": "url('/static/img/BgCircuitLight.svg')",
+        "hex-blue": "url('/static/img/BgHexBlue.svg')",
       }),
       animation: {
         "slide-slow": "shift 200s linear infinite",

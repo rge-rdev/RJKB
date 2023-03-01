@@ -1,57 +1,4 @@
 import React from "react"
-import {
-  DockerEditSVG,
-  DockerWorkingSVG,
-  IconArrowDownCircleBlackSVG,
-  IconArrowLeftCircleBlackSVG,
-  IconArrowRightCircleBlackSVG,
-  IconArrowRopRightCircleBlackSVG,
-  IconArrowTopLeftCircleBlackSVG,
-  IconArrowUpCircleBlackSVG,
-  IconBrainCircleColorSVG,
-  IconCodeEditorDiamondColorSVG,
-  IconDockerColorSVG,
-  IconDocusaurusBlackSVG,
-  IconDocusaurusColorSVG,
-  IconDocusaurusGreySVG,
-  IconDownButtonCyanBlueSVG,
-  IconDownButtonDocusaurusGreenSVG,
-  IconEsbuildColorSVG,
-  IconGitSVG,
-  IconHTML5GreySVG,
-  IconJavascriptBlackSVG,
-  IconNodeJSBlackSVG,
-  IconNodeJSColorSVG,
-  IconReactBlackSVG,
-  IconReactColorSVG,
-  IconReactGreySVG,
-  IconRjnoteCodeEditorColorSVG,
-  IconSpiralLoopBlackSVG,
-  IconTailwindcssBlackSVG,
-  IconTailwindcssColorSVG,
-  IconTypescriptBlackSVG,
-  IconTypescriptColorSVG,
-  IconTypesenseLogoColorOfficialSVG,
-  IconWebassemblyColorSVG,
-  LogoMDXColorSVG,
-  LogoMDXLightSVG,
-  LogoNgrokSVG,
-  LogoNodeJSColorSVG,
-  LogoReactLiveColorSVG,
-  LogoReduxOfficialColorSVG,
-  LogoTailwindcssOfficialColorSVG,
-  LogoTSNodeBlackSVG,
-  LogoTSNodeColorSVG,
-  LogoTSNodeGreySVG,
-  LogoTypesenseColorOfficialSVG,
-  LogoSVG,
-  LogoTextDockerBlackSVG,
-  LogoTextTypescriptBlackSVG,
-  LogoTextTypescriptColorSVG,
-  UndrawDocusaurusMountainSVG,
-  UndrawDocusaurusReactSVG,
-  UndrawDocusaurusTreeSVG,
-} from "../../static/img/svg_logos"
 
 interface SliderProps {
   children?: React.ReactNode
@@ -78,61 +25,6 @@ function SVG_LOGO({ Svg, title, h, w }: MediaElement) {
   )
 }
 
-const top = [
-  { Svg: IconBrainCircleColorSVG },
-  {
-    Svg: IconCodeEditorDiamondColorSVG,
-  },
-  { Svg: IconDocusaurusBlackSVG },
-  { Svg: IconEsbuildColorSVG },
-  { Svg: IconGitSVG },
-  { Svg: IconHTML5GreySVG },
-  { Svg: IconJavascriptBlackSVG },
-  { Svg: IconNodeJSBlackSVG },
-  { Svg: IconReactBlackSVG },
-  {
-    Svg: IconRjnoteCodeEditorColorSVG,
-  },
-  { Svg: IconSpiralLoopBlackSVG },
-  { Svg: IconTailwindcssBlackSVG },
-  { Svg: IconTypescriptBlackSVG },
-  {
-    Svg: IconTypesenseLogoColorOfficialSVG,
-  },
-  { Svg: IconWebassemblyColorSVG },
-]
-const bot = [
-  { Svg: LogoMDXColorSVG },
-  { Svg: LogoMDXLightSVG },
-  { Svg: LogoNgrokSVG },
-  { Svg: LogoNodeJSColorSVG },
-  { Svg: LogoReactLiveColorSVG },
-  {
-    Svg: LogoReduxOfficialColorSVG,
-  },
-  {
-    Svg: LogoTailwindcssOfficialColorSVG,
-  },
-  { Svg: LogoTSNodeBlackSVG },
-  { Svg: LogoTSNodeGreySVG },
-  {
-    Svg: LogoTypesenseColorOfficialSVG,
-  },
-  { Svg: LogoSVG },
-  { Svg: LogoTextDockerBlackSVG },
-  {
-    Svg: LogoTextTypescriptBlackSVG,
-  },
-
-  {
-    Svg: UndrawDocusaurusMountainSVG,
-  },
-  {
-    Svg: UndrawDocusaurusReactSVG,
-  },
-  { Svg: UndrawDocusaurusTreeSVG },
-]
-
 interface SliderRowProps {
   MediaElements: MediaElement[]
   config?: string
@@ -157,8 +49,8 @@ function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
           >
             <SVG_LOGO
               {...props}
-              h={h}
-              w={w}
+              h={h || props.h}
+              w={props.w}
             />
           </div>
         ))}

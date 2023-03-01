@@ -2,7 +2,7 @@ import React from "react"
 import Link from "@docusaurus/Link"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import HomeLogoSlider from "./HomeLogoSlider"
-import IconArrowDownCircleBlackSVG from "../../../static/img/icon-down-button-docusaurus-green.svg"
+import IconArrowDownCircleBlackSVG from "../../../static/img/IconDownButtonDocusaurusGreen.svg"
 
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()

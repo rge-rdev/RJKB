@@ -3,8 +3,6 @@ import clsx from "clsx"
 import Link from "@docusaurus/Link"
 // import mdx_ssg_video from "../../../static/vid/mdx-ssg-x264-crf30-placebo.mp4"
 import {
-  DockerEditSVG,
-  DockerWorkingSVG,
   IconArrowDownCircleBlackSVG,
   IconArrowLeftCircleBlackSVG,
   IconArrowRightCircleBlackSVG,
@@ -34,19 +32,18 @@ import {
   IconTailwindcssColorSVG,
   IconTypescriptBlackSVG,
   IconTypescriptColorSVG,
-  IconTypesenseLogoColorOfficialSVG,
+  LogoTypesenseColorSVG,
   IconWebassemblyColorSVG,
   LogoMDXColorSVG,
   LogoMDXLightSVG,
   LogoNgrokSVG,
   LogoNodeJSColorSVG,
-  LogoReactLiveColorSVG,
-  LogoReduxOfficialColorSVG,
+  IconReactLiveColorSVG,
+  IconReduxOfficialColorSVG,
   LogoTailwindcssOfficialColorSVG,
   LogoTSNodeBlackSVG,
   LogoTSNodeColorSVG,
   LogoTSNodeGreySVG,
-  LogoTypesenseColorOfficialSVG,
   LogoSVG,
   LogoTextDockerBlackSVG,
   LogoTextTypescriptBlackSVG,
@@ -54,7 +51,9 @@ import {
   UndrawDocusaurusMountainSVG,
   UndrawDocusaurusReactSVG,
   UndrawDocusaurusTreeSVG,
-} from "../../../static/img/svg_logos"
+  IconYarnBlackSVG,
+  IconYarnColorSVG,
+} from "../../../static/img/svg"
 
 type FeatureItem = {
   title: string
@@ -77,7 +76,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Typesense",
-    SVG: LogoTypesenseColorOfficialSVG,
+    SVG: LogoTypesenseColorSVG,
     description: (
       <>
         Fully-indexed via <code>typesense-docscraper</code> run on self-hosted
@@ -121,7 +120,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: "JSON to MDX",
     SVG: LogoMDXLightSVG,
-    description: <>Recursively</>,
+    description: <>Custom Node copy RJScripts to Recursively</>,
   },
   {
     title: "Node.js",
@@ -172,7 +171,7 @@ const FeatureList: FeatureItem[] = [
 
   {
     title: "Redux Toolkit",
-    SVG: LogoReduxOfficialColorSVG,
+    SVG: IconReduxOfficialColorSVG,
     description: (
       <>
         Redux Toolkit + <code>react-redux</code>
@@ -182,7 +181,7 @@ const FeatureList: FeatureItem[] = [
 
   {
     title: "React Live Code Editor",
-    SVG: LogoReactLiveColorSVG,
+    SVG: IconReactLiveColorSVG,
     description: (
       <>
         Live Code Editor via <code>@docusaurus/theme-live-codeblock</code>
@@ -213,12 +212,12 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "TS-blue?",
-    SVG: IconTypesenseLogoColorOfficialSVG,
+    SVG: LogoTypesenseColorSVG,
     description: <>RJ's KB </>,
   },
   {
     title: "__",
-    SVG: require("@site/static/img/_.svg").default,
+    SVG: IconYarnBlackSVG,
     description: <>RJ's KB </>,
   },
 ]

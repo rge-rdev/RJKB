@@ -2,8 +2,6 @@ import React from "react"
 import LogoSlider from "../LogoSlider"
 
 import {
-  DockerEditSVG,
-  DockerWorkingSVG,
   IconArrowDownCircleBlackSVG,
   IconArrowLeftCircleBlackSVG,
   IconArrowRightCircleBlackSVG,
@@ -12,6 +10,9 @@ import {
   IconArrowUpCircleBlackSVG,
   IconBrainCircleColorSVG,
   IconCodeEditorDiamondColorSVG,
+  IconCSS3Black,
+  IconCSS3Color,
+  IconDockerBlackSVG,
   IconDockerColorSVG,
   IconDocusaurusBlackSVG,
   IconDocusaurusColorSVG,
@@ -19,6 +20,7 @@ import {
   IconDownButtonCyanBlueSVG,
   IconDownButtonDocusaurusGreenSVG,
   IconEsbuildColorSVG,
+  IconGitBlackSVG,
   IconGitSVG,
   IconHTML5GreySVG,
   IconJavascriptBlackSVG,
@@ -27,92 +29,86 @@ import {
   IconReactBlackSVG,
   IconReactColorSVG,
   IconReactGreySVG,
+  IconReactLiveBlackSVG,
+  IconReactLiveColorSVG,
+  IconReduxOfficialBlackSVG,
+  IconReduxOfficialColorSVG,
   IconRjnoteCodeEditorColorSVG,
   IconSpiralLoopBlackSVG,
   IconTailwindcssBlackSVG,
   IconTailwindcssColorSVG,
   IconTypescriptBlackSVG,
   IconTypescriptColorSVG,
-  IconTypesenseLogoColorOfficialSVG,
+  IconWebassemblyBlackSVG,
   IconWebassemblyColorSVG,
+  IconYarnBlackSVG,
+  LogoDocSearchColorSVG,
   LogoMDXColorSVG,
   LogoMDXLightSVG,
   LogoNgrokSVG,
   LogoNodeJSColorSVG,
-  LogoReactLiveColorSVG,
-  LogoReduxOfficialColorSVG,
-  LogoTailwindcssOfficialColorSVG,
-  LogoTSNodeBlackSVG,
-  LogoTSNodeColorSVG,
-  LogoTSNodeGreySVG,
-  LogoTypesenseColorOfficialSVG,
   LogoSVG,
+  LogoSwcColorDarkSVG,
+  LogoTailwindcssOfficialColorSVG,
   LogoTextDockerBlackSVG,
   LogoTextTypescriptBlackSVG,
   LogoTextTypescriptColorSVG,
+  LogoTSNodeBlackSVG,
+  LogoTSNodeColorSVG,
+  LogoTSNodeGreySVG,
+  LogoTypesenseBlackSVG,
+  LogoTypesenseColorSVG,
   UndrawDocusaurusMountainSVG,
   UndrawDocusaurusReactSVG,
   UndrawDocusaurusTreeSVG,
-} from "../../../static/img/svg_logos"
-
-type MediaElement = {
-  title?: string
-  Svg: React.ComponentType<React.ComponentProps<"svg">>
-}
+} from "../../../static/img/svg"
 
 const top = [
-  { Svg: IconBrainCircleColorSVG },
+  { Svg: IconYarnBlackSVG },
+  { Svg: LogoSwcColorDarkSVG },
+  { Svg: IconDockerBlackSVG },
   {
     Svg: IconCodeEditorDiamondColorSVG,
   },
   { Svg: IconDocusaurusBlackSVG },
   { Svg: IconEsbuildColorSVG },
-  { Svg: IconGitSVG },
+  { Svg: IconGitBlackSVG },
   { Svg: IconHTML5GreySVG },
+  { Svg: IconCSS3Black },
   { Svg: IconJavascriptBlackSVG },
   { Svg: IconNodeJSBlackSVG },
   { Svg: IconReactBlackSVG },
   {
     Svg: IconRjnoteCodeEditorColorSVG,
   },
-  { Svg: IconSpiralLoopBlackSVG },
   { Svg: IconTailwindcssBlackSVG },
   { Svg: IconTypescriptBlackSVG },
+
+  { Svg: IconWebassemblyBlackSVG },
+  { Svg: UndrawDocusaurusTreeSVG },
+  { Svg: LogoMDXColorSVG },
   {
-    Svg: IconTypesenseLogoColorOfficialSVG,
+    Svg: IconReduxOfficialBlackSVG,
   },
-  { Svg: IconWebassemblyColorSVG },
+  { Svg: IconReactLiveBlackSVG },
 ]
 const bot = [
-  { Svg: LogoMDXColorSVG },
-  { Svg: LogoMDXLightSVG },
+  { Svg: LogoDocSearchColorSVG, w: 476 },
+
   { Svg: LogoNgrokSVG },
   { Svg: LogoNodeJSColorSVG },
-  { Svg: LogoReactLiveColorSVG },
-  {
-    Svg: LogoReduxOfficialColorSVG,
-  },
+
   {
     Svg: LogoTailwindcssOfficialColorSVG,
   },
-  { Svg: LogoTSNodeBlackSVG },
   { Svg: LogoTSNodeGreySVG },
   {
-    Svg: LogoTypesenseColorOfficialSVG,
+    Svg: LogoTypesenseBlackSVG,
   },
-  { Svg: LogoSVG },
-  { Svg: LogoTextDockerBlackSVG },
+  // { Svg: LogoTextDockerBlackSVG },
   {
     Svg: LogoTextTypescriptBlackSVG,
   },
-
-  {
-    Svg: UndrawDocusaurusMountainSVG,
-  },
-  {
-    Svg: UndrawDocusaurusReactSVG,
-  },
-  { Svg: UndrawDocusaurusTreeSVG },
 ]
 
 export default function HomeLogoSlider() {
