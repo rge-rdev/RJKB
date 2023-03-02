@@ -102,23 +102,29 @@ async function generate_mdx_page_from_id(
 
     const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
     const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
+
+    const k_img = k?.match(/.*@site\/static\/files\//gm)?.length // not working?
+    // const k_img = k?.match(/@site\/static\/files/gm)?.length
+    // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
 
-    // if (!k_code && (k_newLine || k_illegal)) {
-    if (!k_code && k_illegal) {
+    if (!k_code && (k_newLine || k_illegal)) {
+      // if (!k_code && k_illegal) {
       k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
-    const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
+    // const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
 
-    if (k_illegal_startOnly) k?.replace(/^([ ]*export |[ ]*import)/, "NULL")
+    // if (k_illegal_startOnly) k?.replace(/^([ ]*export |[ ]*import)/, "NULL")
     if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
     if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
     // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
     if (k && v)
-      return `${k_code || k_illegal || k_newLine ? "" : "## "}${k}\n\n${
+      return `${
+        k_code || k_illegal || k_newLine || k_img ? "" : "## "
+      }${k}\n\n${
         v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
       }${v}\n\n`
-    if (k && !v) return `${k_code || k_newLine ? "" : "## "}${k}\n\n`
+    if (k && !v) return `${k_code || k_newLine || k_img ? "" : "## "}${k}\n\n`
     if (!k && v) return `\n\n${v}`
     return ""
   })
