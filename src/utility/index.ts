@@ -450,9 +450,11 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         output_str += `${el["u"] ? "__" : ""}` // underline
         output_str += `${el["l"] ? "*" : ""}`
         // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
-        output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
+        //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
+        //! TODO: add function to remove <mark> from code snippets - but only do this when cloze/spoiler tags actually needed
+        // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
         output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
-        output_str += `${el["cId"] ? "</mark>" : ""}`
+        // output_str += `${el["cId"] ? "</mark>" : ""}`
         output_str += `${el["l"] ? "*" : ""}`
         output_str += `${el["u"] ? "__" : ""}`
         output_str += `${el["b"] ? "**" : ""}`
@@ -461,17 +463,22 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       if (el["i"] === "q") {
         if (el["aliasId"]) {
           const aliasId = el["aliasId"] // look up alternative key for aliasId
+          //! aliasId doesn't seem to link to any docs - perhaps used as ref handle for some other purpose?
           // const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
-          const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
+          // const aliasKey = map.get(aliasId)?.["key"] || false //"__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
+          // const aliasId_mdx = id_to_mdx(aliasId)
           const alias_id = el["_id"]
-          const alias_doc = getDoc(alias_id)
-          const alias_doc_key = alias_doc?.key
-          const alias_mdx = alias_doc_key
-            ? make_mdx(alias_doc_key, alias_id)
-            : ""
+          const aliasKey = id_to_mdx(alias_id)
+          if (!aliasKey) {
+            console.log(
+              `Could not find aliasKey for aliasId: ${aliasId} - referring ID: ${alias_id}\\naliasId_mdx = ${aliasKey}`
+            )
+            process.exit()
+          }
+
           // const alias_mdx = make_mdx(alias_id) //!! THIS WAS THE BREAKING BUG!
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
-          const path = get_path_from_id(el["_id"])
+          const path = get_path_from_id(alias_id)
           if (!path) return ""
           output_str += `[${aliasKey}](${path})`
           return output_str // exit early once alias found
@@ -498,6 +505,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       }
       //`files/`
       if (el["i"] === "i") {
+        //!
         output_str += `\n![Image](${(el["url"] as string).replace(
           `%LOCAL_FILE%`,
           `@site/static/files/`

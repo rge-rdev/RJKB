@@ -106,17 +106,32 @@ async function generate_mdx_page_from_id(id: string, slug_key: string) {
   // const v_code = false
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
-    const k = id_to_mdx(id, "key", { safe: true })
-    const v = id_to_mdx(id, "value", { safe: true })
+    let k = id_to_mdx(id, "key", { safe: true })
+    let v = id_to_mdx(id, "value", { safe: true })
 
-    const k_code = k?.match(/^(\`\`\`)/)?.length
-    const v_code = v?.match(/^(\`\`\`)/)?.length
+    //! max sure to check this doesn't exist on other
+    const k_code = k?.match(/^(\`\`\`)/gm)?.length
+    const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-    const k_newLine = k?.match(/[\\\n]+/g)
-    const v_newLine = v?.match(/[\\\n]+/g)
+    const k_newLine = k?.match(/[\\\n]+/g)?.length
+    const v_newLine = v?.match(/[\\\n]+/g)?.length
+
+    const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
+    const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
+    //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
+
+    if (!k_code && (k_newLine || k_illegal)) {
+      k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+    }
+    const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
+
+    if (k_illegal_startOnly) k?.replace(/^([ ]*export |[ ]*import)/, "NULL")
+    if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
+    if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
+    // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
     if (k && v)
-      return `${k_code || k_newLine ? "" : "## "}${k}\n\n${
-        v_code ? "" : "## "
+      return `${k_code || k_illegal || k_newLine ? "" : "## "}${k}\n\n${
+        v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
       }${v}\n\n`
     if (k && !v) return `${k_code || k_newLine ? "" : "## "}${k}\n\n`
     if (!k && v) return `\n\n${v}`
@@ -139,8 +154,6 @@ aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${references.join(", ")}]
 id: ${id}
 ---
-
-ID_FOR_DEBUGGING = ${id}
 
 ${
   title_has_line_breaks

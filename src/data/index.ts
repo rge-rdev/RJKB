@@ -292,10 +292,12 @@ export function getParentIDsArray(id: string) {
   return map_all_parents.get(id) || []
 }
 
-const array_output = [[""]]
-//! Ugly fix to get TSC to infer type
-//! Also, recall that const array can mutate
-array_output.pop()
+// const array_output = [[""]]
+// //! Ugly fix to get TSC to infer type
+// //! Also, recall that const array can mutate
+// array_output.pop()
+
+const array_output: string[][] = []
 
 let l = 0
 const max = map_all_parents.size + 1
@@ -476,11 +478,12 @@ process.stdout.write(
   `\n\n================================================\nCOMPLETE: JSON MAP scripts in ${uptime()} \n================================================\n\nNEXT STEP: MDX SSG Scripts \n================================================\n\n`
 )
 
-// console.dir(id_to_mdx("F3pfGC5FmxkDPhLeW"))
-// console.dir(id_to_mdx("F3XGCTu8hZW9Nc2QT"))
-// console.dir(id_to_mdx("HWLTjZrhernsLocy7"))
-// console.dir(id_to_mdx("5jxvqtuiTvhdhxys7"))
-// console.dir(id_to_mdx("65wxDaND8qaAd8G4g"))
+console.dir(id_to_mdx("F46ayoC5CmYX3tLoq"))
+console.dir(id_to_mdx("F3pfGC5FmxkDPhLeW")) // 'data structure with persistent versioning making copies of state to keep track of changes over time'
+console.dir(id_to_mdx("F3XGCTu8hZW9Nc2QT")) // ''
+console.dir(id_to_mdx("HWLTjZrhernsLocy7")) // 'JS'
+console.dir(id_to_mdx("5jxvqtuiTvhdhxys7")) // 'AI/ML'
+console.dir(id_to_mdx("65wxDaND8qaAd8G4g")) // '`yarn add PKG@latest`'
 
 // process.exit()
 
