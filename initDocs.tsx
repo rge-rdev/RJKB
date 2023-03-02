@@ -124,12 +124,16 @@ async function generate_mdx_page_from_id(
 
       if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
       if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
-      if (k && v)
+      if (k && v) {
+        const k_path = get_path_from_id(id)
+        k = k_path && k.length ? `[\`${k}\`](${k_path})` : k
+
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
           v_code || v_newLine ? "" : ""
         }${v}\n\n`
-      if (k && !v) return `${k_code || k_newLine || k_img ? "" : ""}${k}\n\n`
-      if (!k && v) return `\n\n${v}`
+      }
+      // if (k && !v) return `${k_code || k_newLine || k_img ? "" : ""}${k}\n\n`
+      // if (!k && v) return `\n\n${v}`
     })
     .filter((str) => str !== undefined)
 
@@ -140,9 +144,8 @@ async function generate_mdx_page_from_id(
     let k = id_to_mdx(id, "key", { safe: true })
     let v = id_to_mdx(id, "value", { safe: true })
     // const k_link_description = k?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
-    let skip_k = k?.length === 0 //|| k_link_description === title_mdx
-
-    const k_path = get_path_from_id(id)
+    let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
+    //|| k_link_description === title_mdx
 
     //! max sure to check this doesn't exist on other
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
@@ -158,7 +161,6 @@ async function generate_mdx_page_from_id(
     // const k_img = k?.match(/@site\/static\/files/gm)?.length
     // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
-    k = k_path && !skip_k ? `[\`${k}\`](${k_path})` : k
 
     if (!k_code && (k_newLine || k_illegal)) {
       // if (!k_code && k_illegal) {
@@ -170,13 +172,19 @@ async function generate_mdx_page_from_id(
     if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
     if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
     // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
-    if (k && v)
+    if (k && v && !skip_k) {
+      const k_path = get_path_from_id(id)
+
+      k = k_path ? `[\`${k}\`](${k_path})` : k
+
       return `${
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
       }${k}\n\n${
         v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
       }${v}\n\n`
-    if (k && !v) return `${k_code || k_newLine || k_img ? "" : "## "}${k}\n\n`
+    }
+    if (k && !v && !skip_k)
+      return `${k_code || k_newLine || k_img ? "" : "## "}${k}\n\n`
     if (!k && v) return `\n\n${v}`
     return ""
   })
