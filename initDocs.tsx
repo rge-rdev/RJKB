@@ -69,19 +69,27 @@ async function generate_mdx_page_from_id(
   let init_tags = hasTags
     ? [id_to_tags(id) as string[], title_safe]
     : [title_safe]
-  const tags = _.uniq(
-    init_tags
-      .concat(slug_key.replace(/-/g, " ")) // add de-slug key as safe title
-      .filter((tag) => tag.length > 0)
-  )
-  // .filter((tag) => tag.length < 15)
 
-  // const aliases = ["ALIAS1", "ALIAS2", "ALIAS3"] // PLACEHOLDER ALIAS KEYS
   const alias_ids = getAliasIDs(id) // return string[] | []
   const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0) // return string[] | []
-  let keywords = [...tags, ...alias_slugs].filter(
-    (s) => typeof s !== undefined && s && s.length > 0
-  ) // add extra duplicate aliases for SEO keywords and avoid clutter within tags
+  const tags = _.uniqWith(
+    [
+      ...alias_slugs,
+      ...init_tags
+        .concat(slug_key.replace(/-/g, " ")) // add de-slug key as safe title
+        .filter((tag) => tag.length > 0),
+    ],
+    (a, b) => a.toString().toLowerCase() === b.toString().toLowerCase()
+  )
+  // keep strings with identical characters but different cAsEs
+
+  let keywords = _.uniq(
+    [title, ...tags, ...alias_slugs].filter(
+      (s) => typeof s !== undefined && s && s.length > 0
+    )
+  )
+  // remove duplicate case spellings for keywords
+  // add extra duplicate aliases for SEO keywords and avoid clutter within tags
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
   const description = id_to_plaintext(id, "value")
@@ -192,7 +200,7 @@ async function generate_mdx_page_from_id(
   const output_mdx = `---
 ${title && title !== null && title !== undefined ? `title: "${title}"\n` : ""}${
     description && description !== null && description !== undefined
-      ? `description: "${description}"\n`
+      ? `description: "${description}"`
       : ""
   }
 tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
@@ -213,9 +221,7 @@ ${
     : `# [\`${title}\`](./) ${value_mdx ? `↔ ${value_mdx}` : ""}`
 }${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
-  }
-
-## References
+  }## References
 
 ${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}`
   return output_mdx
