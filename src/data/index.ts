@@ -515,6 +515,8 @@ process.stdout.write(
   `\n\n================================================\nCOMPLETE: JSON MAP scripts in ${uptime()} \n================================================\n\nNEXT STEP: MDX SSG Scripts \n================================================\n\n`
 )
 
+// console.dir(id_to_mdx("CkmLcDySECqmNE5bY", "value")) // '[`Syntax`](/docs/Computer-Science/General-Computing-Concepts/Syntax) to express search pattern to match [`Character`](/docs/JS/JS-Language/Primitive/string/Character). XLang support  '
+// console.dir(id_to_mdx("2yaT3eKi72d6NR99p", "value")) // undefined
 // console.dir(id_to_mdx("F46ayoC5CmYX3tLoq"))
 // console.dir(id_to_mdx("F3pfGC5FmxkDPhLeW")) // 'data structure with persistent versioning making copies of state to keep track of changes over time'
 // console.dir(id_to_mdx("F3XGCTu8hZW9Nc2QT")) // ''

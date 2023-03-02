@@ -114,6 +114,7 @@ export function id_to_mdx(
 ) {
   const doc = getDoc(id)
   if (!doc) return
+  if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
   if (!key_type || key_type === "key") {
     if (!config?.safe) return make_mdx(doc.key, "key")
     if (config.safe)
@@ -126,12 +127,14 @@ export function id_to_mdx(
 export function id_to_plaintext(id: string, key_type?: "key" | "value") {
   const doc = getDoc(id)
   if (!doc) return
+  if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
   if (!key_type || key_type === "key") return make_plaintext(doc.key)
   if (key_type === "value") return make_plaintext(doc.value!) // TODO: fix assertion here
 }
 export function id_to_tags(id: string) {
   const doc = getDoc(id)
   if (!doc) return
+  if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
   const key = make_plaintext(doc.key)
     ?.replace(/(?<!\\)"/g, "\\\\'") // MAKE EVERYTHING INSIDE SINGLE QUOTE
     .replace(/(?<!\\)'/g, "\\\\'")

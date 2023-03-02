@@ -384,17 +384,9 @@ export default {
 
 fs.outputFile("docs/intro.mdx", template_mdx)
 
-function RedirectMDX(parent_path: string) {
-  return `<Redirect to="${parent_path}" />
-  `
+function RedirectMDX(redirect_path: string) {
+  return `<Redirect to="${redirect_path}" />`
 }
-// function RedirectMDX(parent_path: string) {
-//   return `
-// export default function RedirectTo() {
-//   return <Redirect to="${parent_path}" />
-// }
-//   `
-// }
 
 function RedirectFCTSX_textdata(dirpath: string) {
   return `
@@ -477,6 +469,7 @@ async function loop_docs_mkdir(
       num_alias_redirect_mdx,
       "Alias Redirect MDX"
     )
+    const prev_slug = dirpath.split("/").slice(0, -1).pop()
 
     const debug_slug = false
     if (slug_key && debug_slug) slug_key_arr.push(slug_key)
@@ -501,12 +494,15 @@ async function loop_docs_mkdir(
         // console.log(alias_filepath)
         //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
         if (alias_slug.toLowerCase() !== parent_slug?.toLowerCase())
-          generate_id_redirect(alias_filepath, parent_path)
+          generate_id_redirect(alias_filepath, `/${parent_path}`)
+        //! Must add extra slash to ensure router path relative to root!
         //! Forgot to avoid duplicate alias slug overriting parent!
       })
     }
 
     let skip_next =
+      slug_key === prev_slug || //! skip duplicate with parent & avoid clash with actual alias
+      doc.type === 6 || //! Add "type 6" doc to skip list
       slug_key === "Aliases" || //! Defer Aliases logic to parent role during @function generate_mdx_page_from_id
       slug_key === "Color" ||
       slug_key === "Status" ||
