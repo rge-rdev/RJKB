@@ -12,6 +12,7 @@ import {
   getAliasIDs,
   getAliasSlugs,
   getParentId,
+  getRefIDs,
 } from "./src/data/"
 import {
   id_to_mdx,
@@ -86,7 +87,7 @@ async function generate_mdx_page_from_id(
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
 
-  const references = ["REF_ID1", "REF_ID2", "REF_ID3"]
+  const references = getRefIDs(id) || [] //["REF_ID1", "REF_ID2", "REF_ID3"]
 
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))

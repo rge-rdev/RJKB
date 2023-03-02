@@ -160,6 +160,39 @@ export const map_all_parents = new Map(
   })
 )
 
+type doc_ref = { q: string; f: "key" | "value" }[]
+
+const map_all_refs_init_time = uptime()
+export const map_all_refs_ID_array = new Map(
+  rem.docs.map((doc, i) => {
+    LOG_CLI_PROGRESS(
+      i,
+      docs_length,
+      "refs",
+      "Map ID to Ref ID Array",
+      "⏳ 🔎 ",
+      "✅ MAP",
+      map_all_refs_init_time
+    )
+
+    return [
+      doc._id,
+      doc.references?.map((x) => x.q), // {q: string, f: ("key" | "value")}[]
+    ]
+  })
+)
+
+export function getRefIDs(id: string) {
+  return map_all_refs_ID_array.get(id)
+}
+
+// export function id_to_refs(id: string) {
+//   const refs = map_all_refs_array.get(id)
+//   if (!refs) return
+//   const output: any = []
+//   const ref_id_array =
+// }
+
 /**
  * root_main_topics = root level doc for main topics - excludes orphans/"powerups"
  */
