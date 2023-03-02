@@ -133,7 +133,7 @@ async function generate_mdx_page_from_id(
       if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
       if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
       if (k && v) {
-        const k_path = get_path_from_id(id)
+        const k_path = get_path_from_id(map_id) //! map_id NOT id!!
         k = k_path && k.length ? `[\`${k}\`](${k_path})` : k
 
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
