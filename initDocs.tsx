@@ -29,22 +29,6 @@ let num_skipped = 0
 let num_links = 0
 let num_alias_redirect_mdx = 0
 
-// const entries = path_map.entries()
-// const array = [...entries]
-// const path_map_string = array.join("\n\n")
-// fs.outputFile("test/paths_map.mdx", path_map_string)
-
-// console.log("this starts before Docusaurus!")
-
-// generate root dirs for each main topic (root_main_topics) map to docs/_TOPIC
-// console.log("map size = ", map_size)
-
-// const main_root_filepaths = root_main_topic_ids.map((id) => {
-//   const doc_slug = id_to_key_slug(id)
-
-//   return `docs/${doc_slug}/${doc_slug}.mdx`
-// })
-
 /**
  * recursive dir & md docs init loop
  *
@@ -59,7 +43,11 @@ let num_alias_redirect_mdx = 0
  * @param id
  * @returns
  */
-async function generate_mdx_page_from_id(id: string, slug_key: string) {
+async function generate_mdx_page_from_id(
+  id: string,
+  slug_key: string,
+  filepath: string
+) {
   // const key_mdx = id_to_mdx(id, "key")
   const title = id_to_plaintext(id)?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
@@ -99,11 +87,7 @@ async function generate_mdx_page_from_id(id: string, slug_key: string) {
     .replace(/\\/g, `&#92;`)
 
   const references = ["REF_ID1", "REF_ID2", "REF_ID3"]
-  // const k = false
-  // const v = false
-  // const k_code = false
-  // const k_newLine = false
-  // const v_code = false
+
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
     let k = id_to_mdx(id, "key", { safe: true })
@@ -113,14 +97,15 @@ async function generate_mdx_page_from_id(id: string, slug_key: string) {
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
     const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-    const k_newLine = k?.match(/[\\\n]+/g)?.length
-    const v_newLine = v?.match(/[\\\n]+/g)?.length
+    const k_newLine = k?.match(/(\\n)+/g)?.length
+    const v_newLine = v?.match(/(\\n)+/g)?.length
 
     const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
     const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
 
-    if (!k_code && (k_newLine || k_illegal)) {
+    // if (!k_code && (k_newLine || k_illegal)) {
+    if (!k_code && k_illegal) {
       k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
     const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
@@ -153,6 +138,7 @@ alias IDs: [${alias_ids.join(", ")}]
 aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${references.join(", ")}]
 id: ${id}
+filepath: ${filepath}
 ---
 
 ${
@@ -474,7 +460,10 @@ async function loop_docs_mkdir(
     if (!skip_next && !skip && slug_key && !title_has_line_breaks)
       try {
         await fs
-          .outputFile(filepath, await generate_mdx_page_from_id(id, slug_key))
+          .outputFile(
+            filepath,
+            await generate_mdx_page_from_id(id, slug_key, filepath)
+          )
           .then(() => {
             // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
             // write_to_md(filepath, )
@@ -522,7 +511,10 @@ const init_mdx_map_time = uptime()
     if (!doc_slug) return
     try {
       await fs
-        .outputFile(filepath, await generate_mdx_page_from_id(id, doc_slug))
+        .outputFile(
+          filepath,
+          await generate_mdx_page_from_id(id, doc_slug, filepath)
+        )
         .then(() => {
           num += 1
 

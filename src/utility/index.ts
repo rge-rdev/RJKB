@@ -114,7 +114,12 @@ export function id_to_mdx(
 ) {
   const doc = getDoc(id)
   if (!doc) return
-  if (!key_type || key_type === "key") return make_mdx(doc.key, "key")
+  if (!key_type || key_type === "key") {
+    if (!config?.safe) return make_mdx(doc.key, "key")
+    if (config.safe)
+      return make_mdx(doc.key, "key").replace(/(<[A-z_]*>)/g, "`$1`")
+    //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
+  }
   if (key_type === "value") if (!doc.value) return
   return make_mdx(doc.value!, "value assertion broke everything!") // TODO: fix assertion here
 }
@@ -505,8 +510,12 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       }
       //`files/`
       if (el["i"] === "i") {
-        //!
-        output_str += `\n![Image](${(el["url"] as string).replace(
+        //! w/o metadata can't think of a better alt name than simply "image"
+        const p = el["percent"] / 100
+        const w = el["width"] * p
+        const h = el["height"] * p
+        // TODO: use w & h with ideal-image
+        output_str += `\n![image](${(el["url"] as string).replace(
           `%LOCAL_FILE%`,
           `@site/static/files/`
         )})\n`
