@@ -87,7 +87,37 @@ async function generate_mdx_page_from_id(
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
 
-  const references = getRefIDs(id) || [] //["REF_ID1", "REF_ID2", "REF_ID3"]
+  let ref_ids = getRefIDs(id) || [] //["REF_ID1", "REF_ID2", "REF_ID3"]
+  const references = ref_ids
+    .map((id) => {
+      let k = id_to_mdx(id, "key", { safe: true })
+      let v = id_to_mdx(id, "value", { safe: true })
+
+      const k_code = k?.match(/^(\`\`\`)/gm)?.length
+      const v_code = v?.match(/^(\`\`\`)/gm)?.length
+
+      const k_newLine = k?.match(/(\\n)+/g)?.length
+      const v_newLine = v?.match(/(\\n)+/g)?.length
+
+      const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
+      const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
+
+      const k_img = k?.match(/.*@site\/static\/files\//gm)?.length // not working?
+
+      if (!k_code && (k_newLine || k_illegal)) {
+        k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+      }
+
+      if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
+      if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
+      if (k && v)
+        return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
+          v_code || v_newLine ? "" : ""
+        }${v}\n\n`
+      if (k && !v) return `${k_code || k_newLine || k_img ? "" : ""}${k}\n\n`
+      if (!k && v) return `\n\n${v}`
+    })
+    .filter((str) => str !== undefined)
 
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
@@ -143,9 +173,9 @@ tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
   }
 alias IDs: [${alias_ids.join(", ")}]
 aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
-references: [${references.join(", ")}]
+references: [${ref_ids.join(", ")}]
 id: ${id}
-filepath: ${filepath}
+filepath: "${filepath}"
 ---
 
 ${

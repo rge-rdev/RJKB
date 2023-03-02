@@ -485,7 +485,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           const path = get_path_from_id(alias_id)
           if (!path) return ""
-          output_str += `[${aliasKey}](${path})`
+          output_str += `[\`${aliasKey}\`](${path})`
           return output_str // exit early once alias found
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId

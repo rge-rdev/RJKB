@@ -220,10 +220,14 @@ export const root_main_topic_ids = root_main_topics.map((doc) => doc._id)
  * @param id UID for doc in JSON DB
  * @returns doc object
  */
-
+let num_docs_not_found = 0
 export function getDoc(id: string) {
-  if (!map.get(id)) return console.log(`ID: ${id} could not be found!`)
-  return map.get(id)
+  const doc = map.get(id)
+  if (!doc) {
+    num_docs_not_found += 1
+    return //console.log(`ID: ${id} could not be found! ${num_docs_not_found}`)
+  }
+  return doc
 }
 // added overload to fix type error on return type not being possibly both string and string[] - which prevented string chaining methods
 export function get_doc_plaintext(
