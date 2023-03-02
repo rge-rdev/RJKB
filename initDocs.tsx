@@ -385,7 +385,10 @@ export default {
 fs.outputFile("docs/intro.mdx", template_mdx)
 
 function RedirectMDX(redirect_path: string) {
-  return `<Redirect to="${redirect_path}" />`
+  return `---
+unlisted: true
+---
+<Redirect to="${redirect_path}" />`
 }
 
 function RedirectFCTSX_textdata(dirpath: string) {

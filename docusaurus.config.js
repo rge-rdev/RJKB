@@ -137,8 +137,9 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           path: "blog",
@@ -176,9 +177,9 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       colorMode: {
-        defaultMode: "light",
+        defaultMode: "dark",
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
       /*
       announcementBar: {
