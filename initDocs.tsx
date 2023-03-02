@@ -86,12 +86,25 @@ async function generate_mdx_page_from_id(
   const description = id_to_plaintext(id, "value")
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
+  const title_match_ref = `[\`${title}\`](`
 
-  let ref_ids = getRefIDs(id) || [] //["REF_ID1", "REF_ID2", "REF_ID3"]
+  let ref_ids = getRefIDs(id) || [] //["PLACEHOLDER REF_ID1", "REF_ID2_FOR", "REF_ID3_DEBUG"]
   const references = ref_ids
-    .map((id) => {
-      let k = id_to_mdx(id, "key", { safe: true })
-      let v = id_to_mdx(id, "value", { safe: true })
+    .map((map_id) => {
+      let k = id_to_mdx(map_id, "key", { safe: true })?.replace(
+        title_match_ref,
+        `[<strong><em><ins>${title_match_ref.slice(
+          1,
+          -2
+        )}</ins></em></strong>](`
+      )
+      let v = id_to_mdx(map_id, "value", { safe: true })?.replace(
+        title_match_ref,
+        `[<strong><em><ins>${title_match_ref.slice(
+          1,
+          -2
+        )}</ins></em></strong>](`
+      )
 
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
