@@ -13,6 +13,7 @@ import {
   getAliasSlugs,
   getParentId,
   getRefIDs,
+  get_path_from_id,
 } from "./src/data/"
 import {
   id_to_mdx,
@@ -132,10 +133,16 @@ async function generate_mdx_page_from_id(
     })
     .filter((str) => str !== undefined)
 
+  //TODO fix identical child skip check
+  // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
     let k = id_to_mdx(id, "key", { safe: true })
     let v = id_to_mdx(id, "value", { safe: true })
+    // const k_link_description = k?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
+    let skip_k = k?.length === 0 //|| k_link_description === title_mdx
+
+    const k_path = get_path_from_id(id)
 
     //! max sure to check this doesn't exist on other
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
@@ -151,6 +158,7 @@ async function generate_mdx_page_from_id(
     // const k_img = k?.match(/@site\/static\/files/gm)?.length
     // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
+    k = k_path && !skip_k ? `[\`${k}\`](${k_path})` : k
 
     if (!k_code && (k_newLine || k_illegal)) {
       // if (!k_code && k_illegal) {
