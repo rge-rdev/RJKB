@@ -63,6 +63,7 @@ async function generate_mdx_page_from_id(id: string, slug_key: string) {
   // const key_mdx = id_to_mdx(id, "key")
   const title = id_to_plaintext(id)?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
+  // const value_mdx = "debug if value_mdx is breaking"
   const value_mdx = id_to_mdx(id, "value")
     ?.replace(/"/g, `'`)
     ?.replace(/(?<!```.*)^import /gms, "\\`import\\` ")
@@ -98,8 +99,13 @@ async function generate_mdx_page_from_id(id: string, slug_key: string) {
     .replace(/\\/g, `&#92;`)
 
   const references = ["REF_ID1", "REF_ID2", "REF_ID3"]
+  // const k = false
+  // const v = false
+  // const k_code = false
+  // const k_newLine = false
+  // const v_code = false
   const child_text_array = getChildren(id)?.map((id) => {
-    // const k = _.unescape(id_to_mdx(id, "key"))
+    //   // const k = _.unescape(id_to_mdx(id, "key"))
     const k = id_to_mdx(id, "key", { safe: true })
     const v = id_to_mdx(id, "value", { safe: true })
 
@@ -108,7 +114,6 @@ async function generate_mdx_page_from_id(id: string, slug_key: string) {
 
     const k_newLine = k?.match(/[\\\n]+/g)
     const v_newLine = v?.match(/[\\\n]+/g)
-
     if (k && v)
       return `${k_code || k_newLine ? "" : "## "}${k}\n\n${
         v_code ? "" : "## "

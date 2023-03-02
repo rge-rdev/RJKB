@@ -58,18 +58,7 @@ const config = {
     RJ_WEBPACK_PLUGIN,
     RJ_TAILWIND_PLUGIN,
     "docusaurus-plugin-sass",
-    [
-      "ideal-image",
-      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
-      ({
-        quality: 70,
-        max: 1030,
-        min: 640,
-        steps: 2,
-        // Use false to debug, but it incurs huge perf costs
-        disableInDev: true,
-      }),
-    ],
+
     // "plugin-image-zoom",
   ],
   title: "RJ KB",

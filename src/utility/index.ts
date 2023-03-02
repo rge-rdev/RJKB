@@ -69,7 +69,7 @@ export function make_str(input: RemData[] | []): string {
   return output_arr
 }
 
-export function id_to_mdx(
+export function id_to_mdx_BROKEN(
   id: string,
   key_type?: "key" | "value",
   config?: { safe: true }
@@ -78,6 +78,7 @@ export function id_to_mdx(
   if (!doc) return
   const output = make_mdx(doc[key_type || "key"]!)
 
+  return output
   if (!config) return output //! UNSAFE for mdx-loader & may cause docusaurus to go extinct! 🐱‍🐉😭
   if (!output) return
   const output_startsAsCodeblock = Boolean(
@@ -96,7 +97,7 @@ export function id_to_mdx(
     output.match(/\<[A-z{}[]= 1-9]*\>/)?.length
   )
   if (
-    config.safe &&
+    config?.safe &&
     output_startsIllegalJSKeywords &&
     !output_startsAsCodeblock
   ) {
@@ -106,11 +107,16 @@ export function id_to_mdx(
     // single quote escape for single liners with import/export JS code snippet
   }
 }
-export function id_to_mdx_old(id: string, key_type?: "key" | "value") {
+export function id_to_mdx(
+  id: string,
+  key_type?: "key" | "value",
+  config?: { safe: true }
+) {
   const doc = getDoc(id)
   if (!doc) return
-  if (!key_type || key_type === "key") return make_mdx(doc.key)
-  if (key_type === "value") return make_mdx(doc.value!) // TODO: fix assertion here
+  if (!key_type || key_type === "key") return make_mdx(doc.key, "key")
+  if (key_type === "value") if (!doc.value) return
+  return make_mdx(doc.value!, "value assertion broke everything!") // TODO: fix assertion here
 }
 export function id_to_plaintext(id: string, key_type?: "key" | "value") {
   const doc = getDoc(id)
@@ -187,11 +193,15 @@ export function id_to_tags(id: string) {
 
 /**MDX version of make_str
  *
- * @param input aray of remData_objects to map over and
+ * @param input array of remData_objects to map over and
  * @returns array of
  */
 
-export function make_mdx(input: RemData[] | []): string {
+export function make_mdx(input: RemData[] | [], id?: string): string {
+  if (!Array.isArray(input)) {
+    console.log("BROKEN!!", `${id}`)
+    return "__BROKEN__"
+  }
   let output_arr = input?.map((el: RemData) => obj_to_mdx(el))
   if (Array.isArray(output_arr)) {
     const output_str = output_arr.join("")
@@ -454,12 +464,21 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           // const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
           const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
           const alias_id = el["_id"]
-          const alias_mdx = make_mdx(alias_id)
-          output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
+          const alias_doc = getDoc(alias_id)
+          const alias_doc_key = alias_doc?.key
+          const alias_mdx = alias_doc_key
+            ? make_mdx(alias_doc_key, alias_id)
+            : ""
+          // const alias_mdx = make_mdx(alias_id) //!! THIS WAS THE BREAKING BUG!
+          // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
+          const path = get_path_from_id(el["_id"])
+          if (!path) return ""
+          output_str += `[${aliasKey}](${path})`
+          return output_str // exit early once alias found
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId
         }
-        if (el["_id"] === "2n8Gw7PvXGPcFQm7i") output_str += "__Aliases"
+        if (el["_id"] === "2n8Gw7PvXGPcFQm7i") output_str += "" // "__Aliases"
         // if (!el["textOfDeletedRem"]) {
         if (el["_id"] !== "2n8Gw7PvXGPcFQm7i") {
           const find_doc = map.get(el["_id"]) // return doc obj for link

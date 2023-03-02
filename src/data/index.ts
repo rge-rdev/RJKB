@@ -5,6 +5,7 @@ import {
   make_plaintext,
   LOG_CLI_PROGRESS,
   id_to_plaintext,
+  id_to_mdx,
 } from "../utility"
 import { uptime } from "process"
 
@@ -268,7 +269,7 @@ export function getParentId(id?: string) {
   return parent
 }
 
-/**Recursive func to get ID_STTRING[] from SINGLE ID string
+/**Recursive func to get ID_STRING[] from SINGLE ID string
  * will UNSHIFT parent ID onto string[] while one exists
  * //BAD IDEA TO PUSH from 0 leaf to end node
  *
@@ -435,7 +436,7 @@ function loop_child_to_make_sure_path_maps_set_up_first(
     // Add push_alias_to_parent step to map out IDs to aliases
     if (slug_key === "Aliases") push_alias_to_parent(id)
 
-    // FUCK - dont' forget the RECURSION layer!!
+    // FUCK - don't forget the RECURSION layer!!
     const children = getChildren(id)
     if (children)
       loop_child_to_make_sure_path_maps_set_up_first(dirpath, children)
@@ -474,3 +475,18 @@ function push_alias_to_parent(id: string) {
 process.stdout.write(
   `\n\n================================================\nCOMPLETE: JSON MAP scripts in ${uptime()} \n================================================\n\nNEXT STEP: MDX SSG Scripts \n================================================\n\n`
 )
+
+// console.dir(id_to_mdx("F3pfGC5FmxkDPhLeW"))
+// console.dir(id_to_mdx("F3XGCTu8hZW9Nc2QT"))
+// console.dir(id_to_mdx("HWLTjZrhernsLocy7"))
+// console.dir(id_to_mdx("5jxvqtuiTvhdhxys7"))
+// console.dir(id_to_mdx("65wxDaND8qaAd8G4g"))
+
+// process.exit()
+
+// id_to_key_slug("F3pfGC5FmxkDPhLeW") // data structure with persistent versioning making copies of state to keep track of changes over time
+// id_to_key_slug("F3XGCTu8hZW9Nc2QT") // UR
+// id_to_key_slug("HWLTjZrhernsLocy7") //JS
+// id_to_key_slug("5jxvqtuiTvhdhxys7") // AI/ML
+// getDocKey("65wxDaND8qaAd8G4g") // yarn add PKG@latest
+// id_to_key_slug("65wxDaND8qaAd8G4g") // yarn add PKG@latest
