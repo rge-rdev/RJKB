@@ -60,7 +60,10 @@ async function generate_mdx_page_from_id(
   const value_mdx_code = value_mdx?.match(
     /^([ ]*export |[ ]*import )/gm
   )?.length
-  if (value_mdx_newLine && value_mdx_code)
+  const value_mdx_link = value_mdx?.match(
+    /(]\((\/docs|\.)\/[A-z-\/]*)\)/gm
+  )?.length
+  if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
   const title_safe = slug_key.replace(/-+/g, " ")
@@ -119,6 +122,9 @@ async function generate_mdx_page_from_id(
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
+      // const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
+      const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
+
       const k_newLine = k?.match(/(\\n)+/g)?.length
       const v_newLine = v?.match(/(\\n)+/g)?.length
 
@@ -127,16 +133,24 @@ async function generate_mdx_page_from_id(
 
       const k_img = k?.match(/.*@site\/static\/files\//gm)?.length // not working?
 
-      if (!k_code && (k_newLine || k_illegal)) {
+      if (
+        !k_code &&
+        (k_newLine || k_illegal) &&
+        !k_link &&
+        typeof k?.trim()?.length === "number" &&
+        k?.trim()?.length > 20
+      ) {
         k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
       }
 
       if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
-      if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
+      v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
       if (k && v) {
         const k_path = get_path_from_id(map_id) //! map_id NOT id!!
-        if (k[0] !== "`" && k[k.length - 1] !== "`") k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
-        k = k_path && k.length ? `[${k}](${k_path})` : k
+        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link)
+          k = `<code>${k}</code> ` //!prevent ``` being accidentally created inline - which breaks mdx!
+        k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+        k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
 
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
           v_code || v_newLine ? "" : ""
@@ -161,6 +175,9 @@ async function generate_mdx_page_from_id(
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
     const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
+    const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
+    const v_link = v?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
+
     // k = k?.replace(/(?<=[0-9A-z-_ ]+)(\`\`\`)/, "```")
     // k = k?.replace(/^([A-z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
 
@@ -178,20 +195,25 @@ async function generate_mdx_page_from_id(
     const k_path = get_path_from_id(id)
     const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
 
-    if (!k_code && (k_newLine || k_illegal) && !k_img) {
+    if (!k_code && (k_newLine || k_illegal) && !k_img && !k_link) {
       // if (!k_code && k_illegal) {
       k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
     // const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
 
     // if (k_illegal_startOnly) k?.replace(/^([ ]*export |[ ]*import)/, "NULL")
-    if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
-    if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
+    if (!v_code && (v_newLine || v_illegal) && !v_link)
+      v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
+    // if (v_code && v_illegal)
+    v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+
+    k = k?.replace(/^(export |import )/gm, "<code>$1</code> ")
     // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
     if (k && v && !skip_k) {
       // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
-      k = k_without_code ? `<code>${k}</code>` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
-      k = k_path ? `[${k}](${k_path})` : k
+      k =
+        k_without_code && !k_link ? `<code>${k.replace(/\`/g, "")}</code> ` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
+      k = k_path && !k_link ? `[${k}](${k_path})` : k
 
       return `${
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
@@ -201,8 +223,8 @@ async function generate_mdx_page_from_id(
     }
     const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
     if (k && !v && !skip_k) {
-      return !recheck_code
-        ? `[<code>${k}</code>](${k_path})\n\n`
+      return !recheck_code && !k_link
+        ? `[<code>${k.replace(/\`/g, "")}</code>](${k_path})\n\n`
         : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
     }
     if (!k && v) return `\n\n${v}`
