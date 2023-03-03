@@ -115,17 +115,24 @@ export function id_to_mdx(
   const doc = getDoc(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
+
+  //refactor regex here
+  // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
+  // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
+  const re_unsafe_html =
+    /(?<!\`)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
   if (!key_type || key_type === "key") {
-    if (!config?.safe) return make_mdx(doc.key, "key")
+    if (!config?.safe) return make_mdx(doc.key, id)
     if (config.safe)
-      return make_mdx(doc.key, "key").replace(
-        /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g,
-        "`$1`"
-      )
+      return make_mdx(doc.key, id).replace(re_unsafe_html, "`<$1>`")
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
   }
-  if (key_type === "value") if (!doc.value) return
-  return make_mdx(doc.value!, "value assertion broke everything!") // TODO: fix assertion here
+  if (key_type === "value") {
+    if (!doc.value) return
+    if (!config?.safe) return make_mdx(doc.value, id)
+    if (config.safe)
+      return make_mdx(doc.value, id).replace(re_unsafe_html, "`<$1>`")
+  } // TODO: fix assertion here
 }
 export function id_to_plaintext(id: string, key_type?: "key" | "value") {
   const doc = getDoc(id)
@@ -208,9 +215,12 @@ export function id_to_tags(id: string) {
  * @returns array of
  */
 
-export function make_mdx(input: RemData[] | [], id?: string): string {
+export function make_mdx(
+  input: RemData[] | [],
+  optional_id_to_debug?: string
+): string {
   if (!Array.isArray(input)) {
-    console.log("BROKEN!!", `${id}`)
+    console.log("BROKEN!!", `${optional_id_to_debug}`)
     return "__BROKEN__"
   }
   let output_arr = input?.map((el: RemData) => obj_to_mdx(el))
@@ -456,23 +466,33 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           el["text"] === "import"
         )
           force_q = true
-        // href found at el["qId"] = _id at crt.b.s
-        output_str += `${el["q"] || force_q ? "`" : ""}` // Ref Rem
-        output_str += `${el["b"] ? "<b>" : ""}` // bold
-        // output_str += `${el["b"] ? "**" : ""}`; // bold md
-        output_str += `${el["u"] ? "<u>" : ""}` // underline
-        output_str += `${el["l"] ? "_" : ""}` // mixing * with ** and _ and __ breaks things majorly?!
-        // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
-        //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
-        //! TODO: add function to remove <mark> from code snippets - but only do this when cloze/spoiler tags actually needed
-        // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
-        // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
-        output_str += `${el["text"]}`
-        // output_str += `${el["cId"] ? "</mark>" : ""}`
-        output_str += `${el["l"] ? "_" : ""}`
-        output_str += `${el["u"] ? "<u>" : ""}`
-        output_str += `${el["b"] ? "</b>" : ""}`
-        output_str += `${el["q"] || force_q ? "`" : ""}`
+        const raw_text: string = el["text"] ? el["text"] : ""
+        // const only_space = raw_text.match(/[^ \n\t]*/)
+        // if (/\S/.test(raw_text)) {
+        if (el["text"] && raw_text.trim()?.length) {
+          //! add prototype test to skip style wrap for blank space - mdx loader is breaking when multiple tags next to each other only wrapping whitespace !
+          // href found at el["qId"] = _id at crt.b.s
+          output_str += `${el["q"] || force_q ? "`" : ""}` // Ref Rem
+          output_str += `${el["b"] ? "**" : ""}` // bold
+          //! <b> messes up mdx-loader if used at start line and then use a mdx link directly after ?!
+          //! switch back to ** to avoid dealing with this - whitespace skip should prevent bugs from multiple ** appearing next to each other... hopefully
+          // output_str += `${el["b"] ? "**" : ""}`; // bold md
+          output_str += `${el["u"] ? "<u>" : ""}` // underline
+          output_str += `${el["l"] ? "_" : ""}` // mixing * with ** and _ and __ breaks things majorly?!
+          // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
+          //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
+          //! TODO: add function to remove <mark> from code snippets - but only do this when cloze/spoiler tags actually needed
+          // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
+          // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
+          output_str += `${el["text"]}`
+          // output_str += `${el["cId"] ? "</mark>" : ""}`
+          output_str += `${el["l"] ? "_" : ""}`
+          output_str += `${el["u"] ? "<u>" : ""}`
+          output_str += `${el["b"] ? "**" : ""}`
+          output_str += `${el["q"] || force_q ? "`" : ""}`
+        } else {
+          output_str += ""
+        }
       }
       if (el["i"] === "q") {
         if (el["aliasId"]) {
