@@ -41,6 +41,9 @@ let num_alias_redirect_mdx = 0
  *  ✅ fixed @function id_to_tags to .replace unescaped " & ' in middle of string
  *  ✅ fixed @function id_to_mdx with extra @param config.safe to refactor extra string - important to allow non-safe escaping since  I still need the raw unescaped JSX/code snippets to render elsewhere
  *
+ *  TODO: refactor duplicate regex transforms into helper //? although, admittedly it's easier keeping all the logic in one single place - and these regex patterns mostly don't apply elsewhere - maybe just refactor up a level && keep it function scope
+ *  TODO: run prettier format on transformed mdx after its created - OR while it's still a template string? !ONLY if it doesn't hurt perf
+ *
  * @param id
  * @returns
  */
@@ -49,8 +52,8 @@ async function generate_mdx_page_from_id(
   slug_key: string,
   filepath: string
 ) {
-  // const key_mdx = id_to_mdx(id, "key")
-  const title = id_to_plaintext(id)?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
+  const title = id_to_plaintext(id)?.replace(/"/g, `'`) //.replace(/\\/g, `&#92;`)
+  const title_safe = title?.replace(/\\/g, `\\\\`) || ""
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
   // const value_mdx = "debug if value_mdx is breaking"
   let value_mdx = id_to_mdx(id, "value", { safe: true })
@@ -65,7 +68,7 @@ async function generate_mdx_page_from_id(
   if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
-  const title_safe = slug_key.replace(/-+/g, " ")
+  // const title_safe = slug_key.replace(/-+/g, " ") // alternatively, infer YAML-safe title from slug //! BUT this loses \ in terms
   const hasTags = Boolean(id_to_tags(id)?.length)
   let init_tags = hasTags
     ? [id_to_tags(id) as string[], title_safe]
@@ -93,12 +96,12 @@ async function generate_mdx_page_from_id(
   // keep strings with identical characters but different cAsEs
 
   let keywords = _.uniq(
-    [title, ...tags, ...alias_slugs].filter(
+    [title_safe, ...tags, ...alias_slugs].filter(
       (s) => typeof s !== undefined && s && s.length > 0
     )
   )
-  // remove duplicate case spellings for keywords
-  // add extra duplicate aliases for SEO keywords and avoid clutter within tags
+  //! DON'T remove duplicate case spellings for keywords
+  //! KEEP extra duplicate aliases for SEO keywords BUT remove in tags to avoid visible clutter
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
   const description = id_to_plaintext(id, "value")
@@ -124,8 +127,8 @@ async function generate_mdx_page_from_id(
       // const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
       const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
 
-      const k_newLine = k?.match(/(\\n)+/g)?.length
-      const v_newLine = v?.match(/(\\n)+/g)?.length
+      const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
+      const v_newLine = v?.match(/(\n)+/g)?.length
 
       const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
       const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
@@ -197,16 +200,18 @@ async function generate_mdx_page_from_id(
       // if (!k_code && k_illegal) {
       k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
-    // const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
 
-    // if (k_illegal_startOnly) k?.replace(/^([ ]*export |[ ]*import)/, "NULL")
     if (!v_code && (v_newLine || v_illegal) && !v_link)
       v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
     // if (v_code && v_illegal)
     v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
 
-    k = k?.replace(/^(export |import )/gm, "<code>$1</code> ")
-    // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
+    //? TODO: make prettier ignore every single (long) regex line
+    // prettier-ignore
+    k = k?.trim().replace(/^((export(?= )|import(?= ))(( default function| function| async function| const| var| let)|(?= )))/, "<code>$1</code> ")
+    // prettier-ignore
+    v = v?.trim().replace(/^((export(?= )|import(?= ))(( default function| function| async function| const| var| let)|(?= )))/, "<code>$1</code> ")
+
     if (k && v && !skip_k) {
       // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
       k = k_without_code && !k_link ? `\`${k.replace(/\`/g, "")}\`` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
@@ -229,7 +234,11 @@ async function generate_mdx_page_from_id(
   })
 
   const output_mdx = `---
-${title && title !== null && title !== undefined ? `title: "${title}"\n` : ""}${
+${
+  title && title !== null && title !== undefined
+    ? `title: "${title_safe}"\n`
+    : ""
+}${
     description && description !== null && description !== undefined
       ? `description: "${description}"`
       : ""
@@ -278,6 +287,10 @@ ${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}`
  *
  * !ID over-rides sidebar route generation
  * Adding "UID" frontmatter attribute to track original JSON DB ID
+ *
+ * !IMPORTANT rules to avoid breaking YAML Front Matter
+ *  - AVOID unescaped \ inside YAML! - pass @const title_safe for YAML but keep unescaped @const title for content @
+ *
  */
 
 let num = 0
