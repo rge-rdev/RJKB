@@ -118,7 +118,10 @@ export function id_to_mdx(
   if (!key_type || key_type === "key") {
     if (!config?.safe) return make_mdx(doc.key, "key")
     if (config.safe)
-      return make_mdx(doc.key, "key").replace(/(<[A-z_]*>)/g, "`$1`")
+      return make_mdx(doc.key, "key").replace(
+        /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g,
+        "`$1`"
+      )
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
   }
   if (key_type === "value") if (!doc.value) return
@@ -422,8 +425,9 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
     if (el["i"]) {
       if (el["i"] === "o") {
         // "o" for Object | Outside Code?
+        // ${_.escape(el["text"])}\n
         output_str += `\n\`\`\`${resolve_lang_mdx(el["language"])}\n
-        ${_.escape(el["text"])}\n
+        ${el["text"]}\n
         \`\`\`\n`
       }
       if (el["i"] === "m") {
@@ -433,7 +437,8 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           output_str += `${el["i"] === "m" ? "`" : ""}` // Ref HYPERLINKS
           output_str += `${
             el["qId"]
-              ? `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
+              ? // ? `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
+                `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
               : ""
           }`
           output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
@@ -453,19 +458,20 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           force_q = true
         // href found at el["qId"] = _id at crt.b.s
         output_str += `${el["q"] || force_q ? "`" : ""}` // Ref Rem
-        output_str += `${el["b"] ? "**" : ""}` // bold
+        output_str += `${el["b"] ? "<b>" : ""}` // bold
         // output_str += `${el["b"] ? "**" : ""}`; // bold md
-        output_str += `${el["u"] ? "__" : ""}` // underline
-        output_str += `${el["l"] ? "*" : ""}`
+        output_str += `${el["u"] ? "<u>" : ""}` // underline
+        output_str += `${el["l"] ? "_" : ""}` // mixing * with ** and _ and __ breaks things majorly?!
         // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
         //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
         //! TODO: add function to remove <mark> from code snippets - but only do this when cloze/spoiler tags actually needed
         // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
-        output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
+        // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
+        output_str += `${el["text"]}`
         // output_str += `${el["cId"] ? "</mark>" : ""}`
-        output_str += `${el["l"] ? "*" : ""}`
-        output_str += `${el["u"] ? "__" : ""}`
-        output_str += `${el["b"] ? "**" : ""}`
+        output_str += `${el["l"] ? "_" : ""}`
+        output_str += `${el["u"] ? "<u>" : ""}`
+        output_str += `${el["b"] ? "</b>" : ""}`
         output_str += `${el["q"] || force_q ? "`" : ""}`
       }
       if (el["i"] === "q") {

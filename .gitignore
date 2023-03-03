@@ -19,7 +19,6 @@ src/pages/debug
 /build
 /docs
 /typesense
-/blog
 
 # Generated files
 .docusaurus

@@ -54,16 +54,23 @@ async function generate_mdx_page_from_id(
   const title = id_to_plaintext(id)?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
   // const value_mdx = "debug if value_mdx is breaking"
-  const value_mdx = id_to_mdx(id, "value")
-    ?.replace(/"/g, `'`)
-    ?.replace(/(?<!```.*)^import /gms, "\\`import\\` ")
-    ?.replace(
-      /(?<!```.*)^export default function /gms,
-      "\\`export default function\\` "
-    )
-    ?.replace(/(?<!```.*)^export const /gms, "\\`export const\\` ")
-    ?.replace(/(?<!```.*)^module/gms, "\\`module\\` ")
+  let value_mdx = id_to_mdx(id, "value", { safe: true })
 
+  const value_mdx_newLine = value_mdx?.match(/([\n])+/g)?.length
+  const value_mdx_code = value_mdx?.match(
+    /^([ ]*export |[ ]*import )/gm
+  )?.length
+  if (value_mdx_newLine && value_mdx_code)
+    value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
+
+  // ?.replace(/"/g, `'`)
+  // ?.replace(/(?<!```.*)^import /gms, "\\`import\\` ")
+  // ?.replace(
+  //   /(?<!```.*)^export default function /gms,
+  //   "\\`export default function\\` "
+  // )
+  // ?.replace(/(?<!```.*)^export const /gms, "\\`export const\\` ")
+  // ?.replace(/(?<!```.*)^module/gms, "\\`module\\` ")
   const title_safe = slug_key.replace(/-+/g, " ")
   const hasTags = Boolean(id_to_tags(id)?.length)
   let init_tags = hasTags
@@ -72,8 +79,14 @@ async function generate_mdx_page_from_id(
 
   const alias_ids = getAliasIDs(id) // return string[] | []
   const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0) // return string[] | []
+  //! use filepath to infer parent tags from path
+  const prev_slugs = filepath
+    .split("/")
+    .slice(1, -2)
+    .map((str) => str.replace(/-/g, " "))
   const tags = _.uniqWith(
     [
+      ...prev_slugs,
       ...alias_slugs,
       ...init_tags
         .concat(slug_key.replace(/-/g, " ")) // add de-slug key as safe title
@@ -102,17 +115,11 @@ async function generate_mdx_page_from_id(
     .map((map_id) => {
       let k = id_to_mdx(map_id, "key", { safe: true })?.replace(
         title_match_ref,
-        `[<strong><em><ins>${title_match_ref.slice(
-          1,
-          -2
-        )}</ins></em></strong>](`
+        `[**_${title_match_ref.slice(1, -2)}_**](`
       )
       let v = id_to_mdx(map_id, "value", { safe: true })?.replace(
         title_match_ref,
-        `[<strong><em><ins>${title_match_ref.slice(
-          1,
-          -2
-        )}</ins></em></strong>](`
+        `[**_${title_match_ref.slice(1, -2)}_**](`
       )
 
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
@@ -134,7 +141,8 @@ async function generate_mdx_page_from_id(
       if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
       if (k && v) {
         const k_path = get_path_from_id(map_id) //! map_id NOT id!!
-        k = k_path && k.length ? `[\`${k}\`](${k_path})` : k
+        if (k[0] !== "`" && k[k.length - 1] !== "`") k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
+        k = k_path && k.length ? `[${k}](${k_path})` : k
 
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
           v_code || v_newLine ? "" : ""
@@ -182,8 +190,8 @@ async function generate_mdx_page_from_id(
     // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
     if (k && v && !skip_k) {
       const k_path = get_path_from_id(id)
-
-      k = k_path ? `[\`${k}\`](${k_path})` : k
+      const k_without_code = k[0] !== "`" && k[k.length - 1] !== "`"
+      k = k_path && k_without_code ? `[\`${k}\`](${k_path})` : k
 
       return `${
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
@@ -218,7 +226,9 @@ filepath: "${filepath}"
 ${
   title_has_line_breaks
     ? `${title}${value_mdx ? `\n\n${value_mdx}` : ""}`
-    : `# [\`${title}\`](./) ${value_mdx ? `↔ ${value_mdx}` : ""}`
+    : `# [\`${title}\`](./) ${
+        value_mdx ? `${value_mdx_newLine ? "\n\n" : " ↔ "}${value_mdx}` : ""
+      }`
 }${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }## References
