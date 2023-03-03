@@ -445,7 +445,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         // "o" for Object | Outside Code?
         // ${_.escape(el["text"])}\n
         if (typeof el["text"] === "string") {
-          output_str += `\`\`\`${resolve_lang_mdx(el["language"])}\n${(
+          output_str += `\n\n\`\`\`${resolve_lang_mdx(el["language"])}\n${(
             el["text"] as string
           ).trim()}\n\`\`\`\n`
         }

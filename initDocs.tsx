@@ -75,16 +75,18 @@ async function generate_mdx_page_from_id(
   const prev_slugs = filepath
     .split("/")
     .slice(1, -2)
-    .map((str) => str.replace(/-/g, " "))
+    .map((str) => str.replace(/-/g, " ").trim())
   const tags = _.uniqWith(
     [
       ...prev_slugs,
       ...alias_slugs,
       ...init_tags
         .concat(slug_key.replace(/-/g, " ")) // add de-slug key as safe title
-        .filter((tag) => tag.length > 0),
+        .filter((tag) => tag.length > 0 && tag.length < 30),
+      //! Add max limit to avoid very long tags!
     ],
-    (a, b) => a.toString().toLowerCase() === b.toString().toLowerCase()
+    (a, b) =>
+      a.toString().toLowerCase().trim() === b.toString().toLowerCase().trim()
   )
   // keep strings with identical characters but different cAsEs
 
@@ -159,6 +161,9 @@ async function generate_mdx_page_from_id(
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
     const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
+    // k = k?.replace(/(?<=[0-9A-z-_ ]+)(\`\`\`)/, "```")
+    // k = k?.replace(/^([A-z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
+
     const k_newLine = k?.match(/(\n)+/g)?.length
     const v_newLine = v?.match(/(\n)+/g)?.length
 
@@ -175,7 +180,7 @@ async function generate_mdx_page_from_id(
 
     if (!k_code && (k_newLine || k_illegal) && !k_img) {
       // if (!k_code && k_illegal) {
-      k = `\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+      k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
     // const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
 
@@ -507,7 +512,7 @@ async function loop_docs_mkdir(
         //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
         if (
           alias_slug.toLowerCase() !== parent_slug?.toLowerCase() &&
-          alias_slug !== "index" //! Add skip to index alias here
+          alias_slug.toLowerCase() !== "index" //! Add skip to index alias here
         )
           generate_id_redirect(alias_filepath, `/${parent_path}`)
         //! Must add extra slash to ensure router path relative to root!
@@ -538,7 +543,7 @@ async function loop_docs_mkdir(
     }
     if (num === 13592) {
       fs.outputFile("test/debug_keywords.mdx", debug_keywords.join("\n"))
-      fs.outputFile("test/debug_Tags.mdx", debug_keywords.join("\n"))
+      fs.outputFile("test/debug_Tags.mdx", debug_tags.join("\n"))
     }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
     if (!skip_next && !skip && slug_key && !title_has_line_breaks)
