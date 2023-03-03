@@ -124,14 +124,22 @@ export function id_to_mdx(
   if (!key_type || key_type === "key") {
     if (!config?.safe) return make_mdx(doc.key, id)
     if (config.safe)
-      return make_mdx(doc.key, id).replace(re_unsafe_html, "`<$1>`")
+      return make_mdx(doc.key, id)
+        .replace(re_unsafe_html, "`<$1>`")
+        .replace(/`{2}/g, "`")
+        .replace(/\[`[ ]+/g, "[`")
+        .replace(/[ ]+`]/g, "`]")
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
   }
   if (key_type === "value") {
     if (!doc.value) return
     if (!config?.safe) return make_mdx(doc.value, id)
     if (config.safe)
-      return make_mdx(doc.value, id).replace(re_unsafe_html, "`<$1>`")
+      return make_mdx(doc.value, id)
+        .replace(re_unsafe_html, "`<$1>`")
+        .replace(/`{2}/g, "`")
+        .replace(/\[`[ ]+/g, "[`")
+        .replace(/[ ]+`]/g, "`]")
   } // TODO: fix assertion here
 }
 export function id_to_plaintext(id: string, key_type?: "key" | "value") {

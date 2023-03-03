@@ -191,7 +191,8 @@ async function generate_mdx_page_from_id(
     if (k && v && !skip_k) {
       const k_path = get_path_from_id(id)
       const k_without_code = k[0] !== "`" && k[k.length - 1] !== "`"
-      k = k_path && k_without_code ? `[\`${k}\`](${k_path})` : k
+      k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
+      k = k_path ? `[${k}](${k_path})` : k
 
       return `${
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
@@ -514,6 +515,7 @@ async function loop_docs_mkdir(
     }
 
     let skip_next =
+      (slug_key === "index" && prev_slug !== "index") || //! fix the docusaurus complaint about duplicate routes resulting from alias redirect named "index"
       slug_key === prev_slug || //! skip duplicate with parent & avoid clash with actual alias
       doc.type === 6 || //! Add "type 6" doc to skip list
       slug_key === "Aliases" || //! Defer Aliases logic to parent role during @function generate_mdx_page_from_id
