@@ -1,4 +1,3 @@
-// import { existsSync, mkdirSync } from "fs"
 import fs from "fs-extra"
 import { uptime } from "process"
 import {
@@ -147,8 +146,7 @@ async function generate_mdx_page_from_id(
       v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
       if (k && v) {
         const k_path = get_path_from_id(map_id) //! map_id NOT id!!
-        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link)
-          k = `<code>${k}</code> ` //!prevent ``` being accidentally created inline - which breaks mdx!
+        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link) k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
         k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
         k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
 
@@ -211,8 +209,7 @@ async function generate_mdx_page_from_id(
     // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
     if (k && v && !skip_k) {
       // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
-      k =
-        k_without_code && !k_link ? `<code>${k.replace(/\`/g, "")}</code> ` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
+      k = k_without_code && !k_link ? `\`${k.replace(/\`/g, "")}\`` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
       k = k_path && !k_link ? `[${k}](${k_path})` : k
 
       return `${
@@ -224,7 +221,7 @@ async function generate_mdx_page_from_id(
     const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
     if (k && !v && !skip_k) {
       return !recheck_code && !k_link
-        ? `[<code>${k.replace(/\`/g, "")}</code>](${k_path})\n\n`
+        ? `[\`${k.replace(/\`/g, "")}\`](${k_path})\n\n`
         : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
     }
     if (!k && v) return `\n\n${v}`
