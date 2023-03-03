@@ -126,7 +126,7 @@ export function id_to_mdx(
     if (config.safe)
       return make_mdx(doc.key, id)
         .replace(re_unsafe_html, "`<$1>`")
-        .replace(/`{2}/g, "`")
+        .replace(/(?<!`)\`{2}(?!`)/g, "`")
         .replace(/\[`[ ]+/g, "[`")
         .replace(/[ ]+`]/g, "`]")
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
@@ -137,7 +137,7 @@ export function id_to_mdx(
     if (config.safe)
       return make_mdx(doc.value, id)
         .replace(re_unsafe_html, "`<$1>`")
-        .replace(/`{2}/g, "`")
+        .replace(/(?<!`)\`{2}(?!`)/g, "`")
         .replace(/\[`[ ]+/g, "[`")
         .replace(/[ ]+`]/g, "`]")
   } // TODO: fix assertion here
@@ -444,9 +444,11 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
       if (el["i"] === "o") {
         // "o" for Object | Outside Code?
         // ${_.escape(el["text"])}\n
-        output_str += `\n\`\`\`${resolve_lang_mdx(el["language"])}\n
-        ${el["text"]}\n
-        \`\`\`\n`
+        if (typeof el["text"] === "string") {
+          output_str += `\`\`\`${resolve_lang_mdx(el["language"])}\n${(
+            el["text"] as string
+          ).trim()}\n\`\`\`\n`
+        }
       }
       if (el["i"] === "m") {
         // "m" for MarkDown?

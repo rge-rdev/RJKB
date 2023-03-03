@@ -63,14 +63,6 @@ async function generate_mdx_page_from_id(
   if (value_mdx_newLine && value_mdx_code)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
-  // ?.replace(/"/g, `'`)
-  // ?.replace(/(?<!```.*)^import /gms, "\\`import\\` ")
-  // ?.replace(
-  //   /(?<!```.*)^export default function /gms,
-  //   "\\`export default function\\` "
-  // )
-  // ?.replace(/(?<!```.*)^export const /gms, "\\`export const\\` ")
-  // ?.replace(/(?<!```.*)^module/gms, "\\`module\\` ")
   const title_safe = slug_key.replace(/-+/g, " ")
   const hasTags = Boolean(id_to_tags(id)?.length)
   let init_tags = hasTags
@@ -157,8 +149,8 @@ async function generate_mdx_page_from_id(
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
-    let k = id_to_mdx(id, "key", { safe: true })
-    let v = id_to_mdx(id, "value", { safe: true })
+    let k = id_to_mdx(id, "key", { safe: true })?.trim()
+    let v = id_to_mdx(id, "value", { safe: true })?.trim()
     // const k_link_description = k?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
     //|| k_link_description === title_mdx
@@ -167,8 +159,8 @@ async function generate_mdx_page_from_id(
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
     const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-    const k_newLine = k?.match(/(\\n)+/g)?.length
-    const v_newLine = v?.match(/(\\n)+/g)?.length
+    const k_newLine = k?.match(/(\n)+/g)?.length
+    const v_newLine = v?.match(/(\n)+/g)?.length
 
     const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
     const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
@@ -178,9 +170,12 @@ async function generate_mdx_page_from_id(
     // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
 
-    if (!k_code && (k_newLine || k_illegal)) {
+    const k_path = get_path_from_id(id)
+    const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
+
+    if (!k_code && (k_newLine || k_illegal) && !k_img) {
       // if (!k_code && k_illegal) {
-      k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+      k = `\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
     // const k_illegal_startOnly = k?.match(/^([ ]*export|[ ]*import)/)?.length
 
@@ -189,9 +184,8 @@ async function generate_mdx_page_from_id(
     if (v_code && v_illegal) v?.replace(/^(export |import )/gm, "__$1__")
     // v = `\\\`\\\`\\\`tsx\\\\n${v}\\\\n\\\`\\\`\\\`` //! escape ` inside template literal too!
     if (k && v && !skip_k) {
-      const k_path = get_path_from_id(id)
-      const k_without_code = k[0] !== "`" && k[k.length - 1] !== "`"
-      k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
+      // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
+      k = k_without_code ? `<code>${k}</code>` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
       k = k_path ? `[${k}](${k_path})` : k
 
       return `${
@@ -200,8 +194,12 @@ async function generate_mdx_page_from_id(
         v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
       }${v}\n\n`
     }
-    if (k && !v && !skip_k)
-      return `${k_code || k_newLine || k_img ? "" : "## "}${k}\n\n`
+    const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
+    if (k && !v && !skip_k) {
+      return !recheck_code
+        ? `[<code>${k}</code>](${k_path})\n\n`
+        : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
+    }
     if (!k && v) return `\n\n${v}`
     return ""
   })
@@ -507,7 +505,10 @@ async function loop_docs_mkdir(
         const alias_filepath = `${parent_path}/${alias_slug}.mdx`
         // console.log(alias_filepath)
         //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
-        if (alias_slug.toLowerCase() !== parent_slug?.toLowerCase())
+        if (
+          alias_slug.toLowerCase() !== parent_slug?.toLowerCase() &&
+          alias_slug !== "index" //! Add skip to index alias here
+        )
           generate_id_redirect(alias_filepath, `/${parent_path}`)
         //! Must add extra slash to ensure router path relative to root!
         //! Forgot to avoid duplicate alias slug overriting parent!
@@ -515,7 +516,7 @@ async function loop_docs_mkdir(
     }
 
     let skip_next =
-      (slug_key === "index" && prev_slug !== "index") || //! fix the docusaurus complaint about duplicate routes resulting from alias redirect named "index"
+      // (slug_key === "index" && prev_slug !== "index") || //! fix the docusaurus complaint about duplicate routes resulting from alias redirect named "index"
       slug_key === prev_slug || //! skip duplicate with parent & avoid clash with actual alias
       doc.type === 6 || //! Add "type 6" doc to skip list
       slug_key === "Aliases" || //! Defer Aliases logic to parent role during @function generate_mdx_page_from_id
