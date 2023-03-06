@@ -119,13 +119,25 @@ export function id_to_mdx(
   //refactor regex here
   // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
-  const re_unsafe_html =
-    /(?<!\`)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
+  const re_unsafe_jsx =
+    /(?<!\`)(?<=)([a-zA-z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
+  //! Add ([a-zA-z-_0-9\.]*) to match anything before angle bracket notation ie React.FC<ChildProps>
+
+  const re_unsafe_unicode = /\\x|\\u/
+  let key = make_mdx(doc.key, id)
+  if (key.match(re_unsafe_unicode)?.length) {
+    key = `<code>\\${key.slice(1, -1)}</code>`
+    //all unicode containing text is already wrapped in ` backticks
+    return key
+      .replace(/(?<!`)\`{2}(?!`)/g, "`")
+      .replace(/\[`[ ]+/g, "[`")
+      .replace(/[ ]+`]/g, "`]")
+  }
   if (!key_type || key_type === "key") {
-    if (!config?.safe) return make_mdx(doc.key, id)
+    if (!config?.safe) return key
     if (config.safe)
-      return make_mdx(doc.key, id)
-        .replace(re_unsafe_html, "`<$1>`")
+      return key
+        .replace(re_unsafe_jsx, "`<$1>`")
         .replace(/(?<!`)\`{2}(?!`)/g, "`")
         .replace(/\[`[ ]+/g, "[`")
         .replace(/[ ]+`]/g, "`]")
@@ -136,7 +148,7 @@ export function id_to_mdx(
     if (!config?.safe) return make_mdx(doc.value, id)
     if (config.safe)
       return make_mdx(doc.value, id)
-        .replace(re_unsafe_html, "`<$1>`")
+        .replace(re_unsafe_jsx, "`<$1>`")
         .replace(/(?<!`)\`{2}(?!`)/g, "`")
         .replace(/\[`[ ]+/g, "[`")
         .replace(/[ ]+`]/g, "`]")

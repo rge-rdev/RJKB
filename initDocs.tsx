@@ -52,7 +52,10 @@ async function generate_mdx_page_from_id(
   slug_key: string,
   filepath: string
 ) {
-  const title = id_to_plaintext(id)?.replace(/"/g, `'`) //.replace(/\\/g, `&#92;`)
+  let title = id_to_plaintext(id)?.replace(/"/g, `'`) //.replace(/\\/g, `&#92;`)
+  const title_illegal = title?.match(/\\(x|u)/)?.length
+  let title_mdx = title
+  if (title_illegal) title_mdx = `<code>\\${title_mdx}</code>`
   const title_safe = title?.replace(/\\/g, `\\\\`) || ""
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
   // const value_mdx = "debug if value_mdx is breaking"
@@ -149,9 +152,11 @@ async function generate_mdx_page_from_id(
 
       if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
       v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+      const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
       if (k && v) {
         const k_path = get_path_from_id(map_id) //! map_id NOT id!!
-        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link) k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
+        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)
+          k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
         k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
         k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
 
@@ -197,6 +202,8 @@ async function generate_mdx_page_from_id(
     // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
 
+    const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+
     const k_path = get_path_from_id(id)
     const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
 
@@ -218,7 +225,10 @@ async function generate_mdx_page_from_id(
 
     if (k && v && !skip_k) {
       // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
-      k = k_without_code && !k_link ? `\`${k.replace(/\`/g, "")}\`` : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
+      k =
+        k_without_code && !k_link && !k_inlineCode
+          ? `\`${k.replace(/\`/g, "")}\``
+          : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
       k = k_path && !k_link ? `[${k}](${k_path})` : k
 
       return `${
@@ -229,7 +239,7 @@ async function generate_mdx_page_from_id(
     }
     const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
     if (k && !v && !skip_k) {
-      return !recheck_code && !k_link && !k_img
+      return !recheck_code && !k_link && !k_img && !k_inlineCode
         ? `[\`${k.replace(/\`/g, "")}\`](${k_path})\n\n`
         : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
     }
@@ -263,7 +273,7 @@ route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"
 ${
   title_has_line_breaks
     ? `${title}${value_mdx ? `\n\n${value_mdx}` : ""}`
-    : `# [\`${title}\`](./) ${
+    : `# [${title_illegal ? title_mdx : `\`${title_mdx?.trim()}\``}](./) ${
         value_mdx ? `${value_mdx_newLine ? "\n\n" : " ↔ "}${value_mdx}` : ""
       }`
 }${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
