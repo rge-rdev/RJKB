@@ -268,7 +268,7 @@ export function id_to_key_slug(id: string) {
     ?.replace(/[?/\\@[\\^{}\]|`~:;,=+ ]+/g, "-")
     ?.replace(/[![\]"'*()<>]+/g, "")
     ?.replace(/-{2,}/g, "-")
-    ?.replace(/[^A-z0-9-]/g, "") // clear anything not approved
+    ?.replace(/[^a-zA-Z0-9-]/g, "") // clear anything not approved
   // ignore _ to allow for plaintext keys such as __proto__
   if (!text) return
   // console.log(text)

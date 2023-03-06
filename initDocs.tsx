@@ -63,7 +63,7 @@ async function generate_mdx_page_from_id(
     /^([ ]*export |[ ]*import )/gm
   )?.length
   const value_mdx_link = value_mdx?.match(
-    /(]\((\/docs|\.)\/[A-z-\/]*)\)/gm
+    /(]\((\/docs|\.)\/[a-zA-Z-\/]*)\)/gm
   )?.length
   if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
@@ -124,8 +124,8 @@ async function generate_mdx_page_from_id(
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-      // const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
-      const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
+      // const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+      const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
 
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
       const v_newLine = v?.match(/(\n)+/g)?.length
@@ -134,7 +134,7 @@ async function generate_mdx_page_from_id(
       const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
       const k_img = k?.match(
-        /((\!\[[A-z0-9_-]+]\(@site\/static\/(files|img)\/([A-z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@A-z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
       )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
 
       if (
@@ -165,12 +165,12 @@ async function generate_mdx_page_from_id(
     .filter((str) => str !== undefined)
 
   //TODO fix identical child skip check
-  // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
+  // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
     let k = id_to_mdx(id, "key", { safe: true })?.trim()
     let v = id_to_mdx(id, "value", { safe: true })?.trim()
-    // const k_link_description = k?.replace(/(?<=])\([A-z\\ -_/]+\)$/, "")
+    // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
     //|| k_link_description === title_mdx
 
@@ -178,11 +178,11 @@ async function generate_mdx_page_from_id(
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
     const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-    const k_link = k?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
-    const v_link = v?.match(/]\((\/docs|\.)\/([0-9A-z-\/]*)\)/gm)?.length
+    const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+    const v_link = v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
 
-    // k = k?.replace(/(?<=[0-9A-z-_ ]+)(\`\`\`)/, "```")
-    // k = k?.replace(/^([A-z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
+    // k = k?.replace(/(?<=[0-9a-zA-Z-_ ]+)(\`\`\`)/, "```")
+    // k = k?.replace(/^([a-zA-Z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
 
     const k_newLine = k?.match(/(\n)+/g)?.length
     const v_newLine = v?.match(/(\n)+/g)?.length
@@ -191,7 +191,7 @@ async function generate_mdx_page_from_id(
     const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
     const k_img = k?.match(
-      /((\!\[[A-z0-9_-]+]\(@site\/static\/(files|img)\/([A-z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@A-z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+      /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
     )?.length // not working?
     // const k_img = k?.match(/@site\/static\/files/gm)?.length
     // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
@@ -257,6 +257,7 @@ aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${ref_ids.join(", ")}]
 id: ${id}
 filepath: "${filepath}"
+route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"
 ---
 
 ${
