@@ -431,6 +431,8 @@ export function resolve_lang_mdx(lang: string) {
  *
  * Adding internal check to see if < > is used
  *
+ * ✅ Output <Image> ideal image instead of markdown image
+ *
  */
 
 // export const Aliases_UID = "2n8Gw7PvXGPcFQm7i"
@@ -554,10 +556,11 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
         const w = el["width"] * p
         const h = el["height"] * p
         // TODO: use w & h with ideal-image
-        output_str += `\n![image](${(el["url"] as string).replace(
-          `%LOCAL_FILE%`,
-          `@site/static/files/`
-        )})\n`
+        //prettier-ignore
+        const static_img_path = (el["url"] as string).replace(`%LOCAL_FILE%`,`@site/static/files/`)
+        //prettier-ignore
+        // output_str += `\n![image](${(el["url"] as string).replace(`%LOCAL_FILE%`,`@site/static/files/`)})\n`
+        output_str += `\n<Image img={require('${static_img_path}')} />\n`
       }
     }
   }

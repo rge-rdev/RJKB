@@ -133,7 +133,9 @@ async function generate_mdx_page_from_id(
       const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
       const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
-      const k_img = k?.match(/.*@site\/static\/files\//gm)?.length // not working?
+      const k_img = k?.match(
+        /((\!\[[A-z0-9_-]+]\(@site\/static\/(files|img)\/([A-z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@A-z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+      )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
 
       if (
         !k_code &&
@@ -188,7 +190,9 @@ async function generate_mdx_page_from_id(
     const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
     const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
-    const k_img = k?.match(/.*@site\/static\/files\//gm)?.length // not working?
+    const k_img = k?.match(
+      /((\!\[[A-z0-9_-]+]\(@site\/static\/(files|img)\/([A-z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@A-z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+    )?.length // not working?
     // const k_img = k?.match(/@site\/static\/files/gm)?.length
     // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
@@ -225,7 +229,7 @@ async function generate_mdx_page_from_id(
     }
     const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
     if (k && !v && !skip_k) {
-      return !recheck_code && !k_link
+      return !recheck_code && !k_link && !k_img
         ? `[\`${k.replace(/\`/g, "")}\`](${k_path})\n\n`
         : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
     }
