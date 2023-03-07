@@ -103,6 +103,7 @@ async function generate_mdx_page_from_id(
         .replace(/\\u005c\\u2028/gi, "")
         .replace(/(\\u005c)+/gi, "")
         .replace(/\//g, " ")
+        .replace(/-/g, " ")
         .trim() ===
       b
         .toString()
@@ -110,6 +111,7 @@ async function generate_mdx_page_from_id(
         .replace(/\\u005c\\u2028/gi, "")
         .replace(/(\\u005c)+/gi, "")
         .replace(/\//g, " ")
+        .replace(/-/g, " ")
         .trim()
     //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
     //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!

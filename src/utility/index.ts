@@ -133,8 +133,11 @@ export function id_to_mdx(
   // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
   const re_unsafe_jsx =
-    /(?<!\`)(?<=)([a-zA-z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
+    /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions
+  // /(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
+  // /(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
   //! Add ([a-zA-z-_0-9\.]*) to match anything before angle bracket notation ie React.FC<ChildProps>
+  //! TYPO a-zA-z WRONG should be a-zA-Z
 
   const re_unsafe_unicode = /\\x|\\u/
   let key = make_mdx(doc.key, id)
@@ -144,9 +147,9 @@ export function id_to_mdx(
     //all unicode containing text is already wrapped in ` backticks
     //! wrapping / backslash with span fixes mdx-loader parse fail
     return key
-      .replace(/(?<!`)\`{2}(?!`)/g, "`")
-      .replace(/\[`[ ]+/g, "[`")
-      .replace(/[ ]+`]/g, "`]")
+      .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup 2x backticks only
+      .replace(/\[`[ ]+/g, "[`") //trim whitespace aft opening backtick
+      .replace(/[ ]+`]/g, "`]") // trim whitespace bef closing backtick
   }
   //! FIX codeblock title
   const has_multiple_codeblocks = /\`\`\`([a-z]+)\n(?=.*\`\`\`\n\n)/gs
@@ -176,14 +179,24 @@ export function id_to_mdx(
     }
   } else if (key.match(has_multiple_codeblocks)?.length === 2) {
     const re_text_between_codeblock = /(?<=\`\`\`\n\n)(.*)(?=\n\n\`\`\`[a-z]+)/
-    key.split(re_text_between_codeblock)
+    let text_between_codeblocks = key.match(re_text_between_codeblock)?.shift()
+    const middle_str_unsafe_jsx = text_between_codeblocks?.match(re_unsafe_jsx)
+    if (middle_str_unsafe_jsx) {
+      //@prettier-ignore
+      text_between_codeblocks = text_between_codeblocks?.replace(
+        re_unsafe_jsx,
+        "`$1`"
+      )
+      if (text_between_codeblocks)
+        key = key.replace(re_text_between_codeblock, text_between_codeblocks)
+    }
   }
 
   if (!key_type || key_type === "key") {
     if (!config?.safe) return key
     if (config.safe)
       return key
-        .replace(re_unsafe_jsx, "`<$1>`") //
+        .replace(re_unsafe_jsx, "`$1`") //
         .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup backticks
         .replace(/\[`[ ]+/g, "[`") // trim aft backtick
         .replace(/[ ]+`]/g, "`]") // trim bef backtick
@@ -192,12 +205,14 @@ export function id_to_mdx(
   if (key_type === "value") {
     if (!doc.value) return
     if (!config?.safe) return make_mdx(doc.value, id)
-    if (config.safe)
-      return make_mdx(doc.value, id)
-        .replace(re_unsafe_jsx, "`<$1>`")
+    if (config.safe) {
+      let value = make_mdx(doc.value, id)
+      return value
+        .replace(re_unsafe_jsx, "`$1`")
         .replace(/(?<!`)\`{2}(?!`)/g, "`")
         .replace(/\[`[ ]+/g, "[`")
         .replace(/[ ]+`]/g, "`]")
+    }
   } // TODO: fix assertion here
 }
 export function id_to_plaintext(id: string, key_type?: "key" | "value") {
