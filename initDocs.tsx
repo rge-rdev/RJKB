@@ -30,6 +30,8 @@ let num_skipped = 0
 let num_links = 0
 let num_alias_redirect_mdx = 0
 
+const __DOC_LENGTH = 8457
+
 /**
  * recursive dir & md docs init loop
  *
@@ -53,10 +55,13 @@ async function generate_mdx_page_from_id(
   filepath: string
 ) {
   let title = id_to_plaintext(id)?.replace(/"/g, `'`) //.replace(/\\/g, `&#92;`)
-  const title_illegal = title?.match(/\\(x|u)/)?.length
+  const title_illegal_unicode = title?.match(/\\(x|u)/)?.length
   let title_mdx = title
-  if (title_illegal) title_mdx = `<code>\\${title_mdx}</code>`
-  const title_safe = title?.replace(/\\/g, `\\\\`) || ""
+  if (title_illegal_unicode)
+    title_mdx = `<code>\u005C\u2028\${title_mdx}</code>`
+  const title_yaml = title?.replace(/\\/g, "\\u005C\\u2028").trim() || "" //(/\\/g, `\\\\`) || ""
+  // alternatively, infer YAML-safe title from slug //! BUT this loses \ in terms
+  //? why is \\u005c\\u005c (which appears as \u005c\u005c in mdx) OK but NOT \\ (in MDX)?! Makes no sense - must be some quirk with mdx-loader/docusaurus parser
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
   // const value_mdx = "debug if value_mdx is breaking"
   let value_mdx = id_to_mdx(id, "value", { safe: true })
@@ -71,11 +76,10 @@ async function generate_mdx_page_from_id(
   if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
-  // const title_safe = slug_key.replace(/-+/g, " ") // alternatively, infer YAML-safe title from slug //! BUT this loses \ in terms
   const hasTags = Boolean(id_to_tags(id)?.length)
   let init_tags = hasTags
-    ? [id_to_tags(id) as string[], title_safe]
-    : [title_safe]
+    ? [...(id_to_tags(id) as string[]), title_yaml]
+    : [title_yaml]
 
   const alias_ids = getAliasIDs(id) // return string[] | []
   const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0) // return string[] | []
@@ -88,18 +92,32 @@ async function generate_mdx_page_from_id(
     [
       ...prev_slugs,
       ...alias_slugs,
-      ...init_tags
-        .concat(slug_key.replace(/-/g, " ")) // add de-slug key as safe title
-        .filter((tag) => tag.length > 0 && tag.length < 30),
+      ...init_tags, //.concat(slug_key.replace(/-/g, " ")), // add de-slug key as safe title
+      // .filter((tag) => tag.length > 0 && tag.length < 30),
       //! Add max limit to avoid very long tags!
-    ],
+    ].filter((tag) => tag.length < 30),
     (a, b) =>
-      a.toString().toLowerCase().trim() === b.toString().toLowerCase().trim()
+      a
+        .toString()
+        .toLowerCase()
+        .replace(/\\u005c\\u2028/gi, "")
+        .replace(/(\\u005c)+/gi, "")
+        .replace(/\//g, " ")
+        .trim() ===
+      b
+        .toString()
+        .toLowerCase()
+        .replace(/\\u005c\\u2028/gi, "")
+        .replace(/(\\u005c)+/gi, "")
+        .replace(/\//g, " ")
+        .trim()
+    //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
+    //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
   )
   // keep strings with identical characters but different cAsEs
 
   let keywords = _.uniq(
-    [title_safe, ...tags, ...alias_slugs].filter(
+    ["", ...tags, ...alias_slugs].filter(
       (s) => typeof s !== undefined && s && s.length > 0
     )
   )
@@ -111,6 +129,12 @@ async function generate_mdx_page_from_id(
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
   const title_match_ref = `[\`${title}\`](`
+
+  // colocate regex helper functions here
+  // function wrap_mdx_link(str: string){
+  //   str = str.replace(/\`/g, "") //omit
+  //   return $str
+  // }
 
   let ref_ids = getRefIDs(id) || [] //["PLACEHOLDER REF_ID1", "REF_ID2_FOR", "REF_ID3_DEBUG"]
   const references = ref_ids
@@ -249,9 +273,7 @@ async function generate_mdx_page_from_id(
 
   const output_mdx = `---
 ${
-  title && title !== null && title !== undefined
-    ? `title: "${title_safe}"\n`
-    : ""
+  title && title !== null && title !== undefined ? `title: "${title_yaml}"` : ""
 }${
     description && description !== null && description !== undefined
       ? `description: "${description}"`
@@ -266,14 +288,16 @@ alias IDs: [${alias_ids.join(", ")}]
 aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${ref_ids.join(", ")}]
 id: ${id}
-filepath: "${filepath}"
+filepath: "/${filepath}"
 route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"
 ---
 
 ${
   title_has_line_breaks
     ? `${title}${value_mdx ? `\n\n${value_mdx}` : ""}`
-    : `# [${title_illegal ? title_mdx : `\`${title_mdx?.trim()}\``}](./) ${
+    : `# [${
+        title_illegal_unicode ? title_mdx : `\`${title_mdx?.trim()}\``
+      }](./) ${
         value_mdx ? `${value_mdx_newLine ? "\n\n" : " ↔ "}${value_mdx}` : ""
       }`
 }${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
@@ -399,6 +423,8 @@ Any.Typescript<angleBracketNotation>
 
 - [link to \`/docs/intro\`](/docs/intro)
 - [link to \`/docs/JS/JS-Definition\`](/docs/JS/JS-Definition)
+
+## [<pre><code>\</code><code>xxx</code></pre>](/docs/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Character-Escape/Unicode-other-escape/xxx)
 
 ## Load from \`docusaurus.png\` from \`@site/static/img/docusaurus.png\`
 
@@ -538,7 +564,7 @@ async function loop_docs_mkdir(
 
     const debug_slug = false
     if (slug_key && debug_slug) slug_key_arr.push(slug_key)
-    if (num === 13592 && debug_slug) {
+    if (num === __DOC_LENGTH && debug_slug) {
       try {
         // console.table(slug_key_arr)
         const slug_key_mdx = slug_key_arr.join("\n\n# ")
@@ -582,16 +608,17 @@ async function loop_docs_mkdir(
     //? How to embed template literal inside regex experssion ?    Boolean(slug_key.match(/^contains:${parent_slug}/))
     if (omit_check && slug_key && !skip_next)
       __plaintext__id_array.push(`__${slug_key}__${id}`)
-    if (num === 13592 && omit_check) {
+    if (num === __DOC_LENGTH && omit_check) {
       try {
         // console.table(slug_key_arr)
         const plaintext_id_mdx = __plaintext__id_array.join("\n\n# ")
         await fs.outputFile(`test/omit-check.mdx`, plaintext_id_mdx)
       } catch (error) {}
     }
-    if (num === 13592) {
-      fs.outputFile("test/debug_keywords.mdx", debug_keywords.join("\n"))
-      fs.outputFile("test/debug_Tags.mdx", debug_tags.join("\n"))
+    // console.log(`num=${num}`) // to recheck __DOC_LENGTH still valid
+    if (num === __DOC_LENGTH) {
+      fs.outputFile("test/DEBUG_KEYWORDS.mdx", debug_keywords.join("\n"))
+      fs.outputFile("test/DEBUG_TAGS.mdx", debug_tags.join("\n"))
     }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
     if (!skip_next && !skip && slug_key && !title_has_line_breaks)

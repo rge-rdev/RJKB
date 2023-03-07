@@ -139,8 +139,10 @@ export function id_to_mdx(
   const re_unsafe_unicode = /\\x|\\u/
   let key = make_mdx(doc.key, id)
   if (key.match(re_unsafe_unicode)?.length) {
-    key = `<code>\\${key.slice(1, -1)}</code>`
+    key = `<code><span>&#92;</span>${key.slice(2, -1)}</code>`
+    //! &#47; instead of // in mdx - prevents mdx-loader parse error
     //all unicode containing text is already wrapped in ` backticks
+    //! wrapping / backslash with span fixes mdx-loader parse fail
     return key
       .replace(/(?<!`)\`{2}(?!`)/g, "`")
       .replace(/\[`[ ]+/g, "[`")
@@ -209,9 +211,16 @@ export function id_to_tags(id: string) {
   const doc = getDoc(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
-  const key = make_plaintext(doc.key)
+  // const tag_illegal_unicode = /\\(?=u|x)/g
+  let key = make_plaintext(doc.key)
     ?.replace(/(?<!\\)"/g, "\\\\'") // MAKE EVERYTHING INSIDE SINGLE QUOTE
     .replace(/(?<!\\)'/g, "\\\\'")
+    .trim()
+    .replace(/(?<!\\+)\\(?!ux)/g, "\\\\")
+    .replace(/(?<!\\+)\\(?=ux)/g, "\\u005C\\u2028C")
+    .replace(/(?<!\\+)\\{3,}/g, "\\\\")
+  // if (key?.match(tag_illegal_unicode)?.length)
+  // key = key?.replace(tag_illegal_unicode, "\\\\u005C\\\\u2028")
   if (!key) return
   let output = [key]
   if (!doc.value) return output
