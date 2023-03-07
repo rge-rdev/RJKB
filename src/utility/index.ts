@@ -107,6 +107,19 @@ export function id_to_mdx_BROKEN(
     // single quote escape for single liners with import/export JS code snippet
   }
 }
+
+/**Regex Utility to Match `[`ANYTHING`](./)` | `[`ANYTHING`](/only-slugify)`
+ *
+ * @param str
+ * @returns
+ */
+
+function replace_link_to_key(str: string) {
+  const re_link = /\[[\`]+([.]*[^\`]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/
+  // /\[[\`]+([\<\>a-zA-Z_+\-\\\.\!"'\$%\^&\*=(){}\[\];:'@#~,\<.\>\/\?]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/g
+  return str.replace(re_link, "$1")
+}
+
 export function id_to_mdx(
   id: string,
   key_type?: "key" | "value",
@@ -133,14 +146,31 @@ export function id_to_mdx(
       .replace(/\[`[ ]+/g, "[`")
       .replace(/[ ]+`]/g, "`]")
   }
+  //! FIX codeblock title
+  const re_has_codeblock_title =
+    /(.*)(?=\`\`\`([a-z]+))(\`\`\`([a-z]+)(?=\n.*))/s
+  // match ANYTHING before any generic codeblock type -
+  // TODO: replace [a-z]+\n with code list instead OR safe to leave as vague?
+  if (key.match(re_has_codeblock_title)?.length) {
+    const re_prefix_quotes = /"(?=.*\`\`\`([a-z]+))/gs
+
+    key = key
+      .replace(re_prefix_quotes, "'") // replace all double quotes in codeblock prefix title as single quote
+      .replace(re_has_codeblock_title, '$3 title="$1"')
+      .replace(/[\n ]+"$/m, '"') // trim whitespace after code title AND add extra \newline
+    // .replace(re_has_codeblock_prefix, "")
+    // .replace(re_has_codeblock_title, "")
+    key = replace_link_to_key(key)
+  }
+
   if (!key_type || key_type === "key") {
     if (!config?.safe) return key
     if (config.safe)
       return key
-        .replace(re_unsafe_jsx, "`<$1>`")
-        .replace(/(?<!`)\`{2}(?!`)/g, "`")
-        .replace(/\[`[ ]+/g, "[`")
-        .replace(/[ ]+`]/g, "`]")
+        .replace(re_unsafe_jsx, "`<$1>`") //
+        .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup backticks
+        .replace(/\[`[ ]+/g, "[`") // trim aft backtick
+        .replace(/[ ]+`]/g, "`]") // trim bef backtick
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
   }
   if (key_type === "value") {
