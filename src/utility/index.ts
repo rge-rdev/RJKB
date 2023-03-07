@@ -114,8 +114,8 @@ export function id_to_mdx_BROKEN(
  * @returns
  */
 
-function replace_link_to_key(str: string) {
-  const re_link = /\[[\`]+([.]*[^\`]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/
+export function replace_link_to_key(str: string) {
+  const re_link = /\[[\`]+([.]*[^\`]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/g
   // /\[[\`]+([\<\>a-zA-Z_+\-\\\.\!"'\$%\^&\*=(){}\[\];:'@#~,\<.\>\/\?]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/g
   return str.replace(re_link, "$1")
 }
@@ -147,20 +147,34 @@ export function id_to_mdx(
       .replace(/[ ]+`]/g, "`]")
   }
   //! FIX codeblock title
-  const re_has_codeblock_title =
-    /(.*)(?=\`\`\`([a-z]+))(\`\`\`([a-z]+)(?=\n.*))/s
-  // match ANYTHING before any generic codeblock type -
-  // TODO: replace [a-z]+\n with code list instead OR safe to leave as vague?
-  if (key.match(re_has_codeblock_title)?.length) {
-    const re_prefix_quotes = /"(?=.*\`\`\`([a-z]+))/gs
+  const has_multiple_codeblocks = /\`\`\`([a-z]+)\n(?=.*\`\`\`\n\n)/gs
+  if (key.match(has_multiple_codeblocks)?.length === 1) {
+    //! ONLY shift preceding text into codeblock title position if it is the only codeblock
+    const re_has_codeblock_title =
+      /(.*)(?=\`\`\`([a-z]+))(\`\`\`([a-z]+)(?=\n.*))/s
+    // match ANYTHING before any generic codeblock type -
+    // TODO: replace [a-z]+\n with code list instead OR safe to leave as vague?
+    if (key.match(re_has_codeblock_title)?.length) {
+      key = replace_link_to_key(key)
 
-    key = key
-      .replace(re_prefix_quotes, "'") // replace all double quotes in codeblock prefix title as single quote
-      .replace(re_has_codeblock_title, '$3 title="$1"')
-      .replace(/[\n ]+"$/m, '"') // trim whitespace after code title AND add extra \newline
-    // .replace(re_has_codeblock_prefix, "")
-    // .replace(re_has_codeblock_title, "")
-    key = replace_link_to_key(key)
+      const re_prefix_quotes = /"(?=.*\`\`\`([a-z]+))/gs
+      const re_prefix_backticks = /\`{1}(?=.*\`\`\`([a-z]+))/gs //! don't omit preceding ```codeblock!
+      const re_prefix_newline_whitespace = /( )*\n( )*(?=.*\`\`\`([a-z]+))/gs
+
+      key = key
+        .replace(re_prefix_quotes, "'") // replace all double quotes in codeblock prefix title as single quote
+        .replace(re_prefix_backticks, "") // omit all backticks in codeblock title as it breaks mdx-loader or codeblock FC somehow
+        .replace(re_prefix_newline_whitespace, "") // replace all newlines+whitespace in codeblock title
+        .replace(re_has_codeblock_title, '$3 title="$1"')
+        .replace(/[\n ]+"$/m, '"') // trim whitespace after code title AND add extra \newline
+      // .replace(re_has_codeblock_prefix, "")
+      // .replace(re_has_codeblock_title, "")
+
+      //clean broken links
+    }
+  } else if (key.match(has_multiple_codeblocks)?.length === 2) {
+    const re_text_between_codeblock = /(?<=\`\`\`\n\n)(.*)(?=\n\n\`\`\`[a-z]+)/
+    key.split(re_text_between_codeblock)
   }
 
   if (!key_type || key_type === "key") {
@@ -541,7 +555,7 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           output_str += `${el["text"]}`
           // output_str += `${el["cId"] ? "</mark>" : ""}`
           output_str += `${el["l"] ? "_" : ""}`
-          output_str += `${el["u"] ? "<u>" : ""}`
+          output_str += `${el["u"] ? "</u>" : ""}`
           output_str += `${el["b"] ? "**" : ""}`
           output_str += `${el["q"] || force_q ? "`" : ""}`
         } else {

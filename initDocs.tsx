@@ -373,12 +373,13 @@ Import < NOT CASE SENSITIVE!
 IMPORT
 
 
-# LISS OF BAD
+# List of UNSAFE JS Keywords in MDX
 
 \`\`\`tsx
 import
 export
 <anyanglebracketswithoutterminating>
+Any.Typescript<angleBracketNotation>
 \`\`\`
 
 - [link back to home](/)
