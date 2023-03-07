@@ -133,7 +133,8 @@ export function id_to_mdx(
   // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
   const re_unsafe_jsx =
-    /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions
+    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions
+  // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
   // /(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
   // /(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
   //! Add ([a-zA-z-_0-9\.]*) to match anything before angle bracket notation ie React.FC<ChildProps>

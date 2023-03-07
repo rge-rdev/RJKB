@@ -188,7 +188,7 @@ async function generate_mdx_page_from_id(
 
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
           v_code || v_newLine ? "" : ""
-        }${v}\n\n`
+        }${v}\n`
       }
       // if (k && !v) return `${k_code || k_newLine || k_img ? "" : ""}${k}\n\n`
       // if (!k && v) return `\n\n${v}`
