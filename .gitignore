@@ -17,7 +17,7 @@ src/pages/debug
 
 # production
 /build
-/docs
+# /docs
 /typesense
 
 # Generated files
