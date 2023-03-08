@@ -1,5 +1,5 @@
 import React from "react"
-import _ from "lodash"
+import _, { slice } from "lodash"
 import { RemData } from "../rem-json"
 import {
   map,
@@ -614,31 +614,46 @@ export function obj_to_mdx(el: RemData, input_str = "", preview?: boolean) {
       }
       if (el["i"] === "q") {
         if (el["aliasId"]) {
-          const aliasId = el["aliasId"] // look up alternative key for aliasId
+          //! Rename to alias_id && doc_id_ref_by_alias to avoid future confusion!
+          const alias_id = el["aliasId"] // look up alternative key for aliasId
           //! aliasId doesn't seem to link to any docs - perhaps used as ref handle for some other purpose?
           // const aliasKey = map.get(aliasId)?.["key"] || "__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
           // const aliasKey = map.get(aliasId)?.["key"] || false //"__ERROR_NO_ALIAS_KEY" //! fallback to original key if no alias key was found
           // const aliasId_mdx = id_to_mdx(aliasId)
-          const alias_id = el["_id"]
-          const aliasKey = id_to_mdx(alias_id)
+          const original_doc_id_ref_by_alias = el["_id"] //! MISTAKE to refer to this for alias key - this is the ORIGINAL doc that the alias ref to
+          let aliasKey = id_to_mdx(alias_id)
+          let alias_path = get_path_from_id(alias_id)
+
+          if (alias_path)
+            alias_path = alias_path
+              ?.split("/")
+              .slice(0, -2) //! recall end is up to but NOT INCLUDING
+              .concat(alias_path?.split("/").slice(-1))
+              .join("/")
           if (!aliasKey) {
             console.log(
-              `Could not find aliasKey for aliasId: ${aliasId} - referring ID: ${alias_id}\\naliasId_mdx = ${aliasKey}`
+              `Could not find aliasKey for aliasId: ${alias_id} - ref to doc ID: ${original_doc_id_ref_by_alias} ${id_to_plaintext(
+                original_doc_id_ref_by_alias
+              )} <- will assign this original doc key as fallback`
             )
-            process.exit()
+            aliasKey = id_to_mdx(original_doc_id_ref_by_alias)
+            alias_path = get_path_from_id(original_doc_id_ref_by_alias)
+            // process.exit()
           }
 
           // const alias_mdx = make_mdx(alias_id) //!! THIS WAS THE BREAKING BUG!
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
-          const path = get_path_from_id(alias_id)
-          if (!path) return ""
+          if (!alias_path) return ""
           if (!preview) {
-            output_str += `[\`${aliasKey}\`](${path})`
+            output_str += `[\`${aliasKey}\`](${alias_path})`
             return output_str // exit early once alias found
           } else if (preview) {
-            const id_tooltip = `tooltip__${alias_id}`
-            const alias_tooltip_mdx = Preview(alias_id, true)
-            output_str += `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${path})`
+            const id_tooltip = `tooltip__${original_doc_id_ref_by_alias}`
+            const alias_tooltip_mdx = Preview(
+              original_doc_id_ref_by_alias,
+              true
+            )
+            output_str += `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${alias_path})`
             return [output_str, alias_tooltip_mdx]
           }
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`

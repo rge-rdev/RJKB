@@ -459,7 +459,10 @@ function loop_child_to_make_sure_path_maps_set_up_first(
 ) {
   children.forEach((id) => {
     const slug_key = id_to_key_slug(id)
-    const dirpath = `${parent_path}/${slug_key}`
+    let dirpath = `${parent_path}/${slug_key}`
+    // Add push_alias_to_parent step to map out IDs to aliases
+    if (slug_key === "Aliases") push_alias_to_parent(id)
+
     path_map.set(id, dirpath)
     num_paths_mapped_to_id += 1
     LOG_CLI_PROGRESS(
@@ -472,8 +475,6 @@ function loop_child_to_make_sure_path_maps_set_up_first(
       map_path_to_id_time,
       `${num_aliases} keys mapped to ${num_child_slugs} aliases`
     )
-    // Add push_alias_to_parent step to map out IDs to aliases
-    if (slug_key === "Aliases") push_alias_to_parent(id)
 
     // FUCK - don't forget the RECURSION layer!!
     const children = getChildren(id)

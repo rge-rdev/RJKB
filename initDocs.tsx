@@ -1,5 +1,5 @@
 import fs from "fs-extra"
-import { uptime } from "process"
+import { config, uptime } from "process"
 import {
   root_main_topic_ids,
   getDoc,
@@ -133,7 +133,17 @@ async function generate_mdx_page_from_id(
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
   const title_match_ref = `[\`${title}\`](`
-
+  const alias_mdx_arr = alias_ids.map((id) =>
+    id_to_mdx(id, "key", { safe: true })
+  )
+  const title_alias_str = [title, ...alias_mdx_arr]
+    .map((str) => _.escapeRegExp(str).trim())
+    .join("|")
+  const re_title_alias_ref = new RegExp(
+    `\\[(\`(${title_alias_str})\`)\\]\\(`,
+    "g"
+  )
+  // console.log(re_title_alias_ref)
   // colocate regex helper functions here
   // function wrap_mdx_link(str: string){
   //   str = str.replace(/\`/g, "") //omit
@@ -144,13 +154,16 @@ async function generate_mdx_page_from_id(
   const references = ref_ids
     .map((map_id) => {
       let k = id_to_mdx(map_id, "key", { safe: true })?.replace(
-        title_match_ref,
-        `[**_${title_match_ref.slice(1, -2)}_**](`
+        re_title_alias_ref,
+        "[**_$1_**]("
+        // `[**_${title_match_ref.slice(1, -2)}_**](`
       )
       let v = id_to_mdx(map_id, "value", { safe: true })?.replace(
-        title_match_ref,
-        `[**_${title_match_ref.slice(1, -2)}_**](`
+        re_title_alias_ref,
+        "[**_$1_**]("
       )
+      //? return [**_`JS`_**](/docs/JS)
+      //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
 
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
@@ -593,7 +606,10 @@ async function loop_docs_mkdir(
           alias_slug.toLowerCase() !== parent_slug?.toLowerCase() &&
           alias_slug.toLowerCase() !== "index" //! Add skip to index alias here
         )
-          generate_id_redirect(alias_filepath, `/${parent_path}`)
+          generate_id_redirect(
+            alias_filepath,
+            `/${parent_path}?alias=${alias_slug}`
+          )
         //! Must add extra slash to ensure router path relative to root!
         //! Forgot to avoid duplicate alias slug overriting parent!
       })
