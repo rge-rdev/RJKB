@@ -49,6 +49,8 @@ const __DOC_LENGTH = 8457
  * @param id
  * @returns
  */
+const test_preview = undefined
+
 async function generate_mdx_page_from_id(
   id: string,
   slug_key: string,
@@ -199,8 +201,8 @@ async function generate_mdx_page_from_id(
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
-    let k = id_to_mdx(id, "key", { safe: true })?.trim()
-    let v = id_to_mdx(id, "value", { safe: true })?.trim()
+    let k = id_to_mdx(id, "key", { safe: true }, test_preview)?.trim()
+    let v = id_to_mdx(id, "value", { safe: true }, test_preview)?.trim()
     // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
     //|| k_link_description === title_mdx
@@ -276,11 +278,12 @@ async function generate_mdx_page_from_id(
   const output_mdx = `---
 ${
   title && title !== null && title !== undefined ? `title: "${title_yaml}"` : ""
-}${
-    description && description !== null && description !== undefined
-      ? `description: "${description}"`
-      : ""
-  }
+}
+${
+  description && description !== null && description !== undefined
+    ? `description: "${description}"`
+    : ""
+}
 tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
     keywords.length > 0
       ? `\nkeywords: [${keywords.map((w) => `\"${w}\"`).join(", ")}]`

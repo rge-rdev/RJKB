@@ -1,3 +1,4 @@
+import React from "react"
 import _ from "lodash"
 import { RemData } from "../rem-json"
 import {
@@ -6,10 +7,12 @@ import {
   map_all_parents,
   getDoc,
   get_path_from_id,
+  getRefIDs,
 } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
+import Preview from "../components/Preview"
 
 // import Cloze from "../components/Cloze"
 
@@ -123,7 +126,8 @@ export function replace_link_to_key(str: string) {
 export function id_to_mdx(
   id: string,
   key_type?: "key" | "value",
-  config?: { safe: true }
+  config?: { safe: true },
+  preview?: true
 ) {
   const doc = getDoc(id)
   if (!doc) return
@@ -132,8 +136,15 @@ export function id_to_mdx(
   //refactor regex here
   // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
-  const re_unsafe_jsx =
+  let re_unsafe_jsx =
     /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions
+
+  const re_link_preview_mdx =
+    /\[<><span data-tooltip-id="tooltip__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
+
+  if (preview)
+    re_unsafe_jsx =
+      /.*(?=\[<><span data-tooltip-id="tooltip__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<><span data-tooltip-id="tooltip__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
   // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
   // /(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
   // /(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
@@ -141,16 +152,18 @@ export function id_to_mdx(
   //! TYPO a-zA-z WRONG should be a-zA-Z
 
   const re_unsafe_unicode = /\\x|\\u/
-  let key = make_mdx(doc.key, id)
+  let key = make_mdx(doc.key, id, preview)
   if (key.match(re_unsafe_unicode)?.length) {
-    key = `<code><span>&#92;</span>${key.slice(2, -1)}</code>`
-    //! &#47; instead of // in mdx - prevents mdx-loader parse error
-    //all unicode containing text is already wrapped in ` backticks
-    //! wrapping / backslash with span fixes mdx-loader parse fail
-    return key
-      .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup 2x backticks only
-      .replace(/\[`[ ]+/g, "[`") //trim whitespace aft opening backtick
-      .replace(/[ ]+`]/g, "`]") // trim whitespace bef closing backtick
+    if (!preview) {
+      key = `<code><span>&#92;</span>${key.slice(2, -1)}</code>`
+      //! &#47; instead of // in mdx - prevents mdx-loader parse error
+      //all unicode containing text is already wrapped in ` backticks
+      //! wrapping / backslash with span fixes mdx-loader parse fail
+      return key
+        .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup 2x backticks only
+        .replace(/\[`[ ]+/g, "[`") //trim whitespace aft opening backtick
+        .replace(/[ ]+`]/g, "`]") // trim whitespace bef closing backtick
+    }
   }
   //! FIX codeblock title
   const has_multiple_codeblocks = /\`\`\`([a-z]+)\n(?=.*\`\`\`\n\n)/gs
@@ -205,9 +218,9 @@ export function id_to_mdx(
   }
   if (key_type === "value") {
     if (!doc.value) return
-    if (!config?.safe) return make_mdx(doc.value, id)
+    if (!config?.safe) return make_mdx(doc.value, id, preview)
     if (config.safe) {
-      let value = make_mdx(doc.value, id)
+      let value = make_mdx(doc.value, id, preview)
       return value
         .replace(re_unsafe_jsx, "`$1`")
         .replace(/(?<!`)\`{2}(?!`)/g, "`")
@@ -306,13 +319,16 @@ export function id_to_tags(id: string) {
 
 export function make_mdx(
   input: RemData[] | [],
-  optional_id_to_debug?: string
+  optional_id_to_debug?: string,
+  preview?: boolean
 ): string {
   if (!Array.isArray(input)) {
     console.log("BROKEN!!", `${optional_id_to_debug}`)
     return "__BROKEN__"
   }
-  let output_arr = input?.map((el: RemData) => obj_to_mdx(el))
+  let output_arr = input?.map((el: RemData) =>
+    obj_to_mdx(el, undefined, preview)
+  )
   if (Array.isArray(output_arr)) {
     const output_str = output_arr.join("")
     // fix raw strings that contain import are START - which is illegal for mdx-loader
@@ -517,8 +533,17 @@ export function resolve_lang_mdx(lang: string) {
  */
 
 // export const Aliases_UID = "2n8Gw7PvXGPcFQm7i"
-
-export function obj_to_mdx(el: RemData, input_str = ""): string {
+export function obj_to_mdx(
+  el: RemData,
+  input_str?: string | "",
+  preview?: boolean
+): string
+export function obj_to_mdx(
+  el: RemData,
+  input_str?: string | "",
+  preview?: boolean
+): [string, string]
+export function obj_to_mdx(el: RemData, input_str = "", preview?: boolean) {
   let output_str: string = input_str
 
   if (typeof el === "string") output_str += el
@@ -607,8 +632,15 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           const path = get_path_from_id(alias_id)
           if (!path) return ""
-          output_str += `[\`${aliasKey}\`](${path})`
-          return output_str // exit early once alias found
+          if (!preview) {
+            output_str += `[\`${aliasKey}\`](${path})`
+            return output_str // exit early once alias found
+          } else if (preview) {
+            const id_tooltip = `tooltip__${alias_id}`
+            const alias_tooltip_mdx = Preview(alias_id, true)
+            output_str += `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${path})`
+            return [output_str, alias_tooltip_mdx]
+          }
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId
         }
@@ -621,7 +653,15 @@ export function obj_to_mdx(el: RemData, input_str = ""): string {
           const path = get_path_from_id(el["_id"])
           if (!path) return "" // early return for empty string - to eliminate linked TAGS or "powerups" from non-main DB
 
-          output_str += `[\`${make_mdx(find_key)}\`](${path})`
+          if (!preview) {
+            output_str += `[\`${make_mdx(find_key)}\`](${path})`
+          } else if (preview) {
+            const id_tooltip = `tooltip__${el["_id"]}`
+            const link_tooltip_mdx = Preview(el["_id"], true)
+            output_str += `[<><span data-tooltip-id="${id_tooltip}">${make_mdx(
+              find_key
+            )}</span></>](${path})\n${link_tooltip_mdx}\n`
+          }
           // output_str += `[[<a href="#${el["_id"]}">${make_mdx(find_key)}</a>]]`
         }
         if (el["textOfDeletedRem"]) {
@@ -828,4 +868,134 @@ const clearLines = (n: number) => {
     }
     process.stdout.cursorTo(0)
   }
+}
+
+export function id_to_tooltop(id: string) {
+  //   // const k = _.unescape(id_to_mdx(id, "key"))
+  let k = id_to_mdx(id, "key", { safe: true })?.trim()
+  let v = id_to_mdx(id, "value", { safe: true })?.trim()
+  // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
+  let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
+  //|| k_link_description === title_mdx
+
+  //! max sure to check this doesn't exist on other
+  const k_code = k?.match(/^(\`\`\`)/gm)?.length
+  const v_code = v?.match(/^(\`\`\`)/gm)?.length
+
+  const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+  const v_link = v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+
+  const k_newLine = k?.match(/(\n)+/g)?.length
+  const v_newLine = v?.match(/(\n)+/g)?.length
+
+  const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
+  const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
+
+  const k_img = k?.match(
+    /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+  )?.length // not working?
+  //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
+
+  const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+
+  const k_path = get_path_from_id(id)
+  const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
+
+  if (!k_code && (k_newLine || k_illegal) && !k_img && !k_link) {
+    // if (!k_code && k_illegal) {
+    k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+  }
+
+  if (!v_code && (v_newLine || v_illegal) && !v_link)
+    v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
+  // if (v_code && v_illegal)
+  v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+
+  //? TODO: make prettier ignore every single (long) regex line
+  // prettier-ignore
+  k = k?.trim().replace(/^((export(?= )|import(?= ))(( default function| function| async function| const| var| let)|(?= )))/, "<code>$1</code> ")
+  // prettier-ignore
+  v = v?.trim().replace(/^((export(?= )|import(?= ))(( default function| function| async function| const| var| let)|(?= )))/, "<code>$1</code> ")
+
+  if (k && v && !skip_k) {
+    // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
+    k =
+      k_without_code && !k_link && !k_inlineCode
+        ? `\`${k.replace(/\`/g, "")}\``
+        : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
+    k = k_path && !k_link ? `[${k}](${k_path})` : k
+
+    return `${k_code || k_illegal || k_newLine || k_img ? "" : "## "}${k}\n\n${
+      v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
+    }${v}\n\n`
+  }
+  const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
+  if (k && !v && !skip_k) {
+    return !recheck_code && !k_link && !k_img && !k_inlineCode
+      ? `[\`${k.replace(/\`/g, "")}\`](${k_path})\n\n`
+      : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
+  }
+  if (!k && v) return `\n\n${v}`
+  return ""
+}
+
+export function id_to_ref_mdx(id: string) {
+  let ref_ids = getRefIDs(id) || []
+  let title = id_to_plaintext(id)?.replace(/"/g, `'`)
+  if (!title) return
+  const title_match_ref = `[\`${title}\`](`
+  const ref_mdx = ref_ids
+    .map((map_id) => {
+      let k = id_to_mdx(map_id, "key", { safe: true })?.replace(
+        title_match_ref,
+        `[**_${title_match_ref.slice(1, -2)}_**](`
+      )
+      let v = id_to_mdx(map_id, "value", { safe: true })?.replace(
+        title_match_ref,
+        `[**_${title_match_ref.slice(1, -2)}_**](`
+      )
+
+      const k_code = k?.match(/^(\`\`\`)/gm)?.length
+      const v_code = v?.match(/^(\`\`\`)/gm)?.length
+
+      const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+
+      const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
+      const v_newLine = v?.match(/(\n)+/g)?.length
+
+      const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
+      const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
+
+      const k_img = k?.match(
+        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+      )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
+
+      if (
+        !k_code &&
+        (k_newLine || k_illegal) &&
+        !k_link &&
+        typeof k?.trim()?.length === "number" &&
+        k?.trim()?.length > 20
+      ) {
+        k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+      }
+
+      if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
+      v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+      const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+      if (k && v) {
+        const k_path = get_path_from_id(map_id) //! map_id NOT id!!
+        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)
+          k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
+        k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+        k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
+
+        return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
+          v_code || v_newLine ? "" : ""
+        }${v}\n`
+      }
+    })
+    .filter((str) => str !== undefined)
+
+  return ref_mdx
 }
