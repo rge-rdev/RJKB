@@ -8,11 +8,11 @@
 
 ## Typescript
 
-import {SiTypescript} from "react-icons/si";
+import { SiTypescript } from "react-icons/si"
 
-export const size = "3em";
+export const size = "3em"
 
-<SiTypescript size={size}/>
+<SiTypescript size={size} />
 
 ## Docusaurus
 
@@ -20,9 +20,9 @@ export const size = "3em";
 
 ## React
 
-import { FaReact } from 'react-icons/fa';
+import { FaReact } from "react-icons/fa"
 
-<FaReact size={size}/>
+<FaReact size={size} />
 
 ### Built-in Router
 
@@ -52,21 +52,22 @@ This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 This is <Highlight color="#1877F2">Facebook blue</Highlight> !
 ```
 
-export const Highlight = ({children, color}) => (
-<span
-style={{
+export const Highlight = ({ children, color }) => (
+  <span
+    style={{
       backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
+      borderRadius: "20px",
+      color: "#fff",
+      padding: "10px",
+      cursor: "pointer",
     }}
-onClick={() => {
-alert(`You clicked the color ${color} with label ${children}`)
-}}>
-{children}
-</span>
-);
+    onClick={() => {
+      alert(`You clicked the color ${color} with label ${children}`)
+    }}
+  >
+    {children}
+  </span>
+)
 
 This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 
@@ -74,6 +75,8 @@ This is <Highlight color="#1877F2">Facebook blue</Highlight> !
 
 # Test
 
+```tsx
 export const Hello = () => <div>Hello</div>
 
 <Hello/>
+```

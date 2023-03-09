@@ -15,7 +15,7 @@ mdx={true},
 debug={false}/>
 ```
 
-<Hello />
+<!-- <Hello /> -->
 
 ```tsx live
 import { Render_Docs_BFS } from "../src/components/App"
@@ -38,7 +38,7 @@ SyntaxError: Unexpected token (1:15)
 1 : return (import { Render_Docs_BFS } from "../src/components/App"
 ```
 
-<Test/>
+<!-- <Test/> -->
 
 ### Takeaway Points
 

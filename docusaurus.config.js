@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+const TerserPlugin = require("terser-webpack-plugin")
 
 //@ts-ignore
 const lightCodeTheme = require("prism-react-renderer/themes/github")
@@ -16,10 +17,45 @@ function RJ_WEBPACK_PLUGIN(context, options) {
       return {
         optimization: {
           // mergeDuplicateChunks: false, // skip client optimizating step to speed up build
-          // removeEmptyChunks: false, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
-          removeAvailableModules: false, // disable duplicate module check for extra build speed
-          minimize: false, // disable Webpack minimizer in favor of swc-loader as set up below
+          minimize: true,
+          minimizer: [
+            new TerserPlugin({
+              minify: TerserPlugin.swcMinify,
+              terserOptions: {
+                compress: {
+                  unused: true,
+                  booleans_as_integers: true, // coerce even smaller!
+                  dead_code: true, // kill dead code
+                  reduce_funcs: true, //? assume this reduces name size
+                },
+                mangle: {},
+              },
+            }),
+          ],
+          /*
+          minimizer: [
+            new TerserPlugin({
+              minify: TerserPlugin.esbuildMinify,
+              terserOptions: {
+                //   minify: false,
+                minifyWhitespace: true,
+                //   minifyIdentifiers: false,
+                minifySyntax: true,
+              },
+            }),
+          ],
+          */
           // minimizer: [new EsbuildPlugin({ target: "esnext" })],
+          /**Enable Production settings in Dev mode */
+          // concatenateModules: true, // to find safe module graph segments to concatenate into a single module
+          // flagIncludedChunks: true, // don't load chunks when already loaded as subset of another chunk
+          // innerGraph: true, // detect unused exports
+          // mangleExports: "size", // minifiy variable names to reduce size
+          // mangleWasmImports: true,
+          // mergeDuplicateChunks: true, // dedup chunks with same modules
+          // removeAvailableModules: true, // disable duplicate module check for extra build speed
+          // removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
+          // usedExports: true, // dead code elim
         },
         module: {
           rules: [
@@ -108,8 +144,6 @@ const config = {
       options: {
         loader: "tsx",
         format: isServer ? "cjs" : undefined,
-        //format: isServer ? "cjs" : undefined,
-        //es2017 4.23m
         target: isServer ? "node12" : "esnext",
       },
     }),
@@ -124,20 +158,23 @@ const config = {
           parser: {
             syntax: "typescript",
             tsx: true,
-            minify: {
-              compress: true,
-            },
+            // minify: {
+            //   compress: {
+            //     unused: true,
+            //   },
+            //   mangle: true,
+            // },
           },
           target: "esnext",
         },
         module: {
           type: isServer ? "commonjs" : "es6",
         },
-        minify: true,
+        // minify: true,
       },
     }),
   },
-
+  // */
   presets: [
     [
       "classic",
@@ -148,8 +185,10 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
+          // showLastUpdateAuthor: true, //! Will result in git history error
+          // showLastUpdateTime: true, //? https://github.com/Seneca-CDOT/telescope/issues/3403
         },
         blog: {
           path: "blog",
@@ -312,7 +351,7 @@ const config = {
         contextualSearch: true,
       },
       //! Add Image Zoom Plugin here
-      //! buggy - requires 2 clicks - not pretty - bad plugin!
+      //! buggy - requires 2 clicks - not pretty - bad plugin! REMOVED!
       // imageZoom: {
       //   // CSS selector to apply the plugin to, defaults to '.markdown img'
       //   selector: ".markdown img",
