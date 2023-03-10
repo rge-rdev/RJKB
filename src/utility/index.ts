@@ -14,6 +14,7 @@ import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
 import Preview from "../components/Preview"
+import { encode } from "he"
 
 // import Cloze from "../components/Cloze"
 
@@ -129,14 +130,26 @@ export function replace_link_to_key(str: string) {
 export function id_to_mdx(
   id: string,
   key_type?: "key" | "value",
-  config?: { safe?: boolean; preview?: boolean }
+  config?: { safe?: boolean; preview?: boolean; jsx?: boolean }
 ) {
   const safe = config?.safe
   const preview = config?.preview
+  const jsx = config?.jsx
   const doc = getDoc(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
 
+  if (safe && jsx) {
+    if (!key_type || key_type === "key") {
+      let key = make_mdx(doc.key, { id, preview, jsx })
+      return key
+    }
+    if (key_type === "value") {
+      if (!doc.value) return
+      let value = make_mdx(doc.value, { id, preview, jsx })
+      return value
+    }
+  }
   //refactor regex here
   // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
@@ -323,16 +336,15 @@ export function id_to_tags(id: string) {
 
 export function make_mdx(
   input: RemData[] | [],
-  config?: { id?: string; preview?: boolean }
+  config?: { id?: string; preview?: boolean; jsx?: boolean }
 ): string {
-  const id = config?.id
-  const preview = config?.preview
+  const { id, preview, jsx } = config || {}
   if (!Array.isArray(input)) {
     console.log("BROKEN!!", `${id}`)
     return "__BROKEN__"
   }
   let output_arr = input?.map((el: RemData) =>
-    obj_to_mdx(el, undefined, { preview, id })
+    obj_to_mdx(el, undefined, { preview, id, jsx })
   )
   if (Array.isArray(output_arr)) {
     const output_str = output_arr.join("")
@@ -599,37 +611,46 @@ export function getAllPreviewMDX_BROKEN_CLIENT(preview_ids_arr: string[]) {
 export function obj_to_mdx(
   el: RemData,
   input_str = "",
-  config?: { id?: string; preview?: boolean }
+  config?: { id?: string; preview?: boolean; jsx?: boolean }
 ) {
+  const { id, preview, jsx } = config || {}
   let output_str: string = input_str
-  const id = config?.id
-  const preview = config?.preview
-  // const { preview, id } = config // DOESN'T WORK!
 
-  if (typeof el === "string") output_str += el
+  if (typeof el === "string")
+    output_str += jsx
+      ? `<span>${encode(el, { encodeEverything: true })}</span>`
+      : // `<span>${_.escape(el).replace(/^ {1,}| {1,}$/g, "&nbsp;")}</span>`
+        el
   if (typeof el === "object") {
     if (el["i"]) {
       if (el["i"] === "o") {
         // "o" for Object | Outside Code?
         // ${_.escape(el["text"])}\n
         if (typeof el["text"] === "string") {
-          output_str += `\n\n\`\`\`${resolve_lang_mdx(el["language"])}\n${(
-            el["text"] as string
-          ).trim()}\n\`\`\`\n`
+          if (!jsx)
+            output_str += `\n\n\`\`\`${resolve_lang_mdx(el["language"])}\n${(
+              el["text"] as string
+            ).trim()}\n\`\`\`\n`
+          if (jsx)
+            output_str += `<CodeBlock language="${resolve_lang_mdx(
+              el["language"]
+            )}">{\`${(el["text"] as string)
+              .trim()
+              .replace(/\n/gs, "\\n")}\`}</CodeBlock>` //! THIS WAS A CRITICAL SILENT && UNDOCUMENTED? BUG - all new lines in plaintext code must have explicit \n
         }
       }
       if (el["i"] === "m") {
         // "m" for MarkDown?
         if (el["qId"]) {
           const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
-          output_str += `${el["i"] === "m" ? "`" : ""}` // Ref HYPERLINKS
+          output_str += `${el["i"] === "m" ? (jsx ? "<q>" : "`") : ""}` // Ref HYPERLINKS
           output_str += `${
             el["qId"]
               ? // ? `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
                 `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
               : ""
           }`
-          output_str += `${el["i"] === "m" ? "`" : ""}` // Ref Rem
+          output_str += `${el["i"] === "m" ? (jsx ? "</q>" : "`") : ""}` // Ref Rem
         }
         //check if el["text"] contains angle brackets <> and does not have el["q"] set true
 
@@ -650,24 +671,27 @@ export function obj_to_mdx(
         if (el["text"] && raw_text.trim()?.length) {
           //! add prototype test to skip style wrap for blank space - mdx loader is breaking when multiple tags next to each other only wrapping whitespace !
           // href found at el["qId"] = _id at crt.b.s
-          output_str += `${el["q"] || force_q ? "`" : ""}` // Ref Rem
-          output_str += `${el["b"] ? "**" : ""}` // bold
+          output_str += `${el["q"] || force_q ? (jsx ? "<code>" : "`") : ""}` // Ref Rem
+          output_str += `${el["b"] ? (jsx ? "<b>" : "**") : ""}` // bold
           //! <b> messes up mdx-loader if used at start line and then use a mdx link directly after ?!
           //! switch back to ** to avoid dealing with this - whitespace skip should prevent bugs from multiple ** appearing next to each other... hopefully
           // output_str += `${el["b"] ? "**" : ""}`; // bold md
           output_str += `${el["u"] ? "<u>" : ""}` // underline
-          output_str += `${el["l"] ? "_" : ""}` // mixing * with ** and _ and __ breaks things majorly?!
+          output_str += `${el["l"] ? (jsx ? "<em>" : "_") : ""}` // mixing * with ** and _ and __ breaks things majorly?!
           // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
           //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
           //! TODO: add function to remove <mark> from code snippets - but only do this when cloze/spoiler tags actually needed
           // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
           // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
-          output_str += `${el["text"]}`
+          // output_str += jsx ? `${_.escape(el["text"])}` : `${el["text"]}`
+          output_str += jsx
+            ? `${encode(el["text"], { encodeEverything: true })}`
+            : `${el["text"]}`
           // output_str += `${el["cId"] ? "</mark>" : ""}`
-          output_str += `${el["l"] ? "_" : ""}`
+          output_str += `${el["l"] ? (jsx ? "</em>" : "_") : ""}`
           output_str += `${el["u"] ? "</u>" : ""}`
-          output_str += `${el["b"] ? "**" : ""}`
-          output_str += `${el["q"] || force_q ? "`" : ""}`
+          output_str += `${el["b"] ? (jsx ? "</b>" : "**") : ""}`
+          output_str += `${el["q"] || force_q ? (jsx ? "</code>" : "`") : ""}`
         } else {
           output_str += ""
         }
@@ -705,7 +729,9 @@ export function obj_to_mdx(
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           if (!alias_path) return ""
           if (!preview) {
-            output_str += `[\`${aliasKey}\`](${alias_path})`
+            output_str += jsx
+              ? `<Link to="${alias_path}"><code>${aliasKey}</code></Link>`
+              : `[\`${aliasKey}\`](${alias_path})`
             return output_str // exit early once alias found
           } else if (preview) {
             const id_tooltip = `preview__${original_doc_id_ref_by_alias}`
@@ -727,7 +753,12 @@ export function obj_to_mdx(
           if (!path) return "" // early return for empty string - to eliminate linked TAGS or "powerups" from non-main DB
 
           if (!preview) {
-            output_str += `[\`${make_mdx(find_key)}\`](${path})`
+            output_str += jsx
+              ? `<Link to="${path}">${make_mdx(find_key, {
+                  id: el_id,
+                  jsx: true,
+                })}</Link>`
+              : `[\`${make_mdx(find_key)}\`](${path})`
           } else if (preview) {
             const id_tooltip = `preview__${el_id}`
             output_str += `[<><span data-tooltip-id="${id_tooltip}">${make_mdx(
@@ -1009,6 +1040,12 @@ export function id_to_tooltop(id: string) {
   return ""
 }
 
+/**
+ *
+ * @param id
+ * @returns
+ */
+
 export function id_to_ref_mdx(id: string) {
   let ref_ids = getRefIDs(id) || []
   let title = id_to_plaintext(id)?.replace(/"/g, `'`)
@@ -1064,6 +1101,31 @@ export function id_to_ref_mdx(id: string) {
           v_code || v_newLine ? "" : ""
         }${v}\n`
       }
+    })
+    .filter((str) => str !== undefined)
+
+  return ref_mdx
+}
+
+/**
+ *
+ * @param id
+ * @returns
+ */
+
+export function id_to_ref_mdx_jsx(id: string) {
+  let ref_ids = getRefIDs(id) || []
+  let title = id_to_mdx(id, "key", { safe: true, jsx: true }) //id_to_plaintext(id)?.replace(/"/g, `'`)
+  if (!title) return
+  const ref_mdx = ref_ids
+    .map((map_id) => {
+      let k = id_to_mdx(map_id, "key", { safe: true, jsx: true })
+      let v = id_to_mdx(map_id, "value", { safe: true, jsx: true })
+
+      if (k && v) {
+        return `${k}<span>&nbsp;↔&nbsp;</span>${v}`
+      }
+      if (k && !v) return k
     })
     .filter((str) => str !== undefined)
 

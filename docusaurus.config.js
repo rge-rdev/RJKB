@@ -39,8 +39,10 @@ function RJ_WEBPACK_PLUGIN(context, options) {
     configureWebpack(config, isServer, utils, content) {
       return {
         optimization: {
-          // mergeDuplicateChunks: false, // skip client optimizating step to speed up build
-          minimize: true,
+          mergeDuplicateChunks: true, // skip client optimizating step to speed up build
+          removeAvailableModules: false, // disable duplicate module check for extra build speed
+
+          minimize: false,
           minimizer: [
             new TerserPlugin({
               minify: TerserPlugin.swcMinify,
@@ -76,7 +78,6 @@ function RJ_WEBPACK_PLUGIN(context, options) {
           // mangleExports: "size", // minifiy variable names to reduce size
           // mangleWasmImports: true,
           // mergeDuplicateChunks: true, // dedup chunks with same modules
-          // removeAvailableModules: true, // disable duplicate module check for extra build speed
           // removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
           // usedExports: true, // dead code elim
         },

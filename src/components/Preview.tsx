@@ -6,6 +6,7 @@ import {
   id_to_mdx,
   id_to_plaintext,
   id_to_ref_mdx,
+  id_to_ref_mdx_jsx,
   id_to_tooltop,
 } from "../utility"
 
@@ -15,52 +16,63 @@ interface PreviewProps {
 }
 
 export default function Preview({ id, notMarkup }: PreviewProps) {
-  const tooltip_key = id_to_mdx(id, "key", { safe: true })
-  const tooltip_value = id_to_mdx(id, "value", { safe: true }) || ""
-  const ref_mdx = id_to_ref_mdx(id)
-  const ref_arr = ref_mdx?.map((ref) => `<h6>\n\n${ref}</h6>`) || []
+  // const tooltip_key = id_to_mdx(id, "key", { safe: true, jsx: true })
+  const tooltip_value = id_to_mdx(id, "value", { safe: true, jsx: true }) || ""
+  const ref_mdx = id_to_ref_mdx_jsx(id)
+  const ref_arr =
+    ref_mdx
+      ?.filter((ref) => typeof ref === "string" && ref.length > 0)
+      .map((ref) => `<li><cite>${ref}</cite></li>`) || []
   const ref_l = ref_arr.length
   const ref_min = 5 < ref_l - 1 ? 3 : ref_l - 1
   const ref_top = ref_arr.slice(0, ref_min).join("")
   const ref_bot = ref_arr.slice(ref_min).join("")
-  const is_ref_bot = ref_bot.length
+  // const is_ref_bot = ref_bot.length
+  // const aka = ""
 
   const tooltip_id = `preview__${id}`
-  const tags =
-    getTags(id)
-      ?.map(
-        (tag) =>
-          `<Link to="/docs/tags/${_.kebabCase(
-            tag
-          )}"><code class="rounded-full">${tag}</code></Link>`
-      )
-      .join("") || ""
-  const num_tags = getTags(id)?.length || ""
+  // const tags =
+  //   getTags(id)
+  //     ?.map(
+  //       (tag) =>
+  //         `<code class="rounded-full h-10"><Link to="/docs/tags/${_.kebabCase(
+  //           tag
+  //         )}">${tag.trim()}</Link></code>`
+  //     )
+  //     .join("") || ""
+  // const num_tags = getTags(id)?.length || ""
   //! manually rendering to static markup since renderToStaticMarkup() is not working right...
-  if (!notMarkup) {
-    return `<>
+  if (!notMarkup && tooltip_value.length) {
+    return `
   <Tooltip
     id="${tooltip_id}"
     place="top"
     clickable
-    className="max-w-lg rounded-full bg-zinc-300 text-slate-700 dark:bg-zinc-700 dark:text-slate-300 opacity-75"
   >
-      <div class="rounded-full bg-zinc-300 dark:bg-zinc-700"><h4>\n\n${tooltip_value}\n\n</h4><h5>${ref_l} References</h5><ol>\n${ref_top}</ol>
-  </div></Tooltip>
-  <Tooltip
+      <small class="">\n\t<blockquote>\n\t<span>${tooltip_value}</span></blockquote>\n<h6>${
+      ref_l
+        ? `Cited ${ref_l} time${ref_l > 1 ? "s" : ""}</h6>\n<ol>${ref_top}</ol>`
+        : ""
+    }
+      </small></Tooltip>
+  `
+  //! somehow </small></Tooltip> is being return & written to mdx TWICE - sometimes with sections of incomplete pieces of refs html - how is that even possible? This may hint at a serious engine bug - possibly a bad optimizing assumption from the compiler? 
+    if (!tooltip_value.length) return "" // should never return here - keep as future guard clause
+  }
+  /** OMIT TAGS/ALIAS for now
+   <Tooltip
     id="${tooltip_id}"
     place="right"
     clickable
-    className="flex flex-row shrink"
   >
-    <div class="rounded-full bg-zinc-300 text-slate-700 dark:bg-zinc-700 dark:text-slate-300 opacity-75">
-      ${num_tags && `${num_tags}`}${tags}
-    </div>
+    <small class="flex flex-row">
+      ${num_tags && tags}
+    </small>
   </Tooltip>
-</>`
-  }
+   */
 
   //? THIS DOESN'T WORK AND DOESN'T GET TRANSFORMED BY REACTDOMSERVER'S STATIC RENDER FN - EVEN WHEN THIS WAS LEFT AS AN ACTUAL FC
+  /*
   return (
     notMarkup && (
       <>
@@ -101,6 +113,7 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
       </>
     )
   )
+  */
 }
 
 /* Bad example below...

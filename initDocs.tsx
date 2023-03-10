@@ -56,6 +56,10 @@ const test_preview = undefined
 
 export const map_all_tags: Map<string, string[]> = new Map()
 export const getTags = (id: string) => map_all_tags.get(id)
+export const map_all_routes: Map<string, string[]> = new Map()
+export const getRoute = (id: string) => map_all_routes.get(id)
+
+const show_extra_debug_yaml = false
 
 async function generate_mdx_page_from_id(
   id: string,
@@ -311,13 +315,17 @@ tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
     keywords.length > 0
       ? `\nkeywords: [${keywords.map((w) => `\"${w}\"`).join(", ")}]`
       : ""
-  }
+  }${
+    show_extra_debug_yaml
+      ? `
 alias IDs: [${alias_ids.join(", ")}]
 aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${ref_ids_arr.join(", ")}]
 id: ${id}
 filepath: "/${filepath}"
-route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"
+route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"`
+      : ""
+  }
 ---
 
 ${
@@ -332,7 +340,7 @@ ${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }## References
 
-${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}}`
+${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}`
   //\n\n${preview_mdx.join("\n")
 
   const re_preview_ids =
