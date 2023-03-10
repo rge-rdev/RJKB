@@ -1,5 +1,5 @@
 import fs from "fs-extra"
-import { config, uptime } from "process"
+import { uptime, env } from "process"
 import {
   root_main_topic_ids,
   getDoc,
@@ -22,6 +22,7 @@ import {
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
+import { renderToStaticMarkup } from "react-dom/server"
 
 let debug_keywords: any[] = []
 let debug_tags: any[] = []
@@ -51,6 +52,9 @@ const __DOC_LENGTH = 8457
  * @returns
  */
 const test_preview = undefined
+
+export const map_all_tags: Map<string, string[]> = new Map()
+export const getTags = (id: string) => map_all_tags.get(id)
 
 async function generate_mdx_page_from_id(
   id: string,
@@ -91,7 +95,7 @@ async function generate_mdx_page_from_id(
     .split("/")
     .slice(1, -2)
     .map((str) => str.replace(/-/g, " ").trim())
-  const tags = _.uniqWith(
+  let tags = _.uniqWith(
     [
       ...prev_slugs,
       ...alias_slugs,
@@ -101,20 +105,14 @@ async function generate_mdx_page_from_id(
     ].filter((tag) => tag.length < 30),
     (a, b) =>
       a
-        .toString()
         .toLowerCase()
-        .replace(/\\u005c\\u2028/gi, "")
-        .replace(/(\\u005c)+/gi, "")
-        .replace(/\//g, " ")
-        .replace(/-/g, " ")
+        .replace(/\\u005c\\u2028|(\\u005c)+/gi, "")
+        .replace(/\/|-/g, " ")
         .trim() ===
       b
-        .toString()
         .toLowerCase()
-        .replace(/\\u005c\\u2028/gi, "")
-        .replace(/(\\u005c)+/gi, "")
-        .replace(/\//g, " ")
-        .replace(/-/g, " ")
+        .replace(/\\u005c\\u2028|(\\u005c)+/gi, "")
+        .replace(/\/|-/g, " ")
         .trim()
     //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
     //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
@@ -126,6 +124,9 @@ async function generate_mdx_page_from_id(
       (s) => typeof s !== undefined && s && s.length > 0
     )
   )
+  tags = _.uniqWith(tags, (a, b) => _.kebabCase(a) === _.kebabCase(b))
+  map_all_tags.set(id, tags)
+
   //! DON'T remove duplicate case spellings for keywords
   //! KEEP extra duplicate aliases for SEO keywords BUT remove in tags to avoid visible clutter
   debug_keywords.push(keywords || "___NOTHING")
@@ -330,7 +331,9 @@ ${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }## References
 
-${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}\n\n${preview_mdx}`
+${references
+  .map((ref, i) => `${i + 1}. ${ref}\n`)
+  .join("")}\n\n${preview_mdx.join("\n")}`
   return output_mdx
 }
 /**

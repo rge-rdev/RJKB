@@ -5,12 +5,13 @@ const TerserPlugin = require("terser-webpack-plugin")
 const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-const webpack = require("webpack")
+// const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+// const webpack = require("webpack")
 
 //@ts-ignore
 /** @type {import('@docusaurus/types').Plugin} */
 
+/*
 function RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN(context, options) {
   return {
     name: "rj-fix-webpack-node-polyfill",
@@ -27,6 +28,7 @@ function RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN(context, options) {
     },
   }
 }
+*/
 
 //@ts-ignore
 /** @type {import('@docusaurus/types').Plugin} */
@@ -114,7 +116,7 @@ const config = {
     "@docusaurus/theme-live-codeblock",
     RJ_WEBPACK_PLUGIN,
     RJ_TAILWIND_PLUGIN,
-    RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN,
+    // RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN,
     "docusaurus-plugin-sass",
     [
       "@docusaurus/plugin-ideal-image",
@@ -203,6 +205,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // routeBasePath: '/',
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.

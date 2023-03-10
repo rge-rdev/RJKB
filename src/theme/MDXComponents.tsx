@@ -4,7 +4,7 @@ import { Redirect } from "@docusaurus/router"
 import Image from "@theme/IdealImage"
 import { Tooltip } from "react-tooltip"
 import tooltip_css from "react-tooltip/dist/react-tooltip.css"
-import Preview from "../components/Preview"
+// import Preview from "../components/Preview"
 
 export default {
   ...MDXComponents,
@@ -12,5 +12,5 @@ export default {
   Image,
   Tooltip,
   tooltip_css,
-  Preview,
+  // Preview,
 }

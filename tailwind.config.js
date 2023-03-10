@@ -4,7 +4,7 @@ const { url } = require("inspector")
 module.exports = {
   mode: "jit",
   darkMode: ["class", '[data-theme="dark"]'],
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./{docs,src}/**/*.{js,jsx,ts,tsx,mdx}"],
   theme: {
     extend: {
       backgroundImage: (theme) => ({

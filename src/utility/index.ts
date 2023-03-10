@@ -1,4 +1,5 @@
 import React from "react"
+import { renderToStaticMarkup, renderToString } from "react-dom/server"
 import _, { slice } from "lodash"
 import { RemData } from "../rem-json"
 import {
@@ -12,7 +13,7 @@ import {
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
-import Preview_mdx from "../components/Preview"
+import Preview from "../components/Preview"
 
 // import Cloze from "../components/Cloze"
 
@@ -72,6 +73,7 @@ export function make_str(input: RemData[] | []): string {
   return output_arr
 }
 
+/*
 export function id_to_mdx_BROKEN(
   id: string,
   key_type?: "key" | "value",
@@ -110,6 +112,7 @@ export function id_to_mdx_BROKEN(
     // single quote escape for single liners with import/export JS code snippet
   }
 }
+*/
 
 /**Regex Utility to Match `[`ANYTHING`](./)` | `[`ANYTHING`](/only-slugify)`
  *
@@ -563,9 +566,13 @@ export function getAllPreviewMDX(preview_ids_arr: string[]) {
     })
     .flat()
   const dedup_preview_ids = _.uniq(all_preview_ids)
+  //! MUST RENAME FILE TO .tsx TO MAKE JSX WORK!!
   const output_all_preview_mdx = dedup_preview_ids
-    .map((link_id) => `<Preview id="${link_id}"/>`)
-    .join("\n")
+    // .map((link_id) => renderToStaticMarkup(<Preview id={link_id} />))
+    // .map((link_id) => renderToString(<Preview id={link_id} />))
+    .map((link_id) => Preview({ id: link_id }))
+  // .join("\n")
+
   return output_all_preview_mdx
 }
 /**Using this function breaks docusaurus due to requiring node process to run in client?!
