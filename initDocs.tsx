@@ -23,6 +23,7 @@ import {
 } from "./src/utility"
 import _ from "lodash"
 import { renderToStaticMarkup } from "react-dom/server"
+import Preview from "./src/components/Preview"
 
 let debug_keywords: any[] = []
 let debug_tags: any[] = []
@@ -71,7 +72,7 @@ async function generate_mdx_page_from_id(
   //? why is \\u005c\\u005c (which appears as \u005c\u005c in mdx) OK but NOT \\ (in MDX)?! Makes no sense - must be some quirk with mdx-loader/docusaurus parser
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
   // const value_mdx = "debug if value_mdx is breaking"
-  let value_mdx = id_to_mdx(id, "value", { safe: true })
+  let value_mdx = id_to_mdx(id, "value", { safe: true, preview: true })
 
   const value_mdx_newLine = value_mdx?.match(/([\n])+/g)?.length
   const value_mdx_code = value_mdx?.match(
@@ -151,7 +152,7 @@ async function generate_mdx_page_from_id(
   //   str = str.replace(/\`/g, "") //omit
   //   return $str
   // }
-  let ids_with_preview: string[] = []
+  // let ids_with_preview: string[] = []
 
   //TODO fix identical child skip check
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
@@ -162,7 +163,7 @@ async function generate_mdx_page_from_id(
     // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
 
-    if (v) ids_with_preview.push(child_id)
+    // if (v) ids_with_preview.push(child_id)
 
     //! max sure to check this doesn't exist on other
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
@@ -247,7 +248,7 @@ async function generate_mdx_page_from_id(
       //? return [**_`JS`_**](/docs/JS)
       //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
 
-      if (v) ids_with_preview.push(ref_id)
+      // if (v) ids_with_preview.push(ref_id)
 
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
@@ -294,8 +295,8 @@ async function generate_mdx_page_from_id(
     })
     .filter((str) => str !== undefined)
 
-  ids_with_preview = _.uniq(ids_with_preview)
-  const preview_mdx = getAllPreviewMDX(ids_with_preview)
+  // ids_with_preview = _.uniq(ids_with_preview)
+  // const preview_mdx = getAllPreviewMDX(ids_with_preview)
 
   const output_mdx = `---
 ${
@@ -331,10 +332,18 @@ ${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }## References
 
-${references
-  .map((ref, i) => `${i + 1}. ${ref}\n`)
-  .join("")}\n\n${preview_mdx.join("\n")}`
-  return output_mdx
+${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}}`
+  //\n\n${preview_mdx.join("\n")
+
+  const re_preview_ids =
+    /(?<=\[<><span data-tooltip-id="preview__)([a-zA-Z0-9]+)(?=">)/g
+  const ids_with_preview = _.uniq(output_mdx.match(re_preview_ids)) || []
+
+  const preview_mdx = ids_with_preview.map((link_id) =>
+    Preview({ id: link_id })
+  )
+
+  return output_mdx + "\n\n" + preview_mdx.join("\n\n")
 }
 /**
  * PAINFUL: to find fix for the extra commas in array map to string in MDX - need to use .join("") instead of .toString()!!

@@ -1,6 +1,6 @@
 import React from "react"
 import MDXComponents from "@theme-original/MDXComponents"
-import { Redirect } from "@docusaurus/router"
+import { Link, Redirect } from "@docusaurus/router"
 import Image from "@theme/IdealImage"
 import { Tooltip } from "react-tooltip"
 import tooltip_css from "react-tooltip/dist/react-tooltip.css"
@@ -8,6 +8,7 @@ import tooltip_css from "react-tooltip/dist/react-tooltip.css"
 
 export default {
   ...MDXComponents,
+  Link,
   Redirect,
   Image,
   Tooltip,

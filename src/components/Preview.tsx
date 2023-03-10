@@ -20,7 +20,7 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
   const ref_mdx = id_to_ref_mdx(id)
   const ref_arr = ref_mdx?.map((ref) => `<h6>\n\n${ref}</h6>`) || []
   const ref_l = ref_arr.length
-  const ref_min = 3 < ref_l - 1 ? 3 : ref_l - 1
+  const ref_min = 5 < ref_l - 1 ? 3 : ref_l - 1
   const ref_top = ref_arr.slice(0, ref_min).join("")
   const ref_bot = ref_arr.slice(ref_min).join("")
   const is_ref_bot = ref_bot.length
@@ -30,10 +30,12 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
     getTags(id)
       ?.map(
         (tag) =>
-          `<Link to="/docs/tags/${_.kebabCase(tag)}"><code>${tag}</code></Link>`
+          `<Link to="/docs/tags/${_.kebabCase(
+            tag
+          )}"><code class="rounded-full">${tag}</code></Link>`
       )
       .join("") || ""
-  const num_tags = tags.length
+  const num_tags = getTags(id)?.length || ""
   //! manually rendering to static markup since renderToStaticMarkup() is not working right...
   if (!notMarkup) {
     return `<>
@@ -41,16 +43,18 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
     id="${tooltip_id}"
     place="top"
     clickable
+    className="max-w-lg rounded-full bg-zinc-300 text-slate-700 dark:bg-zinc-700 dark:text-slate-300 opacity-75"
   >
-      <div><details class="w-3/4"><summary><h4>\n\n${tooltip_value}\n\n</h4><h5>${ref_l} References</h5><ol>${ref_top}</ol></summary><br/><ol>${ref_bot}</ol></details>
+      <div class="rounded-full bg-zinc-300 dark:bg-zinc-700"><h4>\n\n${tooltip_value}\n\n</h4><h5>${ref_l} References</h5><ol>\n${ref_top}</ol>
   </div></Tooltip>
   <Tooltip
     id="${tooltip_id}"
     place="right"
     clickable
+    className="flex flex-row shrink"
   >
-    <div>
-      ${num_tags && `${num_tags} tags: `}${tags}
+    <div class="rounded-full bg-zinc-300 text-slate-700 dark:bg-zinc-700 dark:text-slate-300 opacity-75">
+      ${num_tags && `${num_tags}`}${tags}
     </div>
   </Tooltip>
 </>`
