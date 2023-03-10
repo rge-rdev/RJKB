@@ -2,10 +2,31 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 const TerserPlugin = require("terser-webpack-plugin")
 
-//@ts-ignore
 const lightCodeTheme = require("prism-react-renderer/themes/github")
-//@ts-ignore
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
+
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+const webpack = require("webpack")
+
+//@ts-ignore
+/** @type {import('@docusaurus/types').Plugin} */
+
+function RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN(context, options) {
+  return {
+    name: "rj-fix-webpack-node-polyfill",
+    configureWebpack(config, isServer, utils, content) {
+      return {
+        // plugins: [new NodePolyfillPlugin({ includeAliases: ["process"] })], // add "os" if webpack suddenly complains about that too...
+        plugins: [new NodePolyfillPlugin()],
+        // plugins: [
+        //   new webpack.ProvidePlugin({
+        //     process: "process/browser",
+        //   }),
+        // ],
+      }
+    },
+  }
+}
 
 //@ts-ignore
 /** @type {import('@docusaurus/types').Plugin} */
@@ -93,6 +114,7 @@ const config = {
     "@docusaurus/theme-live-codeblock",
     RJ_WEBPACK_PLUGIN,
     RJ_TAILWIND_PLUGIN,
+    RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN,
     "docusaurus-plugin-sass",
     [
       "@docusaurus/plugin-ideal-image",

@@ -12,7 +12,7 @@ import {
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
-import Preview from "../components/Preview"
+import Preview_mdx from "../components/Preview"
 
 // import Cloze from "../components/Cloze"
 
@@ -126,9 +126,10 @@ export function replace_link_to_key(str: string) {
 export function id_to_mdx(
   id: string,
   key_type?: "key" | "value",
-  config?: { safe: true },
-  preview?: true
+  config?: { safe?: boolean; preview?: boolean }
 ) {
+  const safe = config?.safe
+  const preview = config?.preview
   const doc = getDoc(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
@@ -140,11 +141,11 @@ export function id_to_mdx(
     /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions
 
   const re_link_preview_mdx =
-    /\[<><span data-tooltip-id="tooltip__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
+    /\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
   if (preview)
     re_unsafe_jsx =
-      /.*(?=\[<><span data-tooltip-id="tooltip__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<><span data-tooltip-id="tooltip__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
+      /.*(?=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
   // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
   // /(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
   // /(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
@@ -152,7 +153,7 @@ export function id_to_mdx(
   //! TYPO a-zA-z WRONG should be a-zA-Z
 
   const re_unsafe_unicode = /\\x|\\u/
-  let key = make_mdx(doc.key, id, preview)
+  let key = make_mdx(doc.key, { id, preview })
   if (key.match(re_unsafe_unicode)?.length) {
     if (!preview) {
       key = `<code><span>&#92;</span>${key.slice(2, -1)}</code>`
@@ -207,7 +208,7 @@ export function id_to_mdx(
   }
 
   if (!key_type || key_type === "key") {
-    if (!config?.safe) return key
+    if (!safe) return key
     if (config.safe)
       return key
         .replace(re_unsafe_jsx, "`$1`") //
@@ -218,9 +219,9 @@ export function id_to_mdx(
   }
   if (key_type === "value") {
     if (!doc.value) return
-    if (!config?.safe) return make_mdx(doc.value, id, preview)
+    if (!safe) return make_mdx(doc.value, { id, preview })
     if (config.safe) {
-      let value = make_mdx(doc.value, id, preview)
+      let value = make_mdx(doc.value, { id, preview })
       return value
         .replace(re_unsafe_jsx, "`$1`")
         .replace(/(?<!`)\`{2}(?!`)/g, "`")
@@ -319,28 +320,22 @@ export function id_to_tags(id: string) {
 
 export function make_mdx(
   input: RemData[] | [],
-  optional_id_to_debug?: string,
-  preview?: boolean
+  config?: { id?: string; preview?: boolean }
 ): string {
+  const id = config?.id
+  const preview = config?.preview
   if (!Array.isArray(input)) {
-    console.log("BROKEN!!", `${optional_id_to_debug}`)
+    console.log("BROKEN!!", `${id}`)
     return "__BROKEN__"
   }
   let output_arr = input?.map((el: RemData) =>
-    obj_to_mdx(el, undefined, preview)
+    obj_to_mdx(el, undefined, { preview, id })
   )
   if (Array.isArray(output_arr)) {
     const output_str = output_arr.join("")
-    // fix raw strings that contain import are START - which is illegal for mdx-loader
-    // ^ to match illegal reserved keywords
-    // if (output_str.match(/^import /g))
-    //   return `\`\`\`tsx\n ${output_str}\n\`\`\``
-    // if (output_str.match(/^export default |^export const |^export function /g))
-    //   return `\`\`\`tsx\n ${output_str}\n\`\`\``
-    // output_str.match(/(?<!\\n\\`\\`\\`.*\n)/g)
     return output_str
   }
-  return output_arr
+  return `__FATAL__ERROR__REACHED__AT__ID__${id}`
 }
 
 /** PLAINTEXT version of make_str
@@ -533,18 +528,76 @@ export function resolve_lang_mdx(lang: string) {
  */
 
 // export const Aliases_UID = "2n8Gw7PvXGPcFQm7i"
+export const map_all_link_ids: Map<string, string[]> = new Map()
+export function getLinkIds(id: string) {
+  return map_all_link_ids.get(id)
+}
+const checked_id_for_links: Set<string> = new Set()
+
+function setLinkIDtoMap(set_id: string, link_id: string) {
+  const visited = checked_id_for_links.has(set_id)
+  if (visited) return
+  const curr_link_ids = map_all_link_ids.get(set_id)
+  if (!curr_link_ids) {
+    map_all_link_ids.set(set_id, [link_id])
+    checked_id_for_links.add(set_id)
+  }
+  if (curr_link_ids && !curr_link_ids.find((link) => link === link_id)) {
+    map_all_link_ids.set(set_id, [...curr_link_ids, link_id])
+    checked_id_for_links.add(set_id)
+  }
+}
+
+/**Using this function breaks docusaurus due to requiring node process to run in client?!
+ * That means docusaurus is deferring FC rendering to client - is this a bug or intended feature of mdxjs?
+ *
+ * @param preview_ids_arr
+ * @returns
+ */
+export function getAllPreviewMDX(preview_ids_arr: string[]) {
+  const all_preview_ids = preview_ids_arr
+    .map((id_with_link) => {
+      const link_ids_arr = map_all_link_ids.get(id_with_link)
+      if (!link_ids_arr) return []
+      return link_ids_arr
+    })
+    .flat()
+  const dedup_preview_ids = _.uniq(all_preview_ids)
+  const output_all_preview_mdx = dedup_preview_ids
+    .map((link_id) => `<Preview id="${link_id}"/>`)
+    .join("\n")
+  return output_all_preview_mdx
+}
+/**Using this function breaks docusaurus due to requiring node process to run in client?!
+ * That means docusaurus is deferring FC rendering to client - is this a bug or intended feature of mdxjs?
+ *
+ * @param preview_ids_arr
+ * @returns
+ */
+export function getAllPreviewMDX_BROKEN_CLIENT(preview_ids_arr: string[]) {
+  const all_preview_ids = preview_ids_arr
+    .map((id_with_link) => {
+      const link_ids_arr = map_all_link_ids.get(id_with_link)
+      if (!link_ids_arr) return []
+      return link_ids_arr
+    })
+    .flat()
+  const dedup_preview_ids = _.uniq(all_preview_ids)
+  const output_all_preview_mdx = dedup_preview_ids
+    .map((link_id) => `<Preview id="${link_id}"/>`)
+    .join("\n")
+  return output_all_preview_mdx
+}
+
 export function obj_to_mdx(
   el: RemData,
-  input_str?: string | "",
-  preview?: boolean
-): string
-export function obj_to_mdx(
-  el: RemData,
-  input_str?: string | "",
-  preview?: boolean
-): [string, string]
-export function obj_to_mdx(el: RemData, input_str = "", preview?: boolean) {
+  input_str = "",
+  config?: { id?: string; preview?: boolean }
+) {
   let output_str: string = input_str
+  const id = config?.id
+  const preview = config?.preview
+  // const { preview, id } = config // DOESN'T WORK!
 
   if (typeof el === "string") output_str += el
   if (typeof el === "object") {
@@ -631,11 +684,11 @@ export function obj_to_mdx(el: RemData, input_str = "", preview?: boolean) {
               .concat(alias_path?.split("/").slice(-1))
               .join("/")
           if (!aliasKey) {
-            console.log(
-              `Could not find aliasKey for aliasId: ${alias_id} - ref to doc ID: ${original_doc_id_ref_by_alias} ${id_to_plaintext(
-                original_doc_id_ref_by_alias
-              )} <- will assign this original doc key as fallback`
-            )
+            // console.log(
+            //   `Could not find aliasKey for aliasId: ${alias_id} - ref to doc ID: ${original_doc_id_ref_by_alias} ${id_to_plaintext(
+            //     original_doc_id_ref_by_alias
+            //   )} <- will assign this original doc key as fallback`
+            // )
             aliasKey = id_to_mdx(original_doc_id_ref_by_alias)
             alias_path = get_path_from_id(original_doc_id_ref_by_alias)
             // process.exit()
@@ -648,39 +701,37 @@ export function obj_to_mdx(el: RemData, input_str = "", preview?: boolean) {
             output_str += `[\`${aliasKey}\`](${alias_path})`
             return output_str // exit early once alias found
           } else if (preview) {
-            const id_tooltip = `tooltip__${original_doc_id_ref_by_alias}`
-            const alias_tooltip_mdx = Preview(
-              original_doc_id_ref_by_alias,
-              true
-            )
+            const id_tooltip = `preview__${original_doc_id_ref_by_alias}`
             output_str += `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${alias_path})`
-            return [output_str, alias_tooltip_mdx]
+            if (id) setLinkIDtoMap(id, original_doc_id_ref_by_alias)
+            return output_str
           }
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId
         }
-        if (el["_id"] === "2n8Gw7PvXGPcFQm7i") output_str += "" // "__Aliases"
+        const el_id = el["_id"] //? presumably stands for "element" ID? or maybe element link ID?
+        if (el_id === "2n8Gw7PvXGPcFQm7i") output_str += "" // "__Aliases"
         // if (!el["textOfDeletedRem"]) {
-        if (el["_id"] !== "2n8Gw7PvXGPcFQm7i") {
-          const find_doc = map.get(el["_id"]) // return doc obj for link
+        if (el_id !== "2n8Gw7PvXGPcFQm7i") {
+          const find_doc = map.get(el_id) // return doc obj for link
           const find_key = find_doc?.key!
 
-          const path = get_path_from_id(el["_id"])
+          const path = get_path_from_id(el_id)
           if (!path) return "" // early return for empty string - to eliminate linked TAGS or "powerups" from non-main DB
 
           if (!preview) {
             output_str += `[\`${make_mdx(find_key)}\`](${path})`
           } else if (preview) {
-            const id_tooltip = `tooltip__${el["_id"]}`
-            const link_tooltip_mdx = Preview(el["_id"], true)
+            const id_tooltip = `preview__${el_id}`
             output_str += `[<><span data-tooltip-id="${id_tooltip}">${make_mdx(
               find_key
-            )}</span></>](${path})\n${link_tooltip_mdx}\n`
+            )}</span></>](${path})`
+            if (id) setLinkIDtoMap(id, el_id)
           }
-          // output_str += `[[<a href="#${el["_id"]}">${make_mdx(find_key)}</a>]]`
+          // output_str += `[[<a href="#${el_id}">${make_mdx(find_key)}</a>]]`
         }
         if (el["textOfDeletedRem"]) {
-          output_str += `<del id=#${el["_id"]}>${make_mdx(
+          output_str += `<del id=#${el_id}>${make_mdx(
             el["textOfDeletedRem"]
           )}</del>`
         }
@@ -886,12 +937,9 @@ const clearLines = (n: number) => {
 }
 
 export function id_to_tooltop(id: string) {
-  //   // const k = _.unescape(id_to_mdx(id, "key"))
   let k = id_to_mdx(id, "key", { safe: true })?.trim()
   let v = id_to_mdx(id, "value", { safe: true })?.trim()
-  // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
   let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
-  //|| k_link_description === title_mdx
 
   //! max sure to check this doesn't exist on other
   const k_code = k?.match(/^(\`\`\`)/gm)?.length

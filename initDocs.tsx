@@ -15,6 +15,7 @@ import {
   get_path_from_id,
 } from "./src/data/"
 import {
+  getAllPreviewMDX,
   id_to_mdx,
   id_to_plaintext,
   id_to_tags,
@@ -149,76 +150,18 @@ async function generate_mdx_page_from_id(
   //   str = str.replace(/\`/g, "") //omit
   //   return $str
   // }
-
-  let ref_ids = getRefIDs(id) || [] //["PLACEHOLDER REF_ID1", "REF_ID2_FOR", "REF_ID3_DEBUG"]
-  const references = ref_ids
-    .map((map_id) => {
-      let k = id_to_mdx(map_id, "key", { safe: true })?.replace(
-        re_title_alias_ref,
-        "[**_$1_**]("
-        // `[**_${title_match_ref.slice(1, -2)}_**](`
-      )
-      let v = id_to_mdx(map_id, "value", { safe: true })?.replace(
-        re_title_alias_ref,
-        "[**_$1_**]("
-      )
-      //? return [**_`JS`_**](/docs/JS)
-      //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
-
-      const k_code = k?.match(/^(\`\`\`)/gm)?.length
-      const v_code = v?.match(/^(\`\`\`)/gm)?.length
-
-      // const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-      const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-
-      const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
-      const v_newLine = v?.match(/(\n)+/g)?.length
-
-      const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
-      const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
-
-      const k_img = k?.match(
-        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
-      )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
-
-      if (
-        !k_code &&
-        (k_newLine || k_illegal) &&
-        !k_link &&
-        typeof k?.trim()?.length === "number" &&
-        k?.trim()?.length > 20
-      ) {
-        k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
-      }
-
-      if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
-      v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
-      const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
-      if (k && v) {
-        const k_path = get_path_from_id(map_id) //! map_id NOT id!!
-        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)
-          k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
-        k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
-        k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
-
-        return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
-          v_code || v_newLine ? "" : ""
-        }${v}\n`
-      }
-      // if (k && !v) return `${k_code || k_newLine || k_img ? "" : ""}${k}\n\n`
-      // if (!k && v) return `\n\n${v}`
-    })
-    .filter((str) => str !== undefined)
+  let ids_with_preview: string[] = []
 
   //TODO fix identical child skip check
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
-  const child_text_array = getChildren(id)?.map((id) => {
+  const child_text_array = getChildren(id)?.map((child_id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
-    let k = id_to_mdx(id, "key", { safe: true }, test_preview)?.trim()
-    let v = id_to_mdx(id, "value", { safe: true }, test_preview)?.trim()
+    let k = id_to_mdx(child_id, "key", { safe: true })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
+    let v = id_to_mdx(child_id, "value", { safe: true, preview: true })?.trim()
     // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
-    //|| k_link_description === title_mdx
+
+    if (v) ids_with_preview.push(child_id)
 
     //! max sure to check this doesn't exist on other
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
@@ -245,7 +188,7 @@ async function generate_mdx_page_from_id(
 
     const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
 
-    const k_path = get_path_from_id(id)
+    const k_path = get_path_from_id(child_id)
     const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
 
     if (!k_code && (k_newLine || k_illegal) && !k_img && !k_link) {
@@ -288,6 +231,71 @@ async function generate_mdx_page_from_id(
     return ""
   })
 
+  let ref_ids_arr = getRefIDs(id) || [] //["PLACEHOLDER REF_ID1", "REF_ID2_FOR", "REF_ID3_DEBUG"]
+  const references = ref_ids_arr
+    .map((ref_id) => {
+      let k = id_to_mdx(ref_id, "key", { safe: true })?.replace(
+        re_title_alias_ref,
+        "[**_$1_**]("
+        // `[**_${title_match_ref.slice(1, -2)}_**](`
+      )
+      let v = id_to_mdx(ref_id, "value", {
+        safe: true,
+        preview: true,
+      })?.replace(re_title_alias_ref, "[**_$1_**](")
+      //? return [**_`JS`_**](/docs/JS)
+      //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
+
+      if (v) ids_with_preview.push(ref_id)
+
+      const k_code = k?.match(/^(\`\`\`)/gm)?.length
+      const v_code = v?.match(/^(\`\`\`)/gm)?.length
+
+      // const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+      const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+
+      const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
+      const v_newLine = v?.match(/(\n)+/g)?.length
+
+      const k_illegal = k?.match(/^([ ]*export |[ ]*import )/gm)?.length
+      const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
+
+      const k_img = k?.match(
+        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+      )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
+
+      if (
+        !k_code &&
+        (k_newLine || k_illegal) &&
+        !k_link &&
+        typeof k?.trim()?.length === "number" &&
+        k?.trim()?.length > 20
+      ) {
+        k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
+      }
+
+      if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
+      v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+      const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+      if (k && v) {
+        const k_path = get_path_from_id(ref_id) //! map_id NOT id!!
+        if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)
+          k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
+        k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
+        k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
+
+        return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
+          v_code || v_newLine ? "" : ""
+        }${v}\n`
+      }
+      // if (k && !v) return `${k_code || k_newLine || k_img ? "" : ""}${k}\n\n`
+      // if (!k && v) return `\n\n${v}`
+    })
+    .filter((str) => str !== undefined)
+
+  ids_with_preview = _.uniq(ids_with_preview)
+  const preview_mdx = getAllPreviewMDX(ids_with_preview)
+
   const output_mdx = `---
 ${
   title && title !== null && title !== undefined ? `title: "${title_yaml}"` : ""
@@ -304,7 +312,7 @@ tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
   }
 alias IDs: [${alias_ids.join(", ")}]
 aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
-references: [${ref_ids.join(", ")}]
+references: [${ref_ids_arr.join(", ")}]
 id: ${id}
 filepath: "/${filepath}"
 route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"
@@ -322,7 +330,7 @@ ${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }## References
 
-${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}`
+${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}\n\n${preview_mdx}`
   return output_mdx
 }
 /**
