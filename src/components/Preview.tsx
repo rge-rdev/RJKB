@@ -2,6 +2,7 @@ import _ from "lodash"
 import React from "react"
 import { Tooltip } from "react-tooltip"
 import { getTags } from "../../initDocs"
+import { get_path_from_id } from "../data"
 import {
   id_to_mdx,
   id_to_plaintext,
@@ -24,11 +25,18 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
       ?.filter((ref) => typeof ref === "string" && ref.length > 0)
       .map((ref) => `<li><cite>${ref}</cite></li>`) || []
   const ref_l = ref_arr.length
-  const ref_min = 5 < ref_l - 1 ? 3 : ref_l - 1
-  const ref_top = ref_arr.slice(0, ref_min).join("")
-  const ref_bot = ref_arr.slice(ref_min).join("")
+  const ref_show_l = 3
+  const ref_has_more = ref_show_l < ref_l
+  const ref_top =
+    ref_show_l && ref_show_l < ref_l
+      ? ref_arr.slice(0, ref_show_l).join("")
+      : ref_arr
+  // const ref_bot = ref_arr.slice(ref_show_l).join("")
   // const is_ref_bot = ref_bot.length
   // const aka = ""
+  const ref_path = get_path_from_id(id)
+    ? get_path_from_id(id) + "#references"
+    : undefined
 
   const tooltip_id = `preview__${id}`
   // const tags =
@@ -49,14 +57,20 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
     place="top"
     clickable
   >
-      <small class="">\n\t<blockquote>\n\t<span>${tooltip_value}</span></blockquote>\n<h6>${
+      <small>\n\t<blockquote class="font-extrabold">\n\t<span>${tooltip_value}</span></blockquote>\n<h6>${
       ref_l
-        ? `Cited ${ref_l} time${ref_l > 1 ? "s" : ""}</h6>\n<ol>${ref_top}</ol>`
+        ? `<cite class="text-xs">Cited ${ref_l} time${
+            ref_l > 1 ? "s" : ""
+          }</cite></h6>\n<ol>${ref_top}</ol>`
+        : ""
+    }${
+      ref_has_more
+        ? `<Link to="${ref_path}">View ${ref_l - ref_show_l} more Refs</Link>`
         : ""
     }
       </small></Tooltip>
   `
-  //! somehow </small></Tooltip> is being return & written to mdx TWICE - sometimes with sections of incomplete pieces of refs html - how is that even possible? This may hint at a serious engine bug - possibly a bad optimizing assumption from the compiler? 
+    //! somehow </small></Tooltip> is being return & written to mdx TWICE - sometimes with sections of incomplete pieces of refs html - how is that even possible? This may hint at a serious engine bug - possibly a bad optimizing assumption from the compiler?
     if (!tooltip_value.length) return "" // should never return here - keep as future guard clause
   }
   /** OMIT TAGS/ALIAS for now

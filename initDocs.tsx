@@ -76,7 +76,12 @@ async function generate_mdx_page_from_id(
   //? why is \\u005c\\u005c (which appears as \u005c\u005c in mdx) OK but NOT \\ (in MDX)?! Makes no sense - must be some quirk with mdx-loader/docusaurus parser
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
   // const value_mdx = "debug if value_mdx is breaking"
-  let value_mdx = id_to_mdx(id, "value", { safe: true, preview: true })
+  // let value_mdx = id_to_mdx(id, "value", { safe: true, preview: true })
+  let value_mdx = id_to_mdx(id, "value", {
+    safe: true,
+    preview: true,
+    // jsx: true,
+  })
 
   const value_mdx_newLine = value_mdx?.match(/([\n])+/g)?.length
   const value_mdx_code = value_mdx?.match(
@@ -158,12 +163,24 @@ async function generate_mdx_page_from_id(
   // }
   // let ids_with_preview: string[] = []
 
+  const child_jsx = false
+
   //TODO fix identical child skip check
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((child_id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
-    let k = id_to_mdx(child_id, "key", { safe: true })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
-    let v = id_to_mdx(child_id, "value", { safe: true, preview: true })?.trim()
+    let k = id_to_mdx(child_id, "key", { safe: true, jsx: child_jsx })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
+    let v = id_to_mdx(child_id, "value", {
+      safe: true,
+      preview: true,
+      jsx: child_jsx,
+    })?.trim()
+
+    if (child_jsx) {
+      if (k && v) return `<h2>${k}<span> ↔ </span>${v}</h2>`
+      if (k) return `<h2>${k}<span></h2>`
+      if (!k) return ""
+    }
     // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
 
@@ -237,10 +254,12 @@ async function generate_mdx_page_from_id(
     return ""
   })
 
+  const ref_jsx = false
+
   let ref_ids_arr = getRefIDs(id) || [] //["PLACEHOLDER REF_ID1", "REF_ID2_FOR", "REF_ID3_DEBUG"]
   const references = ref_ids_arr
     .map((ref_id) => {
-      let k = id_to_mdx(ref_id, "key", { safe: true })?.replace(
+      let k = id_to_mdx(ref_id, "key", { safe: true, jsx: ref_jsx })?.replace(
         re_title_alias_ref,
         "[**_$1_**]("
         // `[**_${title_match_ref.slice(1, -2)}_**](`
@@ -248,7 +267,14 @@ async function generate_mdx_page_from_id(
       let v = id_to_mdx(ref_id, "value", {
         safe: true,
         preview: true,
+        jsx: ref_jsx,
       })?.replace(re_title_alias_ref, "[**_$1_**](")
+
+      if (ref_jsx) {
+        if (k) return `<li>${k}${v ? ` ↔ ${v}` : ""}</li>`
+        if (!k) return
+      }
+
       //? return [**_`JS`_**](/docs/JS)
       //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
 
@@ -338,9 +364,11 @@ ${
       }`
 }${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
-  }## References
-
-${references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")}`
+  }\n\n## References\n\n${
+    ref_jsx
+      ? `${references.length ? `<ol>${references.join("")}</ol>` : ""}`
+      : references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")
+  }`
   //\n\n${preview_mdx.join("\n")
 
   const re_preview_ids =

@@ -635,6 +635,7 @@ export function obj_to_mdx(
             output_str += `<CodeBlock language="${resolve_lang_mdx(
               el["language"]
             )}">{\`${(el["text"] as string)
+              .replace(/(?<!\\)`/g, "\\`") //! MUST escape backticks inside <CodeBlock> else will throw!
               .trim()
               .replace(/\n/gs, "\\n")}\`}</CodeBlock>` //! THIS WAS A CRITICAL SILENT && UNDOCUMENTED? BUG - all new lines in plaintext code must have explicit \n
         }
