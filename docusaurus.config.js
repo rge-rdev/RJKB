@@ -39,10 +39,10 @@ function RJ_WEBPACK_PLUGIN(context, options) {
     configureWebpack(config, isServer, utils, content) {
       return {
         optimization: {
-          mergeDuplicateChunks: true, // skip client optimizating step to speed up build
-          removeAvailableModules: false, // disable duplicate module check for extra build speed
+          // mergeDuplicateChunks: true, // skip client optimizating step to speed up build
+          // removeAvailableModules: false, // disable duplicate module check for extra build speed
 
-          minimize: false,
+          minimize: true,
           minimizer: [
             new TerserPlugin({
               minify: TerserPlugin.swcMinify,
@@ -51,7 +51,7 @@ function RJ_WEBPACK_PLUGIN(context, options) {
                   unused: true,
                   booleans_as_integers: true, // coerce even smaller!
                   dead_code: true, // kill dead code
-                  reduce_funcs: true, //? assume this reduces name size
+                  // reduce_funcs: true, //? risky to enable - Terser author considered obsoleting this due to bugs, exponential complexity (esp for recursive fn) & miniminal bundle size improvement //https://github.com/terser/terser/issues/696
                 },
                 mangle: {},
               },
@@ -123,7 +123,7 @@ const config = {
       "@docusaurus/plugin-ideal-image",
       /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
       {
-        quality: 70,
+        quality: 80,
         max: 1030, // max resized image's size.
         min: 640, // min resized image's size. if original is lower, use that size.
         steps: 2, // the max number of images generated between min and max (inclusive)
@@ -266,11 +266,12 @@ const config = {
       },
       */
       navbar: {
-        title: "RJKB",
+        // title: "", // Disable title to show only SVG Logo for home page return
 
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "RJKB Site Logo",
+          src: "img/LogoTextRJKB.svg",
+          // src: "img/LogoTextRJKB.svg",
         },
         items: [
           {

@@ -2,7 +2,7 @@ import _ from "lodash"
 import React from "react"
 import { Tooltip } from "react-tooltip"
 import { getTags } from "../../initDocs"
-import { get_path_from_id } from "../data"
+import { get_path_from_id, getAliasIDs, getAliasSlugs } from "../data"
 import {
   id_to_mdx,
   id_to_plaintext,
@@ -10,70 +10,91 @@ import {
   id_to_ref_mdx_jsx,
   id_to_tooltop,
 } from "../utility"
+import fs from "fs-extra"
+import { renderToStaticMarkup } from "react-dom/server"
 
-interface PreviewProps {
-  id: string
-  notMarkup?: boolean
+const map_all_static_preview: Map<string, string> = new Map()
+
+export function getStaticPreviews(ids: string[]) {
+  if (!ids) return
+  const output_static_previews: string[] = []
+  ids.forEach((id) => {
+    let static_preview = map_all_static_preview.get(id)
+    if (static_preview) output_static_previews.push(static_preview)
+    if (!static_preview) {
+      static_preview = Preview(id)
+      if (!static_preview) return
+      if (static_preview) output_static_previews.push(static_preview)
+    }
+  })
+  return output_static_previews
+  //Preview({ id: link_id }
 }
 
-export default function Preview({ id, notMarkup }: PreviewProps) {
-  // const tooltip_key = id_to_mdx(id, "key", { safe: true, jsx: true })
-  const tooltip_value = id_to_mdx(id, "value", { safe: true, jsx: true }) || ""
+export default function Preview(id: string) {
+  // need to check if id is for alias - in which case need to assign original ref that alias is pointing to - I think this is this is the root of the silent fails
+  const tooltip_key = id_to_mdx(id, "key", { safe: true, jsx: true })
+  if (!tooltip_key) return ""
+  const tooltip_value = id_to_mdx(id, "value", {
+    safe: true,
+    jsx: true,
+  })?.trim()
+  if (!tooltip_value) return ""
+
   const ref_mdx = id_to_ref_mdx_jsx(id)
+  const ref_show_l = 5
   const ref_arr =
-    ref_mdx
-      ?.filter((ref) => typeof ref === "string" && ref.length > 0)
-      .map((ref) => `<li><cite>${ref}</cite></li>`) || []
+    ref_mdx?.filter((ref) => typeof ref === "string" && ref.length > 0) || []
   const ref_l = ref_arr.length
-  const ref_show_l = 3
   const ref_has_more = ref_show_l < ref_l
-  const ref_top =
-    ref_show_l && ref_show_l < ref_l
-      ? ref_arr.slice(0, ref_show_l).join("")
-      : ref_arr
-  // const ref_bot = ref_arr.slice(ref_show_l).join("")
-  // const is_ref_bot = ref_bot.length
-  // const aka = ""
+  // const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0)
+  const alias_ids = getAliasIDs(id)
+  const aka = alias_ids?.length
+    ? `<em>&#x20;aka&#x20;</em>${getAliasIDs(id)
+        ?.map(
+          (id) =>
+            `<span>${id_to_mdx(id, "key", { safe: true, jsx: true })}</span>`
+        )
+        .join("<span>&#x2C;&#x20;</span>")}`
+    : ""
   const ref_path = get_path_from_id(id)
     ? get_path_from_id(id) + "#references"
     : undefined
 
   const tooltip_id = `preview__${id}`
-  // const tags =
-  //   getTags(id)
-  //     ?.map(
-  //       (tag) =>
-  //         `<code class="rounded-full h-10"><Link to="/docs/tags/${_.kebabCase(
-  //           tag
-  //         )}">${tag.trim()}</Link></code>`
-  //     )
-  //     .join("") || ""
-  // const num_tags = getTags(id)?.length || ""
   //! manually rendering to static markup since renderToStaticMarkup() is not working right...
-  if (!notMarkup && tooltip_value.length) {
-    return `
+  if (ref_path && tooltip_key && tooltip_value) {
+    const show_more_refs = ref_has_more
+      ? `<Link to="${ref_path}">View ${ref_l - ref_show_l} more Refs</Link>`
+      : ""
+
+    const ref_slice = ref_arr.slice(0, ref_show_l)
+    const refs = ref_slice.map((ref) => `<li><cite>${ref}</cite></li>`).join("")
+    const ref_jsx = ref_l
+      ? `<cite class="text-xs">Cited ${ref_l} time${
+          ref_l > 1 ? "s" : ""
+        }</cite><ol>${refs}</ol>`
+      : ""
+    const output = `
   <Tooltip
     id="${tooltip_id}"
     place="top"
     clickable
   >
-      <small>\n\t<blockquote class="font-extrabold">\n\t<span>${tooltip_value}</span></blockquote>\n<h6>${
-      ref_l
-        ? `<cite class="text-xs">Cited ${ref_l} time${
-            ref_l > 1 ? "s" : ""
-          }</cite></h6>\n<ol>${ref_top}</ol>`
-        : ""
-    }${
-      ref_has_more
-        ? `<Link to="${ref_path}">View ${ref_l - ref_show_l} more Refs</Link>`
-        : ""
-    }
-      </small></Tooltip>
-  `
+      <small><dfn><dt>${tooltip_key}${aka}</dt><dd>
+        <blockquote class="font-extrabold"><span>${tooltip_value}</span></blockquote>
+      </dd></dfn>${ref_jsx}</small></Tooltip>`
+
+    const re_to_fix_duplicate_small_tooltip_closing_tags_somehow_showing_up_do_to_wierd_JS_engine_breakdown =
+      /(?<=<\/small><\/Tooltip>)[\n ]+.*<\/small><\/Tooltip>(?=([ \n]+<Tooltip|[ \n]+))/g
+    //! REALLY WIERD THAT (.*)</small></Tooltip> ends up duplicated and truncated at random place where (.*) can vary in length but is truncated leaving broken HTML - if I modify the template literal slightly shorter or longer - the place where it is truncated changes - so at least the error seems deterministic
+    //prettier-ignore
+    return output //.replace(re_to_fix_duplicate_small_tooltip_closing_tags_somehow_showing_up_do_to_wierd_JS_engine_breakdown, "")
     //! somehow </small></Tooltip> is being return & written to mdx TWICE - sometimes with sections of incomplete pieces of refs html - how is that even possible? This may hint at a serious engine bug - possibly a bad optimizing assumption from the compiler?
-    if (!tooltip_value.length) return "" // should never return here - keep as future guard clause
   }
-  /** OMIT TAGS/ALIAS for now
+}
+
+/** OMIT TAGS/ALIAS for now
    <Tooltip
     id="${tooltip_id}"
     place="right"
@@ -85,8 +106,8 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
   </Tooltip>
    */
 
-  //? THIS DOESN'T WORK AND DOESN'T GET TRANSFORMED BY REACTDOMSERVER'S STATIC RENDER FN - EVEN WHEN THIS WAS LEFT AS AN ACTUAL FC
-  /*
+//? THIS DOESN'T WORK AND DOESN'T GET TRANSFORMED BY REACTDOMSERVER'S STATIC RENDER FN - EVEN WHEN THIS WAS LEFT AS AN ACTUAL FC
+/*
   return (
     notMarkup && (
       <>
@@ -128,7 +149,6 @@ export default function Preview({ id, notMarkup }: PreviewProps) {
     )
   )
   */
-}
 
 /* Bad example below...
 export function Preview_mdx(id: string, return_as_mdx?: boolean): string

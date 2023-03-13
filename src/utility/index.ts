@@ -569,6 +569,7 @@ function setLinkIDtoMap(set_id: string, link_id: string) {
  * @param preview_ids_arr
  * @returns
  */
+/*
 export function getAllPreviewMDX(preview_ids_arr: string[]) {
   const all_preview_ids = preview_ids_arr
     .map((id_with_link) => {
@@ -587,6 +588,7 @@ export function getAllPreviewMDX(preview_ids_arr: string[]) {
 
   return output_all_preview_mdx
 }
+*/
 /**Using this function breaks docusaurus due to requiring node process to run in client?!
  * That means docusaurus is deferring FC rendering to client - is this a bug or intended feature of mdxjs?
  *
@@ -608,6 +610,13 @@ export function getAllPreviewMDX_BROKEN_CLIENT(preview_ids_arr: string[]) {
   return output_all_preview_mdx
 }
 
+export function escapeTextInJSX(text: string) {
+  return encode(text)
+    .replace(/\{/g, "&#x7B;")
+    .replace(/\}/g, "&#x7D;")
+    .replace(/ {1,}/g, "&#x20;")
+}
+
 export function obj_to_mdx(
   el: RemData,
   input_str = "",
@@ -618,8 +627,10 @@ export function obj_to_mdx(
 
   if (typeof el === "string")
     output_str += jsx
-      ? `<span>${encode(el, { encodeEverything: true })}</span>`
-      : // `<span>${_.escape(el).replace(/^ {1,}| {1,}$/g, "&nbsp;")}</span>`
+      ? `<span>${escapeTextInJSX(el)}</span>`
+      : // ?  `<span>${encode(el)}</span>`
+        // `<span>${encode(el, { encodeEverything: true })}</span>`
+        // `<span>${_.escape(el).replace(/^ {1,}| {1,}$/g, "&nbsp;")}</span>`
         el
   if (typeof el === "object") {
     if (el["i"]) {
@@ -648,7 +659,11 @@ export function obj_to_mdx(
           output_str += `${
             el["qId"]
               ? // ? `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
-                `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
+                jsx
+                ? `\n<Link to="${qId_href}">${escapeTextInJSX(
+                    el["text"]
+                  )}</Link>`
+                : `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
               : ""
           }`
           output_str += `${el["i"] === "m" ? (jsx ? "</q>" : "`") : ""}` // Ref Rem
@@ -686,8 +701,9 @@ export function obj_to_mdx(
           // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
           // output_str += jsx ? `${_.escape(el["text"])}` : `${el["text"]}`
           output_str += jsx
-            ? `${encode(el["text"], { encodeEverything: true })}`
-            : `${el["text"]}`
+            ? `${escapeTextInJSX(el["text"])}`
+            : // ? `${encode(el["text"], { encodeEverything: true })}`
+              `${el["text"]}`
           // output_str += `${el["cId"] ? "</mark>" : ""}`
           output_str += `${el["l"] ? (jsx ? "</em>" : "_") : ""}`
           output_str += `${el["u"] ? "</u>" : ""}`
@@ -1122,13 +1138,14 @@ export function id_to_ref_mdx_jsx(id: string) {
     .map((map_id) => {
       let k = id_to_mdx(map_id, "key", { safe: true, jsx: true })
       let v = id_to_mdx(map_id, "value", { safe: true, jsx: true })
+      if (!k) return
 
       if (k && v) {
         return `${k}<span>&nbsp;↔&nbsp;</span>${v}`
       }
       if (k && !v) return k
     })
-    .filter((str) => str !== undefined)
+    .filter((str) => str !== undefined) as string[]
 
   return ref_mdx
 }

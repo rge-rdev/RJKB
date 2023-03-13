@@ -15,15 +15,13 @@ import {
   get_path_from_id,
 } from "./src/data/"
 import {
-  getAllPreviewMDX,
   id_to_mdx,
   id_to_plaintext,
   id_to_tags,
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
-import { renderToStaticMarkup } from "react-dom/server"
-import Preview from "./src/components/Preview"
+import { getStaticPreviews } from "./src/components/Preview"
 
 let debug_keywords: any[] = []
 let debug_tags: any[] = []
@@ -369,17 +367,14 @@ ${
       ? `${references.length ? `<ol>${references.join("")}</ol>` : ""}`
       : references.map((ref, i) => `${i + 1}. ${ref}\n`).join("")
   }`
-  //\n\n${preview_mdx.join("\n")
 
   const re_preview_ids =
     /(?<=\[<><span data-tooltip-id="preview__)([a-zA-Z0-9]+)(?=">)/g
   const ids_with_preview = _.uniq(output_mdx.match(re_preview_ids)) || []
 
-  const preview_mdx = ids_with_preview.map((link_id) =>
-    Preview({ id: link_id })
-  )
+  const preview_mdx = getStaticPreviews(ids_with_preview)
 
-  return output_mdx + "\n\n" + preview_mdx.join("\n\n")
+  return output_mdx + "\n\n" + preview_mdx?.join("\n\n")
 }
 /**
  * PAINFUL: to find fix for the extra commas in array map to string in MDX - need to use .join("") instead of .toString()!!

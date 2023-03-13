@@ -1,5 +1,7 @@
 import React from "react"
+//@ts-ignore
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
+//@ts-ignore
 import Layout from "@theme/Layout"
 import HomepageFeatures from "../components/Home/HomeFeatures"
 import HomeHeader from "../components/Home/HomeHeader"
