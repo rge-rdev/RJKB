@@ -7,8 +7,9 @@ import { Link, Redirect } from "react-router-dom"
 import Image from "@theme/IdealImage"
 import { Tooltip } from "react-tooltip"
 // import tooltip_css from "react-tooltip/dist/react-tooltip.css" //paste raw css inside custom.css to avoid webpack warnings during build
+import CodeBlock from "@docusaurus/theme-classic/lib/theme/CodeBlock"
 //@ts-ignore
-import CodeBlock from "@theme/CodeBlock"
+// import CodeBlock from "@theme/CodeBlock"
 
 export default {
   ...MDXComponents,

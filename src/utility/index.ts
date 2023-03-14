@@ -153,15 +153,19 @@ export function id_to_mdx(
   //refactor regex here
   // /<([a-z_]+)([^b]{1}|[^u]{1})(\/?)>/g, //? spot the error here - see how long it takes you!
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
+  // /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? dup [z] also should have grouped as ([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})? - was letting <b> slip past...
   let re_unsafe_jsx =
-    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions
+    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g
+  //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions // is it necessary to keep <B> <U> etc as well?
 
   const re_link_preview_mdx =
     /\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
   if (preview)
     re_unsafe_jsx =
-      /.*(?=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
+      /(?<!(?:!?\`[ ]*|\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[\/]?(?:[ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?[\/]?>)(?!(?:[ ]*\`|<span data-tooltip-id="preview__|(?:<\/span>)?(?:<\/>)?\]\((?:\.|\/)))/gs
+  // /(?<!(\`[ ]*|\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
+  // /.*(?=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
   // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
   // /(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
   // /(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
@@ -238,11 +242,18 @@ export function id_to_mdx(
     if (!safe) return make_mdx(doc.value, { id, preview })
     if (config.safe) {
       let value = make_mdx(doc.value, { id, preview })
-      return value
-        .replace(re_unsafe_jsx, "`$1`")
-        .replace(/(?<!`)\`{2}(?!`)/g, "`")
-        .replace(/\[`[ ]+/g, "[`")
-        .replace(/[ ]+`]/g, "`]")
+      const re_starts_with_breaking_import_export_keyword =
+        /^(?:(?: )*(export|import))(?= +)/
+      const export_start = /^(export )/
+      return (
+        value
+          .replace(re_starts_with_breaking_import_export_keyword, "`$1`")
+          // .replace(/^(export|import) /, `$1`)
+          .replace(re_unsafe_jsx, "`$1`")
+          .replace(/(?<!`)\`{2}(?!`)/g, "`")
+          .replace(/\[`[ ]+/g, "[`")
+          .replace(/[ ]+`]/g, "`]")
+      )
     }
   } // TODO: fix assertion here
 }
@@ -752,7 +763,9 @@ export function obj_to_mdx(
             return output_str // exit early once alias found
           } else if (preview) {
             const id_tooltip = `preview__${original_doc_id_ref_by_alias}`
-            output_str += `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${alias_path})`
+            output_str += jsx
+              ? `<Link to="${alias_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
+              : `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${alias_path})`
             if (id) setLinkIDtoMap(id, original_doc_id_ref_by_alias)
             return output_str
           }
@@ -778,9 +791,13 @@ export function obj_to_mdx(
               : `[\`${make_mdx(find_key)}\`](${path})`
           } else if (preview) {
             const id_tooltip = `preview__${el_id}`
-            output_str += `[<><span data-tooltip-id="${id_tooltip}">${make_mdx(
-              find_key
-            )}</span></>](${path})`
+            output_str += jsx
+              ? `<Link to="${path}"><span data-tooltip-id="${id_tooltip}">${make_mdx(
+                  find_key
+                )}</span></></Link>`
+              : `[<><span data-tooltip-id="${id_tooltip}">${make_mdx(
+                  find_key
+                )}</span></>](${path})`
             if (id) setLinkIDtoMap(id, el_id)
           }
           // output_str += `[[<a href="#${el_id}">${make_mdx(find_key)}</a>]]`

@@ -21,7 +21,7 @@ import {
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
-import { getStaticPreviews } from "./src/components/Preview"
+import { getStaticPreviews, getPreviewImports } from "./src/components/Preview"
 
 let debug_keywords: any[] = []
 let debug_tags: any[] = []
@@ -59,7 +59,7 @@ export const getRoute = (id: string) => map_all_routes.get(id)
 
 const show_extra_debug_yaml = false
 
-async function generate_mdx_page_from_id(
+function generate_mdx_page_from_id(
   id: string,
   slug_key: string,
   filepath: string
@@ -153,13 +153,6 @@ async function generate_mdx_page_from_id(
     `\\[(\`(${title_alias_str})\`)\\]\\(`,
     "g"
   )
-  // console.log(re_title_alias_ref)
-  // colocate regex helper functions here
-  // function wrap_mdx_link(str: string){
-  //   str = str.replace(/\`/g, "") //omit
-  //   return $str
-  // }
-  // let ids_with_preview: string[] = []
 
   const child_jsx = false
 
@@ -167,12 +160,17 @@ async function generate_mdx_page_from_id(
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((child_id) => {
     //   // const k = _.unescape(id_to_mdx(id, "key"))
-    let k = id_to_mdx(child_id, "key", { safe: true, jsx: child_jsx })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
     let v = id_to_mdx(child_id, "value", {
       safe: true,
       preview: true,
       jsx: child_jsx,
     })?.trim()
+    const k_preview_if_no_v = !v //? Show preview for K if there is only key value - usually this is for children with single sentence/paragraph descriptions
+    let k = id_to_mdx(child_id, "key", {
+      safe: true,
+      preview: k_preview_if_no_v,
+      jsx: child_jsx,
+    })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
 
     if (child_jsx) {
       if (k && v) return `<h2>${k}<span> ↔ </span>${v}</h2>`
@@ -276,12 +274,9 @@ async function generate_mdx_page_from_id(
       //? return [**_`JS`_**](/docs/JS)
       //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
 
-      // if (v) ids_with_preview.push(ref_id)
-
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-      // const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
       const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
 
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
@@ -372,7 +367,8 @@ ${
     /(?<=\[<><span data-tooltip-id="preview__)([a-zA-Z0-9]+)(?=">)/g
   const ids_with_preview = _.uniq(output_mdx.match(re_preview_ids)) || []
 
-  const preview_mdx = getStaticPreviews(ids_with_preview)
+  // const preview_mdx = getStaticPreviews(ids_with_preview)
+  const preview_mdx = getPreviewImports(ids_with_preview)
 
   return output_mdx + "\n\n" + preview_mdx?.join("\n\n")
 }
@@ -651,6 +647,7 @@ async function loop_docs_mkdir(
 
       alias_slugs.forEach((alias_slug) => {
         const alias_filepath = `${parent_path}/${alias_slug}.mdx`
+        //! Add extra step to ensure alias does not clash with sibling slug - such as /Bittorrent/Torrent.mdx clash with /Bittorrent/torrent/torrent.mdx - only docusaurus prod build throws on error - client build allows silent fail - bad detection, will only warn and then break during SSG phase at 92% progress after 2+hrs!
         // console.log(alias_filepath)
         //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
         if (
@@ -691,25 +688,25 @@ async function loop_docs_mkdir(
     if (num === __DOC_LENGTH) {
       fs.outputFile("test/DEBUG_KEYWORDS.mdx", debug_keywords.join("\n"))
       fs.outputFile("test/DEBUG_TAGS.mdx", debug_tags.join("\n"))
+      fs.remove(
+        "docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx"
+      )
     }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
     if (!skip_next && !skip && slug_key && !title_has_line_breaks)
       try {
-        await fs
-          .outputFile(
-            filepath,
-            await generate_mdx_page_from_id(id, slug_key, filepath)
-          )
-          .then(() => {
-            // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
-            // write_to_md(filepath, )
-            // const full_mdx = ""
-            // fs.writeFile(filepath, full_mdx)
-            const children = getChildren(id)
-            if (!children) return
-            loop_docs_mkdir(dirpath, children)
-            // console.log(`${id} was created`)
-          })
+        const mdx = generate_mdx_page_from_id(id, slug_key, filepath)
+        fs.outputFileSync(filepath, mdx)
+        // await fs.outputFile(filepath, mdx).then(() => { //!TOGGLE TO GO BACK TO BUGGED ASYNC
+        // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
+        // write_to_md(filepath, )
+        // const full_mdx = ""
+        // fs.writeFile(filepath, full_mdx)
+        const children = getChildren(id)
+        if (!children) return
+        loop_docs_mkdir(dirpath, children)
+        // console.log(`${id} was created`)
+        // }) //!TOGGLE TO GO BACK TO BUGGED ASYNC MODE
       } catch (err) {
         console.log("err:", filepath, err)
       }
@@ -746,35 +743,31 @@ const init_mdx_map_time = uptime()
     const filepath = `docs/${doc_slug}/${doc_slug}.mdx`
     if (!doc_slug) return
     try {
-      await fs
-        .outputFile(
-          filepath,
-          await generate_mdx_page_from_id(id, doc_slug, filepath)
-        )
-        .then(() => {
-          num += 1
+      const mdx = generate_mdx_page_from_id(id, doc_slug, filepath)
+      await fs.outputFile(filepath, mdx).then(() => {
+        num += 1
 
-          /**
-           * lookup children and repeat
-           *
-           * map each index in @param main_doc_dirs to @param root_main_topics for doc object
-           */
+        /**
+         * lookup children and repeat
+         *
+         * map each index in @param main_doc_dirs to @param root_main_topics for doc object
+         */
 
-          const child_docs = getChildren(id)
-          // console.log("child_docs=", child_docs)
-          if (!child_docs)
-            return console.log(`${filepath} is leaf node - no children found.`)
-          // console.log(`Now recursively looping over children from ${path}`)
-          // const dirpath = String(filepath.split("/").slice(0, -1).join("/"))
-          /**
-           * FUCK - forgot to cut off _doc.md from end!
-           * AND DON'T FORGET TO assign it FFS!!should be slice(0, -1)
-           * AND DON'T FORGET TO JOIN IT BACK UP AGAIN !!
-           * console.log("path after split=", path)
-           * MUTATE path OUTSIDE .forEach loop!!
-           */
-          loop_docs_mkdir(dirpath, child_docs)
-        })
+        const child_docs = getChildren(id)
+        // console.log("child_docs=", child_docs)
+        if (!child_docs)
+          return console.log(`${filepath} is leaf node - no children found.`)
+        // console.log(`Now recursively looping over children from ${path}`)
+        // const dirpath = String(filepath.split("/").slice(0, -1).join("/"))
+        /**
+         * FUCK - forgot to cut off _doc.md from end!
+         * AND DON'T FORGET TO assign it FFS!!should be slice(0, -1)
+         * AND DON'T FORGET TO JOIN IT BACK UP AGAIN !!
+         * console.log("path after split=", path)
+         * MUTATE path OUTSIDE .forEach loop!!
+         */
+        loop_docs_mkdir(dirpath, child_docs)
+      })
     } catch (err) {
       console.log(err)
     }

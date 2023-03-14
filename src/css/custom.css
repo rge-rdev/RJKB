@@ -92,19 +92,43 @@
 
 /* esbuild-css-modules-plugin-namespace:./src/components/Tooltip/styles.module.css?esbuild-css-modules-plugin-built */
 .react-tooltip__tooltip_KtSkBq {
-  visibility: hidden;
-  width: max-content;
-  pointer-events: none;
-  opacity: 0;
-  will-change: opacity, visibility;
-  border-radius: 3px;
-  padding: 8px 16px;
-  font-size: 90%;
-  transition: opacity 0.3s ease-out;
-  position: absolute;
-  top: 0;
-  left: 0;
+  @apply invisible pointer-events-none opacity-0 will-change-[opacity,visibility] transition-opacity duration-[0.5s] ease-[ease-out] absolute px-6 py-3 rounded-tl-md rounded-bl-xl rounded-r-3xl left-0 top-10 z-[999];
+  /* @apply sm:w-max md:w-7/12 lg:w-6/12 xl:w-5/12;  */
+  @apply sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12;
+  @apply sm:text-[60%] md:text-[80%];
+  @apply dark:shadow-md dark:shadow-cyan-900;
+  @apply shadow-md shadow-emerald-200;
+  @apply dark:bg-gradient-to-br dark:from-zinc-600 dark:to-teal-900  dark:text-cyan-200;
+  @apply bg-gradient-to-br from-zinc-100 to-cyan-100  text-zinc-900;
 }
+
+.react-tooltip__dt {
+  @apply sm:text-sm md:text-base font-extrabold;
+}
+.react-tooltip__dd {
+  @apply sm:text-sm md:text-base font-extrabold;
+}
+.react-tooltip__alias {
+  @apply sm:text-xs md:text-sm lg:text-base italic font-bold;
+}
+.react-tooltip__ref-list {
+  @apply sm:text-xs md:text-sm;
+}
+.react-tooltip__ref-header {
+  @apply sm:text-xs md:text-xs lg:text-sm font-bold;
+}
+.react-tooltip__ref-link {
+  @apply italic font-extralight;
+  /* @apply sm:text-xs md:text-xs lg:text-sm italic font-extralight; */
+}
+/* .react-tooltip__dt
+  .react-tooltip__dd
+  .react-tooltip__alias
+  .react-tooltip__ref-list
+  .react-tooltip__ref-header
+  .react-tooltip__ref-link {
+  @apply sm:text-xs;
+} */
 .react-tooltip__fixed_KtSkBq {
   position: fixed;
 }
@@ -123,16 +147,10 @@
 }
 .react-tooltip__show_KtSkBq {
   visibility: visible;
-  opacity: var(--rt-opacity);
+  @apply opacity-95;
 }
-.react-tooltip__dark_KtSkBq {
-  background: var(--rt-color-dark);
-  color: var(--rt-color-white);
-}
-.react-tooltip__light_KtSkBq {
-  background-color: var(--rt-color-white);
-  color: var(--rt-color-dark);
-}
+/* .react-tooltip__dark_KtSkBq {} */
+/* .react-tooltip__light_KtSkBq {} */
 .react-tooltip__success_KtSkBq {
   background-color: var(--rt-color-success);
   color: var(--rt-color-white);
