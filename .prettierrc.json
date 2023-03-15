@@ -18,6 +18,5 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "filepath": "c:\\Users\\Z\\react-dev\\rjdb-map\\.prettierrc.json",
-  "parser": "json"
+  "filepath": "c:\\Users\\Z\\react-dev\\rjdb-map\\.prettierrc.json"
 }

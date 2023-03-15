@@ -54,6 +54,10 @@ export default function Preview${id}(){
 const map_all_static_preview_imports: Map<string, string> = new Map()
 const map_all_static_preview_tsx: Map<string, string> = new Map()
 
+export function get_map_all_static_preview_tsx_length() {
+  return map_all_static_preview_tsx.size
+}
+
 export function getPreviewImports(ids: string[]) {
   if (!ids) return
   const output_static_preview_imports: string[] = []

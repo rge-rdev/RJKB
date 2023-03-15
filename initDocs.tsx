@@ -4,10 +4,8 @@ import {
   root_main_topic_ids,
   getDoc,
   id_to_key_slug,
-  root_main_topics,
   getChildren,
   map_size,
-  path_map,
   getAliasIDs,
   getAliasSlugs,
   getParentId,
@@ -21,7 +19,10 @@ import {
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
-import { getStaticPreviews, getPreviewImports } from "./src/components/Preview"
+import {
+  getPreviewImports,
+  get_map_all_static_preview_tsx_length,
+} from "./src/components/Preview"
 
 let debug_keywords: any[] = []
 let debug_tags: any[] = []
@@ -30,6 +31,8 @@ let num_docs = 0
 let num_skipped = 0
 let num_links = 0
 let num_alias_redirect_mdx = 0
+let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
+let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
 
 const __DOC_LENGTH = 8457
 
@@ -65,6 +68,7 @@ function generate_mdx_page_from_id(
   filepath: string
 ) {
   let title = id_to_plaintext(id)?.replace(/"/g, `'`) //.replace(/\\/g, `&#92;`)
+  num_doc_refs += 1
   const title_illegal_unicode = title?.match(/\\(x|u)/)?.length
   let title_mdx = title
   if (title_illegal_unicode)
@@ -73,13 +77,12 @@ function generate_mdx_page_from_id(
   // alternatively, infer YAML-safe title from slug //! BUT this loses \ in terms
   //? why is \\u005c\\u005c (which appears as \u005c\u005c in mdx) OK but NOT \\ (in MDX)?! Makes no sense - must be some quirk with mdx-loader/docusaurus parser
   const title_has_line_breaks = Boolean(title?.match(/[\n]+/)?.length)
-  // const value_mdx = "debug if value_mdx is breaking"
-  // let value_mdx = id_to_mdx(id, "value", { safe: true, preview: true })
   let value_mdx = id_to_mdx(id, "value", {
     safe: true,
     preview: true,
     // jsx: true,
   })
+  //? KEEP TITLE & VALUE as plaintext && MARKDOWN - to allow docusaurus to add to TOC - ANY JSX will break this
 
   const value_mdx_newLine = value_mdx?.match(/([\n])+/g)?.length
   const value_mdx_code = value_mdx?.match(
@@ -104,13 +107,9 @@ function generate_mdx_page_from_id(
     .slice(1, -2)
     .map((str) => str.replace(/-/g, " ").trim())
   let tags = _.uniqWith(
-    [
-      ...prev_slugs,
-      ...alias_slugs,
-      ...init_tags, //.concat(slug_key.replace(/-/g, " ")), // add de-slug key as safe title
-      // .filter((tag) => tag.length > 0 && tag.length < 30),
-      //! Add max limit to avoid very long tags!
-    ].filter((tag) => tag.length < 30),
+    [...prev_slugs, ...alias_slugs, ...init_tags].filter(
+      (tag) => tag.length < 30
+    ),
     (a, b) =>
       a
         .toLowerCase()
@@ -125,7 +124,7 @@ function generate_mdx_page_from_id(
     //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
     //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
   )
-  // keep strings with identical characters but different cAsEs
+  //? keep strings with identical characters but different cAsEs
 
   let keywords = _.uniq(
     ["", ...tags, ...alias_slugs].filter(
@@ -134,15 +133,14 @@ function generate_mdx_page_from_id(
   )
   tags = _.uniqWith(tags, (a, b) => _.kebabCase(a) === _.kebabCase(b))
   map_all_tags.set(id, tags)
+  //! DEDUP tags but KEEP dup for max SEO
 
-  //! DON'T remove duplicate case spellings for keywords
-  //! KEEP extra duplicate aliases for SEO keywords BUT remove in tags to avoid visible clutter
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
   const description = id_to_plaintext(id, "value")
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
-  const title_match_ref = `[\`${title}\`](`
+  // const title_match_ref = `[\`${title}\`](`
   const alias_mdx_arr = alias_ids.map((id) =>
     id_to_mdx(id, "key", { safe: true })
   )
@@ -171,7 +169,7 @@ function generate_mdx_page_from_id(
       preview: k_preview_if_no_v,
       jsx: child_jsx,
     })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
-
+    if (k) num_doc_refs += 1
     if (child_jsx) {
       if (k && v) return `<h2>${k}<span> ↔ </span>${v}</h2>`
       if (k) return `<h2>${k}<span></h2>`
@@ -265,6 +263,7 @@ function generate_mdx_page_from_id(
         "[**_$1_**]("
         // `[**_${title_match_ref.slice(1, -2)}_**](`
       )
+      if (k) num_doc_refs += 1
       let v = id_to_mdx(ref_id, "value", {
         safe: true,
         preview: true,
@@ -374,6 +373,7 @@ ${
 
   // const preview_mdx = getStaticPreviews(ids_with_preview)
   const preview_mdx = getPreviewImports(ids_with_preview)
+  if (preview_mdx) num_preview_refs += preview_mdx.length
 
   return output_mdx + "\n\n" + preview_mdx?.join("\n\n")
 }
@@ -578,6 +578,7 @@ async function generate_id_redirect(alias_path: string, redirect_path: string) {
     num_alias_redirect_mdx += 1
   } catch (error) {}
 }
+/*
 async function generate_id_redirect_OLD(id: string, dirpath: string) {
   const redirect_filepath = `src/pages/redirect/${id}.tsx`
   // NOT const redirect_filepath = `src/pages/redirect/${id}/${id}.tsx` - don't need extra /${id}/ for pages since Docusaurus renders /pages differently!
@@ -585,6 +586,7 @@ async function generate_id_redirect_OLD(id: string, dirpath: string) {
     await fs.outputFile(redirect_filepath, RedirectFCTSX_textdata(dirpath))
   } catch (error) {}
 }
+*/
 
 // push arrays to debug & keep track of appended slugs & paths
 let slug_key_arr = [""]
@@ -684,6 +686,7 @@ async function loop_docs_mkdir(
       Boolean(slug_key.match(/^contains-/)) //! Shave off 180 "contains:" type docs //!recall that : was swapped for - by slugify!
     // slug_key.length > 15 //! BEFORE: 7187 Files, 6418 Folders --> AFTER >20: 4,522 Files, 3,970 Folders --> <15 3,574 Files, 3,167 Folders
     //? How to embed template literal inside regex experssion ?    Boolean(slug_key.match(/^contains:${parent_slug}/))
+    if (skip_next) num_skipped += 1
     if (omit_check && slug_key && !skip_next)
       __plaintext__id_array.push(`__${slug_key}__${id}`)
     if (num === __DOC_LENGTH && omit_check) {
@@ -695,10 +698,17 @@ async function loop_docs_mkdir(
     }
     // console.log(`num=${num}`) // to recheck __DOC_LENGTH still valid
     if (num === __DOC_LENGTH) {
+      console.log(num, "output debug files & remove breaking mdx")
       fs.outputFile("test/DEBUG_KEYWORDS.mdx", debug_keywords.join("\n"))
       fs.outputFile("test/DEBUG_TAGS.mdx", debug_tags.join("\n"))
+      console.log(
+        "removing docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx"
+      )
       fs.remove(
         "docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx"
+      )
+      console.log(
+        "docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
       )
       fs.remove(
         "docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
@@ -709,12 +719,19 @@ async function loop_docs_mkdir(
       try {
         const mdx = generate_mdx_page_from_id(id, slug_key, filepath)
         fs.outputFileSync(filepath, mdx)
-        // await fs.outputFile(filepath, mdx).then(() => { //!TOGGLE TO GO BACK TO BUGGED ASYNC
+        // await fs.outputFile(filepath, mdx).then(() => { //!TOGGLE TO GO BACK TO BUGGED ASYNC - WILL CORRUPT STATIC OUTPUT FOR A FEW FILES
         // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
         // write_to_md(filepath, )
         // const full_mdx = ""
         // fs.writeFile(filepath, full_mdx)
         const children = getChildren(id)
+        if (num === __DOC_LENGTH) {
+          console.log(
+            `SSG Output: ${num} MDX with ${num_doc_refs} links\n${get_map_all_static_preview_tsx_length()} Preview TSX with ${num_preview_refs} links\n${num_skipped} docs skipped\n in ${(
+              uptime() - init_mdx_map_time
+            ).toFixed(2)}s`
+          )
+        }
         if (!children) return
         loop_docs_mkdir(dirpath, children)
         // console.log(`${id} was created`)

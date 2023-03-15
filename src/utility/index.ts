@@ -658,6 +658,7 @@ export function obj_to_mdx(
               el["language"]
             )}">{\`${(el["text"] as string)
               .replace(/(?<!\\)`/g, "\\`") //! MUST escape backticks inside <CodeBlock> else will throw!
+              .replace(/\$/g, "\\$") //! MUST escape $ inside <CodeBlock> else Docusaurus will near end of prod build - BUT NOT in client dev build?!
               .trim()
               .replace(/\n/gs, "\\n")}\`}</CodeBlock>` //! THIS WAS A CRITICAL SILENT && UNDOCUMENTED? BUG - all new lines in plaintext code must have explicit \n
         }
