@@ -51,11 +51,11 @@ export default function HomepageHeader() {
   }, [scrollHeader])
 
   return (
-    <header className="flex flex-col items-center text-[color:var(--ifm-hero-text-color)] bg-green-700 dark:bg-teal-700 bg-blend-hard-light hero--primary text-center relative overflow-hidden mt-1 bg-circuit-light">
-      <div className="flex flex-col justify-center items-center">
+    <header className="hero--primary relative mt-1 flex flex-col items-center overflow-hidden bg-green-700 bg-circuit-light text-center text-[color:var(--ifm-hero-text-color)] bg-blend-hard-light dark:bg-teal-700">
+      <div className="flex flex-col items-center justify-center">
         <h1
           id="test"
-          className={`hero__title shadow-lg rounded-full w-fit mt-2 mb-5 max-w-screen-sm text-cyan-900 dark:text-cyan-100 font-extralight ${
+          className={`hero__title mb-5 mt-2 w-fit  max-w-screen-sm rounded-full font-extralight text-cyan-900 shadow-lg dark:text-cyan-100 ${
             scrollHeader
               ? "fixed top-0 z-[250] animate-fade-in-slow-75 opacity-75"
               : "fixed top-0 animate-fade-out-fast-75 opacity-0"
@@ -64,12 +64,12 @@ export default function HomepageHeader() {
           RJKB
         </h1>
         <h1
-          className={`hero__title shadow-lg rounded-full w-1/2 mt-2 mb-5 max-w-screen-sm text-cyan-900 dark:text-cyan-100`}
+          className={`hero__title mt-2 mb-5 w-1/2 max-w-screen-sm rounded-full text-cyan-900 shadow-lg dark:text-cyan-100`}
         >
           {siteConfig.title}
         </h1>
         <h2
-          className={`w-fit flex flex-col justify-center items-center shadow-lg rounded-full mb-10 px-10 font-semibold italic text-cyan-200 dark:text-cyan-300 ${
+          className={`mb-10 flex w-fit flex-col items-center justify-center rounded-full px-10 font-semibold italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
             scrollTagline
               ? "fixed top-20 animate-fade-in-md-50 opacity-50"
               : "fixed top-20 animate-fade-out-md-50 opacity-0"
@@ -78,7 +78,7 @@ export default function HomepageHeader() {
           {siteConfig.tagline}
         </h2>
         <h2
-          className={`w-fit flex flex-col justify-center items-center shadow-lg rounded-full mb-10 px-10 font-light italic text-cyan-200 dark:text-cyan-300 ${
+          className={`mb-10 flex w-fit flex-col items-center justify-center rounded-full px-10 font-light italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
             scrollTagline ? "animate-fade-out-fast opacity-0" : ""
           }`}
         >
@@ -87,7 +87,7 @@ export default function HomepageHeader() {
         <div className="">
           <HomeLogoSlider />
         </div>
-        <p className="fixed opacity-0 animate-fade-in-out text-cyan-300 dark:text-cyan-500">
+        <p className="fixed animate-fade-in-out text-cyan-300 opacity-0 dark:text-cyan-500">
           Explore My Fullstack Knowledge Showcase
         </p>
         <div className="">

@@ -155,17 +155,17 @@ export function id_to_mdx(
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
   // /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? dup [z] also should have grouped as ([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})? - was letting <b> slip past...
   let re_unsafe_jsx =
-    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g
+    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?(?:[a-zA-Z0-9\<\>_ ]{1,})?)?)[\/]?>)(?![ ]*\`)/g
   //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions // is it necessary to keep <B> <U> etc as well?
 
   const re_link_preview_mdx =
-    /\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
+    /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
   if (preview)
     re_unsafe_jsx =
-      /(?<!(?:!?\`[ ]*|\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[\/]?(?:[ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?[\/]?>)(?!(?:[ ]*\`|<span data-tooltip-id="preview__|(?:<\/span>)?(?:<\/>)?\]\((?:\.|\/)))/gs
-  // /(?<!(\`[ ]*|\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
-  // /.*(?=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<><span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
+      /(?<!(?:!?\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*\`\`\`(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[\/]?(?:[ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?[\/]?>)(?!(?:[ ]*\`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
+  // /(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
+  // /.*(?=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
   // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
   // /(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
   // /(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g //! yuck this is some horric looking regex - but it is quite necessary for preventing Docusaurus' mdx-loader from breaking - the DX from this perspective has been horrendous... the extra escapes to html tags can ALSO break things.
@@ -698,12 +698,11 @@ export function obj_to_mdx(
         if (el["text"] && raw_text.trim()?.length) {
           //! add prototype test to skip style wrap for blank space - mdx loader is breaking when multiple tags next to each other only wrapping whitespace !
           // href found at el["qId"] = _id at crt.b.s
-          output_str += `${el["q"] || force_q ? (jsx ? "<code>" : "`") : ""}` // Ref Rem
           output_str += `${el["b"] ? (jsx ? "<b>" : "**") : ""}` // bold
           //! <b> messes up mdx-loader if used at start line and then use a mdx link directly after ?!
           //! switch back to ** to avoid dealing with this - whitespace skip should prevent bugs from multiple ** appearing next to each other... hopefully
           // output_str += `${el["b"] ? "**" : ""}`; // bold md
-          output_str += `${el["u"] ? "<u>" : ""}` // underline
+          output_str += `${el["u"] ? (jsx ? "<u>" : "") : ""}` // underline //! OMIT <u> or even __ - MDX SUCKS with too many quirks and parsing
           output_str += `${el["l"] ? (jsx ? "<em>" : "_") : ""}` // mixing * with ** and _ and __ breaks things majorly?!
           // output_str += `${el["cId"] ? `<mark id='#${el["cId"]}'>` : ""}` // OMIT ID for Cloze card - feat not added yet
           //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
@@ -711,15 +710,16 @@ export function obj_to_mdx(
           // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
           // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
           // output_str += jsx ? `${_.escape(el["text"])}` : `${el["text"]}`
+          output_str += `${el["q"] || force_q ? (jsx ? "<code>" : "`") : ""}` // Ref Rem //! MOVE ` backtick to inside to avoid stupid MDX parsing other styles wrong (sometimes?!)
           output_str += jsx
             ? `${escapeTextInJSX(el["text"])}`
             : // ? `${encode(el["text"], { encodeEverything: true })}`
               `${el["text"]}`
+          output_str += `${el["q"] || force_q ? (jsx ? "</code>" : "`") : ""}` //! MOVE ` backtick to inside to avoid stupid MDX parsing other styles wrong (sometimes?!)
           // output_str += `${el["cId"] ? "</mark>" : ""}`
           output_str += `${el["l"] ? (jsx ? "</em>" : "_") : ""}`
-          output_str += `${el["u"] ? "</u>" : ""}`
+          output_str += `${el["u"] ? (jsx ? "</u>" : "") : ""}` //! OMIT <u> or even __ - MDX SUCKS with too many quirks and parsing
           output_str += `${el["b"] ? (jsx ? "</b>" : "**") : ""}`
-          output_str += `${el["q"] || force_q ? (jsx ? "</code>" : "`") : ""}`
         } else {
           output_str += ""
         }
@@ -765,7 +765,7 @@ export function obj_to_mdx(
             const id_tooltip = `preview__${original_doc_id_ref_by_alias}`
             output_str += jsx
               ? `<Link to="${alias_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
-              : `[<><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></>](${alias_path})`
+              : `[<span data-tooltip-id="${id_tooltip}">${aliasKey}</span>](${alias_path})`
             if (id) setLinkIDtoMap(id, original_doc_id_ref_by_alias)
             return output_str
           }
@@ -794,10 +794,10 @@ export function obj_to_mdx(
             output_str += jsx
               ? `<Link to="${path}"><span data-tooltip-id="${id_tooltip}">${make_mdx(
                   find_key
-                )}</span></></Link>`
-              : `[<><span data-tooltip-id="${id_tooltip}">${make_mdx(
+                )}</span></Link>`
+              : `[<span data-tooltip-id="${id_tooltip}">${make_mdx(
                   find_key
-                )}</span></>](${path})`
+                )}</span>](${path})`
             if (id) setLinkIDtoMap(id, el_id)
           }
           // output_str += `[[<a href="#${el_id}">${make_mdx(find_key)}</a>]]`

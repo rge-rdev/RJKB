@@ -1,5 +1,11 @@
 .docusaurus
 .git
+.vscode
 docs
+build
 node_modules
+public
 test
+typesense
+static
+src/data

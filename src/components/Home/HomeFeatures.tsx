@@ -232,10 +232,10 @@ function Feature({ title, SVG: Svg, VIDEO, description }: FeatureItem) {
       id={title}
       className="col col--4 hover:mix-blend-hard-light"
     >
-      <div className="flex justify-center bg-gradient-to-bl  from-cyan-300 to-gray-300 dark:bg-gradient-to-bl  dark:from-sky-500 dark:to-emerald-900  m-1 rounded-tl-3xl rounded-br-3xl opacity-70 dark:opacity-60 transition-all">
+      <div className="m-1 flex justify-center  rounded-tl-3xl rounded-br-3xl bg-gradient-to-bl  from-cyan-300 to-gray-300  opacity-70 transition-all dark:bg-gradient-to-bl dark:from-sky-500 dark:to-emerald-900 dark:opacity-60">
         {Svg && (
           <Svg
-            className="items-center h-48 w-48"
+            className="h-48 w-48 items-center"
             role="img"
           />
         )}
@@ -252,10 +252,10 @@ function Feature({ title, SVG: Svg, VIDEO, description }: FeatureItem) {
         )}
       </div>
       <div className="padding-horiz--md text-center mix-blend-luminosity hover:mix-blend-plus-lighter">
-        <h3 className="shadow-teal-400 shadow-inner text-sky-900 dark:text-cyan-100 rounded-t-full font-extrabold">
+        <h3 className="rounded-t-full font-extrabold text-sky-900 shadow-inner shadow-teal-400 dark:text-cyan-100">
           {title}
         </h3>
-        <p className="text-cyan-900 dark:text-cyan-100 rounded-b-full font-bold">
+        <p className="rounded-b-full font-bold text-cyan-900 dark:text-cyan-100">
           {description}
         </p>
       </div>
@@ -267,9 +267,9 @@ function Feature({ title, SVG: Svg, VIDEO, description }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className="flex items-center p-8 w-full bg-prism-light dark:bg-prism-dark">
+    <section className="flex w-full items-center bg-prism-light p-8 dark:bg-prism-dark">
       <div className="container">
-        <div className="flex flex-wrap my-0 justify-center w-fit">
+        <div className="my-0 flex w-fit flex-wrap justify-center">
           {FeatureList.map((props, i) => (
             <Feature
               key={props.title}

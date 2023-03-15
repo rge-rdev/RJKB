@@ -241,9 +241,14 @@ function generate_mdx_page_from_id(
       }${v}\n\n`
     }
     const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
+    //.replace(/(\*\*_)?)(?=.*(\3\2))/g, "$1`")
+    //.replace(/((\*\*)?(_)?)(?=.*(\3\2))/g, "`$4")
     if (k && !v && !skip_k) {
+      const k_bold_markup = k.match(/(\*\*)(?=.*\*\*)/g)?.length
       return !recheck_code && !k_link && !k_img && !k_inlineCode
-        ? `[\`${k.replace(/\`/g, "")}\`](${k_path})\n\n`
+        ? `[${!k_bold_markup ? "`" : ""}${k.replace(/\`/g, "")}${
+            !k_bold_markup ? "`" : ""
+          }](${k_path})\n\n`
         : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
     }
     if (!k && v) return `\n\n${v}`
@@ -364,7 +369,7 @@ ${
   }`
 
   const re_preview_ids =
-    /(?<=\[<><span data-tooltip-id="preview__)([a-zA-Z0-9]+)(?=">)/g
+    /(?<=\[<span data-tooltip-id="preview__)([a-zA-Z0-9]+)(?=">)/g
   const ids_with_preview = _.uniq(output_mdx.match(re_preview_ids)) || []
 
   // const preview_mdx = getStaticPreviews(ids_with_preview)
@@ -373,8 +378,12 @@ ${
   return output_mdx + "\n\n" + preview_mdx?.join("\n\n")
 }
 /**
- * PAINFUL: to find fix for the extra commas in array map to string in MDX - need to use .join("") instead of .toString()!!
- * !MUST postfix .map with .join("") to prevent docusaurus/mdx-loader1.0 to inject extra annoyingly unhelpful commas!
+ * !EXTREME PAIN - After testing and assessing MDXJS for a while - it seems to have TERRIBLE - and worst of all, INCONSISTENT ability to parse MDX & JSX when used inline
+ *    !SIMPLY NOT WORTH THE EFFORT and complex REGEX to patch and fix every single quirk - For the purposes of this SSG script - rendering pure jsx should just be fine and perhaps better to avoid all these BAD PARSING LOGIC BUGS. Even though these parsing fails have been supposed been patched in v2 of MDXJS - docusaurus remains stuck in v1 for the time being.
+ * TODO: MUST MIGRATE all programmatically generated doc files into jsx to avoid terrible MDX loader
+ *
+ * PAINFUL: to find fix for the extra commas in array map to string in MDX - need to use .join(",") instead of .toString()!!
+ * !MUST postfix .map with .join(", ") to prevent docusaurus/mdx-loader1.0 to inject extra annoyingly unhelpful commas!
  *
  * PAINFUL: for some stupid reason arrays get turn back into comma separated lists by Docusaurus MDX loader?!
  * !MUST double wrap string[] for docusaurus/mdx-loader1.0 to properly render front matter as string[]
@@ -690,6 +699,9 @@ async function loop_docs_mkdir(
       fs.outputFile("test/DEBUG_TAGS.mdx", debug_tags.join("\n"))
       fs.remove(
         "docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx"
+      )
+      fs.remove(
+        "docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
       )
     }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path

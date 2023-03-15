@@ -267,13 +267,16 @@ const config = {
       */
       navbar: {
         // title: "", // Disable title to show only SVG Logo for home page return
-
+        hideOnScroll: true,
         logo: {
           alt: "RJKB Site Logo",
           src: "img/LogoTextRJKB.svg",
+          srcDark: "img/LogoTextRJKB.svg",
+          height: 70,
           // src: "img/LogoTextRJKB.svg",
         },
         items: [
+          //LTR
           {
             type: "doc",
             docId: "intro",
@@ -281,12 +284,19 @@ const config = {
             label: "Docs",
           },
           { to: "/blog", label: "Dev Log", position: "left" },
-          { to: "/features", label: "Tour", position: "left" },
+          //RTL
           { to: "/about", label: "About", position: "right" },
           {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
             position: "right",
+            href: "https://github.com/rgerdev",
+            className: "header-github-link",
+            // label: "RGE RDEV Github",
+            "aria-label": "RGE RDEV GitHub",
+          },
+          {
+            type: "search",
+            position: "right",
+            className: "RJ_SEARCH",
           },
         ],
       },
@@ -295,6 +305,7 @@ const config = {
         style: "dark",
         links: [
           {
+            //C1
             title: "RJKB",
             items: [
               {
@@ -312,6 +323,7 @@ const config = {
             ],
           },
           {
+            //C2
             title: "Contact",
             items: [
               {
@@ -329,10 +341,11 @@ const config = {
             ],
           },
           {
+            //C3
             title: "More",
             items: [
               {
-                label: "About Me",
+                label: "About",
                 to: "/about",
               },
               {

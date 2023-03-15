@@ -49,6 +49,7 @@ export default function Preview${id}(){
   `
   )
 }
+//? Fragment NOT needed - but keep there for easier expansion
 
 const map_all_static_preview_imports: Map<string, string> = new Map()
 const map_all_static_preview_tsx: Map<string, string> = new Map()
@@ -129,7 +130,7 @@ export default function Preview(id: string) {
         }</cite>`
       : ""
     const refs = ref_l
-      ? `<ol classname="font-semibold">` +
+      ? `<ol className="font-semibold">` +
         ref_slice
           .map(
             (ref) =>

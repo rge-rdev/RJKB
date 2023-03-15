@@ -44,7 +44,7 @@ function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
       <div className="inline-block">
         {MediaElements.map((props, i) => (
           <div
-            className={`inline-block opacity-10 hover:opacity-90 hover:shadow-inner visited:shadow-yellow-200 hover:shadow-yellow-200 rounded-sm hover:-backdrop-hue-rotate-30 hover:bg-hex-blue transition-all ${customCSS}`}
+            className={`inline-block rounded-sm opacity-10 transition-all visited:shadow-yellow-200 hover:bg-hex-blue hover:opacity-90 hover:shadow-inner hover:shadow-yellow-200 hover:-backdrop-hue-rotate-30 ${customCSS}`}
             key={config + String(i)}
           >
             <SVG_LOGO
@@ -68,8 +68,8 @@ function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
 
 export default function Slider({ top, bot, h, w }: SliderProps) {
   return (
-    <div className="my-0 py-0 hover:bg-hero bg-prism">
-      <div className="inline-block whitespace-nowrap overflow-hidden animate-slide-fast">
+    <div className="hover:bg-hero bg-prism my-0 py-0">
+      <div className="inline-block animate-slide-fast overflow-hidden whitespace-nowrap">
         <SliderRow
           MediaElements={top}
           config="top"
@@ -77,7 +77,7 @@ export default function Slider({ top, bot, h, w }: SliderProps) {
           w={w}
         />
       </div>
-      <div className="inline-block whitespace-nowrap overflow-hidden animate-slide-slow">
+      <div className="inline-block animate-slide-slow overflow-hidden whitespace-nowrap">
         <SliderRow
           MediaElements={bot}
           config="bot"
