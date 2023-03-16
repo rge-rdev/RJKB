@@ -17,6 +17,7 @@ src/pages/debug
 
 # production
 /build
+/build backups
 # /docs
 /typesense
 
@@ -36,3 +37,4 @@ yarn-debug.log*
 yarn-error.log*
 .env
 .vscode
+docsearch.config.json

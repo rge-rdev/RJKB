@@ -1,0 +1,13 @@
+diff --git a/node_modules/docusaurus-theme-search-typesense/src/theme/SearchBar/index.tsx b/node_modules/docusaurus-theme-search-typesense/src/theme/SearchBar/index.tsx
+index 68bad6c..be5e541 100644
+--- a/node_modules/docusaurus-theme-search-typesense/src/theme/SearchBar/index.tsx
++++ b/node_modules/docusaurus-theme-search-typesense/src/theme/SearchBar/index.tsx
+@@ -59,7 +59,7 @@ function Hit({
+   hit: InternalDocSearchHit | StoredDocSearchHit;
+   children: React.ReactNode;
+ }) {
+-  return <Link to={hit.url}>{children}</Link>;
++  return <Link to={hit.url.replace('#docusaurus_skipToContent_fallback', '')}>{children}</Link>;
+ }
+ 
+ type ResultsFooterProps = {
