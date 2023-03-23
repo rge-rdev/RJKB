@@ -1,82 +1,274 @@
-# FEATURES
+---
+slug: features
+title: Features
+authors:
+  name: Roger Jiang
+  title: Aspiring Fullstack Enginner
+  url: https://github.com/rgerdev
+  image_url: https://source.unsplash.com/200x200/?coding
+tags: [JS, TS, React]
+---
 
-## JSON parsing
+# Features List of RJKB
 
-### Map to hash tables
+## 🥇 SSG Over SSG
 
-### Recursive Key rendering
+Custom RJ SSG Node.js Script to transform JSON DB (export from [Remnote](./blog/)) into full featured MDX, statically output to respective file routes based on doc hierachy
 
-## Typescript
+<Video src="/vid/RJKB_SSG_CLI.mp4" />
 
-import { SiTypescript } from "react-icons/si"
+- ✅ RJ SSG Scripts transform JSON into MDX & TSX
 
-export const size = "3em"
+- ✅ transform JSON DB into `Map<string, string[]>` to hash out each doc UID to children, keys, values, references, etc
 
-<SiTypescript size={size} />
+- ✅ transform each key & value array
 
-## Docusaurus
+- ✅ dedup tags
 
-## MDX
+- ✅ output fancy CLI logs (@deprecated due to lag! Turns out that spamming process.stdout.write() every few ms REALLY SLOWS down everything, despite how awesome it looked!☹)
 
-## React
+- ✅ output optional debug YAML frontmatter with alias IDs, aliases, references, ID, filepath & route
 
-import { FaReact } from "react-icons/fa"
+- Low priority TODOS
 
-<FaReact size={size} />
+  - 🚧 Dedup alias mdx & sibling/child mdx programmatically - ie ../Bittorent/Torrent.mdx && ../Bittorent/Torrent/torrent.mdx (which this was trimmed from .torrent). This build exit to avoid race condition - which only throws for prod Build BUT NOT client build. Since this was the only example, it was simpler to just delete the alias redirect.
 
-### Built-in Router
+  - 🚧 Migrate all redirects away from react-router `<Redirect />` and explore a less client heavy redirect solution via `@docusaurus/plugin-client-redirects` to config inside docusaurus.config.js. Just need to programmatically output redirects array to paste inside. Only worth exploring if the latter pushes a (impactfully) smaller js bundle to the client, which improves loading speed for <2G connections, otherwise, `<Redirect />` works just fine as is.
 
-## WIP: Typesense
+### Map JSON DB to doc hierachy
 
-### Fuzzy Search
+Hashing out all doc objects from the JSON input greatly improved efficiency, in terms of retrieval and memoization. See original client app demo (once fixed) for good example of how excessive recursion impacts perf
 
-```jsx
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}>
-    {children}
-  </span>
-);
+- ✅ hash out all docs from JSON & trim unused props
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+- ✅ map Doc UID to adjancency list of doc, children, parent, references
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
-```
+- ✅ map Doc UID to slugified key-name && skip codeblocks/non-compat keys
 
-export const Highlight = ({ children, color }) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: "20px",
-      color: "#fff",
-      padding: "10px",
-      cursor: "pointer",
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}
-  >
-    {children}
-  </span>
-)
+- ✅ map Doc UID to adjancency list of route path - via parent & slug maps
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+- ✅ utility fn to getDoc, getChildren, etc from (id: string)
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+- 🚧 refactor regex replace logic
 
-# Test
+- 🚧 trim 🤬
 
-```tsx
-export const Hello = () => <div>Hello</div>
+### Output static MDX & TSX files into designated dir hierachy
 
-<Hello/>
+- ✅ static docs output 6666 MDX nested in 5,904 Folders
+
+- ✅ static output 1300+ Preview FC .tsx & import to each mdx
+
+- ✅ output @XX Alias/Synonym `<Redirect />`
+
+- ✅ output optional debug files to inspect Tags, Keywords, Aliases
+
+- ✅ switch to synchronous outputFile in recursive calls
+
+- ❌ too many concurrent async fs.outputFile() calls resulted in corrupted string output 💣 - this took a while to debug - [read more here](./blog)
+
+## 🥇 Hover Link Previews
+
+<Video
+  src="/vid/RJKB_hover_preview_ipad.mp4"
+  h={300}
+  title="RJKB Hover Preview Links viewed on Ipad 810x1080 resolution"
+/>
+<Video
+  src="/vid/RJKB_hover_preview_iphone.mp4"
+  h={300}
+  title="RJKB Hover Preview Links viewed on Iphone 13 Pro Max 428 x 926 resolution"
+/>
+
+- ✅ static preview page complete with
+
+  - ✅ key with aka list of aliases and blockquote of definition
+
+  - ✅ References list with citation count, 5 or less list & conditional view more button to redirect to ../link_key#references
+
+    - ✅ highlight hover word in reference list
+
+  - ✅ fix arrow, opacity, z-index
+
+  - ✅ Responsive width layout AND text-size for screen/mobile variants
+
+  - ✅ Dark/light variants
+
+- ❌ render Preview FC directly into doc MDX - works but
+
+- ❌ client-side render for Preview doesn't work due to id_to_mdx transform call chain requiring access to all data maps, which were inside scripts requiring node runtime specific libraries such as process. It seems Webpack 5+ cut out polyfill support for a good reason - and that hacks to polyfill this wouldn't be worth the extra hit to client network loading time & compute.
+
+- ❌ for unclear reasons (possibly due to the above), renderToStaticMarkup() didn't work
+
+## 🥇 Self-hosted Typesense Search
+
+Self-hosted Typesense server as run on Docker instance
+
+⚡ fast typo-tolerant fuzzy search. Read more on [setting up self-hosted typesense search for docusaurus](./blog/)
+
+### Dedup & trim #docusaurus_skipToContent_fallback affix in search
+
+The `docsearch.config.json` [Docusaurus V2 template](https://github.com/algolia/docsearch-configs/blob/master/configs/docusaurus-2.json) led to bad search results - duplicated hits & #docusaurus_skipToContent_fallback appearing at the end of every result. [See article for more](/blog/)
+
+- ✅ patch-package to fix #docusaurus_skipToContent_fallback affix to every search link. see [skipToContent bug fix](./#bug-fix-skipToContent)
+
+- ✅ dedup DocScraper search hits due to crawler visiting (\/)?#docusaurus_skipToContent_fallback
+
+- ✅ Customize DocSearch box styling & Affix RJKB Logo
+
+- ⚠ DocScraper Synonym list does not get integrated into typesense collections
+
+- ⚠ WSL vmmem will not shut down automatically upon closing Docker containers and Docker Desktop. It requries manual shutdown via cli. If left to run at default settings, it will continue to consume a high amount of RAM ie >7GB despite the actual typesense container never exceeding 500MB usage.
+
+- ⚠ Typesense folder spiked to over 1.5GB in previous builds for unclear reasons - but now recent stable builds result in >50MB
+
+### PUT Synonyms to Typesense Server
+
+- ✅ Output 267 sets of multi-way synonyms (aliases), ie JS === JavaScript === ECMAScript for Search indexing
+
+- ✅ Axios to send PUT request in RJ SSG
+
+- ✅ @deprecated ?alias=\_\_ALIAS to prevent dedup docscraper search hits - unclear how to config docscraper to ignore these query strings but since they don't serve any actual purpose except for debugging - alias redirects have been removed for now
+
+### Noted challenges
+
+- ⚠ MDX links with query strings or URL parameters will show up as duplicates in docscraper search hits
+
+- ⚠ initial scraping attempts used ngrok as fallback were much slower - up to 1 hr to scrape entire database. After fixing DocScraper to directly access internal docker container on same instance, scraping was slightly faster
+
+## 🥇 Fullstack wiki
+
+- [JS](/docs/JS)
+- [HTML](/docs/HTML)
+- [CSS](/docs/CSS)
+- [React](/docs/React)
+
+## 🥇 Unbreaking Docusaurus
+
+[Docusaurus v2.3.1 loads everything into memory by design](./blog/), which can easily run into FATAL ERROR: JavaScript heap out of memory - right at the end of 2hr+ build. [Read more on Docusaurus Scaling limits](./blog/)
+
+- ✅ migrate Webpack to swc-loader reduce build time by 50%
+
+- ✅ migrate Webpack minification to custom Terser/SWC plugin
+
+- ✅ set `.env` to increase NODE_OPTIONS `max_old_space_size` to 16GB+
+
+- ✅ `yarn mem` to inspect & log current instance of v8 for specific terminal
+
+- ✅ reduced `DOCUSAURUS_SSR_CONCURRENCY` (a "secret" ENV) to 8 - lowered from default 32 found in `@slorber/static-site-generator-webpack-plugin`
+
+- 🚧 determine how max_old_space_size is being reset to
+
+- ✅ RJ_WEBPACK_PLUGIN - configureWebpack to toggle fast dev mode (skip merge dups/minimize/etc) & to migrate to custom SWC minifier via TerserPlugin
+
+- ✅ docusaurus-plugin-sass
+
+- ✅ @docusaurus/theme-live-codeblock
+
+- ✅ @deprecated `@docusaurus/plugin-ideal-image` - worse file size when resized - no SVG support - quality setting too dependent on image source & type
+
+- ✅ @deprecated `plugin-image-zoom` - zoom bug bad UX needs double click - needs high res source else blurry & pointless
+
+- ✅ `docusaurus-theme-search-typesense` -
+
+- ⏳ replace all default Docusaurus Infima CSS with Tailwind
+
+## 🥇 RegExp Insanity
+
+MDX Loader (^1.6.22) has significant quirks in handling markdown + JSX when inline. Too many silent fails 💩 - /docs should still contain some. [Docusaurus v2 will remain frozen at v1 mdx-loader](https://github.com/facebook/docusaurus/issues/4029) due to breaking changes in v2.3+.
+
+- ✅ RegExp to escape JSX AND TS Generics for MDX
+
+- ✅ RegExp to escape codeblocks for MDX AND JSX CodeBlock
+
+## 🥇 Fully typed with Typescript
+
+- ✅ decrypt confusing JSON DB types
+
+- ✅ function overloads to expand id_to_mdx with more config & multiple output types
+
+## 🥇 RJKB Branding
+
+### RJKB Homepage
+
+- ✅ Hero Slider with Web Technologies featured on RJKB Site
+
+  - ✅ scroll & hover animation
+
+  - ✅ SVG background
+
+- ✅ Migrate Infima CSS to Tailwind
+
+- ✅ All custom TailwindCSS
+
+- ✅ SVG Feature list
+
+- ✅ dark/light mode variants for all above
+
+- ✅ responsive screen-size & mobile variants for all above
+
+### RJKB SVG Artwork
+
+Custom SVG editing with Inkscape
+
+- ✅ RJKB Site Logo Dark
+
+- ✅ RJKB Site Logo Light
+
+- ✅ RJKB DocSearch Logo
+
+- ✅ Docusaurus Injured At 9K Docs Logo 😜
+
+- ✅ Docusaurus Prof Logo
+
+- ✅ Swizzle custom logo into DocSearch Components
+
+### Blog
+
+- ✅ refactor author to yaml
+
+- ⏳ Randomize Avatar until final one picked
+
+## RJKB Client-side App Demo
+
+- 🔧 Broken after switching to docusaurus - deps/tsconfig change?
+
+## Bug Fix List
+
+### bug-fix-skipToContent
+
+BUG: DocScraper adding multiple search hits due to crawling to /docs/something/#docusaurus_skipToContent_fallback AND /docs/something#docusaurus_skipToContent_fallback
+
+FIX: At site termination regex /$ - this now results in only /docs/something#docusaurus_skipToContent_fallback
+
+### Stacktrace error
+
+```bash title="Now the Docusaurus build *only* crashes at 'IdleFileCachePlugin' phase which is at least after the entire Server output has been compiled. However, the Stacktrace shows that the old space limit was reset to something lower, at some point."
+√ Client
+
+
+√ Server
+  Compiled successfully in 1.39h
+
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (101kiB) impacts deserialization performan
+ce (consider using Buffer instead and decode when needed)
+
+√ Client
+
+
+● Server █████████████████████████ cache (99%) shutdown IdleFileCachePlugin
+ stored
+
+
+<--- Last few GCs --->
+
+[18376:0000015F35BB0670]  5188660 ms: Mark-sweep (reduce) 3547.8 (5310.1) -> 3547.0 (5210.9) MB, 2530.3 / 0.
+0 ms  (average mu = 0.539, current mu = 0.019) last resort; GC in old space requested
+[18376:0000015F35BB0670]  5191897 ms: Mark-sweep (reduce) 3547.0 (5210.9) -> 3547.0 (5150.6) MB, 3236.9 / 0.
+0 ms  (average mu = 0.330, current mu = 0.000) last resort; GC in old space requested
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
 ```

@@ -10,6 +10,8 @@ import { Tooltip } from "react-tooltip"
 import CodeBlock from "@docusaurus/theme-classic/lib/theme/CodeBlock"
 //@ts-ignore
 // import CodeBlock from "@theme/CodeBlock"
+// import DocCardList from "@theme/DocCardList"
+import Video from "../components/Video"
 
 export default {
   ...MDXComponents,
@@ -18,4 +20,5 @@ export default {
   Image,
   Tooltip,
   CodeBlock,
+  Video,
 }

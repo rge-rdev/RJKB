@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
+//@ts-ignore
 import Link from "@docusaurus/Link"
+//@ts-ignore
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import HomeLogoSlider from "./HomeLogoSlider"
 import { IconArrowDownCircleBlackSVG } from "../../../static/img/svg"
@@ -84,13 +86,13 @@ export default function HomepageHeader() {
         >
           {siteConfig.tagline}
         </h2>
-        <div className="">
+        <div>
           <HomeLogoSlider />
         </div>
         <p className="fixed animate-fade-in-out text-cyan-300 opacity-0 dark:text-cyan-500">
           Explore My Fullstack Knowledge Showcase
         </p>
-        <div className="">
+        <div>
           <Link
             // className="button button--secondary button--lg hover:shadow-2xl"
             className="animate-fade-in animate-pulse-2x"

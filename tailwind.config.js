@@ -2,7 +2,7 @@
 module.exports = {
   mode: "jit",
   darkMode: ["class", '[data-theme="dark"]'],
-  content: ["./{docs,src}/**/*.{js,jsx,ts,tsx,mdx}"],
+  content: ["./{docs,src}/**/*.{js,jsx,ts,tsx,mdx}", "docusaurus.config.js"],
   theme: {
     extend: {
       backgroundImage: (theme) => ({

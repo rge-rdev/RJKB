@@ -29,8 +29,6 @@ export function getStaticPreviews(ids: string[]) {
   return output_static_previews
 }
 
-function writeStaticPreview(id: string) {}
-
 function getStaticPreviewTSX(id: string) {
   const PreviewJSX = Preview(id)
 
@@ -42,11 +40,8 @@ import Image from "@theme/IdealImage"
 import { Link, Redirect } from "react-router-dom"
 import { Tooltip } from "react-tooltip"
 export default function Preview${id}(){
-  return (<>
-    ${PreviewJSX}
-  </>)
-}
-  `
+  return (${PreviewJSX})
+}`
   )
 }
 //? Fragment NOT needed - but keep there for easier expansion
@@ -149,8 +144,7 @@ export default function Preview(id: string) {
           View ${ref_l - ref_show_l} more
         </button></Link>`
         : ""
-    return `
-<Tooltip
+    return `<Tooltip
   id="${tooltip_id}"
   place="top"
   clickable

@@ -39,9 +39,11 @@ function RJ_WEBPACK_PLUGIN(context, options) {
     configureWebpack(config, isServer, utils, content) {
       return {
         optimization: {
-          // mergeDuplicateChunks: true, // skip client optimizating step to speed up build
+          // mergeDuplicateChunks: false, // skip client optimizating step to speed up build
           // removeAvailableModules: false, // disable duplicate module check for extra build speed
-
+          // removeEmptyChunks: false,
+          // // splitChunks: false,
+          // minimize: false,
           minimize: true,
           minimizer: [
             new TerserPlugin({
@@ -133,17 +135,17 @@ const config = {
     // "plugin-image-zoom",
   ],
   title: "RJ KB",
-  tagline: "A Fullstack Showcase",
+  tagline: "Fullstack Dev Showcase",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "http://host.docker.internal",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
-  organizationName: "rgerdev", // Usually your GitHub org/user name.
+  organizationName: "rge-rdev", // Usually your GitHub org/user name.
   projectName: "RJKB", // Usually your repo name.
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -218,14 +220,30 @@ const config = {
         },
         blog: {
           path: "blog",
-          blogTitle: "RJ's Dev logs",
-          blogDescription: "Blog for Fullstack Engineers",
+          blogTitle: "Fullstack Dev Blog",
+          blogDescription: "Fullstack Dev Blog",
           blogSidebarCount: 20,
-          blogSidebarTitle: "RJ's Dev Logs",
+          blogSidebarTitle: "Recent Posts",
+          routeBasePath: "blog",
           tagsBasePath: "tags",
+          archiveBasePath: "archive",
+          postsPerPage: 10,
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
             defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          authorsMapPath: "authors.yml",
+          feedOptions: {
+            type: "all",
+            copyright: `Copyright © ${new Date().getFullYear()} Roger Jiang`,
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              })
+            },
+          },
           //! disable editURL to hide "edit this page" link showing
           // editUrl:"https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // postsPerPage: 3,
@@ -271,7 +289,7 @@ const config = {
         logo: {
           alt: "RJKB Site Logo",
           src: "img/LogoTextRJKB.svg",
-          srcDark: "img/LogoTextRJKB.svg",
+          srcDark: "img/LogoTextRJKBDark.svg",
           height: 70,
           // src: "img/LogoTextRJKB.svg",
         },
@@ -283,14 +301,13 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog", label: "Dev Log", position: "left" },
+          { to: "/blog", label: "Blog", position: "left" },
           //RTL
           { to: "/about", label: "About", position: "right" },
           {
             position: "right",
-            href: "https://github.com/rgerdev",
+            href: "https://github.com/rge-rdev",
             className: "header-github-link",
-            // label: "RGE RDEV Github",
             "aria-label": "RGE RDEV GitHub",
           },
           {
@@ -302,60 +319,33 @@ const config = {
       },
       // customize footer for landing page
       footer: {
-        style: "dark",
         links: [
           {
-            //C1
-            title: "RJKB",
-            items: [
-              {
-                label: "Docs",
-                to: "/docs",
-              },
-              {
-                label: "Dev Log",
-                to: "/blog",
-              },
-              {
-                label: "Tour",
-                to: "/features",
-              },
-            ],
+            html: `<a href="https://github.com/rge-rdev" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link header-github-link" aria-label="rge.rdev GitHub"></a>`,
+          },
+
+          {
+            html: `<a href="https://localhost.com/blog/rss.xml" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-rss-link" aria-label="RSS Feed for RJKB Fullstack Blog"></a>`,
           },
           {
-            //C2
-            title: "Contact",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
+            html: `<a href="" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-linkedin-link" aria-label="LinkedIn"></a>`,
           },
           {
-            //C3
-            title: "More",
-            items: [
-              {
-                label: "About",
-                to: "/about",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/rgerdev",
-              },
-            ],
+            html: `<a target="_blank" rel="noopener nofollow" aria-label="Link to mailto:rge.rdev+website@gmail.com" href="mailto:rge.rdev+website@gmail.com" class="navbar__item footer-icon-link footer-mail-link"></a>`,
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Roger Jiang. Built with Docusaurus.`,
+        copyright: `<a class="inline-flex">© ${
+          new Date().getFullYear() > 2023
+            ? "2023-" + new Date().getFullYear()
+            : new Date().getFullYear()
+        } Roger Jiang</a>`,
+        logo: {
+          alt: "RJKB Site Logo",
+          src: "img/LogoTextRJKB.svg",
+          srcDark: "img/LogoTextRJKBDark.svg",
+          height: 30,
+          className: "inline-flex",
+        },
       },
       prism: {
         theme: lightCodeTheme,
@@ -384,7 +374,7 @@ const config = {
           apiKey: "xyz",
         },
 
-        // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
+        // Optional: Typesense search parameters: https://typesense.org/d ocs/0.24.0/api/search.html#search-parameters
         typesenseSearchParameters: {},
 
         // Optional
