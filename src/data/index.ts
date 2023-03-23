@@ -150,7 +150,8 @@ export const map_all_parents = new Map(
       "Map ID to Parent ID",
       "⏳ 🔎 ",
       "✅ MAP",
-      map_all_parents_init_time
+      map_all_parents_init_time,
+      `${i+1} doc IDs mapped to parent in ${(uptime()-map_all_parents_init_time).toFixed(2)}s`
     )
 
     return [
@@ -172,7 +173,8 @@ export const map_all_refs_ID_array = new Map(
       "Map ID to Ref ID Array",
       "⏳ 🔎 ",
       "✅ MAP",
-      map_all_refs_init_time
+      map_all_refs_init_time,
+      `${i+1} refs mapped to Doc ID in ${(uptime()-map_all_refs_init_time).toFixed(2)}s`
     )
 
     return [
@@ -440,12 +442,11 @@ let num_child_slugs = 0
       num_paths_mapped_to_id,
       map_size,
       "slugs",
-      "MAP ID PATH",
+      "MAP ID to PATH",
       "⏳",
       "✅ MAP",
       map_path_to_id_time,
-      num_aliases,
-      "Aliases found"
+      `${num_aliases} keys mapped to ${num_child_slugs} aliases`
     )
     const children = getChildren(id)
     if (children)

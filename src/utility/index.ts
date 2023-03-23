@@ -13,7 +13,6 @@ import {
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
-import Preview from "../components/Preview"
 import { encode } from "he"
 
 // import Cloze from "../components/Cloze"
@@ -736,6 +735,13 @@ export function obj_to_mdx(
           const original_doc_id_ref_by_alias = el["_id"] //! MISTAKE to refer to this for alias key - this is the ORIGINAL doc that the alias ref to
           let aliasKey = id_to_mdx(alias_id)
           let alias_path = get_path_from_id(alias_id)
+          const original_doc_key = id_to_mdx(original_doc_id_ref_by_alias)
+          let original_doc_path = get_path_from_id(original_doc_id_ref_by_alias)
+          let redirect_path =
+            aliasKey && aliasKey !== original_doc_key
+              ? // ? `${original_doc_path}?alias=${aliasKey}` // ?alias= query params might be screwing up scraping dups
+                `${original_doc_path}`
+              : original_doc_path
 
           if (alias_path)
             alias_path = alias_path
@@ -756,17 +762,24 @@ export function obj_to_mdx(
 
           // const alias_mdx = make_mdx(alias_id) //!! THIS WAS THE BREAKING BUG!
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
+          if (!original_doc_path) return ""
           if (!alias_path) return ""
           if (!preview) {
             output_str += jsx
-              ? `<Link to="${alias_path}"><code>${aliasKey}</code></Link>`
-              : `[\`${aliasKey}\`](${alias_path})`
+              ? `<Link to="${redirect_path}"><code>${aliasKey}</code></Link>`
+              : `[\`${aliasKey}\`](${redirect_path})`
+            //! DEPRECATE <REDIRECT>
+            // ? `<Link to="${alias_path}"><code>${aliasKey}</code></Link>`
+            // : `[\`${aliasKey}\`](${alias_path})`
             return output_str // exit early once alias found
           } else if (preview) {
             const id_tooltip = `preview__${original_doc_id_ref_by_alias}`
             output_str += jsx
-              ? `<Link to="${alias_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
-              : `[<span data-tooltip-id="${id_tooltip}">${aliasKey}</span>](${alias_path})`
+              ? `<Link to="${redirect_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
+              : `[<span data-tooltip-id="${id_tooltip}">${aliasKey}</span>](${redirect_path})`
+            //! DEPRECATE <REDIRECT>
+            // ? `<Link to="${alias_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
+            // : `[<span data-tooltip-id="${id_tooltip}">${aliasKey}</span>](${alias_path})`
             if (id) setLinkIDtoMap(id, original_doc_id_ref_by_alias)
             return output_str
           }
@@ -819,8 +832,8 @@ export function obj_to_mdx(
         //prettier-ignore
         const static_img_path = (el["url"] as string).replace(`%LOCAL_FILE%`,`@site/static/files/`)
         //prettier-ignore
-        // output_str += `\n![image](${(el["url"] as string).replace(`%LOCAL_FILE%`,`@site/static/files/`)})\n`
-        output_str += `\n<Image img={require('${static_img_path}')} />\n`
+        output_str += `\n![image](${(el["url"] as string).replace(`%LOCAL_FILE%`,`@site/static/files/`)})\n`
+        // output_str += `\n<Image img={require('${static_img_path}')} />\n` //! IdealImage SUCKS - increases file-size for same image at LOWER res - also can't handle svg files properly
       }
     }
   }
@@ -948,7 +961,7 @@ export async function LOG_CLI_PROGRESS_SLOW( //SLOWEST
   process.stdout.clearLine(1)
   process.stdout.cursorTo(0)
 }
-export function LOG_CLI_PROGRESS( //NO LOGS FOR MAX SPEED
+export function LOG_CLI_PROGRESS_DISABLE( //NO LOGS FOR MAX SPEED
   i: number,
   length: number,
   element: string,
@@ -959,7 +972,7 @@ export function LOG_CLI_PROGRESS( //NO LOGS FOR MAX SPEED
   ...more: (string | number)[]
 ) {}
 
-export function LOG_CLI_PROGRESS_NEW( //ORIGINAL SIMPLE FAST
+export function LOG_CLI_PROGRESS( //ORIGINAL SIMPLE FAST
   i: number,
   length: number,
   element: string,
@@ -971,25 +984,26 @@ export function LOG_CLI_PROGRESS_NEW( //ORIGINAL SIMPLE FAST
 ) {
   if (i === 0) process.stdout.write("\n\n\n")
 
-  process.stdout.write(
-    `${i < length - 1 ? progress : completed}: ${(
-      (100 * (i + 1)) /
-      length
-    ).toPrecision(3)}% of ${task} for ${i} ${element}${
-      i === length - 1
-        ? ` in ${(uptime() - init_time).toPrecision(3)}s ⏱\n`
-        : ""
-    }${more ? `\n${more.join(" ")}` : ""}`
-  )
-  if (!more) {
-    process.stdout.cursorTo(0, 0)
-    process.stdout.clearLine(1)
-    // if (i === length - 1) process.stdout.write("\n")
-  }
-  if (more) {
-    process.stdout.moveCursor(-999, -1)
-    process.stdout.clearLine(1)
-    process.stdout.cursorTo(0)
+  if (i % 10 === 0 || i === length - 1) {
+    process.stdout.write(
+      `${i < length - 1 ? progress : completed}: ${(
+        (100 * (i + 1)) /
+        length
+      ).toPrecision(3)}% of ${task} for ${i} ${element}${
+        i === length - 1
+          ? ` in ${(uptime() - init_time).toPrecision(3)}s ⏱\n`
+          : ""
+      }${more ? `\n${more.join(" ")}` : ""}`
+    )
+    if (!more) {
+      process.stdout.cursorTo(0, 0)
+      process.stdout.clearLine(1)
+    }
+    if (more) {
+      process.stdout.moveCursor(-999, -1)
+      process.stdout.clearLine(1)
+      process.stdout.cursorTo(0)
+    }
   }
 }
 //!   process.stdout.clearScreenDown() DESTROYS performance whereas process.stdout.clearLine() doesn't?!

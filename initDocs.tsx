@@ -23,13 +23,24 @@ import {
   getPreviewImports,
   get_map_all_static_preview_tsx_length,
 } from "./src/components/Preview"
+import axios from "axios"
+
+const {
+  TYPESENSE_PROTOCOL,
+  TYPESENSE_SERVER,
+  TYPESENSE_PORT,
+  TYPESENSE_API_KEY,
+  APPLICATION_ID,
+} = require("dotenv").config().parsed
 
 let debug_keywords: any[] = []
 let debug_tags: any[] = []
+let ouput_docsearch_alias: string[] = []
 
 let num_docs = 0
 let num_skipped = 0
 let num_links = 0
+let num_tags = 0
 let num_alias_redirect_mdx = 0
 let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
 let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
@@ -53,7 +64,6 @@ const __DOC_LENGTH = 8457
  * @param id
  * @returns
  */
-const test_preview = undefined
 
 export const map_all_tags: Map<string, string[]> = new Map()
 export const getTags = (id: string) => map_all_tags.get(id)
@@ -107,9 +117,11 @@ function generate_mdx_page_from_id(
     .slice(1, -2)
     .map((str) => str.replace(/-/g, " ").trim())
   let tags = _.uniqWith(
-    [...prev_slugs, ...alias_slugs, ...init_tags].filter(
-      (tag) => tag.length < 30
-    ),
+    [
+      ...prev_slugs,
+      // ...alias_slugs, // disable alias-slugs for tags
+      ...init_tags,
+    ].filter((tag) => tag.length < 30),
     (a, b) =>
       a
         .toLowerCase()
@@ -137,6 +149,7 @@ function generate_mdx_page_from_id(
 
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
+  num_tags += tags.length
   const description = id_to_plaintext(id, "value")
     ?.replace(/"/g, `'`)
     .replace(/\\/g, `&#92;`)
@@ -144,6 +157,7 @@ function generate_mdx_page_from_id(
   const alias_mdx_arr = alias_ids.map((id) =>
     id_to_mdx(id, "key", { safe: true })
   )
+
   const title_alias_str = [title, ...alias_mdx_arr]
     .map((str) => _.escapeRegExp(str).trim())
     .join("|")
@@ -151,7 +165,16 @@ function generate_mdx_page_from_id(
     `\\[(\`(${title_alias_str})\`)\\]\\(`,
     "g"
   )
+  const alias_synonyms = _.uniq(
+    alias_mdx_arr
+      .map((a) => a?.trim().replace(/`/g, ""))
+      .filter((alias) => alias !== undefined && alias.length > 0)
+  ) as string[] | []
 
+  if (alias_synonyms.length > 1)
+    ouput_docsearch_alias.push(
+      `["${title}", ${alias_synonyms.map((alias) => `"${alias}"`).join(`, `)}]`
+    )
   const child_jsx = false
 
   //TODO fix identical child skip check
@@ -627,14 +650,19 @@ async function loop_docs_mkdir(
     // process.stdout.write(`#${num} Writing ${file} to ${dirpath}`)
     LOG_CLI_PROGRESS(
       num,
-      map_size,
+      8457 + 1,
+      // map_size,
       "files",
       "SSG MDX",
       "⏳ ✍ ",
       "✅ MDX",
       init_mdx_map_time,
-      num_alias_redirect_mdx,
-      "Alias Redirect MDX"
+      `${num} MDX with ${num_tags} tags,`,
+      `${get_map_all_static_preview_tsx_length()} Preview TSX,`,
+      ouput_docsearch_alias.length,
+      `sets of synonyms in ${(uptime() - init_mdx_map_time).toFixed(2)}s`
+      // num_alias_redirect_mdx,
+      // "Alias Redirect MDX"
     )
     const prev_slug = dirpath.split("/").slice(0, -1).pop()
 
@@ -650,28 +678,78 @@ async function loop_docs_mkdir(
     const omit_check = true
     const pop_parent_path = parent_path
     const parent_slug = pop_parent_path.split("/").pop()
+    const use_react_router_redirects = false
+    const use_node_put_to_typesense_server = false
+
     if (slug_key === "Aliases") {
       const parent_id = getParentId(id) || ""
 
-      const alias_slugs = getAliasSlugs(parent_id)
-      // console.log(`parent_slug: ${parent_slug} alias_slugs:${alias_slugs}`)
+      if (use_react_router_redirects) {
+        const alias_slugs = getAliasSlugs(parent_id)
+        // console.log(`parent_slug: ${parent_slug} alias_slugs:${alias_slugs}`)
 
-      alias_slugs.forEach((alias_slug) => {
-        const alias_filepath = `${parent_path}/${alias_slug}.mdx`
-        //! Add extra step to ensure alias does not clash with sibling slug - such as /Bittorrent/Torrent.mdx clash with /Bittorrent/torrent/torrent.mdx - only docusaurus prod build throws on error - client build allows silent fail - bad detection, will only warn and then break during SSG phase at 92% progress after 2+hrs!
-        // console.log(alias_filepath)
-        //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
-        if (
-          alias_slug.toLowerCase() !== parent_slug?.toLowerCase() &&
-          alias_slug.toLowerCase() !== "index" //! Add skip to index alias here
-        )
-          generate_id_redirect(
-            alias_filepath,
-            `/${parent_path}?alias=${alias_slug}`
+        alias_slugs.forEach((alias_slug) => {
+          const alias_filepath = `${parent_path}/${alias_slug}.mdx`
+          //! Add extra step to ensure alias does not clash with sibling slug - such as /Bittorrent/Torrent.mdx clash with /Bittorrent/torrent/torrent.mdx - only docusaurus prod build throws on error - client build allows silent fail - bad detection, will only warn and then break during SSG phase at 92% progress after 2+hrs!
+          // console.log(alias_filepath)
+          //! alias_slug !== parent_slug TAKES CASE INTO CONSIDERATION!
+
+          if (
+            alias_slug.toLowerCase() !== parent_slug?.toLowerCase() &&
+            alias_slug.toLowerCase() !== "index" //! Add skip to index alias here
           )
-        //! Must add extra slash to ensure router path relative to root!
-        //! Forgot to avoid duplicate alias slug overriting parent!
-      })
+            generate_id_redirect(
+              alias_filepath,
+              `/${parent_path}?alias=${alias_slug}`
+            )
+          //! Must add extra slash to ensure router path relative to root!
+          //! Forgot to avoid duplicate alias slug overriting parent!
+        })
+      }
+      if (use_node_put_to_typesense_server) {
+        const parent_slug = id_to_key_slug(parent_id)?.toLowerCase()
+        const parent_mdx = id_to_mdx(id, "key", { safe: true })
+        const synonym_collection = `${parent_slug}-synonyms`
+        const synonym_path = `${TYPESENSE_PROTOCOL}://${TYPESENSE_SERVER}:${TYPESENSE_PORT}/collections/${APPLICATION_ID}/synonyms/${synonym_collection}`
+        const alias_ids = getAliasIDs(parent_id)
+        const alias_mdx_arr = alias_ids.map((id) =>
+          id_to_mdx(id, "key", { safe: true })
+        )
+        const synonyms_arr = _.uniq(
+          [parent_mdx, ...alias_mdx_arr]
+            .map((a) => a?.trim().replace(/`/g, ""))
+            .filter((alias) => alias !== undefined && alias.length > 0)
+        ) as string[] | []
+
+        const skip = synonyms_arr?.find(
+          (synonym) => synonym === "Root Element"
+        )?.length
+
+        let data = JSON.stringify({
+          synonyms: synonyms_arr,
+        })
+
+        let config = {
+          method: "put",
+          maxBodyLength: Infinity,
+          url: synonym_path,
+          headers: {
+            "X-TYPESENSE-API-KEY": TYPESENSE_API_KEY,
+            "Content-Type": "application/json",
+          },
+          data,
+        }
+
+        ;(async function putRJKBTypesenseSynonymsCollection() {
+          if (!skip)
+            try {
+              const response = await axios.request(config)
+              console.log(synonym_path, JSON.stringify(response.data))
+            } catch (error) {
+              console.log(error)
+            }
+        })()
+      }
     }
 
     let skip_next =
@@ -697,20 +775,29 @@ async function loop_docs_mkdir(
       } catch (error) {}
     }
     // console.log(`num=${num}`) // to recheck __DOC_LENGTH still valid
+    // if (num % 1000 === 0) console.log(`processed ${num / 1000}000 docs\n`)
     if (num === __DOC_LENGTH) {
-      console.log(num, "output debug files & remove breaking mdx")
+      process.stdout.write(
+        `\n\n${num} output debug files & remove breaking mdx`
+      )
       fs.outputFile("test/DEBUG_KEYWORDS.mdx", debug_keywords.join("\n"))
       fs.outputFile("test/DEBUG_TAGS.mdx", debug_tags.join("\n"))
-      console.log(
-        "removing docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx"
+      const alias_output_dir = "test/DEBUG_ALIAS_LIST.mdx"
+      process.stdout.write(
+        `\n${ouput_docsearch_alias.length} sets of synonyms for docsearch to: ${alias_output_dir}`
       )
-      fs.remove(
-        "docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx"
+      fs.outputFile(
+        alias_output_dir,
+        '"synonyms": [' + ouput_docsearch_alias.join(",\n") + "]"
       )
-      console.log(
-        "docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
+      //prettier-ignore
+      // process.stdout.write("\nrm docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx")
+      //prettier-ignore
+      // fs.removeSync("docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx")
+      process.stdout.write(
+        "\nrm docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
       )
-      fs.remove(
+      fs.removeSync(
         "docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
       )
     }
@@ -726,8 +813,8 @@ async function loop_docs_mkdir(
         // fs.writeFile(filepath, full_mdx)
         const children = getChildren(id)
         if (num === __DOC_LENGTH) {
-          console.log(
-            `SSG Output: ${num} MDX with ${num_doc_refs} links\n${get_map_all_static_preview_tsx_length()} Preview TSX with ${num_preview_refs} links\n${num_skipped} docs skipped\n in ${(
+          process.stdout.write(
+            `\nSSG Output: ${num} MDX with ${num_doc_refs} links\n${get_map_all_static_preview_tsx_length()} Preview TSX with ${num_preview_refs} links\n${num_skipped} docs skipped\n in ${(
               uptime() - init_mdx_map_time
             ).toFixed(2)}s`
           )
