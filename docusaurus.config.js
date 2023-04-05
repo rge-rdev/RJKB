@@ -156,7 +156,7 @@ const config = {
   favicon: "img/RJKB.ico",
 
   // Set the production url of your site here
-  url: "http://host.docker.internal",
+  url: `${process.env.PROD_URL}`,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -344,7 +344,7 @@ const config = {
             html: `<a href="https://www.npmjs.com/~rge-rdev" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-npm-link" aria-label="rge-rdev npm"></a>`,
           },
           {
-            html: `<a href="https://localhost.com/blog/rss.xml" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-rss-link" aria-label="RSS Feed for RJKB Fullstack Blog"></a>`,
+            html: `<a href="${process.env.PROD_URL}/blog/rss.xml" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-rss-link" aria-label="RSS Feed for RJKB Fullstack Blog"></a>`,
           },
           {
             html: `<a href="" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-linkedin-link" aria-label="LinkedIn"></a>`,

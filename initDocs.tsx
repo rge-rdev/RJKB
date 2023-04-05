@@ -722,10 +722,11 @@ async function loop_docs_mkdir(
         const alias_mdx_arr = alias_ids.map((id) =>
           id_to_mdx(id, "key", { safe: true })
         )
-        const synonyms_arr = _.uniq(
-          [parent_mdx, ...alias_mdx_arr]
+        const synonyms_arr = _.uniqWith(
+          [parent_mdx, parent_slug, ...alias_mdx_arr]
             .map((a) => a?.trim().replace(/`/g, ""))
-            .filter((alias) => alias !== undefined && alias.length > 0)
+            .filter((alias) => alias !== undefined && alias.length > 0),
+          (a, b) => (a && a.toLowerCase()) === (b && b.toLowerCase())
         ) as string[] | []
 
         const skip = synonyms_arr?.find(
