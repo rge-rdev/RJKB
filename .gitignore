@@ -14,6 +14,7 @@ static
 /test
 src/pages/redirect
 src/pages/debug
+bfg-1.14.0.jar
 
 # production
 /build
@@ -37,12 +38,12 @@ yarn-debug.log*
 yarn-error.log*
 .env
 .vscode
-docsearch.config.json
+
 # docker 
 fly.toml
 docker-compose.yml
 dockerfile
-bfg-1.14.0.jar
+docsearch.config.json
 src/data/rem.json
 
 # exclude pages
