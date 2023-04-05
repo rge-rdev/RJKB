@@ -5,7 +5,6 @@ import {
   getDoc,
   id_to_key_slug,
   getChildren,
-  map_size,
   getAliasIDs,
   getAliasSlugs,
   getParentId,
@@ -31,6 +30,9 @@ const {
   TYPESENSE_PORT,
   TYPESENSE_API_KEY,
   APPLICATION_ID,
+  MAP_SIZE,
+  TS_PUT_REQS,
+  TS_PUT_DELAY,
 } = require("dotenv").config().parsed
 
 let debug_keywords: any[] = []
@@ -41,11 +43,12 @@ let num_docs = 0
 let num_skipped = 0
 let num_links = 0
 let num_tags = 0
-let num_alias_redirect_mdx = 0
+// let num_axios_put_reqs = 0
+let num_alias_redirect_mdx = 0 // deprecated
 let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
 let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
 
-const __DOC_LENGTH = 8457
+const __DOC_LENGTH = +MAP_SIZE //8457
 
 /**
  * recursive dir & md docs init loop
@@ -648,11 +651,13 @@ async function loop_docs_mkdir(
     // console.log("dirpath=", dirpath)
     num += 1
     // process.stdout.write(`#${num} Writing ${file} to ${dirpath}`)
+    // console.log(num)
     LOG_CLI_PROGRESS(
       num,
-      8457 + 1,
+      __DOC_LENGTH,
+      // 8457 + 1,
       // map_size,
-      "files",
+      "docs",
       "SSG MDX",
       "⏳ ✍ ",
       "✅ MDX",
@@ -666,20 +671,22 @@ async function loop_docs_mkdir(
     )
     const prev_slug = dirpath.split("/").slice(0, -1).pop()
 
-    const debug_slug = false
+    const debug_slug = true
     if (slug_key && debug_slug) slug_key_arr.push(slug_key)
     if (num === __DOC_LENGTH && debug_slug) {
       try {
         // console.table(slug_key_arr)
-        const slug_key_mdx = slug_key_arr.join("\n\n# ")
-        await fs.outputFile(`test/slug-keys.mdx`, slug_key_mdx)
+        const slug_key_mdx = slug_key_arr.join("\n")
+        // await fs.outputFile(`test/slug-keys.mdx`, slug_key_mdx)
+        fs.outputFileSync(`test/slug-keys.mdx`, slug_key_mdx)
       } catch (error) {}
     }
     const omit_check = true
     const pop_parent_path = parent_path
     const parent_slug = pop_parent_path.split("/").pop()
     const use_react_router_redirects = false
-    const use_node_put_to_typesense_server = false
+    const use_node_put_to_typesense_server = TS_PUT_REQS === "YES"
+    const axios_delay = +TS_PUT_DELAY
 
     if (slug_key === "Aliases") {
       const parent_id = getParentId(id) || ""
@@ -724,6 +731,7 @@ async function loop_docs_mkdir(
         const skip = synonyms_arr?.find(
           (synonym) => synonym === "Root Element"
         )?.length
+        // if (!skip) num_axios_put_reqs += 1
 
         let data = JSON.stringify({
           synonyms: synonyms_arr,
@@ -742,12 +750,21 @@ async function loop_docs_mkdir(
 
         ;(async function putRJKBTypesenseSynonymsCollection() {
           if (!skip)
-            try {
-              const response = await axios.request(config)
-              console.log(synonym_path, JSON.stringify(response.data))
-            } catch (error) {
-              console.log(error)
-            }
+            setTimeout(async () => {
+              try {
+                const response = await axios.request(config)
+                console.log(
+                  // num_axios_put_reqs,
+                  synonym_path,
+                  JSON.stringify(response.data)
+                )
+
+                //! fly.io free VM is only 1vCPU and REALLY CAN'T handle too many concurrent reqs!
+              } catch (error) {
+                console.log(error)
+                process.exit()
+              }
+            }, axios_delay)
         })()
       }
     }
@@ -794,17 +811,16 @@ async function loop_docs_mkdir(
       // process.stdout.write("\nrm docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx")
       //prettier-ignore
       // fs.removeSync("docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx")
-      process.stdout.write(
-        "\nrm docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
-      )
-      fs.removeSync(
-        "docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx"
-      )
+      //prettier-ignore
+      // process.stdout.write("\nrm docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx")
+      //prettier-ignore
+      // fs.removeSync("docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx")
     }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
     if (!skip_next && !skip && slug_key && !title_has_line_breaks)
       try {
         const mdx = generate_mdx_page_from_id(id, slug_key, filepath)
+        num_docs += 1
         fs.outputFileSync(filepath, mdx)
         // await fs.outputFile(filepath, mdx).then(() => { //!TOGGLE TO GO BACK TO BUGGED ASYNC - WILL CORRUPT STATIC OUTPUT FOR A FEW FILES
         // generate_id_redirect(id, dirpath) // CUTTING OUT redirect SSG - 13000 <Redirect/> FCs is way too LAGGY!
@@ -814,7 +830,9 @@ async function loop_docs_mkdir(
         const children = getChildren(id)
         if (num === __DOC_LENGTH) {
           process.stdout.write(
-            `\nSSG Output: ${num} MDX with ${num_doc_refs} links\n${get_map_all_static_preview_tsx_length()} Preview TSX with ${num_preview_refs} links\n${num_skipped} docs skipped\n in ${(
+            `\n\nSSG Output: ${num} docs processed, skipped ${
+              num - num_docs
+            } & output ${num_docs} MDX files\nEach MDX with ${num_doc_refs} links\n${get_map_all_static_preview_tsx_length()} Preview TSX with ${num_preview_refs} links\n${num_skipped} docs skipped\n in ${(
               uptime() - init_mdx_map_time
             ).toFixed(2)}s`
           )

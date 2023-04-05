@@ -15,7 +15,10 @@ tags: [JS, TS, React]
 
 Custom RJ SSG Node.js Script to transform JSON DB (export from [Remnote](./blog/)) into full featured MDX, statically output to respective file routes based on doc hierachy
 
-<Video src="/vid/RJKB_SSG_CLI.mp4" />
+<Video
+  src="/vid/RJKB_SSG_CLI.mp4"
+  poster="/vid/RJKB_SSG_CLI.jpg"
+/>
 
 - ✅ RJ SSG Scripts transform JSON into MDX & TSX
 
@@ -71,11 +74,13 @@ Hashing out all doc objects from the JSON input greatly improved efficiency, in 
 
 <Video
   src="/vid/RJKB_hover_preview_ipad.mp4"
+  poster="/vid/RJKB_hover_preview_ipad_300.jpg"
   h={300}
   title="RJKB Hover Preview Links viewed on Ipad 810x1080 resolution"
 />
 <Video
-  src="/vid/RJKB_hover_preview_iphone.mp4"
+  src="/vid/RJKB_hover_preview_iphone_500.mp4"
+  poster="/vid/RJKB_hover_preview_iphone_500p.jpg"
   h={300}
   title="RJKB Hover Preview Links viewed on Iphone 13 Pro Max 428 x 926 resolution"
 />
@@ -102,9 +107,35 @@ Hashing out all doc objects from the JSON input greatly improved efficiency, in 
 
 ## 🥇 Self-hosted Typesense Search
 
-Self-hosted Typesense server as run on Docker instance
+Self-hosted Typesense server as run on Docker instance on fly.io
 
 ⚡ fast typo-tolerant fuzzy search. Read more on [setting up self-hosted typesense search for docusaurus](./blog/)
+
+### Typesense backend secured
+
+- ✅ set up front-end API key scoped to only perform search for documents on main typesense collection
+
+- ✅ migrate from bootstrap API key to Admin key for debug
+
+- ✅ migrate all Typesense parameters expose in docusaurus.config.js to ENV for extra security
+
+- ✅ update to typesense v0.25.0
+
+- ✅ for now, there's no need to scope aditional keys
+
+- 🚧 swizzle docsearch component to query separate backend for OTP with search-scoped API key instead of hard coding scoped key (and more importantly add some kind of auth to distinguish legitimate user agents from bots/scrapers. Or perhaps, just save this for when migrating out of Docusaurus into Nextjs.
+
+### Docker Deployed on fly.io
+
+- ✅ best option for long-term free-tier docker deployment found at fly.io!
+
+- ✅ set up new dockerfile & fly.toml to
+
+- ✅ London instance deployed with 0.25vCPU 1GB Volume Mount - sufficient for low-concurrency search traffic
+
+  - ✅ benchmark 41.8 concurrent PUT reqs PER SECOND to update synonyms collection, according to stats.json
+
+- ✅
 
 ### Dedup & trim #docusaurus_skipToContent_fallback affix in search
 
@@ -146,6 +177,14 @@ The `docsearch.config.json` [Docusaurus V2 template](https://github.com/algolia/
 ## 🥇 Unbreaking Docusaurus
 
 [Docusaurus v2.3.1 loads everything into memory by design](./blog/), which can easily run into FATAL ERROR: JavaScript heap out of memory - right at the end of 2hr+ build. [Read more on Docusaurus Scaling limits](./blog/)
+
+### Critical Checklist
+
+- Install 32GB RAM Minimum
+
+```bash
+node -e "console.log(require('v8').getHeapStatistics().total_available_size / 1024**2)"
+```
 
 - ✅ migrate Webpack to swc-loader reduce build time by 50%
 

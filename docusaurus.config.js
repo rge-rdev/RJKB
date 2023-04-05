@@ -4,6 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin")
 
 const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
+require("dotenv").config()
 
 // const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 // const webpack = require("webpack")
@@ -35,31 +36,47 @@ function RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN(context, options) {
 
 function RJ_WEBPACK_PLUGIN(context, options) {
   return {
-    name: "rj-webpack-fixes",
+    name: "RJ's super special awesome plugin to optimize webpack",
     configureWebpack(config, isServer, utils, content) {
-      return {
-        optimization: {
-          // mergeDuplicateChunks: false, // skip client optimizating step to speed up build
-          // removeAvailableModules: false, // disable duplicate module check for extra build speed
-          // removeEmptyChunks: false,
-          // // splitChunks: false,
-          // minimize: false,
-          minimize: true,
-          minimizer: [
-            new TerserPlugin({
-              minify: TerserPlugin.swcMinify,
-              terserOptions: {
-                compress: {
-                  unused: true,
-                  booleans_as_integers: true, // coerce even smaller!
-                  dead_code: true, // kill dead code
-                  // reduce_funcs: true, //? risky to enable - Terser author considered obsoleting this due to bugs, exponential complexity (esp for recursive fn) & miniminal bundle size improvement //https://github.com/terser/terser/issues/696
+      return process.env.NODE_ENV === "development"
+        ? {
+            optimization: {
+              mergeDuplicateChunks: false, // skip client optimizating step to speed up build
+              removeAvailableModules: false, // disable duplicate module check for extra build speed
+              removeEmptyChunks: false,
+              minimize: false,
+            },
+            module: {
+              rules: [
+                {
+                  test: /\.m?js$/,
+                  exclude: /(node_modules)/,
+                  use: {
+                    // `.swcrc` can be used to configure swc
+                    loader: "swc-loader",
+                  },
                 },
-                mangle: {},
-              },
-            }),
-          ],
-          /*
+              ],
+            },
+          }
+        : {
+            optimization: {
+              minimize: true,
+              minimizer: [
+                new TerserPlugin({
+                  minify: TerserPlugin.swcMinify,
+                  terserOptions: {
+                    compress: {
+                      unused: true,
+                      booleans_as_integers: true, // coerce even smaller!
+                      dead_code: true, // kill dead code
+                      // reduce_funcs: true, //? risky to enable - Terser author considered obsoleting this due to bugs, exponential complexity (esp for recursive fn) & miniminal bundle size improvement //https://github.com/terser/terser/issues/696
+                    },
+                    mangle: {},
+                  },
+                }),
+              ],
+              /*
           minimizer: [
             new TerserPlugin({
               minify: TerserPlugin.esbuildMinify,
@@ -72,30 +89,30 @@ function RJ_WEBPACK_PLUGIN(context, options) {
             }),
           ],
           */
-          // minimizer: [new EsbuildPlugin({ target: "esnext" })],
-          /**Enable Production settings in Dev mode */
-          // concatenateModules: true, // to find safe module graph segments to concatenate into a single module
-          // flagIncludedChunks: true, // don't load chunks when already loaded as subset of another chunk
-          // innerGraph: true, // detect unused exports
-          // mangleExports: "size", // minifiy variable names to reduce size
-          // mangleWasmImports: true,
-          // mergeDuplicateChunks: true, // dedup chunks with same modules
-          // removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
-          // usedExports: true, // dead code elim
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /(node_modules)/,
-              use: {
-                // `.swcrc` can be used to configure swc
-                loader: "swc-loader",
-              },
+              // minimizer: [new EsbuildPlugin({ target: "esnext" })],
+              /**Enable Production settings in Dev mode */
+              // concatenateModules: true, // to find safe module graph segments to concatenate into a single module
+              // flagIncludedChunks: true, // don't load chunks when already loaded as subset of another chunk
+              // innerGraph: true, // detect unused exports
+              // mangleExports: "size", // minifiy variable names to reduce size
+              // mangleWasmImports: true,
+              // mergeDuplicateChunks: true, // dedup chunks with same modules
+              // removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
+              // usedExports: true, // dead code elim
             },
-          ],
-        },
-      }
+            module: {
+              rules: [
+                {
+                  test: /\.m?js$/,
+                  exclude: /(node_modules)/,
+                  use: {
+                    // `.swcrc` can be used to configure swc
+                    loader: "swc-loader",
+                  },
+                },
+              ],
+            },
+          }
     },
   }
 }
@@ -136,7 +153,7 @@ const config = {
   ],
   title: "RJ KB",
   tagline: "Fullstack Dev Showcase",
-  favicon: "img/favicon.ico",
+  favicon: "img/RJKB.ico",
 
   // Set the production url of your site here
   url: "http://host.docker.internal",
@@ -268,7 +285,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/DrawRJKBSocialCard.png",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
@@ -321,9 +338,11 @@ const config = {
       footer: {
         links: [
           {
-            html: `<a href="https://github.com/rge-rdev" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link header-github-link" aria-label="rge.rdev GitHub"></a>`,
+            html: `<a href="https://github.com/rge-rdev" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link header-github-link" aria-label="rge-rdev GitHub"></a>`,
           },
-
+          {
+            html: `<a href="https://www.npmjs.com/~rge-rdev" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-npm-link" aria-label="rge-rdev npm"></a>`,
+          },
           {
             html: `<a href="https://localhost.com/blog/rss.xml" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-rss-link" aria-label="RSS Feed for RJKB Fullstack Blog"></a>`,
           },
@@ -331,7 +350,7 @@ const config = {
             html: `<a href="" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-linkedin-link" aria-label="LinkedIn"></a>`,
           },
           {
-            html: `<a target="_blank" rel="noopener nofollow" aria-label="Link to mailto:rge.rdev+website@gmail.com" href="mailto:rge.rdev+website@gmail.com" class="navbar__item footer-icon-link footer-mail-link"></a>`,
+            html: `<a target="_blank" rel="noopener nofollow" aria-label="Link to mail ${process.env.GIT_USER}" href="${process.env.MAIL_TO}" class="navbar__item footer-icon-link footer-mail-link"></a>`,
           },
         ],
         copyright: `<a class="inline-flex">© ${
@@ -361,17 +380,28 @@ const config = {
       },
       //! ADD typesense-search theme here
       typesense: {
-        typesenseCollectionName: "rjkb", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseCollectionName: process.env.APPLICATION_ID, // Replace with your own doc site's name. Should match the collection name in the scraper settings.
 
         typesenseServerConfig: {
           nodes: [
             {
-              host: "localhost",
-              port: 8108,
-              protocol: "http",
+              host: process.env.TS_NODE_1,
+              port: 443,
+              protocol: process.env.TYPESENSE_PROTOCOL,
             },
+            // 1 node seems to perform fine for just now
+            // {
+            //   host: process.env.TS_NODE_2,
+            //   port: 443,
+            //   protocol: process.env.TYPESENSE_PROTOCOL,
+            // },
+            // {
+            //   host: process.env.TS_NODE_3,
+            //   port: 443,
+            //   protocol: process.env.TYPESENSE_PROTOCOL,
+            // },
           ],
-          apiKey: "xyz",
+          apiKey: process.env.TYPESENSE_CLIENT_SEARCH_KEY, //!scope API key to search only!
         },
 
         // Optional: Typesense search parameters: https://typesense.org/d ocs/0.24.0/api/search.html#search-parameters

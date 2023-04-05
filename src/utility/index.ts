@@ -1,5 +1,3 @@
-import React from "react"
-import { renderToStaticMarkup, renderToString } from "react-dom/server"
 import _, { slice } from "lodash"
 import { RemData } from "../rem-json"
 import {

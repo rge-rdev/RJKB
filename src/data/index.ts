@@ -8,6 +8,7 @@ import {
   id_to_mdx,
 } from "../utility"
 import { uptime } from "process"
+const {MAP_SIZE} = require("dotenv").config().parsed
 
 export const rem: Rem_DB = rem_json as Rem_DB
 
@@ -103,7 +104,7 @@ export const map = new Map(
   })
 )
 
-export const map_size = 13592 + 1 // map.size includes also non-main topics + children which were filtered out for docusaurus build
+// export const MAP_SIZE = 13592 + 1 // map.size includes also non-main topics + children which were filtered out for docusaurus build
 export const map_all = new Map(
   rem.docs.map((doc) => [
     doc._id,
@@ -440,7 +441,7 @@ let num_child_slugs = 0
     num_paths_mapped_to_id += 1
     LOG_CLI_PROGRESS(
       num_paths_mapped_to_id,
-      map_size,
+      MAP_SIZE,
       "slugs",
       "MAP ID to PATH",
       "⏳",
@@ -468,7 +469,7 @@ function loop_child_to_make_sure_path_maps_set_up_first(
     num_paths_mapped_to_id += 1
     LOG_CLI_PROGRESS(
       num_paths_mapped_to_id,
-      map_size,
+      MAP_SIZE,
       "slugs",
       "MAP ID to PATH",
       "⏳",

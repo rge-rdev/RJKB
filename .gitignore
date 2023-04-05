@@ -38,3 +38,13 @@ yarn-error.log*
 .env
 .vscode
 docsearch.config.json
+# docker 
+fly.toml
+docker-compose.yml
+dockerfile
+bfg-1.14.0.jar
+src/data/rem.json
+
+# exclude pages
+src/pages/about.mdx
+src/data/rem.json
