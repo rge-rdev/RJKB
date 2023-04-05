@@ -7,7 +7,7 @@
 
 # static folder
 public
-static
+# static
 
 # testing
 /coverage
