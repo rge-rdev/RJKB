@@ -1,7 +1,8 @@
 /* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css?family=FiraCode");
+@import "fira_code.css";
+/* @import url("https://fonts.googleapis.com/css?family=FiraCode"); */
 /* @import url("https://unpkg.com/firacode@6.2.0/distr/fira_code.css"); */
 /* @import "../../node_modules/react-tooltip/dist/react-tooltip.css" */
 /**
@@ -22,6 +23,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   scroll-behavior: smooth;
   --ifm-font-family-base: "Fira Code";
+  font-family: "Fira Code";
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */

@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Fira Code";
+  src: local("Fira Code Light"), local("Fira Code"),
+    url(woff2/FiraCode-Light-basiclatin.woff2) format("woff2"),
+    url(woff/FiraCode-Light-basiclatin.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: local("Fira Code Regular"), local("Fira Code"),
+    url(woff2/FiraCode-Regular-basiclatin.woff2) format("woff2"),
+    url(woff/FiraCode-Regular-basiclatin.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: local("Fira Code Medium"), local("Fira Code"),
+    url(woff2/FiraCode-Medium-basiclatin.woff2) format("woff2"),
+    url(woff/FiraCode-Medium-basiclatin.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: local("Fira Code SemiBold"), local("Fira Code"),
+    url(woff2/FiraCode-SemiBold-basiclatin.woff2) format("woff2"),
+    url(woff/FiraCode-SemiBold-basiclatin.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: local("Fira Code Bold"), local("Fira Code"),
+    url(woff2/FiraCode-Bold-basiclatin.woff2) format("woff2"),
+    url(woff/FiraCode-Bold-basiclatin.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: local("Fira Code Retina"), local("Fira Code"),
+    url(woff2/FiraCode-Retina-basiclatin.woff2) format("woff2-variations"),
+    url(woff/FiraCode-Retina-basiclatin.woff) format("woff-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: fallback;
+}
