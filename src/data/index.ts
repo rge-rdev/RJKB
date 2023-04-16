@@ -208,8 +208,8 @@ export const root_main_topics = root.filter(
     doc._id === "G887bqycfCYCmncMh" ||
     doc._id === "bcxqhqezdr3iRjhNq" ||
     doc._id === "bcxqhqezdr3iRjhNq" ||
-    doc._id === "9izw8RoFY6epyxXYK" ||
-    doc._id === "5jxvqtuiTvhdhxys7"
+    doc._id === "9izw8RoFY6epyxXYK"
+    //|| doc._id === "5jxvqtuiTvhdhxys7" // disable AI/ML
 )
 
 export const root_main_topic_ids = root_main_topics.map((doc) => doc._id)
