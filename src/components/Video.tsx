@@ -24,8 +24,8 @@ export default function Video({
       width={h ? undefined : w || 500}
       autoPlay
       loop
-      muted // all screen caps won't have sound anyway - but just future proof 
-      preload="auto"
+      muted // all screen caps won't have sound anyway - but just future proof
+      preload="none"
     >
       <source
         src={src}

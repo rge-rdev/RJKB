@@ -19,83 +19,87 @@ type FeatureItem = {
   poster?: string
   config?: { inline?: boolean; w?: number; h?: number }
   description?: JSX.Element
+  lazy?: boolean
 }
 
 const FeatureList: FeatureItem[] = [
+  //Video-Highlights // Kills Vitals to put on init screen!
   {
     title: "🥇 SSG over SSG",
     // SVG: DrawRJSSGColorSVG,
     img_url: `/img/DrawRJSSGColorV2.svg`,
     alt: "Diagram of SSG Converting JSON into JSX & MDX via Node.js",
-    vid_path: "/vid/RJKB_SSG_CLI.mp4",
-    poster: "/vid/RJKB_SSG_CLI.jpg",
+    vid_path: "/vid/RJKB_SSG_CLI_350.mp4",
+    poster: "/vid/RJKB_SSG_CLI_350.webp",
     description: (
       <>
         <Link
           className="text-cyan-900 dark:text-cyan-300"
           to="/features#-ssg-over-ssg"
         >
-          Node.js SSG script transforms JSON
+          Node.js script transforms JSON
         </Link>{" "}
-        into 9000+ MDX + YAML frontmatter, CS-routing, 1300+ Preview JSX & sort
-        by dirpath hierarchy, in {`>`}30s!
+        into 9000+ MDX + YAML frontmatter & 1300+ Preview JSX into dirpath
+        hierarchy, in {`>`}30s!
       </>
     ),
   },
   {
     title: "🥇 Hover Link Previews",
-    img_url: `/img/DrawHoverPreviewColor.svg`,
+    img_url: "/img/DrawHoverPreviewColor_288.webp",
     alt: "RJKB Doc Links show preview page on hover",
-    vid_path: "/vid/RJKB_hover_preview_iphone_500p.mp4",
-    poster: "/vid/RJKB_hover_preview_iphone_500p.jpg",
+    vid_path: "/vid/RJKB_hover_preview_iphone_116.mp4",
+    poster: "/vid/RJKB_hover_preview_iphone_116.webp",
     config: { inline: true, h: 250 },
     description: (
       <>
-        Every{" "}
+        Hover{" "}
         <Link
           className="text-cyan-900 dark:text-cyan-300"
           to="/docs"
         >
-          /docs
+          /docs links
         </Link>{" "}
-        page shows an interactive preview page on hover
+        to show instant beautiful interactive preview pages
       </>
     ),
   },
   {
     title: "🥇 Self-hosted Search",
-    img_url: `/img/DrawRJKBTypesenseSearchColor.svg`,
+    img_url: "/img/DrawRJKBTypesenseSearchColor_288.webp",
     alt: "RJKB Doc Links show preview page on hover",
-    vid_path: "/vid/RJKB_docker_compose_up_700.mp4",
-    poster: "/vid/RJKB_docker_compose_up_350.jpg",
+    vid_path: "/vid/RJKB_docker_compose_up_350.mp4",
+    poster: "/vid/RJKB_docker_compose_up_350.webp",
     description: (
       <>
-        Site-indexed via <code>DocSearch</code> scraper. ⚡{" "}
-        <code>Typesense</code> instant search deploy on <code>Docker</code>{" "}
+        Deploy{" "}
         <Link
           className="text-cyan-900 dark:text-cyan-300"
           to="/features#-self-hosted-typesense-search"
         >
-          every link hover to show preview page
-        </Link>
+          <code>Typesense</code> Search Engine
+        </Link>{" "}
+        as <code>Docker</code> container to <code>fly.io</code> server, scraped
+        with <code>DocSearch</code> & PUT synonyms.
       </>
     ),
   },
   {
     title: "💎 Multi-way Synonym Search",
-    vid_path: "/vid/RJKB_Search_Synonyms_720p.mp4",
-    poster: "/vid/RJKB_Search_Synonyms_720p.jpg",
+    vid_path: "/vid/RJKB_Search_Synonyms_350.mp4",
+    poster: "/vid/RJKB_Search_Synonyms_350.webp",
   },
   {
     title: "💎 Typo-tolerant Fuzzy Search",
-    vid_path: "/vid/RJKB_Search_Fuzzy_720p.mp4",
-    poster: "/vid/RJKB_Search_Fuzzy_720p.jpg",
+    vid_path: "/vid/RJKB_Search_Fuzzy_350.mp4",
+    poster: "/vid/RJKB_Search_Fuzzy_350.webp",
   },
   {
     title: "💎 RJKB Fullstack Search",
-    vid_path: "/vid/RJKB_Fullstack_Search_720.mp4",
-    poster: "/vid/RJKB_Fullstack_Search_720.jpg",
+    vid_path: "/vid/RJKB_Fullstack_Search_350.mp4",
+    poster: "/vid/RJKB_Fullstack_Search_350.webp",
   },
+  //Docusaurus-SVGs
   {
     title: "👨‍🎓 Fullstack wiki",
     img_url: `/img/IconDocusaurusProfColor.svg`,
@@ -109,9 +113,10 @@ const FeatureList: FeatureItem[] = [
         >
           fullstack KB
         </Link>
-        , with 9000+ concise definitions
+        , with 9000+ concise definitions + ⚡ fast cloud search engine
       </>
     ),
+    lazy: true,
   },
   {
     title: "💪 Unbreaking Docusaurus",
@@ -127,9 +132,11 @@ const FeatureList: FeatureItem[] = [
           Hack Webpack
         </Link>{" "}
         to build 2-4X faster & fix{" "}
-        <code>FATAL ERROR: JavaScript heap out of memory</code>☠
+        <code>FATAL ERROR: JavaScript heap out of memory</code>☠ when docusaurus
+        can't scale
       </>
     ),
+    lazy: true,
   },
   {
     title: "🐱‍🐉 Docusaurus SSG",
@@ -138,6 +145,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>Made with Docusaurus 2.4.0, a feature-packed extensible SSG framework</>
     ),
+    lazy: true,
   },
 ]
 
@@ -151,6 +159,7 @@ function Feature({
   vid_path,
   poster,
   config,
+  lazy,
 }: FeatureItem) {
   return (
     <div
@@ -166,7 +175,7 @@ function Feature({
         )}
         {img_str && (
           <img
-            loading="eager"
+            loading={`${lazy ? "lazy" : "eager"}`}
             alt={alt}
             src={img_str}
             className="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module h-48 w-48 items-center"
@@ -174,7 +183,7 @@ function Feature({
         )}
         {img_url && !vid_path && (
           <img
-            loading="eager"
+            loading={`${lazy ? "lazy" : "eager"}`}
             alt={alt}
             src={useBaseUrl(img_url)}
             className={`items-center ${config?.h ? "h-64" : "h-48 w-48"}`}
@@ -197,7 +206,7 @@ function Feature({
               className={`${config?.inline ? "inline-flex self-center" : ""}`}
             >
               <img
-                loading="eager"
+                loading={`${lazy ? "lazy" : "eager"}`}
                 alt={alt}
                 src={useBaseUrl(img_url)}
                 className="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module h-36 w-36 items-center"
@@ -220,12 +229,12 @@ function Feature({
       {/* mix-blend-luminosity  hover:mix-blend-plus-lighter */}
       <div className="padding-horiz--md text-center">
         <h3 className="rounded-t-full font-extrabold text-slate-900 shadow-inner shadow-teal-400 dark:text-cyan-100">
-          <a
+          <span
             className="text-neutral-900 dark:text-neutral-50"
             id={_.kebabCase(title)}
           >
             {title}
-          </a>
+          </span>
         </h3>
         <p className="rounded-b-full font-bold text-zinc-900 dark:text-cyan-100">
           {description}
