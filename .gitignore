@@ -6,14 +6,12 @@
 .pnp.js
 
 # static folder
-public
+/public
 # static
 
 # testing
-/coverage
+src/data/rem.json
 /test
-src/pages/redirect
-src/pages/debug
 bfg-1.14.0.jar
 
 # production
@@ -44,8 +42,11 @@ fly.toml
 docker-compose.yml
 dockerfile
 docsearch.config.json
-src/data/rem.json
 
 # exclude pages
+src/pages/redirect
+src/pages/debug
 src/pages/about.mdx
 src/data/rem.json
+mange_css.tsx
+convert_img.tsx

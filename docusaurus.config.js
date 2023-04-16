@@ -5,6 +5,8 @@ const TerserPlugin = require("terser-webpack-plugin")
 const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 require("dotenv").config()
+const BrotliPlugin = require("brotli-webpack-plugin")
+// const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin")
 
 // const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 // const webpack = require("webpack")
@@ -60,7 +62,34 @@ function RJ_WEBPACK_PLUGIN(context, options) {
             },
           }
         : {
+            plugins: [
+              new BrotliPlugin({
+                asset: "[path].br[query]",
+                test: /\.(js|css|html|svg|woff|woff2|xml|jpg|png|gif|webp|txt|json)$/,
+                threshold: 5120,
+                // threshold: 1280, //OVERKILL@1.3KB
+                minRatio: 0.8,
+                // deleteOriginalAssets: true,
+              }),
+              // WTF - the HTML mangled CSS DONT match CSS MANGLES?! Can't escape the crappy Infima trap!
+              // new MangleCssClassPlugin({
+              // classNameRegExp:
+              // "(?<![a-zA-Z0-9_-]+)[a-zA-Z-]{3,}(__|--)[a-z]+[a-zA-Z0-9]+((__|--)[a-z]+[a-zA-Z0-9]+)?(?![a-zA-Z0-9_-]+)", // 124 & BREAKS!
+              // classNameRegExp: "(?<![a-zA-Z0-9_-]+)[a-zA-Z-]{3,}(__|--)[a-z]+[a-zA-Z0-9_-]+(?![a-zA-Z0-9_-]+)", // 122/128KB & STILL breaks!
+              //prettier-ignore
+              // classNameRegExp: "((?<![a-zA-Z0-9_-]+)(react-tooltip__[a-zA-Z0-9_-]+)(?![a-zA-Z0-9_-]+))|(--(ifm|docsearch|docusaurus|doc)-[a-z]+(-[a-z]+(-[a-z]+(-[a-z]+)?)?)?)", // isolate to react-tooltip for now
+              //prettier-ignore
+              // classNameRegExp: "(?<![a-zA-Z0-9_-]+)(react-tooltip__[a-zA-Z0-9_-]+)(?![a-zA-Z0-9_-]+)", // isolate to react-tooltip for now
+              // classNameRegExp: "[a-z]{3,}(-[a-z]{3,})?__[a-z]+[a-zA-Z0-9_-]+",// works but somehow breaks all infima CSS in final build?!
+              // "((react-tooltip|buttonGroup|breadcrumbs|menu|dropdown|tabList|alert|avatar|card|footer|table-of-contents|pagination-nav|pagination|pills|tabs|hero|navbar-sidebar|docPage|sidebarItem)__[a-zA-Z0-9_-]+|(avatar)|(DocSearch-(Hit-Tree|Commands-key|Commands|Container|Button-Placeholder|Hit--favoriting|Reset|Input|MagnifierLabel|LoadingIndicator|HitsFooter|Label|Hit-action-button|StartScreen)))", //
+              // "((react-tooltip|buttonGroup|breadcrumbs|menu|dropdown|tabList|alert|avatar|card|footer|table-of-contents|pagination-nav|pagination|pills|tabs|hero|navbar-sidebar|navbar|docPage|sidebarItem)__[a-zA-Z0-9_-]+|(avatar)|(DocSearch-(Hit-Tree|Commands-key|Commands|Container|Button-Placeholder|Hit--favoriting|Dropdown|Button|Hit-icon|Link|Reset|Input|MagnifierLabel|LoadingIndicator|HitsFooter|Label|Hit-action-button|StartScreen)))", //
+              // classNameRegExp: ".*", // MANGLE IT ALL! INCL all your JS code for lulz
+              // log: true, // turn on for unholy spam
+              // }),
+              // new MiniCssExtractPlugin(),
+            ],
             optimization: {
+              emitOnErrors: true, //! force webpack to complete build with errors - including ones which will crash at runtime
               minimize: true,
               minimizer: [
                 new TerserPlugin({
@@ -68,11 +97,29 @@ function RJ_WEBPACK_PLUGIN(context, options) {
                   terserOptions: {
                     compress: {
                       unused: true,
-                      booleans_as_integers: true, // coerce even smaller!
                       dead_code: true, // kill dead code
+                      arguments: true,
+                      booleans_as_integers: true, // coerce even smaller!
+                      passes: 3, // 3X the improvement?!
+                      drop_console: true,
+                      hoist_funs: true,
+                      toplevel: true, // kill dead top-level funcs
+                      unsafe: true, // live life dangerous!
+                      unsafe_Function: true,
+                      unsafe_methods: true,
+                      unsafe_proto: true,
+                      unsafe_undefined: true,
                       // reduce_funcs: true, //? risky to enable - Terser author considered obsoleting this due to bugs, exponential complexity (esp for recursive fn) & miniminal bundle size improvement //https://github.com/terser/terser/issues/696
                     },
-                    mangle: {},
+                    mangle: {
+                      // eval: true, // not accepted?! valid option on Terser docs
+                      toplevel: true,
+                      // safari10: true,// screw mac users?
+                    },
+                    format: {
+                      comments: false, //? ask @docusaurus MIT License allow stripping comments from chunks?
+                      // indent_level: 4,
+                    },
                   },
                 }),
               ],
@@ -152,7 +199,7 @@ const config = {
     // "plugin-image-zoom",
   ],
   title: "RJ KB",
-  tagline: "Fullstack Dev Showcase",
+  tagline: "iFullstack.Dev",
   favicon: "img/RJKB.ico",
 
   // Set the production url of your site here
@@ -202,19 +249,32 @@ const config = {
           parser: {
             syntax: "typescript",
             tsx: true,
-            // minify: {
-            //   compress: {
-            //     unused: true,
-            //   },
-            //   mangle: true,
-            // },
+            minify: {
+              compress: {
+                arguments: true,
+                booleans_as_integers: true,
+                dead_code: true,
+                drop_console: true,
+                hoist_funs: true,
+                reduce_funcs: true,
+                unsafe: true,
+                unsafe_Function: true,
+                unsafe_methods: true,
+                unsafe_proto: true,
+                unsafe_undefined: true,
+                unused: true,
+              },
+              mangle: true,
+              format: {
+                comments: false,
+              },
+            },
           },
           target: "esnext",
         },
         module: {
           type: isServer ? "commonjs" : "es6",
         },
-        // minify: true,
       },
     }),
   },
@@ -226,6 +286,7 @@ const config = {
       ({
         docs: {
           // routeBasePath: '/',
+          // routeBasePath: '/wiki',
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -237,8 +298,8 @@ const config = {
         },
         blog: {
           path: "blog",
-          blogTitle: "Fullstack Dev Blog",
-          blogDescription: "Fullstack Dev Blog",
+          blogTitle: "iFullstack.Dev Blog",
+          blogDescription: "iFullstack.Dev Blog",
           blogSidebarCount: 20,
           blogSidebarTitle: "Recent Posts",
           routeBasePath: "blog",
@@ -285,7 +346,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/DrawRJKBSocialCard.png",
+      image: "img/DrawRJKBSocialCard.webp",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
@@ -305,16 +366,17 @@ const config = {
         hideOnScroll: true,
         logo: {
           alt: "RJKB Site Logo",
-          src: "img/LogoTextRJKB.svg",
-          srcDark: "img/LogoTextRJKBDark.svg",
-          height: 70,
+          src: "img/LogoTextRJKBV2.svg",
+          srcDark: "img/LogoTextRJKBDarkV2.svg",
+          height: 32,
+          width: 84,
           // src: "img/LogoTextRJKB.svg",
         },
         items: [
           //LTR
           {
             type: "doc",
-            docId: "intro",
+            docId: "JS/JS",
             position: "left",
             label: "Docs",
           },
@@ -347,22 +409,23 @@ const config = {
             html: `<a href="${process.env.PROD_URL}/blog/rss.xml" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-rss-link" aria-label="RSS Feed for RJKB Fullstack Blog"></a>`,
           },
           {
-            html: `<a href="" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-linkedin-link" aria-label="LinkedIn"></a>`,
+            html: `<a href="${process.env.LINKEDIN}" target="_blank" rel="noopener noreferrer" class="navbar__item footer-icon-link footer-linkedin-link" aria-label="LinkedIn"></a>`,
           },
           {
             html: `<a target="_blank" rel="noopener nofollow" aria-label="Link to mail ${process.env.GIT_USER}" href="${process.env.MAIL_TO}" class="navbar__item footer-icon-link footer-mail-link"></a>`,
           },
         ],
-        copyright: `<a class="inline-flex">© ${
+        copyright: `<span class="inline-flex">© ${
           new Date().getFullYear() > 2023
             ? "2023-" + new Date().getFullYear()
             : new Date().getFullYear()
-        } Roger Jiang</a>`,
+        } Roger Jiang</span>`,
         logo: {
           alt: "RJKB Site Logo",
-          src: "img/LogoTextRJKB.svg",
-          srcDark: "img/LogoTextRJKBDark.svg",
-          height: 30,
+          src: "img/LogoTextRJKBV2.svg",
+          srcDark: "img/LogoTextRJKBDarkV2.svg",
+          height: 32,
+          width: 84,
           className: "inline-flex",
         },
       },
