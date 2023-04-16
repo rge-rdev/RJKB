@@ -69,7 +69,10 @@ function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
 
 export default function Slider({ top, bot, h, w }: SliderProps) {
   return (
-    <div className="bg-prism my-0 py-0">
+    <div
+      className="bg-prism my-0 py-0"
+      style={{ width: "100%", height: "154px" }}
+    >
       <div className="inline-block transform-gpu animate-slide-fast overflow-hidden whitespace-nowrap">
         <SliderRow
           MediaElements={top}

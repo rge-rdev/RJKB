@@ -54,7 +54,10 @@ export default function HomepageHeader() {
 
   return (
     <header className="hero--primary relative mt-1 flex flex-col items-center overflow-hidden bg-green-700 bg-circuit-light text-center text-[color:var(--ifm-hero-text-color)] bg-blend-hard-light dark:bg-teal-700">
-      <div className="flex flex-col items-center justify-center">
+      <div
+        className="flex aspect-auto flex-col items-center justify-center"
+        style={{ height: "384px", width: "100%" }}
+      >
         <h1
           id="test"
           className={`hero__title mb-5 mt-2 w-fit  max-w-screen-sm rounded-full font-extralight text-cyan-900 shadow-lg dark:text-cyan-100 ${
@@ -62,33 +65,35 @@ export default function HomepageHeader() {
               ? "fixed top-0 z-[250] animate-fade-in-slow-75 opacity-75"
               : "fixed top-0 animate-fade-out-fast-75 opacity-0"
           }`}
+          style={{ height: "60px", width: "120px" }}
         >
           RJKB
         </h1>
         <h1
-          className={`hero__title mt-2 mb-5 w-1/2 max-w-screen-sm rounded-full text-cyan-900 shadow-lg dark:text-cyan-100`}
+          className={`hero__title mt-2 mb-5 max-w-screen-sm rounded-full text-cyan-900 shadow-lg dark:text-cyan-100`}
+          style={{ height: "64px", width: "250px" }}
         >
           {siteConfig.title}
         </h1>
         <h2
-          className={`mb-10 flex w-fit flex-col items-center justify-center rounded-full px-10 font-semibold italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
+          className={`mb-10 flex flex-col items-center justify-center rounded-full px-10 font-semibold italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
             scrollTagline
               ? "fixed top-20 animate-fade-in-md-50 opacity-50"
               : "fixed top-20 animate-fade-out-md-50 opacity-0"
           }`}
+          style={{ height: "30px", width: "300px" }}
         >
           {siteConfig.tagline}
         </h2>
         <h2
-          className={`mb-10 flex w-fit flex-col items-center justify-center rounded-full px-10 font-light italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
+          className={`mb-10 flex flex-col items-center justify-center rounded-full px-10 font-light italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
             scrollTagline ? "animate-fade-out-fast opacity-0" : ""
           }`}
+          style={{ height: "30px", width: "355px" }}
         >
           {siteConfig.tagline}
         </h2>
-        <div>
-          <HomeLogoSlider />
-        </div>
+        <HomeLogoSlider />
         <p className="fixed animate-fade-in-out text-cyan-300 opacity-0 dark:text-cyan-500">
           Explore My Fullstack Knowledge Showcase
         </p>
@@ -97,6 +102,7 @@ export default function HomepageHeader() {
             // className="button button--secondary button--lg hover:shadow-2xl"
             className="animate-fade-in animate-pulse-2x"
             to="#explore"
+            aria-label="button to scroll down to see site features"
           >
             <IconArrowDownCircleBlackSVG
               id="explore"
