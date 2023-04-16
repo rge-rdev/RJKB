@@ -1,95 +1,206 @@
 diff --git a/node_modules/typesense-docsearch-react/dist/esm/Footer.js b/node_modules/typesense-docsearch-react/dist/esm/Footer.js
-index 2041b8c..c1e7dd7 100644
+index 2041b8c..42f9b79 100644
 --- a/node_modules/typesense-docsearch-react/dist/esm/Footer.js
 +++ b/node_modules/typesense-docsearch-react/dist/esm/Footer.js
-@@ -34,12 +34,12 @@ export function Footer(_ref) {
-       _translations$closeKe = translations.closeKeyAriaLabel,
-       closeKeyAriaLabel = _translations$closeKe === void 0 ? 'Escape key' : _translations$closeKe,
-       _translations$searchB = translations.searchByText,
+@@ -17,61 +17,11 @@ function CommandIcon(props) {
+ }
+ 
+ export function Footer(_ref) {
+-  var _ref$translations = _ref.translations,
+-      translations = _ref$translations === void 0 ? {} : _ref$translations;
+-  var _translations$selectT = translations.selectText,
+-      selectText = _translations$selectT === void 0 ? 'to select' : _translations$selectT,
+-      _translations$selectK = translations.selectKeyAriaLabel,
+-      selectKeyAriaLabel = _translations$selectK === void 0 ? 'Enter key' : _translations$selectK,
+-      _translations$navigat = translations.navigateText,
+-      navigateText = _translations$navigat === void 0 ? 'to navigate' : _translations$navigat,
+-      _translations$navigat2 = translations.navigateUpKeyAriaLabel,
+-      navigateUpKeyAriaLabel = _translations$navigat2 === void 0 ? 'Arrow up' : _translations$navigat2,
+-      _translations$navigat3 = translations.navigateDownKeyAriaLabel,
+-      navigateDownKeyAriaLabel = _translations$navigat3 === void 0 ? 'Arrow down' : _translations$navigat3,
+-      _translations$closeTe = translations.closeText,
+-      closeText = _translations$closeTe === void 0 ? 'to close' : _translations$closeTe,
+-      _translations$closeKe = translations.closeKeyAriaLabel,
+-      closeKeyAriaLabel = _translations$closeKe === void 0 ? 'Escape key' : _translations$closeKe,
+-      _translations$searchB = translations.searchByText,
 -      searchByText = _translations$searchB === void 0 ? 'Search by' : _translations$searchB;
-+      searchByText = ""//_translations$searchB === void 0 ? 'Search by' : _translations$searchB;
    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
      className: "DocSearch-Logo"
    }, /*#__PURE__*/React.createElement(TypesenseLogo, {
      translations: {
 -      searchByText: searchByText
-+      searchByText: ""
++      searchByText: "ifullstack.dev wiki +"
      }
-   })), /*#__PURE__*/React.createElement("ul", {
-     className: "DocSearch-Commands"
+-  })), /*#__PURE__*/React.createElement("ul", {
+-    className: "DocSearch-Commands"
+-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("kbd", {
+-    className: "DocSearch-Commands-Key"
+-  }, /*#__PURE__*/React.createElement(CommandIcon, {
+-    ariaLabel: selectKeyAriaLabel
+-  }, /*#__PURE__*/React.createElement("path", {
+-    d: "M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"
+-  }))), /*#__PURE__*/React.createElement("span", {
+-    className: "DocSearch-Label"
+-  }, selectText)), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("kbd", {
+-    className: "DocSearch-Commands-Key"
+-  }, /*#__PURE__*/React.createElement(CommandIcon, {
+-    ariaLabel: navigateDownKeyAriaLabel
+-  }, /*#__PURE__*/React.createElement("path", {
+-    d: "M7.5 3.5v8M10.5 8.5l-3 3-3-3"
+-  }))), /*#__PURE__*/React.createElement("kbd", {
+-    className: "DocSearch-Commands-Key"
+-  }, /*#__PURE__*/React.createElement(CommandIcon, {
+-    ariaLabel: navigateUpKeyAriaLabel
+-  }, /*#__PURE__*/React.createElement("path", {
+-    d: "M7.5 11.5v-8M10.5 6.5l-3-3-3 3"
+-  }))), /*#__PURE__*/React.createElement("span", {
+-    className: "DocSearch-Label"
+-  }, navigateText)), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("kbd", {
+-    className: "DocSearch-Commands-Key"
+-  }, /*#__PURE__*/React.createElement(CommandIcon, {
+-    ariaLabel: closeKeyAriaLabel
+-  }, /*#__PURE__*/React.createElement("path", {
+-    d: "M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"
+-  }))), /*#__PURE__*/React.createElement("span", {
+-    className: "DocSearch-Label"
+-  }, closeText))));
++  })));
+ }
+\ No newline at end of file
 diff --git a/node_modules/typesense-docsearch-react/dist/esm/RJKBSearch.svg b/node_modules/typesense-docsearch-react/dist/esm/RJKBSearch.svg
 new file mode 100644
-index 0000000..31484a5
+index 0000000..39e904f
 --- /dev/null
 +++ b/node_modules/typesense-docsearch-react/dist/esm/RJKBSearch.svg
 @@ -0,0 +1 @@
-+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 45.863 5.934"><defs><path id="a" d="M11.71.573C9.47 1.29 8 3.054 7.3 5.865 6.251 10.08 4.952 10.618.72 9.119c1.52 2.807 4.6 3.932 6.58 3.932 1.98 0 7.11-2.757 6.522-7.998A21.678 21.678 0 0 0 11.71.573z"/><path id="c" d="m14.18 12.77 5.53 5.54a.99.99 0 1 1-1.4 1.4l-5.53-5.539a7.92 7.92 0 1 1 1.399-1.401zm-6.26 1.09a5.94 5.94 0 1 0 0-11.88 5.94 5.94 0 0 0 0 11.88z"/></defs><path d="M3.917 0h38.028c4.327 0 3.907 1.315 3.907 2.948v.039c0 1.632.42 2.947-3.907 2.947H3.917C-.41 5.934.011 4.62.011 2.987v-.04C.011 1.316-.41 0 3.917 0z" style="font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;opacity:1;fill:#000f33;stroke-width:.373522;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke:none"/><g aria-label="RJKB" style="font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;fill:url(#a);stroke:url(#linearGradient29589);stroke-width:.2;stroke-opacity:.501961" transform="matrix(.97592 0 0 1.38072 31.574 .618)"><g style="font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;fill:url(#a);stroke:#00e5ff;stroke-width:.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.5;stroke-dasharray:none;stroke-opacity:1"><path d="m11.135-3.437-.418.687h1.12l-.792 2.236h.467a.8.8 0 0 0 .54-.207l.73-.652-.14.418a.447.447 0 0 0-.023.135c0 .091.04.18.112.234a.435.435 0 0 0 .267.072h1.712c.325 0-.667-.144-.552-.207.114-.063.738-.05.774-.175l.036-.127h-1.391l.16-.453.008-.025a.49.49 0 0 0 .033-.19.331.331 0 0 0-.102-.254c-.048-.042-.118-.046-.183-.057l1.613-1.435h-.904l-1.766 1.609.348-1.03a.714.714 0 0 0 .044-.23.328.328 0 0 0-.123-.265.5.5 0 0 0-.308-.084zm.113.2h1.149c.098 0 .158.02.187.042.03.022.043.046.043.107 0 .042-.01.099-.033.166L12-1.16l2.278-2.076h.302l-1.375 1.22.002-.003-.21.189-1.079.959a.583.583 0 0 1-.406.156h-.184l.79-2.234h-1.045zm1.897 1.407h.262c.075 0 .118.017.138.035.02.018.033.043.033.104a.46.46 0 0 1-.03.148l-.253.719h.746c-.015.012-.016.034-.035.045a.699.699 0 0 1-.33.064h-.678c-.08 0-.127-.016-.148-.031-.02-.016-.03-.028-.03-.074a.24.24 0 0 1 .012-.073z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:darken;fill:none;fill-opacity:1;stroke:#00e5ff;stroke-width:.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke" transform="translate(-4.65 3.426)"/><path d="m9.797-.012-.42.688h2.443c.141 0 .235.025.285.058.05.033.069.067.069.141 0 .111-.043.202-.15.295v.002a1.54 1.54 0 0 1-.327.195c-.124.059-.216.118-.26.215l-.001.004-.002.006c-.01.03-.008.047-.008.07 0 .084.038.143.093.229.046.07.061.122.061.148a.227.227 0 0 1-.06.164.516.516 0 0 1-.22.127c-.13.043-.3.063-.495.066l.593-1.67h-.91l-.77 2.186h1.15c.362 0 .683-.051.962-.154.196-.073.351-.168.46-.291a.662.662 0 0 0 .163-.442c0-.132-.06-.275-.13-.42.202-.103.38-.202.493-.296.215-.178.336-.385.336-.61a.628.628 0 0 0-.326-.578c-.173-.093-.409-.133-.715-.133zM9.91.19h2.201c.288 0 .498.041.621.108.154.083.221.2.221.402 0 .155-.078.302-.264.455-.109.09-.288.199-.529.317l-.096.047.053.091a.86.86 0 0 1 .137.416.445.445 0 0 1-.115.31.913.913 0 0 1-.377.235c-.253.093-.55.14-.895.14h-.865l.629-1.784h.484l-.594 1.676h.24c.234 0 .434-.026.604-.082a.702.702 0 0 0 .303-.184.44.44 0 0 0 .111-.297.474.474 0 0 0-.093-.258h.002c-.048-.074-.063-.13-.063-.119.01-.018.055-.067.158-.115.163-.078.286-.152.371-.227a.59.59 0 0 0 .221-.445.367.367 0 0 0-.16-.309c-.102-.066-.232-.09-.395-.09H9.734z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:darken;fill:none;fill-opacity:1;stroke:#00e5ff;stroke-width:.264584;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke" transform="translate(.394)"/><path d="M4.73-.012c-.37 0-.689.09-.947.272l-.002.002a1.036 1.036 0 0 0-.447.88c0 .256.11.475.316.622.185.13.416.191.68.191.177 0 .334-.04.461-.129a.528.528 0 0 0 .232-.445c0-.165-.102-.257-.227-.361C4.68.924 4.57.816 4.416.816a.648.648 0 0 0-.387.125c-.071.052-.096.135-.136.21-.002-.012-.006-.013-.006-.03 0-.13.05-.227.175-.318a.64.64 0 0 1 .39-.127h.974L4.889 2.19a3.173 3.173 0 0 1-.178.43c-.056.102-.12.139-.182.19-.025-.105-.047-.213-.133-.29a.635.635 0 0 0-.431-.162.638.638 0 0 0-.432.162.526.526 0 0 0 .049.836.9.9 0 0 0 .53.149c.333 0 .655-.118.956-.344.357-.267.62-.647.79-1.13l.716-2.044h-.14zm0 .201h1.563L5.67 1.967c-.159.453-.399.794-.72 1.035-.275.205-.55.305-.839.305a.698.698 0 0 1-.414-.112c-.105-.074-.148-.155-.148-.273 0-.102.034-.177.117-.252a.423.423 0 0 1 .299-.111c.122 0 .216.036.299.11a.316.316 0 0 1 .117.253.39.39 0 0 1-.006.062l-.031.182.168-.072c.15-.065.273-.195.373-.375.057-.103.12-.255.193-.461L5.707.477H4.451a.85.85 0 0 0-.508.164.591.591 0 0 0-.257.48c0 .067.01.128.043.182a.23.23 0 0 0 .148.105l.1.02.02-.098a.346.346 0 0 1 .15-.226v-.002a.435.435 0 0 1 .269-.084c.114 0 .204.031.285.1a.31.31 0 0 1 .123.263.303.303 0 0 1-.146.28v.001a.592.592 0 0 1-.348.094.954.954 0 0 1-.564-.156.514.514 0 0 1-.233-.457c0-.316.117-.543.365-.72.22-.155.494-.234.832-.234z" style="color:#000;-inkscape-font-specification:Magneto;mix-blend-mode:darken;fill:none;fill-opacity:1;stroke:#00e5ff;stroke-width:.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"/><path d="M.115-.011-.31.676h2.152c.15 0 .253.03.309.068.055.04.08.087.08.178 0 .157-.094.287-.332.41h-.002a3.268 3.268 0 0 1-.301.123h-.002c-.085.032-.102.035-.156.053l.277-.781H.801L.03 2.912h.908l.36-1.011.29.642a.853.853 0 0 0 .152.258.411.411 0 0 0 .303.111h1.342c.12 0-.366-.03-.271-.093v-.002a.4.4 0 0 0 .18-.309l.71-.148-.81.043h-.705l-.284-.614c.315-.13.585-.267.76-.425.196-.178.305-.385.305-.606a.668.668 0 0 0-.31-.586c-.2-.128-.48-.183-.842-.183zm.112.2h1.892c.34 0 .585.056.735.151.15.095.217.221.217.418 0 .157-.072.305-.24.457-.169.152-.432.303-.79.441l-.1.04.42.906h.67c-.012.014-.009.035-.029.049a.367.367 0 0 1-.213.06h-.746c-.084 0-.13-.02-.16-.05a.974.974 0 0 1-.111-.2l-.336-.744c.064-.02.114-.031.228-.074a2.96 2.96 0 0 0 .326-.133l.002-.002c.274-.142.438-.344.438-.586A.41.41 0 0 0 2.266.58c-.107-.075-.25-.103-.424-.103H.05zm.715.737h.49l-.23.65-.047.008.023.053-.38 1.074H.312z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:darken;fill:none;fill-opacity:1;stroke:#00e5ff;stroke-width:.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"/></g><g style="font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;fill:#000fff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:.501961"><path d="M13.052.698c0 .19-.1.367-.3.533-.12.099-.302.209-.547.329a.95.95 0 0 1 .149.466c0 .288-.186.5-.558.639a2.679 2.679 0 0 1-.929.147H9.861L10.56.826h.696l-.594 1.676h.099c.226 0 .417-.026.573-.077.23-.079.346-.207.346-.385a.39.39 0 0 0-.077-.204c-.052-.08-.078-.138-.078-.174 0-.018.002-.03.004-.039.026-.056.096-.112.211-.166a1.59 1.59 0 0 0 .348-.21.48.48 0 0 0 .186-.372c0-.2-.151-.299-.455-.299H8.96L9.257.09h2.855c.296 0 .519.04.667.12.182.098.273.261.273.49z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:normal;fill:#000fff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1" transform="translate(.394)"/><path d="M14.843-3.337 13.26-1.93h.147c.18 0 .271.08.271.238a.548.548 0 0 1-.037.182l-.205.586h.803c-.059.207-.247.31-.563.31H13c-.186 0-.279-.069-.279-.207 0-.032.006-.066.018-.103l.257-.772-1.01.9a.69.69 0 0 1-.473.182h-.325l.79-2.235-1.557.003-.123-.484 2.1-.007c.22 0 .33.083.33.25a.617.617 0 0 1-.038.197l-.47 1.395 2.02-1.842z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:normal;fill:#000fff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1" transform="translate(-4.65 3.426)"/><path d="m6.433.089-.67 1.91q-.245.702-.754 1.084-.432.323-.898.323-.288 0-.472-.13-.19-.133-.19-.354 0-.191.151-.327.151-.135.364-.135.215 0 .366.135.15.136.15.327 0 .033-.007.08.186-.08.325-.331.077-.14.186-.446L5.566.576H4.452q-.25 0-.45.146-.216.158-.216.398 0 .167.112.19.037-.18.19-.288.143-.105.329-.105.201 0 .348.124.159.132.159.34 0 .233-.19.362-.162.113-.404.113-.374 0-.622-.174-.274-.196-.274-.538 0-.513.406-.802.358-.253.89-.253z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:normal;fill:#000fff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"/><path d="M4.052 2.462c-.009.216.197.367.005.352-.26-.003-1.714.006-1.975-.006-.19-.018-.25-.22-.32-.366L1.3 1.659a4.17 4.17 0 0 0 .693-.264c.194-.1.373-.302.334-.535C2.31.68 2.12.59 1.957.582 1.587.57 1.217.58.847.577h-.978L.17.089C.863.091 1.555.086 2.247.092c.292.015.633.063.82.314.168.238.123.584-.077.79a2.004 2.004 0 0 1-.803.555l.348.753zM1.574.826.867 2.812H.171L.87.826z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:normal;fill:#000fff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"/></g></g><path fill="#1035bc" d="M15.074 15.847c.11.552.165 1.086.165 1.6 0 .48-.055.995-.165 1.547l-7.013-.055V37.49c0 1.546.718 2.319 2.154 2.319h4.196a4.89 4.89 0 0 1 .387 1.877c0 .626-.037 1.012-.11 1.16-1.694.22-3.443.33-5.246.33-3.57 0-5.356-1.527-5.356-4.582V18.94l-3.92.055A7.91 7.91 0 0 1 0 17.448c0-.515.055-1.05.166-1.601l3.92.055v-5.798c0-.994.147-1.693.442-2.098.294-.442.865-.662 1.711-.662H7.73l.331.33v8.283zm26.717.276-7.564 25.895c-1.399 4.749-2.89 8.099-4.472 10.05-1.582 1.951-3.957 2.926-7.123 2.926-1.62 0-3.11-.24-4.472-.718-.11-1.03.184-2.025.883-2.982 1.141.405 2.356.608 3.644.608 1.951 0 3.442-.663 4.473-1.988 1.03-1.325 1.969-3.386 2.816-6.184l.165-.552c-.957-.074-1.693-.295-2.208-.663-.479-.368-.884-1.049-1.215-2.043l-7.73-24.294c1.14-.479 1.95-.718 2.43-.718 1.067 0 1.785.644 2.153 1.933l4.362 13.859c.147.441.994 3.312 2.54 8.613.073.258.257.387.552.387l6.736-24.405c.478-.148 1.104-.221 1.877-.221.81 0 1.49.11 2.043.331zM52.4 41.135v10.932c0 .994-.146 1.694-.44 2.099-.295.441-.884.662-1.768.662h-1.49l-.332-.331V16.012l.332-.331h1.435c.884 0 1.473.24 1.767.718.331.441.497 1.178.497 2.208v.276c2.208-2.466 4.84-3.699 7.896-3.699 3.129 0 5.484 1.27 7.067 3.81 1.583 2.503 2.374 5.981 2.374 10.435 0 2.172-.294 4.123-.883 5.853-.552 1.73-1.307 3.203-2.264 4.417-.92 1.178-1.988 2.098-3.202 2.761-1.215.626-2.467.939-3.755.939-2.54 0-4.95-.755-7.233-2.264zm0-17.945v14.19c2.246 1.657 4.363 2.485 6.35 2.485 1.988 0 3.626-.883 4.915-2.65 1.288-1.767 1.932-4.436 1.932-8.006 0-1.767-.165-3.295-.497-4.583-.294-1.325-.7-2.411-1.214-3.258-.516-.883-1.123-1.528-1.823-1.932a3.807 3.807 0 0 0-2.153-.663c-1.472 0-2.871.386-4.196 1.16-1.325.772-2.43 1.858-3.313 3.257zm45.297 7.454H80.581c.184 6.258 2.558 9.387 7.122 9.387 2.503 0 5.172-.773 8.006-2.32.81.737 1.307 1.676 1.491 2.817-3.018 2.061-6.405 3.092-10.16 3.092-1.913 0-3.551-.35-4.913-1.05a9.727 9.727 0 0 1-3.368-2.981c-.847-1.288-1.473-2.798-1.878-4.528-.405-1.73-.607-3.625-.607-5.687 0-2.098.24-4.012.718-5.742.515-1.73 1.251-3.221 2.208-4.473.957-1.251 2.098-2.227 3.424-2.926 1.362-.7 2.908-1.049 4.638-1.049 1.693 0 3.202.313 4.527.939 1.362.589 2.485 1.417 3.368 2.484.92 1.031 1.62 2.283 2.099 3.755.478 1.435.717 2.982.717 4.638 0 .663-.037 1.307-.11 1.932-.037.59-.092 1.16-.166 1.712zm-17.116-3.147h13.251v-.718c0-2.54-.533-4.583-1.601-6.129-1.068-1.546-2.669-2.319-4.804-2.319-2.098 0-3.736.829-4.914 2.485-1.14 1.656-1.785 3.883-1.932 6.68zm22.8 13.528c.036-.81.257-1.694.662-2.65.442-.995.939-1.768 1.491-2.32 2.908 1.583 5.466 2.374 7.675 2.374 1.214 0 2.19-.239 2.926-.717.773-.479 1.16-1.123 1.16-1.933 0-1.288-.994-2.319-2.982-3.092l-3.092-1.16c-4.638-1.693-6.957-4.398-6.957-8.116 0-1.325.239-2.503.718-3.534a7.992 7.992 0 0 1 2.098-2.705c.92-.773 2.006-1.362 3.258-1.767 1.251-.405 2.65-.607 4.196-.607.699 0 1.472.055 2.319.165.883.11 1.767.276 2.65.497.884.184 1.73.405 2.54.663s1.509.533 2.098.828c0 .92-.184 1.877-.552 2.871-.368.994-.865 1.73-1.491 2.209-2.908-1.289-5.429-1.933-7.564-1.933-.957 0-1.712.24-2.264.718-.552.442-.828 1.03-.828 1.767 0 1.14.92 2.043 2.761 2.705l3.368 1.215c2.429.847 4.233 2.006 5.411 3.479 1.178 1.473 1.767 3.184 1.767 5.135 0 2.613-.976 4.711-2.927 6.294-1.951 1.546-4.748 2.32-8.392 2.32-3.571 0-6.921-.903-10.049-2.707zm48.391-9.442h-15.239c.111 2.024.571 3.626 1.38 4.804.847 1.14 2.301 1.711 4.362 1.711 2.135 0 4.583-.626 7.344-1.877 1.067 1.104 1.748 2.558 2.043 4.362-2.945 2.098-6.479 3.147-10.601 3.147-3.902 0-6.865-1.196-8.89-3.589-1.988-2.43-2.981-6.018-2.981-10.767 0-2.208.257-4.196.773-5.963.515-1.804 1.269-3.331 2.263-4.583a10.19 10.19 0 0 1 3.644-2.981c1.436-.7 3.074-1.05 4.915-1.05 1.877 0 3.533.295 4.969.884 1.436.552 2.65 1.362 3.644 2.43.994 1.03 1.73 2.263 2.209 3.699.515 1.435.773 3 .773 4.693 0 .92-.056 1.804-.166 2.65-.11.81-.258 1.62-.442 2.43zm-10.656-11.595c-2.871 0-4.417 2.171-4.638 6.515h9.165v-.663c0-1.766-.368-3.184-1.104-4.251-.736-1.068-1.877-1.601-3.423-1.601zm40.917 4.527v12.037c0 2.356.386 4.104 1.159 5.245-1.178 1.031-2.595 1.547-4.251 1.547-1.583 0-2.669-.35-3.258-1.05-.589-.736-.884-1.877-.884-3.423V26.006c0-1.656-.202-2.816-.607-3.478-.405-.662-1.159-.994-2.264-.994-1.951 0-3.773.883-5.466 2.65v18.773c-.552.11-1.141.184-1.767.22-.589.038-1.196.056-1.822.056-.626 0-1.251-.018-1.877-.055a12.89 12.89 0 0 1-1.712-.22V15.625l.331-.387h2.761c2.062 0 3.35 1.105 3.865 3.313 2.687-2.319 5.356-3.478 8.006-3.478 2.651 0 4.602.865 5.853 2.595 1.288 1.693 1.933 3.975 1.933 6.846zm5.792 16.51c.036-.81.257-1.694.662-2.65.442-.995.939-1.768 1.491-2.32 2.908 1.583 5.466 2.374 7.675 2.374 1.214 0 2.19-.239 2.926-.717.773-.479 1.16-1.123 1.16-1.933 0-1.288-.994-2.319-2.982-3.092l-3.092-1.16c-4.638-1.693-6.957-4.398-6.957-8.116 0-1.325.239-2.503.718-3.534a7.992 7.992 0 0 1 2.098-2.705c.92-.773 2.006-1.362 3.258-1.767 1.251-.405 2.65-.607 4.196-.607.699 0 1.472.055 2.319.165.883.11 1.767.276 2.65.497.884.184 1.73.405 2.54.663s1.509.533 2.098.828c0 .92-.184 1.877-.552 2.871-.368.994-.865 1.73-1.491 2.209-2.908-1.289-5.429-1.933-7.564-1.933-.957 0-1.712.24-2.264.718-.552.442-.828 1.03-.828 1.767 0 1.14.92 2.043 2.761 2.705l3.368 1.215c2.429.847 4.233 2.006 5.411 3.479 1.178 1.473 1.767 3.184 1.767 5.135 0 2.613-.976 4.711-2.927 6.294-1.951 1.546-4.748 2.32-8.392 2.32-3.571 0-6.921-.903-10.049-2.707zm48.391-9.442h-15.239c.111 2.024.571 3.626 1.38 4.804.847 1.14 2.301 1.711 4.362 1.711 2.135 0 4.583-.626 7.344-1.877 1.067 1.104 1.748 2.558 2.043 4.362-2.945 2.098-6.479 3.147-10.601 3.147-3.902 0-6.865-1.196-8.89-3.589-1.988-2.43-2.981-6.018-2.981-10.767 0-2.208.257-4.196.773-5.963.515-1.804 1.269-3.331 2.263-4.583a10.186 10.186 0 0 1 3.645-2.981c1.435-.7 3.073-1.05 4.914-1.05 1.877 0 3.533.295 4.969.884 1.436.552 2.65 1.362 3.644 2.43.994 1.03 1.73 2.263 2.209 3.699.515 1.435.773 3 .773 4.693 0 .92-.055 1.804-.166 2.65-.11.81-.258 1.62-.442 2.43zM225.56 19.988c-2.871 0-4.417 2.171-4.638 6.515h9.166v-.663c0-1.766-.369-3.184-1.105-4.251-.736-1.068-1.877-1.601-3.423-1.601zm19.217 30.699V.166A9.626 9.626 0 0 1 246.655 0c.736 0 1.417.055 2.042.166v50.521a11.8 11.8 0 0 1-2.042.166 9.58 9.58 0 0 1-1.878-.166z" style="fill:#00e5ff;fill-opacity:1" transform="translate(1.054 .326) scale(.09496)"/><g fill="none" fill-rule="evenodd" style="fill:#000" transform="translate(25.228 .392) scale(.26014)"><g transform="translate(1 2)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M11.71.573C9.47 1.29 8 3.054 7.3 5.865 6.251 10.08 4.952 10.618.72 9.119c1.52 2.807 4.6 3.932 6.58 3.932 1.98 0 7.11-2.757 6.522-7.998A21.678 21.678 0 0 0 11.71.573z" style="fill:none;stroke:#000;stroke-opacity:1"/><g fill="#00e5ff" mask="url(#b)"><path d="M0 0h24v24H0z" style="fill-opacity:1;fill:#00e5ff;stroke:none" transform="translate(-3 -4)"/></g></g><mask id="d" fill="#fff"><use xlink:href="#c"/></mask><path d="m14.18 12.77 5.53 5.54a.99.99 0 1 1-1.4 1.4l-5.53-5.539a7.92 7.92 0 1 1 1.399-1.401zm-6.26 1.09a5.94 5.94 0 1 0 0-11.88 5.94 5.94 0 0 0 0 11.88z" style="fill:#000;fill-rule:nonzero"/><g fill="#000fff" mask="url(#d)"><path d="M-2-2h24v24H-2z"/></g></g></svg>
++<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" height="32" viewBox="0 0 28.895 5.934"><defs><linearGradient id="a"><stop offset="0" style="stop-color:#000f33;stop-opacity:1"/><stop offset=".109" style="stop-color:#000fff;stop-opacity:1"/><stop offset=".225" style="stop-color:#808aff;stop-opacity:1"/><stop offset=".426" style="stop-color:#000fff;stop-opacity:1"/><stop offset=".566" style="stop-color:#000f33;stop-opacity:1"/><stop offset="1" style="stop-color:#000f33;stop-opacity:1"/></linearGradient><linearGradient xlink:href="#a" id="b" x1="0" x2="45.863" y1="2.967" y2="2.967" gradientUnits="userSpaceOnUse"/><path id="c" d="M11.71.573C9.47 1.29 8 3.054 7.3 5.865 6.251 10.08 4.952 10.618.72 9.119c1.52 2.807 4.6 3.932 6.58 3.932 1.98 0 7.11-2.757 6.522-7.998A21.678 21.678 0 0 0 11.71.573Z"/><path id="e" d="m14.18 12.77 5.53 5.54a.99.99 0 1 1-1.4 1.4l-5.53-5.539a7.92 7.92 0 1 1 1.399-1.401zm-6.26 1.09a5.94 5.94 0 1 0 0-11.88 5.94 5.94 0 0 0 0 11.88z"/></defs><path d="M2.468 0h23.958c2.727 0 2.462 1.315 2.462 2.948v.039c0 1.632.265 2.947-2.462 2.947H2.468C-.258 5.934.007 4.62.007 2.987v-.04C.007 1.316-.258 0 2.467 0Z" style="font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;opacity:1;fill:url(#b);fill-opacity:1;stroke:none;stroke-width:.29648;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"/><g fill="none" fill-rule="evenodd" style="fill:#000f33;fill-opacity:1" transform="translate(8.228 .392) scale(.26014)"><g style="fill:#000f33;fill-opacity:1" transform="translate(1 2)"><mask id="d" fill="#fff"><use xlink:href="#c"/></mask><g fill="#00e5ff" mask="url(#d)" style="fill:#000f33;fill-opacity:1"><path d="M0 0h24v24H0Z" style="fill:#00e5ff;fill-opacity:1;stroke:none;stroke-width:.999462;stroke-dasharray:none" transform="translate(-3 -4)"/></g></g><mask id="f" fill="#fff"><use xlink:href="#e"/></mask><g fill="#000fff" mask="url(#f)" style="fill:#000f33;fill-opacity:1"><path d="M-2-2h24v24H-2Z" style="fill:#000f33;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"/></g></g><path d="m24.026.478-.42.974h2.444c.141 0 .235.035.285.082.05.046.07.095.07.2a.62.62 0 0 1-.151.417v.003a1.546 1.546 0 0 1-.327.276c-.124.083-.216.167-.26.304l-.001.006-.002.008c-.01.042-.008.067-.008.1 0 .118.038.202.093.323a.56.56 0 0 1 .06.21.406.406 0 0 1-.06.232.511.511 0 0 1-.22.18c-.13.06-.3.089-.495.093l.594-2.364h-.91l-.771 3.094h1.15c.363 0 .684-.072.963-.218.196-.103.351-.237.46-.411a1.19 1.19 0 0 0 .163-.626c0-.187-.06-.39-.13-.595.202-.145.38-.285.493-.418.215-.252.337-.545.337-.864.01-.338-.117-.655-.327-.818-.173-.132-.409-.188-.715-.188zm.113.286h2.202c.288 0 .498.058.621.153.154.117.221.283.221.569 0 .219-.077.427-.264.643a2.853 2.853 0 0 1-.529.45l-.096.066.053.129a1.6 1.6 0 0 1 .137.588.798.798 0 0 1-.115.439.937.937 0 0 1-.377.333c-.253.131-.55.198-.895.198h-.866l.63-2.525h.484l-.595 2.372h.24c.234 0 .435-.037.605-.116a.712.712 0 0 0 .303-.26.79.79 0 0 0 .11-.421.86.86 0 0 0-.092-.365h.002c-.048-.105-.063-.184-.063-.168a.426.426 0 0 1 .158-.163c.163-.11.286-.215.371-.322a.99.99 0 0 0 .221-.63.606.606 0 0 0-.16-.437c-.102-.093-.232-.127-.395-.127h-2.087zM20.268.476l-1.705.002c-.37 0-.69.127-.947.385l-.003.003c-.288.281-.456.75-.447 1.245 0 .362.11.672.316.88a.93.93 0 0 0 .68.27.63.63 0 0 0 .462-.182c.147-.14.235-.378.232-.63 0-.233-.102-.363-.227-.51-.116-.136-.226-.29-.38-.29a.532.532 0 0 0-.387.178c-.071.073-.097.19-.137.297-.001-.017-.005-.018-.005-.043 0-.184.05-.32.175-.45a.526.526 0 0 1 .39-.18h.974l-.537 2.143a5.665 5.665 0 0 1-.178.609c-.056.144-.12.197-.182.27-.025-.15-.047-.303-.134-.412a.544.544 0 0 0-.43-.229.457.457 0 0 0-.12.015l-.652.049h-.705l-.284-.869c.315-.184.585-.378.76-.602.196-.252.305-.545.305-.857.008-.335-.11-.65-.31-.83-.2-.181-.48-.259-.842-.259h-2.004l-.426.973h2.154c.15 0 .253.042.309.096.055.056.08.123.08.252 0 .222-.094.406-.332.58h-.002a2.815 2.815 0 0 1-.302.174h-.001c-.085.045-.103.05-.157.075l.278-1.105h-.915l-.771 3.092h.908l.36-1.43.29.908c.035.133.087.257.152.365.082.109.191.165.303.157h1.308c-.003.252.085.488.232.629a.72.72 0 0 0 .53.21c.333 0 .656-.166.957-.486.357-.378.62-.916.79-1.6l.475-1.917h.855l-.793 3.164h.468c.2.001.392-.103.54-.293 0 0 1.397-1.772.73-.923l-.14.592a.874.874 0 0 0-.023.191c0 .129.04.255.112.331.079.075.173.11.267.102h1.713c.325 0-1.733-.334-.553-.293.145.005.497-.005.775-.247l.036-.18h-1.391l.16-.641.008-.036a.95.95 0 0 0 .033-.268.582.582 0 0 0-.102-.36c-.048-.06-.118-.065-.183-.08L24.29.478h-.904L21.62 2.756c-.438 1.02.348-1.457.348-1.457a1.387 1.387 0 0 0 .044-.326.558.558 0 0 0-.123-.375.398.398 0 0 0-.308-.119h-1.174V.476zm-6.21.286h1.893c.34 0 .585.08.735.214.15.135.217.313.217.591 0 .223-.072.432-.24.647-.169.215-.432.43-.79.625l-.1.056.42 1.283h.67c-.012.02-.01.049-.03.069a.293.293 0 0 1-.212.085h-.746c-.084 0-.13-.028-.16-.07a1.614 1.614 0 0 1-.111-.284l-.337-1.053c.064-.028.114-.044.229-.105a2.558 2.558 0 0 0 .326-.188l.002-.003c.274-.2.438-.487.438-.83a.691.691 0 0 0-.164-.483c-.107-.106-.25-.146-.424-.146H13.88zm4.505 0h1.564l-.096.386-.13.304h.055l-.453 1.827c-.159.641-.399 1.124-.72 1.465-.275.29-.55.431-.84.431a.555.555 0 0 1-.414-.158.495.495 0 0 1-.148-.386.53.53 0 0 1 .118-.357.357.357 0 0 1 .298-.157c.123 0 .217.05.3.155a.54.54 0 0 1 .117.359.773.773 0 0 1-.006.087l-.031.258.168-.102c.15-.092.273-.276.373-.53.057-.146.12-.362.193-.653l.63-2.521h-1.257a.699.699 0 0 0-.508.232c-.16.154-.255.407-.258.68 0 .094.01.18.043.257.033.076.087.13.148.149l.1.028.02-.139a.532.532 0 0 1 .15-.32v-.002a.357.357 0 0 1 .27-.12.35.35 0 0 1 .285.142.525.525 0 0 1 .123.372.498.498 0 0 1-.146.397v0a.47.47 0 0 1-.348.134.76.76 0 0 1-.565-.22c-.153-.142-.242-.389-.233-.647 0-.448.117-.769.366-1.02.22-.219.493-.33.832-.33zm1.869 0h1.15c.098 0 .157.028.186.06.03.03.043.065.043.151 0 .06-.01.14-.033.235l-.594 2.494L23.463.763h.302L22.39 2.49l.001-.004-.21.268-1.079 1.357c-.11.145-.256.224-.406.22h-.184l.79-3.161h-1.046zm-5.659 1.044h.49l-.23.92-.047.01.023.076-.38 1.52h-.486zm7.556.948h.263c.075 0 .117.024.138.05.02.025.033.06.033.147a.899.899 0 0 1-.03.209l-.254 1.018 1.466-.16c-.015.017-.735.208-.754.223a.527.527 0 0 1-.33.09h-.679c-.08 0-.127-.022-.148-.043-.02-.023-.03-.04-.03-.105a.44.44 0 0 1 .012-.103zm-4.836 1.182a.687.687 0 0 0-.128.125.893.893 0 0 0-.182.542c-.1-.02-.302-.058-.237-.118v-.003a.64.64 0 0 0 .18-.437z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:normal;fill:none;fill-opacity:1;stroke:#00e5ff;stroke-width:.314838;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"/><path d="m14.001.62-.301.691h.978c.37.005.74-.01 1.11.007a.405.405 0 0 1 .371.394.841.841 0 0 1-.334.757 4.172 5.902 0 0 1-.693.374l.461 1.108c.07.207.13.493.321.518.173.011.855.01 1.38.008a.87.87 0 0 0-.013.154c0 .208.064.375.19.5a.64.64 0 0 0 .473.185c.31 0 .61-.153.898-.458.34-.36.591-.871.754-1.534l.498-2.01 1.068-.003-.79 3.164h.325a.69.977 0 0 0 .473-.258l1.01-1.274-.257 1.093a.65.65 0 0 0-.018.146c0 .195.093.293.28.293h.676c.316 0 .504-.146.563-.439h-.804l.205-.83a.548.776 0 0 0 .037-.257c0-.224-.09-.337-.27-.337h-.148L23.48 1.31h2.569c.304 0 .455.14.455.423a.48.68 0 0 1-.186.527 1.59 2.25 0 0 1-.348.297c-.115.076-.185.156-.211.235a.331.331 0 0 0-.004.055c0 .05.026.133.078.246a.39.552 0 0 1 .077.289.566.566 0 0 1-.346.545 1.36 1.36 0 0 1-.574.11h-.099l.595-2.373h-.696l-.7 2.81h1.007a2.68 3.792 0 0 0 .929-.207c.372-.197.558-.497.558-.905a.95 1.345 0 0 0-.149-.659 2.97 2.97 0 0 0 .548-.466c.199-.234.299-.484.3-.752 0-.324-.092-.554-.274-.693-.148-.113-.37-.17-.667-.17h-2.315l.001-.001h-.603l-2.021 2.607.47-1.975a.617.873 0 0 0 .038-.278c0-.237-.11-.354-.33-.354l-1.317.006.001-.006h-1.703c-.355 0-.652.119-.89.358-.272.272-.407.651-.407 1.135 0 .323.092.577.274.762a.848.848 0 0 0 .623.246.552.552 0 0 0 .404-.16c.126-.122.19-.293.19-.513a.717.717 0 0 0-.159-.48.443.443 0 0 0-.348-.177.444.444 0 0 0-.33.15.699.699 0 0 0-.19.407c-.074-.022-.111-.112-.111-.27 0-.226.071-.413.216-.562a.613.613 0 0 1 .45-.207h1.114l-.582 2.334a5.866 5.866 0 0 1-.186.631c-.093.237-.201.393-.325.469a1.108 1.108 0 0 0 .007-.113.73.73 0 0 0-.15-.463.472.472 0 0 0-.278-.183V3.98h-.029a.455.455 0 0 0-.154.006l-1.335.053-.348-1.066a2.005 2.836 0 0 0 .803-.785c.2-.292.245-.782.077-1.119-.187-.355-.528-.423-.82-.444C15.386.616 14.694.624 14 .62Zm.7 1.044-.699 2.81h.696l.707-2.81z" style="color:#000;font-size:3.96355px;font-family:Magneto;-inkscape-font-specification:Magneto;mix-blend-mode:normal;fill:#000f33;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.5;stroke-dasharray:none;stroke-opacity:1"/><g style="fill:#00e5ff;fill-opacity:1;stroke:none;stroke-width:1.00013;stroke-dasharray:none"><path fill="#000" d="M48 53.335V2.815a9.626 9.626 0 0 1 1.878-.167c.736 0 1.417.055 2.042.166v50.521a11.8 11.8 0 0 1-2.042.166A9.583 9.583 0 0 1 48 53.335Z" style="fill:#00e5ff;fill-opacity:1;stroke:none;stroke-width:1.00013;stroke-dasharray:none" transform="translate(1.688 -.07) scale(.10815)"/><path d="M47.588-2.706c.036-.81.257-1.694.662-2.65.442-.995.94-1.768 1.491-2.32 2.908 1.583 5.466 2.374 7.675 2.374 1.214 0 2.19-.24 2.926-.717.773-.48 1.16-1.123 1.16-1.933 0-1.288-.994-2.32-2.982-3.092l-3.092-1.16c-4.638-1.693-6.957-4.398-6.957-8.116 0-1.325.24-2.503.718-3.534a7.992 7.992 0 0 1 2.098-2.705c.92-.773 2.006-1.362 3.258-1.767 1.251-.405 2.65-.607 4.196-.607.7 0 1.472.055 2.32.165.882.11 1.766.276 2.65.497.883.184 1.73.405 2.54.663s1.508.533 2.097.828c0 .92-.184 1.877-.552 2.87-.368.995-.865 1.73-1.49 2.21-2.909-1.29-5.43-1.933-7.565-1.933-.957 0-1.712.24-2.264.718-.552.442-.828 1.03-.828 1.767 0 1.14.92 2.043 2.761 2.705l3.368 1.215c2.43.847 4.233 2.006 5.411 3.479 1.178 1.473 1.767 3.184 1.767 5.135 0 2.613-.976 4.71-2.927 6.294C64.08-.774 61.281 0 57.637 0c-3.57 0-6.92-.903-10.049-2.707Z" style="fill:#00e5ff;fill-opacity:1;stroke:none;stroke-width:1.00013;stroke-dasharray:none" transform="translate(-1 4.916) scale(.10815)"/><path d="M21.106-27.33c.11.553.165 1.087.165 1.6 0 .48-.055.996-.165 1.548l-7.013-.055v18.55c0 1.547.718 2.32 2.154 2.32h4.196a4.89 4.89 0 0 1 .387 1.877c0 .626-.037 1.012-.11 1.16-1.694.22-3.443.33-5.246.33-3.57 0-5.356-1.527-5.356-4.582v-19.654l-3.92.055a7.91 7.91 0 0 1-.166-1.547c0-.515.055-1.05.166-1.601l3.92.055v-5.798c0-.994.147-1.693.442-2.098.294-.442.865-.662 1.71-.662h1.492l.33.33v8.283z" style="fill:#00e5ff;fill-opacity:1;stroke:none;stroke-width:1.00013;stroke-dasharray:none" transform="translate(1.468 4.894) scale(.10815)"/></g></svg>
 \ No newline at end of file
 diff --git a/node_modules/typesense-docsearch-react/dist/esm/TypesenseLogo.js b/node_modules/typesense-docsearch-react/dist/esm/TypesenseLogo.js
-index ecf27af..2d96bcf 100644
+index ecf27af..94e9205 100644
 --- a/node_modules/typesense-docsearch-react/dist/esm/TypesenseLogo.js
 +++ b/node_modules/typesense-docsearch-react/dist/esm/TypesenseLogo.js
-@@ -3,40 +3,240 @@ export function TypesenseLogo(_ref) {
-   var _ref$translations = _ref.translations,
-       translations = _ref$translations === void 0 ? {} : _ref$translations;
-   var _translations$searchB = translations.searchByText,
+@@ -1,42 +1,218 @@
+-import React from 'react';
++import React from "react";
+ export function TypesenseLogo(_ref) {
+-  var _ref$translations = _ref.translations,
+-      translations = _ref$translations === void 0 ? {} : _ref$translations;
+-  var _translations$searchB = translations.searchByText,
 -      searchByText = _translations$searchB === void 0 ? 'Search by' : _translations$searchB;
-+      searchByText = ""//_translations$searchB === void 0 ? 'Search by' : _translations$searchB;
    return /*#__PURE__*/React.createElement("a", {
 -    href: "https://typesense.org/?utm_source=".concat(window.location.hostname, "&utm_medium=referral&utm_content=powered_by&utm_campaign=docsearch"),
-+    href: "https://typesense.org/?utm_source=".concat(window.location.hostname, "&utm_medium=referral&utm_content=powered_by&utm_campaign=helloFromRJKB"),
-     target: "_blank",
-     rel: "noopener noreferrer"
+-    target: "_blank",
+-    rel: "noopener noreferrer"
++    href: `${window.location.origin}/search`
    }, /*#__PURE__*/React.createElement("span", {
-     className: "DocSearch-Label"
+-    className: "DocSearch-Label"
 -  }, searchByText), /*#__PURE__*/React.createElement("svg", {
--    fill: "none",
-+  }, searchByText),  /*#__PURE__*/React.createElement("svg", {
++    style: {
++      fontFamily: "Corbel"
++    }
++  }, "iFullstack.Dev | Roger Jiang"), /*#__PURE__*/React.createElement("svg", {
 +    xmlns: "http://www.w3.org/2000/svg",
 +    xmlnsXlink: "http://www.w3.org/1999/xlink",
 +    xmlSpace: "preserve",
-     height: "18",
++    height: 32,
++    viewBox: "0 0 28.895 5.934"
++  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
++    id: "a"
++  }, /*#__PURE__*/React.createElement("stop", {
++    offset: 0,
++    style: {
++      stopColor: "#000f33",
++      stopOpacity: 1
++    }
++  }), /*#__PURE__*/React.createElement("stop", {
++    offset: 0.109,
++    style: {
++      stopColor: "#000fff",
++      stopOpacity: 1
++    }
++  }), /*#__PURE__*/React.createElement("stop", {
++    offset: 0.225,
++    style: {
++      stopColor: "#808aff",
++      stopOpacity: 1
++    }
++  }), /*#__PURE__*/React.createElement("stop", {
++    offset: 0.426,
++    style: {
++      stopColor: "#000fff",
++      stopOpacity: 1
++    }
++  }), /*#__PURE__*/React.createElement("stop", {
++    offset: 0.566,
++    style: {
++      stopColor: "#000f33",
++      stopOpacity: 1
++    }
++  }), /*#__PURE__*/React.createElement("stop", {
++    offset: 1,
++    style: {
++      stopColor: "#000f33",
++      stopOpacity: 1
++    }
++  })), /*#__PURE__*/React.createElement("linearGradient", {
++    xlinkHref: "#a",
++    id: "b",
++    x1: 0,
++    x2: 45.863,
++    y1: 2.967,
++    y2: 2.967,
++    gradientUnits: "userSpaceOnUse"
++  }), /*#__PURE__*/React.createElement("path", {
++    id: "c",
++    d: "M11.71.573C9.47 1.29 8 3.054 7.3 5.865 6.251 10.08 4.952 10.618.72 9.119c1.52 2.807 4.6 3.932 6.58 3.932 1.98 0 7.11-2.757 6.522-7.998A21.678 21.678 0 0 0 11.71.573z"
++  }), /*#__PURE__*/React.createElement("path", {
++    id: "e",
++    d: "m14.18 12.77 5.53 5.54a.99.99 0 1 1-1.4 1.4l-5.53-5.539a7.92 7.92 0 1 1 1.399-1.401zm-6.26 1.09a5.94 5.94 0 1 0 0-11.88 5.94 5.94 0 0 0 0 11.88z"
++  })), /*#__PURE__*/React.createElement("path", {
++    d: "M2.468 0h23.958c2.727 0 2.462 1.315 2.462 2.948v.039c0 1.632.265 2.947-2.462 2.947H2.468C-.258 5.934.007 4.62.007 2.987v-.04C.007 1.316-.258 0 2.467 0z",
++    style: {
++      fontSize: "3.96355px",
++      fontFamily: "Magneto",
++      InkscapeFontSpecification: "Magneto",
++      opacity: 1,
++      fill: "url(#b)",
++      fillOpacity: 1,
++      stroke: "none",
++      strokeWidth: 0.29648,
++      strokeLinecap: "round",
++      strokeLinejoin: "round",
++      paintOrder: "fill markers stroke"
++    }
++  }), /*#__PURE__*/React.createElement("g", {
+     fill: "none",
+-    height: "18",
 -    viewBox: "0 0 80 18",
 -    width: "80",
 -    xmlns: "http://www.w3.org/2000/svg"
-+    viewBox: "0 0 45.863 5.934"
-+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("path", {
-+    id: "a",
-+    d: "M11.71.573C9.47 1.29 8 3.054 7.3 5.865 6.251 10.08 4.952 10.618.72 9.119c1.52 2.807 4.6 3.932 6.58 3.932 1.98 0 7.11-2.757 6.522-7.998A21.678 21.678 0 0 0 11.71.573z"
-+  }), /*#__PURE__*/React.createElement("path", {
-+    id: "c",
-+    d: "m14.18 12.77 5.53 5.54a.99.99 0 1 1-1.4 1.4l-5.53-5.539a7.92 7.92 0 1 1 1.399-1.401zm-6.26 1.09a5.94 5.94 0 1 0 0-11.88 5.94 5.94 0 0 0 0 11.88z"
-+  })), /*#__PURE__*/React.createElement("path", {
-+    d: "M3.917 0h38.028c4.327 0 3.907 1.315 3.907 2.948v.039c0 1.632.42 2.947-3.907 2.947H3.917C-.41 5.934.011 4.62.011 2.987v-.04C.011 1.316-.41 0 3.917 0z",
++    fillRule: "evenodd",
 +    style: {
-+      opacity: 1,
 +      fill: "#000f33",
-+      strokeWidth: 0.373522,
-+      strokeLinecap: "round",
-+      strokeLinejoin: "round",
-+      paintOrder: "fill markers stroke",
-+      stroke: "none"
-+    }
-+  }), /*#__PURE__*/React.createElement("g", {
-+    "aria-label": "RJKB",
-+    style: {
-+      fill: "url(#a)",
-+      stroke: "url(#linearGradient29589)",
-+      strokeWidth: 0.2,
-+      strokeOpacity: 0.501961
++      fillOpacity: 1
 +    },
-+    transform: "matrix(.97592 0 0 1.38072 31.574 .618)"
++    transform: "translate(8.228 .392) scale(.26014)"
    }, /*#__PURE__*/React.createElement("g", {
 -    fill: "currentColor"
 +    style: {
-+      fill: "url(#a)",
-+      stroke: "#00e5ff",
-+      strokeWidth: 0.264583,
-+      strokeLinecap: "square",
-+      strokeLinejoin: "miter",
-+      strokeMiterlimit: 4.5,
-+      strokeDasharray: "none",
-+      strokeOpacity: 1
++      fill: "#000f33",
++      fillOpacity: 1
++    },
++    transform: "translate(1 2)"
++  }, /*#__PURE__*/React.createElement("mask", {
++    id: "d",
++    fill: "#fff"
++  }, /*#__PURE__*/React.createElement("use", {
++    xlinkHref: "#c"
++  })), /*#__PURE__*/React.createElement("g", {
++    fill: "#00e5ff",
++    mask: "url(#d)",
++    style: {
++      fill: "#000f33",
++      fillOpacity: 1
 +    }
    }, /*#__PURE__*/React.createElement("path", {
 -    d: "m4.82356 5.166c.03534.18.053.354.053.522 0 .156-.01766.324-.053.504l-2.24393-.018v6.048c0 .504.2297.756.68908.756h1.34282c.08246.204.12368.408.12368.612s-.01177.33-.03533.378c-.54184.072-1.10135.108-1.67853.108-1.14258 0-1.71387-.498-1.71387-1.494v-6.408l-1.2544739.018c-.0353374-.18-.0530061-.348-.0530061-.504 0-.168.0176687-.342.0530061-.522l1.2544739.018v-1.89c0-.324.04712-.552.14135-.684.09424-.144.27681-.216.54773-.216h.47706l.10601.108v2.7z"
@@ -99,197 +210,123 @@ index ecf27af..2d96bcf 100644
 -    d: "m16.7683 13.41v3.564c0 .324-.0471.552-.1414.684-.0942.144-.2827.216-.5653.216h-.4771l-.106-.108v-12.546l.106-.108h.4594c.2827 0 .4711.078.5654.234.106.144.159.384.159.72v.09c.7067-.804 1.549-1.206 2.5266-1.206 1.0013 0 1.7551.414 2.2616 1.242.5065.816.7598 1.95.7598 3.402 0 .708-.0943 1.344-.2827 1.908-.1767.564-.4182 1.044-.7244 1.44-.2945.384-.6361.684-1.0248.9-.3887.204-.7892.306-1.2015.306-.8128 0-1.5843-.246-2.3146-.738zm0-5.85v4.626c.7185.54 1.3958.81 2.0319.81s1.1602-.288 1.5725-.864.6184-1.446.6184-2.61c0-.576-.053-1.074-.159-1.494-.0942-.432-.2238-.786-.3887-1.062-.1649-.288-.3593-.498-.5831-.63-.212-.144-.4417-.216-.6891-.216-.4711 0-.9187.126-1.3428.378-.424.252-.7774.606-1.0601 1.062z"
 -  }), /*#__PURE__*/React.createElement("path", {
 -    d: "m31.2631 9.99h-5.4773c.0589 2.04.8187 3.06 2.2793 3.06.801 0 1.655-.252 2.562-.756.2591.24.4181.546.477.918-.9659.672-2.0496 1.008-3.251 1.008-.6125 0-1.1367-.114-1.5725-.342-.4359-.24-.7951-.564-1.0778-.972-.271-.42-.4712-.912-.6008-1.476-.1295-.564-.1943-1.182-.1943-1.854 0-.684.0765-1.308.2297-1.872.1649-.564.4005-1.05.7067-1.458.3063-.408.6714-.726 1.0955-.954.4358-.228.9305-.342 1.4841-.342.5419 0 1.0248.102 1.4489.306.4358.192.7951.462 1.0778.81.2944.336.5183.744.6714 1.224.1531.468.2297.972.2297 1.512 0 .216-.0118.426-.0354.63-.0117.192-.0294.378-.053.558zm-5.4773-1.026h4.2405v-.234c0-.828-.1708-1.494-.5124-1.998s-.854-.756-1.5372-.756c-.6714 0-1.1955.27-1.5725.81-.3651.54-.5713 1.266-.6184 2.178z"
-+    d: "m11.135-3.437-.418.687h1.12l-.792 2.236h.467a.8.8 0 0 0 .54-.207l.73-.652-.14.418a.447.447 0 0 0-.023.135c0 .091.04.18.112.234a.435.435 0 0 0 .267.072h1.712c.325 0-.667-.144-.552-.207.114-.063.738-.05.774-.175l.036-.127h-1.391l.16-.453.008-.025a.49.49 0 0 0 .033-.19.331.331 0 0 0-.102-.254c-.048-.042-.118-.046-.183-.057l1.613-1.435h-.904l-1.766 1.609.348-1.03a.714.714 0 0 0 .044-.23.328.328 0 0 0-.123-.265.5.5 0 0 0-.308-.084zm.113.2h1.149c.098 0 .158.02.187.042.03.022.043.046.043.107 0 .042-.01.099-.033.166L12-1.16l2.278-2.076h.302l-1.375 1.22.002-.003-.21.189-1.079.959a.583.583 0 0 1-.406.156h-.184l.79-2.234h-1.045zm1.897 1.407h.262c.075 0 .118.017.138.035.02.018.033.043.033.104a.46.46 0 0 1-.03.148l-.253.719h.746c-.015.012-.016.034-.035.045a.699.699 0 0 1-.33.064h-.678c-.08 0-.127-.016-.148-.031-.02-.016-.03-.028-.03-.074a.24.24 0 0 1 .012-.073z",
-+    style: {
-+      color: "#000",
-+      mixBlendMode: "darken",
-+      fill: "none",
-+      fillOpacity: 1,
-+      stroke: "#00e5ff",
-+      strokeWidth: 0.264583,
-+      strokeLinecap: "square",
-+      strokeLinejoin: "miter",
-+      strokeMiterlimit: 5,
-+      strokeDasharray: "none",
-+      strokeDashoffset: 0,
-+      strokeOpacity: 1,
-+      paintOrder: "fill markers stroke"
-+    },
-+    transform: "translate(-4.65 3.426)"
-   }), /*#__PURE__*/React.createElement("path", {
+-  }), /*#__PURE__*/React.createElement("path", {
 -    d: "m33.0818 13.374c.0117-.264.0824-.552.212-.864.1413-.324.3004-.576.477-.756.9306.516 1.7492.774 2.456.774.3887 0 .7009-.078.9364-.234.2474-.156.3711-.366.3711-.63 0-.42-.3181-.756-.9541-1.008l-.9895-.378c-1.4841-.552-2.2262-1.434-2.2262-2.646 0-.432.0765-.816.2297-1.152.1649-.348.3887-.642.6714-.882.2945-.252.6419-.444 1.0424-.576s.8481-.198 1.3428-.198c.2238 0 .4712.018.7421.054.2827.036.5654.09.8481.162.2827.06.5537.132.8128.216s.4829.174.6714.27c0 .3-.0589.612-.1767.936s-.2768.564-.477.72c-.9306-.42-1.7375-.63-2.4207-.63-.3062 0-.5477.078-.7244.234-.1767.144-.265.336-.265.576 0 .372.2945.666.8834.882l1.0778.396c.7775.276 1.3546.654 1.7316 1.134.3769.48.5654 1.038.5654 1.674 0 .852-.3122 1.536-.9365 2.052-.6243.504-1.5195.756-2.6856.756-1.1426 0-2.2145-.294-3.2157-.882z"
-+    d: "m9.797-.012-.42.688h2.443c.141 0 .235.025.285.058.05.033.069.067.069.141 0 .111-.043.202-.15.295v.002a1.54 1.54 0 0 1-.327.195c-.124.059-.216.118-.26.215l-.001.004-.002.006c-.01.03-.008.047-.008.07 0 .084.038.143.093.229.046.07.061.122.061.148a.227.227 0 0 1-.06.164.516.516 0 0 1-.22.127c-.13.043-.3.063-.495.066l.593-1.67h-.91l-.77 2.186h1.15c.362 0 .683-.051.962-.154.196-.073.351-.168.46-.291a.662.662 0 0 0 .163-.442c0-.132-.06-.275-.13-.42.202-.103.38-.202.493-.296.215-.178.336-.385.336-.61a.628.628 0 0 0-.326-.578c-.173-.093-.409-.133-.715-.133zM9.91.19h2.201c.288 0 .498.041.621.108.154.083.221.2.221.402 0 .155-.078.302-.264.455-.109.09-.288.199-.529.317l-.096.047.053.091a.86.86 0 0 1 .137.416.445.445 0 0 1-.115.31.913.913 0 0 1-.377.235c-.253.093-.55.14-.895.14h-.865l.629-1.784h.484l-.594 1.676h.24c.234 0 .434-.026.604-.082a.702.702 0 0 0 .303-.184.44.44 0 0 0 .111-.297.474.474 0 0 0-.093-.258h.002c-.048-.074-.063-.13-.063-.119.01-.018.055-.067.158-.115.163-.078.286-.152.371-.227a.59.59 0 0 0 .221-.445.367.367 0 0 0-.16-.309c-.102-.066-.232-.09-.395-.09H9.734z",
-+    style: {
-+      color: "#000",
-+      mixBlendMode: "darken",
-+      fill: "none",
-+      fillOpacity: 1,
-+      stroke: "#00e5ff",
-+      strokeWidth: 0.264584,
-+      strokeLinecap: "square",
-+      strokeLinejoin: "miter",
-+      strokeMiterlimit: 4.5,
-+      strokeDasharray: "none",
-+      strokeDashoffset: 0,
-+      strokeOpacity: 1,
-+      paintOrder: "fill markers stroke"
-+    },
-+    transform: "translate(.394)"
-   }), /*#__PURE__*/React.createElement("path", {
+-  }), /*#__PURE__*/React.createElement("path", {
 -    d: "m48.5671 10.296h-4.8765c.0353.66.1826 1.182.4417 1.566.2709.372.7362.558 1.3958.558.6832 0 1.4665-.204 2.35-.612.3416.36.5595.834.6537 1.422-.9423.684-2.0731 1.026-3.3924 1.026-1.2486 0-2.1968-.39-2.8446-1.17-.6361-.792-.9542-1.962-.9542-3.51 0-.72.0825-1.368.2474-1.944.1649-.588.4064-1.086.7244-1.494.3181-.42.7068-.744 1.1662-.972.4593-.228.9835-.342 1.5725-.342.6007 0 1.1308.096 1.5902.288.4593.18.8481.444 1.1661.792.318.336.5536.738.7067 1.206.1649.468.2474.978.2474 1.53 0 .3-.0177.588-.053.864-.0353.264-.0825.528-.1414.792zm-3.41-3.78c-.9188 0-1.4135.708-1.4842 2.124h2.933v-.216c0-.576-.1178-1.038-.3534-1.386-.2355-.348-.6007-.522-1.0954-.522z"
-+    d: "M4.73-.012c-.37 0-.689.09-.947.272l-.002.002a1.036 1.036 0 0 0-.447.88c0 .256.11.475.316.622.185.13.416.191.68.191.177 0 .334-.04.461-.129a.528.528 0 0 0 .232-.445c0-.165-.102-.257-.227-.361C4.68.924 4.57.816 4.416.816a.648.648 0 0 0-.387.125c-.071.052-.096.135-.136.21-.002-.012-.006-.013-.006-.03 0-.13.05-.227.175-.318a.64.64 0 0 1 .39-.127h.974L4.889 2.19a3.173 3.173 0 0 1-.178.43c-.056.102-.12.139-.182.19-.025-.105-.047-.213-.133-.29a.635.635 0 0 0-.431-.162.638.638 0 0 0-.432.162.526.526 0 0 0 .049.836.9.9 0 0 0 .53.149c.333 0 .655-.118.956-.344.357-.267.62-.647.79-1.13l.716-2.044h-.14zm0 .201h1.563L5.67 1.967c-.159.453-.399.794-.72 1.035-.275.205-.55.305-.839.305a.698.698 0 0 1-.414-.112c-.105-.074-.148-.155-.148-.273 0-.102.034-.177.117-.252a.423.423 0 0 1 .299-.111c.122 0 .216.036.299.11a.316.316 0 0 1 .117.253.39.39 0 0 1-.006.062l-.031.182.168-.072c.15-.065.273-.195.373-.375.057-.103.12-.255.193-.461L5.707.477H4.451a.85.85 0 0 0-.508.164.591.591 0 0 0-.257.48c0 .067.01.128.043.182a.23.23 0 0 0 .148.105l.1.02.02-.098a.346.346 0 0 1 .15-.226v-.002a.435.435 0 0 1 .269-.084c.114 0 .204.031.285.1a.31.31 0 0 1 .123.263.303.303 0 0 1-.146.28v.001a.592.592 0 0 1-.348.094.954.954 0 0 1-.564-.156.514.514 0 0 1-.233-.457c0-.316.117-.543.365-.72.22-.155.494-.234.832-.234z",
-+    style: {
-+      color: "#000",
-+      mixBlendMode: "darken",
-+      fill: "none",
-+      fillOpacity: 1,
-+      stroke: "#00e5ff",
-+      strokeWidth: 0.264583,
-+      strokeLinecap: "square",
-+      strokeLinejoin: "miter",
-+      strokeMiterlimit: 4.5,
-+      strokeDasharray: "none",
-+      strokeDashoffset: 0,
-+      strokeOpacity: 1,
-+      paintOrder: "fill markers stroke"
-+    }
-   }), /*#__PURE__*/React.createElement("path", {
+-  }), /*#__PURE__*/React.createElement("path", {
 -    d: "m58.2504 7.992v3.924c0 .768.1237 1.338.3711 1.71-.377.336-.8305.504-1.3605.504-.5065 0-.854-.114-1.0425-.342-.1884-.24-.2827-.612-.2827-1.116v-4.194c0-.54-.0648-.918-.1943-1.134-.1296-.216-.3711-.324-.7244-.324-.6243 0-1.2074.288-1.7492.864v6.12c-.1767.036-.3652.06-.5654.072-.1885.012-.3829.018-.5831.018-.2003 0-.4005-.006-.6007-.018-.1885-.012-.3711-.036-.5478-.072v-8.91l.106-.126h.8835c.6596 0 1.0719.36 1.2368 1.08.8599-.756 1.7138-1.134 2.5619-1.134s1.4724.282 1.8729.846c.4123.552.6184 1.296.6184 2.232z"
-+    d: "M.115-.011-.31.676h2.152c.15 0 .253.03.309.068.055.04.08.087.08.178 0 .157-.094.287-.332.41h-.002a3.268 3.268 0 0 1-.301.123h-.002c-.085.032-.102.035-.156.053l.277-.781H.801L.03 2.912h.908l.36-1.011.29.642a.853.853 0 0 0 .152.258.411.411 0 0 0 .303.111h1.342c.12 0-.366-.03-.271-.093v-.002a.4.4 0 0 0 .18-.309l.71-.148-.81.043h-.705l-.284-.614c.315-.13.585-.267.76-.425.196-.178.305-.385.305-.606a.668.668 0 0 0-.31-.586c-.2-.128-.48-.183-.842-.183zm.112.2h1.892c.34 0 .585.056.735.151.15.095.217.221.217.418 0 .157-.072.305-.24.457-.169.152-.432.303-.79.441l-.1.04.42.906h.67c-.012.014-.009.035-.029.049a.367.367 0 0 1-.213.06h-.746c-.084 0-.13-.02-.16-.05a.974.974 0 0 1-.111-.2l-.336-.744c.064-.02.114-.031.228-.074a2.96 2.96 0 0 0 .326-.133l.002-.002c.274-.142.438-.344.438-.586A.41.41 0 0 0 2.266.58c-.107-.075-.25-.103-.424-.103H.05zm.715.737h.49l-.23.65-.047.008.023.053-.38 1.074H.312z",
++    d: "M0 0h24v24H0z",
 +    style: {
-+      color: "#000",
-+      mixBlendMode: "darken",
-+      fill: "none",
-+      fillOpacity: 1,
-+      stroke: "#00e5ff",
-+      strokeWidth: 0.264583,
-+      strokeLinecap: "square",
-+      strokeLinejoin: "miter",
-+      strokeMiterlimit: 4.5,
-+      strokeDasharray: "none",
-+      strokeDashoffset: 0,
-+      strokeOpacity: 1,
-+      paintOrder: "fill markers stroke"
-+    }
-+  })), /*#__PURE__*/React.createElement("g", {
-+    style: {
-+      fill: "#000fff",
++      fill: "#00e5ff",
 +      fillOpacity: 1,
 +      stroke: "none",
-+      strokeWidth: 0,
-+      strokeDasharray: "none",
-+      strokeOpacity: 0.501961
++      strokeWidth: 0.999462,
++      strokeDasharray: "none"
++    },
++    transform: "translate(-3 -4)"
++  }))), /*#__PURE__*/React.createElement("mask", {
++    id: "f",
++    fill: "#fff"
++  }, /*#__PURE__*/React.createElement("use", {
++    xlinkHref: "#e"
++  })), /*#__PURE__*/React.createElement("g", {
++    fill: "#000fff",
++    mask: "url(#f)",
++    style: {
++      fill: "#000f33",
++      fillOpacity: 1
 +    }
 +  }, /*#__PURE__*/React.createElement("path", {
-+    d: "M13.052.698c0 .19-.1.367-.3.533-.12.099-.302.209-.547.329a.95.95 0 0 1 .149.466c0 .288-.186.5-.558.639a2.679 2.679 0 0 1-.929.147H9.861L10.56.826h.696l-.594 1.676h.099c.226 0 .417-.026.573-.077.23-.079.346-.207.346-.385a.39.39 0 0 0-.077-.204c-.052-.08-.078-.138-.078-.174 0-.018.002-.03.004-.039.026-.056.096-.112.211-.166a1.59 1.59 0 0 0 .348-.21.48.48 0 0 0 .186-.372c0-.2-.151-.299-.455-.299H8.96L9.257.09h2.855c.296 0 .519.04.667.12.182.098.273.261.273.49z",
++    d: "M-2-2h24v24H-2z",
 +    style: {
-+      color: "#000",
-+      mixBlendMode: "normal",
-+      fill: "#000fff",
++      fill: "#000f33",
 +      fillOpacity: 1,
-+      stroke: "none",
-+      strokeWidth: 0,
-+      strokeDasharray: "none",
-+      strokeOpacity: 1
-+    },
-+    transform: "translate(.394)"
-   }), /*#__PURE__*/React.createElement("path", {
--    d: "m60.1039 13.374c.0117-.264.0824-.552.212-.864.1413-.324.3003-.576.477-.756.9306.516 1.7492.774 2.456.774.3887 0 .7008-.078.9364-.234.2474-.156.3711-.366.3711-.63 0-.42-.3181-.756-.9541-1.008l-.9895-.378c-1.4842-.552-2.2262-1.434-2.2262-2.646 0-.432.0765-.816.2296-1.152.165-.348.3888-.642.6715-.882.2944-.252.6419-.444 1.0424-.576s.8481-.198 1.3428-.198c.2238 0 .4712.018.7421.054.2827.036.5654.09.8481.162.2827.06.5536.132.8128.216.2591.084.4829.174.6714.27 0 .3-.0589.612-.1767.936s-.2768.564-.4771.72c-.9305-.42-1.7374-.63-2.4206-.63-.3062 0-.5477.078-.7244.234-.1767.144-.265.336-.265.576 0 .372.2945.666.8834.882l1.0778.396c.7774.276 1.3546.654 1.7315 1.134.377.48.5655 1.038.5655 1.674 0 .852-.3122 1.536-.9365 2.052-.6243.504-1.5195.756-2.6856.756-1.1426 0-2.2145-.294-3.2157-.882z"
-+    d: "M14.843-3.337 13.26-1.93h.147c.18 0 .271.08.271.238a.548.548 0 0 1-.037.182l-.205.586h.803c-.059.207-.247.31-.563.31H13c-.186 0-.279-.069-.279-.207 0-.032.006-.066.018-.103l.257-.772-1.01.9a.69.69 0 0 1-.473.182h-.325l.79-2.235-1.557.003-.123-.484 2.1-.007c.22 0 .33.083.33.25a.617.617 0 0 1-.038.197l-.47 1.395 2.02-1.842z",
-+    style: {
-+      color: "#000",
-+      mixBlendMode: "normal",
-+      fill: "#000fff",
-+      fillOpacity: 1,
-+      stroke: "none",
-+      strokeWidth: 0,
-+      strokeDasharray: "none",
-+      strokeOpacity: 1
-+    },
-+    transform: "translate(-4.65 3.426)"
-   }), /*#__PURE__*/React.createElement("path", {
--    d: "m75.5892 10.296h-4.8765c.0353.66.1826 1.182.4417 1.566.2709.372.7362.558 1.3958.558.6832 0 1.4665-.204 2.35-.612.3416.36.5595.834.6537 1.422-.9423.684-2.0731 1.026-3.3924 1.026-1.2486 0-2.1968-.39-2.8447-1.17-.636-.792-.9541-1.962-.9541-3.51 0-.72.0825-1.368.2474-1.944.1649-.588.4064-1.086.7244-1.494.318-.42.7068-.744 1.1662-.972.4593-.228.9835-.342 1.5725-.342.6007 0 1.1308.096 1.5902.288.4593.18.8481.444 1.1661.792.318.336.5536.738.7067 1.206.1649.468.2474.978.2474 1.53 0 .3-.0177.588-.053.864-.0353.264-.0825.528-.1414.792zm-3.41-3.78c-.9188 0-1.4135.708-1.4842 2.124h2.933v-.216c0-.576-.1178-1.038-.3534-1.386-.2355-.348-.6007-.522-1.0954-.522z"
-+    d: "m6.433.089-.67 1.91q-.245.702-.754 1.084-.432.323-.898.323-.288 0-.472-.13-.19-.133-.19-.354 0-.191.151-.327.151-.135.364-.135.215 0 .366.135.15.136.15.327 0 .033-.007.08.186-.08.325-.331.077-.14.186-.446L5.566.576H4.452q-.25 0-.45.146-.216.158-.216.398 0 .167.112.19.037-.18.19-.288.143-.105.329-.105.201 0 .348.124.159.132.159.34 0 .233-.19.362-.162.113-.404.113-.374 0-.622-.174-.274-.196-.274-.538 0-.513.406-.802.358-.253.89-.253z",
-+    style: {
-+      color: "#000",
-+      mixBlendMode: "normal",
-+      fill: "#000fff",
-+      fillOpacity: 1,
-+      stroke: "none",
-+      strokeWidth: 0,
-+      strokeDasharray: "none",
-+      strokeOpacity: 1
-+    }
-   }), /*#__PURE__*/React.createElement("path", {
--    d: "m78.3287 16.524v-16.4699996c.1767-.0360003.3769-.0540004.6007-.0540004.2356 0 .4535.0180001.6538.0540004v16.4699996c-.2003.036-.4182.054-.6538.054-.2238 0-.424-.018-.6007-.054z"
--  }))));
-+    d: "M4.052 2.462c-.009.216.197.367.005.352-.26-.003-1.714.006-1.975-.006-.19-.018-.25-.22-.32-.366L1.3 1.659a4.17 4.17 0 0 0 .693-.264c.194-.1.373-.302.334-.535C2.31.68 2.12.59 1.957.582 1.587.57 1.217.58.847.577h-.978L.17.089C.863.091 1.555.086 2.247.092c.292.015.633.063.82.314.168.238.123.584-.077.79a2.004 2.004 0 0 1-.803.555l.348.753zM1.574.826.867 2.812H.171L.87.826z",
-+    style: {
-+      color: "#000",
-+      mixBlendMode: "normal",
-+      fill: "#000fff",
-+      fillOpacity: 1,
++      fillRule: "evenodd",
 +      stroke: "none",
 +      strokeWidth: 0,
 +      strokeDasharray: "none",
 +      strokeOpacity: 1
 +    }
 +  }))), /*#__PURE__*/React.createElement("path", {
-+    fill: "#1035bc",
-+    d: "M15.074 15.847c.11.552.165 1.086.165 1.6 0 .48-.055.995-.165 1.547l-7.013-.055V37.49c0 1.546.718 2.319 2.154 2.319h4.196a4.89 4.89 0 0 1 .387 1.877c0 .626-.037 1.012-.11 1.16-1.694.22-3.443.33-5.246.33-3.57 0-5.356-1.527-5.356-4.582V18.94l-3.92.055A7.91 7.91 0 0 1 0 17.448c0-.515.055-1.05.166-1.601l3.92.055v-5.798c0-.994.147-1.693.442-2.098.294-.442.865-.662 1.711-.662H7.73l.331.33v8.283zm26.717.276-7.564 25.895c-1.399 4.749-2.89 8.099-4.472 10.05-1.582 1.951-3.957 2.926-7.123 2.926-1.62 0-3.11-.24-4.472-.718-.11-1.03.184-2.025.883-2.982 1.141.405 2.356.608 3.644.608 1.951 0 3.442-.663 4.473-1.988 1.03-1.325 1.969-3.386 2.816-6.184l.165-.552c-.957-.074-1.693-.295-2.208-.663-.479-.368-.884-1.049-1.215-2.043l-7.73-24.294c1.14-.479 1.95-.718 2.43-.718 1.067 0 1.785.644 2.153 1.933l4.362 13.859c.147.441.994 3.312 2.54 8.613.073.258.257.387.552.387l6.736-24.405c.478-.148 1.104-.221 1.877-.221.81 0 1.49.11 2.043.331zM52.4 41.135v10.932c0 .994-.146 1.694-.44 2.099-.295.441-.884.662-1.768.662h-1.49l-.332-.331V16.012l.332-.331h1.435c.884 0 1.473.24 1.767.718.331.441.497 1.178.497 2.208v.276c2.208-2.466 4.84-3.699 7.896-3.699 3.129 0 5.484 1.27 7.067 3.81 1.583 2.503 2.374 5.981 2.374 10.435 0 2.172-.294 4.123-.883 5.853-.552 1.73-1.307 3.203-2.264 4.417-.92 1.178-1.988 2.098-3.202 2.761-1.215.626-2.467.939-3.755.939-2.54 0-4.95-.755-7.233-2.264zm0-17.945v14.19c2.246 1.657 4.363 2.485 6.35 2.485 1.988 0 3.626-.883 4.915-2.65 1.288-1.767 1.932-4.436 1.932-8.006 0-1.767-.165-3.295-.497-4.583-.294-1.325-.7-2.411-1.214-3.258-.516-.883-1.123-1.528-1.823-1.932a3.807 3.807 0 0 0-2.153-.663c-1.472 0-2.871.386-4.196 1.16-1.325.772-2.43 1.858-3.313 3.257zm45.297 7.454H80.581c.184 6.258 2.558 9.387 7.122 9.387 2.503 0 5.172-.773 8.006-2.32.81.737 1.307 1.676 1.491 2.817-3.018 2.061-6.405 3.092-10.16 3.092-1.913 0-3.551-.35-4.913-1.05a9.727 9.727 0 0 1-3.368-2.981c-.847-1.288-1.473-2.798-1.878-4.528-.405-1.73-.607-3.625-.607-5.687 0-2.098.24-4.012.718-5.742.515-1.73 1.251-3.221 2.208-4.473.957-1.251 2.098-2.227 3.424-2.926 1.362-.7 2.908-1.049 4.638-1.049 1.693 0 3.202.313 4.527.939 1.362.589 2.485 1.417 3.368 2.484.92 1.031 1.62 2.283 2.099 3.755.478 1.435.717 2.982.717 4.638 0 .663-.037 1.307-.11 1.932-.037.59-.092 1.16-.166 1.712zm-17.116-3.147h13.251v-.718c0-2.54-.533-4.583-1.601-6.129-1.068-1.546-2.669-2.319-4.804-2.319-2.098 0-3.736.829-4.914 2.485-1.14 1.656-1.785 3.883-1.932 6.68zm22.8 13.528c.036-.81.257-1.694.662-2.65.442-.995.939-1.768 1.491-2.32 2.908 1.583 5.466 2.374 7.675 2.374 1.214 0 2.19-.239 2.926-.717.773-.479 1.16-1.123 1.16-1.933 0-1.288-.994-2.319-2.982-3.092l-3.092-1.16c-4.638-1.693-6.957-4.398-6.957-8.116 0-1.325.239-2.503.718-3.534a7.992 7.992 0 0 1 2.098-2.705c.92-.773 2.006-1.362 3.258-1.767 1.251-.405 2.65-.607 4.196-.607.699 0 1.472.055 2.319.165.883.11 1.767.276 2.65.497.884.184 1.73.405 2.54.663s1.509.533 2.098.828c0 .92-.184 1.877-.552 2.871-.368.994-.865 1.73-1.491 2.209-2.908-1.289-5.429-1.933-7.564-1.933-.957 0-1.712.24-2.264.718-.552.442-.828 1.03-.828 1.767 0 1.14.92 2.043 2.761 2.705l3.368 1.215c2.429.847 4.233 2.006 5.411 3.479 1.178 1.473 1.767 3.184 1.767 5.135 0 2.613-.976 4.711-2.927 6.294-1.951 1.546-4.748 2.32-8.392 2.32-3.571 0-6.921-.903-10.049-2.707zm48.391-9.442h-15.239c.111 2.024.571 3.626 1.38 4.804.847 1.14 2.301 1.711 4.362 1.711 2.135 0 4.583-.626 7.344-1.877 1.067 1.104 1.748 2.558 2.043 4.362-2.945 2.098-6.479 3.147-10.601 3.147-3.902 0-6.865-1.196-8.89-3.589-1.988-2.43-2.981-6.018-2.981-10.767 0-2.208.257-4.196.773-5.963.515-1.804 1.269-3.331 2.263-4.583a10.19 10.19 0 0 1 3.644-2.981c1.436-.7 3.074-1.05 4.915-1.05 1.877 0 3.533.295 4.969.884 1.436.552 2.65 1.362 3.644 2.43.994 1.03 1.73 2.263 2.209 3.699.515 1.435.773 3 .773 4.693 0 .92-.056 1.804-.166 2.65-.11.81-.258 1.62-.442 2.43zm-10.656-11.595c-2.871 0-4.417 2.171-4.638 6.515h9.165v-.663c0-1.766-.368-3.184-1.104-4.251-.736-1.068-1.877-1.601-3.423-1.601zm40.917 4.527v12.037c0 2.356.386 4.104 1.159 5.245-1.178 1.031-2.595 1.547-4.251 1.547-1.583 0-2.669-.35-3.258-1.05-.589-.736-.884-1.877-.884-3.423V26.006c0-1.656-.202-2.816-.607-3.478-.405-.662-1.159-.994-2.264-.994-1.951 0-3.773.883-5.466 2.65v18.773c-.552.11-1.141.184-1.767.22-.589.038-1.196.056-1.822.056-.626 0-1.251-.018-1.877-.055a12.89 12.89 0 0 1-1.712-.22V15.625l.331-.387h2.761c2.062 0 3.35 1.105 3.865 3.313 2.687-2.319 5.356-3.478 8.006-3.478 2.651 0 4.602.865 5.853 2.595 1.288 1.693 1.933 3.975 1.933 6.846zm5.792 16.51c.036-.81.257-1.694.662-2.65.442-.995.939-1.768 1.491-2.32 2.908 1.583 5.466 2.374 7.675 2.374 1.214 0 2.19-.239 2.926-.717.773-.479 1.16-1.123 1.16-1.933 0-1.288-.994-2.319-2.982-3.092l-3.092-1.16c-4.638-1.693-6.957-4.398-6.957-8.116 0-1.325.239-2.503.718-3.534a7.992 7.992 0 0 1 2.098-2.705c.92-.773 2.006-1.362 3.258-1.767 1.251-.405 2.65-.607 4.196-.607.699 0 1.472.055 2.319.165.883.11 1.767.276 2.65.497.884.184 1.73.405 2.54.663s1.509.533 2.098.828c0 .92-.184 1.877-.552 2.871-.368.994-.865 1.73-1.491 2.209-2.908-1.289-5.429-1.933-7.564-1.933-.957 0-1.712.24-2.264.718-.552.442-.828 1.03-.828 1.767 0 1.14.92 2.043 2.761 2.705l3.368 1.215c2.429.847 4.233 2.006 5.411 3.479 1.178 1.473 1.767 3.184 1.767 5.135 0 2.613-.976 4.711-2.927 6.294-1.951 1.546-4.748 2.32-8.392 2.32-3.571 0-6.921-.903-10.049-2.707zm48.391-9.442h-15.239c.111 2.024.571 3.626 1.38 4.804.847 1.14 2.301 1.711 4.362 1.711 2.135 0 4.583-.626 7.344-1.877 1.067 1.104 1.748 2.558 2.043 4.362-2.945 2.098-6.479 3.147-10.601 3.147-3.902 0-6.865-1.196-8.89-3.589-1.988-2.43-2.981-6.018-2.981-10.767 0-2.208.257-4.196.773-5.963.515-1.804 1.269-3.331 2.263-4.583a10.186 10.186 0 0 1 3.645-2.981c1.435-.7 3.073-1.05 4.914-1.05 1.877 0 3.533.295 4.969.884 1.436.552 2.65 1.362 3.644 2.43.994 1.03 1.73 2.263 2.209 3.699.515 1.435.773 3 .773 4.693 0 .92-.055 1.804-.166 2.65-.11.81-.258 1.62-.442 2.43zM225.56 19.988c-2.871 0-4.417 2.171-4.638 6.515h9.166v-.663c0-1.766-.369-3.184-1.105-4.251-.736-1.068-1.877-1.601-3.423-1.601zm19.217 30.699V.166A9.626 9.626 0 0 1 246.655 0c.736 0 1.417.055 2.042.166v50.521a11.8 11.8 0 0 1-2.042.166 9.58 9.58 0 0 1-1.878-.166z",
++    d: "m24.026.478-.42.974h2.444c.141 0 .235.035.285.082.05.046.07.095.07.2a.62.62 0 0 1-.151.417v.003a1.546 1.546 0 0 1-.327.276c-.124.083-.216.167-.26.304l-.001.006-.002.008c-.01.042-.008.067-.008.1 0 .118.038.202.093.323a.56.56 0 0 1 .06.21.406.406 0 0 1-.06.232.511.511 0 0 1-.22.18c-.13.06-.3.089-.495.093l.594-2.364h-.91l-.771 3.094h1.15c.363 0 .684-.072.963-.218.196-.103.351-.237.46-.411a1.19 1.19 0 0 0 .163-.626c0-.187-.06-.39-.13-.595.202-.145.38-.285.493-.418.215-.252.337-.545.337-.864.01-.338-.117-.655-.327-.818-.173-.132-.409-.188-.715-.188zm.113.286h2.202c.288 0 .498.058.621.153.154.117.221.283.221.569 0 .219-.077.427-.264.643a2.853 2.853 0 0 1-.529.45l-.096.066.053.129a1.6 1.6 0 0 1 .137.588.798.798 0 0 1-.115.439.937.937 0 0 1-.377.333c-.253.131-.55.198-.895.198h-.866l.63-2.525h.484l-.595 2.372h.24c.234 0 .435-.037.605-.116a.712.712 0 0 0 .303-.26.79.79 0 0 0 .11-.421.86.86 0 0 0-.092-.365h.002c-.048-.105-.063-.184-.063-.168a.426.426 0 0 1 .158-.163c.163-.11.286-.215.371-.322a.99.99 0 0 0 .221-.63.606.606 0 0 0-.16-.437c-.102-.093-.232-.127-.395-.127h-2.087zM20.268.476l-1.705.002c-.37 0-.69.127-.947.385l-.003.003c-.288.281-.456.75-.447 1.245 0 .362.11.672.316.88a.93.93 0 0 0 .68.27.63.63 0 0 0 .462-.182c.147-.14.235-.378.232-.63 0-.233-.102-.363-.227-.51-.116-.136-.226-.29-.38-.29a.532.532 0 0 0-.387.178c-.071.073-.097.19-.137.297-.001-.017-.005-.018-.005-.043 0-.184.05-.32.175-.45a.526.526 0 0 1 .39-.18h.974l-.537 2.143a5.665 5.665 0 0 1-.178.609c-.056.144-.12.197-.182.27-.025-.15-.047-.303-.134-.412a.544.544 0 0 0-.43-.229.457.457 0 0 0-.12.015l-.652.049h-.705l-.284-.869c.315-.184.585-.378.76-.602.196-.252.305-.545.305-.857.008-.335-.11-.65-.31-.83-.2-.181-.48-.259-.842-.259h-2.004l-.426.973h2.154c.15 0 .253.042.309.096.055.056.08.123.08.252 0 .222-.094.406-.332.58h-.002a2.815 2.815 0 0 1-.302.174h-.001c-.085.045-.103.05-.157.075l.278-1.105h-.915l-.771 3.092h.908l.36-1.43.29.908c.035.133.087.257.152.365.082.109.191.165.303.157h1.308c-.003.252.085.488.232.629a.72.72 0 0 0 .53.21c.333 0 .656-.166.957-.486.357-.378.62-.916.79-1.6l.475-1.917h.855l-.793 3.164h.468c.2.001.392-.103.54-.293 0 0 1.397-1.772.73-.923l-.14.592a.874.874 0 0 0-.023.191c0 .129.04.255.112.331.079.075.173.11.267.102h1.713c.325 0-1.733-.334-.553-.293.145.005.497-.005.775-.247l.036-.18h-1.391l.16-.641.008-.036a.95.95 0 0 0 .033-.268.582.582 0 0 0-.102-.36c-.048-.06-.118-.065-.183-.08L24.29.478h-.904L21.62 2.756c-.438 1.02.348-1.457.348-1.457a1.387 1.387 0 0 0 .044-.326.558.558 0 0 0-.123-.375.398.398 0 0 0-.308-.119h-1.174V.476zm-6.21.286h1.893c.34 0 .585.08.735.214.15.135.217.313.217.591 0 .223-.072.432-.24.647-.169.215-.432.43-.79.625l-.1.056.42 1.283h.67c-.012.02-.01.049-.03.069a.293.293 0 0 1-.212.085h-.746c-.084 0-.13-.028-.16-.07a1.614 1.614 0 0 1-.111-.284l-.337-1.053c.064-.028.114-.044.229-.105a2.558 2.558 0 0 0 .326-.188l.002-.003c.274-.2.438-.487.438-.83a.691.691 0 0 0-.164-.483c-.107-.106-.25-.146-.424-.146H13.88zm4.505 0h1.564l-.096.386-.13.304h.055l-.453 1.827c-.159.641-.399 1.124-.72 1.465-.275.29-.55.431-.84.431a.555.555 0 0 1-.414-.158.495.495 0 0 1-.148-.386.53.53 0 0 1 .118-.357.357.357 0 0 1 .298-.157c.123 0 .217.05.3.155a.54.54 0 0 1 .117.359.773.773 0 0 1-.006.087l-.031.258.168-.102c.15-.092.273-.276.373-.53.057-.146.12-.362.193-.653l.63-2.521h-1.257a.699.699 0 0 0-.508.232c-.16.154-.255.407-.258.68 0 .094.01.18.043.257.033.076.087.13.148.149l.1.028.02-.139a.532.532 0 0 1 .15-.32v-.002a.357.357 0 0 1 .27-.12.35.35 0 0 1 .285.142.525.525 0 0 1 .123.372.498.498 0 0 1-.146.397v0a.47.47 0 0 1-.348.134.76.76 0 0 1-.565-.22c-.153-.142-.242-.389-.233-.647 0-.448.117-.769.366-1.02.22-.219.493-.33.832-.33zm1.869 0h1.15c.098 0 .157.028.186.06.03.03.043.065.043.151 0 .06-.01.14-.033.235l-.594 2.494L23.463.763h.302L22.39 2.49l.001-.004-.21.268-1.079 1.357c-.11.145-.256.224-.406.22h-.184l.79-3.161h-1.046zm-5.659 1.044h.49l-.23.92-.047.01.023.076-.38 1.52h-.486zm7.556.948h.263c.075 0 .117.024.138.05.02.025.033.06.033.147a.899.899 0 0 1-.03.209l-.254 1.018 1.466-.16c-.015.017-.735.208-.754.223a.527.527 0 0 1-.33.09h-.679c-.08 0-.127-.022-.148-.043-.02-.023-.03-.04-.03-.105a.44.44 0 0 1 .012-.103zm-4.836 1.182a.687.687 0 0 0-.128.125.893.893 0 0 0-.182.542c-.1-.02-.302-.058-.237-.118v-.003a.64.64 0 0 0 .18-.437z",
 +    style: {
-+      fill: "#00e5ff",
-+      fillOpacity: 1
-+    },
-+    transform: "translate(1.054 .326) scale(.09496)"
-+  }), /*#__PURE__*/React.createElement("g", {
-+    fill: "none",
-+    fillRule: "evenodd",
-+    style: {
-+      fill: "#000"
-+    },
-+    transform: "translate(25.228 .392) scale(.26014)"
-+  }, /*#__PURE__*/React.createElement("g", {
-+    transform: "translate(1 2)"
-+  }, /*#__PURE__*/React.createElement("mask", {
-+    id: "b",
-+    fill: "#fff"
-+  }, /*#__PURE__*/React.createElement("use", {
-+    xlinkHref: "#a"
-+  })), /*#__PURE__*/React.createElement("path", {
-+    d: "M11.71.573C9.47 1.29 8 3.054 7.3 5.865 6.251 10.08 4.952 10.618.72 9.119c1.52 2.807 4.6 3.932 6.58 3.932 1.98 0 7.11-2.757 6.522-7.998A21.678 21.678 0 0 0 11.71.573z",
-+    style: {
++      color: "#000",
++      fontSize: "3.96355px",
++      fontFamily: "Magneto",
++      InkscapeFontSpecification: "Magneto",
++      mixBlendMode: "normal",
 +      fill: "none",
-+      stroke: "#000",
++      fillOpacity: 1,
++      stroke: "#00e5ff",
++      strokeWidth: 0.314838,
++      strokeLinecap: "square",
++      strokeLinejoin: "miter",
++      strokeMiterlimit: 4.5,
++      strokeDasharray: "none",
++      strokeDashoffset: 0,
++      strokeOpacity: 1,
++      paintOrder: "fill markers stroke"
++    }
+   }), /*#__PURE__*/React.createElement("path", {
+-    d: "m60.1039 13.374c.0117-.264.0824-.552.212-.864.1413-.324.3003-.576.477-.756.9306.516 1.7492.774 2.456.774.3887 0 .7008-.078.9364-.234.2474-.156.3711-.366.3711-.63 0-.42-.3181-.756-.9541-1.008l-.9895-.378c-1.4842-.552-2.2262-1.434-2.2262-2.646 0-.432.0765-.816.2296-1.152.165-.348.3888-.642.6715-.882.2944-.252.6419-.444 1.0424-.576s.8481-.198 1.3428-.198c.2238 0 .4712.018.7421.054.2827.036.5654.09.8481.162.2827.06.5536.132.8128.216.2591.084.4829.174.6714.27 0 .3-.0589.612-.1767.936s-.2768.564-.4771.72c-.9305-.42-1.7374-.63-2.4206-.63-.3062 0-.5477.078-.7244.234-.1767.144-.265.336-.265.576 0 .372.2945.666.8834.882l1.0778.396c.7774.276 1.3546.654 1.7315 1.134.377.48.5655 1.038.5655 1.674 0 .852-.3122 1.536-.9365 2.052-.6243.504-1.5195.756-2.6856.756-1.1426 0-2.2145-.294-3.2157-.882z"
++    d: "m14.001.62-.301.691h.978c.37.005.74-.01 1.11.007a.405.405 0 0 1 .371.394.841.841 0 0 1-.334.757 4.172 5.902 0 0 1-.693.374l.461 1.108c.07.207.13.493.321.518.173.011.855.01 1.38.008a.87.87 0 0 0-.013.154c0 .208.064.375.19.5a.64.64 0 0 0 .473.185c.31 0 .61-.153.898-.458.34-.36.591-.871.754-1.534l.498-2.01 1.068-.003-.79 3.164h.325a.69.977 0 0 0 .473-.258l1.01-1.274-.257 1.093a.65.65 0 0 0-.018.146c0 .195.093.293.28.293h.676c.316 0 .504-.146.563-.439h-.804l.205-.83a.548.776 0 0 0 .037-.257c0-.224-.09-.337-.27-.337h-.148L23.48 1.31h2.569c.304 0 .455.14.455.423a.48.68 0 0 1-.186.527 1.59 2.25 0 0 1-.348.297c-.115.076-.185.156-.211.235a.331.331 0 0 0-.004.055c0 .05.026.133.078.246a.39.552 0 0 1 .077.289.566.566 0 0 1-.346.545 1.36 1.36 0 0 1-.574.11h-.099l.595-2.373h-.696l-.7 2.81h1.007a2.68 3.792 0 0 0 .929-.207c.372-.197.558-.497.558-.905a.95 1.345 0 0 0-.149-.659 2.97 2.97 0 0 0 .548-.466c.199-.234.299-.484.3-.752 0-.324-.092-.554-.274-.693-.148-.113-.37-.17-.667-.17h-2.315l.001-.001h-.603l-2.021 2.607.47-1.975a.617.873 0 0 0 .038-.278c0-.237-.11-.354-.33-.354l-1.317.006.001-.006h-1.703c-.355 0-.652.119-.89.358-.272.272-.407.651-.407 1.135 0 .323.092.577.274.762a.848.848 0 0 0 .623.246.552.552 0 0 0 .404-.16c.126-.122.19-.293.19-.513a.717.717 0 0 0-.159-.48.443.443 0 0 0-.348-.177.444.444 0 0 0-.33.15.699.699 0 0 0-.19.407c-.074-.022-.111-.112-.111-.27 0-.226.071-.413.216-.562a.613.613 0 0 1 .45-.207h1.114l-.582 2.334a5.866 5.866 0 0 1-.186.631c-.093.237-.201.393-.325.469a1.108 1.108 0 0 0 .007-.113.73.73 0 0 0-.15-.463.472.472 0 0 0-.278-.183V3.98h-.029a.455.455 0 0 0-.154.006l-1.335.053-.348-1.066a2.005 2.836 0 0 0 .803-.785c.2-.292.245-.782.077-1.119-.187-.355-.528-.423-.82-.444C15.386.616 14.694.624 14 .62zm.7 1.044-.699 2.81h.696l.707-2.81z",
++    style: {
++      color: "#000",
++      fontSize: "3.96355px",
++      fontFamily: "Magneto",
++      InkscapeFontSpecification: "Magneto",
++      mixBlendMode: "normal",
++      fill: "#000f33",
++      fillOpacity: 1,
++      stroke: "none",
++      strokeWidth: 0,
++      strokeLinecap: "square",
++      strokeLinejoin: "miter",
++      strokeMiterlimit: 4.5,
++      strokeDasharray: "none",
 +      strokeOpacity: 1
 +    }
 +  }), /*#__PURE__*/React.createElement("g", {
-+    fill: "#00e5ff",
-+    mask: "url(#b)"
-+  }, /*#__PURE__*/React.createElement("path", {
-+    d: "M0 0h24v24H0z",
 +    style: {
-+      fillOpacity: 1,
 +      fill: "#00e5ff",
-+      stroke: "none"
-+    },
-+    transform: "translate(-3 -4)"
-+  }))), /*#__PURE__*/React.createElement("mask", {
-+    id: "d",
-+    fill: "#fff"
-+  }, /*#__PURE__*/React.createElement("use", {
-+    xlinkHref: "#c"
-+  })), /*#__PURE__*/React.createElement("path", {
-+    d: "m14.18 12.77 5.53 5.54a.99.99 0 1 1-1.4 1.4l-5.53-5.539a7.92 7.92 0 1 1 1.399-1.401zm-6.26 1.09a5.94 5.94 0 1 0 0-11.88 5.94 5.94 0 0 0 0 11.88z",
-+    style: {
-+      fill: "#000",
-+      fillRule: "nonzero"
++      fillOpacity: 1,
++      stroke: "none",
++      strokeWidth: 1.00013,
++      strokeDasharray: "none"
 +    }
-+  }), /*#__PURE__*/React.createElement("g", {
-+    fill: "#000fff",
-+    mask: "url(#d)"
 +  }, /*#__PURE__*/React.createElement("path", {
-+    d: "M-2-2h24v24H-2z"
-+  })))));
++    d: "M48 53.335V2.815a9.626 9.626 0 0 1 1.878-.167c.736 0 1.417.055 2.042.166v50.521a11.8 11.8 0 0 1-2.042.166A9.583 9.583 0 0 1 48 53.335z",
++    style: {
++      fill: "#00e5ff",
++      fillOpacity: 1,
++      stroke: "none",
++      strokeWidth: 1.00013,
++      strokeDasharray: "none"
++    },
++    transform: "translate(1.688 -.07) scale(.10815)"
+   }), /*#__PURE__*/React.createElement("path", {
+-    d: "m75.5892 10.296h-4.8765c.0353.66.1826 1.182.4417 1.566.2709.372.7362.558 1.3958.558.6832 0 1.4665-.204 2.35-.612.3416.36.5595.834.6537 1.422-.9423.684-2.0731 1.026-3.3924 1.026-1.2486 0-2.1968-.39-2.8447-1.17-.636-.792-.9541-1.962-.9541-3.51 0-.72.0825-1.368.2474-1.944.1649-.588.4064-1.086.7244-1.494.318-.42.7068-.744 1.1662-.972.4593-.228.9835-.342 1.5725-.342.6007 0 1.1308.096 1.5902.288.4593.18.8481.444 1.1661.792.318.336.5536.738.7067 1.206.1649.468.2474.978.2474 1.53 0 .3-.0177.588-.053.864-.0353.264-.0825.528-.1414.792zm-3.41-3.78c-.9188 0-1.4135.708-1.4842 2.124h2.933v-.216c0-.576-.1178-1.038-.3534-1.386-.2355-.348-.6007-.522-1.0954-.522z"
++    d: "M47.588-2.706c.036-.81.257-1.694.662-2.65.442-.995.94-1.768 1.491-2.32 2.908 1.583 5.466 2.374 7.675 2.374 1.214 0 2.19-.24 2.926-.717.773-.48 1.16-1.123 1.16-1.933 0-1.288-.994-2.32-2.982-3.092l-3.092-1.16c-4.638-1.693-6.957-4.398-6.957-8.116 0-1.325.24-2.503.718-3.534a7.992 7.992 0 0 1 2.098-2.705c.92-.773 2.006-1.362 3.258-1.767 1.251-.405 2.65-.607 4.196-.607.7 0 1.472.055 2.32.165.882.11 1.766.276 2.65.497.883.184 1.73.405 2.54.663s1.508.533 2.097.828c0 .92-.184 1.877-.552 2.87-.368.995-.865 1.73-1.49 2.21-2.909-1.29-5.43-1.933-7.565-1.933-.957 0-1.712.24-2.264.718-.552.442-.828 1.03-.828 1.767 0 1.14.92 2.043 2.761 2.705l3.368 1.215c2.43.847 4.233 2.006 5.411 3.479 1.178 1.473 1.767 3.184 1.767 5.135 0 2.613-.976 4.71-2.927 6.294C64.08-.774 61.281 0 57.637 0c-3.57 0-6.92-.903-10.049-2.707z",
++    style: {
++      fill: "#00e5ff",
++      fillOpacity: 1,
++      stroke: "none",
++      strokeWidth: 1.00013,
++      strokeDasharray: "none"
++    },
++    transform: "translate(-1 4.916) scale(.10815)"
+   }), /*#__PURE__*/React.createElement("path", {
+-    d: "m78.3287 16.524v-16.4699996c.1767-.0360003.3769-.0540004.6007-.0540004.2356 0 .4535.0180001.6538.0540004v16.4699996c-.2003.036-.4182.054-.6538.054-.2238 0-.424-.018-.6007-.054z"
++    d: "M21.106-27.33c.11.553.165 1.087.165 1.6 0 .48-.055.996-.165 1.548l-7.013-.055v18.55c0 1.547.718 2.32 2.154 2.32h4.196a4.89 4.89 0 0 1 .387 1.877c0 .626-.037 1.012-.11 1.16-1.694.22-3.443.33-5.246.33-3.57 0-5.356-1.527-5.356-4.582v-19.654l-3.92.055a7.91 7.91 0 0 1-.166-1.547c0-.515.055-1.05.166-1.601l3.92.055v-5.798c0-.994.147-1.693.442-2.098.294-.442.865-.662 1.71-.662h1.492l.33.33v8.283z",
++    style: {
++      fill: "#00e5ff",
++      fillOpacity: 1,
++      stroke: "none",
++      strokeWidth: 1.00013,
++      strokeDasharray: "none"
++    },
++    transform: "translate(1.468 4.894) scale(.10815)"
+   }))));
  }
 \ No newline at end of file
