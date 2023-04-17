@@ -8,7 +8,7 @@ import {
   id_to_mdx,
 } from "../utility"
 import { uptime } from "process"
-const {MAP_SIZE} = require("dotenv").config().parsed
+const {MAP_SIZE,DOCS_BASE} = require("dotenv").config().parsed
 
 export const rem: Rem_DB = rem_json as Rem_DB
 
@@ -436,8 +436,9 @@ let num_child_slugs = 0
 ;(function loop_dirs_to_make_sure_path_maps_set_up_first() {
   root_main_topic_ids.forEach((id: string, i: number) => {
     const doc_slug = id_to_key_slug(id)
-    const dirpath = `/docs/${doc_slug}`
+    const dirpath = `/${DOCS_BASE}/${doc_slug}`
     path_map.set(id, dirpath)
+    // console.log(dirpath)
     num_paths_mapped_to_id += 1
     LOG_CLI_PROGRESS(
       num_paths_mapped_to_id,

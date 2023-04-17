@@ -12,6 +12,7 @@ import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
 import { uptime } from "process"
 import { encode } from "he"
+const { DOCS_BASE } = require("dotenv").config().parsed
 
 // import Cloze from "../components/Cloze"
 
@@ -1030,8 +1031,16 @@ export function id_to_tooltop(id: string) {
   const k_code = k?.match(/^(\`\`\`)/gm)?.length
   const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-  const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-  const v_link = v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+  const k_link =
+    DOCS_BASE === "docs"
+      ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+      : k?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
+          ?.length
+  const v_link =
+    DOCS_BASE === "docs"
+      ? v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+      : v?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
+          ?.length
 
   const k_newLine = k?.match(/(\n)+/g)?.length
   const v_newLine = v?.match(/(\n)+/g)?.length
@@ -1112,7 +1121,12 @@ export function id_to_ref_mdx(id: string) {
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-      const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+      const k_link =
+        DOCS_BASE === "docs"
+          ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+          : k?.match(
+              RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm")
+            )?.length
 
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
       const v_newLine = v?.match(/(\n)+/g)?.length

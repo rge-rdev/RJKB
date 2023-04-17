@@ -33,6 +33,7 @@ const {
   MAP_SIZE,
   TS_PUT_REQS,
   TS_PUT_DELAY,
+  DOCS_BASE,
 } = require("dotenv").config().parsed
 
 let debug_keywords: any[] = []
@@ -101,9 +102,12 @@ function generate_mdx_page_from_id(
   const value_mdx_code = value_mdx?.match(
     /^([ ]*export |[ ]*import )/gm
   )?.length
-  const value_mdx_link = value_mdx?.match(
-    /(]\((\/docs|\.)\/[a-zA-Z-\/]*)\)/gm
-  )?.length
+  const value_mdx_link =
+    DOCS_BASE === "docs"
+      ? value_mdx?.match(/(]\((\/docs|\.)\/[a-zA-Z-\/]*)\)/gm)?.length
+      : value_mdx?.match(
+          RegExp(`(]\((\/${DOCS_BASE}|\.)\/[a-zA-Z-\/]*)\)`, "gm")
+        )?.length
   if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
@@ -210,8 +214,16 @@ function generate_mdx_page_from_id(
     const k_code = k?.match(/^(\`\`\`)/gm)?.length
     const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-    const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-    const v_link = v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+    const k_link =
+      DOCS_BASE === "docs"
+        ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+        : k?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
+            ?.length
+    const v_link =
+      DOCS_BASE === "docs"
+        ? v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+        : v?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
+            ?.length
 
     // k = k?.replace(/(?<=[0-9a-zA-Z-_ ]+)(\`\`\`)/, "```")
     // k = k?.replace(/^([a-zA-Z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
@@ -307,7 +319,12 @@ function generate_mdx_page_from_id(
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-      const k_link = k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+      const k_link =
+        DOCS_BASE === "docs"
+          ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
+          : k?.match(
+              RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm")
+            )?.length
 
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
       const v_newLine = v?.match(/(\n)+/g)?.length
@@ -519,12 +536,12 @@ Any.Typescript<angleBracketNotation>
 \`\`\`
 - [link to \`src/pages/intro\`](/intro)
 \`\`\`
-- [link to \`src/pages/redirect\`, which redirects to /docs/react](/redirect)
+- [link to \`src/pages/redirect\`, which redirects to /${DOCS_BASE}/react](/redirect)
 
-- [link to \`/docs/intro\`](/docs/intro)
-- [link to \`/docs/JS/JS-Definition\`](/docs/JS/JS-Definition)
+- [link to \`/${DOCS_BASE}/intro\`](/${DOCS_BASE}/intro)
+- [link to \`/${DOCS_BASE}/JS/JS-Definition\`](/${DOCS_BASE}/JS/JS-Definition)
 
-## [<pre><code>\</code><code>xxx</code></pre>](/docs/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Character-Escape/Unicode-other-escape/xxx)
+## [<pre><code>\</code><code>xxx</code></pre>](/${DOCS_BASE}/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Character-Escape/Unicode-other-escape/xxx)
 
 ## Load from \`docusaurus.png\` from \`@site/static/img/docusaurus.png\`
 
@@ -874,7 +891,7 @@ const init_mdx_map_time = uptime()
 ;(function () {
   root_main_topic_ids.forEach(async (id: string, i: number) => {
     const doc_slug = id_to_key_slug(id)
-    const dirpath = `docs/${doc_slug}`
+    const dirpath = `docs/${doc_slug}` // LEAVE /docs filesys folder same
     const filepath = `docs/${doc_slug}/${doc_slug}.mdx`
     if (!doc_slug) return
     try {

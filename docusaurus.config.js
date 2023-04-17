@@ -6,6 +6,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 require("dotenv").config()
 const BrotliPlugin = require("brotli-webpack-plugin")
+const CompressionPlugin = require("compression-webpack-plugin")
 // const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin")
 
 // const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
@@ -63,13 +64,31 @@ function RJ_WEBPACK_PLUGIN(context, options) {
           }
         : {
             plugins: [
-              new BrotliPlugin({
-                asset: "[path].br[query]",
+              // does not compress .xml sitemap/rss/etc - does not compress .json
+              // new BrotliPlugin({
+              //   asset: "[path].br[query]",
+              //   test: /\.(js|css|html|svg|woff|woff2|xml|jpg|png|gif|webp|txt|json)$/,
+              //   threshold: 5120,
+              //   // threshold: 1280, //OVERKILL@1.3KB
+              //   minRatio: 0.8,
+              //   // deleteOriginalAssets: true,
+              // }),
+              new CompressionPlugin({
+                filename: "[path][base].gz",
+                algorithm: "gzip",
                 test: /\.(js|css|html|svg|woff|woff2|xml|jpg|png|gif|webp|txt|json)$/,
                 threshold: 5120,
-                // threshold: 1280, //OVERKILL@1.3KB
                 minRatio: 0.8,
-                // deleteOriginalAssets: true,
+              }),
+              new CompressionPlugin({
+                filename: "[path][base].br",
+                algorithm: "brotliCompress",
+                test: /\.(js|css|html|svg|woff|woff2|xml|jpg|png|gif|webp|txt|json)$/,
+                compressionOptions: {
+                  level: 11,
+                },
+                threshold: 5120,
+                minRatio: 0.8,
               }),
               // WTF - the HTML mangled CSS DONT match CSS MANGLES?! Can't escape the crappy Infima trap!
               // new MangleCssClassPlugin({
@@ -286,7 +305,7 @@ const config = {
       ({
         docs: {
           // routeBasePath: '/',
-          // routeBasePath: '/wiki',
+          routeBasePath: "/wiki",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -378,7 +397,7 @@ const config = {
             type: "doc",
             docId: "JS/JS",
             position: "left",
-            label: "Docs",
+            label: "Wiki",
           },
           { to: "/blog", label: "Blog", position: "left" },
           //RTL
