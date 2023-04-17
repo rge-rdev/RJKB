@@ -7,7 +7,9 @@
 
 # static folder
 /public
-# static
+/static
+/docs
+/blog
 
 # testing
 src/data/rem.json
@@ -17,7 +19,6 @@ bfg-1.14.0.jar
 # production
 /build
 /build backups
-# /docs
 /typesense
 
 # Generated files
