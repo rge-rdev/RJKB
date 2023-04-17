@@ -1,41 +1,29 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+JSON to Static MDX generator + Docusaurus 2.4.0
+
+## For code demo only
+
+This public repo is intended to showcase the code for static MDX-based documentation site generator only - and not for deployment of website. Therefore, key data such as the raw JSON data, MDX files & build output will not be published. In addition, a number of key sensitive ENV variables have been omitted for security, which are required for the node.js scripts & to ensure docker container deployment for the site-scraper & typesense server.
 
 ### Installation
 
 ```
-$ pnpm
+$ yarn
 ```
 
-### Local Development
+### To generate initial docs
 
 ```
-$ pnpm run docs
+$ yarn id
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command generates static mdx & tsx to /docs & /static/preview.
 
 ### Build
 
 ```
-$ yarn build
+$ yarn db
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This command combines `docusaurus build` with initial Node heap size check, datetime log & node_modules patch - ending with build serve to localhost.

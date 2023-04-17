@@ -36,8 +36,7 @@ function getStaticPreviewTSX(id: string) {
     PreviewJSX &&
     `import React from "react"
 import CodeBlock from "@theme/CodeBlock"
-import Image from "@theme/IdealImage"
-import { Link, Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Tooltip } from "react-tooltip"
 export default function Preview${id}(){
   return (${PreviewJSX})
