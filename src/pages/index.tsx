@@ -1,4 +1,4 @@
-import React from "react"
+import React, { lazy, Suspense } from "react"
 //@ts-ignore
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 //@ts-ignore
@@ -14,10 +14,7 @@ export default function Home(): JSX.Element {
       description="COPYRIGHT ROGER JIANG 2023 RJ's Fullstack Knowledgebase & Portfolio Demo."
     >
       <HomeHeader />
-
-      <main id="features">
-        <HomepageFeatures />
-      </main>
+      <HomepageFeatures />
     </Layout>
   )
 }

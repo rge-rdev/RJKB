@@ -166,7 +166,7 @@ function Feature({
       id={title}
       className="col col--4"
     >
-      <div className="not:hover:delay-1000 hover:from-neutral-1000 m-1 flex transform-gpu justify-center rounded-tl-3xl rounded-br-3xl bg-gradient-to-t from-neutral-300 to-cyan-300 transition-all duration-1000 hover:rounded-full hover:from-neutral-100 hover:to-cyan-500 hover:opacity-90 dark:bg-gradient-to-t dark:from-sky-500 dark:to-emerald-900 hover:dark:from-sky-300 hover:dark:to-sky-900">
+      <div className="not:hover:delay-1000 hover:from-neutral-1000 m-1 flex transform-gpu justify-center rounded-br-3xl rounded-tl-3xl bg-gradient-to-t from-neutral-300 to-cyan-300 transition-all duration-1000 hover:rounded-full hover:from-neutral-100 hover:to-cyan-500 hover:opacity-90 dark:bg-gradient-to-t dark:from-sky-500 dark:to-emerald-900 hover:dark:from-sky-300 hover:dark:to-sky-900">
         {Svg && (
           <Svg
             className="logo h-48 w-48 items-center"
@@ -246,7 +246,10 @@ function Feature({
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className="flex w-full items-center bg-prism-light p-8 dark:bg-prism-dark">
+    <main
+      id="features"
+      className="flex w-full items-center bg-prism-light p-8 dark:bg-prism-dark"
+    >
       <div className="container">
         <div className="my-0 flex w-fit flex-wrap justify-center">
           {FeatureList.map((props, i) => (
@@ -257,6 +260,6 @@ export default function HomepageFeatures(): JSX.Element {
           ))}
         </div>
       </div>
-    </section>
+    </main>
   )
 }

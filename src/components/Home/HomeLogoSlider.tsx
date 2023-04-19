@@ -12,13 +12,10 @@ import {
   IconJavascriptBlackSVG,
   IconNodeJSBlackSVG,
   IconReactBlackSVG,
-  IconReactColorSVG,
   IconReactLiveBlackSVG,
   IconReduxOfficialBlackSVG,
   IconRjnoteCodeEditorColorSVG,
-  IconRustBlackSVG,
   IconTailwindcssBlackSVG,
-  IconTailwindcssColorSVG,
   IconTypescriptBlackSVG,
   IconVSCodeColorSVG,
   IconWebassemblyBlackSVG,
@@ -36,7 +33,6 @@ import {
   LogoTextTypescriptBlackSVG,
   LogoTSNodeGreySVG,
   LogoTypesenseBlackSVG,
-  LogoTypesenseColorSVG,
 } from "../../../static/img/svg"
 
 const top = [
