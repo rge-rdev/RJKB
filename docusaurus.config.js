@@ -204,15 +204,44 @@ const config = {
     RJ_TAILWIND_PLUGIN,
     // RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN,
     "docusaurus-plugin-sass",
+    // [
+    //   "@docusaurus/plugin-ideal-image",
+    //   /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+    //   {
+    //     quality: 80,
+    //     max: 1030, // max resized image's size.
+    //     min: 640, // min resized image's size. if original is lower, use that size.
+    //     steps: 2, // the max number of images generated between min and max (inclusive)
+    //     disableInDev: false,
+    //   },
+    // ],
+    // PWA
     [
-      "@docusaurus/plugin-ideal-image",
-      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      "@docusaurus/plugin-pwa",
       {
-        quality: 80,
-        max: 1030, // max resized image's size.
-        min: 640, // min resized image's size. if original is lower, use that size.
-        steps: 2, // the max number of images generated between min and max (inclusive)
-        disableInDev: false,
+        debug: false,
+        offlineModeActivationStrategies: [
+          "appInstalled",
+          "standalone",
+          "queryString",
+        ],
+        pwaHead: [
+          {
+            tagName: "link",
+            rel: "icon",
+            href: "/img/RJ.webp",
+          },
+          {
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json", // your PWA manifest
+          },
+          {
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(14, 118, 110)",
+          },
+        ],
       },
     ],
     // "plugin-image-zoom",
