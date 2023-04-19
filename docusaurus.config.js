@@ -516,10 +516,34 @@ const config = {
         },
 
         // Optional: Typesense search parameters: https://typesense.org/d ocs/0.24.0/api/search.html#search-parameters
-        typesenseSearchParameters: {},
+        typesenseSearchParameters: {
+          collection: "rjkb",
+          query_by:
+            "hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3,content,tags",
+          query_by_weights: "32,16,8,4,2,1",
+          prioritize_token_position: true,
+          group_limit: 3,
+          include_fields:
+            "hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3,content,anchor,url,type,id",
+          highlight_full_fields:
+            "hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3,content",
+          group_by: "url",
+          sort_by: "_text_match:desc",
+          // group_by: "url,tags",
+          //prettier-ignore
+          // filter_by: "language:=en && docusaurus_tag:=[default,docs-default-current]",
+          // facet_by: "tags",
+          // snippet_threshold: 30, // default
+          //typo
+          // min_len_1typo: 2,
+          // min_len_2typo: 5,
+          //caching
+          use_cache: true,
+          cache_ttl: 3600, //  1hr
+        },
 
         // Optional
-        contextualSearch: true,
+        contextualSearch: false,
       },
       //! Add Image Zoom Plugin here
       //! buggy - requires 2 clicks - not pretty - bad plugin! REMOVED!
