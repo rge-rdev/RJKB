@@ -5,7 +5,7 @@ const TerserPlugin = require("terser-webpack-plugin")
 const lightCodeTheme = require("prism-react-renderer/themes/github")
 const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 require("dotenv").config()
-const BrotliPlugin = require("brotli-webpack-plugin")
+// const BrotliPlugin = require("brotli-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
 // const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin")
 
@@ -380,7 +380,7 @@ const config = {
         },
         // ADDED sitemap-plugin
         sitemap: {
-          changefreq: "weekly",
+          changefreq: "daily",
           priority: 0.5,
           ignorePatterns: ["/tags/**"],
           filename: "sitemap.xml",
@@ -393,6 +393,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Global Metadata
+      metadata: [
+        {
+          name: "keywords",
+          content:
+            "Fullstack, React, JS, dev, wiki, blog, code, examples, tutorial, tips, demo",
+        },
+      ],
       // Replace with your project's social card
       image: "img/DrawRJKBSocialCard.webp",
       colorMode: {
@@ -418,7 +426,6 @@ const config = {
           srcDark: "img/LogoTextRJKBDarkV2.svg",
           height: 32,
           width: 84,
-          // src: "img/LogoTextRJKB.svg",
         },
         items: [
           //LTR

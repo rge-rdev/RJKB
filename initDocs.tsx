@@ -144,9 +144,17 @@ function generate_mdx_page_from_id(
     //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
   )
   //? keep strings with identical characters but different cAsEs
+  const default_keywords = [
+    "define",
+    "definition",
+    "ELI5",
+    "explain",
+    "what is",
+    "How to",
+  ]
 
   let keywords = _.uniq(
-    ["", ...tags, ...alias_slugs].filter(
+    ["", ...tags, ...alias_slugs, ...default_keywords].filter(
       (s) => typeof s !== undefined && s && s.length > 0
     )
   )
