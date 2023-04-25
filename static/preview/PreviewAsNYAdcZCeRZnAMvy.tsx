@@ -1,0 +1,22 @@
+import React from "react"
+import CodeBlock from "@theme/CodeBlock"
+import { Link } from "react-router-dom"
+import { Tooltip } from "react-tooltip"
+export default function PreviewAsNYAdcZCeRZnAMvy(){
+  return (<Tooltip
+  id="preview__AsNYAdcZCeRZnAMvy"
+  place="top"
+  clickable
+>
+  <small>
+    <dfn>
+      <dt><code className="react-tooltip__dt"><span>Role</span></code></dt>
+      <dd>
+        <blockquote className="react-tooltip__dd"><span><span>purpose&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function/Entity"><span>Entity</span></Link><span>;&#x20;</span><em>how&#x20;it&#x20;is&#x20;used&#x20;</em><span>&#x20;</span></span></blockquote>
+      </dd>
+    </dfn>
+    <cite className="react-tooltip__ref-header">Cited 4 times</cite>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Specialized&#x20;Function</span><span>&nbsp;↔&nbsp;</span><b>single-purpose</b><span>&#x20;version&#x20;of&#x20;Ordinary&#x20;Function&#x20;with&#x20;</span>special&#x20;<Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function/Role"><span>Role</span></Link>,<span>&#x20;supports&#x20;</span>more&#x20;<b>features</b>&#x20;&#x26;&#x20;nicer&#x20;<Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function/Role"><span>Role</span></Link><span>&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/class"><code>class</code></Link><span>&#x20;is&#x20;to&#x20;be&#x20;a&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><span>Constructor&#x20;Function</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function/Role"><span>Role</span></Link><span>&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Slot/Method"><span>Method</span></Link><span>&#x20;is&#x20;to&#x20;be&#x20;a&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Slot/Method"><span>Method</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function/Role"><span>Role</span></Link><span>&#x20;of&#x20;Arrow&#x20;Function&#x20;is&#x20;to&#x20;be&#x20;a&#x20;Real&#x20;Function?&#x20;</span></cite></li></ol>
+    
+    </small></Tooltip>)
+}

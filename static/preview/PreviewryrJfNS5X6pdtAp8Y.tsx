@@ -1,0 +1,22 @@
+import React from "react"
+import CodeBlock from "@theme/CodeBlock"
+import { Link } from "react-router-dom"
+import { Tooltip } from "react-tooltip"
+export default function PreviewryrJfNS5X6pdtAp8Y(){
+  return (<Tooltip
+  id="preview__ryrJfNS5X6pdtAp8Y"
+  place="top"
+  clickable
+>
+  <small>
+    <dfn>
+      <dt><code className="react-tooltip__dt"><span>DOM&#x20;Traversal</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Traverse</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Traversing</span></code></dt>
+      <dd>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;walk&#x20;through&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>;&#x20;to&#x20;select&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node"><code>Node</code></Link><span>&#x20;relative&#x20;to&#x20;each&#x20;other&#x20;</span></span></blockquote>
+      </dd>
+    </dfn>
+    <cite className="react-tooltip__ref-header">Cited 5 times</cite>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>equivalent&#x20;to&#x20;sideways&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Traversal"><span>DOM&#x20;Traversal</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Definition/VDOM"><span>VDOM</span></Link><span>&#x20;designed&#x20;for&#x20;</span><b>more&#x20;efficient</b><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Traversal"><span>DOM&#x20;Traversal</span></Link><span>,&#x20;change&#x20;detection&#x20;&#x26;&#x20;DOM&#x20;mutation</span></cite></li><li><cite className="react-tooltip__ref-list"><b><em>to&#x20;</em></b><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Traversal"><code>Traverse</code></Link><b><em>&#x20;down&#x20;</em></b><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Child"><span>Child</span></Link><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node"><code>Nodes</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><b><em>to&#x20;</em></b><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Traversal"><code>Traverse</code></Link><b><em>&#x20;up&#x20;</em></b><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Parent"><span>Parent</span></Link><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node"><code>Nodes</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><b><em>to&#x20;</em></b><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Traversal"><code>Traverse</code></Link><b><em>&#x20;sideways&#x20;</em></b><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Sibling"><span>Sibling</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node"><code>Nodes</code></Link><span>&#x20;</span></cite></li></ol>
+    
+    </small></Tooltip>)
+}
