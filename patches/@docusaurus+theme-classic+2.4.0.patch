@@ -1,0 +1,27 @@
+diff --git a/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Layout/index.js b/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Layout/index.js
+index 270910e..a8cdff8 100644
+--- a/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Layout/index.js
++++ b/node_modules/@docusaurus/theme-classic/lib/theme/Footer/Layout/index.js
+@@ -11,7 +11,9 @@ export default function FooterLayout({style, links, logo, copyright}) {
+     <footer
+       className={clsx('footer', {
+         'footer--dark': style === 'dark',
+-      })}>
++      })}
++      style={{height:"210px", width:"100%"}}
++      >
+       <div className="container container-fluid">
+         {links}
+         {(logo || copyright) && (
+diff --git a/node_modules/@docusaurus/theme-classic/src/theme/Footer/Layout/index.tsx b/node_modules/@docusaurus/theme-classic/src/theme/Footer/Layout/index.tsx
+index bb22f31..e9f1164 100644
+--- a/node_modules/@docusaurus/theme-classic/src/theme/Footer/Layout/index.tsx
++++ b/node_modules/@docusaurus/theme-classic/src/theme/Footer/Layout/index.tsx
+@@ -17,6 +17,7 @@ export default function FooterLayout({
+ }: Props): JSX.Element {
+   return (
+     <footer
++      style={{height:"210px", width:"100%"}}
+       className={clsx('footer', {
+         'footer--dark': style === 'dark',
+       })}>
