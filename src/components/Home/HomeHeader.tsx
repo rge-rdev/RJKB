@@ -53,14 +53,14 @@ export default function HomepageHeader() {
   }, [scrollHeader])
 
   return (
-    <header className="hero--primary relative mt-1 flex flex-col items-center overflow-hidden bg-green-700 bg-circuit-light text-center text-[color:var(--ifm-hero-text-color)] bg-blend-hard-light dark:bg-teal-700">
+    <header className="relative mt-1 flex flex-col items-center overflow-hidden bg-green-700 bg-circuit-light text-center bg-blend-hard-light dark:bg-teal-700">
       <div
         className="flex aspect-auto flex-col items-center justify-center"
         style={{ height: "384px", width: "100%" }}
       >
         <h1
           id="test"
-          className={`hero__title mb-5 mt-2 w-fit  max-w-screen-sm rounded-full font-extralight text-cyan-900 shadow-lg dark:text-cyan-100 ${
+          className={`mb-5 mt-2 w-fit max-w-screen-sm rounded-full text-5xl font-extralight text-cyan-900 shadow-lg dark:text-cyan-100 ${
             scrollHeader
               ? "fixed top-0 z-[250] animate-fade-in-slow-75 opacity-75"
               : "fixed top-0 animate-fade-out-fast-75 opacity-0"
@@ -70,7 +70,7 @@ export default function HomepageHeader() {
           RJKB
         </h1>
         <h1
-          className={`hero__title mt-2 mb-5 max-w-screen-sm rounded-full text-cyan-900 shadow-lg dark:text-cyan-100`}
+          className="mb-5 mt-2 max-w-screen-sm rounded-full text-5xl text-cyan-900 shadow-lg dark:text-cyan-100"
           style={{ height: "64px", width: "250px" }}
         >
           {siteConfig.title}
@@ -87,7 +87,7 @@ export default function HomepageHeader() {
         </h2>
         <h2
           className={`mb-10 flex flex-col items-center justify-center rounded-full px-10 font-light italic text-cyan-200 shadow-lg dark:text-cyan-300 ${
-            scrollTagline ? "animate-fade-out-fast opacity-0" : ""
+            scrollTagline ? "animate-fade-out-fast-75 opacity-0" : ""
           }`}
           style={{ height: "30px", width: "355px" }}
         >

@@ -161,15 +161,22 @@ function Feature({
   config,
   lazy,
 }: FeatureItem) {
+  const img_src = useBaseUrl(img_url)
   return (
     <div
       id={title}
-      className="col col--4"
+      className="ml-0 box-border w-full flex-[0_0_100%] px-4 py-0 md:max-w-[50%] lg:max-w-[33.3333%]"
     >
-      <div className="not:hover:delay-1000 hover:from-neutral-1000 m-1 flex transform-gpu justify-center rounded-br-3xl rounded-tl-3xl bg-gradient-to-t from-neutral-300 to-cyan-300 transition-all duration-1000 hover:rounded-full hover:from-neutral-100 hover:to-cyan-500 hover:opacity-90 dark:bg-gradient-to-t dark:from-sky-500 dark:to-emerald-900 hover:dark:from-sky-300 hover:dark:to-sky-900">
+      <div
+        className={`group m-1 flex justify-center ${
+          img_url
+            ? "not:hover:delay-1000 hover:from-neutral-1000 transform-gpu rounded-br-2xl rounded-tl-2xl bg-gradient-to-t from-neutral-300 to-cyan-300 transition-all duration-1000 hover:rounded-3xl hover:from-neutral-100 hover:to-cyan-500 hover:opacity-90 dark:bg-gradient-to-t dark:from-sky-500 dark:to-emerald-900 hover:dark:from-sky-300 hover:dark:to-sky-900"
+            : ""
+        }`}
+      >
         {Svg && (
           <Svg
-            className="logo h-48 w-48 items-center"
+            className="h-48 w-48 items-center"
             role="img"
           />
         )}
@@ -178,14 +185,14 @@ function Feature({
             loading={`${lazy ? "lazy" : "eager"}`}
             alt={alt}
             src={img_str}
-            className="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module h-48 w-48 items-center"
+            className="h-48 w-48 items-center"
           />
         )}
         {img_url && !vid_path && (
           <img
             loading={`${lazy ? "lazy" : "eager"}`}
             alt={alt}
-            src={useBaseUrl(img_url)}
+            src={img_src}
             className={`items-center ${config?.h ? "h-64" : "h-48 w-48"}`}
           />
         )}
@@ -195,6 +202,7 @@ function Feature({
             src={vid_path}
             poster={poster}
             w={350}
+            className="max-w-full"
           />
         )}
         {/*
@@ -203,17 +211,19 @@ function Feature({
         {img_url && vid_path && (
           <div>
             <div
-              className={`${config?.inline ? "inline-flex self-center" : ""}`}
+              className={`${config?.inline ? "inline-flex " : ""}text-center`}
             >
               <img
                 loading={`${lazy ? "lazy" : "eager"}`}
                 alt={alt}
-                src={useBaseUrl(img_url)}
-                className="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module h-36 w-36 items-center"
+                src={img_src}
+                className="h-36 w-36 items-center"
               />
             </div>
             <div
-              className={`${config?.inline ? "inline-flex self-center" : ""}`}
+              className={`${
+                config?.inline ? "inline-flex " : ""
+              }text-center px-2`}
             >
               <Video
                 title={title}
@@ -221,14 +231,14 @@ function Feature({
                 poster={poster}
                 w={config?.w || 350}
                 h={config?.h}
+                className="max-w-full"
               />
             </div>
           </div>
         )}
       </div>
-      {/* mix-blend-luminosity  hover:mix-blend-plus-lighter */}
-      <div className="padding-horiz--md text-center">
-        <h3 className="rounded-t-full font-extrabold text-slate-900 shadow-inner shadow-teal-400 dark:text-cyan-100">
+      <div className="group px-4 text-center">
+        <h3 className="transform-gpu rounded-t-full bg-gradient-to-tr from-cyan-50/75 to-cyan-300/75 font-extrabold text-slate-900 shadow-inner shadow-teal-400 duration-1000 group-hover:to-cyan-50 dark:from-cyan-800/75 dark:text-cyan-100 dark:group-hover:to-emerald-700">
           <span
             className="text-neutral-900 dark:text-neutral-50"
             id={_.kebabCase(title)}
@@ -236,7 +246,7 @@ function Feature({
             {title}
           </span>
         </h3>
-        <p className="rounded-b-full font-bold text-zinc-900 dark:text-cyan-100">
+        <p className="transform-gpu rounded-b-2xl bg-gradient-to-br from-teal-200/25 to-emerald-300/50 font-bold text-zinc-900 duration-1000 group-hover:rounded-b-3xl group-hover:rounded-t-xl group-hover:from-teal-50 group-hover:to-emerald-200/75 dark:from-teal-500/25 dark:text-cyan-100 dark:group-hover:from-teal-500/75 dark:group-hover:to-emerald-700/75">
           {description}
         </p>
       </div>
@@ -248,10 +258,12 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <main
       id="features"
-      className="flex w-full items-center bg-prism-light p-8 dark:bg-prism-dark"
+      className="flex w-full items-center bg-prism-light p-1 dark:bg-prism-dark sm:p-2 md:p-4 lg:p-6 xl:p-8"
     >
-      <div className="container">
-        <div className="my-0 flex w-fit flex-wrap justify-center">
+      {/* container */}
+      <div className="mx-auto my-0 box-border w-full max-w-screen-xl px-4 py-0 2xl:max-w-screen-2xl">
+        {/* row */}
+        <div className="my-0 ml-[-1rem] mr-[-1rem] flex flex-wrap">
           {FeatureList.map((props, i) => (
             <Feature
               key={props.title}
