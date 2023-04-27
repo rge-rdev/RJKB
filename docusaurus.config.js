@@ -3,43 +3,21 @@
 const TerserPlugin = require("terser-webpack-plugin")
 
 require("dotenv").config()
-// const BrotliPlugin = require("brotli-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
-// const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin")
 
-// const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-// const webpack = require("webpack")
-
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 
 //@ts-ignore
 /** @type {import('@docusaurus/types').Plugin} */
 
-/*
-function RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN(context, options) {
+/**
+ * ✅ No longer crashes for full-site build!
+ *
+ */
+function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
   return {
-    name: "rj-fix-webpack-node-polyfill",
-    configureWebpack(config, isServer, utils, content) {
-      return {
-        // plugins: [new NodePolyfillPlugin({ includeAliases: ["process"] })], // add "os" if webpack suddenly complains about that too...
-        plugins: [new NodePolyfillPlugin()],
-        // plugins: [
-        //   new webpack.ProvidePlugin({
-        //     process: "process/browser",
-        //   }),
-        // ],
-      }
-    },
-  }
-}
-*/
-
-//@ts-ignore
-/** @type {import('@docusaurus/types').Plugin} */
-
-function RJ_WEBPACK_PLUGIN(context, options) {
-  return {
-    name: "RJ's super special awesome plugin to optimize webpack",
+    name: "RJ's super special awesome plugin to optimize webpack for docusaurus",
     configureWebpack(config, isServer, utils, content) {
       return process.env.NODE_ENV === "development"
         ? {
@@ -61,18 +39,10 @@ function RJ_WEBPACK_PLUGIN(context, options) {
                 },
               ],
             },
+            plugins: [new BundleAnalyzerPlugin({ analyzerPort: "auto" })], // Enable for small dev mode tests to avoid prod crash
           }
         : {
             plugins: [
-              // does not compress .xml sitemap/rss/etc - does not compress .json
-              // new BrotliPlugin({
-              //   asset: "[path].br[query]",
-              //   test: /\.(js|css|html|svg|woff|woff2|xml|jpg|png|gif|webp|txt|json)$/,
-              //   threshold: 5120,
-              //   // threshold: 1280, //OVERKILL@1.3KB
-              //   minRatio: 0.8,
-              //   // deleteOriginalAssets: true,
-              // }),
               new CompressionPlugin({
                 filename: "[path][base].gz",
                 algorithm: "gzip",
@@ -92,23 +62,6 @@ function RJ_WEBPACK_PLUGIN(context, options) {
               }),
               /** Bundle Analyzer crashes for larger docusaurus sites */
               // new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
-
-              // WTF - the HTML mangled CSS DONT match CSS MANGLES?! Can't escape the crappy Infima trap!
-              // new MangleCssClassPlugin({
-              // classNameRegExp:
-              // "(?<![a-zA-Z0-9_-]+)[a-zA-Z-]{3,}(__|--)[a-z]+[a-zA-Z0-9]+((__|--)[a-z]+[a-zA-Z0-9]+)?(?![a-zA-Z0-9_-]+)", // 124 & BREAKS!
-              // classNameRegExp: "(?<![a-zA-Z0-9_-]+)[a-zA-Z-]{3,}(__|--)[a-z]+[a-zA-Z0-9_-]+(?![a-zA-Z0-9_-]+)", // 122/128KB & STILL breaks!
-              //prettier-ignore
-              // classNameRegExp: "((?<![a-zA-Z0-9_-]+)(react-tooltip__[a-zA-Z0-9_-]+)(?![a-zA-Z0-9_-]+))|(--(ifm|docsearch|docusaurus|doc)-[a-z]+(-[a-z]+(-[a-z]+(-[a-z]+)?)?)?)", // isolate to react-tooltip for now
-              //prettier-ignore
-              // classNameRegExp: "(?<![a-zA-Z0-9_-]+)(react-tooltip__[a-zA-Z0-9_-]+)(?![a-zA-Z0-9_-]+)", // isolate to react-tooltip for now
-              // classNameRegExp: "[a-z]{3,}(-[a-z]{3,})?__[a-z]+[a-zA-Z0-9_-]+",// works but somehow breaks all infima CSS in final build?!
-              // "((react-tooltip|buttonGroup|breadcrumbs|menu|dropdown|tabList|alert|avatar|card|footer|table-of-contents|pagination-nav|pagination|pills|tabs|hero|navbar-sidebar|docPage|sidebarItem)__[a-zA-Z0-9_-]+|(avatar)|(DocSearch-(Hit-Tree|Commands-key|Commands|Container|Button-Placeholder|Hit--favoriting|Reset|Input|MagnifierLabel|LoadingIndicator|HitsFooter|Label|Hit-action-button|StartScreen)))", //
-              // "((react-tooltip|buttonGroup|breadcrumbs|menu|dropdown|tabList|alert|avatar|card|footer|table-of-contents|pagination-nav|pagination|pills|tabs|hero|navbar-sidebar|navbar|docPage|sidebarItem)__[a-zA-Z0-9_-]+|(avatar)|(DocSearch-(Hit-Tree|Commands-key|Commands|Container|Button-Placeholder|Hit--favoriting|Dropdown|Button|Hit-icon|Link|Reset|Input|MagnifierLabel|LoadingIndicator|HitsFooter|Label|Hit-action-button|StartScreen)))", //
-              // classNameRegExp: ".*", // MANGLE IT ALL! INCL all your JS code for lulz
-              // log: true, // turn on for unholy spam
-              // }),
-              // new MiniCssExtractPlugin(),
             ],
             optimization: {
               chunkIds: "size",
@@ -228,21 +181,9 @@ module.exports = async () => ({
   // plugins: ["@docusaurus/theme-live-codeblock"],
   plugins: [
     "@docusaurus/theme-live-codeblock",
-    RJ_WEBPACK_PLUGIN,
+    DOCUSAURUS_RJ_WEBPACK_PLUGIN,
     RJ_TAILWIND_PLUGIN,
-    // RJ_FIX_WEBPACK_NODE_POLYFILL_PLUGIN,
     "docusaurus-plugin-sass",
-    // [
-    //   "@docusaurus/plugin-ideal-image",
-    //   /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
-    //   {
-    //     quality: 80,
-    //     max: 1030, // max resized image's size.
-    //     min: 640, // min resized image's size. if original is lower, use that size.
-    //     steps: 2, // the max number of images generated between min and max (inclusive)
-    //     disableInDev: false,
-    //   },
-    // ],
     // PWA
     [
       "@docusaurus/plugin-pwa",
@@ -272,7 +213,6 @@ module.exports = async () => ({
         ],
       },
     ],
-    // "plugin-image-zoom",
   ],
   title: "RJ KB",
   tagline: "iFullstack.Dev",
@@ -590,22 +530,13 @@ module.exports = async () => ({
         // Optional
         contextualSearch: false,
       },
-      //! Add Image Zoom Plugin here
-      //! buggy - requires 2 clicks - not pretty - bad plugin! REMOVED!
-      // imageZoom: {
-      //   // CSS selector to apply the plugin to, defaults to '.markdown img'
-      //   selector: ".markdown img",
-      //   // Optional medium-zoom options
-      //   // see: https://www.npmjs.com/package/medium-zoom#options
-      //   options: {
-      //     margin: 24,
-      //     background: "#BADA55",
-      //     scrollOffset: 0,
-      //     container: "#zoom-container",
-      //     template: "#zoom-template",
-      //   },
-      // },
     }),
 })
 
-// module.exports = config
+/**
+ * LIST of Plugins + Extensions tested & @deprecated
+ *  - "plugin-image-zoom" - buggy, ugly, needs 2 clicks - just bad. Also, needs to serve over-sized images to zoom into in the first place. A terrible idea.
+ *  - const BrotliPlugin = require("brotli-webpack-plugin") - one zip format for one match pattern only. Use superior compression-webpack-plugin#
+ *  - const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin") - bad - does not mangle consistently across files. Literally made a better node script (mangle_css.tsx) to do the same thing. Also, messes up the logs with extra whitespace (even when logs disabled)
+ *  - @docusaurus/plugin-ideal-image - bad - often results in worse image quality for higher file size. Pointless and computationally wasteful - just run batch image script to convert static assets ONE-TIME.
+ */
