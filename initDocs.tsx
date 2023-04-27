@@ -123,25 +123,19 @@ function generate_mdx_page_from_id(
     .split("/")
     .slice(1, -2)
     .map((str) => str.replace(/-/g, " ").trim())
-  let tags = _.uniqWith(
+  let tags = uniq(
     [
       ...prev_slugs,
       // ...alias_slugs, // disable alias-slugs for tags
       ...init_tags,
-    ].filter((tag) => tag.length < 30),
-    (a, b) =>
-      a
-        .toLowerCase()
-        .replace(/\\u005c\\u2028|(\\u005c)+/gi, "")
-        .replace(/\/|-/g, " ")
-        .trim() ===
-      b
-        .toLowerCase()
-        .replace(/\\u005c\\u2028|(\\u005c)+/gi, "")
-        .replace(/\/|-/g, " ")
-        .trim()
-    //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
-    //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
+    ]
+      .filter((tag) => tag.length < 30)
+      .map((str) => startCase(str))
+      .filter((str) => str.length > 0)
+  )
+
+  //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
+  //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
   )
   //? keep strings with identical characters but different cAsEs
   const default_keywords = [
@@ -165,9 +159,13 @@ function generate_mdx_page_from_id(
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
   num_tags += tags.length
-  const description = id_to_plaintext(id, "value")
-    ?.replace(/"/g, `'`)
-    .replace(/\\/g, `&#92;`)
+  const description =
+    title_yaml +
+    (alias_slugs.length
+      ? ` aka ${alias_slugs.join(", ").replace(/!/g, "\\!")}` //? low priority to add & for last alias
+      : "") +
+    " = " + //?is "is" better than "=" for SEO? "=" makes more sense grammatically, and also should be what appears in the search results.
+    id_to_plaintext(id, "value")?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
   // const title_match_ref = `[\`${title}\`](`
   const alias_mdx_arr = alias_ids.map((id) =>
     id_to_mdx(id, "key", { safe: true })
