@@ -1,4 +1,5 @@
 import React from "react"
+import startCase from "lodash/startCase"
 
 interface SliderProps {
   children?: React.ReactNode
@@ -15,16 +16,6 @@ type MediaElement = {
   w?: number
 }
 
-function SVG_LOGO({ Svg, title, h, w }: MediaElement) {
-  return (
-    <Svg
-      height={h}
-      width={w}
-      role="img"
-    />
-  )
-}
-
 interface SliderRowProps {
   MediaElements: MediaElement[]
   config?: string
@@ -34,28 +25,44 @@ interface SliderRowProps {
 
 function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
   function Slides() {
-    let customCSS = ""
-    if (config === "top")
-      customCSS +=
-        "px-10 hover:rounded-br-3xl hover:rounded-tl-3xl duration-700"
-    if (config === "bot")
-      customCSS +=
-        "px-10 hover:rounded-bl-3xl hover:rounded-tr-3xl duration-1000"
     return (
-      <div className="inline-block">
-        {MediaElements.map((props, i) => (
-          <div
-            className={`inline-block transform-gpu rounded-sm opacity-10 transition-all  visited:shadow-yellow-200 hover:bg-hex-blue hover:opacity-90 hover:shadow-inner hover:shadow-yellow-200 hover:-backdrop-hue-rotate-30 ${customCSS} `}
-            key={config + String(i)}
-          >
-            <SVG_LOGO
-              {...props}
-              h={h || props.h}
-              w={props.w}
+      // <div className="inline-block">
+      <>
+        {MediaElements.map(({ Svg, title, h, w }, i) => (
+          <>
+            <img
+              className={`inline-block transform-gpu rounded-sm opacity-10 transition-all visited:shadow-yellow-200 hover:bg-hex-blue hover:opacity-90 hover:shadow-inner hover:shadow-yellow-200 hover:-backdrop-hue-rotate-30 ${
+                config === "top"
+                  ? "duration-700 hover:rounded-br-3xl hover:rounded-tl-3xl"
+                  : "duration-1000 hover:rounded-bl-3xl hover:rounded-tr-3xl"
+              }`}
+              key={config + String(i)}
+              loading="lazy"
+              alt={startCase(Svg.displayName?.slice(5, -4))}
+              src={Svg.displayName}
+              height={h || 60}
+              style={{ height: `${h || 60}px` }}
             />
-          </div>
+            {config === "top" ? (
+              <span
+                style={{
+                  display: "inline-block",
+                  height: "60px",
+                  width: "75px",
+                }}
+              />
+            ) : (
+              <span
+                style={{
+                  display: "inline-block",
+                  height: "60px",
+                  width: "50px",
+                }}
+              />
+            )}
+          </>
         ))}
-      </div>
+      </>
     )
   }
 
@@ -70,10 +77,13 @@ function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
 export default function Slider({ top, bot, h, w }: SliderProps) {
   return (
     <div
-      className="bg-prism my-0 py-0"
+      className="my-0"
       style={{ width: "100%", height: "154px" }}
     >
-      <div className="inline-block transform-gpu animate-slide-fast overflow-hidden whitespace-nowrap">
+      <div
+        className="inline-block transform-gpu animate-slide-fast overflow-visible whitespace-nowrap"
+        style={{ height: "69px", width: "90%" }}
+      >
         <SliderRow
           MediaElements={top}
           config="top"
@@ -81,7 +91,10 @@ export default function Slider({ top, bot, h, w }: SliderProps) {
           w={w}
         />
       </div>
-      <div className="inline-block transform-gpu animate-slide-slow overflow-hidden whitespace-nowrap">
+      <div
+        className="inline-block transform-gpu animate-slide-slow overflow-visible whitespace-nowrap"
+        style={{ height: "69px", width: "90%" }}
+      >
         <SliderRow
           MediaElements={bot}
           config="bot"

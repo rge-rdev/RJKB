@@ -38,37 +38,37 @@ import {
 } from "../../../static/img/svg"
 
 const top = [
-  { Svg: IconYarnBlackSVG },
+  { Svg: IconDocusaurusBlackSVG },
   { Svg: LogoSwcColorDarkSVG },
   { Svg: IconDockerBlackSVG },
+  { Svg: IconNodeJSBlackSVG },
+  { Svg: IconReactBlackSVG },
   {
-    Svg: IconCodeEditorDiamondColorSVG,
+    Svg: IconReduxOfficialBlackSVG,
   },
-  { Svg: IconDocusaurusBlackSVG },
   { Svg: IconEsbuildColorSVG },
-  { Svg: IconGitBlackSVG },
   { Svg: IconHTML5ColorSVG },
   { Svg: IconCSS3Black },
   { Svg: IconJavascriptBlackSVG },
   { Svg: IconTypescriptBlackSVG },
-  { Svg: IconNodeJSBlackSVG },
-  { Svg: IconReactBlackSVG },
+
   { Svg: LogoMDXColorSVG },
   { Svg: IconTailwindcssBlackSVG },
   { Svg: LogoInkscapeSVG },
   {
     Svg: IconRjnoteCodeEditorColorSVG,
   },
-
   { Svg: IconWebassemblyBlackSVG },
+  { Svg: IconReactLiveBlackSVG },
+  { Svg: IconGitBlackSVG },
+  { Svg: IconVSCodeColorSVG },
+  { Svg: IconYarnBlackSVG },
   {
     Svg: LogoLinuxMascotColorSVG,
   },
   {
-    Svg: IconReduxOfficialBlackSVG,
+    Svg: IconCodeEditorDiamondColorSVG,
   },
-  { Svg: IconReactLiveBlackSVG },
-  { Svg: IconVSCodeColorSVG },
   // { Svg: IconRustBlackSVG },
 ]
 const bot = [
@@ -93,6 +93,10 @@ const bot = [
     Svg: LogoTextTypescriptBlackSVG,
   },
   //DUP
+  {
+    Svg: LogoNodeJsColorSVG,
+  },
+
   { Svg: LogoNgrokSVG },
   { Svg: LogoTSNodeGreySVG },
   {

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react"
 import Link from "@docusaurus/Link"
 //@ts-ignore
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
-import HomeLogoSlider from "./HomeLogoSlider"
 import { IconArrowDownCircleBlackSVG } from "../../../static/img/svg"
+const HomeLogoSlider = React.lazy(() => import("./HomeLogoSlider"))
 
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
@@ -81,7 +81,7 @@ export default function HomepageHeader() {
               ? "fixed top-20 animate-fade-in-md-50 opacity-50"
               : "fixed top-20 animate-fade-out-md-50 opacity-0"
           }`}
-          style={{ height: "30px", width: "300px" }}
+          style={{ height: "30px", width: "355px" }}
         >
           {siteConfig.tagline}
         </h2>
@@ -93,9 +93,13 @@ export default function HomepageHeader() {
         >
           {siteConfig.tagline}
         </h2>
-        <HomeLogoSlider />
+        <React.Suspense
+          fallback={<div style={{ width: "100%", height: "384px" }}></div>}
+        >
+          <HomeLogoSlider />
+        </React.Suspense>
         <p className="fixed animate-fade-in-out text-cyan-300 opacity-0 dark:text-cyan-500">
-          Explore My Fullstack Knowledge Showcase
+          Explore the Best Fullstack Knowledgebase
         </p>
         <div>
           <Link
