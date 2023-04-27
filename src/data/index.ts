@@ -129,6 +129,10 @@ export function getChildren(id: string) {
   return children
 }
 
+export function hasChildren(id: string){
+  return Boolean(getChildren(id)?.length)
+}
+
 export function getChildIDs(id: string) {
   const childIDs = map_all.get(id)?.children
   return childIDs
@@ -187,6 +191,10 @@ export const map_all_refs_ID_array = new Map(
 
 export function getRefIDs(id: string) {
   return map_all_refs_ID_array.get(id)
+}
+
+export function hasRefs(id: string){
+  return Boolean(map_all_refs_ID_array.get(id)?.length)
 }
 
 // export function id_to_refs(id: string) {

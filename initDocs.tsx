@@ -20,6 +20,11 @@ import {
   LOG_CLI_PROGRESS,
 } from "./src/utility"
 import _ from "lodash"
+import kebabCase from "lodash/kebabCase"
+import startCase from "lodash/startCase"
+import escapeRegExp from "lodash/escapeRegExp"
+import uniq from "lodash/uniq"
+import uniqWith from "lodash/uniqWith"
 import {
   getPreviewImports,
   get_map_all_static_preview_tsx_length,
@@ -138,7 +143,6 @@ function generate_mdx_page_from_id(
 
   //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
   //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
-  )
   //? keep strings with identical characters but different cAsEs
   const default_keywords = [
     "define",
@@ -196,7 +200,6 @@ function generate_mdx_page_from_id(
   //TODO fix identical child skip check
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
   const child_text_array = getChildren(id)?.map((child_id) => {
-    //   // const k = _.unescape(id_to_mdx(id, "key"))
     let v = id_to_mdx(child_id, "value", {
       safe: true,
       preview: true,
@@ -374,9 +377,6 @@ function generate_mdx_page_from_id(
     })
     .filter((str) => str !== undefined)
 
-  // ids_with_preview = _.uniq(ids_with_preview)
-  // const preview_mdx = getAllPreviewMDX(ids_with_preview)
-
   const output_mdx = `---
 ${
   title && title !== null && title !== undefined ? `title: "${title_yaml}"` : ""
@@ -421,7 +421,7 @@ ${
 
   const re_preview_ids =
     /(?<=\[<span data-tooltip-id="preview__)([a-zA-Z0-9]+)(?=">)/g
-  const ids_with_preview = _.uniq(output_mdx.match(re_preview_ids)) || []
+  const ids_with_preview = uniq(output_mdx.match(re_preview_ids)) || []
 
   // const preview_mdx = getStaticPreviews(ids_with_preview)
   const preview_mdx = getPreviewImports(ids_with_preview)
@@ -536,9 +536,9 @@ Any.Typescript<angleBracketNotation>
 \`\`\`
 - [link back to home](/)
 \`\`\`
-- [link to google](www.google.com)
+- [link to google](https://www.google.com)
 \`\`\`
-- [link to google](www.google.com)
+- [link to google](https://www.google.com)
 \`\`\`
 - [link to \`src/pages/intro\`](/intro)
 
@@ -748,7 +748,7 @@ async function loop_docs_mkdir(
         const alias_mdx_arr = alias_ids.map((id) =>
           id_to_mdx(id, "key", { safe: true })
         )
-        const synonyms_arr = _.uniqWith(
+        const synonyms_arr = uniqWith(
           [parent_mdx, parent_slug, ...alias_mdx_arr]
             .map((a) => a?.trim().replace(/`/g, ""))
             .filter((alias) => alias !== undefined && alias.length > 0),
@@ -796,6 +796,9 @@ async function loop_docs_mkdir(
       }
     }
 
+    const no_refs = !hasRefs(id)
+    const no_children = !hasChildren(id)
+
     let skip_next =
       // (slug_key === "index" && prev_slug !== "index") || //! fix the docusaurus complaint about duplicate routes resulting from alias redirect named "index"
       slug_key === prev_slug || //! skip duplicate with parent & avoid clash with actual alias
@@ -805,6 +808,7 @@ async function loop_docs_mkdir(
       slug_key === "Status" ||
       slug_key === "Sources" ||
       slug_key === "Size" ||
+      (no_refs && no_children) || //! skip docs for leaf nodes w/o refs or children - to cut down on repetition w/o affecting nested hierarchy routing
       Boolean(slug_key.match(/^contains-/)) //! Shave off 180 "contains:" type docs //!recall that : was swapped for - by slugify!
     // slug_key.length > 15 //! BEFORE: 7187 Files, 6418 Folders --> AFTER >20: 4,522 Files, 3,970 Folders --> <15 3,574 Files, 3,167 Folders
     //? How to embed template literal inside regex experssion ?    Boolean(slug_key.match(/^contains:${parent_slug}/))
