@@ -406,13 +406,13 @@ export function obj_to_str(el: RemData, input_str = ""): string {
       if (el["i"] === "o") {
         output_str += `[[CODE=${el["language"]}]]<br><code lang=${
           el["language"]
-        }>${_.escape(el["text"])}</code>`
+        }>${escape(el["text"])}</code>`
       }
       if (el["i"] === "m") {
         if (el["qId"]) {
           const qId_href = map.get(el["qId"])?.crt?.b?.u?.s
           output_str += `${
-            el["qId"] ? `<a href=${qId_href}>${_.escape(el["text"])}</a>` : ""
+            el["qId"] ? `<a href=${qId_href}>${escape(el["text"])}</a>` : ""
           }`
         }
         // href found at el["qId"] = _id at crt.b.s
@@ -422,7 +422,7 @@ export function obj_to_str(el: RemData, input_str = ""): string {
         output_str += `${el["u"] ? "<u>" : ""}` // underline
         output_str += `${el["l"] ? "<i>" : ""}`
         output_str += `${el["cId"] ? `{{<mark id='#${el["cId"]}'>` : ""}` // Cloze
-        output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
+        output_str += `${el["q"] ? `${escape(el["text"])}` : `${el["text"]}`}`
         output_str += `${el["cId"] ? "</mark>}}" : ""}`
         output_str += `${el["l"] ? "</i>" : ""}`
         output_str += `${el["u"] ? "</u>" : ""}`
@@ -587,7 +587,7 @@ export function getAllPreviewMDX(preview_ids_arr: string[]) {
       return link_ids_arr
     })
     .flat()
-  const dedup_preview_ids = _.uniq(all_preview_ids)
+  const dedup_preview_ids = uniq(all_preview_ids)
   //! MUST RENAME FILE TO .tsx TO MAKE JSX WORK!!
   const output_all_preview_mdx = dedup_preview_ids
     // .map((link_id) => renderToStaticMarkup(<Preview id={link_id} />))
@@ -612,7 +612,7 @@ export function getAllPreviewMDX_BROKEN_CLIENT(preview_ids_arr: string[]) {
       return link_ids_arr
     })
     .flat()
-  const dedup_preview_ids = _.uniq(all_preview_ids)
+  const dedup_preview_ids = uniq(all_preview_ids)
   const output_all_preview_mdx = dedup_preview_ids
     .map((link_id) => `<Preview id="${link_id}"/>`)
     .join("\n")
@@ -639,13 +639,13 @@ export function obj_to_mdx(
       ? `<span>${escapeTextInJSX(el)}</span>`
       : // ?  `<span>${encode(el)}</span>`
         // `<span>${encode(el, { encodeEverything: true })}</span>`
-        // `<span>${_.escape(el).replace(/^ {1,}| {1,}$/g, "&nbsp;")}</span>`
+        // `<span>${escape(el).replace(/^ {1,}| {1,}$/g, "&nbsp;")}</span>`
         el
   if (typeof el === "object") {
     if (el["i"]) {
       if (el["i"] === "o") {
         // "o" for Object | Outside Code?
-        // ${_.escape(el["text"])}\n
+        // ${escape(el["text"])}\n
         if (typeof el["text"] === "string") {
           if (!jsx)
             output_str += `\n\n\`\`\`${resolve_lang_mdx(el["language"])}\n${(
@@ -668,12 +668,12 @@ export function obj_to_mdx(
           output_str += `${el["i"] === "m" ? (jsx ? "<q>" : "`") : ""}` // Ref HYPERLINKS
           output_str += `${
             el["qId"]
-              ? // ? `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
+              ? // ? `\n<a href="${qId_href}">${escape(el["text"])}</a>`
                 jsx
                 ? `\n<Link to="${qId_href}">${escapeTextInJSX(
                     el["text"]
                   )}</Link>`
-                : `\n<a href="${qId_href}">${_.escape(el["text"])}</a>`
+                : `\n<a href="${qId_href}">${escape(el["text"])}</a>`
               : ""
           }`
           output_str += `${el["i"] === "m" ? (jsx ? "</q>" : "`") : ""}` // Ref Rem
@@ -707,8 +707,8 @@ export function obj_to_mdx(
           //! skip <mark> for cloze cards - not a feature needed now - also messes up code snippets in mdx code view
           //! TODO: add function to remove <mark> from code snippets - but only do this when cloze/spoiler tags actually needed
           // output_str += `${el["cId"] ? `<mark>` : ""}` // id to Cloze cId
-          // output_str += `${el["q"] ? `${_.escape(el["text"])}` : `${el["text"]}`}`
-          // output_str += jsx ? `${_.escape(el["text"])}` : `${el["text"]}`
+          // output_str += `${el["q"] ? `${escape(el["text"])}` : `${el["text"]}`}`
+          // output_str += jsx ? `${escape(el["text"])}` : `${el["text"]}`
           output_str += `${el["q"] || force_q ? (jsx ? "<code>" : "`") : ""}` // Ref Rem //! MOVE ` backtick to inside to avoid stupid MDX parsing other styles wrong (sometimes?!)
           output_str += jsx
             ? `${escapeTextInJSX(el["text"])}`

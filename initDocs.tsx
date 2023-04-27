@@ -10,6 +10,8 @@ import {
   getParentId,
   getRefIDs,
   get_path_from_id,
+  hasRefs,
+  hasChildren,
 } from "./src/data/"
 import {
   id_to_mdx,
@@ -42,10 +44,10 @@ let ouput_docsearch_alias: string[] = []
 
 let num_docs = 0
 let num_skipped = 0
-let num_links = 0
+// let num_links = 0
 let num_tags = 0
 // let num_axios_put_reqs = 0
-let num_alias_redirect_mdx = 0 // deprecated
+// let num_alias_redirect_mdx = 0 // deprecated
 let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
 let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
 
@@ -147,12 +149,13 @@ function generate_mdx_page_from_id(
     "How to",
   ]
 
-  let keywords = _.uniq(
-    ["", ...tags, ...alias_slugs, ...default_keywords].filter(
+  // switch order to put order for term > aliases > tags > defaults - just in case SEO cares about the order!
+  let keywords = uniq(
+    ["", ...alias_slugs, ...tags, ...default_keywords].filter(
       (s) => typeof s !== undefined && s && s.length > 0
     )
   )
-  tags = _.uniqWith(tags, (a, b) => _.kebabCase(a) === _.kebabCase(b))
+  tags = uniqWith(tags, (a, b) => kebabCase(a) === kebabCase(b))
   map_all_tags.set(id, tags)
   //! DEDUP tags but KEEP dup for max SEO
 
@@ -172,13 +175,13 @@ function generate_mdx_page_from_id(
   )
 
   const title_alias_str = [title, ...alias_mdx_arr]
-    .map((str) => _.escapeRegExp(str).trim())
+    .map((str) => escapeRegExp(str).trim())
     .join("|")
   const re_title_alias_ref = new RegExp(
     `\\[(\`(${title_alias_str})\`)\\]\\(`,
     "g"
   )
-  const alias_synonyms = _.uniq(
+  const alias_synonyms = uniq(
     alias_mdx_arr
       .map((a) => a?.trim().replace(/`/g, ""))
       .filter((alias) => alias !== undefined && alias.length > 0)
