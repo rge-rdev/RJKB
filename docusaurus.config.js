@@ -2,8 +2,6 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 const TerserPlugin = require("terser-webpack-plugin")
 
-const lightCodeTheme = require("prism-react-renderer/themes/github")
-const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 require("dotenv").config()
 // const BrotliPlugin = require("brotli-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
@@ -11,6 +9,8 @@ const CompressionPlugin = require("compression-webpack-plugin")
 
 // const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 // const webpack = require("webpack")
+
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 
 //@ts-ignore
 /** @type {import('@docusaurus/types').Plugin} */
@@ -85,11 +85,14 @@ function RJ_WEBPACK_PLUGIN(context, options) {
                 algorithm: "brotliCompress",
                 test: /\.(js|css|html|svg|woff|woff2|xml|jpg|png|gif|webp|txt|json)$/,
                 compressionOptions: {
-                  level: 11,
+                  level: 9,
                 },
                 threshold: 5120,
                 minRatio: 0.8,
               }),
+              /** Bundle Analyzer crashes for larger docusaurus sites */
+              // new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
+
               // WTF - the HTML mangled CSS DONT match CSS MANGLES?! Can't escape the crappy Infima trap!
               // new MangleCssClassPlugin({
               // classNameRegExp:
@@ -108,10 +111,20 @@ function RJ_WEBPACK_PLUGIN(context, options) {
               // new MiniCssExtractPlugin(),
             ],
             optimization: {
+              chunkIds: "size",
               emitOnErrors: true, //! force webpack to complete build with errors - including ones which will crash at runtime
+              mangleExports: "size",
+              mangleWasmImports: true,
+              moduleIds: "size",
+              innerGraph: true, // detect unused exports
+              mergeDuplicateChunks: true, // dedup chunks with same modules
+              removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
+              concatenateModules: true, // to find safe module graph segments to concatenate into a single module
+              flagIncludedChunks: true, // don't load chunks when already loaded as subset of another chunk
               minimize: true,
               minimizer: [
                 new TerserPlugin({
+                  parallel: true,
                   minify: TerserPlugin.swcMinify,
                   terserOptions: {
                     compress: {
@@ -136,12 +149,21 @@ function RJ_WEBPACK_PLUGIN(context, options) {
                       // safari10: true,// screw mac users?
                     },
                     format: {
-                      comments: false, //? ask @docusaurus MIT License allow stripping comments from chunks?
+                      comments: false,
                       // indent_level: 4,
                     },
                   },
                 }),
               ],
+              realContentHash: true,
+              usedExports: true, // dead code elim
+              // splitChunks: {
+              //   chunks: "all",
+              // },
+              // runtimeChunk: {
+              //   name: "runtime",
+              // },
+
               /*
           minimizer: [
             new TerserPlugin({
@@ -156,15 +178,6 @@ function RJ_WEBPACK_PLUGIN(context, options) {
           ],
           */
               // minimizer: [new EsbuildPlugin({ target: "esnext" })],
-              /**Enable Production settings in Dev mode */
-              // concatenateModules: true, // to find safe module graph segments to concatenate into a single module
-              // flagIncludedChunks: true, // don't load chunks when already loaded as subset of another chunk
-              // innerGraph: true, // detect unused exports
-              // mangleExports: "size", // minifiy variable names to reduce size
-              // mangleWasmImports: true,
-              // mergeDuplicateChunks: true, // dedup chunks with same modules
-              // removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
-              // usedExports: true, // dead code elim
             },
             module: {
               rules: [
@@ -178,6 +191,19 @@ function RJ_WEBPACK_PLUGIN(context, options) {
                 },
               ],
             },
+            cache: {
+              type: "filesystem",
+              allowCollectingMemory: true,
+              buildDependencies: {
+                config: [__filename],
+              },
+              compression: "brotli",
+            },
+            // experiments: {
+            // outputModule: true,
+            // css: true,
+            // futureDefaults: true,
+            // },
           }
     },
   }
@@ -196,7 +222,9 @@ async function RJ_TAILWIND_PLUGIN(context, options) {
 }
 //@ts-ignore
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+// The config doesn't need to be async - but I'm just going to add it for now to make it easier to directly await import() modules in future. It's also following the same pattern used by Facebook, albeit more compact here.
+/** @returns {Promise<import('@docusaurus/types').Config>} */
+module.exports = async () => ({
   // plugins: ["@docusaurus/theme-live-codeblock"],
   plugins: [
     "@docusaurus/theme-live-codeblock",
@@ -259,7 +287,7 @@ const config = {
   // GitHub pages deployment config.
   organizationName: "rge-rdev", // Usually your GitHub org/user name.
   projectName: "RJKB", // Usually your repo name.
-  onBrokenLinks: "warn",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -334,10 +362,10 @@ const config = {
       ({
         docs: {
           // routeBasePath: '/',
-          routeBasePath: "/wiki",
+          routeBasePath: `/${process.env.DOCS_BASE}`,
+          // sidebarPath: false,
+          // breadcrumbs: false,
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           showLastUpdateAuthor: false,
           showLastUpdateTime: false,
@@ -382,7 +410,7 @@ const config = {
         sitemap: {
           changefreq: "daily",
           priority: 0.5,
-          ignorePatterns: ["/tags/**"],
+          ignorePatterns: ["/tags/**"], //! Not working! tags still showing up!
           filename: "sitemap.xml",
         },
       }),
@@ -393,6 +421,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Add (more?!) Docs config here instead of above!!
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       // Global Metadata
       metadata: [
         {
@@ -485,8 +520,11 @@ const config = {
         },
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        additionalLanguages: ["latex"], // @see blog post - it's dumb but you need to add one random additional language to prevent 25KB of crap appearing in your final production bundle!
+        // theme: (await import("./src/theme/DraculaLight.mjs")).default,
+        // darkTheme: (await import("./src/theme/DraculaDark.mjs")).default,
+        theme: require("prism-react-renderer/themes/github").default,
+        darkTheme: require("prism-react-renderer/themes/dracula").default,
       },
       //! add new liveCodeBlock theme here
       liveCodeBlock: {
@@ -527,7 +565,7 @@ const config = {
           collection: "rjkb",
           query_by:
             "hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3,content,tags",
-          query_by_weights: "32,16,8,4,2,1",
+          query_by_weights: "127,16,8,4,2,1",
           prioritize_token_position: true,
           group_limit: 3,
           include_fields:
@@ -568,6 +606,6 @@ const config = {
       //   },
       // },
     }),
-}
+})
 
-module.exports = config
+// module.exports = config
