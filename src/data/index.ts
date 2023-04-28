@@ -8,8 +8,6 @@ import {
   make_mdx,
   make_plaintext,
   LOG_CLI_PROGRESS,
-  id_to_plaintext,
-  id_to_mdx,
 } from "../utility"
 import { uptime } from "process"
 import { kebabCase } from "lodash"
@@ -170,8 +168,6 @@ export const map_all_parents = new Map(
     ]
   })
 )
-
-type doc_ref = { q: string; f: "key" | "value" }[]
 
 const map_all_refs_init_time = uptime()
 export const map_all_refs_ID_array = new Map(

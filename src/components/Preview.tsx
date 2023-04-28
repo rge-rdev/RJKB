@@ -34,6 +34,7 @@ function getStaticPreviewTSX(id: string) {
  * Copyright(c) Roger Jiang
  */
 import React from "react"
+//@ts-ignore
 import CodeBlock from "@theme/CodeBlock"
 import { Link } from "react-router-dom"
 import { Tooltip } from "react-tooltip"

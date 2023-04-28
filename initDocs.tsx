@@ -3,7 +3,7 @@
  */
 
 import fs from "fs-extra"
-import { uptime, env } from "process"
+import { uptime } from "process"
 import {
   root_main_topic_ids,
   getDoc,
@@ -24,7 +24,6 @@ import {
   id_to_tags,
   LOG_CLI_PROGRESS,
 } from "./src/utility"
-import _ from "lodash"
 import kebabCase from "lodash/kebabCase"
 import startCase from "lodash/startCase"
 import escapeRegExp from "lodash/escapeRegExp"
@@ -116,10 +115,9 @@ function generate_mdx_page_from_id(
   )?.length
   const value_mdx_link =
     DOCS_BASE === "docs"
-      ? value_mdx?.match(/(]\((\/docs|\.)\/[a-zA-Z-\/]*)\)/gm)?.length
-      : value_mdx?.match(
-          RegExp(`(]\((\/${DOCS_BASE}|\.)\/[a-zA-Z-\/]*)\)`, "gm")
-        )?.length
+      ? value_mdx?.match(/(]\((\/docs|\.)\/[a-zA-Z-/]*)\)/gm)?.length
+      : value_mdx?.match(RegExp(`(]\((/${DOCS_BASE}|\.)/[a-zA-Z-/]*)\)`, "gm"))
+          ?.length
   if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
@@ -161,7 +159,7 @@ function generate_mdx_page_from_id(
   // switch order to put order for term > aliases > tags > defaults - just in case SEO cares about the order!
   let keywords = uniq(
     ["", ...alias_slugs, ...tags, ...default_keywords].filter(
-      (s) => typeof s !== undefined && s && s.length > 0
+      (s) => typeof s !== "undefined" && s && s.length > 0
     )
   )
   tags = uniqWith(tags, (a, b) => kebabCase(a) === kebabCase(b))
@@ -227,30 +225,23 @@ function generate_mdx_page_from_id(
       if (k) return `<h2>${k}<span></h2>`
       if (!k) return ""
     }
-    // const k_link_description = k?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
 
-    // if (v) ids_with_preview.push(child_id)
-
-    //! max sure to check this doesn't exist on other
-    const k_code = k?.match(/^(\`\`\`)/gm)?.length
-    const v_code = v?.match(/^(\`\`\`)/gm)?.length
+    const k_code = k?.match(/^(```)/gm)?.length
+    const v_code = v?.match(/^(```)/gm)?.length
 
     const k_link =
       DOCS_BASE === "docs"
-        ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-        : k?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
+        ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-/]*)\)/gm)?.length
+        : k?.match(RegExp(`]\((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*)\)`, "gm"))
             ?.length
     const v_link =
       DOCS_BASE === "docs"
-        ? v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-        : v?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
+        ? v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-/]*)\)/gm)?.length
+        : v?.match(RegExp(`]\((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*)\)`, "gm"))
             ?.length
 
     const k_leaf = isLeaf(child_id)
-
-    // k = k?.replace(/(?<=[0-9a-zA-Z-_ ]+)(\`\`\`)/, "```")
-    // k = k?.replace(/^([a-zA-Z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
 
     const k_newLine = k?.match(/(\n)+/g)?.length
     const v_newLine = v?.match(/(\n)+/g)?.length
@@ -259,19 +250,16 @@ function generate_mdx_page_from_id(
     const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
     const k_img = k?.match(
-      /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+      /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\./]+)'\)}[ \n]*\/>))/gm
     )?.length // not working?
-    // const k_img = k?.match(/@site\/static\/files/gm)?.length
-    // const v_img = v?.match(/^(\!\[image\]\()/gm)?.length
     //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
 
-    const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+    const k_inlineCode = k?.match(/<code>.*<\/code>/)?.length
 
     let k_path = get_path_from_id(child_id)
     const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
 
     if (!k_code && (k_newLine || k_illegal) && !k_img && !k_link) {
-      // if (!k_code && k_illegal) {
       k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
     }
 
@@ -290,7 +278,7 @@ function generate_mdx_page_from_id(
       // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
       k =
         k_without_code && !k_link && !k_inlineCode
-          ? `\`${k.replace(/\`/g, "")}\``
+          ? `\`${k.replace(/`/g, "")}\``
           : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
       k =
         k_path && !k_link && !k_leaf
@@ -303,13 +291,13 @@ function generate_mdx_page_from_id(
         v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
       }${v}\n\n`
     }
-    const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
+    const recheck_code = k?.match(/^(```)/gm)?.length
     //.replace(/(\*\*_)?)(?=.*(\3\2))/g, "$1`")
     //.replace(/((\*\*)?(_)?)(?=.*(\3\2))/g, "`$4")
     if (k && !v && !skip_k) {
       const k_bold_markup = k.match(/(\*\*)(?=.*\*\*)/g)?.length
       return !recheck_code && !k_link && !k_img && !k_inlineCode && !k_leaf
-        ? `[${!k_bold_markup ? "`" : ""}${k.replace(/\`/g, "")}${
+        ? `[${!k_bold_markup ? "`" : ""}${k.replace(/`/g, "")}${
             !k_bold_markup ? "`" : ""
           }](${k_path})\n\n`
         : `${!k_img && !recheck_code ? "## " : ""}${remove_middle_backticks(
@@ -342,20 +330,14 @@ function generate_mdx_page_from_id(
         if (!k) return
       }
 
-      //? return [**_`JS`_**](/docs/JS)
-      //? ALSO mark aliases [**_`ECMAScript`_**](/docs/JS)
-
-      const k_code = k?.match(/^(\`\`\`)/gm)?.length
-      const v_code = v?.match(/^(\`\`\`)/gm)?.length
+      const k_code = k?.match(/^(```)/gm)?.length
+      const v_code = v?.match(/^(```)/gm)?.length
 
       const k_link =
         DOCS_BASE === "docs"
-          ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-          : k?.match(
-              RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm")
-            )?.length
-
-      const k_leaf = isLeaf(ref_id)
+          ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-/]*)\)/gm)?.length
+          : k?.match(RegExp(`]\((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*)\)`, "gm"))
+              ?.length
 
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
       const v_newLine = v?.match(/(\n)+/g)?.length
@@ -364,7 +346,7 @@ function generate_mdx_page_from_id(
       const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
       const k_img = k?.match(
-        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\./]+)'\)}[ \n]*\/>))/gm
       )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
 
       if (
@@ -379,7 +361,7 @@ function generate_mdx_page_from_id(
 
       if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
       v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
-      const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+      const k_inlineCode = k?.match(/<code>.*<\/code>/)?.length
       if (k && v) {
         const k_path = get_path_from_id(ref_id) //! map_id NOT id!!
 
@@ -625,16 +607,6 @@ unlisted: true
 <Redirect to="${redirect_path}" />`
 }
 
-function RedirectFCTSX_textdata(dirpath: string) {
-  return `
-import { Redirect } from "react-router-dom"
-
-export default function RedirectTo() {
-  return <Redirect to="/${dirpath}" />
-}
-  `
-}
-
 /**
  * !Find alternative way to redirect aliases - instead of <Redirect />
 
@@ -650,15 +622,6 @@ async function generate_id_redirect(alias_path: string, redirect_path: string) {
     num_alias_redirect_mdx += 1
   } catch (error) {}
 }
-/*
-async function generate_id_redirect_OLD(id: string, dirpath: string) {
-  const redirect_filepath = `src/pages/redirect/${id}.tsx`
-  // NOT const redirect_filepath = `src/pages/redirect/${id}/${id}.tsx` - don't need extra /${id}/ for pages since Docusaurus renders /pages differently!
-  try {
-    await fs.outputFile(redirect_filepath, RedirectFCTSX_textdata(dirpath))
-  } catch (error) {}
-}
-*/
 
 // push arrays to debug & keep track of appended slugs & paths
 let slug_key_arr = [""]
@@ -858,14 +821,6 @@ async function loop_docs_mkdir(
         alias_output_dir,
         '"synonyms": [' + ouput_docsearch_alias.join(",\n") + "]"
       )
-      //prettier-ignore
-      // process.stdout.write("\nrm docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx")
-      //prettier-ignore
-      // fs.removeSync("docs/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Torrent.mdx")
-      //prettier-ignore
-      // process.stdout.write("\nrm docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx")
-      //prettier-ignore
-      // fs.removeSync("docs/React/React-API/JSX/ReactcreateElement/ReactcreateElement.mdx")
     }
     // Generate MDX from ID AFTER ABOVE Sequence of writing to map of ID to plaintext_slug_path
     if (!skip_next && !skip && slug_key && !title_has_line_breaks)
@@ -890,8 +845,6 @@ async function loop_docs_mkdir(
         }
         if (!children) return
         loop_docs_mkdir(dirpath, children)
-        // console.log(`${id} was created`)
-        // }) //!TOGGLE TO GO BACK TO BUGGED ASYNC MODE
       } catch (err) {
         console.log("err:", filepath, err)
       }

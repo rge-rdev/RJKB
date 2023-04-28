@@ -20,8 +20,6 @@ import { uptime } from "process"
 import { encode } from "he"
 const { DOCS_BASE } = require("dotenv").config().parsed
 
-// import Cloze from "../components/Cloze"
-
 /**
  * Fn to get DOCS_OBJECT[] from DOCS_ID_STRING[]
  *
@@ -126,8 +124,7 @@ export function id_to_mdx_BROKEN(
  */
 
 export function replace_link_to_key(str: string) {
-  const re_link = /\[[\`]+([.]*[^\`]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/g
-  // /\[[\`]+([\<\>a-zA-Z_+\-\\\.\!"'\$%\^&\*=(){}\[\];:'@#~,\<.\>\/\?]*)[\`]+\]\((\.|\/)[a-zA-Z0-9-\/]*\)/g
+  const re_link = /\[[`]+([.]*[^`]*)[`]+\]\((\.|\/)[a-zA-Z0-9-/]*\)/g
   return str.replace(re_link, "$1")
 }
 
@@ -140,7 +137,6 @@ export function id_to_mdx(
   const preview = config?.preview
   const jsx = config?.jsx
   const doc = getDoc(id)
-  const leaf = isLeaf(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
 
@@ -160,16 +156,16 @@ export function id_to_mdx(
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
   // /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? dup [z] also should have grouped as ([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})? - was letting <b> slip past...
   let re_unsafe_jsx =
-    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([!ac-tv-zAC-TV-Z\<\>_ ]{1}?(?:[a-zA-Z0-9\<\>_ ]{1,})?)?)[\/]?>)(?![ ]*\`)/g
+    /(?<!`[ ]*)(([A-Za-z-_0-9\.]*)<[/]?(([!ac-tv-zAC-TV-Z<>_ ]{1}?(?:[a-zA-Z0-9<>_ ]{1,})?)?)[/]?>)(?![ ]*`)/g
   // added ! to catch <!DOCTYPE html> which slipped through!
   //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions // is it necessary to keep <B> <U> etc as well?
 
-  const re_link_preview_mdx =
-    /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
+  //prettier-ignore
+  // const re_link_preview_mdx = /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
   if (preview)
     re_unsafe_jsx =
-      /(?<!(?:!?\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*\`\`\`(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[\/]?(?:[ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?[\/]?>)(?!(?:[ ]*\`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
+      /(?<!(?:!?`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*```(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[/]?(?:[ac-tv-zAC-TV-Z<>_ ]{1}?[a-zA-Z0-9<>_ ]{2,})?[/]?>)(?!(?:[ ]*`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
   // /(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
   // /.*(?=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
   // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
@@ -187,25 +183,24 @@ export function id_to_mdx(
       //all unicode containing text is already wrapped in ` backticks
       //! wrapping / backslash with span fixes mdx-loader parse fail
       return key
-        .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup 2x backticks only
+        .replace(/(?<!`)`{2}(?!`)/g, "`") // dedup 2x backticks only
         .replace(/\[`[ ]+/g, "[`") //trim whitespace aft opening backtick
         .replace(/[ ]+`]/g, "`]") // trim whitespace bef closing backtick
     }
   }
   //! FIX codeblock title
-  const has_multiple_codeblocks = /\`\`\`([a-z]+)\n(?=.*\`\`\`\n\n)/gs
+  const has_multiple_codeblocks = /```([a-z]+)\n(?=.*```\n\n)/gs
   if (key.match(has_multiple_codeblocks)?.length === 1) {
     //! ONLY shift preceding text into codeblock title position if it is the only codeblock
-    const re_has_codeblock_title =
-      /(.*)(?=\`\`\`([a-z]+))(\`\`\`([a-z]+)(?=\n.*))/s
+    const re_has_codeblock_title = /(.*)(?=```([a-z]+))(```([a-z]+)(?=\n.*))/s
     // match ANYTHING before any generic codeblock type -
     // TODO: replace [a-z]+\n with code list instead OR safe to leave as vague?
     if (key.match(re_has_codeblock_title)?.length) {
       key = replace_link_to_key(key)
 
-      const re_prefix_quotes = /"(?=.*\`\`\`([a-z]+))/gs
-      const re_prefix_backticks = /\`{1}(?=.*\`\`\`([a-z]+))/gs //! don't omit preceding ```codeblock!
-      const re_prefix_newline_whitespace = /( )*\n( )*(?=.*\`\`\`([a-z]+))/gs
+      const re_prefix_quotes = /"(?=.*```([a-z]+))/gs
+      const re_prefix_backticks = /`{1}(?=.*```([a-z]+))/gs //! don't omit preceding ```codeblock!
+      const re_prefix_newline_whitespace = /( )*\n( )*(?=.*```([a-z]+))/gs
 
       key = key
         .replace(re_prefix_quotes, "'") // replace all double quotes in codeblock prefix title as single quote
@@ -219,7 +214,7 @@ export function id_to_mdx(
       //clean broken links
     }
   } else if (key.match(has_multiple_codeblocks)?.length === 2) {
-    const re_text_between_codeblock = /(?<=\`\`\`\n\n)(.*)(?=\n\n\`\`\`[a-z]+)/
+    const re_text_between_codeblock = /(?<=```\n\n)(.*)(?=\n\n```[a-z]+)/
     let text_between_codeblocks = key.match(re_text_between_codeblock)?.shift()
     const middle_str_unsafe_jsx = text_between_codeblocks?.match(re_unsafe_jsx)
     if (middle_str_unsafe_jsx) {
@@ -241,7 +236,7 @@ export function id_to_mdx(
       return key
         .replace(re_unsafe_jsx, "`$1`") //
         .replace(regex_unsafe_html, "`$1`")
-        .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup backticks
+        .replace(/(?<!`)`{2}(?!`)/g, "`") // dedup backticks
         .replace(/\[`[ ]+/g, "[`") // trim aft backtick
         .replace(/[ ]+`]/g, "`]") // trim bef backtick
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
@@ -253,14 +248,13 @@ export function id_to_mdx(
       let value = make_mdx(doc.value, { id, preview })
       const re_starts_with_breaking_import_export_keyword =
         /^(?:(?: )*(export|import))(?= +)/
-      const export_start = /^(export )/
       return (
         value
           .replace(re_starts_with_breaking_import_export_keyword, "`$1`")
           // .replace(/^(export|import) /, `$1`)
           .replace(regex_unsafe_html, "`$1`")
           .replace(re_unsafe_jsx, "`$1`")
-          .replace(/(?<!`)\`{2}(?!`)/g, "`")
+          .replace(/(?<!`)`{2}(?!`)/g, "`")
           .replace(/\[`[ ]+/g, "[`")
           .replace(/[ ]+`]/g, "`]")
       )
@@ -846,9 +840,9 @@ export function obj_to_mdx(
       //`files/`
       if (el["i"] === "i") {
         //! w/o metadata can't think of a better alt name than simply "image"
-        const p = el["percent"] / 100
-        const w = el["width"] * p
-        const h = el["height"] * p
+        // const p = el["percent"] / 100
+        // const w = el["width"] * p
+        // const h = el["height"] * p
         // TODO: use w & h with ideal-image
         //prettier-ignore
         const static_img_path = (el["url"] as string).replace(`%LOCAL_FILE%`,`@site/static/files/`)
@@ -1029,6 +1023,7 @@ export function LOG_CLI_PROGRESS( //ORIGINAL SIMPLE FAST
 }
 //!   process.stdout.clearScreenDown() DESTROYS performance whereas process.stdout.clearLine() doesn't?!
 //! Adding terminal colors adds latency!
+/*
 const clearLines = (n: number) => {
   if (n === 1) {
     process.stdout.clearLine(1)
@@ -1043,15 +1038,15 @@ const clearLines = (n: number) => {
     process.stdout.cursorTo(0)
   }
 }
-
+*/
 export function id_to_tooltop(id: string) {
   let k = id_to_mdx(id, "key", { safe: true })?.trim()
   let v = id_to_mdx(id, "value", { safe: true })?.trim()
   let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
 
   //! max sure to check this doesn't exist on other
-  const k_code = k?.match(/^(\`\`\`)/gm)?.length
-  const v_code = v?.match(/^(\`\`\`)/gm)?.length
+  const k_code = k?.match(/^(```)/gm)?.length
+  const v_code = v?.match(/^(```)/gm)?.length
 
   const k_link = k?.match(
     RegExp(`]((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*))`, "gm")
@@ -1096,7 +1091,7 @@ export function id_to_tooltop(id: string) {
     // k = k_without_code ? `\`${k}\`` : k //! prefix extra escape here ONLY if not already exists
     k =
       k_without_code && !k_link && !k_inlineCode
-        ? `\`${k.replace(/\`/g, "")}\``
+        ? `\`${k.replace(/`/g, "")}\``
         : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
     k = k_path && !k_link ? `[${k}](${k_path})` : k
 
@@ -1104,10 +1099,10 @@ export function id_to_tooltop(id: string) {
       v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
     }${v}\n\n`
   }
-  const recheck_code = k?.match(/^(\`\`\`)/gm)?.length
+  const recheck_code = k?.match(/^(```)/gm)?.length
   if (k && !v && !skip_k) {
     return !recheck_code && !k_link && !k_img && !k_inlineCode
-      ? `[\`${k.replace(/\`/g, "")}\`](${k_path})\n\n`
+      ? `[\`${k.replace(/`/g, "")}\`](${k_path})\n\n`
       : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
   }
   if (!k && v) return `\n\n${v}`
@@ -1136,8 +1131,8 @@ export function id_to_ref_mdx(id: string) {
         `[**_${title_match_ref.slice(1, -2)}_**](`
       )
 
-      const k_code = k?.match(/^(\`\`\`)/gm)?.length
-      const v_code = v?.match(/^(\`\`\`)/gm)?.length
+      const k_code = k?.match(/^(```)/gm)?.length
+      const v_code = v?.match(/^(```)/gm)?.length
 
       const k_link = k?.match(
         RegExp(`]((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*))`, "gm")
