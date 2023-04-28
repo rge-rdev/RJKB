@@ -18,6 +18,7 @@ Custom RJ SSG Node.js Script to transform JSON DB (export from [Remnote](./blog/
 <Video
   src="/vid/RJKB_SSG_CLI_350.mp4"
   poster="/vid/RJKB_SSG_CLI_350.webp"
+  width={350}
 />
 
 - ✅ RJ SSG Scripts transform JSON into MDX & TSX
@@ -75,13 +76,13 @@ Hashing out all doc objects from the JSON input greatly improved efficiency, in 
 <Video
   src="/vid/RJKB_hover_preview_ipad_350.mp4"
   poster="/vid/RJKB_hover_preview_ipad_350.webp"
-  h={300}
+  h={175}
   title="RJKB Hover Preview Links viewed on Ipad 810x1080 resolution"
 />
 <Video
-  src="/vid/RJKB_hover_preview_iphone_350.mp4"
-  poster="/vid/RJKB_hover_preview_iphone_350.webp"
-  h={300}
+  src="/vid/RJKB_hover_preview_iphone_116.mp4"
+  poster="/vid/RJKB_hover_preview_iphone_116.webp"
+  h={116}
   title="RJKB Hover Preview Links viewed on Iphone 13 Pro Max 428 x 926 resolution"
 />
 
@@ -99,6 +100,8 @@ Hashing out all doc objects from the JSON input greatly improved efficiency, in 
 
   - ✅ Dark/light variants
 
+- ✅ Selectively render hover previews only for descriptions - and not headings - to avoid duplicating content that's already visible on the page
+
 - ❌ render Preview FC directly into doc MDX - works but
 
 - ❌ client-side render for Preview doesn't work due to id_to_mdx transform call chain requiring access to all data maps, which were inside scripts requiring node runtime specific libraries such as process. It seems Webpack 5+ cut out polyfill support for a good reason - and that hacks to polyfill this wouldn't be worth the extra hit to client network loading time & compute.
@@ -113,7 +116,11 @@ Self-hosted Typesense server as run on Docker instance on fly.io
 
 ### Typesense backend secured
 
-- ✅ set up front-end API key scoped to only perform search for documents on main typesense collection
+- ✅ disabled CORS & whitelist ifullstack.dev & vercel sub-domain deployments via POST to typesense server /config
+
+- ✅ POST documents collection to update crawler results & strip "#docusaurus_skipToContent_fallback" from url field & hits. Now docsearch patch no longer needs regex to replace that anchor. Also, JSON search hits res is 10%+ smaller.
+
+- ✅ scoped API key for frontend with access to only perform search actions for documents on main typesense collection
 
 - ✅ migrate from bootstrap API key to Admin key for debug
 
@@ -169,14 +176,22 @@ The `docsearch.config.json` [Docusaurus V2 template](https://github.com/algolia/
 
 ## 🥇 Fullstack wiki
 
-- [JS](/docs/JS)
-- [HTML](/docs/HTML)
-- [CSS](/docs/CSS)
-- [React](/docs/React)
+- [JS](/wiki/JS)
+- [HTML](/wiki/HTML)
+- [CSS](/wiki/CSS)
+- [React](/wiki/React)
 
 ## 🥇 Unbreaking Docusaurus
 
 [Docusaurus v2.3.1 loads everything into memory by design](./blog/), which can easily run into FATAL ERROR: JavaScript heap out of memory - right at the end of 2hr+ build. [Read more on Docusaurus Scaling limits](./blog/)
+
+Adding `swc-loader` and raising node heap size is mandatory once docusaurus reaches a certain number of pages - otherwise it will crash before emitting the build. However, presently, it STILL crashes during shutdown of IdleFileCachePlugin - but fortunately this occurs after the client & server build has been fully emitted.
+
+### Optimizing Webpack config
+
+- ✅ add swc-loader - 50% lower build time - still terrible at ~2hrs.
+
+  - ❎ `swc-loader` more easy to config than `esbuild-loader`
 
 ### Critical Checklist
 
@@ -212,9 +227,31 @@ node -e "console.log(require('v8').getHeapStatistics().total_available_size / 10
 
 - ⏳ replace all default Docusaurus Infima CSS with Tailwind
 
+### Lighthouse Optimization
+
+- ✅ serve Fira Code from local server, split into Basic Latin glyphs AND optionally fetch local machine if client has pre-installed
+
+- ✅ serve assets as Brotli AND gzip + raw fallback
+
+- ✅ convert all image assets to webp
+
+- ✅ re-encode videos with better ffmpeg mp4 quality/compression, using custom fine-tuned CLI settings to maximize quality/size
+
+  - 🚧 ✅ encode additional set of mp4/h265 videos for Chrome/Safari
+
+- ✅ convert larger SVG assets into smaller webp size
+
+- ✅ add inline CSS height/width attributes to reduce CLS - including patching @docusaurus components
+
+  - ✅ add missing height/width to SVG & image assets
+
+- ✅ fix lazy loading order for media assets on homepage
+
+- ✅ deprecate buggy `@docusaurus/plugin-ideal-image` in favor of custom node.js + sharp script
+
 ## 🥇 RegExp Insanity
 
-MDX Loader (^1.6.22) has significant quirks in handling markdown + JSX when inline. Too many silent fails 💩 - /docs should still contain some. [Docusaurus v2 will remain frozen at v1 mdx-loader](https://github.com/facebook/docusaurus/issues/4029) due to breaking changes in v2.3+.
+MDX Loader (^1.6.22) has significant quirks in handling markdown + JSX when inline. Too many silent fails 💩 - /wiki should still contain some. [Docusaurus v2 will remain frozen at v1 mdx-loader](https://github.com/facebook/docusaurus/issues/4029) due to breaking changes in v2.3+.
 
 - ✅ RegExp to escape JSX AND TS Generics for MDX
 
@@ -275,6 +312,8 @@ Custom SVG editing with Inkscape
 ## Bug Fix List
 
 ### bug-fix-skipToContent
+
+NOTE: all /docs/ routes have been changed to /wiki/
 
 BUG: DocScraper adding multiple search hits due to crawling to /docs/something/#docusaurus_skipToContent_fallback AND /docs/something#docusaurus_skipToContent_fallback
 
