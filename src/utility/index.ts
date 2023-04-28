@@ -167,7 +167,7 @@ export function id_to_mdx(
   const re_link_preview_mdx =
     /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
-  if (preview && !leaf)
+  if (preview)
     re_unsafe_jsx =
       /(?<!(?:!?\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*\`\`\`(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[\/]?(?:[ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?[\/]?>)(?!(?:[ ]*\`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
   // /(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
@@ -233,11 +233,14 @@ export function id_to_mdx(
     }
   }
 
+  const regex_unsafe_html = /(<![a-zA-Z ]+>)/
+
   if (!key_type || key_type === "key") {
     if (!safe) return key
     if (config.safe)
       return key
         .replace(re_unsafe_jsx, "`$1`") //
+        .replace(regex_unsafe_html, "`$1`")
         .replace(/(?<!`)\`{2}(?!`)/g, "`") // dedup backticks
         .replace(/\[`[ ]+/g, "[`") // trim aft backtick
         .replace(/[ ]+`]/g, "`]") // trim bef backtick
@@ -255,6 +258,7 @@ export function id_to_mdx(
         value
           .replace(re_starts_with_breaking_import_export_keyword, "`$1`")
           // .replace(/^(export|import) /, `$1`)
+          .replace(regex_unsafe_html, "`$1`")
           .replace(re_unsafe_jsx, "`$1`")
           .replace(/(?<!`)\`{2}(?!`)/g, "`")
           .replace(/\[`[ ]+/g, "[`")

@@ -267,7 +267,7 @@ function generate_mdx_page_from_id(
 
     const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
 
-    const k_path = get_path_from_id(child_id)
+    let k_path = get_path_from_id(child_id)
     const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
 
     if (!k_code && (k_newLine || k_illegal) && !k_img && !k_link) {
@@ -292,7 +292,10 @@ function generate_mdx_page_from_id(
         k_without_code && !k_link && !k_inlineCode
           ? `\`${k.replace(/\`/g, "")}\``
           : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
-      k = k_path && !k_link && !k_leaf ? `[${k}](${k_path})` : k
+      k =
+        k_path && !k_link && !k_leaf
+          ? `[${remove_middle_backticks(k)}](${k_path})`
+          : k
 
       return `${
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
@@ -379,10 +382,11 @@ function generate_mdx_page_from_id(
       const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
       if (k && v) {
         const k_path = get_path_from_id(ref_id) //! map_id NOT id!!
+
         if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)
           k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
         k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
-        k = k_path && k.length && !k_link && !k_leaf ? `[${k}](${k_path})` : k
+        k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
 
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
           v_code || v_newLine ? "" : ""

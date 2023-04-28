@@ -12,6 +12,7 @@ import {
   id_to_mdx,
 } from "../utility"
 import { uptime } from "process"
+import { kebabCase } from "lodash"
 const {MAP_SIZE,DOCS_BASE} = require("dotenv").config().parsed
 
 export const rem: Rem_DB = rem_json as Rem_DB
@@ -430,6 +431,18 @@ export const map_to_mdx_slug = new Map(
   array_output.map((x) => [x[0], x.slice(1).map((str) => str)])
 )
 
+function return_anchor_from_parent(path: string) {
+  return path.replace(
+    /(\/)([a-zA-Z0-9-]+)$/,
+    "#" +
+      kebabCase(
+        path.match(/([a-zA-Z0-9-]+)$/)
+          ? path.match(/([a-zA-Z0-9-]+)$/)![0]
+          : ""
+      )
+  )
+}
+
 export const path_map: Map<string, string> = new Map()
 /**
  * @function get_path_from_id
@@ -441,7 +454,11 @@ export const path_map: Map<string, string> = new Map()
  * @returns
  */
 export function get_path_from_id(id: string) {
-  return path_map.get(id)
+  const leaf = isLeaf(id)
+  const path = path_map.get(id)
+  if(!path) return path
+  const anchor_path = !leaf  ? path : return_anchor_from_parent(path)
+  return anchor_path
 }
 
 export const map_alias_ids: Map<string, string[]> = new Map()
