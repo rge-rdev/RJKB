@@ -1,8 +1,15 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
+  future: { hoverOnlyWhenSupported: true },
   darkMode: ["class", '[data-theme="dark"]'],
-  content: ["./{docs,src}/**/*.{js,jsx,ts,tsx,mdx}", "docusaurus.config.js"],
+  content: [
+    "./{docs,src}/**/*.{js,jsx,ts,tsx,mdx,css}",
+    "docusaurus.config.js",
+  ],
   theme: {
     extend: {
       backgroundImage: (theme) => ({
@@ -12,7 +19,7 @@ module.exports = {
         "hex-blue": "url('/static/img/BgHexBlue.svg')",
       }),
       animation: {
-        "slide-slow": "shift 200s linear infinite",
+        "slide-slow": "shift 100s linear infinite",
         "slide-fast": "shift 150s linear infinite",
         "fade-in-out": "fade-flash 7s linear 1",
         "fade-in": "fadein 1s cubic-bezier(.2,2,1,-1) 1",
@@ -49,10 +56,10 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 0.75 },
         },
-        fadeout: {
-          "0%": { opacity: 1 },
-          "100%": { opacity: 0 },
-        },
+        // fadeout: {
+        //   "0%": { opacity: 1 },
+        //   "100%": { opacity: 0 },
+        // },
         fadeout: {
           "0%": { opacity: 0.75 },
           "100%": { opacity: 0 },
@@ -62,7 +69,21 @@ module.exports = {
           "100%": { opacity: 0 },
         },
       },
+      // screens: {
+      //   "xxxs	": "300px",
+      //   "xxs	": "400px",
+      //   "xs	": "500px",
+      // },
     },
+    /*
+    screens: {
+      "sm	": "640px",
+      "md	": "768px",
+      "lg	": "1024px",
+      "xl	": "1280px",
+      "2xl	": "1536px",
+    },
+    */
   },
   plugins: [],
 }
