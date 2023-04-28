@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { useState } from "react"
 import { getParentIDsArray } from "../data"
 import { get_rem_list } from "../utility"

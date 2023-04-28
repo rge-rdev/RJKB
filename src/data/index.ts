@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import rem_json from "./rem.json"
 import { Rem_DB, Rem_obj } from "../rem-json"
 import {

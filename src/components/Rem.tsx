@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { memo, useState, useEffect } from "react"
 
 import { get_rem_list, getParentPathIDsArray } from "../utility/"

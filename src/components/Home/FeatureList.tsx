@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React, { Suspense, lazy } from "react"
 //@ts-ignore
 import Link from "@docusaurus/Link"

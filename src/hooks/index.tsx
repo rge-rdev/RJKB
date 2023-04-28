@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { useState, useLayoutEffect } from "react"
 import { rem, root } from "../data"
 

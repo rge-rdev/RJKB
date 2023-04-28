@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { configureStore } from "@reduxjs/toolkit"
 import CountSlice from "./reducers/countSlice"
 import testSlice from "./reducers/testSlice"

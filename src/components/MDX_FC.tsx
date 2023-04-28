@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import ReactMarkdown from "react-markdown"
 import { Prism } from "react-syntax-highlighter"
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism"

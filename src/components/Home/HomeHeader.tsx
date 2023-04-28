@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React, { useEffect, useState } from "react"
 //@ts-ignore
 import Link from "@docusaurus/Link"

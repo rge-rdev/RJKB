@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React from "react"
 //@ts-ignore
 import MDXComponents from "@theme-original/MDXComponents"

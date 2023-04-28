@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import fs from "fs-extra"
 import { uptime, env } from "process"
 import {

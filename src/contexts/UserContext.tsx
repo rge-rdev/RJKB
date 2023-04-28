@@ -1,18 +1,22 @@
-import { createContext, useState } from "react";
+/**
+ * Copyright(c) Roger Jiang
+ */
 
-const UserContext = createContext({});
-export default UserContext;
+import { createContext, useState } from "react"
+
+const UserContext = createContext({})
+export default UserContext
 
 interface UserProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 export function UserProvider({ children }: UserProps) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null)
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}
     </UserContext.Provider>
-  );
+  )
 }

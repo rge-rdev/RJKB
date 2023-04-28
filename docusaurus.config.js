@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 const TerserPlugin = require("terser-webpack-plugin")

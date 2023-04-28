@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { createContext, useState } from "react"
 
 interface DebugContextProps {

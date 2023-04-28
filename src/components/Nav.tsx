@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { useEffect, useState } from "react"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { Counter } from "./Counter"

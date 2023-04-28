@@ -1,15 +1,11 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React from "react"
-import _ from "lodash"
-import { get_path_from_id, getAliasIDs, getAliasSlugs } from "../data"
-import {
-  id_to_mdx,
-  id_to_plaintext,
-  id_to_ref_mdx,
-  id_to_ref_mdx_jsx,
-  id_to_tooltop,
-} from "../utility"
+import { get_path_from_id, getAliasIDs } from "../data"
+import { id_to_mdx, id_to_ref_mdx_jsx } from "../utility"
 import fs from "fs-extra"
-// import { renderToStaticMarkup } from "react-dom/server"
 
 //? use map to memoize & skip repeat preview_FC compute
 const map_all_static_preview: Map<string, string> = new Map()
@@ -34,7 +30,10 @@ function getStaticPreviewTSX(id: string) {
 
   return (
     PreviewJSX &&
-    `import React from "react"
+    `/**
+ * Copyright(c) Roger Jiang
+ */
+import React from "react"
 import CodeBlock from "@theme/CodeBlock"
 import { Link } from "react-router-dom"
 import { Tooltip } from "react-tooltip"
@@ -100,7 +99,6 @@ export default function Preview(id: string) {
     ref_mdx?.filter((ref) => typeof ref === "string" && ref.length > 0) || []
   const ref_l = ref_arr.length
   const ref_has_more = ref_show_l < ref_l
-  // const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0)
   const alias_ids = getAliasIDs(id)
   const aka = alias_ids?.length
     ? `<em>&#x20;aka&#x20;</em>${getAliasIDs(id)

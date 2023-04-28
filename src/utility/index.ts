@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import uniq from "lodash/uniq"
 import escape from "lodash/escape"
 import { RemData } from "../rem-json"

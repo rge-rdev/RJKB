@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 /* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +12,7 @@
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * work well for content-centric websites. // I hate Infima
  */
 /* You can override the default Infima variables here. */
 :root {
@@ -92,10 +96,9 @@
   --rt-opacity: 0.9;
 }
 
-/* esbuild-css-modules-plugin-namespace:./src/components/Tooltip/styles.module.css?esbuild-css-modules-plugin-built */
+/* react-tooltip customization - locked to this version */
 .react-tooltip__tooltip_KtSkBq {
   @apply pointer-events-none invisible absolute left-0 top-10 z-[999] rounded-r-3xl rounded-bl-xl rounded-tl-md opacity-0 transition-opacity duration-[0.3s] ease-[ease-out] will-change-[opacity,visibility];
-  /* @apply sm:w-max md:w-7/12 lg:w-6/12 xl:w-5/12;  */
   @apply py-1 sm:py-2 md:py-3;
   @apply px-1 sm:px-2 md:px-3 lg:px-4 xl:px-5;
   @apply w-[97.5%] sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12;
@@ -122,27 +125,13 @@
 }
 .react-tooltip__ref-link {
   @apply text-xs font-extralight italic sm:text-xs md:text-xs lg:text-sm;
-  /* @apply sm:text-xs md:text-xs lg:text-sm italic font-extralight; */
 }
-/* .react-tooltip__dt
-  .react-tooltip__dd
-  .react-tooltip__alias
-  .react-tooltip__ref-list
-  .react-tooltip__ref-header
-  .react-tooltip__ref-link {
-  @apply sm:text-xs;
-} */
+
 .react-tooltip__fixed_KtSkBq {
   position: fixed;
 }
 .react-tooltip__arrow_KtSkBq {
-  /* background: inherit;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  transform: rotate(45deg); */
   @apply absolute h-0 w-0 border-x-[20px] border-b-[20px] border-solid border-x-transparent border-b-cyan-700 opacity-50;
-  /* background: inherit; */
 }
 .react-tooltip__no-arrow_KtSkBq {
   display: none;
@@ -154,8 +143,6 @@
   visibility: visible;
   @apply opacity-95;
 }
-/* .react-tooltip__dark_KtSkBq {} */
-/* .react-tooltip__light_KtSkBq {} */
 .react-tooltip__success_KtSkBq {
   background-color: var(--rt-color-success);
   color: var(--rt-color-white);
@@ -172,15 +159,6 @@
   background-color: var(--rt-color-info);
   color: var(--rt-color-white);
 }
-/*# sourceMappingURL=react-tooltip.css.map */
-/* This doesn't work:
-.react-tooltip__tooltip_KtSkBq[place="top"] {
-  margin-top: 64px;
-}
-Tooltip[place="top"] {
-  margin-top: 64px;
-}
-*/
 .footer__flex {
   display: flex;
 }
@@ -204,7 +182,6 @@ Tooltip[place="top"] {
   @apply inline-flex hover:rounded-full;
   @apply transition-all hover:bg-stone-400;
   @apply transition-all hover:opacity-75 hover:duration-300 dark:hover:bg-zinc-500;
-  /* hover:opacity-60  scale-75 */
 }
 .footer-mail-link::before {
   @apply flex h-6 w-6 content-[''];

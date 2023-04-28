@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React, { lazy, Suspense } from "react"
 //@ts-ignore
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"

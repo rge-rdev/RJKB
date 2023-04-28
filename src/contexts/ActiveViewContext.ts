@@ -1,5 +1,9 @@
-import { createContext } from "react";
+/**
+ * Copyright(c) Roger Jiang
+ */
 
-const ActiveViewContext = createContext({});
+import { createContext } from "react"
 
-export default ActiveViewContext;
+const ActiveViewContext = createContext({})
+
+export default ActiveViewContext

@@ -1,3 +1,5 @@
+Copyright(c) Roger Jiang
+
 # Website
 
 JSON to Static MDX generator + Docusaurus 2.4.0

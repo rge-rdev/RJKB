@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { id_to_key_slug } from "../../data"
 import { id_to_mdx, id_to_plaintext } from "../../utility"

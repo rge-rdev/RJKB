@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 export interface Rem_DB {
   knowledgebaseid?: Owner_ID
   name?: string

@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React, { Suspense, lazy } from "react"
 const FeatureList = lazy(() => import("./FeatureList"))
 

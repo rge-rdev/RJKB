@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import { lazy, StrictMode } from "react"
 import * as ReactDOM from "react-dom/client"
 import { Provider } from "react-redux"

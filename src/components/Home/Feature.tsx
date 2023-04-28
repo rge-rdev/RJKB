@@ -1,3 +1,7 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+
 import React from "react"
 import Video from "../Video"
 import useBaseUrl from "@docusaurus/useBaseUrl"

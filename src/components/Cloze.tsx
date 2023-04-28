@@ -1,14 +1,18 @@
-import React, { useState } from "react";
-import "./cloze.css";
+/**
+ * Copyright(c) Roger Jiang
+ */
+
+import React, { useState } from "react"
+import "./cloze.css"
 
 //TODO: insert Cloze Component into make_str to
 
 interface ClozeProps {
-  text: string;
+  text: string
 }
 
 export default function Cloze({ text }: ClozeProps) {
-  const [hide, setHide] = useState(true);
+  const [hide, setHide] = useState(true)
 
   return (
     <span
@@ -17,7 +21,7 @@ export default function Cloze({ text }: ClozeProps) {
     >
       {text}
     </span>
-  );
+  )
 }
 
 //https://github.com/dazulu/react-spoiler-tag/blob/master/src/index.tsx

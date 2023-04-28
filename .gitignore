@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Yes! I'm even going to copyright(c) Roger Jiang this file!
 
 # dependencies
 /node_modules
@@ -7,9 +7,21 @@
 
 # static folder
 /public
-/static
-/docs
+/static/*
+!/static/preview
+
 /blog
+docs/*
+!docs/JS
+docs/JS/*
+!docs/JS/JS.mdx
+docs/JS/TS/*
+!docs/JS/TS
+docs/JS/TS/*
+!docs/JS/TS/TS.mdx
+!docs/React
+docs/React/*
+!docs/React/React.mdx
 
 # testing
 src/data/rem.json
@@ -49,5 +61,7 @@ src/pages/redirect
 src/pages/debug
 src/pages/about.mdx
 src/data/rem.json
-mange_css.tsx
+
+# Scripts
 convert_img.tsx
+mangle_css.bat
