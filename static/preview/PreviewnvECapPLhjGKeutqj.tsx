@@ -16,7 +16,7 @@ export default function PreviewnvECapPLhjGKeutqj(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Definition/DOM-Abstractions/Synthetic-Event"><span>Synthetic&#x20;Event</span></Link><span>&#x20;is&#x20;</span><Link to="/wiki/React/React-API"><span>React&#x20;API</span></Link><span>&#x20;to&#x20;standardize&#x20;events&#x20;since&#x20;events&#x20;are&#x20;not&#x20;(currently)&#x20;part&#x20;of&#x20;core&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;vendors&#x20;implement&#x20;events&#x20;differently&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Synthetic&#x20;Event</span></span><span>&#x20;is&#x20;</span><span ><span>React&#x20;API</span></span><span>&#x20;to&#x20;standardize&#x20;events&#x20;since&#x20;events&#x20;are&#x20;not&#x20;(currently)&#x20;part&#x20;of&#x20;core&#x20;</span><span ><span>JS</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>Browser</span></span><span>&#x20;vendors&#x20;implement&#x20;events&#x20;differently&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

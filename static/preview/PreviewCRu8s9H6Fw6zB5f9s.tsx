@@ -16,7 +16,7 @@ export default function PreviewCRu8s9H6Fw6zB5f9s(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Tracker/Private-Tracker"><span>Private&#x20;Tracker</span></Link><span>&#x20;bans&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/DHT"><span>DHT</span></Link><span>,&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/PeX"><span>PeX</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/LSD"><span>LSD</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Peer"><span>Peer</span></Link><span>-discovery&#x20;for&#x20;kill&#x20;privacy&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Private&#x20;Tracker</span></span><span>&#x20;bans&#x20;</span><span ><span>DHT</span></span><span>,&#x20;</span><span ><span>PeX</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>LSD</span></span><span>&#x20;</span><span ><span>Peer</span></span><span>-discovery&#x20;for&#x20;kill&#x20;privacy&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewQ4NdQTHEk3BcoABMu(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector/Class-Selector"><span>Class&#x20;Selector</span></Link><span>&#x20;can&#x20;be&#x20;chained&#x20;onto&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector/Type-Selector"><span>Type&#x20;Selector</span></Link></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Class&#x20;Selector</span></span><span>&#x20;can&#x20;be&#x20;chained&#x20;onto&#x20;</span><span ><span>Type&#x20;Selector</span></span></cite></li></ol>
     
     </small></Tooltip>)
 }

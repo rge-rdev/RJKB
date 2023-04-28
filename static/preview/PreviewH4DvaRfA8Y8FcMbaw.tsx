@@ -16,7 +16,7 @@ export default function PreviewH4DvaRfA8Y8FcMbaw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>if&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/Flag/g"><code>g</code></Link><span>&#x20;omitted,&#x20;only&#x20;1st&#x20;match&#x20;will&#x20;be&#x20;shown&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>if&#x20;</span><span ><code>g</code></span><span>&#x20;omitted,&#x20;only&#x20;1st&#x20;match&#x20;will&#x20;be&#x20;shown&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

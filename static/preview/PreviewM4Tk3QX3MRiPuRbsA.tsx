@@ -16,7 +16,7 @@ export default function PreviewM4Tk3QX3MRiPuRbsA(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Separation&#x20;of&#x20;server&#x20;&#x26;&#x20;client</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/REST"><span>REST</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Separation-of-Concerns"><span>Separation&#x20;of&#x20;Concerns</span></Link><span>&#x20;for&#x20;independent&#x20;client-side&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Backend"><span>Backend</span></Link><span>&#x20;code&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Separation&#x20;of&#x20;server&#x20;&#x26;&#x20;client</span><span>&nbsp;↔&nbsp;</span><span ><span>REST</span></span><span>&#x20;</span><span ><span>Separation&#x20;of&#x20;Concerns</span></span><span>&#x20;for&#x20;independent&#x20;client-side&#x20;&#x26;&#x20;</span><span ><span>Backend</span></span><span>&#x20;code&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

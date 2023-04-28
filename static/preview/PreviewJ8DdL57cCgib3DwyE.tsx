@@ -16,7 +16,7 @@ export default function PreviewJ8DdL57cCgib3DwyE(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS/tsconfigjson/compilerOptions/Emit/noEmitOnError-true"><span>&#x22;</span><code>noEmitOnError&#x22;:&#x20;true</code></Link><span>&#x20;will&#x20;prevent&#x20;output&#x20;of&#x20;even&#x20;correctly&#x20;typed&#x20;files,&#x20;if&#x20;any&#x20;single&#x20;error&#x20;found!&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>&#x22;</span><code>noEmitOnError&#x22;:&#x20;true</code></span><span>&#x20;will&#x20;prevent&#x20;output&#x20;of&#x20;even&#x20;correctly&#x20;typed&#x20;files,&#x20;if&#x20;any&#x20;single&#x20;error&#x20;found!&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

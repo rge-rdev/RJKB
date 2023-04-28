@@ -16,7 +16,7 @@ export default function PreviewiF3f45TBoYriQJKsd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13/not-foundtsx"><code>not-found.tsx</code></Link><span>&#x20;is&#x20;reserved&#x20;name&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Client-Routing/Routing/Catch-All-Route"><span>Catch&#x20;All&#x20;Route</span></Link><span>&#x20;in&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13"><span>Next&#x20;13</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>not-found.tsx</code></span><span>&#x20;is&#x20;reserved&#x20;name&#x20;for&#x20;</span><span ><span>Catch&#x20;All&#x20;Route</span></span><span>&#x20;in&#x20;</span><span ><span>Next&#x20;13</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

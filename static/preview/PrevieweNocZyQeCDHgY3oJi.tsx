@@ -16,7 +16,7 @@ export default function PrevieweNocZyQeCDHgY3oJi(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/DHT"><span>DHT</span></Link><span>&#x20;uses&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/DHT/Kademlia"><span>Kademlia</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>DHT</span></span><span>&#x20;uses&#x20;</span><span ><span>Kademlia</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function Previews8cE862HZB6aSK9A3(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Or&#x20;just&#x20;go&#x20;RPi&#x20;+&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/VPS"><span>VPS</span></Link><span>?&#x20;-&#x20;need&#x20;very&#x20;specific&#x20;reqs&#x20;for&#x20;2-4C&#x20;and&#x20;low&#x20;RAM/SSD</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Or&#x20;just&#x20;go&#x20;RPi&#x20;+&#x20;</span><span ><span>VPS</span></span><span>?&#x20;-&#x20;need&#x20;very&#x20;specific&#x20;reqs&#x20;for&#x20;2-4C&#x20;and&#x20;low&#x20;RAM/SSD</span></cite></li></ol>
     
     </small></Tooltip>)
 }

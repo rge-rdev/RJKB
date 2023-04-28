@@ -16,7 +16,7 @@ export default function PreviewiJq7KMoHGr5Mx4nMP(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Adjacent/Sibling&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>s&#x20;(on&#x20;same&#x20;level)&#x20;do&#x20;not&#x20;have&#x20;any&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Component-Hierarchy/Component-Relationship"><span>Component&#x20;Relationship</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Adjacent/Sibling&#x20;</span><span ><span>Component</span></span><span>s&#x20;(on&#x20;same&#x20;level)&#x20;do&#x20;not&#x20;have&#x20;any&#x20;</span><span ><span>Component&#x20;Relationship</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

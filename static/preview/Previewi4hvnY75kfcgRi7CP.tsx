@@ -16,7 +16,7 @@ export default function Previewi4hvnY75kfcgRi7CP(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Offical&#x20;specs&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Hardware/I-O/audio-jack/Phantom-Power"><span>Phantom&#x20;Power</span></Link><span>&#x20;range&#x20;for&#x20;11-52V&#x20;of&#x20;DC&#x20;power.&#x20;Most&#x20;studio&#x20;mics&#x20;run&#x20;at&#x20;48V&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Offical&#x20;specs&#x20;for&#x20;</span><span ><span>Phantom&#x20;Power</span></span><span>&#x20;range&#x20;for&#x20;11-52V&#x20;of&#x20;DC&#x20;power.&#x20;Most&#x20;studio&#x20;mics&#x20;run&#x20;at&#x20;48V&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

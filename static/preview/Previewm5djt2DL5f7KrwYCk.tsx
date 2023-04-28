@@ -16,7 +16,7 @@ export default function Previewm5djt2DL5f7KrwYCk(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Track</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/HTTP-Cookie"><code>Cookie</code></Link><span>&#x20;to&#x20;record/analyze&#x20;user&#x20;behavior</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Personalize</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/HTTP-Cookie"><code>Cookie</code></Link><span>&#x20;to&#x20;customize&#x20;user&#x20;theme/language/etc</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Session</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/HTTP-Cookie"><code>Cookie</code></Link><span>&#x20;to&#x20;store&#x20;user&#x20;login/forms/cart/etc</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Track</span><span>&nbsp;↔&nbsp;</span><span ><code>Cookie</code></span><span>&#x20;to&#x20;record/analyze&#x20;user&#x20;behavior</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Personalize</span><span>&nbsp;↔&nbsp;</span><span ><code>Cookie</code></span><span>&#x20;to&#x20;customize&#x20;user&#x20;theme/language/etc</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Session</span><span>&nbsp;↔&nbsp;</span><span ><code>Cookie</code></span><span>&#x20;to&#x20;store&#x20;user&#x20;login/forms/cart/etc</span></cite></li></ol>
     
     </small></Tooltip>)
 }

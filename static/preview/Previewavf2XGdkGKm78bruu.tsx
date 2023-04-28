@@ -16,7 +16,7 @@ export default function Previewavf2XGdkGKm78bruu(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Library/Module/ES-Module"><span>ES&#x20;Module</span></Link><span>s&#x20;supersede&#x20;all&#x20;previous&#x20;module&#x20;formats&#x20;(</span><Link to="/wiki/JS/Library/Module/CommonJS"><span>CommonJS</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/Library/Module/AMD-Module"><span>AMD&#x20;Module</span></Link><span>)&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>ES&#x20;Module</span></span><span>s&#x20;supersede&#x20;all&#x20;previous&#x20;module&#x20;formats&#x20;(</span><span ><span>CommonJS</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>AMD&#x20;Module</span></span><span>)&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

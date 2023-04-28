@@ -16,7 +16,7 @@ export default function Preview4KGLr3FxLbp4AMAtJ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;interface&#x20;for&#x20;Generic&#x20;Value&#x20;Container&#x20;where&#x3C;Value&#x3E;&#x20;is&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Generics/Generic-Type-Variable"><span>Generic&#x20;Type&#x20;Variable</span></Link><span>&#x20;</span><CodeBlock language="tsx">{`interface ValueContainer<Value> {\n  value: Value;\n}\ntype StringContainer = ValueContainer<string>;`}</CodeBlock><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;interface&#x20;for&#x20;Generic&#x20;Value&#x20;Container&#x20;where&#x3C;Value&#x3E;&#x20;is&#x20;</span><span ><span>Generic&#x20;Type&#x20;Variable</span></span><span>&#x20;</span><CodeBlock language="tsx">{`interface ValueContainer<Value> {\n  value: Value;\n}\ntype StringContainer = ValueContainer<string>;`}</CodeBlock><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

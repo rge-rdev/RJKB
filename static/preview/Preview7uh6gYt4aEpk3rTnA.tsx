@@ -16,7 +16,7 @@ export default function Preview7uh6gYt4aEpk3rTnA(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Typed-Callback-Function"><span>Typed&#x20;Callback&#x20;Function</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><span>Typed&#x20;Callback&#x20;Function</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

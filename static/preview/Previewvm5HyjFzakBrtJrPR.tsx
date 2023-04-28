@@ -16,7 +16,7 @@ export default function Previewvm5HyjFzakBrtJrPR(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Checksum</span><span>&nbsp;↔&nbsp;</span><span>file&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Piece-Hash"><span>Piece&#x20;Hash</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Checksum</span><span>&nbsp;↔&nbsp;</span><span>file&#x20;</span><span ><span>Piece&#x20;Hash</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

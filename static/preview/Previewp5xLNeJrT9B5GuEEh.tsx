@@ -16,7 +16,7 @@ export default function Previewp5xLNeJrT9B5GuEEh(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>URL()</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><code>Constructor</code></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/new"><code>new</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/URL"><code>URL</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>url</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;set&#x20;absolute&#x20;or&#x20;relative&#x20;</span><Link to="/wiki/JS/JS-Language/Object/URL"><code>URL</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>URL()</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><code>Constructor</code></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/new"><code>new</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/URL"><code>URL</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>url</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;set&#x20;absolute&#x20;or&#x20;relative&#x20;</span><span ><code>URL</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

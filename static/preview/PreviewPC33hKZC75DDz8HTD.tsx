@@ -16,7 +16,7 @@ export default function PreviewPC33hKZC75DDz8HTD(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>EKS</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/AWS"><span>AWS</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/AWS/ECS"><span>ECS</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/Kubernetes"><span>Kubernetes</span></Link><span>&#x20;Service&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>EKS</span><span>&nbsp;↔&nbsp;</span><span ><span>AWS</span></span><span>&#x20;</span><span ><span>ECS</span></span><span>&#x20;for&#x20;</span><span ><span>Kubernetes</span></span><span>&#x20;Service&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

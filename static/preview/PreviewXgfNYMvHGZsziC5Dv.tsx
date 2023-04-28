@@ -16,7 +16,7 @@ export default function PreviewXgfNYMvHGZsziC5Dv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API/Hooks-API/Stateful-Hook/useState/Lazy-Initial-value"><span>Lazy&#x20;Initial&#x20;value</span></Link><span>&#x20;used&#x20;when&#x20;initial&#x20;value&#x20;requires&#x20;expensive&#x20;calculation,&#x20;which&#x20;should&#x20;be&#x20;done&#x20;once</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Lazy&#x20;Initial&#x20;value</span></span><span>&#x20;used&#x20;when&#x20;initial&#x20;value&#x20;requires&#x20;expensive&#x20;calculation,&#x20;which&#x20;should&#x20;be&#x20;done&#x20;once</span></cite></li></ol>
     
     </small></Tooltip>)
 }

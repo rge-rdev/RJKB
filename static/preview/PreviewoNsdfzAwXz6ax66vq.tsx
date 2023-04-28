@@ -16,7 +16,7 @@ export default function PreviewoNsdfzAwXz6ax66vq(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>pnpm&#x20;import</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;import&#x20;</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;from&#x20;npm/yarn&#x20;lock-files&#x20;into&#x20;</span><Link to="/wiki/JS/Nodejs/npm/NPM-Alternatives/pnpm/pnpm-lockyaml"><code>pnpm-lock.yaml</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>pnpm&#x20;import</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;import&#x20;</span><span ><code>Deps</code></span><span>&#x20;from&#x20;npm/yarn&#x20;lock-files&#x20;into&#x20;</span><span ><code>pnpm-lock.yaml</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

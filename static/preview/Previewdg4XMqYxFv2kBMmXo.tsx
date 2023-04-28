@@ -16,7 +16,7 @@ export default function Previewdg4XMqYxFv2kBMmXo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Intranet</span><span>&nbsp;↔&nbsp;</span><span>Private&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network"><span>Computer&#x20;Network</span></Link><span>&#x20;with&#x20;access&#x20;limited&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Intranet/LAN"><span>LAN</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Intranet/WAN"><span>WAN</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>contrast&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Intranet/WAN"><span>WAN</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Intranet</span><span>&nbsp;↔&nbsp;</span><span>Private&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network"><span>Computer&#x20;Network</span></Link><span>&#x20;with&#x20;access&#x20;limited&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Intranet/LAN"><span>LAN</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Intranet/WAN"><span>WAN</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>contrast&#x20;</span><span ><span>WAN</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

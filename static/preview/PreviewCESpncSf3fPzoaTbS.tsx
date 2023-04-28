@@ -16,7 +16,7 @@ export default function PreviewCESpncSf3fPzoaTbS(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>default&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Quantifier"><span>Quantifier</span></Link><span>&#x20;match&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/Flag/Greedy"><span>Greedy</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>default&#x20;</span><span ><span>Quantifier</span></span><span>&#x20;match&#x20;</span><span ><span>Greedy</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

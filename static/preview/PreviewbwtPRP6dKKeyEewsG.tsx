@@ -16,7 +16,7 @@ export default function PreviewbwtPRP6dKKeyEewsG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>sfc&#x20;/scannow</code><span>&nbsp;↔&nbsp;</span><span>run&#x20;</span><Link to="/wiki/Dev-tool/CLI/Shell/PowerShell/sfc"><code>sfc</code></Link><span>&#x20;scan&#x20;of&#x20;system&#x20;for&#x20;Win&#x20;10/11&#x20;-&#x20;output&#x20;sfc&#x20;lof&#x20;-&#x20;trigger&#x20;repair&#x20;service&#x20;on&#x20;find&#x20;corrupt</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>sfc&#x20;/scannow</code><span>&nbsp;↔&nbsp;</span><span>run&#x20;</span><span ><code>sfc</code></span><span>&#x20;scan&#x20;of&#x20;system&#x20;for&#x20;Win&#x20;10/11&#x20;-&#x20;output&#x20;sfc&#x20;lof&#x20;-&#x20;trigger&#x20;repair&#x20;service&#x20;on&#x20;find&#x20;corrupt</span></cite></li></ol>
     
     </small></Tooltip>)
 }

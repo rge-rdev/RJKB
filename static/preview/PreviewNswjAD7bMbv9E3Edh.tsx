@@ -16,7 +16,7 @@ export default function PreviewNswjAD7bMbv9E3Edh(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>git&#x20;commit&#x20;--amend&#x20;--no-edit</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;fix&#x20;&#x26;&#x20;update&#x20;previous&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit"><span>Commit</span></Link><span>&#x20;with&#x20;extra&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Staging"><span>Staging</span></Link><span>&#x20;file&#x20;(after&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/add/git-add"><code>git&#x20;add&#x20;.</code></Link><span>)&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>git&#x20;commit&#x20;--amend&#x20;--no-edit</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;fix&#x20;&#x26;&#x20;update&#x20;previous&#x20;</span><span ><span>Commit</span></span><span>&#x20;with&#x20;extra&#x20;</span><span ><span>Staging</span></span><span>&#x20;file&#x20;(after&#x20;</span><span ><code>git&#x20;add&#x20;.</code></span><span>)&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

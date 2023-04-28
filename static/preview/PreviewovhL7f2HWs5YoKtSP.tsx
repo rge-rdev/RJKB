@@ -16,7 +16,7 @@ export default function PreviewovhL7f2HWs5YoKtSP(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>checkout&#x20;-</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/checkout"><code>checkout</code></Link><span>&#x20;prev&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Branch"><span>Branch</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>switch</code><span>&nbsp;↔&nbsp;</span><span>same&#x20;function&#x20;as&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/checkout"><code>checkout</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>checkout&#x20;-</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;</span><span ><code>checkout</code></span><span>&#x20;prev&#x20;</span><span ><span>Branch</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>switch</code><span>&nbsp;↔&nbsp;</span><span>same&#x20;function&#x20;as&#x20;</span><span ><code>checkout</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

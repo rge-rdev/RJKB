@@ -16,7 +16,7 @@ export default function PreviewNAFfNfDQM8kXhYdcY(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><b><em>!snippet&#x20;</em></b><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/Object-Literal-Type"><span>Object&#x20;Literal&#x20;Type</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>inline&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Type-Annotation"><span>Type&#x20;Annotation</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/Object-Literal-Type"><span>Object&#x20;Literal&#x20;Type</span></Link><span></span><CodeBlock language="tsx">{`function xy(coords: {x: number, y: number}) {\n  return \`\${coords.x} \$[coords.y}\`\n}`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><b><em>!snippet&#x20;</em></b><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/Object-Literal-Type"><span>Object&#x20;Literal&#x20;Type</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>inline&#x20;</span><span ><span>Type&#x20;Annotation</span></span><span>&#x20;for&#x20;</span><span ><span>Object&#x20;Literal&#x20;Type</span></span><span></span><CodeBlock language="tsx">{`function xy(coords: {x: number, y: number}) {\n  return \`\${coords.x} \$[coords.y}\`\n}`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

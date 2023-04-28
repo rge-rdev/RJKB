@@ -16,7 +16,7 @@ export default function PreviewRnB6wBDZFPDCiPoHM(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/General-Computing-Concepts/Glob-Pattern/a-z"><code>[a-z]</code></Link><span>&#x20;cf&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/regex"><code>Regex</code></Link><span>&#x20;</span><code>[a-z]&#x7B;1&#x7D;</code><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>[a-z]</code></span><span>&#x20;cf&#x20;</span><span ><code>Regex</code></span><span>&#x20;</span><code>[a-z]&#x7B;1&#x7D;</code><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

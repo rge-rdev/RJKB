@@ -16,7 +16,7 @@ export default function Preview7Q5NTRq49LTEA9mzQ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;Split&#x3E;</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-Stack/react-split"><code>react-split</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;to&#x20;wrap&#x20;children&#x20;with&#x20;options&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>react-split-grid</code><span>&nbsp;↔&nbsp;</span><span>better&#x20;version&#x20;of&#x20;</span><Link to="/wiki/React/React-Stack/react-split"><code>react-split</code></Link><span>&#x20;with&#x20;2-D&#x20;split&#x20;panel&#x20;UI&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;Split&#x3E;</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-Stack/react-split"><code>react-split</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;to&#x20;wrap&#x20;children&#x20;with&#x20;options&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>react-split-grid</code><span>&nbsp;↔&nbsp;</span><span>better&#x20;version&#x20;of&#x20;</span><span ><code>react-split</code></span><span>&#x20;with&#x20;2-D&#x20;split&#x20;panel&#x20;UI&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewZJRBKgMPqhyyQPAdp(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>TypeScript&#x20;extends&#x20;JavaScript&#x20;classes&#x20;through&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Classes/method-modifiers/private"><code>private</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Classes/method-modifiers/protected"><code>protected</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>TypeScript&#x20;extends&#x20;JavaScript&#x20;classes&#x20;through&#x20;</span><span ><code>private</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>protected</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

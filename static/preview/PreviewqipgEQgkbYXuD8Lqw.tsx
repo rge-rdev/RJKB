@@ -16,7 +16,7 @@ export default function PreviewqipgEQgkbYXuD8Lqw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>opt&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/enum/String-Enum"><span>String&#x20;Enum</span></Link><span>&#x20;instead&#x20;of&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/enum/Numeric-Enum"><span>Numeric&#x20;Enum</span></Link><span>;&#x20;useful&#x20;log&#x20;&#x26;&#x20;type-check</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>opt&#x20;for&#x20;</span><span ><span>String&#x20;Enum</span></span><span>&#x20;instead&#x20;of&#x20;</span><span ><span>Numeric&#x20;Enum</span></span><span>;&#x20;useful&#x20;log&#x20;&#x26;&#x20;type-check</span></cite></li></ol>
     
     </small></Tooltip>)
 }

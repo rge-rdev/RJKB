@@ -16,7 +16,7 @@ export default function PreviewkB6wJRnFNSpZLWxRY(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/ReferenceError"><code>ReferenceError</code></Link><span>&#x20;thrown&#x20;when&#x20;attempt&#x20;to&#x20;access&#x20;let/const&#x20;variable&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/VE/Functions-can-access-variables-outside-VE-via-Scope-Chain/Hoisting/Hoisting-differs-per-variable-type/Hoisting-let-const-variables/TDZ"><span>TDZ</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>ReferenceError</code></span><span>&#x20;thrown&#x20;when&#x20;attempt&#x20;to&#x20;access&#x20;let/const&#x20;variable&#x20;in&#x20;</span><span ><span>TDZ</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function Previewy4QKbBMHk3Q6dEB3F(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>moat</span><span>&nbsp;↔&nbsp;</span><span>tool&#x20;to&#x20;request&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Firefox/Tor-Browser/Bridge"><span>Bridge</span></Link><span>&#x20;from&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Firefox/Tor-Browser/Bridge/Bridge-Authority"><span>Bridge&#x20;Authority</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Security/CAPTCHA"><span>CAPTCHA</span></Link><span>&#x20;verify&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>moat</span><span>&nbsp;↔&nbsp;</span><span>tool&#x20;to&#x20;request&#x20;</span><span ><span>Bridge</span></span><span>&#x20;from&#x20;</span><span ><span>Bridge&#x20;Authority</span></span><span>&#x20;with&#x20;</span><span ><span>CAPTCHA</span></span><span>&#x20;verify&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewjfoHFYTTGCY437shk(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!inverse&#x20;</span><Link to="/wiki/JS/Library/lodash/Lodash-String-methods/escapestring"><code>_.escape(string)</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!inverse&#x20;</span><span ><code>_.escape(string)</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

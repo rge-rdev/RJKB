@@ -16,7 +16,7 @@ export default function PreviewkL5wPh5AgZkLgQ69S(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Pure&#x20;Function</span><span>&nbsp;↔&nbsp;</span><span>Function&#x20;with&#x20;fixed&#x20;input&#x20;&#x26;&#x20;same&#x20;output,&#x20;no&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Functional-Programming/Side-Effect"><span>Side&#x20;Effect</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>No&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;to&#x20;store&#x20;changes&#x20;=&#x20;No&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Functional-Programming/Side-Effect"><span>Side&#x20;Effect</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Pure&#x20;Function</span><span>&nbsp;↔&nbsp;</span><span>Function&#x20;with&#x20;fixed&#x20;input&#x20;&#x26;&#x20;same&#x20;output,&#x20;no&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Functional-Programming/Side-Effect"><span>Side&#x20;Effect</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>No&#x20;</span><span ><span>state</span></span><span>&#x20;to&#x20;store&#x20;changes&#x20;=&#x20;No&#x20;</span><span ><span>Side&#x20;Effect</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

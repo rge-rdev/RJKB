@@ -16,7 +16,7 @@ export default function PreviewF4eRZpMHzHwcNedZp(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>s</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/Flag"><span>Flag</span></Link><span>&#x20;to&#x20;match&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Pattern-Character/undefined"><code>.</code></Link><span>&#x20;to&#x20;newline&#x20;character&#x20;-&#x20;treat&#x20;everything&#x20;as&#x20;one&#x20;line</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>s</code><span>&nbsp;↔&nbsp;</span><span ><span>Flag</span></span><span>&#x20;to&#x20;match&#x20;</span><span ><code>.</code></span><span>&#x20;to&#x20;newline&#x20;character&#x20;-&#x20;treat&#x20;everything&#x20;as&#x20;one&#x20;line</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewKviabrLeLammf8A5C(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>to&#x20;search&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Metacharacter"><span>Metacharacter</span></Link><span>,&#x20;must&#x20;escape&#x20;by&#x20;prefix&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Metacharacter/"><code>\</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>to&#x20;search&#x20;</span><span ><span>Metacharacter</span></span><span>,&#x20;must&#x20;escape&#x20;by&#x20;prefix&#x20;</span><span ><code>\</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

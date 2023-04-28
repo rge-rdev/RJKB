@@ -16,7 +16,7 @@ export default function Previewf6hEtHikaaDxujkRc(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>BUG:&#x20;Vite&#x20;can&#x27;t&#x20;load&#x20;SVG&#x20;files&#x20;properly&#x20;with&#x20;correct&#x20;types</span><span>&nbsp;↔&nbsp;</span><span>FIX:&#x20;add&#x20;</span><Link to="/wiki/Dev-tool/Build-Tool/Vite/Vite-Plugins/vite-plugin-svgr"><code>vite-plugin-svgr</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>BUG:&#x20;Vite&#x20;can&#x27;t&#x20;load&#x20;SVG&#x20;files&#x20;properly&#x20;with&#x20;correct&#x20;types</span><span>&nbsp;↔&nbsp;</span><span>FIX:&#x20;add&#x20;</span><span ><code>vite-plugin-svgr</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

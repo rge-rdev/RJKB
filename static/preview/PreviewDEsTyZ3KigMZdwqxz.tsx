@@ -16,7 +16,7 @@ export default function PreviewDEsTyZ3KigMZdwqxz(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL/URL-Structure/URL-Anchor"><span>URL&#x20;Anchor</span></Link><span>&#x20;to&#x20;prefix&#x20;#SomeLabelForLocation</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL/URL-Structure/URL-Anchor"><span>URL&#x20;Anchor</span></Link><span>&#x20;to&#x20;bookmark&#x20;audio/video&#x20;media&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>URL&#x20;Anchor</span></span><span>&#x20;to&#x20;prefix&#x20;#SomeLabelForLocation</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>URL&#x20;Anchor</span></span><span>&#x20;to&#x20;bookmark&#x20;audio/video&#x20;media&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

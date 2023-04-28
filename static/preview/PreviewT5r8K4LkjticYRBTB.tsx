@@ -16,7 +16,7 @@ export default function PreviewT5r8K4LkjticYRBTB(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>average&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/DNS/DNS-Propagation"><span>DNS&#x20;Propagation</span></Link><span>&#x20;takes&#x20;48-72hrs,&#x20;vary&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/Domain-Registrar"><span>Domain&#x20;Registrar</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>average&#x20;</span><span ><span>DNS&#x20;Propagation</span></span><span>&#x20;takes&#x20;48-72hrs,&#x20;vary&#x20;by&#x20;</span><span ><span>Domain&#x20;Registrar</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

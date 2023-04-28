@@ -16,7 +16,7 @@ export default function PreviewCG2aAJik4DCNKn5wF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API/Hooks-API/Effect-Hook/useEffect/Cleanup-Function"><span>Cleanup&#x20;Function</span></Link><span>&#x20;used&#x20;to&#x20;prevent&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/High-Level/Garbage-Collection/Garbage-Collection-is-required-to-prevent-memory-leaks/Memory-Leak"><span>Memory&#x20;Leak</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Cleanup&#x20;Function</span></span><span>&#x20;used&#x20;to&#x20;prevent&#x20;</span><span ><span>Memory&#x20;Leak</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

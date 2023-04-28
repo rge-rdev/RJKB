@@ -16,7 +16,7 @@ export default function Previewn8HnM89swGYw8wdCW(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/CORS/Origin/Same-Origin"><span>Same-Origin</span></Link><span>&#x20;policy&#x20;to&#x20;restrict&#x20;access&#x20;to&#x20;</span><b>requests&#x20;of&#x20;same&#x20;origin&#x20;only</b><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>&#x22;allow-same-origin&#x22;</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;</span><b>allow&#x20;access</b><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/CORS/Origin/Same-Origin"><span>Same-Origin</span></Link><span>&#x20;(within&#x20;same&#x20;parent&#x20;iframe)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Same-Origin</span></span><span>&#x20;policy&#x20;to&#x20;restrict&#x20;access&#x20;to&#x20;</span><b>requests&#x20;of&#x20;same&#x20;origin&#x20;only</b><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>&#x22;allow-same-origin&#x22;</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;</span><b>allow&#x20;access</b><span>&#x20;for&#x20;</span><span ><span>Same-Origin</span></span><span>&#x20;(within&#x20;same&#x20;parent&#x20;iframe)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewB4uaNLsMttdvrccyK(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!contrast&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/never/bottom-type"><span>bottom&#x20;type</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>never</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/never/bottom-type"><span>bottom&#x20;type</span></Link><span>&#x20;to&#x20;rep&#x20;values&#x20;</span><b>never&#x20;observed</b><span>&#x20;(or&#x20;never&#x20;return&#x20;from&#x20;function)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!contrast&#x20;</span><span ><span>bottom&#x20;type</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>never</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/never/bottom-type"><span>bottom&#x20;type</span></Link><span>&#x20;to&#x20;rep&#x20;values&#x20;</span><b>never&#x20;observed</b><span>&#x20;(or&#x20;never&#x20;return&#x20;from&#x20;function)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

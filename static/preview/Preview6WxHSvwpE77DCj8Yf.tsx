@@ -16,7 +16,7 @@ export default function Preview6WxHSvwpE77DCj8Yf(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>eg&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling/Data-Relationship/1-Many/1-Few"><span>1:Few</span></Link><span>&#x20;=&#x20;1&#x20;Movie&#x20;can&#x20;only&#x20;win&#x20;a&#x20;fixed&#x20;#&#x20;many&#x20;awards</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>eg&#x20;</span><span ><span>1:Few</span></span><span>&#x20;=&#x20;1&#x20;Movie&#x20;can&#x20;only&#x20;win&#x20;a&#x20;fixed&#x20;#&#x20;many&#x20;awards</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewPuf3qEDMEAPzPkyRv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>ctrl+space</code><span>&nbsp;↔&nbsp;</span><span>prompt&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/VSCode-Features/Intellisense"><span>Intellisense</span></Link><span>&#x20;def/docs</span></cite></li><li><cite className="react-tooltip__ref-list"><code>ctrl+shift+space</code><span>&nbsp;↔&nbsp;</span><span>prompt&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/VSCode-Features/Intellisense"><span>Intellisense</span></Link><span>&#x20;for&#x20;params&#x20;hint</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>ctrl+space</code><span>&nbsp;↔&nbsp;</span><span>prompt&#x20;</span><span ><span>Intellisense</span></span><span>&#x20;def/docs</span></cite></li><li><cite className="react-tooltip__ref-list"><code>ctrl+shift+space</code><span>&nbsp;↔&nbsp;</span><span>prompt&#x20;</span><span ><span>Intellisense</span></span><span>&#x20;for&#x20;params&#x20;hint</span></cite></li></ol>
     
     </small></Tooltip>)
 }

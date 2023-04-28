@@ -16,7 +16,7 @@ export default function Previewpzdjbu5xdBEqiHLdw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/SOCKS5/Socksifier/Shadowsocks"><span>Shadowsocks</span></Link><span>&#x20;similar&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/SSH"><span>SSH</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Windows"><code>WinOS</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/SOCKS5/Socksifier/Shadowsocks"><span>Shadowsocks</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Client"><span>Client</span></Link><span>&nbsp;↔&nbsp;</span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Shadowsocks</span></span><span>&#x20;similar&#x20;to&#x20;</span><span ><span>SSH</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>WinOS</code></span><span>&#x20;</span><span ><span>Shadowsocks</span></span><span>&#x20;</span><span ><span>Client</span></span><span>&nbsp;↔&nbsp;</span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

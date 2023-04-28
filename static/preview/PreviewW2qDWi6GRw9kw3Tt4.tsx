@@ -16,7 +16,7 @@ export default function PreviewW2qDWi6GRw9kw3Tt4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Subscription</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/API/Online-API/Stripe/Stripe-Concepts/Payment-Flow/Invoice"><span>Invoice</span></Link><span>&#x20;to&#x20;recur&#x20;&#x26;&#x20;autogen&#x20;on&#x20;set&#x20;interval&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Subscription</span><span>&nbsp;↔&nbsp;</span><span ><span>Invoice</span></span><span>&#x20;to&#x20;recur&#x20;&#x26;&#x20;autogen&#x20;on&#x20;set&#x20;interval&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

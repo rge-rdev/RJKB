@@ -16,7 +16,7 @@ export default function PreviewzcQR3rKqpmpY6u3GB(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Dev-tool/Docker/Docker-Container"><span>Docker&#x20;Container</span></Link><span>&#x20;run&#x20;on&#x20;single&#x20;shared&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Kernel"><span>Kernel</span></Link><span>&#x20;for&#x20;less&#x20;overhead&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Docker&#x20;Container</span></span><span>&#x20;run&#x20;on&#x20;single&#x20;shared&#x20;</span><span ><span>Kernel</span></span><span>&#x20;for&#x20;less&#x20;overhead&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewLosLJcWGkc96RczyW(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-o-</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/CSS/CSS-Syntax/Vendor-Prefix"><span>Vendor&#x20;Prefix</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Opera"><span>Opera</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-o-</code><span>&nbsp;↔&nbsp;</span><span ><span>Vendor&#x20;Prefix</span></span><span>&#x20;for&#x20;</span><span ><span>Opera</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

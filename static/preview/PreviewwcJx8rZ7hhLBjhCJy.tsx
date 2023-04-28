@@ -16,7 +16,7 @@ export default function PreviewwcJx8rZ7hhLBjhCJy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>&#x26A0;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;may&#x20;limit&#x20;max&#x20;length&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/iframe/srcDoc"><code>srcDoc</code></Link><span>&#x20;for&#x20;embed&#x20;page&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>&#x26A0;</span><span ><span>Browser</span></span><span>&#x20;may&#x20;limit&#x20;max&#x20;length&#x20;</span><span ><code>srcDoc</code></span><span>&#x20;for&#x20;embed&#x20;page&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

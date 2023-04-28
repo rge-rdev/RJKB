@@ -16,7 +16,7 @@ export default function PreviewqvqaYK5DF3syhKLHm(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>updated&#x20;JSX&#x20;transform&#x20;for&#x20;</span><Link to="/wiki/React/React-API/JSX/Transpile/Babel"><span>Babel</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/TS"><span>TS</span></Link><span>&#x20;compilers&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>updated&#x20;JSX&#x20;transform&#x20;for&#x20;</span><span ><span>Babel</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>TS</span></span><span>&#x20;compilers&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

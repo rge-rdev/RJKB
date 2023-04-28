@@ -16,7 +16,7 @@ export default function PreviewjDtnTgaw99Y7FY79k(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>a&#x20;variable&#x20;can&#x20;be&#x20;either&#x20;a&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive"><span>Primitive</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Reference-Value"><span>Reference&#x20;Value</span></Link><span>&#x20;type</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>a&#x20;variable&#x20;can&#x20;be&#x20;either&#x20;a&#x20;</span><span ><span>Primitive</span></span><span>&#x20;or&#x20;</span><span ><span>Reference&#x20;Value</span></span><span>&#x20;type</span></cite></li></ol>
     
     </small></Tooltip>)
 }

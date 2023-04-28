@@ -16,7 +16,7 @@ export default function PreviewMqYE4kqG6TpK4nhNo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>way&#x20;to&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling"><code>Data Model</code></Link><span>&#x20;defines&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Backend"><span>Backend</span></Link><span>&#x20;architecture,&#x20;can&#x20;make&#x20;or&#x20;break&#x20;app!&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>way&#x20;to&#x20;</span><span ><code>Data Model</code></span><span>&#x20;defines&#x20;</span><span ><span>Backend</span></span><span>&#x20;architecture,&#x20;can&#x20;make&#x20;or&#x20;break&#x20;app!&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

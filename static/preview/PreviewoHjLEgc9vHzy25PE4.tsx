@@ -16,7 +16,7 @@ export default function PreviewoHjLEgc9vHzy25PE4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Firefox/Spidermonkey"><span>Spidermonkey</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Spidermonkey</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewzmRWhwPjSbEteLfgF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/class"><code>class</code></Link><span>&#x20;is&#x20;more&#x20;compact&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;to&#x20;set&#x20;up&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype-Chain"><span>Prototype&#x20;Chain</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/class"><code>class</code></Link><span>&#x20;as&#x20;compact&#x20;way&#x20;to&#x20;set&#x20;up&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype-Chain"><span>Prototype&#x20;Chain</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>class</code></span><span>&#x20;is&#x20;more&#x20;compact&#x20;</span><span ><span>JS&#x20;Syntax</span></span><span>&#x20;to&#x20;set&#x20;up&#x20;</span><span ><span>Prototype&#x20;Chain</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><code>class</code></span><span>&#x20;as&#x20;compact&#x20;way&#x20;to&#x20;set&#x20;up&#x20;</span><span ><span>Prototype&#x20;Chain</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

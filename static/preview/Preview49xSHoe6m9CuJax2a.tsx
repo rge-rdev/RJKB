@@ -16,7 +16,7 @@ export default function Preview49xSHoe6m9CuJax2a(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-d</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;run&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Container"><code>Container</code></Link><span>&#x20;in&#x20;</span><Link to="/wiki/Dev-tool/Docker/Detached-Mode"><span>Detached&#x20;Mode</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-d</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;run&#x20;</span><span ><code>Container</code></span><span>&#x20;in&#x20;</span><span ><span>Detached&#x20;Mode</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

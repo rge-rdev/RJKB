@@ -16,7 +16,7 @@ export default function PreviewxhbgAdxGLt6v5xdnG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/Nodejs/Express/Express-Methods/express/appuse"><code>app.use()</code></Link><span>&#x20;for&#x20;custom&#x20;404&#x20;page</span><CodeBlock language="tsx">{`app.use((req,res) => {\n  res.type("text/plain")\n  res.status(404)\n  res.send("404 - Not Found")\n})`}</CodeBlock></cite></li><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/Nodejs/Express/Express-Methods/express/appuse"><code>app.use()</code></Link><span>&#x20;for&#x20;custom&#x20;500&#x20;page&#x20;</span><CodeBlock language="tsx">{`app.use((err, req, res, next) => {\n  console.error(err.message)\n  res.type("text/plain")\n  res.status(500)\n  res.send("500 - Server Error")\n})`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><code>app.use()</code></span><span>&#x20;for&#x20;custom&#x20;404&#x20;page</span><CodeBlock language="tsx">{`app.use((req,res) => {\n  res.type("text/plain")\n  res.status(404)\n  res.send("404 - Not Found")\n})`}</CodeBlock></cite></li><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><code>app.use()</code></span><span>&#x20;for&#x20;custom&#x20;500&#x20;page&#x20;</span><CodeBlock language="tsx">{`app.use((err, req, res, next) => {\n  console.error(err.message)\n  res.type("text/plain")\n  res.status(500)\n  res.send("500 - Server Error")\n})`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

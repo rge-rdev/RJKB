@@ -16,7 +16,7 @@ export default function Preview66wsMrA46bBmheTPe(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>should&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption"><code>Encrypt</code></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/API-Key"><span>API&#x20;Key</span></Link><span>&#x20;&#x26;&#x20;not&#x20;stored&#x20;as&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption/Plaintext"><span>Plaintext</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>should&#x20;</span><span ><code>Encrypt</code></span><span>&#x20;</span><span ><span>API&#x20;Key</span></span><span>&#x20;&#x26;&#x20;not&#x20;stored&#x20;as&#x20;</span><span ><span>Plaintext</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

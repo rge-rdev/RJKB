@@ -16,7 +16,7 @@ export default function PreviewGjzXhuHCZaRahhXP4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>written&#x20;in&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>,&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Markup-Language/XUL"><span>XUL</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/CSS"><span>CSS</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>written&#x20;in&#x20;</span><span ><span>JS</span></span><span>,&#x20;</span><span ><span>XUL</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>CSS</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

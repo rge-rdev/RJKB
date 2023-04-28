@@ -16,7 +16,7 @@ export default function PreviewhbjLHrKrozYtwrcEe(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API/Suspense-API/React-Scheduler"><span>React&#x20;Scheduler</span></Link><span>&#x20;will&#x20;pause/discard&#x20;task&#x20;for&#x20;reconciling&#x20;&#x26;&#x20;commiting&#x20;DOM&#x20;changes</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API/Suspense-API/React-Scheduler"><span>React&#x20;Scheduler</span></Link><span>&#x20;ensures&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;with&#x20;higher&#x20;priorty&#x20;update&#x20;first</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>React&#x20;Scheduler</span></span><span>&#x20;will&#x20;pause/discard&#x20;task&#x20;for&#x20;reconciling&#x20;&#x26;&#x20;commiting&#x20;DOM&#x20;changes</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>React&#x20;Scheduler</span></span><span>&#x20;ensures&#x20;</span><span ><span>FC</span></span><span>&#x20;with&#x20;higher&#x20;priorty&#x20;update&#x20;first</span></cite></li></ol>
     
     </small></Tooltip>)
 }

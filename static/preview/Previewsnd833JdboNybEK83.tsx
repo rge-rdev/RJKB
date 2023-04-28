@@ -16,7 +16,7 @@ export default function Previewsnd833JdboNybEK83(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/React-Router-FC/Routes"><code>&#x3C;Routes&#x3E;</code></Link><span>&#x20;replaces&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/Switch"><code>&#x3C;Switch&#x3E;</code></Link><span>&#x20;from&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5"><span>react-router&#x20;v5</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>&#x3C;Routes&#x3E;</code></span><span>&#x20;replaces&#x20;</span><span ><code>&#x3C;Switch&#x3E;</code></span><span>&#x20;from&#x20;</span><span ><span>react-router&#x20;v5</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

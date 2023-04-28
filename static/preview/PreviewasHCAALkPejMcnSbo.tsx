@@ -16,7 +16,7 @@ export default function PreviewasHCAALkPejMcnSbo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>type</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/TS/TS-Syntax/TS-Keyword"><span>TS&#x20;Keyword</span></Link><span>&#x20;to&#x20;declare&#x20;new&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Compound-Type/Alias"><span>Alias</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>type</code><span>&nbsp;↔&nbsp;</span><span ><span>TS&#x20;Keyword</span></span><span>&#x20;to&#x20;declare&#x20;new&#x20;</span><span ><span>Alias</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

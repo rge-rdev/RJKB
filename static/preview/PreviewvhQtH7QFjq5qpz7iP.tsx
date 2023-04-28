@@ -16,7 +16,7 @@ export default function PreviewvhQtH7QFjq5qpz7iP(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Auth/OTP"><span>OTP</span></Link><span>&#x20;needs&#x20;to&#x20;sync&#x20;token&#x20;clock&#x20;with&#x20;server&#x20;clock&#x20;for&#x20;proper&#x20;timeout&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>OTP</span></span><span>&#x20;needs&#x20;to&#x20;sync&#x20;token&#x20;clock&#x20;with&#x20;server&#x20;clock&#x20;for&#x20;proper&#x20;timeout&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

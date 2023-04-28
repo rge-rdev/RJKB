@@ -16,7 +16,7 @@ export default function PreviewbeRcLJ4La8ShFBG3W(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Svelte&#x20;Kit</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Library/JS-Framework/Svelte"><span>Svelte</span></Link><span>&#x20;equi&#x20;of&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs"><span>Next.js</span></Link><span>&#x20;for&#x20;unified&#x20;fullstack&#x20;dev&#x20;environ&#x20;for&#x20;apps</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Svelte&#x20;Kit</span><span>&nbsp;↔&nbsp;</span><span ><span>Svelte</span></span><span>&#x20;equi&#x20;of&#x20;</span><span ><span>Next.js</span></span><span>&#x20;for&#x20;unified&#x20;fullstack&#x20;dev&#x20;environ&#x20;for&#x20;apps</span></cite></li></ol>
     
     </small></Tooltip>)
 }

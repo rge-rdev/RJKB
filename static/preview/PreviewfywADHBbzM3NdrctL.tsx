@@ -16,7 +16,7 @@ export default function PreviewfywADHBbzM3NdrctL(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS/Apache-20"><span>Apache&#x20;2.0</span></Link><span>&#x20;incompat&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS/GPL2"><span>GPL2</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Apache&#x20;2.0</span></span><span>&#x20;incompat&#x20;with&#x20;</span><span ><span>GPL2</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewfrRdZxQTSPZXFmXPJ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/General-Computing-Concepts/Glob-Pattern/abc"><code>[abc]</code></Link><span>&#x20;cf&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/regex"><code>Regex</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Character-Class"><span>Character&#x20;Class</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>[abc]</code></span><span>&#x20;cf&#x20;</span><span ><code>Regex</code></span><span>&#x20;</span><span ><span>Character&#x20;Class</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

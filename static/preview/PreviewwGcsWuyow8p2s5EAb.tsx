@@ -16,7 +16,7 @@ export default function PreviewwGcsWuyow8p2s5EAb(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/recoil"><code>recoil</code></Link><span>&#x20;364K&#x20;vs&#x20;</span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit"><code>@reduxjs/toolkit</code></Link><span>&#x20;2.2M&#x20;vs&#x20;</span><Link to="/wiki/React/React-Stack/redux"><code>redux</code></Link><span>&#x20;8.8M&#x20;Weekly&#x20;Downloads&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>recoil</code></span><span>&#x20;364K&#x20;vs&#x20;</span><span ><code>@reduxjs/toolkit</code></span><span>&#x20;2.2M&#x20;vs&#x20;</span><span ><code>redux</code></span><span>&#x20;8.8M&#x20;Weekly&#x20;Downloads&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

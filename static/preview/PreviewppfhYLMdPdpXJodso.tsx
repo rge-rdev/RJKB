@@ -16,7 +16,7 @@ export default function PreviewppfhYLMdPdpXJodso(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Catch&#x20;Accessibility&#x20;Issues</span><span>&nbsp;↔&nbsp;</span><span>use&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Storybook-Addon/storybook-addon-a11y"><code>@storybook/addon-a11y</code></Link><span>&#x20;to&#x20;audit&#x20;rendered&#x20;dom&#x20;against&#x20;WCAG&#x20;rules/best&#x20;practices&#x20;to&#x20;flag&#x20;potential&#x20;accessibility&#x20;issues</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Catch&#x20;Accessibility&#x20;Issues</span><span>&nbsp;↔&nbsp;</span><span>use&#x20;</span><span ><code>@storybook/addon-a11y</code></span><span>&#x20;to&#x20;audit&#x20;rendered&#x20;dom&#x20;against&#x20;WCAG&#x20;rules/best&#x20;practices&#x20;to&#x20;flag&#x20;potential&#x20;accessibility&#x20;issues</span></cite></li></ol>
     
     </small></Tooltip>)
 }

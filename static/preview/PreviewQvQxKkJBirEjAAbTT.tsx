@@ -16,7 +16,7 @@ export default function PreviewQvQxKkJBirEjAAbTT(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Syntax/Generics"><span>Generics</span></Link><span>&#x20;in&#x20;other&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language"><span>Programming&#x20;Language</span></Link><span>&#x20;=&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;for&#x20;creating&#x20;</span><b>reusable&#x20;components</b><span>&#x20;that&#x20;can&#x20;work&#x20;with&#x20;</span><b>variety&#x20;of&#x20;</b><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><b>s</b><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Generics</span></span><span>&#x20;in&#x20;other&#x20;</span><span ><span>Programming&#x20;Language</span></span><span>&#x20;=&#x20;</span><span ><span>JS&#x20;Syntax</span></span><span>&#x20;for&#x20;creating&#x20;</span><b>reusable&#x20;components</b><span>&#x20;that&#x20;can&#x20;work&#x20;with&#x20;</span><b>variety&#x20;of&#x20;</b><span ><span>Type</span></span><b>s</b><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

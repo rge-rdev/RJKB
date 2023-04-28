@@ -16,7 +16,7 @@ export default function PreviewpJjtQHbtCuCXmJGTX(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Security"><code>websec </code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>websec </code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

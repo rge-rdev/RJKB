@@ -16,7 +16,7 @@ export default function Preview2cJkTaQXcpup74wuK(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit/reduxjs-toolkit-query"><code>RTK Query</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>RTK Query</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

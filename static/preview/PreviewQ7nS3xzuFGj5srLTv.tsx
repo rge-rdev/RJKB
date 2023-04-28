@@ -16,7 +16,7 @@ export default function PreviewQ7nS3xzuFGj5srLTv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>(a|b|c)</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax"><span>RegExp&#x20;Syntax</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Group"><span>Group</span></Link><span>&#x20;to&#x20;</span><b>alternatives</b><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Assertion/"><code>|</code></Link><span>&#x20;delimit&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>(a|b|c)</code><span>&nbsp;↔&nbsp;</span><span ><span>RegExp&#x20;Syntax</span></span><span>&#x20;to&#x20;</span><span ><span>Group</span></span><span>&#x20;to&#x20;</span><b>alternatives</b><span>&#x20;</span><span ><code>|</code></span><span>&#x20;delimit&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

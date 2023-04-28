@@ -16,7 +16,7 @@ export default function PreviewkkPpTELAhbQtwkTFG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Proposed&#x20;Standard</span><span>&nbsp;↔&nbsp;</span><span>not&#x20;formal&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Internet-Standard"><span>Internet&#x20;Standard</span></Link><span>,&#x20;consider&#x20;stable&#x20;popular&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Proposed&#x20;Standard</span><span>&nbsp;↔&nbsp;</span><span>not&#x20;formal&#x20;</span><span ><span>Internet&#x20;Standard</span></span><span>,&#x20;consider&#x20;stable&#x20;popular&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

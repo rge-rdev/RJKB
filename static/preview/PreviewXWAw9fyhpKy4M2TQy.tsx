@@ -16,7 +16,7 @@ export default function PreviewXWAw9fyhpKy4M2TQy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Exception-Handling/finally"><code>.finally()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>.finally()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewF9FhyEMvzuuknEEok(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><Link to="/wiki/React/React-Stack/redux/redux-form"><span>redux-form</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/React/React-Stack/redux/redux-form/React-Final-Form"><span>React&#x20;Final&#x20;Form</span></Link><span>&#x20;to&#x20;handle&#x20;form&#x20;state</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><span>redux-form</span></span><span>&#x20;or&#x20;</span><span ><span>React&#x20;Final&#x20;Form</span></span><span>&#x20;to&#x20;handle&#x20;form&#x20;state</span></cite></li></ol>
     
     </small></Tooltip>)
 }

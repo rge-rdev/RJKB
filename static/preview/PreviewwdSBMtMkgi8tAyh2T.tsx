@@ -16,7 +16,7 @@ export default function PreviewwdSBMtMkgi8tAyh2T(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/enum/Enum-Member/Constant-Enum-Member"><span>Constant&#x20;Enum&#x20;Member</span></Link><span>&#x20;Permissions&#x20;example</span><CodeBlock language="tsx">{`enum Permissions {\n  USER_READ = 1 << 8,\n  USER_WRITE = 1 << 8\n}`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><span>Constant&#x20;Enum&#x20;Member</span></span><span>&#x20;Permissions&#x20;example</span><CodeBlock language="tsx">{`enum Permissions {\n  USER_READ = 1 << 8,\n  USER_WRITE = 1 << 8\n}`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

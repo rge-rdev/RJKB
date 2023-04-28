@@ -16,7 +16,7 @@ export default function Previewa5LobspZzaXWWaQH4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/react-syntax-highlighter"><code>react-syntax-highlighter</code></Link></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>react-syntax-highlighter</code></span></cite></li></ol>
     
     </small></Tooltip>)
 }

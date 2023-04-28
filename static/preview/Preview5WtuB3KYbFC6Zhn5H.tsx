@@ -16,7 +16,7 @@ export default function Preview5WtuB3KYbFC6Zhn5H(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>can&#x20;access&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL/URL-Structure/URL-Parameter"><span>URL&#x20;Parameter</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/window/window-instance-property/location"><code>location</code></Link><b><code>.search</code></b><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>can&#x20;access&#x20;</span><span ><span>URL&#x20;Parameter</span></span><span>&#x20;via&#x20;</span><span ><code>location</code></span><b><code>.search</code></b><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewQNLtbEe9WEPqAyCzN(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/Object/Objectcreate"><code>Object.create()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>Object.create()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

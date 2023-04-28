@@ -16,7 +16,7 @@ export default function Preview8TqL475TjXtBNoz9m(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>:active</code><span>&#x20;can&#x20;be&#x20;used&#x20;to&#x20;activate&#x20;style&#x20;on&#x20;user&#x20;clicking&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/a"><code>&#x3C;a&#x3E;</code></Link><span>&#x20;or&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/button"><code>&#x3C;button&#x3E;</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>:active</code><span>&#x20;can&#x20;be&#x20;used&#x20;to&#x20;activate&#x20;style&#x20;on&#x20;user&#x20;clicking&#x20;</span><span ><code>&#x3C;a&#x3E;</code></span><span>&#x20;or&#x20;</span><span ><code>&#x3C;button&#x3E;</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

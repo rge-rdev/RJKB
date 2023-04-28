@@ -16,7 +16,7 @@ export default function PreviewABErHtrGzEkTpA5SF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>WireGuard</span><span>&nbsp;↔&nbsp;</span><span>next&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Private-Network/VPN"><span>VPN</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Protocol"><span>Protocol</span></Link><span>&#x20;with&#x20;less&#x20;overhead&#x20;&#x26;&#x20;latency</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>WireGuard</span><span>&nbsp;↔&nbsp;</span><span>next&#x20;</span><span ><span>VPN</span></span><span>&#x20;</span><span ><span>Protocol</span></span><span>&#x20;with&#x20;less&#x20;overhead&#x20;&#x26;&#x20;latency</span></cite></li></ol>
     
     </small></Tooltip>)
 }

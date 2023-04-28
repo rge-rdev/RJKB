@@ -16,7 +16,7 @@ export default function PreviewzKPDnRbG3pWG3TY55(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/typeof"><code>typeof</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/instanceof"><code>instanceof</code></Link><span>&#x20;are&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator"><span>JS&#x20;Operator</span></Link><span>&#x20;that&#x20;act&#x20;as&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type-Guard"><span>Type&#x20;Guard</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>typeof</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>instanceof</code></span><span>&#x20;are&#x20;</span><span ><span>JS&#x20;Operator</span></span><span>&#x20;that&#x20;act&#x20;as&#x20;</span><span ><span>Type&#x20;Guard</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

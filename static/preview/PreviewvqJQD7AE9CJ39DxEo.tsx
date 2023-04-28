@@ -16,7 +16,7 @@ export default function PreviewvqJQD7AE9CJ39DxEo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector/Class-Selector"><span>Class&#x20;Selector</span></Link><span>&#x20;can&#x20;be&#x20;chained&#x20;onto&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector/Type-Selector"><span>Type&#x20;Selector</span></Link></cite></li><li><cite className="react-tooltip__ref-list"><span>Universal&#x20;Selector</span><span>&nbsp;↔&nbsp;</span><code>*</code><span>&#x20;Special&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector/Type-Selector"><span>Type&#x20;Selector</span></Link><span>&#x20;to&#x20;match&#x20;every&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Class&#x20;Selector</span></span><span>&#x20;can&#x20;be&#x20;chained&#x20;onto&#x20;</span><span ><span>Type&#x20;Selector</span></span></cite></li><li><cite className="react-tooltip__ref-list"><span>Universal&#x20;Selector</span><span>&nbsp;↔&nbsp;</span><code>*</code><span>&#x20;Special&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector/Type-Selector"><span>Type&#x20;Selector</span></Link><span>&#x20;to&#x20;match&#x20;every&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

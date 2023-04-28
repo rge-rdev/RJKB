@@ -16,7 +16,7 @@ export default function PreviewucsxBrQWu7BksSp4R(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>m</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/Flag"><span>Flag</span></Link><span>&#x20;to&#x20;match&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Assertion/"><code>^</code></Link>&#x20;&#x26;&#x20;<Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Assertion/undefined"><code>$</code></Link><span>&#x20;for&#x20;</span><b>M</b>ulti-line<span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>m</code><span>&nbsp;↔&nbsp;</span><span ><span>Flag</span></span><span>&#x20;to&#x20;match&#x20;</span><span ><code>^</code></span>&#x20;&#x26;&#x20;<span ><code>$</code></span><span>&#x20;for&#x20;</span><b>M</b>ulti-line<span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

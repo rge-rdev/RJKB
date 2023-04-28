@@ -16,7 +16,7 @@ export default function Previewuiu6P7EQEnZRPp5nn(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API"><code>Streams&#x20;API</code></Link><span>&#x20;is&#x20;a&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/indexedDB/indexedDB-is-a-low-level-API-for-client-side-storage-of-large-structured-data-incl-files-blobs/Low-Level-API"><span>Low-Level&#x20;API</span></Link><span>&#x20;to&#x20;optimize&#x20;network&#x20;loading&#x20;via&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/Streaming/Chunks"><span>Chunks</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/Library/Module/Bundler"><code>Bundle</code></Link><span>&#x20;&#x26;&#x20;other&#x20;assets&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>Streams&#x20;API</code></span><span>&#x20;is&#x20;a&#x20;</span><span ><span>Low-Level&#x20;API</span></span><span>&#x20;to&#x20;optimize&#x20;network&#x20;loading&#x20;via&#x20;</span><span ><span>Chunks</span></span><span>&#x20;for&#x20;</span><span ><code>Bundle</code></span><span>&#x20;&#x26;&#x20;other&#x20;assets&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

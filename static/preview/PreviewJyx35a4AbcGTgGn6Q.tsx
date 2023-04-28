@@ -16,7 +16,7 @@ export default function PreviewJyx35a4AbcGTgGn6Q(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>String&#x20;Concatenation</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Basic-Operators/"><code>+</code></Link><span>&#x20;operation&#x20;in&#x20;string&#x20;mode:&#x20;const&#x20;combined&#x20;=&#x20;&#x22;join&#x22;&#x20;+&#x20;&#x22;ed&#x22;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>String&#x20;Concatenation</span><span>&nbsp;↔&nbsp;</span><span ><code>+</code></span><span>&#x20;operation&#x20;in&#x20;string&#x20;mode:&#x20;const&#x20;combined&#x20;=&#x20;&#x22;join&#x22;&#x20;+&#x20;&#x22;ed&#x22;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

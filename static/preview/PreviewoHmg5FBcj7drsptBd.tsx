@@ -16,7 +16,7 @@ export default function PreviewoHmg5FBcj7drsptBd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/HTML/Metadata-Content/link"><code>&#x3C;link&#x3E;</code></Link><span>&#x20;to&#x20;import&#x20;</span><Link to="/wiki/CSS"><span>CSS</span></Link><span>&#x20;stylesheets,&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/ICO/Favicon"><span>Favicon</span></Link><span>,&#x20;etc</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>&#x3C;link&#x3E;</code></span><span>&#x20;to&#x20;import&#x20;</span><span ><span>CSS</span></span><span>&#x20;stylesheets,&#x20;</span><span ><span>Favicon</span></span><span>,&#x20;etc</span></cite></li></ol>
     
     </small></Tooltip>)
 }

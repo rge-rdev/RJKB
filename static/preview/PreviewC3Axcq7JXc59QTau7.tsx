@@ -16,7 +16,7 @@ export default function PreviewC3Axcq7JXc59QTau7(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-webkit-</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/CSS/CSS-Syntax/Vendor-Prefix"><span>Vendor&#x20;Prefix</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Android"><span>Android</span></Link><span>&#x20;||&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Chrome"><span>Chrome</span></Link><span>&#x20;||&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/iOS"><span>iOS</span></Link><span>/</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Safari"><span>Safari</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-webkit-</code><span>&nbsp;↔&nbsp;</span><span ><span>Vendor&#x20;Prefix</span></span><span>&#x20;for&#x20;</span><span ><span>Android</span></span><span>&#x20;||&#x20;</span><span ><span>Chrome</span></span><span>&#x20;||&#x20;</span><span ><span>iOS</span></span><span>/</span><span ><span>Safari</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

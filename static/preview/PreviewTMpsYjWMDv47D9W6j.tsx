@@ -16,7 +16,7 @@ export default function PreviewTMpsYjWMDv47D9W6j(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>NewSQL</span><span>&nbsp;↔&nbsp;</span><span>subset&#x20;of&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Database/SQL/RDBMS"><span>RDBMS</span></Link><span>&#x20;to&#x20;add&#x20;scalability&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Database/NoSQL"><span>NoSQL</span></Link><span>&#x20;system&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>NewSQL</span><span>&nbsp;↔&nbsp;</span><span>subset&#x20;of&#x20;</span><span ><span>RDBMS</span></span><span>&#x20;to&#x20;add&#x20;scalability&#x20;to&#x20;</span><span ><span>NoSQL</span></span><span>&#x20;system&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

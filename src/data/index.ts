@@ -197,6 +197,20 @@ export function hasRefs(id: string){
   return Boolean(map_all_refs_ID_array.get(id)?.length)
 }
 
+/**Check if doc has any other docs referencing it - either as a link or child
+ * use @function isLeaf to skip /docs render to stop the painful docusaurus scaling death
+ * use @function isLeaf to skip link generation
+ * 
+ * @param id doc UID
+ * @returns @boolean 
+ */
+
+export function isLeaf(id: string){
+  const no_refs = !hasRefs(id)
+  const no_children = !hasChildren(id)
+  return no_refs && no_children
+}
+
 // export function id_to_refs(id: string) {
 //   const refs = map_all_refs_array.get(id)
 //   if (!refs) return

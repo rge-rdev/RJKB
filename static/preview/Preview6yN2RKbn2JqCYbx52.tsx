@@ -16,7 +16,7 @@ export default function Preview6yN2RKbn2JqCYbx52(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><b><em>!snippet&#x20;</em></b><Link to="/wiki/JS/JS-Language/Object/Function/Function-Instance-Methods/bind"><code>.bind()</code></Link><span></span><CodeBlock language="tsx">{`const bob = {\n  name: "Bob",\n  hello(msg) {\n    console.log(\`\${this.name} says \${msg}\`)\n  }\n}\nconst func = bob.hello.bind(bob, "hello")`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><b><em>!snippet&#x20;</em></b><span ><code>.bind()</code></span><span></span><CodeBlock language="tsx">{`const bob = {\n  name: "Bob",\n  hello(msg) {\n    console.log(\`\${this.name} says \${msg}\`)\n  }\n}\nconst func = bob.hello.bind(bob, "hello")`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

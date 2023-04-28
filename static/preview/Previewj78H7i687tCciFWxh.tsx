@@ -16,7 +16,7 @@ export default function Previewj78H7i687tCciFWxh(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;del&#x3E;</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><span>Semantic</span></Link><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/s"><code>&#x3C;s&#x3E;</code></Link><span></span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;apply&#x20;strikethrough&#x20;for&#x20;</span><b>Deleted&#x20;Text</b><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>&#x3C;strike&#x3E;</code><span>&nbsp;↔&nbsp;</span><span>!deprecated&#x20;ver&#x20;of&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/s"><code>&#x3C;s&#x3E;</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;del&#x3E;</code><span>&nbsp;↔&nbsp;</span><span ><span>Semantic</span></span><span ><code>&#x3C;s&#x3E;</code></span><span></span><span ><span>Inline&#x20;Element</span></span><span>&#x20;to&#x20;apply&#x20;strikethrough&#x20;for&#x20;</span><b>Deleted&#x20;Text</b><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>&#x3C;strike&#x3E;</code><span>&nbsp;↔&nbsp;</span><span>!deprecated&#x20;ver&#x20;of&#x20;</span><span ><code>&#x3C;s&#x3E;</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

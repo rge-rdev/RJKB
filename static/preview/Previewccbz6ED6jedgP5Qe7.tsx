@@ -16,7 +16,7 @@ export default function Previewccbz6ED6jedgP5Qe7(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>add&#x20;</span><Link to="/wiki/Dev-tool/Build-Tool/Webpack/brotli-webpack-plugin"><code>brotli-webpack-plugin</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/Build-Tool/Webpack"><span>Webpack</span></Link><span>&#x20;</span><CodeBlock language="tsx">{`var BrotliPlugin = require('brotli-webpack-plugin');\nmodule.exports = {\n    plugins: [\n        new BrotliPlugin({\n            asset: '[path].br[query]',\n            test: /\.(js|css|html|svg)\$/,\n            threshold: 10240,\n            minRatio: 0.8\n        })\n    ]\n}`}</CodeBlock><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>add&#x20;</span><span ><code>brotli-webpack-plugin</code></span><span>&#x20;to&#x20;</span><span ><span>Webpack</span></span><span>&#x20;</span><CodeBlock language="tsx">{`var BrotliPlugin = require('brotli-webpack-plugin');\nmodule.exports = {\n    plugins: [\n        new BrotliPlugin({\n            asset: '[path].br[query]',\n            test: /\.(js|css|html|svg)\$/,\n            threshold: 10240,\n            minRatio: 0.8\n        })\n    ]\n}`}</CodeBlock><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

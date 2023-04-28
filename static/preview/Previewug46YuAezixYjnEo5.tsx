@@ -16,7 +16,7 @@ export default function Previewug46YuAezixYjnEo5(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>when&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/Type-Inference"><span>Type&#x20;Inference</span></Link><span>&#x20;fails,&#x20;defaults&#x20;to&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/any"><code>any</code></Link><span>,&#x20;optionally&#x20;throw&#x20;error&#x20;when&#x20;set&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-Strictness-Config-Settings/TSC-CMD-flag-settings/tsc-strict"><code>tsc&#x20;--strict</code></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-Strictness-Config-Settings/TSC-CMD-flag-settings/tsc-strict/noImplicitAny"><code>--noImplicitAny</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>when&#x20;</span><span ><span>Type&#x20;Inference</span></span><span>&#x20;fails,&#x20;defaults&#x20;to&#x20;</span><span ><span>Type</span></span><span>&#x20;</span><span ><code>any</code></span><span>,&#x20;optionally&#x20;throw&#x20;error&#x20;when&#x20;set&#x20;</span><span ><code>tsc&#x20;--strict</code></span><span>&#x20;or&#x20;</span><span ><code>--noImplicitAny</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

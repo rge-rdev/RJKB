@@ -16,7 +16,7 @@ export default function PreviewG2t9beqTAjwsfrXbg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Emoji</span><span>&nbsp;↔&nbsp;</span><span>pictogram,&#x20;occupy&#x20;2&#x20;chars.&#x20;Now&#x20;part&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string/Unicode"><span>Unicode</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Emoji</span><span>&nbsp;↔&nbsp;</span><span>pictogram,&#x20;occupy&#x20;2&#x20;chars.&#x20;Now&#x20;part&#x20;of&#x20;</span><span ><span>Unicode</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewGhMbqoQ6v724zsjjq(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>API&#x20;Endpoint</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL/URL-Structure/Resource-Path"><span>Resource&#x20;Path</span></Link><span>&#x20;to&#x20;point&#x20;to&#x20;specific&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/REST/REST-Resource"><span>REST&#x20;Resource</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>API&#x20;Endpoint</span><span>&nbsp;↔&nbsp;</span><span ><span>Resource&#x20;Path</span></span><span>&#x20;to&#x20;point&#x20;to&#x20;specific&#x20;</span><span ><span>REST&#x20;Resource</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

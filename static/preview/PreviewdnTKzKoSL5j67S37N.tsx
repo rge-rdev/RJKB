@@ -16,7 +16,7 @@ export default function PreviewdnTKzKoSL5j67S37N(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>useDarkMode()</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-API/Hooks-API/Custom-Hook"><span>Custom&#x20;Hook</span></Link><span>&#x20;to&#x20;handle&#x20;dark&#x20;mode&#x20;toggle,&#x20;req&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Custom-Hook/useLocalStorage"><code>useLocalStorage()</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Custom-Hook/useMedia"><code>useMedia()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>useDarkMode()</code><span>&nbsp;↔&nbsp;</span><span ><span>Custom&#x20;Hook</span></span><span>&#x20;to&#x20;handle&#x20;dark&#x20;mode&#x20;toggle,&#x20;req&#x20;</span><span ><code>useLocalStorage()</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>useMedia()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

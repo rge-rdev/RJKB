@@ -16,7 +16,7 @@ export default function PreviewpsgaNefTk3AzLZrQy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!recall&#x20;since&#x20;JS&#x20;has&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/First-Class-Functions"><span>First-Class&#x20;Functions</span></Link><span>&#x20;-&#x20;functions&#x20;are&#x20;just&#x20;values&#x20;stored&#x20;in&#x20;variables</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!recall&#x20;since&#x20;JS&#x20;has&#x20;</span><span ><span>First-Class&#x20;Functions</span></span><span>&#x20;-&#x20;functions&#x20;are&#x20;just&#x20;values&#x20;stored&#x20;in&#x20;variables</span></cite></li></ol>
     
     </small></Tooltip>)
 }

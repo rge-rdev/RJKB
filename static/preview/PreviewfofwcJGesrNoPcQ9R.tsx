@@ -16,7 +16,7 @@ export default function PreviewfofwcJGesrNoPcQ9R(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>--oneline</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/log"><code>log</code></Link><span>&#x20;onto&#x20;single&#x20;line,&#x20;w/o&#x20;annoying&#x20;enter&#x20;prompt&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>--oneline</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;</span><span ><code>log</code></span><span>&#x20;onto&#x20;single&#x20;line,&#x20;w/o&#x20;annoying&#x20;enter&#x20;prompt&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

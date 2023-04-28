@@ -16,7 +16,7 @@ export default function PreviewAw7CsbXYm9B7QAHgc(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS/tsconfigjson/compilerOptions/Emit/noEmit-true"><code>&#x22;noEmit&#x22;:&#x20;true</code></Link><span>&#x20;used&#x20;to&#x20;run&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/Static-Type-System/Type-Check"><span>Type-Check</span></Link><span>ing&#x20;only&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>&#x22;noEmit&#x22;:&#x20;true</code></span><span>&#x20;used&#x20;to&#x20;run&#x20;</span><span ><span>TSC</span></span><span>&#x20;for&#x20;</span><span ><span>Type-Check</span></span><span>ing&#x20;only&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

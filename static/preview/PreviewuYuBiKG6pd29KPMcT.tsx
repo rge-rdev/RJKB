@@ -16,7 +16,7 @@ export default function PreviewuYuBiKG6pd29KPMcT(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Semantic-Web"><span>Semantic&#x20;Web</span></Link><span>&#x20;aka&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Semantic-Web"><code>Web 3.0</code></Link><span>&#x20;&#x2260;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web3"><span>Web3</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Semantic&#x20;Web</span></span><span>&#x20;aka&#x20;</span><span ><code>Web 3.0</code></span><span>&#x20;&#x2260;&#x20;</span><span ><span>Web3</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

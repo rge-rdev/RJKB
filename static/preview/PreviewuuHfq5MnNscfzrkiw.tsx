@@ -16,7 +16,7 @@ export default function PreviewuuHfq5MnNscfzrkiw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Dev-tool/API/Online-API/Checkly"><span>Checkly</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Checkly</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

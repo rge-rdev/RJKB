@@ -16,7 +16,7 @@ export default function Preview2gHpvYHCJ3Pgz3zZy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>(convention&#x20;to&#x20;use)&#x20;single&#x20;uppercase&#x20;character&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Generics/Generic-Type-Parameter"><span>Generic&#x20;Type&#x20;Parameter</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><b><em>!snippet&#x20;</em></b><Link to="/wiki/JS/TS/TS-Syntax/Generics/Generic-Type"><span>Generic&#x20;Type</span></Link><span>&#x20;where&#x20;X&#x20;is&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Generics/Generic-Type-Parameter"><span>Generic&#x20;Type&#x20;Parameter</span></Link><span>&#x20;</span><CodeBlock language="tsx">{`type TypeFactory<X> = X;\ntype MyType = TypeFactory<string>;`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>(convention&#x20;to&#x20;use)&#x20;single&#x20;uppercase&#x20;character&#x20;for&#x20;</span><span ><span>Generic&#x20;Type&#x20;Parameter</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><b><em>!snippet&#x20;</em></b><span ><span>Generic&#x20;Type</span></span><span>&#x20;where&#x20;X&#x20;is&#x20;</span><span ><span>Generic&#x20;Type&#x20;Parameter</span></span><span>&#x20;</span><CodeBlock language="tsx">{`type TypeFactory<X> = X;\ntype MyType = TypeFactory<string>;`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

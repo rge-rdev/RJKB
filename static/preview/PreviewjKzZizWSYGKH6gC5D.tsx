@@ -16,7 +16,7 @@ export default function PreviewjKzZizWSYGKH6gC5D(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/docusaurus"><code>docusaurus</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/SSG"><span>SSG</span></Link><span>&#x20;</span><Link to="/wiki/HTML/Metadata-Content/noscript"><code>&#x3C;noscript&#x3E;</code></Link><span>&#x20;fallback&#x20;so&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Web-Crawler"><span>Web&#x20;Crawler</span></Link><span>&#x20;can&#x20;easily&#x20;index&#x20;w/o&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>&#x20;||&#x20;search&#x20;bar</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>docusaurus</code></span><span>&#x20;</span><span ><span>SSG</span></span><span>&#x20;</span><span ><code>&#x3C;noscript&#x3E;</code></span><span>&#x20;fallback&#x20;so&#x20;</span><span ><span>Web&#x20;Crawler</span></span><span>&#x20;can&#x20;easily&#x20;index&#x20;w/o&#x20;</span><span ><span>JS</span></span><span>&#x20;||&#x20;search&#x20;bar</span></cite></li></ol>
     
     </small></Tooltip>)
 }

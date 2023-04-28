@@ -1,4 +1,5 @@
-import _, { slice } from "lodash"
+import uniq from "lodash/uniq"
+import escape from "lodash/escape"
 import { RemData } from "../rem-json"
 import {
   map,
@@ -7,6 +8,7 @@ import {
   getDoc,
   get_path_from_id,
   getRefIDs,
+  isLeaf,
 } from "../data"
 import { Rem_obj, deleted_rem, portal_rem } from "../rem-json"
 import { Render_Docs_BFS } from "../components/App"
@@ -293,13 +295,13 @@ export function id_to_tags(id: string) {
   // output.push(value) //! mistake .push returns a NUMBER!
   let link_ids: string[] = []
   if (typeof value === "object") {
-    const links = value.forEach((el) => {
+    value.forEach((el) => {
       if (
         typeof el !== "string" &&
         el["i"] === "q" &&
         el["_id"] &&
-        el["_id"] !== "2n8Gw7PvXGPcFQm7i" &&
-        el["aliasId"]
+        el["_id"] !== "2n8Gw7PvXGPcFQm7i"
+        // && !el["aliasId"]
       ) {
         // add aliases
         const link_id = el["_id"]
@@ -646,6 +648,7 @@ export function obj_to_mdx(
       if (el["i"] === "o") {
         // "o" for Object | Outside Code?
         // ${escape(el["text"])}\n
+
         if (typeof el["text"] === "string") {
           if (!jsx)
             output_str += `\n\n\`\`\`${resolve_lang_mdx(el["language"])}\n${(
@@ -724,6 +727,9 @@ export function obj_to_mdx(
         }
       }
       if (el["i"] === "q") {
+        if (!id) return ""
+        const leaf = isLeaf(id)
+        const tag = leaf ? "span" : "Link"
         if (el["aliasId"]) {
           //! Rename to alias_id && doc_id_ref_by_alias to avoid future confusion!
           const alias_id = el["aliasId"] // look up alternative key for aliasId
@@ -765,7 +771,9 @@ export function obj_to_mdx(
           if (!alias_path) return ""
           if (!preview) {
             output_str += jsx
-              ? `<Link to="${redirect_path}"><code>${aliasKey}</code></Link>`
+              ? `<${tag} ${
+                  leaf ? "" : `to="${redirect_path}"`
+                }><code>${aliasKey}</code></${tag}>`
               : `[\`${aliasKey}\`](${redirect_path})`
             //! DEPRECATE <REDIRECT>
             // ? `<Link to="${alias_path}"><code>${aliasKey}</code></Link>`
@@ -774,7 +782,9 @@ export function obj_to_mdx(
           } else if (preview) {
             const id_tooltip = `preview__${original_doc_id_ref_by_alias}`
             output_str += jsx
-              ? `<Link to="${redirect_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
+              ? `<${tag} ${
+                  leaf ? "" : `to="${redirect_path}"`
+                }><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></${tag}>`
               : `[<span data-tooltip-id="${id_tooltip}">${aliasKey}</span>](${redirect_path})`
             //! DEPRECATE <REDIRECT>
             // ? `<Link to="${alias_path}"><span data-tooltip-id="${id_tooltip}">${aliasKey}</span></Link>`
@@ -797,17 +807,19 @@ export function obj_to_mdx(
 
           if (!preview) {
             output_str += jsx
-              ? `<Link to="${path}">${make_mdx(find_key, {
+              ? `<${tag} ${leaf ? "" : `to="${path}"`}>${make_mdx(find_key, {
                   id: el_id,
                   jsx: true,
-                })}</Link>`
+                })}</${tag}>`
               : `[\`${make_mdx(find_key)}\`](${path})`
           } else if (preview) {
             const id_tooltip = `preview__${el_id}`
             output_str += jsx
-              ? `<Link to="${path}"><span data-tooltip-id="${id_tooltip}">${make_mdx(
+              ? `<${tag} ${
+                  leaf ? "" : `to="${path}"`
+                }><span data-tooltip-id="${id_tooltip}">${make_mdx(
                   find_key
-                )}</span></Link>`
+                )}</span></${tag}>`
               : `[<span data-tooltip-id="${id_tooltip}">${make_mdx(
                   find_key
                 )}</span>](${path})`
@@ -1031,16 +1043,12 @@ export function id_to_tooltop(id: string) {
   const k_code = k?.match(/^(\`\`\`)/gm)?.length
   const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-  const k_link =
-    DOCS_BASE === "docs"
-      ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-      : k?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
-          ?.length
-  const v_link =
-    DOCS_BASE === "docs"
-      ? v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-      : v?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
-          ?.length
+  const k_link = k?.match(
+    RegExp(`]((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*))`, "gm")
+  )?.length
+  const v_link = v?.match(
+    RegExp(`]((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*))`, "gm")
+  )?.length
 
   const k_newLine = k?.match(/(\n)+/g)?.length
   const v_newLine = v?.match(/(\n)+/g)?.length
@@ -1049,11 +1057,11 @@ export function id_to_tooltop(id: string) {
   const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
   const k_img = k?.match(
-    /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+    /((!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\./]+)'\)}[ \n]*\/>))/gm
   )?.length // not working?
   //!added [ ]* to account for accidental whitespace before export/import which will get formatted out by prettier later
 
-  const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+  const k_inlineCode = k?.match(/<code>.*<\/code>/)?.length
 
   const k_path = get_path_from_id(id)
   const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
@@ -1121,12 +1129,9 @@ export function id_to_ref_mdx(id: string) {
       const k_code = k?.match(/^(\`\`\`)/gm)?.length
       const v_code = v?.match(/^(\`\`\`)/gm)?.length
 
-      const k_link =
-        DOCS_BASE === "docs"
-          ? k?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
-          : k?.match(
-              RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm")
-            )?.length
+      const k_link = k?.match(
+        RegExp(`]((/${DOCS_BASE}|\.)/([0-9a-zA-Z-/]*))`, "gm")
+      )?.length
 
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
       const v_newLine = v?.match(/(\n)+/g)?.length
@@ -1135,7 +1140,7 @@ export function id_to_ref_mdx(id: string) {
       const v_illegal = v?.match(/^([ ]*export |[ ]*import )/gm)?.length
 
       const k_img = k?.match(
-        /((\!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\.\/]+)'\)}[ \n]*\/\>))/gm
+        /((!\[[a-zA-Z0-9_-]+]\(@site\/static\/(files|img)\/([a-zA-Z0-9-_\.]+)\))|(<Image[ \n]+img={require\('([@a-zA-Z0-9-_\./]+)'\)}[ \n]*\/>))/gm
       )?.length //! Added Ideal Image regex - still need to test/confirm Ideal Image file size bug is worth it
 
       if (
@@ -1150,7 +1155,7 @@ export function id_to_ref_mdx(id: string) {
 
       if (!v_code && (v_newLine || v_illegal)) v = `\n\n\`\`\`tsx\n${v}\n\`\`\``
       v = v?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
-      const k_inlineCode = k?.match(/\<code\>.*<\/code>/)?.length
+      const k_inlineCode = k?.match(/<code>.*<\/code>/)?.length
       if (k && v) {
         const k_path = get_path_from_id(map_id) //! map_id NOT id!!
         if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)

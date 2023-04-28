@@ -16,7 +16,7 @@ export default function Preview3escXxPda58naXahx(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>leak&#x20;example&#x20;due&#x20;to&#x20;object&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Reference-Value/Reference-Reassignment"><span>Reference&#x20;Reassignment</span></Link><span></span><CodeBlock language="tsx">{`var leaked = { name: "bob" }\nleaked = 123`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>leak&#x20;example&#x20;due&#x20;to&#x20;object&#x20;</span><span ><span>Reference&#x20;Reassignment</span></span><span></span><CodeBlock language="tsx">{`var leaked = { name: "bob" }\nleaked = 123`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

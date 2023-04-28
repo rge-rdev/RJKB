@@ -16,7 +16,7 @@ export default function Preview9RmCT2g5m7eRcKME6(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>to&#x20;display&#x20;multiple&#x20;lines&#x20;of&#x20;code</span><span>&nbsp;↔&nbsp;</span><span>wrap&#x20;multiple&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/code"><code>&#x3C;code&#x3E;</code></Link><span>&#x20;elements&#x20;within&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/pre"><code>&#x3C;pre&#x3E;</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>to&#x20;display&#x20;multiple&#x20;lines&#x20;of&#x20;code</span><span>&nbsp;↔&nbsp;</span><span>wrap&#x20;multiple&#x20;</span><span ><code>&#x3C;code&#x3E;</code></span><span>&#x20;elements&#x20;within&#x20;</span><span ><code>&#x3C;pre&#x3E;</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

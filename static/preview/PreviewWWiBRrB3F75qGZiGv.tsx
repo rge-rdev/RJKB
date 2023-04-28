@@ -16,7 +16,7 @@ export default function PreviewWWiBRrB3F75qGZiGv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>NoSQL</span><span>&nbsp;↔&nbsp;</span><span>Non-relational&#x20;non-</span><Link to="/wiki/Computer-Science/Data-Structure/Database/SQL"><span>SQL</span></Link><span>&#x20;database&#x20;of&#x20;field-value&#x20;pair&#x20;data&#x20;structure</span></cite></li><li><cite className="react-tooltip__ref-list"><span>SQL&#x20;Injection</span><span>&nbsp;↔&nbsp;</span><span>exploit&#x20;to&#x20;execute&#x20;malicious&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Database/SQL"><span>SQL</span></Link><span>&#x20;code&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Database"><code>DB </code></Link><span>&#x20;-&#x20;to&#x20;spoof&#x20;identity,&#x20;access/destroy&#x20;data</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>NoSQL</span><span>&nbsp;↔&nbsp;</span><span>Non-relational&#x20;non-</span><Link to="/wiki/Computer-Science/Data-Structure/Database/SQL"><span>SQL</span></Link><span>&#x20;database&#x20;of&#x20;field-value&#x20;pair&#x20;data&#x20;structure</span></cite></li><li><cite className="react-tooltip__ref-list"><span>SQL&#x20;Injection</span><span>&nbsp;↔&nbsp;</span><span>exploit&#x20;to&#x20;execute&#x20;malicious&#x20;</span><span ><span>SQL</span></span><span>&#x20;code&#x20;on&#x20;</span><span ><code>DB </code></span><span>&#x20;-&#x20;to&#x20;spoof&#x20;identity,&#x20;access/destroy&#x20;data</span></cite></li></ol>
     
     </small></Tooltip>)
 }

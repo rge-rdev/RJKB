@@ -16,7 +16,7 @@ export default function PrevieweomLF9eFRyTzFn8Ro(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>&#x1F947;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Security/Certificate-Authority/Lets-Encrypt"><span>Let&#x27;s&#x20;Encrypt</span></Link><span>&#x20;SSL&#x20;certificates&#x20;add&#x20;to&#x20;vercel&#x20;app&#x20;domain&#x20;automatically,&#x20;regardless&#x20;if&#x20;it&#x20;was&#x20;registered&#x20;on&#x20;vercel&#x20;or&#x20;not</span></cite></li><li><cite className="react-tooltip__ref-list"><span>automatic&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Security/Certificate-Authority/Lets-Encrypt"><span>Let&#x27;s&#x20;Encrypt</span></Link><span>&#x20;renewal&#x20;-&#x20;</span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>&#x1F947;</span><span ><span>Let&#x27;s&#x20;Encrypt</span></span><span>&#x20;SSL&#x20;certificates&#x20;add&#x20;to&#x20;vercel&#x20;app&#x20;domain&#x20;automatically,&#x20;regardless&#x20;if&#x20;it&#x20;was&#x20;registered&#x20;on&#x20;vercel&#x20;or&#x20;not</span></cite></li><li><cite className="react-tooltip__ref-list"><span>automatic&#x20;</span><span ><span>Let&#x27;s&#x20;Encrypt</span></span><span>&#x20;renewal&#x20;-&#x20;</span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

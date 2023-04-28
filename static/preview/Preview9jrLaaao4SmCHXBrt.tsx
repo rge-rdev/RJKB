@@ -16,7 +16,7 @@ export default function Preview9jrLaaao4SmCHXBrt(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;StrictMode&#x3E;</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><span>Wrapper</span></Link><span>&#x20;to&#x20;define&#x20;boundary&#x20;for&#x20;</span><Link to="/wiki/React/React-API/StrictMode-API"><code>StrictMode&#x20;API</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API/StrictMode-API"><code>StrictMode&#x20;API</code></Link><span>&#x20;will&#x20;flag/warn&#x20;use&#x20;of&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/findDOMNode"><code>findDOMNode()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;StrictMode&#x3E;</code><span>&nbsp;↔&nbsp;</span><span ><span>Wrapper</span></span><span>&#x20;to&#x20;define&#x20;boundary&#x20;for&#x20;</span><span ><code>StrictMode&#x20;API</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>StrictMode&#x20;API</code></span><span>&#x20;will&#x20;flag/warn&#x20;use&#x20;of&#x20;</span><span ><code>findDOMNode()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

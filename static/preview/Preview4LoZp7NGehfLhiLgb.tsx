@@ -16,7 +16,7 @@ export default function Preview4LoZp7NGehfLhiLgb(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13"><span>Next&#x20;13</span></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/Move-Data-Fetch-to-Server-Side"><span>Move&#x20;Data&#x20;Fetch&#x20;to&#x20;Server-Side</span></Link><span>&#x20;has&#x20;official&#x20;React&#x20;Core&#x20;Team&#x20;Endorsement&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Next&#x20;13</span></span><span>&#x20;</span><span ><span>Move&#x20;Data&#x20;Fetch&#x20;to&#x20;Server-Side</span></span><span>&#x20;has&#x20;official&#x20;React&#x20;Core&#x20;Team&#x20;Endorsement&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

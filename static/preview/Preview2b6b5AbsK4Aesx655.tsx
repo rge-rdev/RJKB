@@ -16,7 +16,7 @@ export default function Preview2b6b5AbsK4Aesx655(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>install&#x20;</span><Link to="/wiki/Dev-tool/jq"><code>jq</code></Link><span></span><CodeBlock language="bash">{`chocolatey install jq`}</CodeBlock></cite></li><li><cite className="react-tooltip__ref-list"><span>convert&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/JSON"><span>JSON</span></Link><span>&#x20;into&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/JSON/JSONL"><span>JSONL</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/Dev-tool/jq"><code>jq</code></Link><span>&#x20;</span><CodeBlock language="bash">{`cat __docs.json | jq -c .[] > __docs.jsonl`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>install&#x20;</span><span ><code>jq</code></span><span></span><CodeBlock language="bash">{`chocolatey install jq`}</CodeBlock></cite></li><li><cite className="react-tooltip__ref-list"><span>convert&#x20;</span><span ><span>JSON</span></span><span>&#x20;into&#x20;</span><span ><span>JSONL</span></span><span>&#x20;via&#x20;</span><span ><code>jq</code></span><span>&#x20;</span><CodeBlock language="bash">{`cat __docs.json | jq -c .[] > __docs.jsonl`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

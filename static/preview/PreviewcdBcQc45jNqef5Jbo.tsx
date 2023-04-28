@@ -16,7 +16,7 @@ export default function PreviewcdBcQc45jNqef5Jbo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/Nodejs/Nodejs-Definition/Node-Global-Object/process/processargv"><code>process.argv</code></Link><span>&#x20;</span><CodeBlock language="tsx">{`node app.js a b c`}</CodeBlock><span>&#x20;generates&#x20;string[]&#x20;output&#x20;of</span><CodeBlock language="tsx">{`0: /usr/local/bin/node\n1: /PATH_TO_FILE.js\n2: a\n3: b\n4: c`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><code>process.argv</code></span><span>&#x20;</span><CodeBlock language="tsx">{`node app.js a b c`}</CodeBlock><span>&#x20;generates&#x20;string[]&#x20;output&#x20;of</span><CodeBlock language="tsx">{`0: /usr/local/bin/node\n1: /PATH_TO_FILE.js\n2: a\n3: b\n4: c`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewQzf4wrgBpd8gB9LgD(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>--fixup</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;combine&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/rebase/squash"><code>squash</code></Link><span>&#x20;within&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/commit"><code>commit</code></Link><span>&#x20;cmd</span></cite></li><li><cite className="react-tooltip__ref-list"><code>--squash</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;combine&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/rebase/squash"><code>squash</code></Link><span>&#x20;within&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/commit"><code>commit</code></Link><span>&#x20;cmd</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>--fixup</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;combine&#x20;</span><span ><code>squash</code></span><span>&#x20;within&#x20;</span><span ><code>commit</code></span><span>&#x20;cmd</span></cite></li><li><cite className="react-tooltip__ref-list"><code>--squash</code><span>&nbsp;↔&nbsp;</span><span>flag&#x20;to&#x20;combine&#x20;</span><span ><code>squash</code></span><span>&#x20;within&#x20;</span><span ><code>commit</code></span><span>&#x20;cmd</span></cite></li></ol>
     
     </small></Tooltip>)
 }

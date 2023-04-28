@@ -16,7 +16,7 @@ export default function Preview64YsQumB6MvEFXi54(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>fix&#x20;with&#x20;</span><Link to="/wiki/JS/Nodejs/npm/NPM-Commands/npm-config-delete-proxy"><code>npm&#x20;config&#x20;delete&#x20;proxy</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>fix&#x20;with&#x20;</span><span ><code>npm&#x20;config&#x20;delete&#x20;proxy</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

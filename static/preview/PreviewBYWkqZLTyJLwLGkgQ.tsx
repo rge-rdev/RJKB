@@ -16,7 +16,7 @@ export default function PreviewBYWkqZLTyJLwLGkgQ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-Directive/ts-expect-error"><code>//&#x20;@ts-</code><code>expect-error</code></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/assert/assertthrows"><code>assert.throws()</code></Link><span>&#x20;</span><CodeBlock language="tsx">{`assert.throws(\n  // @ts-expect-error: Object is possibly "null". (2531)\n  () => null.someProperty,\n  TypeError);`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><code>//&#x20;@ts-</code><code>expect-error</code></span><span>&#x20;with&#x20;</span><span ><code>assert.throws()</code></span><span>&#x20;</span><CodeBlock language="tsx">{`assert.throws(\n  // @ts-expect-error: Object is possibly "null". (2531)\n  () => null.someProperty,\n  TypeError);`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewGhe7Sanv2XLaGXzxx(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>By&#x20;default,&#x20;events&#x20;only&#x20;handled&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event/Event-propagation-cycle-for-Event-upon-Signal-Trigger/Target-Phase"><span>Target&#x20;Phase</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event/Event-propagation-cycle-for-Event-upon-Signal-Trigger/Bubbling-Phase"><span>Bubbling&#x20;Phase</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>By&#x20;default,&#x20;events&#x20;only&#x20;handled&#x20;in&#x20;</span><span ><span>Target&#x20;Phase</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>Bubbling&#x20;Phase</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

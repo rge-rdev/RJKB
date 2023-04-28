@@ -16,7 +16,7 @@ export default function PreviewLoBAJd3WdZW5HT7eG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Definition/VDOM/Fiber"><code>Fiber</code></Link><span>&#x20;acts&#x20;as&#x20;</span>unit&#x20;of&#x20;work<span>&#x20;in&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/new-Render-Cycle-with-Fiber/Render-Phase"><span>Render&#x20;Phase</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/new-Render-Cycle-with-Fiber/Commit-Phase"><span>Commit&#x20;Phase</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>Fiber</code></span><span>&#x20;acts&#x20;as&#x20;</span>unit&#x20;of&#x20;work<span>&#x20;in&#x20;</span><span ><span>Render&#x20;Phase</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>Commit&#x20;Phase</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

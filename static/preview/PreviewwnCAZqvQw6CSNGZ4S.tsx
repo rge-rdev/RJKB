@@ -16,7 +16,7 @@ export default function PreviewwnCAZqvQw6CSNGZ4S(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Library/Fusejs"><span>Fuse.js</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Fuse.js</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

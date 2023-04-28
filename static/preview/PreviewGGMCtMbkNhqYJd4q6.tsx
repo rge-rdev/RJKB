@@ -16,7 +16,7 @@ export default function PreviewGGMCtMbkNhqYJd4q6(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>assert.equal(Test&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Expression"><span>Expression</span></Link><span>,&#x20;Expected&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>):&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/assert/AssertionError"><code>AssertionError</code></Link><span>&#x20;if&#x20;not&#x20;equal&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>assert.equal(Test&#x20;</span><span ><span>Expression</span></span><span>,&#x20;Expected&#x20;</span><span ><span>Value</span></span><span>):&#x20;</span><span ><code>AssertionError</code></span><span>&#x20;if&#x20;not&#x20;equal&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

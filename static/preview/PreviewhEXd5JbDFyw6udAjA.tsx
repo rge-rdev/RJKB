@@ -16,7 +16,7 @@ export default function PreviewhEXd5JbDFyw6udAjA(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-v</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/nodejs-commands/node"><code>node</code></Link><span>&#x20;flag&#x20;to&#x20;show&#x20;current&#x20;version&#x20;of&#x20;</span><Link to="/wiki/JS/Nodejs"><span>Node.js</span></Link><span>&#x20;installed</span></cite></li><li><cite className="react-tooltip__ref-list"><code>-h</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/nodejs-commands/node"><code>node</code></Link><span>&#x20;flag&#x20;to&#x20;show&#x20;help&#x20;menu</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>-v</code><span>&nbsp;↔&nbsp;</span><span ><code>node</code></span><span>&#x20;flag&#x20;to&#x20;show&#x20;current&#x20;version&#x20;of&#x20;</span><span ><span>Node.js</span></span><span>&#x20;installed</span></cite></li><li><cite className="react-tooltip__ref-list"><code>-h</code><span>&nbsp;↔&nbsp;</span><span ><code>node</code></span><span>&#x20;flag&#x20;to&#x20;show&#x20;help&#x20;menu</span></cite></li></ol>
     
     </small></Tooltip>)
 }

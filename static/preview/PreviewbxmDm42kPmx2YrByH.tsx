@@ -16,7 +16,7 @@ export default function PreviewbxmDm42kPmx2YrByH(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/AVIF"><span>AVIF</span></Link><span>&#x20;8K&#x20;res&#x20;limit&#x20;(65536&#x20;px)&#x20;vs&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/WebP"><span>WebP</span></Link><span>&#x20;16K&#x20;res&#x20;limit&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>AVIF</span></span><span>&#x20;8K&#x20;res&#x20;limit&#x20;(65536&#x20;px)&#x20;vs&#x20;</span><span ><span>WebP</span></span><span>&#x20;16K&#x20;res&#x20;limit&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

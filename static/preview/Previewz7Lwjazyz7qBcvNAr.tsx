@@ -16,7 +16,7 @@ export default function Previewz7Lwjazyz7qBcvNAr(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/CSS/CSS-Syntax/At-Rule/media/Media-Query"><span>Media&#x20;Query</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/source"><code>&#x3C;source&#x3E;</code></Link><span></span><CodeBlock language="tsx">{`<picture>\n  <source srcset="logo-md.png" media="(min-width: 800px)" />\n  <source srcset="logo-sm.png" media="(min-width: 600px)" />\n  <img src="logo-mob.png" alt="MDN Web Docs" />\n</picture>`}</CodeBlock><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Media&#x20;Query</span></span><span>&#x20;for&#x20;</span><span ><code>&#x3C;source&#x3E;</code></span><span></span><CodeBlock language="tsx">{`<picture>\n  <source srcset="logo-md.png" media="(min-width: 800px)" />\n  <source srcset="logo-sm.png" media="(min-width: 600px)" />\n  <img src="logo-mob.png" alt="MDN Web Docs" />\n</picture>`}</CodeBlock><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

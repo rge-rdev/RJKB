@@ -16,7 +16,7 @@ export default function PreviewrDsFXEYKAK8LDTbm4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/flyio"><code>Fly</code></Link><span>&#x20;DOES&#x20;NOT&#x20;SUPPORT&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Compose"><span>Docker&#x20;Compose</span></Link><span>&#x20;!!</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>Fly</code></span><span>&#x20;DOES&#x20;NOT&#x20;SUPPORT&#x20;</span><span ><span>Docker&#x20;Compose</span></span><span>&#x20;!!</span></cite></li></ol>
     
     </small></Tooltip>)
 }

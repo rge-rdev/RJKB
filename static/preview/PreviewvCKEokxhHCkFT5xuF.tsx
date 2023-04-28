@@ -16,7 +16,7 @@ export default function PreviewvCKEokxhHCkFT5xuF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>.app</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/macOS"><span>macOS</span></Link><span>&#x20;Application&#x20;Bundle&#x20;to&#x20;</span><Link to="/wiki/JS/Nodejs/npm/Package-Manager/Package"><span>Package</span></Link><span>&#x20;&#x26;&#x20;run&#x20;mac-specific&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Executable"><span>Executable</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>.app</code><span>&nbsp;↔&nbsp;</span><span ><span>macOS</span></span><span>&#x20;Application&#x20;Bundle&#x20;to&#x20;</span><span ><span>Package</span></span><span>&#x20;&#x26;&#x20;run&#x20;mac-specific&#x20;</span><span ><span>Executable</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

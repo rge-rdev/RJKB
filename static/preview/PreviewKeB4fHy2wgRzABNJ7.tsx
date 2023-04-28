@@ -16,7 +16,7 @@ export default function PreviewKeB4fHy2wgRzABNJ7(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>create&#x20;root&#x20;level&#x20;container&#x20;to&#x20;render&#x20;modal&#x20;for&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/createPortal/Portal"><span>Portal</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API"><span>React&#x20;API</span></Link><span>&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/Escape-Hatch"><code>Escape Hatches</code></Link><span>&#x20;include&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Stateful-Hook/useRef"><code>useRef()</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/createPortal/Portal"><code>Portals</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>create&#x20;root&#x20;level&#x20;container&#x20;to&#x20;render&#x20;modal&#x20;for&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/createPortal/Portal"><span>Portal</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>React&#x20;API</span></span><span>&#x20;</span><span ><code>Escape Hatches</code></span><span>&#x20;include&#x20;</span><span ><code>useRef()</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>Portals</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewHLrxCN4tuTqgtFcJ6(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Directive/Hashbang"><span>Hashbang</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Stack/ts-node"><code>ts-node</code></Link><span></span><CodeBlock language="tsx">{`#!/usr/bin/env ts-node`}</CodeBlock><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Directive/Hashbang"><code>Shebang</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Hashbang</span></span><span>&#x20;for&#x20;</span><span ><code>ts-node</code></span><span></span><CodeBlock language="tsx">{`#!/usr/bin/env ts-node`}</CodeBlock><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>Shebang</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

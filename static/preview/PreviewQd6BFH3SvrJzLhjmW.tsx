@@ -16,7 +16,7 @@ export default function PreviewQd6BFH3SvrJzLhjmW(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>combine&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Short-Circuiting"><span>Short-Circuiting</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>s&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>combine&#x20;</span><span ><span>Short-Circuiting</span></span><span>&#x20;with&#x20;</span><span ><span>Component</span></span><span>s&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

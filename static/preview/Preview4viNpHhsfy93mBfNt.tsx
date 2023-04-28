@@ -16,7 +16,7 @@ export default function Preview4viNpHhsfy93mBfNt(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>basename()</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/path"><code>path</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method/Instance-Method"><span>Instance&#x20;Method</span></Link><span>&#x20;to&#x20;return&#x20;string&#x20;of&#x20;just&#x20;file&#x20;name&#x20;from&#x20;a&#x20;full&#x20;path&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>basename()</code><span>&nbsp;↔&nbsp;</span><span ><code>path</code></span><span>&#x20;</span><span ><span>Instance&#x20;Method</span></span><span>&#x20;to&#x20;return&#x20;string&#x20;of&#x20;just&#x20;file&#x20;name&#x20;from&#x20;a&#x20;full&#x20;path&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

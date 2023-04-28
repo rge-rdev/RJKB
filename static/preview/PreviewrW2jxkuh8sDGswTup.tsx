@@ -16,7 +16,7 @@ export default function PreviewrW2jxkuh8sDGswTup(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13/app"><code>/app</code></Link><span>&#x20;must&#x20;include&#x20;one&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Shared-Layout/Root-Layout"><span>Root&#x20;Layout</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Shared-Layout/Root-Layout"><span>Root&#x20;Layout</span></Link><span>&#x20;replaces&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-12/apptsx"><code>_app.tsx</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-12/documenttsx"><code>_document.tsx</code></Link><span>&#x20;from&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-12"><span>Next&#x20;12</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>/app</code></span><span>&#x20;must&#x20;include&#x20;one&#x20;</span><span ><span>Root&#x20;Layout</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>Root&#x20;Layout</span></span><span>&#x20;replaces&#x20;</span><span ><code>_app.tsx</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>_document.tsx</code></span><span>&#x20;from&#x20;</span><span ><span>Next&#x20;12</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

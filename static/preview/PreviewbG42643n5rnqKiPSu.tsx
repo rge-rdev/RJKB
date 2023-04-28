@@ -16,7 +16,7 @@ export default function PreviewbG42643n5rnqKiPSu(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>different&#x20;IPv4&#x20;&#x26;&#x20;IPv6&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/ASN"><span>ASN</span></Link><span>&#x20;indicates&#x20;</span>DNS&#x20;Leak<span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>different&#x20;IPv4&#x20;&#x26;&#x20;IPv6&#x20;</span><span ><span>ASN</span></span><span>&#x20;indicates&#x20;</span>DNS&#x20;Leak<span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

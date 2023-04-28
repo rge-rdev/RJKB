@@ -16,7 +16,7 @@ export default function PreviewRt4hTGM9Hg2H2ExCd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS/tsconfigjson/compilerOptions/Language-and-Environment-settings/lib"><code>&#x22;lib&#x22;:&#x20;[]</code></Link><span>&#x20;defaults&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/JS-Library"><span>JS&#x20;Library</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API"><span>Web&#x20;API</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Browser-Runtime"><span>Browser&#x20;Runtime</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>&#x22;lib&#x22;:&#x20;[]</code></span><span>&#x20;defaults&#x20;to&#x20;</span><span ><span>JS&#x20;Library</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>Web&#x20;API</span></span><span>&#x20;for&#x20;</span><span ><span>Browser&#x20;Runtime</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

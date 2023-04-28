@@ -16,7 +16,7 @@ export default function PreviewBBe4L8avzJQS5aGXx(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/Next-Data-Fetching/Revalidation/On-demand-Revalidation"><span>On-demand&#x20;Revalidation</span></Link><span>&#x20;requires&#x20;secret&#x20;token&#x20;to&#x20;access&#x20;via&#x20;API&#x20;route&#x20;</span><CodeBlock language="bash">{`https://<your-site.com>/api/revalidate?secret=<token>`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>On-demand&#x20;Revalidation</span></span><span>&#x20;requires&#x20;secret&#x20;token&#x20;to&#x20;access&#x20;via&#x20;API&#x20;route&#x20;</span><CodeBlock language="bash">{`https://<your-site.com>/api/revalidate?secret=<token>`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

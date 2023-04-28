@@ -16,7 +16,7 @@ export default function PreviewMAQyq4nEvLp8pvywY(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Overload-Signature"><span>Overload&#x20;Signature</span></Link><span>&#x20;common&#x20;in&#x20;API&#x20;type&#x20;definition&#x20;files&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Overload&#x20;Signature</span></span><span>&#x20;common&#x20;in&#x20;API&#x20;type&#x20;definition&#x20;files&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

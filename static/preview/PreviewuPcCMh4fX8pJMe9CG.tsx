@@ -16,7 +16,7 @@ export default function PreviewuPcCMh4fX8pJMe9CG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm/Sort-Algo/Bubble-Sort"><span>Bubble&#x20;Sort</span></Link><span>&#x20;slow&#x20;impractical&#x20;-&#x20;mainly&#x20;as&#x20;naive&#x20;teaching&#x20;tool&#x20;for&#x20;how&#x20;to&#x20;design&#x20;bad&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><code>Algos</code></Link><span>?!</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Bubble&#x20;Sort</span></span><span>&#x20;slow&#x20;impractical&#x20;-&#x20;mainly&#x20;as&#x20;naive&#x20;teaching&#x20;tool&#x20;for&#x20;how&#x20;to&#x20;design&#x20;bad&#x20;</span><span ><code>Algos</code></span><span>?!</span></cite></li></ol>
     
     </small></Tooltip>)
 }

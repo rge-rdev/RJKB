@@ -16,7 +16,7 @@ export default function PreviewkD5Kt8YjspRvLMuAj(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>RSA</span><span>&nbsp;↔&nbsp;</span><span>asymmetric&#x20;key-block&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption/Cipher"><span>Cipher</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Entropy</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/API/Online-API/randomorg/Pseudorandom"><code>Pseudorandomness</code></Link><span>&#x20;collect&#x20;by&#x20;app&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption/Cipher"><span>Cipher</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>RSA</span><span>&nbsp;↔&nbsp;</span><span>asymmetric&#x20;key-block&#x20;</span><span ><span>Cipher</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Entropy</span><span>&nbsp;↔&nbsp;</span><span ><code>Pseudorandomness</code></span><span>&#x20;collect&#x20;by&#x20;app&#x20;for&#x20;</span><span ><span>Cipher</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

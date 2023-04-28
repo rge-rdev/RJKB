@@ -16,7 +16,7 @@ export default function Previewr6sg9s97HJy4hYCBZ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>super</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compilation-vs-Interpretation/CPUs-only-understand-binary-therefore-all-code-must-be-eventually-converted-into-machine-code/Source-Code-can-be-converted-into-Machine-Code-by-either-compilation-or-interpretation/JIT/JIT-Compilation-flow/Execution"><code>Invoke</code></Link><span>&#x20;superclass&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/class/constructor"><code>constructor()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>super</code><span>&nbsp;↔&nbsp;</span><span ><span>JS&#x20;Keyword</span></span><span>&#x20;to&#x20;</span><span ><code>Invoke</code></span><span>&#x20;superclass&#x20;</span><span ><code>constructor()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

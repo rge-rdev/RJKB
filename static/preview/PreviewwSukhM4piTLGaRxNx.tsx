@@ -16,7 +16,7 @@ export default function PreviewwSukhM4piTLGaRxNx(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/Request-Response-model/HTTP-Request/POST"><code>POST</code></Link><span>&#x20;is&#x20;not&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Idempotent"><span>Idempotent</span></Link><span>&#x20;-&#x20;usually&#x20;results&#x20;in&#x20;change&#x20;in&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/Server-State"><span>Server&#x20;State</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>POST</code></span><span>&#x20;is&#x20;not&#x20;</span><span ><span>Idempotent</span></span><span>&#x20;-&#x20;usually&#x20;results&#x20;in&#x20;change&#x20;in&#x20;</span><span ><span>Server&#x20;State</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

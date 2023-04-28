@@ -16,7 +16,7 @@ export default function PreviewpPDrpcJjTJyxtTncp(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!equivalent&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Array/Array"><code>Array</code></Link><span>.prototype</span><Link to="/wiki/JS/JS-Language/Object/Array/Array/Array-instance-methods-prepend-with-Arrayprototype/fill"><code>.fill()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!equivalent&#x20;to&#x20;</span><span ><code>Array</code></span><span>.prototype</span><span ><code>.fill()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

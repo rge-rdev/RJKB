@@ -16,7 +16,7 @@ export default function Previewe4kdkn3LjRopWkX8f(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>.stories.ts</code><span>&nbsp;↔&nbsp;</span><span>storybook&#x20;TS&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Story/CSF"><span>CSF</span></Link><span>&#x20;ext&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>.stories.js</code><span>&nbsp;↔&nbsp;</span><span>storybook&#x20;JS&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Story/CSF"><span>CSF</span></Link><span>&#x20;ext</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>.stories.ts</code><span>&nbsp;↔&nbsp;</span><span>storybook&#x20;TS&#x20;</span><span ><span>CSF</span></span><span>&#x20;ext&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>.stories.js</code><span>&nbsp;↔&nbsp;</span><span>storybook&#x20;JS&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Story/CSF"><span>CSF</span></Link><span>&#x20;ext</span></cite></li></ol>
     
     </small></Tooltip>)
 }

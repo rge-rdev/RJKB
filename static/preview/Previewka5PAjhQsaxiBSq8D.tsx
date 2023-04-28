@@ -16,7 +16,7 @@ export default function Previewka5PAjhQsaxiBSq8D(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>ctrl+P</code><span>&nbsp;↔&nbsp;</span><span>open&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/VSCode-Features/Command-Pallete"><span>Command&#x20;Pallete</span></Link><span>&#x20;default&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>ctrl+shift+P</code><span>&nbsp;↔&nbsp;</span><span>Open&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/VSCode-Features/Command-Pallete"><span>Command&#x20;Pallete</span></Link><span>&#x20;with&#x20;</span><code>&#x3E;</code><span>&#x20;command&#x20;search</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>ctrl+P</code><span>&nbsp;↔&nbsp;</span><span>open&#x20;</span><span ><span>Command&#x20;Pallete</span></span><span>&#x20;default&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>ctrl+shift+P</code><span>&nbsp;↔&nbsp;</span><span>Open&#x20;</span><span ><span>Command&#x20;Pallete</span></span><span>&#x20;with&#x20;</span><code>&#x3E;</code><span>&#x20;command&#x20;search</span></cite></li></ol>
     
     </small></Tooltip>)
 }

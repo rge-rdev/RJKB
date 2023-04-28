@@ -16,7 +16,7 @@ export default function PreviewxwC5eQExFrwGP8jBk(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Nodejs/npm/packagejson/package-lockjson"><code>package-lock.json</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>package-lock.json</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

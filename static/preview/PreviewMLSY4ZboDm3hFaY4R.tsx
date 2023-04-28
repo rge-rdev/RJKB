@@ -16,7 +16,7 @@ export default function PreviewMLSY4ZboDm3hFaY4R(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;aside&#x3E;</code><span>&nbsp;↔&nbsp;</span><b>Aside</b><span></span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element"><span>Block&#x20;Element</span></Link><span>&#x20;to&#x20;contain&#x20;content&#x20;</span>indirectly&#x20;related<span>&#x20;to&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element/div/main"><code>&#x3C;main&#x3E;</code></Link><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element/div/article"><code>&#x3C;article&#x3E;</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;aside&#x3E;</code><span>&nbsp;↔&nbsp;</span><b>Aside</b><span></span><span ><span>Block&#x20;Element</span></span><span>&#x20;to&#x20;contain&#x20;content&#x20;</span>indirectly&#x20;related<span>&#x20;to&#x20;</span><span ><code>&#x3C;main&#x3E;</code></span><span>&#x20;</span><span ><code>&#x3C;article&#x3E;</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

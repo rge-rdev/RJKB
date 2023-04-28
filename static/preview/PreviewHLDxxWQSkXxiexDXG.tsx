@@ -16,7 +16,7 @@ export default function PreviewHLDxxWQSkXxiexDXG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Dev-tool/API/Online-API/ElasticSearch"><span>ElasticSearch</span></Link><span>&#x20;req&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Java/JVM"><span>JVM</span></Link><span>&#x20;which&#x20;adds&#x20;op&#x20;overhead</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Java"><span>Java</span></Link><span>&#x20;compile&#x20;to&#x20;bytecode&#x20;to&#x20;run&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Java/JVM"><code>JVM</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>ElasticSearch</span></span><span>&#x20;req&#x20;</span><span ><span>JVM</span></span><span>&#x20;which&#x20;adds&#x20;op&#x20;overhead</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>Java</span></span><span>&#x20;compile&#x20;to&#x20;bytecode&#x20;to&#x20;run&#x20;on&#x20;</span><span ><code>JVM</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

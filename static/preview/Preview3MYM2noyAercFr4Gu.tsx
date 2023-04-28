@@ -16,7 +16,7 @@ export default function Preview3MYM2noyAercFr4Gu(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;ins&#x3E;</code><span>&nbsp;↔&nbsp;</span><b>Inserted&#x20;Text</b><span>&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><span>Semantic</span></Link><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/u"><code>&#x3C;u&#x3E;</code></Link><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;apply&#x20;</span><u>underline</u><span>&#x20;&#x26;&#x20;mark&#x20;</span><em>text&#x20;added&#x20;to&#x20;document</em><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;ins&#x3E;</code><span>&nbsp;↔&nbsp;</span><b>Inserted&#x20;Text</b><span>&#x20;</span><span ><span>Semantic</span></span><span>&#x20;</span><span ><code>&#x3C;u&#x3E;</code></span><span>&#x20;</span><span ><span>Inline&#x20;Element</span></span><span>&#x20;to&#x20;apply&#x20;</span><u>underline</u><span>&#x20;&#x26;&#x20;mark&#x20;</span><em>text&#x20;added&#x20;to&#x20;document</em><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

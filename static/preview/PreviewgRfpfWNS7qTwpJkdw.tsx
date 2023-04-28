@@ -16,7 +16,7 @@ export default function PreviewgRfpfWNS7qTwpJkdw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Historically,&#x20;hoisting&#x20;was&#x20;added&#x20;to&#x20;enable&#x20;programming&#x20;techniques&#x20;such&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Recursion/Mutual-Recursion"><span>Mutual&#x20;Recursion</span></Link><span>&#x20;(and&#x20;possibly&#x20;improve&#x20;code&#x20;readability)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Historically,&#x20;hoisting&#x20;was&#x20;added&#x20;to&#x20;enable&#x20;programming&#x20;techniques&#x20;such&#x20;as&#x20;</span><span ><span>Mutual&#x20;Recursion</span></span><span>&#x20;(and&#x20;possibly&#x20;improve&#x20;code&#x20;readability)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

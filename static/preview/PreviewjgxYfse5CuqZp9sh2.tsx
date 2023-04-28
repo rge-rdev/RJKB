@@ -16,7 +16,7 @@ export default function PreviewjgxYfse5CuqZp9sh2(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>pnpm&#x20;add&#x20;-D&#x20;nodemon</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;add&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/nodemon"><code>nodemon</code></Link><span>&#x20;as&#x20;dev&#x20;</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;-&#x20;must&#x20;be&#x20;capital&#x20;flag!!&#x20;else&#x20;default&#x20;to&#x20;normal&#x20;depedency&#x20;list&#x20;with&#x20;pnpm</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>pnpm&#x20;add&#x20;-D&#x20;nodemon</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;add&#x20;</span><span ><code>nodemon</code></span><span>&#x20;as&#x20;dev&#x20;</span><span ><code>Deps</code></span><span>&#x20;-&#x20;must&#x20;be&#x20;capital&#x20;flag!!&#x20;else&#x20;default&#x20;to&#x20;normal&#x20;depedency&#x20;list&#x20;with&#x20;pnpm</span></cite></li></ol>
     
     </small></Tooltip>)
 }

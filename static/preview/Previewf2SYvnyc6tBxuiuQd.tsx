@@ -16,7 +16,7 @@ export default function Previewf2SYvnyc6tBxuiuQd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>getHeapStatistics()</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/v8"><code>v8</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;to&#x20;print&#x20;stats&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>getHeapStatistics()</code><span>&nbsp;↔&nbsp;</span><span ><code>v8</code></span><span>&#x20;</span><span ><span>Static&#x20;Method</span></span><span>&#x20;to&#x20;print&#x20;stats&#x20;for&#x20;</span><span ><span>JS&#x20;Engine</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

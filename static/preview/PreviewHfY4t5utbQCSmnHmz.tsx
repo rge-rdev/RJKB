@@ -16,7 +16,7 @@ export default function PreviewHfY4t5utbQCSmnHmz(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Override&#x20;(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Principles-of-OOP/Polymorphism"><span>Polymorphism</span></Link><span>)&#x20;</span><code>Object.prototype.toString</code><span>&#x20;method</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Override&#x20;(</span><span ><span>Polymorphism</span></span><span>)&#x20;</span><code>Object.prototype.toString</code><span>&#x20;method</span></cite></li></ol>
     
     </small></Tooltip>)
 }

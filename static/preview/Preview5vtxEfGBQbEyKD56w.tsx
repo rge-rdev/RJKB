@@ -16,7 +16,7 @@ export default function Preview5vtxEfGBQbEyKD56w(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Default&#x20;</span><Link to="/wiki/Dev-tool/CLI/ISE"><span>ISE</span></Link><span>&#x20;pre-installed&#x20;with&#x20;Windows&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Default&#x20;</span><span ><span>ISE</span></span><span>&#x20;pre-installed&#x20;with&#x20;Windows&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

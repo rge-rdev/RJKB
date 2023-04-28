@@ -16,7 +16,7 @@ export default function PreviewHxEZYarA28LyT9E43(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>react-window</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-Stack"><span>React&#x20;Stack</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/Windowing"><span>Windowing</span></Link><span>&#x20;</span><Link to="/wiki/JS/Library"><span>Library</span></Link><span>&#x20;-&#x20;more&#x20;update&#x20;than&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/Windowing/react-virtualized"><code>react-virtualized</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>react-window</code><span>&nbsp;↔&nbsp;</span><span ><span>React&#x20;Stack</span></span><span>&#x20;</span><span ><span>Windowing</span></span><span>&#x20;</span><span ><span>Library</span></span><span>&#x20;-&#x20;more&#x20;update&#x20;than&#x20;</span><span ><code>react-virtualized</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

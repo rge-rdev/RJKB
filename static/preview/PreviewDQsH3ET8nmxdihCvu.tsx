@@ -16,7 +16,7 @@ export default function PreviewDQsH3ET8nmxdihCvu(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>not&#x20;vulnerable&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Security/XSS"><span>XSS</span></Link><span>s</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>not&#x20;vulnerable&#x20;to&#x20;</span><span ><span>XSS</span></span><span>s</span></cite></li></ol>
     
     </small></Tooltip>)
 }

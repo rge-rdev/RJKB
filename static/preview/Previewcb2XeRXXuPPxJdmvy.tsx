@@ -16,7 +16,7 @@ export default function Previewcb2XeRXXuPPxJdmvy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;chain&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs/unlinkSync"><code>unlinkSync()</code></Link><span>&#x20;forEach&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs/readdirSync"><code>readdirSync()</code></Link><span></span><CodeBlock language="tsx">{`fs.readdirSync(dir)\n.forEach(file=>fs.unlinkSync(dir+"/"+file))`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;chain&#x20;</span><span ><code>unlinkSync()</code></span><span>&#x20;forEach&#x20;</span><span ><code>readdirSync()</code></span><span></span><CodeBlock language="tsx">{`fs.readdirSync(dir)\n.forEach(file=>fs.unlinkSync(dir+"/"+file))`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

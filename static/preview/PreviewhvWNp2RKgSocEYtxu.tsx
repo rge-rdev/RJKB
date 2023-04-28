@@ -16,7 +16,7 @@ export default function PreviewhvWNp2RKgSocEYtxu(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Library/Module/ES-Module"><span>ES&#x20;Module</span></Link><span>&#x20;have&#x20;compact&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;&#x26;&#x20;support&#x20;</span><Link to="/wiki/JS/Library/Module/Dependency/Cyclical-Dependency"><span>Cyclical&#x20;Dependency</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>ES&#x20;Module</span></span><span>&#x20;have&#x20;compact&#x20;</span><span ><span>JS&#x20;Syntax</span></span><span>&#x20;&#x26;&#x20;support&#x20;</span><span ><span>Cyclical&#x20;Dependency</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

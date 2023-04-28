@@ -16,7 +16,7 @@ export default function PreviewMfX5SKCW2ogTJyfZC(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/storybook"><code>storybook</code></Link><span>&#x20;is&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS"><span>FOSS</span></Link><span>&#x20;-&#x20;with&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Chromatic"><span>Chromatic</span></Link><span>&#x20;fremium&#x20;version&#x20;for&#x20;better&#x20;automation/integration&#x20;tooling</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>storybook</code></span><span>&#x20;is&#x20;</span><span ><span>FOSS</span></span><span>&#x20;-&#x20;with&#x20;</span><span ><span>Chromatic</span></span><span>&#x20;fremium&#x20;version&#x20;for&#x20;better&#x20;automation/integration&#x20;tooling</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewCDBYM756G9DJCwk2Q(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Header</span><span>&nbsp;↔&nbsp;</span><span>to&#x20;express&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><span>Algorithm</span></Link><span>&#x20;to&#x20;sign&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Auth/JWT"><span>JWT</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Auth/JWT/HPS/Signature"><span>Signature</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Header</span><span>&nbsp;↔&nbsp;</span><span>to&#x20;express&#x20;</span><span ><span>Algorithm</span></span><span>&#x20;to&#x20;sign&#x20;</span><span ><span>JWT</span></span><span>&#x20;</span><span ><span>Signature</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

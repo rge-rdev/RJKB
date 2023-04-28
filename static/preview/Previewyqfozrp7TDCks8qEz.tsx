@@ -16,7 +16,7 @@ export default function Previewyqfozrp7TDCks8qEz(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>can&#x20;return&#x20;another&#x20;fetch&#x20;request&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/AJAX"><span>AJAX</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>XMLHttpRequest</code><span>&nbsp;↔&nbsp;</span><span>legacy&#x20;</span><Link to="/wiki/Dev-tool/API/Interface"><span>Interface</span></Link><span>&#x20;for&#x20;old-school&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/AJAX"><span>AJAX</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>can&#x20;return&#x20;another&#x20;fetch&#x20;request&#x20;or&#x20;</span><span ><span>AJAX</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>XMLHttpRequest</code><span>&nbsp;↔&nbsp;</span><span>legacy&#x20;</span><span ><span>Interface</span></span><span>&#x20;for&#x20;old-school&#x20;</span><span ><span>AJAX</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

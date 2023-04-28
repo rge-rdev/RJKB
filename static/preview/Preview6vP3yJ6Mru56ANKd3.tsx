@@ -16,7 +16,7 @@ export default function Preview6vP3yJ6Mru56ANKd3(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>must&#x20;have&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Working-Dir/Clean-Working-Dir"><span>Clean&#x20;Working&#x20;Dir</span></Link><span>&#x20;to&#x20;allow&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/pull"><code>pull</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>must&#x20;have&#x20;</span><span ><span>Clean&#x20;Working&#x20;Dir</span></span><span>&#x20;to&#x20;allow&#x20;</span><span ><code>pull</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

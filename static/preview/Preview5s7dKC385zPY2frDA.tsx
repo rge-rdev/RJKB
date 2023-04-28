@@ -16,7 +16,7 @@ export default function Preview5s7dKC385zPY2frDA(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/DSL/Query-Language/GraphQL"><span>GraphQL</span></Link><span>&#x20;needs&#x20;frameworks&#x20;like&#x20;</span><Link to="/wiki/React/React-Stack/apollo-client"><code>Apollo Client</code></Link><span>&#x20;or&#x20;</span><Link to="/wiki/React/React-Stack/relay"><code>relay</code></Link><span>&#x20;to&#x20;handle&#x20;server-side&#x20;&#x26;&#x20;client&#x20;caching&#x20;(or&#x20;invent&#x20;your&#x20;own)&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>GraphQL</span></span><span>&#x20;needs&#x20;frameworks&#x20;like&#x20;</span><span ><code>Apollo Client</code></span><span>&#x20;or&#x20;</span><span ><code>relay</code></span><span>&#x20;to&#x20;handle&#x20;server-side&#x20;&#x26;&#x20;client&#x20;caching&#x20;(or&#x20;invent&#x20;your&#x20;own)&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

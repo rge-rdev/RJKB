@@ -12,6 +12,7 @@ import {
   get_path_from_id,
   hasRefs,
   hasChildren,
+  isLeaf,
 } from "./src/data/"
 import {
   id_to_mdx,
@@ -52,7 +53,7 @@ let num_skipped = 0
 // let num_links = 0
 let num_tags = 0
 // let num_axios_put_reqs = 0
-// let num_alias_redirect_mdx = 0 // deprecated
+let num_alias_redirect_mdx = 0 // deprecated
 let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
 let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
 
@@ -199,6 +200,11 @@ function generate_mdx_page_from_id(
 
   //TODO fix identical child skip check
   // const title_mdx = id_to_mdx(id, "key", { safe: true })?.replace(/(?<=])\([a-zA-Z\\ -_/]+\)$/, "")
+
+  function remove_middle_backticks(str: string) {
+    return str.replace(/(?<=^`.*)`(?=.*`$)/g, "")
+  }
+
   const child_text_array = getChildren(id)?.map((child_id) => {
     let v = id_to_mdx(child_id, "value", {
       safe: true,
@@ -236,6 +242,8 @@ function generate_mdx_page_from_id(
         ? v?.match(/]\((\/docs|\.)\/([0-9a-zA-Z-\/]*)\)/gm)?.length
         : v?.match(RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm"))
             ?.length
+
+    const k_leaf = isLeaf(child_id)
 
     // k = k?.replace(/(?<=[0-9a-zA-Z-_ ]+)(\`\`\`)/, "```")
     // k = k?.replace(/^([a-zA-Z0-9_-]+)\`\`\`/gm, "$1\n\n___```")
@@ -280,7 +288,7 @@ function generate_mdx_page_from_id(
         k_without_code && !k_link && !k_inlineCode
           ? `\`${k.replace(/\`/g, "")}\``
           : k //! replace ` due to # `\x` and other quirks with mdx breaking things! but <code> still fine
-      k = k_path && !k_link ? `[${k}](${k_path})` : k
+      k = k_path && !k_link && !k_leaf ? `[${k}](${k_path})` : k
 
       return `${
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
@@ -293,11 +301,13 @@ function generate_mdx_page_from_id(
     //.replace(/((\*\*)?(_)?)(?=.*(\3\2))/g, "`$4")
     if (k && !v && !skip_k) {
       const k_bold_markup = k.match(/(\*\*)(?=.*\*\*)/g)?.length
-      return !recheck_code && !k_link && !k_img && !k_inlineCode
+      return !recheck_code && !k_link && !k_img && !k_inlineCode && !k_leaf
         ? `[${!k_bold_markup ? "`" : ""}${k.replace(/\`/g, "")}${
             !k_bold_markup ? "`" : ""
           }](${k_path})\n\n`
-        : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
+        : `${!k_img && !recheck_code ? "## " : ""}${remove_middle_backticks(
+            k
+          )}\n\n`
     }
     if (!k && v) return `\n\n${v}`
     return ""
@@ -338,6 +348,8 @@ function generate_mdx_page_from_id(
               RegExp(`]\((\/${DOCS_BASE}|\.)\/([0-9a-zA-Z-\/]*)\)`, "gm")
             )?.length
 
+      const k_leaf = isLeaf(ref_id)
+
       const k_newLine = k?.match(/(\n)+/g)?.length //! check if I want escaped new line or actual new line
       const v_newLine = v?.match(/(\n)+/g)?.length
 
@@ -366,7 +378,7 @@ function generate_mdx_page_from_id(
         if (k[0] !== "`" && k[k.length - 1] !== "`" && !k_link && !k_inlineCode)
           k = `\`${k}\`` //!prevent ``` being accidentally created inline - which breaks mdx!
         k = k?.replace(/^(export(?= )|import(?= ))/gm, "<code>$1</code> ")
-        k = k_path && k.length && !k_link ? `[${k}](${k_path})` : k
+        k = k_path && k.length && !k_link && !k_leaf ? `[${k}](${k_path})` : k
 
         return `${k_code || k_illegal || k_newLine || k_img ? "" : ""}${k} ↔ ${
           v_code || v_newLine ? "" : ""

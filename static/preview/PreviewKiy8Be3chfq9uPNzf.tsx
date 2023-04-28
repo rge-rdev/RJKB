@@ -16,7 +16,7 @@ export default function PreviewKiy8Be3chfq9uPNzf(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>String.raw</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/String/Tag-Template-Function"><span>Tag&#x20;Template&#x20;Function</span></Link><span>&#x20;to&#x20;escape&#x20;all&#x20;</span><b><code>&#x20;\&#x20;</code></b><span>&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Template-Literal"><code>Template String</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>String.raw</code><span>&nbsp;↔&nbsp;</span><span ><span>Tag&#x20;Template&#x20;Function</span></span><span>&#x20;to&#x20;escape&#x20;all&#x20;</span><b><code>&#x20;\&#x20;</code></b><span>&#x20;in&#x20;</span><span ><code>Template String</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

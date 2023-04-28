@@ -16,7 +16,7 @@ export default function Previewdr63k3v2jHWFvypCe(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Syntax/Decorator"><span>Decorator</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Decorator</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

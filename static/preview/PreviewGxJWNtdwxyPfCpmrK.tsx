@@ -16,7 +16,7 @@ export default function PreviewGxJWNtdwxyPfCpmrK(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS"><span>Initialize&#x20;project&#x20;folder&#x20;to&#x20;run&#x20;with&#x20;</span><Link to="/wiki/JS/TS"><span>TS</span></Link></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Initialize&#x20;project&#x20;folder&#x20;to&#x20;run&#x20;with&#x20;</span><Link to="/wiki/JS/TS"><span>TS</span></Link></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

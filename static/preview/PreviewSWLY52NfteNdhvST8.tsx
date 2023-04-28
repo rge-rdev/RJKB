@@ -16,7 +16,7 @@ export default function PreviewSWLY52NfteNdhvST8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>util.log()</code><span>&nbsp;↔&nbsp;</span><span>variant&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/window/window-instance-property/console/consolelog"><code>console.log()</code></Link><span>&#x20;with&#x20;additional&#x20;timestamp&#x20;&#x26;&#x20;full&#x20;filepath</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>util.log()</code><span>&nbsp;↔&nbsp;</span><span>variant&#x20;of&#x20;</span><span ><code>console.log()</code></span><span>&#x20;with&#x20;additional&#x20;timestamp&#x20;&#x26;&#x20;full&#x20;filepath</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function Previewt8o35wPue7c7T4RfY(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>[[Writable]]</code><span>&nbsp;↔&nbsp;</span><code>[[Writable]]:&#x20;Boolean&#x20;=&#x20;false</code><span>&#x20;whether&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Slot/Public-Slot/Value"><code>[[Value]]</code></Link><span>&#x20;can&#x20;be&#x20;changed</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>[[Writable]]</code><span>&nbsp;↔&nbsp;</span><code>[[Writable]]:&#x20;Boolean&#x20;=&#x20;false</code><span>&#x20;whether&#x20;</span><span ><code>[[Value]]</code></span><span>&#x20;can&#x20;be&#x20;changed</span></cite></li></ol>
     
     </small></Tooltip>)
 }

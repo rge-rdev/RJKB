@@ -16,7 +16,7 @@ export default function PreviewgRE2CArb4JpKM93Yc(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>EBS</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/AWS"><span>AWS</span></Link><span>&#x20;</span><b>E</b><span>lastic&#x20;</span><b>B</b><span>lock&#x20;</span><b>S</b><span>tore&#x20;to&#x20;persist&#x20;storage&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/AWS/EC2"><span>EC2</span></Link><span>&#x20;-&#x20;allow&#x20;provision&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/IOPS"><span>IOPS</span></Link><span>&#x20;target</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>EBS</span><span>&nbsp;↔&nbsp;</span><span ><span>AWS</span></span><span>&#x20;</span><b>E</b><span>lastic&#x20;</span><b>B</b><span>lock&#x20;</span><b>S</b><span>tore&#x20;to&#x20;persist&#x20;storage&#x20;for&#x20;</span><span ><span>EC2</span></span><span>&#x20;-&#x20;allow&#x20;provision&#x20;</span><span ><span>IOPS</span></span><span>&#x20;target</span></cite></li></ol>
     
     </small></Tooltip>)
 }

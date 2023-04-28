@@ -16,7 +16,7 @@ export default function PreviewpkFSBQRAMTGqo6D5E(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/redux/react-redux/useSelector"><code>useSelector()</code></Link><span>&#x20;is&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Hook"><span>Hook</span></Link><span>&#x20;variant&#x20;of&#x20;</span><Link to="/wiki/React/React-Stack/redux/mapStateToProps"><code>mapStateToProps()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>useSelector()</code></span><span>&#x20;is&#x20;</span><span ><span>Hook</span></span><span>&#x20;variant&#x20;of&#x20;</span><span ><code>mapStateToProps()</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

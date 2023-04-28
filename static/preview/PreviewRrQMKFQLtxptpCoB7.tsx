@@ -16,7 +16,7 @@ export default function PreviewRrQMKFQLtxptpCoB7(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>call&#x20;</span><Link to="/wiki/JS/JS-Language/Object/map/Map"><code>Map()</code></Link><span>&#x20;&#x26;&#x20;chain&#x20;</span><Link to="/wiki/JS/JS-Language/Object/set/Set"><code>Set()</code></Link><span>&#x20;to&#x20;add&#x20;entries</span><CodeBlock language="tsx">{`const map = new Map()\n  .set(1, "one")\n  .set(2, "two")\n  .set(3, "three")`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>call&#x20;</span><span ><code>Map()</code></span><span>&#x20;&#x26;&#x20;chain&#x20;</span><span ><code>Set()</code></span><span>&#x20;to&#x20;add&#x20;entries</span><CodeBlock language="tsx">{`const map = new Map()\n  .set(1, "one")\n  .set(2, "two")\n  .set(3, "three")`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

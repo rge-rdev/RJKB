@@ -16,7 +16,7 @@ export default function Previewd6fSBfjPzysG35ECr(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/withRouter"><code>withRouter()</code></Link><span>&#x20;gives&#x20;access&#x20;to&#x20;</span>history&#x20;object&#x20;properties<span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>withRouter()</code></span><span>&#x20;gives&#x20;access&#x20;to&#x20;</span>history&#x20;object&#x20;properties<span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

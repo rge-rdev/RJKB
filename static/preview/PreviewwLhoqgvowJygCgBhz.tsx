@@ -16,7 +16,7 @@ export default function PreviewwLhoqgvowJygCgBhz(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Next&#x20;12&#x20;Migration</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13/Incremental-Adoption"><code>Incrementally Adopt</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/app"><code>/app</code></Link><span>&#x20;per&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><span>Page</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Next&#x20;12&#x20;Migration</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>Incrementally Adopt</code></span><span>&#x20;</span><span ><code>/app</code></span><span>&#x20;per&#x20;</span><span ><span>Page</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

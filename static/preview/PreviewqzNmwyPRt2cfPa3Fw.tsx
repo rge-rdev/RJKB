@@ -16,7 +16,7 @@ export default function PreviewqzNmwyPRt2cfPa3Fw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>?does&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/flyio/flyctl/fly-vol/snaps"><code>Fly Snapshots</code></Link><span>&#x20;count&#x20;towards&#x20;3GB&#x20;free&#x20;limit?&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>?does&#x20;</span><span ><code>Fly Snapshots</code></span><span>&#x20;count&#x20;towards&#x20;3GB&#x20;free&#x20;limit?&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

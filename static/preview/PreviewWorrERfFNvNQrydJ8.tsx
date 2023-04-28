@@ -16,7 +16,7 @@ export default function PreviewWorrERfFNvNQrydJ8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Nodejs/Node-Stack/cors"><code>cors</code></Link><span>&#x20;called&#x20;as&#x20;function&#x20;to&#x20;return&#x20;some&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Middleware"><span>Middleware</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>cors</code></span><span>&#x20;called&#x20;as&#x20;function&#x20;to&#x20;return&#x20;some&#x20;</span><span ><span>Middleware</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

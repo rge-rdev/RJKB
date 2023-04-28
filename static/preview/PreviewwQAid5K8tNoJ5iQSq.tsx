@@ -16,7 +16,7 @@ export default function PreviewwQAid5K8tNoJ5iQSq(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/interface/Object-Optional-Property"><span>Object&#x20;Optional&#x20;Property</span></Link><span></span><CodeBlock language="tsx">{`interface Person {\n  name: string;\n  age?: number;\n}`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;for&#x20;</span><span ><span>Object&#x20;Optional&#x20;Property</span></span><span></span><CodeBlock language="tsx">{`interface Person {\n  name: string;\n  age?: number;\n}`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

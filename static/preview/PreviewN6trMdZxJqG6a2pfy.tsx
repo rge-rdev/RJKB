@@ -16,7 +16,7 @@ export default function PreviewN6trMdZxJqG6a2pfy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>add&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS/tsconfigjson/extends"><code>&#x22;extends&#x22;</code></Link><span>&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/docusaurus/Aliases/docusaurus"><code>@docusaurus</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>add&#x20;</span><span ><code>&#x22;extends&#x22;</code></span><span>&#x20;for&#x20;</span><span ><code>@docusaurus</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

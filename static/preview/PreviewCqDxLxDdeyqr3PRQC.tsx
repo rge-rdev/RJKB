@@ -16,7 +16,7 @@ export default function PreviewCqDxLxDdeyqr3PRQC(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>FTPS</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/FTP"><span>FTP</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTPS/SSL"><span>SSL</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>SFTP</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/SSH"><span>SSH</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/FTP"><span>FTP</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>FTPS</span><span>&nbsp;↔&nbsp;</span><span ><span>FTP</span></span><span>&#x20;with&#x20;</span><span ><span>SSL</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>SFTP</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/SSH"><span>SSH</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/FTP"><span>FTP</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

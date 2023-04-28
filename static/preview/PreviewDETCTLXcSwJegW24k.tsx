@@ -16,7 +16,7 @@ export default function PreviewDETCTLXcSwJegW24k(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Nodejs/Express"><span>Express</span></Link><span>&#x20;provides&#x20;</span><Link to="/wiki/JS/Nodejs/Express/Express-Definition/express-generator/Scaffolding"><span>Scaffolding</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/JS/Nodejs/Express/Express-Definition/express-generator"><code>express-generator</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Express</span></span><span>&#x20;provides&#x20;</span><span ><span>Scaffolding</span></span><span>&#x20;via&#x20;</span><span ><code>express-generator</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

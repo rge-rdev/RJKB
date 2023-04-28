@@ -16,7 +16,7 @@ export default function PreviewPtcia8cqn8Nu7vspf(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Dev-tool/IDE/VS-Code/VSC-Extension/CORE/Prettier"><span>Prettier</span></Link><span>&#x20;is&#x20;based&#x20;on&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/VSC-Extension/CORE/ESLint"><span>ESLint</span></Link><span>&#x20;rules&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Prettier</span></span><span>&#x20;is&#x20;based&#x20;on&#x20;</span><span ><span>ESLint</span></span><span>&#x20;rules&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewaforCR2EcZ5QBKfEC(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>value</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/HTML/Flow-Content/HTML-Attribute"><code>Attribute</code></Link><span>&#x20;to&#x20;set&#x20;</span><b>%&#x20;progress</b><span>&#x20;(as&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string"><code>string</code></Link><span>)&#x20;for&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/progress"><code>&#x3C;progress&#x3E;&#x20;</code></Link><span>.&#x20;Omit&#x20;to&#x20;set&#x20;as&#x20;:indeterminate&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>value</code><span>&nbsp;↔&nbsp;</span><span ><code>Attribute</code></span><span>&#x20;to&#x20;set&#x20;</span><b>%&#x20;progress</b><span>&#x20;(as&#x20;</span><span ><code>string</code></span><span>)&#x20;for&#x20;</span><span ><code>&#x3C;progress&#x3E;&#x20;</code></span><span>.&#x20;Omit&#x20;to&#x20;set&#x20;as&#x20;:indeterminate&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewS2bidGc7eXFs36Pit(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>InternalError</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;when&#x20;exceed&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack"><span>Call&#x20;Stack</span></Link><span>&#x20;size&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;-&#x20;when&#x20;something&#x20;too&#x20;large&#x20;||&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Loop/Infinite-Loop"><span>Infinite&#x20;Loop</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>InternalError</code><span>&nbsp;↔&nbsp;</span><span ><span>Exception</span></span><span>&#x20;when&#x20;exceed&#x20;</span><span ><span>Call&#x20;Stack</span></span><span>&#x20;size&#x20;in&#x20;</span><span ><span>JS&#x20;Engine</span></span><span>&#x20;-&#x20;when&#x20;something&#x20;too&#x20;large&#x20;||&#x20;</span><span ><span>Infinite&#x20;Loop</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

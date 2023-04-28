@@ -16,7 +16,7 @@ export default function PreviewyQjm8qggHw3DgMEH8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>flag&#x20;files/folders&#x20;to&#x20;not&#x20;track&#x20;in&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/gitignore"><code>.gitignore</code></Link><span>&#x20;file</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>flag&#x20;files/folders&#x20;to&#x20;not&#x20;track&#x20;in&#x20;</span><span ><code>.gitignore</code></span><span>&#x20;file</span></cite></li></ol>
     
     </small></Tooltip>)
 }

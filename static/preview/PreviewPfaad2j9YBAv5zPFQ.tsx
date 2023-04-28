@@ -16,7 +16,7 @@ export default function PreviewPfaad2j9YBAv5zPFQ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS/tsconfigjson/compilerOptions/Type-Checking/noImplicitAny-true"><code>&#x22;noImplicitAny&#x22;:&#x20;true</code></Link><span>&#x20;does&#x20;not&#x20;throw&#x20;on&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><span>Declaration</span></Link><span></span><CodeBlock language="tsx">{`let anything; //type any fine here`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>&#x22;noImplicitAny&#x22;:&#x20;true</code></span><span>&#x20;does&#x20;not&#x20;throw&#x20;on&#x20;</span><span ><span>Variable</span></span><span>&#x20;</span><span ><span>Declaration</span></span><span></span><CodeBlock language="tsx">{`let anything; //type any fine here`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

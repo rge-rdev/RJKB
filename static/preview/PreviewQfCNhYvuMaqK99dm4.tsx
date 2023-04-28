@@ -16,7 +16,7 @@ export default function PreviewQfCNhYvuMaqK99dm4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method/static"><code>static</code></Link><span>&#x20;for&#x20;utility/helper&#x20;functions&#x20;-&#x20;or&#x20;just&#x20;add&#x20;better&#x20;inline&#x20;docs&#x20;via&#x20;</span><Link to="/wiki/JS/TS/TS-Stack/TSDoc"><span>TSDoc</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><code>static</code></span><span>&#x20;for&#x20;utility/helper&#x20;functions&#x20;-&#x20;or&#x20;just&#x20;add&#x20;better&#x20;inline&#x20;docs&#x20;via&#x20;</span><span ><span>TSDoc</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

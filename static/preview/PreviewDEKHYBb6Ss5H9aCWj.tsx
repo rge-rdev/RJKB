@@ -16,7 +16,7 @@ export default function PreviewDEKHYBb6Ss5H9aCWj(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13/loadingtsx"><code>loading.tsx</code></Link><span>&#x20;is&#x20;reserved&#x20;name&#x20;for&#x20;Loading&#x20;UI&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13"><span>Next&#x20;13</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>loading.tsx</code></span><span>&#x20;is&#x20;reserved&#x20;name&#x20;for&#x20;Loading&#x20;UI&#x20;for&#x20;</span><span ><span>Next&#x20;13</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

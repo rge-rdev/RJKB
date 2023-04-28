@@ -16,7 +16,7 @@ export default function PreviewZTBAAshvMSS39uqda(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>avoid&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Global-Function/eval"><code>eval()</code></Link><span>&#x20;for&#x20;performance&#x20;as&#x20;most&#x20;</span><Link to="/wiki/JS/Library/Module/Bundler"><span>Bundler</span></Link><span>&#x20;avoid&#x20;minify&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Global-Function/eval"><code>eval()</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Expression"><code>Expressions</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>avoid&#x20;</span><span ><code>eval()</code></span><span>&#x20;for&#x20;performance&#x20;as&#x20;most&#x20;</span><span ><span>Bundler</span></span><span>&#x20;avoid&#x20;minify&#x20;</span><span ><code>eval()</code></span><span>&#x20;</span><span ><code>Expressions</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

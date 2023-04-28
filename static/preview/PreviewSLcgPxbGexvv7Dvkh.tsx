@@ -16,7 +16,7 @@ export default function PreviewSLcgPxbGexvv7Dvkh(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling/Data-Relationship/1-Many"><span>1:Many</span></Link><span>&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling/Data-Relationship"><span>Data&#x20;Relationship</span></Link><span>&#x20;in&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB"><span>MongoDB</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Database/Relational-DB"><span>Relational&#x20;DB</span></Link><span>&#x20;determines&#x20;whether&#x20;to&#x20;use&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling/Denormalization"><span>Denormalization</span></Link><span>/</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling/Normalization"><span>Normalization</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>1:Many</span></span><span>&#x20;</span><span ><span>Data&#x20;Relationship</span></span><span>&#x20;in&#x20;</span><span ><span>MongoDB</span></span><span>&#x20;</span><span ><span>Relational&#x20;DB</span></span><span>&#x20;determines&#x20;whether&#x20;to&#x20;use&#x20;</span><span ><span>Denormalization</span></span><span>/</span><span ><span>Normalization</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

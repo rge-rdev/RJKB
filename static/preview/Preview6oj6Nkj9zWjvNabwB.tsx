@@ -16,7 +16,7 @@ export default function Preview6oj6Nkj9zWjvNabwB(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/any"><code>any</code></Link><span>&#x20;used&#x20;for&#x20;output&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/Object/JSON/JSON-API-Static-Method/JSONparse"><code>JSON.parse()</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>built-in&#x20;JS&#x20;functions&#x20;(ie&#x20;</span><Link to="/wiki/JS/JS-Language/Object/JSON/JSON-API-Static-Method/JSONparse"><code>JSON.parse()</code></Link><span>)&#x20;return&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/any"><code>any</code></Link><span>&#x20;by&#x20;default</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>any</code></span><span>&#x20;used&#x20;for&#x20;output&#x20;of&#x20;</span><span ><code>JSON.parse()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>built-in&#x20;JS&#x20;functions&#x20;(ie&#x20;</span><span ><code>JSON.parse()</code></span><span>)&#x20;return&#x20;</span><span ><code>any</code></span><span>&#x20;by&#x20;default</span></cite></li></ol>
     
     </small></Tooltip>)
 }

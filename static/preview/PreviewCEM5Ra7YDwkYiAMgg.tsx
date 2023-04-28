@@ -16,7 +16,7 @@ export default function PreviewCEM5Ra7YDwkYiAMgg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/storybook/Story/title"><code>title</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Story/component"><code>component</code></Link><span>&#x20;req&#x20;fields&#x20;-&#x20;others&#x20;optional&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>title</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>component</code></span><span>&#x20;req&#x20;fields&#x20;-&#x20;others&#x20;optional&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

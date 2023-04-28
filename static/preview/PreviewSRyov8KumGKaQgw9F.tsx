@@ -16,7 +16,7 @@ export default function PreviewSRyov8KumGKaQgw9F(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Lightbox</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/API/Interface/UI/Common-UI-Types/Modal"><span>Modal</span></Link><span>&#x20;variant&#x20;(for&#x20;video&#x20;playback)&#x20;with&#x20;zoom&#x20;to&#x20;bring&#x20;content&#x20;to&#x20;focus&#x20;&#x26;&#x20;dim&#x20;background</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Dev-tool/API/Interface/UI/Common-UI-Types/Modal"><span>Modal</span></Link><span>&#x20;are&#x20;(quite&#x20;commonly)&#x20;weak&#x20;&#x26;&#x20;terrible&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM"><span>DRM</span></Link><span>/paywalls&#x20;-&#x20;often&#x20;annoying&#x20;&#x26;&#x20;easily&#x20;disabled</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Lightbox</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/API/Interface/UI/Common-UI-Types/Modal"><span>Modal</span></Link><span>&#x20;variant&#x20;(for&#x20;video&#x20;playback)&#x20;with&#x20;zoom&#x20;to&#x20;bring&#x20;content&#x20;to&#x20;focus&#x20;&#x26;&#x20;dim&#x20;background</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>Modal</span></span><span>&#x20;are&#x20;(quite&#x20;commonly)&#x20;weak&#x20;&#x26;&#x20;terrible&#x20;for&#x20;</span><span ><span>DRM</span></span><span>/paywalls&#x20;-&#x20;often&#x20;annoying&#x20;&#x26;&#x20;easily&#x20;disabled</span></cite></li></ol>
     
     </small></Tooltip>)
 }

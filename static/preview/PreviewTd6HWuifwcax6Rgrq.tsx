@@ -16,7 +16,7 @@ export default function PreviewTd6HWuifwcax6Rgrq(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>or&#x20;use&#x20;</span><Link to="/wiki/JS/Library/lodash/Lodash-String-methods/kebabCasestring"><code>_.kebabCase(string)</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>or&#x20;use&#x20;</span><span ><code>_.kebabCase(string)</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

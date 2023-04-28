@@ -16,7 +16,7 @@ export default function Preview6NXCJJjn9kdEtgeSo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Chain/Optional-Chaining"><span>Optional&#x20;Chaining</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/"><code>??</code></Link><span></span><CodeBlock language="tsx">{`const street = persons.map(\n  p => p.address?.street?.name ?? "can't find name"\n);`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><span>Optional&#x20;Chaining</span></span><span>&#x20;with&#x20;</span><span ><code>??</code></span><span></span><CodeBlock language="tsx">{`const street = persons.map(\n  p => p.address?.street?.name ?? "can't find name"\n);`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

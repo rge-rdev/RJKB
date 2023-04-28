@@ -16,7 +16,7 @@ export default function PreviewoZZHJM5QypNoGzSSm(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>client&#x20;request</span><span>&nbsp;↔&nbsp;</span><span>request&#x20;specified&#x20;by&#x20;URL&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/Request-Response-model/HTTP-Request/start-line/HTTP-Method"><span>HTTP&#x20;Method</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>client&#x20;request</span><span>&nbsp;↔&nbsp;</span><span>request&#x20;specified&#x20;by&#x20;URL&#x20;&#x26;&#x20;</span><span ><span>HTTP&#x20;Method</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

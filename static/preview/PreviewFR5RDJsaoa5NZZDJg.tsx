@@ -16,7 +16,7 @@ export default function PreviewFR5RDJsaoa5NZZDJg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Dev-tool/Flowchart-diagrams-draw-tool/drawio"><span>draw.io</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>use&#x20;visual&#x20;tools&#x20;like&#x20;</span><Link to="/wiki/Dev-tool/Flowchart-diagrams-draw-tool/drawio"><span>draw.io</span></Link><span>&#x20;to&#x20;plan&#x20;app&#x20;component&#x20;structure&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>draw.io</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>use&#x20;visual&#x20;tools&#x20;like&#x20;</span><span ><span>draw.io</span></span><span>&#x20;to&#x20;plan&#x20;app&#x20;component&#x20;structure&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

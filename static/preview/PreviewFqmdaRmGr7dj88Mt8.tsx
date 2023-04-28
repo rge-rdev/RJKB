@@ -16,7 +16,7 @@ export default function PreviewFqmdaRmGr7dj88Mt8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Audio-Format/FLAC"><span>FLAC</span></Link><span>&#x20;is&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS"><span>FOSS</span></Link><span>&#x20;alt&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Audio-Format/ALAC"><span>ALAC</span></Link><span>,&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Audio-Format/WMA"><span>WMA</span></Link><span>,&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Audio-Format/WAV"><span>WAV</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>FLAC</span></span><span>&#x20;is&#x20;</span><span ><span>FOSS</span></span><span>&#x20;alt&#x20;to&#x20;</span><span ><span>ALAC</span></span><span>,&#x20;</span><span ><span>WMA</span></span><span>,&#x20;</span><span ><span>WAV</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

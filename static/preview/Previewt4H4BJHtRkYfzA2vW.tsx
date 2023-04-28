@@ -16,7 +16,7 @@ export default function Previewt4H4BJHtRkYfzA2vW(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Fast&#x20;&#x26;&#x20;Cheap</span><span>&nbsp;↔&nbsp;</span><span>Rush&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/Cheap-Fast-or-Good/Fast-Cheap/MVP"><span>MVP</span></Link><span>&#x20;to&#x20;sacrifice&#x20;quality</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Time-To-Market</span><span>&nbsp;↔&nbsp;</span><span>time&#x20;to&#x20;ship&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/Cheap-Fast-or-Good/Fast-Cheap/MVP"><span>MVP</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Fast&#x20;&#x26;&#x20;Cheap</span><span>&nbsp;↔&nbsp;</span><span>Rush&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/Cheap-Fast-or-Good/Fast-Cheap/MVP"><span>MVP</span></Link><span>&#x20;to&#x20;sacrifice&#x20;quality</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Time-To-Market</span><span>&nbsp;↔&nbsp;</span><span>time&#x20;to&#x20;ship&#x20;</span><span ><span>MVP</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

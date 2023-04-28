@@ -16,7 +16,7 @@ export default function PreviewPk4yB4TzRrQf2vuKA(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Denormalization"><span>Denormalization</span></Link><span>&#x20;can&#x20;improve&#x20;performance&#x20;by&#x20;make&#x20;easier&#x20;to&#x20;read&#x20;all&#x20;required&#x20;data&#x20;all&#x20;at&#x20;once</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Denormalization</span></span><span>&#x20;can&#x20;improve&#x20;performance&#x20;by&#x20;make&#x20;easier&#x20;to&#x20;read&#x20;all&#x20;required&#x20;data&#x20;all&#x20;at&#x20;once</span></cite></li></ol>
     
     </small></Tooltip>)
 }

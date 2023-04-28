@@ -16,7 +16,7 @@ export default function PreviewWwvJhfWScyfj9jzmS(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>previews&#x20;next-gen&#x20;JS-features&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript/TC39/TC39-Process"><span>TC39&#x20;Process</span></Link><span>&#x20;pipeline&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>previews&#x20;next-gen&#x20;JS-features&#x20;in&#x20;</span><span ><span>TC39&#x20;Process</span></span><span>&#x20;pipeline&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function Preview7KCdeAgQyNXsdSHjg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!equivalent&#x20;to&#x20;using&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Destructuring"><span>Destructuring</span></Link><span>&#x20;using&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Spread-Operator"><span>Spread&#x20;Operator</span></Link><span>&#x20;</span><code>const&#x20;arr3&#x20;=&#x20;[...arr1,&#x20;...arr2]</code><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!equivalent&#x20;to&#x20;using&#x20;</span><span ><span>Destructuring</span></span><span>&#x20;using&#x20;</span><span ><span>Spread&#x20;Operator</span></span><span>&#x20;</span><code>const&#x20;arr3&#x20;=&#x20;[...arr1,&#x20;...arr2]</code><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewkrHW7JSjXmM97Pjtm(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>supports&#x20;syntax&#x20;highlighting&#x20;via&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/Monaco-Editor/Monarch"><span>Monarch</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>supports&#x20;syntax&#x20;highlighting&#x20;via&#x20;</span><span ><span>Monarch</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

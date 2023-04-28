@@ -16,7 +16,7 @@ export default function PreviewamkqahnoQzv29KqXZ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>add&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Component/Image/unoptimized"><code>unoptimized</code></Link><span>&#x20;attribute&#x20;to&#x20;ANY&#x20;FC&#x20;with&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Component/Image"><code>&#x3C;Image&#x3E;</code></Link><span>&#x20;to&#x20;serve&#x20;deoptimized&#x20;Image&#x20;FC&#x20;compat&#x20;for&#x20;storybook</span><CodeBlock language="tsx">{`// .storybook/preview.js\nimport * as NextImage from "next/image";\n\nconst OriginalNextImage = NextImage.default;\n\nObject.defineProperty(NextImage, "default", {\n  configurable: true,\n  value: (props) => <OriginalNextImage {...props} unoptimized />,\n});`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>add&#x20;</span><span ><code>unoptimized</code></span><span>&#x20;attribute&#x20;to&#x20;ANY&#x20;FC&#x20;with&#x20;</span><span ><code>&#x3C;Image&#x3E;</code></span><span>&#x20;to&#x20;serve&#x20;deoptimized&#x20;Image&#x20;FC&#x20;compat&#x20;for&#x20;storybook</span><CodeBlock language="tsx">{`// .storybook/preview.js\nimport * as NextImage from "next/image";\n\nconst OriginalNextImage = NextImage.default;\n\nObject.defineProperty(NextImage, "default", {\n  configurable: true,\n  value: (props) => <OriginalNextImage {...props} unoptimized />,\n});`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

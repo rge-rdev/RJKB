@@ -16,7 +16,7 @@ export default function Previewcbw2QbP4bZkmbskmZ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Flow&#x20;inside&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-Execution-Context"><span>Global&#x20;Execution&#x20;Context</span></Link></cite></li><li><cite className="react-tooltip__ref-list"><b>Creation&#x20;Phase</b><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-Execution-Context"><span>Global&#x20;Execution&#x20;Context</span></Link><span>&#x20;created&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/window"><code>window</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;pointing&#x20;to&#x20;it&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Flow&#x20;inside&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-Execution-Context"><span>Global&#x20;Execution&#x20;Context</span></Link></cite></li><li><cite className="react-tooltip__ref-list"><b>Creation&#x20;Phase</b><span>&nbsp;↔&nbsp;</span><span ><span>Global&#x20;Execution&#x20;Context</span></span><span>&#x20;created&#x20;with&#x20;</span><span ><code>window</code></span><span>&#x20;&#x26;&#x20;</span><span ><em><code>this</code></em><span>&#x20;keyword</span></span><span>&#x20;pointing&#x20;to&#x20;it&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

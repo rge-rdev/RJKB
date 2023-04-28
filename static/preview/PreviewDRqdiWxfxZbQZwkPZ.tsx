@@ -16,7 +16,7 @@ export default function PreviewDRqdiWxfxZbQZwkPZ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13/layouttsx"><code>layout.tsx</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><code>Wraps</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/pagetsx"><code>page.tsx</code></Link><span>&#x20;in&#x20;same&#x20;folder&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Stack/Nextjs/Next-13"><span>Next&#x20;13</span></Link><span>&#x20;reserve&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/pagetsx"><code>page.tsx</code></Link><span>&#x20;as&#x20;name&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><span>Page</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>layout.tsx</code></span><span>&#x20;</span><span ><code>Wraps</code></span><span>&#x20;</span><span ><code>page.tsx</code></span><span>&#x20;in&#x20;same&#x20;folder&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>Next&#x20;13</span></span><span>&#x20;reserve&#x20;</span><span ><code>page.tsx</code></span><span>&#x20;as&#x20;name&#x20;for&#x20;</span><span ><span>Page</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

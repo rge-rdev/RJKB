@@ -16,7 +16,7 @@ export default function PreviewxXFgDcRFcDYzHAoWv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>tailwindcss-cli&#x20;build&#x20;_input.css&#x20;-o&#x20;_output.css</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;build&#x20;tailwind&#x20;css&#x20;output&#x20;once&#x20;with&#x20;</span><Link to="/wiki/CSS/CSS-Stack/CSS-Utility-Framework/Tailwind-CSS/Tailwind-Features/tailwindcss-cli"><code>Tailwind CLI</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>tailwindcss-cli&#x20;build&#x20;_input.css&#x20;-o&#x20;_output.css</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;build&#x20;tailwind&#x20;css&#x20;output&#x20;once&#x20;with&#x20;</span><span ><code>Tailwind CLI</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

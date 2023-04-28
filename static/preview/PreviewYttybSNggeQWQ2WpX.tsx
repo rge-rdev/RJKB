@@ -16,7 +16,7 @@ export default function PreviewYttybSNggeQWQ2WpX(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/TIFF"><code>`.tiff`</code></Link><span>&#x20;files&#x20;HUGE&#x20;vs&#x20;others&#x20;-&#x20;avoid!&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>`.tiff`</code></span><span>&#x20;files&#x20;HUGE&#x20;vs&#x20;others&#x20;-&#x20;avoid!&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

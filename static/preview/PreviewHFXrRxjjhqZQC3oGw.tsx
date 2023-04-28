@@ -16,7 +16,7 @@ export default function PreviewHFXrRxjjhqZQC3oGw(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>RR&#x20;listens&#x20;for&#x20;URL&#x20;changes&#x20;in&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/RR-concepts/History-Locations/History-Object"><span>History&#x20;Object</span></Link><span>,&#x20;whether&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/RR-concepts/History-Locations/History-Action"><span>History&#x20;Action</span></Link><span>&#x20;=&#x20;push,&#x20;pop&#x20;or&#x20;replace</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>RR&#x20;listens&#x20;for&#x20;URL&#x20;changes&#x20;in&#x20;</span><span ><span>History&#x20;Object</span></span><span>,&#x20;whether&#x20;</span><span ><span>History&#x20;Action</span></span><span>&#x20;=&#x20;push,&#x20;pop&#x20;or&#x20;replace</span></cite></li></ol>
     
     </small></Tooltip>)
 }

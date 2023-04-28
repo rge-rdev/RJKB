@@ -16,7 +16,7 @@ export default function Preview7wnPb4hMK4EfguFLa(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/revert"><code>revert</code></Link><span>&#x20;to&#x20;undo&#x20;bad&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit"><code>Commits</code></Link><span>&#x20;made&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/remote"><code>remote</code></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Git-Repo"><code>Repos</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><code>revert</code></span><span>&#x20;to&#x20;undo&#x20;bad&#x20;</span><span ><code>Commits</code></span><span>&#x20;made&#x20;to&#x20;</span><span ><code>remote</code></span><span>&#x20;</span><span ><code>Repos</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

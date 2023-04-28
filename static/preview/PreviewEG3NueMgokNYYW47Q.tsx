@@ -16,7 +16,7 @@ export default function PreviewEG3NueMgokNYYW47Q(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise/Promiseall"><code>Promise.all()</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise/Promiserace"><code>Promise.race()</code></Link><span>&#x20;to&#x20;fetch&#x20;in&#x20;parallel&#x20;&#x26;&#x20;avoid&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/Network-Waterfall"><span>Network&#x20;Waterfall</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><code>Promise.all()</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>Promise.race()</code></span><span>&#x20;to&#x20;fetch&#x20;in&#x20;parallel&#x20;&#x26;&#x20;avoid&#x20;</span><span ><span>Network&#x20;Waterfall</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewSMmexdFopSQiyivn3(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Scalable</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB"><code>Mongo </code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Horizontal-Scaling"><span>Horizontal&#x20;Scaling</span></Link><span>distributes&#x20;data&#x20;across&#x20;multiple&#x20;machines,&#x20;to&#x20;scale&#x20;with&#x20;user/data&#x20;growth&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Scalable</span><span>&nbsp;↔&nbsp;</span><span ><code>Mongo </code></span><span>&#x20;</span><span ><span>Horizontal&#x20;Scaling</span></span><span>distributes&#x20;data&#x20;across&#x20;multiple&#x20;machines,&#x20;to&#x20;scale&#x20;with&#x20;user/data&#x20;growth&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

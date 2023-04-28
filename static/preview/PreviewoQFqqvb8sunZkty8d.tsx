@@ -16,7 +16,7 @@ export default function PreviewoQFqqvb8sunZkty8d(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>common&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><code>wrap</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/React-Router-FC/Link"><code>&#x3C;Link&#x3E;</code></Link><span>&#x20;with&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element/li"><code>&#x3C;li&#x3E;</code></Link><span>&#x20;for&#x20;block&#x20;format&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>common&#x20;to&#x20;</span><span ><code>wrap</code></span><span>&#x20;</span><span ><code>&#x3C;Link&#x3E;</code></span><span>&#x20;with&#x20;</span><span ><code>&#x3C;li&#x3E;</code></span><span>&#x20;for&#x20;block&#x20;format&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

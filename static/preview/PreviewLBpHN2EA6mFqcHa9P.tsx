@@ -16,7 +16,7 @@ export default function PreviewLBpHN2EA6mFqcHa9P(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>start&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/httpster"><code>httpster</code></Link><span>&#x20;with&#x20;local&#x20;server&#x20;on&#x20;port&#x20;3000&#x20;from&#x20;files&#x20;served&#x20;from&#x20;./public&#x20;dir</span><CodeBlock language="tsx">{`httpster -p 3000 -d ./public/`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>start&#x20;</span><span ><code>httpster</code></span><span>&#x20;with&#x20;local&#x20;server&#x20;on&#x20;port&#x20;3000&#x20;from&#x20;files&#x20;served&#x20;from&#x20;./public&#x20;dir</span><CodeBlock language="tsx">{`httpster -p 3000 -d ./public/`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

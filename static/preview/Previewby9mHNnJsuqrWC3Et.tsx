@@ -16,7 +16,7 @@ export default function Previewby9mHNnJsuqrWC3Et(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/TS/TS-Definition/TSC/Type-Assertion/as"><code>as</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>as</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

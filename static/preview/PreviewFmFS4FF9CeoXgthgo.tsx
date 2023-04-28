@@ -16,7 +16,7 @@ export default function PreviewFmFS4FF9CeoXgthgo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/enum/Enum-Member/Computed-Enum-Member"><span>Computed&#x20;Enum&#x20;Member</span></Link><span>&#x20;specified&#x20;by&#x20;arbitrary&#x20;expression</span><CodeBlock language="tsx">{`enum CalcNum {\n  A = 123,\n  B = Math.Random()\n}`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><span>Computed&#x20;Enum&#x20;Member</span></span><span>&#x20;specified&#x20;by&#x20;arbitrary&#x20;expression</span><CodeBlock language="tsx">{`enum CalcNum {\n  A = 123,\n  B = Math.Random()\n}`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

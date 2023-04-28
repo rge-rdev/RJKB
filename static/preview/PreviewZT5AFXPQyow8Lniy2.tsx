@@ -16,7 +16,7 @@ export default function PreviewZT5AFXPQyow8Lniy2(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-API/ReactDOM-API/render"><code>render()</code></Link><span>&#x20;mutates&#x20;children&#x20;of&#x20;container&#x20;&#x26;&#x20;can&#x20;overwrite&#x20;-&#x20;keep&#x20;it&#x20;empty</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>render()</code></span><span>&#x20;mutates&#x20;children&#x20;of&#x20;container&#x20;&#x26;&#x20;can&#x20;overwrite&#x20;-&#x20;keep&#x20;it&#x20;empty</span></cite></li></ol>
     
     </small></Tooltip>)
 }

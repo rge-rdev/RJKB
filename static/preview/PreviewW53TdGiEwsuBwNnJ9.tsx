@@ -16,7 +16,7 @@ export default function PreviewW53TdGiEwsuBwNnJ9(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/JPEG-XL"><span>JPEG&#x20;XL</span></Link><span>&#x20;launch&#x20;delay&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Chrome"><span>Chrome</span></Link><span>&#x20;blacklist&#x20;to&#x20;favor&#x20;AVIF&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>JPEG&#x20;XL</span></span><span>&#x20;launch&#x20;delay&#x20;by&#x20;</span><span ><span>Chrome</span></span><span>&#x20;blacklist&#x20;to&#x20;favor&#x20;AVIF&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

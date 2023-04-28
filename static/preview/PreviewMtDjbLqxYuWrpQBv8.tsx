@@ -16,7 +16,7 @@ export default function PreviewMtDjbLqxYuWrpQBv8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/label"><code>&#x3C;label&#x3E;</code></Link><span>&#x20;</span><b><code>for</code></b><span>&#x20;to&#x20;match&#x20;</span><b><code>id</code></b><span>&#x20;of&#x20;&#x3C;input&#x3E;</span><CodeBlock language="tsx">{`<div class="quiz">\n  <label for="q1">Yes or No?</label>\n  <input type="checkbox" id="q1">\n</div>`}</CodeBlock><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!snippet&#x20;</span><span ><code>&#x3C;label&#x3E;</code></span><span>&#x20;</span><b><code>for</code></b><span>&#x20;to&#x20;match&#x20;</span><b><code>id</code></b><span>&#x20;of&#x20;&#x3C;input&#x3E;</span><CodeBlock language="tsx">{`<div class="quiz">\n  <label for="q1">Yes or No?</label>\n  <input type="checkbox" id="q1">\n</div>`}</CodeBlock><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

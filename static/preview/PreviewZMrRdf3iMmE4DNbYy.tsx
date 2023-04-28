@@ -16,7 +16,7 @@ export default function PreviewZMrRdf3iMmE4DNbYy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;can&#x20;be&#x20;stored&#x20;in&#x20;either&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>,&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Component-Hierarchy/Component-Relationship/Parent-Component"><span>Parent&#x20;Component</span></Link><span>&#x20;or&#x20;any&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Ascendant"><span>Ascendant</span></Link></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>state</span></span><span>&#x20;can&#x20;be&#x20;stored&#x20;in&#x20;either&#x20;</span><span ><span>Component</span></span><span>,&#x20;</span><span ><span>Parent&#x20;Component</span></span><span>&#x20;or&#x20;any&#x20;</span><span ><span>Ascendant</span></span></cite></li></ol>
     
     </small></Tooltip>)
 }

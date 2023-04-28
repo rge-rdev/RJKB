@@ -16,7 +16,7 @@ export default function Preview9e6MPcLFJ7vWoTSEs(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>npm&#x20;test</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;start&#x20;</span><Link to="/wiki/Dev-tool/Test-Runner"><span>Test&#x20;Runner</span></Link><span>&#x20;script</span></cite></li><li><cite className="react-tooltip__ref-list"><code>yarn&#x20;test&#x20;--watchAll</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;run&#x20;</span><Link to="/wiki/Dev-tool/Test-Runner/Jest"><span>Jest</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/Test-Runner"><span>Test&#x20;Runner</span></Link><span>&#x20;in&#x20;</span><Link to="/wiki/Dev-tool/CLI/Terminal"><span>Terminal</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>npm&#x20;test</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;start&#x20;</span><span ><span>Test&#x20;Runner</span></span><span>&#x20;script</span></cite></li><li><cite className="react-tooltip__ref-list"><code>yarn&#x20;test&#x20;--watchAll</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;run&#x20;</span><span ><span>Jest</span></span><span>&#x20;</span><span ><span>Test&#x20;Runner</span></span><span>&#x20;in&#x20;</span><span ><span>Terminal</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

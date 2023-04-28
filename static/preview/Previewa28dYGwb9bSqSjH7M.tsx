@@ -16,7 +16,7 @@ export default function Previewa28dYGwb9bSqSjH7M(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>S</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/Flag"><span>Flag</span></Link><span>)&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Peer"><span>Peer</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Snubbed"><span>Snubbed</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>S</span><span>&nbsp;↔&nbsp;</span><span>(</span><span ><span>Flag</span></span><span>)&#x20;</span><span ><span>Peer</span></span><span>&#x20;</span><span ><span>Snubbed</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

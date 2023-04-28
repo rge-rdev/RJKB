@@ -16,7 +16,7 @@ export default function PreviewnxCuKAXY3QJc9kfQ2(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><Link to="/wiki/JS/Library/localForage"><code>localForage</code></Link><span>&#x20;helper&#x20;to&#x20;simplify&#x20;working&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/indexedDB"><span>indexedDB</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/Library/localForage"><code>localForage</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><code>localForage</code></span><span>&#x20;helper&#x20;to&#x20;simplify&#x20;working&#x20;with&#x20;</span><span ><span>indexedDB</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>localForage</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }
