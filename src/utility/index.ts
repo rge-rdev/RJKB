@@ -140,6 +140,7 @@ export function id_to_mdx(
   const preview = config?.preview
   const jsx = config?.jsx
   const doc = getDoc(id)
+  const leaf = isLeaf(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
 
@@ -159,13 +160,14 @@ export function id_to_mdx(
   // /<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>/g, //? now spot why the next one is an improvement
   // /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1})?([a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?![ ]*\`)/g //? dup [z] also should have grouped as ([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})? - was letting <b> slip past...
   let re_unsafe_jsx =
-    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?(?:[a-zA-Z0-9\<\>_ ]{1,})?)?)[\/]?>)(?![ ]*\`)/g
+    /(?<!\`[ ]*)(([A-Za-z-_0-9\.]*)<[\/]?(([!ac-tv-zAC-TV-Z\<\>_ ]{1}?(?:[a-zA-Z0-9\<\>_ ]{1,})?)?)[\/]?>)(?![ ]*\`)/g
+  // added ! to catch <!DOCTYPE html> which slipped through!
   //? How to make this simpler?! need to match all types of JSX & TS Angle notation EXCLUDING <b></b> & <u></u> //! Also must account for extra whitespace before & after backticks in assertions // is it necessary to keep <B> <U> etc as well?
 
   const re_link_preview_mdx =
     /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
-  if (preview)
+  if (preview && !leaf)
     re_unsafe_jsx =
       /(?<!(?:!?\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*\`\`\`(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[\/]?(?:[ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?[\/]?>)(?!(?:[ ]*\`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
   // /(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
