@@ -94,7 +94,7 @@
 
 /* esbuild-css-modules-plugin-namespace:./src/components/Tooltip/styles.module.css?esbuild-css-modules-plugin-built */
 .react-tooltip__tooltip_KtSkBq {
-  @apply pointer-events-none invisible absolute left-0 top-10 z-[999] rounded-r-3xl rounded-tl-md rounded-bl-xl opacity-0 transition-opacity duration-[0.3s] ease-[ease-out] will-change-[opacity,visibility];
+  @apply pointer-events-none invisible absolute left-0 top-10 z-[999] rounded-r-3xl rounded-bl-xl rounded-tl-md opacity-0 transition-opacity duration-[0.3s] ease-[ease-out] will-change-[opacity,visibility];
   /* @apply sm:w-max md:w-7/12 lg:w-6/12 xl:w-5/12;  */
   @apply py-1 sm:py-2 md:py-3;
   @apply px-1 sm:px-2 md:px-3 lg:px-4 xl:px-5;
@@ -102,8 +102,7 @@
   @apply text-[60%] sm:text-[70%] md:text-[80%] lg:text-[90%];
   @apply dark:shadow-md dark:shadow-cyan-900;
   @apply shadow-md shadow-emerald-200;
-  @apply dark:bg-gradient-to-br dark:from-zinc-600 dark:to-teal-900  dark:text-cyan-200;
-  @apply bg-gradient-to-br from-zinc-100 to-cyan-100  text-zinc-900;
+  @apply bg-gradient-to-br from-zinc-100 to-cyan-100 text-zinc-900 dark:from-zinc-600 dark:to-teal-900 dark:text-cyan-200;
 }
 
 .react-tooltip__dt {
