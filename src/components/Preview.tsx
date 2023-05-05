@@ -69,7 +69,10 @@ export function getPreviewImports(ids: string[]) {
       }
       if (!static_preview_tsx) return
       if (static_preview_tsx) {
-        static_preview_import = `\nimport ${Preview_filename} from "/static/preview/${Preview_filename}"\n\n<${Preview_filename}/>`
+        // static_preview_import = `\nimport ${Preview_filename} from "/static/preview/${Preview_filename}"\n\n<${Preview_filename}/>`
+        const preview_path = `@site/static/preview/${Preview_filename}`
+        // static_preview_import = `\nexport const ${Preview_filename} = React.lazy(() => import(useBaseUrl("/preview/${Preview_filename}")))\n\n<React.Suspense fallback={null}><${Preview_filename}/></React.Suspense>`
+        static_preview_import = `\nexport const ${Preview_filename} = React.lazy(() => import("${preview_path}"))\n\n<React.Suspense fallback={null}><${Preview_filename}/></React.Suspense>`
         if (static_preview_import)
           output_static_preview_imports.push(static_preview_import)
         try {
