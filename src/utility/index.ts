@@ -137,6 +137,7 @@ export function id_to_mdx(
   const preview = config?.preview
   const jsx = config?.jsx
   const doc = getDoc(id)
+  const leaf = isLeaf(id)
   if (!doc) return
   if (doc.type === 6) return //! add new type to skip this mystery type - from my initial checks this appears to be some form of duplicate doc - as key type only - maybe used for tag system?
 
@@ -163,9 +164,10 @@ export function id_to_mdx(
   //prettier-ignore
   // const re_link_preview_mdx = /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
-  if (preview)
-    re_unsafe_jsx =
-      /(?<!(?:!?`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*```(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[/]?(?:[ac-tv-zAC-TV-Z<>_ ]{1}?[a-zA-Z0-9<>_ ]{2,})?[/]?>)(?!(?:[ ]*`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
+  if (preview || leaf)
+    re_unsafe_jsx = /(?<!\\)(?<!span)(?<!\[<span data-tooltip-id="preview__[a-zA-Z0-9]+")(>)/g
+  // /(?<!`[ ]*)(?<=(?:[A-Za-z-_0-9\.]*)<[/]?(?:(?:[!ac-tv-zAC-TV-Z<>_ ]{1}?(?:[a-zA-Z0-9<>_ ]{1,})?)?)[/]?)((?<!span)>)(?![ ]*`)/g
+  // /(?<!(?:!?`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*```(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[/]?(?:[ac-tv-zAC-TV-Z<>_ ]{1}?[a-zA-Z0-9<>_ ]{2,})?[/]?>)(?!(?:[ ]*`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
   // /(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
   // /.*(?=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
   // /(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g //! this misses <h1>! ALSO critical mistake to use ( )* as it changed to $1 position!!
@@ -221,7 +223,7 @@ export function id_to_mdx(
       //@prettier-ignore
       text_between_codeblocks = text_between_codeblocks?.replace(
         re_unsafe_jsx,
-        "`$1`"
+        "\\$1"
       )
       if (text_between_codeblocks)
         key = key.replace(re_text_between_codeblock, text_between_codeblocks)
@@ -233,12 +235,14 @@ export function id_to_mdx(
   if (!key_type || key_type === "key") {
     if (!safe) return key
     if (config.safe)
-      return key
-        .replace(re_unsafe_jsx, "`$1`") //
-        .replace(regex_unsafe_html, "`$1`")
-        .replace(/(?<!`)`{2}(?!`)/g, "`") // dedup backticks
-        .replace(/\[`[ ]+/g, "[`") // trim aft backtick
-        .replace(/[ ]+`]/g, "`]") // trim bef backtick
+      return (
+        key
+          .replace(re_unsafe_jsx, "\\$1") //
+          // .replace(regex_unsafe_html, "`$1`")
+          .replace(/(?<!`)`{2}(?!`)/g, "`") // dedup backticks
+          .replace(/\[`[ ]+/g, "[`") // trim aft backtick
+          .replace(/[ ]+`]/g, "`]")
+      ) // trim bef backtick
     //✅ fixed <html_tag> breaking mdx - may need to expand regex rule further
   }
   if (key_type === "value") {
@@ -252,8 +256,8 @@ export function id_to_mdx(
         value
           .replace(re_starts_with_breaking_import_export_keyword, "`$1`")
           // .replace(/^(export|import) /, `$1`)
-          .replace(regex_unsafe_html, "`$1`")
-          .replace(re_unsafe_jsx, "`$1`")
+          // .replace(regex_unsafe_html, "`$1`")
+          .replace(re_unsafe_jsx, "\\$1")
           .replace(/(?<!`)`{2}(?!`)/g, "`")
           .replace(/\[`[ ]+/g, "[`")
           .replace(/[ ]+`]/g, "`]")
