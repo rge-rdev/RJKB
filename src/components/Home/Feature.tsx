@@ -4,13 +4,11 @@
 
 import React from "react"
 import Video from "../Video"
-import useBaseUrl from "@docusaurus/useBaseUrl"
 import kebabCase from "lodash/kebabCase"
 
 type FeatureItem = {
   title: string
   SVG?: React.ComponentType<React.ComponentProps<"svg">>
-  img_str?: string
   img_url?: string
   alt?: string
   vid_path?: string
@@ -24,7 +22,6 @@ export default function Feature({
   title,
   SVG: Svg,
   description,
-  img_str,
   img_url,
   alt,
   vid_path,
@@ -32,7 +29,6 @@ export default function Feature({
   config,
   lazy,
 }: FeatureItem) {
-  const img_src = useBaseUrl(img_url)
   return (
     <div
       id={title}
@@ -51,19 +47,11 @@ export default function Feature({
             role="img"
           />
         )}
-        {img_str && (
-          <img
-            loading={`${lazy ? "lazy" : "eager"}`}
-            alt={alt}
-            src={img_str}
-            className="h-48 w-48 items-center"
-          />
-        )}
         {img_url && !vid_path && (
           <img
             loading={`${lazy ? "lazy" : "eager"}`}
             alt={alt}
-            src={img_src}
+            srcSet={img_url}
             className={`items-center ${config?.h ? "h-64" : "h-48 w-48"}`}
           />
         )}
@@ -92,7 +80,7 @@ export default function Feature({
               <img
                 loading={`${lazy ? "lazy" : "eager"}`}
                 alt={alt}
-                src={img_src}
+                srcSet={img_url}
                 className="h-36 w-36 items-center"
               />
             </div>

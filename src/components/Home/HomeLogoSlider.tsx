@@ -25,21 +25,25 @@ import {
   IconWebassemblyBlackSVG,
   IconYarnBlackSVG,
   LogoDocSearchColorSVG,
-  LogoInkscapeSVG,
-  LogoLinuxMascotColorSVG,
   LogoMDXColorSVG,
   LogoNgrokSVG,
   LogoNodeJsColorSVG,
   LogoSwcColorDarkSVG,
   LogoTailwindcssOfficialColorSVG,
   LogoTextAxiosBlackSVG,
-  LogoTextCanonicalUbuntuColorSVG,
   LogoTextOnlyDockerBlackSVG,
   LogoTextReactRouterBlackSVG,
   LogoTextTypescriptBlackSVG,
   LogoTSNodeGreySVG,
   LogoTypesenseBlackSVG,
 } from "../../../static/img/svg"
+
+import LogoLinuxMascotColor_120avif from "./LogoLinuxMascotColor_120.avif"
+import LogoLinuxMascotColor_120webp from "./LogoLinuxMascotColor_120.webp"
+import LogoInkscape_120avif from "./LogoInkscape_120.avif"
+import LogoInkscape_120webp from "./LogoInkscape_120.webp"
+import LogoTextCanonicalUbuntuColor_120avif from "./LogoTextCanonicalUbuntuColor_120.avif"
+import LogoTextCanonicalUbuntuColor_120webp from "./LogoTextCanonicalUbuntuColor_120.webp"
 
 const top = [
   { Svg: IconDocusaurusBlackSVG },
@@ -58,7 +62,9 @@ const top = [
 
   { Svg: LogoMDXColorSVG },
   { Svg: IconTailwindcssBlackSVG },
-  { Svg: LogoInkscapeSVG },
+  {
+    Img: `${LogoInkscape_120avif}, ${LogoInkscape_120webp}`,
+  },
   {
     Svg: IconRjnoteCodeEditorColorSVG,
   },
@@ -68,7 +74,7 @@ const top = [
   { Svg: IconVSCodeColorSVG },
   { Svg: IconYarnBlackSVG },
   {
-    Svg: LogoLinuxMascotColorSVG,
+    Img: `${LogoLinuxMascotColor_120avif}, ${LogoLinuxMascotColor_120webp}`,
   },
   {
     Svg: IconCodeEditorDiamondColorSVG,
@@ -87,7 +93,9 @@ const bot = [
     Svg: LogoTypesenseBlackSVG,
   },
   { Svg: LogoTextOnlyDockerBlackSVG },
-  { Svg: LogoTextCanonicalUbuntuColorSVG },
+  {
+    Img: `${LogoTextCanonicalUbuntuColor_120avif}, ${LogoTextCanonicalUbuntuColor_120webp}`,
+  },
   { Svg: LogoTextAxiosBlackSVG },
   { Svg: LogoTextReactRouterBlackSVG },
   {
@@ -107,7 +115,9 @@ const bot = [
     Svg: LogoTypesenseBlackSVG,
   },
   { Svg: LogoTextOnlyDockerBlackSVG },
-  { Svg: LogoTextCanonicalUbuntuColorSVG },
+  {
+    Img: `${LogoTextCanonicalUbuntuColor_120avif}, ${LogoTextCanonicalUbuntuColor_120webp}`,
+  },
   { Svg: LogoTextAxiosBlackSVG },
   { Svg: LogoTextReactRouterBlackSVG },
   {

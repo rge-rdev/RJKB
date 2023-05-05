@@ -6,12 +6,28 @@ import React, { Suspense, lazy } from "react"
 //@ts-ignore
 import Link from "@docusaurus/Link"
 
+import DrawRJSSGColorV2_288avif from "./DrawRJSSGColorV2_288.avif"
+import DrawRJSSGColorV2_288webp from "./DrawRJSSGColorV2_288.webp"
+import DrawHoverPreviewColor_288avif from "./DrawHoverPreviewColor_288.avif"
+import DrawHoverPreviewColor_288webp from "./DrawHoverPreviewColor_288.webp"
+import DrawRJKBTypesenseSearchColor_288avif from "./DrawRJKBTypesenseSearchColor_288.avif"
+import DrawRJKBTypesenseSearchColor_288webp from "./DrawRJKBTypesenseSearchColor_288.webp"
+import IconDocusaurusProfColor_384avif from "./IconDocusaurusProfColor_384.avif"
+import IconDocusaurusProfColor_384webp from "./IconDocusaurusProfColor_384.webp"
+import IconDocusaurusHurt_384avif from "./IconDocusaurusHurt_384.avif"
+import IconDocusaurusHurt_384webp from "./IconDocusaurusHurt_384.webp"
+import DrawDocusaurusStackColor_384avif from "./DrawDocusaurusStackColor_384.avif"
+import DrawDocusaurusStackColor_384webp from "./DrawDocusaurusStackColor_384.webp"
+
 const Feature = lazy(() => import("./Feature"))
+
+/**
+ * @type img_url @replace @deprecated @type img_str to set direct srcSet @string
+ */
 
 type FeatureItem = {
   title: string
   SVG?: React.ComponentType<React.ComponentProps<"svg">>
-  img_str?: string
   img_url?: string
   alt?: string
   vid_path?: string
@@ -24,7 +40,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "🥇 SSG over SSG",
-    img_url: `/img/DrawRJSSGColorV2.svg`,
+    img_url: `${DrawRJSSGColorV2_288avif}, ${DrawRJSSGColorV2_288webp}`,
     alt: "Diagram of SSG Converting JSON into MDX & TSX via Node.js",
     vid_path: "/vid/RJKB_SSG_CLI_350.mp4",
     poster: "/vid/RJKB_SSG_CLI_350.webp",
@@ -43,7 +59,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "🥇 Hover Link Previews",
-    img_url: "/img/DrawHoverPreviewColor_288.webp",
+    img_url: `${DrawHoverPreviewColor_288avif}, ${DrawHoverPreviewColor_288webp}`,
     alt: "RJKB Doc Links show preview page on hover",
     vid_path: "/vid/RJKB_hover_preview_iphone_116.mp4",
     poster: "/vid/RJKB_hover_preview_iphone_116.webp",
@@ -72,7 +88,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "🥇 Self-hosted Search",
-    img_url: "/img/DrawRJKBTypesenseSearchColor_288.webp",
+    img_url: `${DrawRJKBTypesenseSearchColor_288avif}, ${DrawRJKBTypesenseSearchColor_288webp}`,
     alt: "RJKB Doc Links show preview page on hover",
     vid_path: "/vid/RJKB_docker_compose_up_350.mp4",
     poster: "/vid/RJKB_docker_compose_up_350.webp",
@@ -108,7 +124,7 @@ const FeatureList: FeatureItem[] = [
   //Docusaurus-SVGs
   {
     title: "👨‍🎓 Fullstack wiki",
-    img_url: `/img/IconDocusaurusProfColor.svg`,
+    img_url: `${IconDocusaurusProfColor_384avif}, ${IconDocusaurusProfColor_384webp}`,
     alt: "RJKB is a fullstack wiki made with Docusaurus",
     description: (
       <>
@@ -126,8 +142,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "💪 Unbreaking Docusaurus",
-    // SVG: IconDocusaurusHurt9KColorSVG,
-    img_url: "/img/IconDocusaurusHurt9KColor.svg",
+    img_url: `${IconDocusaurusHurt_384avif}, ${IconDocusaurusHurt_384webp}`,
     alt: "Docusaurus can't scale well with too many pages",
     description: (
       <>
@@ -146,7 +161,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "🐱‍🐉 Docusaurus SSG",
-    img_url: "/img/DrawDocusaurusStackColor.svg",
+    img_url: `${DrawDocusaurusStackColor_384avif}, ${DrawDocusaurusStackColor_384webp}`,
     alt: "Docusaurus comes prepacked with features",
     description: (
       <>

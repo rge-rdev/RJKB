@@ -15,7 +15,8 @@ interface SliderProps {
 
 type MediaElement = {
   title?: string
-  Svg: React.ComponentType<React.ComponentProps<"svg">>
+  Svg?: React.ComponentType<React.ComponentProps<"svg">>
+  Img?: string
   h?: number
   w?: number
 }
@@ -27,45 +28,64 @@ interface SliderRowProps {
   w?: number
 }
 
+/**
+ *
+ * @param Img @string for @media source type for srcSet - AVIF > WEBP - transition all SVG to AVIF ONLY if >20% reduction in size
+ * @returns
+ */
+
 function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
   function Slides() {
     return (
-      // <div className="inline-block">
       <>
-        {MediaElements.map(({ Svg, title, h, w }, i) => (
-          <>
-            <img
-              className={`inline-block transform-gpu rounded-sm opacity-10 transition-all visited:shadow-yellow-200 hover:bg-hex-blue hover:opacity-90 hover:shadow-inner hover:shadow-yellow-200 hover:-backdrop-hue-rotate-30 ${
-                config === "top"
-                  ? "duration-700 hover:rounded-br-3xl hover:rounded-tl-3xl"
-                  : "duration-1000 hover:rounded-bl-3xl hover:rounded-tr-3xl"
-              }`}
-              key={config + String(i)}
-              loading="lazy"
-              alt={startCase(Svg.displayName?.slice(5, -4))}
-              src={Svg.displayName}
-              height={h || 60}
-              style={{ height: `${h || 60}px` }}
-            />
-            {config === "top" ? (
-              <span
-                style={{
-                  display: "inline-block",
-                  height: "60px",
-                  width: "75px",
-                }}
+        {MediaElements.map(({ Svg, title, h, w, Img }, i) => {
+          let srcProps = {}
+          if (Svg)
+            srcProps = {
+              src: Svg.displayName,
+            }
+          if (Img)
+            srcProps = {
+              ...srcProps,
+              srcSet: Img,
+            }
+          return (
+            <>
+              <img
+                className={`inline-block transform-gpu rounded-sm opacity-10 transition-all visited:shadow-yellow-200 hover:bg-hex-blue hover:opacity-90 hover:shadow-inner hover:shadow-yellow-200 hover:-backdrop-hue-rotate-30 ${
+                  config === "top"
+                    ? "duration-700 hover:rounded-br-3xl hover:rounded-tl-3xl"
+                    : "duration-1000 hover:rounded-bl-3xl hover:rounded-tr-3xl"
+                }`}
+                key={config + String(i)}
+                loading="lazy"
+                height={h || 60}
+                style={{ height: `${h || 60}px` }}
+                {...srcProps}
+                alt={startCase(
+                  Svg ? Svg.displayName?.slice(5, -4) : Img?.[0].slice(5, -4)
+                )}
               />
-            ) : (
-              <span
-                style={{
-                  display: "inline-block",
-                  height: "60px",
-                  width: "50px",
-                }}
-              />
-            )}
-          </>
-        ))}
+              {config === "top" ? (
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "60px",
+                    width: "75px",
+                  }}
+                />
+              ) : (
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "60px",
+                    width: "50px",
+                  }}
+                />
+              )}
+            </>
+          )
+        })}
       </>
     )
   }
