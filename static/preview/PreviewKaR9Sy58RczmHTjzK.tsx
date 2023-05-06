@@ -16,7 +16,7 @@ export default function PreviewKaR9Sy58RczmHTjzK(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Expression</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Expressions</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>single&#x20;line&#x20;of&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;to&#x20;evalute&#x20;to&#x20;a&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>single&#x20;line&#x20;of&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;to&#x20;evalute&#x20;to&#x20;a&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 12 times</cite>

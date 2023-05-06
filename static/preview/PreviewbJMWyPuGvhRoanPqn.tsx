@@ -16,7 +16,7 @@ export default function PreviewbJMWyPuGvhRoanPqn(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Compile&#x20;Time</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program"><span>Program</span></Link><span>&#x20;lifecycle&#x20;phase&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compilation-vs-Interpretation/CPUs-only-understand-binary-therefore-all-code-must-be-eventually-converted-into-machine-code/Source-Code-can-be-converted-into-Machine-Code-by-either-compilation-or-interpretation/Compiler"><code>Compile</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program"><span>Program</span></Link><span>&#x20;lifecycle&#x20;phase&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compiler"><code>Compile</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 8 times</cite>

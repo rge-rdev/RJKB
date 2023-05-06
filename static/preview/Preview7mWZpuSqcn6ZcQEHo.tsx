@@ -16,7 +16,7 @@ export default function Preview7mWZpuSqcn6ZcQEHo(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Pending</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/Async/async"><code>async</code></Link><span>&#x20;task&#x20;still&#x20;run&#x20;in&#x20;background</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Async/async"><code>async</code></Link><span>&#x20;task&#x20;still&#x20;run&#x20;in&#x20;background</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

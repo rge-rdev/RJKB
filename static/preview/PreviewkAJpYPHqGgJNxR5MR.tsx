@@ -16,7 +16,7 @@ export default function PreviewkAJpYPHqGgJNxR5MR(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Argument</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>args</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>arg</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;import&#x20;as&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Function-Signature/Parameter"><span>Parameter</span></Link><span>&#x20;</span><b>input</b><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;import&#x20;as&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Function-Signature/Parameter"><span>Parameter</span></Link><span>&#x20;</span><b>input</b><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 44 times</cite>

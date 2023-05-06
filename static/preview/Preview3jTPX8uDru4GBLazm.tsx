@@ -16,7 +16,7 @@ export default function Preview3jTPX8uDru4GBLazm(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>External&#x20;System</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>e.g.&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;element,&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>,&#x20;fetch&#x20;request</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>e.g.&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;element,&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>,&#x20;fetch&#x20;request</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

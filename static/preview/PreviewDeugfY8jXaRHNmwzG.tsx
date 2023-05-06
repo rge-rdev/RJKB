@@ -20,7 +20,7 @@ export default function PreviewDeugfY8jXaRHNmwzG(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>bigint</code><span>&nbsp;↔&nbsp;</span><span>Numeric&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;integer&#x20;with&#x20;</span><b>arbitrary&#x20;precision</b><span>&#x20;to&#x20;store&#x20;numbers&#x20;&#x3E;&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/Number/Number-Static-Property/NumberMAXSAFEINTEGER"><code>Number.MAX_SAFE_INTEGER</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>bigint</code><span>&nbsp;↔&nbsp;</span><span>Numeric&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;integer&#x20;with&#x20;</span><b>arbitrary&#x20;precision</b><span>&#x20;to&#x20;store&#x20;numbers&#x20;&#x3E;&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/Number/Number-Static-Property/NumberMAXSAFEINTEGER"><code>Number.MAX_SAFE_INTEGER</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

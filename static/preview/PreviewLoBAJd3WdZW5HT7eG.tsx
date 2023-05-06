@@ -16,7 +16,7 @@ export default function PreviewLoBAJd3WdZW5HT7eG(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Render&#x20;Phase</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/Async"><span>Async</span></Link><span>&#x20;check&#x20;all&#x20;elements,&#x20;one&#x20;by&#x20;one,&#x20;collect&#x20;changes</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Async"><span>Async</span></Link><span>&#x20;check&#x20;all&#x20;elements,&#x20;one&#x20;by&#x20;one,&#x20;collect&#x20;changes</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -20,7 +20,7 @@ export default function PreviewbjYtPyx25wEBcMrpi(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>install&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Modules-TS/DefinitelyTyped"><span>DefinitelyTyped</span></Link><span>&#x20;definition&#x20;of&#x20;google&#x20;maps</span><CodeBlock language="jsx">{`npm i @types/google.maps`}</CodeBlock></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>install&#x20;</span><span ><span>DefinitelyTyped</span></span><span>&#x20;definition&#x20;of&#x20;google&#x20;maps</span><CodeBlock language="jsx">{`npm i @types/google.maps`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

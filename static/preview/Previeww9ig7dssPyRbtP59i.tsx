@@ -16,7 +16,7 @@ export default function Previeww9ig7dssPyRbtP59i(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>boolean</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Logical</b><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;=&#x20;</span><code>true</code><span>&#x20;||&#x20;</span><code>false</code><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Logical</b><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;=&#x20;</span><code>true</code><span>&#x20;||&#x20;</span><code>false</code><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 11 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewkB6wJRnFNSpZLWxRY(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>ReferenceError</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;due&#x20;to&#x20;</span><b>illegal&#x20;reference&#x20;</b><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Unique-Identifier-created-to-reference-Primitive-Variable/Identifier"><span>Identifier</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;due&#x20;to&#x20;</span><b>illegal&#x20;reference&#x20;</b><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value/Stored-in-EC-in-Call-Stack/Unique-Identifier-created-to-reference-Primitive-Variable/Identifier"><span>Identifier</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewCTrXNo2WTsdppY34b(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Type&#x20;Assertion</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Assert</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/TS/TS-Syntax"><span>TS&#x20;Syntax</span></Link><span>&#x20;to&#x20;override&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x27;s&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/Type-Inference"><span>Type&#x20;Inference</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/Static-Type-System/Static-Type"><span>Static&#x20;Type</span></Link><span>&#x20;of&#x20;specific&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/TS/TS-Syntax"><span>TS&#x20;Syntax</span></Link><span>&#x20;to&#x20;override&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x27;s&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/Type-Inference"><span>Type&#x20;Inference</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/Static-Type-System/Static-Type"><span>Static&#x20;Type</span></Link><span>&#x20;of&#x20;specific&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

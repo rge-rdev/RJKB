@@ -16,7 +16,7 @@ export default function PreviewNRMW2X2SAKWp7P48r(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Runtime&#x20;Environment</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Runtime</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Place&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compilation-vs-Interpretation/CPUs-only-understand-binary-therefore-all-code-must-be-eventually-converted-into-machine-code/Source-Code-can-be-converted-into-Machine-Code-by-either-compilation-or-interpretation/JIT/JIT-Compilation-flow/Execution"><code>Execute</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program"><span>Program</span></Link><span>,&#x20;with&#x20;platform-specific&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link><span>&#x20;access&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Place&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT/JIT-Compilation-flow/Execution"><code>Execute</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program"><span>Program</span></Link><span>,&#x20;with&#x20;platform-specific&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link><span>&#x20;access&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 6 times</cite>

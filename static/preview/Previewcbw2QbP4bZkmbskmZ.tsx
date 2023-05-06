@@ -16,7 +16,7 @@ export default function Previewcbw2QbP4bZkmbskmZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Global&#x20;Execution&#x20;Context</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC"><span>EC</span></Link><span>&#x20;created&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-Execution-Context/Top-Level-Code"><span>Top-Level&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC"><span>EC</span></Link><span>&#x20;created&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-Execution-Context/Top-Level-Code"><span>Top-Level&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

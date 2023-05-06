@@ -20,7 +20,7 @@ export default function Previewn6og9thzG7si8mqtH(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Environment&#x20;Variable</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope/Global-Variable"><span>Global&#x20;Variable</span></Link><span>&#x20;to&#x20;access&#x20;via&#x20;</span><Link to="/wiki/JS/Nodejs/Nodejs-Definition/Node-Global-Object/process/processenv"><code>process.env</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Environment&#x20;Variable</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope/Global-Variable"><span>Global&#x20;Variable</span></Link><span>&#x20;to&#x20;access&#x20;via&#x20;</span><Link to="/wiki/JS/Nodejs/Nodejs-Definition/Node-Global-Object/process/processenv"><code>process.env</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

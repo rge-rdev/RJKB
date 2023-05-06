@@ -16,7 +16,7 @@ export default function Previewp37twFtXp4W525E7g(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>REPL</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Read-Eval-Print&#x20;Loop</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>REPL</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/CLI"><span>CLI</span></Link><span>&#x20;to&#x20;interact&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compilation-vs-Interpretation/CPUs-only-understand-binary-therefore-all-code-must-be-eventually-converted-into-machine-code/Source-Code-can-be-converted-into-Machine-Code-by-either-compilation-or-interpretation/Compiler"><span>Compiler</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/Dev-tool/CLI/Terminal"><span>Terminal</span></Link><span>&#x20;with&#x20;output&#x20;to&#x20;loop&#x20;results</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/CLI"><span>CLI</span></Link><span>&#x20;to&#x20;interact&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compiler"><span>Compiler</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/Dev-tool/CLI/Terminal"><span>Terminal</span></Link><span>&#x20;with&#x20;output&#x20;to&#x20;loop&#x20;results</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

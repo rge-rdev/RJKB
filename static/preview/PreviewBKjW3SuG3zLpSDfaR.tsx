@@ -16,7 +16,7 @@ export default function PreviewBKjW3SuG3zLpSDfaR(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>LCP</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Largest&#x20;Contentful&#x20;Paint</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>L</b><span>argest&#x20;</span><b>C</b><span>ontentful&#x20;</span><b>P</b><span>aint&#x20;for&#x20;</span><b>loading&#x20;perf</b><span>,&#x20;&#x1F44D;&#x3C;2.5s&#x20;&#x26;&#x20;4s&#x3E;&#x1F4A9;,&#x20;from&#x20;init&#x20;load&#x20;to&#x20;first&#x20;largest&#x20;text/img&#x20;render</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>L</b><span>argest&#x20;</span><b>C</b><span>ontentful&#x20;</span><b>P</b><span>aint&#x20;for&#x20;</span><b>loading&#x20;perf</b><span>,&#x20;&#x1F44D;&#x3C;2.5s&#x20;&#x26;&#x20;4s&#x3E;&#x1F4A9;,&#x20;&#x23F1;&#x20;to&#x20;load/render&#x20;first&#x20;largest&#x20;element&#x20;(text/img)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

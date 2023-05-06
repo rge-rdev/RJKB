@@ -14,7 +14,7 @@ export default function PreviewdYLF3pyaaRM6awoXY(){
 >
   <small>
     <dfn>
-      <dt><code className="react-tooltip__dt"><span>HTTP&#x20;Request</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold">HTTP&#x20;Verb<span>&#x20;</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Request</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Requests</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>HTTP&#x20;Requests</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>HTTP&#x20;Reqs</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Reqs</span></code></dt>
+      <dt><code className="react-tooltip__dt"><span>HTTP&#x20;Request</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>HTTP&#x20;Verb&#x20;</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Request</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Requests</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>HTTP&#x20;Requests</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>HTTP&#x20;Reqs</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Reqs</span></code></dt>
       <dd>
         <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;send/declare&#x20;action&#x20;to&#x20;perform&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Page/Web-Resource"><span>Web&#x20;Resource</span></Link><span>&#x20;</span></span></blockquote>
       </dd>

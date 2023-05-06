@@ -16,7 +16,7 @@ export default function PreviewfihL4K4YQJi7xoZZ9(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>NaN</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>NaN</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Not-a-Number</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/Number"><code>Number</code></Link><span>&#x20;Property&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;of&#x20;</span><b>N</b><span>ot-</span><b>a</b><span>-</span><b>N</b><span>umber</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/Number"><code>Number</code></Link><span>&#x20;Property&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;of&#x20;</span><b>N</b><span>ot-</span><b>a</b><span>-</span><b>N</b><span>umber</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

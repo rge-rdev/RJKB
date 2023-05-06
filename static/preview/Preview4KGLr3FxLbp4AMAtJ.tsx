@@ -16,7 +16,7 @@ export default function Preview4KGLr3FxLbp4AMAtJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Generic&#x20;Type&#x20;Variable</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;that&#x20;</span>works&#x20;on&#x20;<Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link>s<span>&#x20;instead&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link>s<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;that&#x20;</span>works&#x20;on&#x20;<Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link>s<span>&#x20;instead&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link>s<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

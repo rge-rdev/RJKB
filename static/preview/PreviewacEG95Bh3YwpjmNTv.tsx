@@ -20,7 +20,7 @@ export default function PreviewacEG95Bh3YwpjmNTv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Hoisting&#x20;let&#x20;&#x26;&#x20;const&#x20;variables</span><span>&nbsp;↔&nbsp;</span><span>!technically&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/VE/Functions-can-access-variables-outside-VE-via-Scope-Chain/Hoisting"><code>Hoisted</code></Link><span>&#x20;as&#x20;</span><code>&#x3C;uninitalized&#x3E;</code><span>&#x20;via&#x20;</span><b>TDZ</b><span>.&#x20;</span><b>Block</b><b>-scoped</b><span>.</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Hoisting&#x20;let&#x20;&#x26;&#x20;const&#x20;variables</span><span>&nbsp;↔&nbsp;</span><span>!technically&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VE/Functions-can-access-variables-outside-VE-via-Scope-Chain/Hoisting"><code>Hoisted</code></Link><span>&#x20;as&#x20;</span><code>&#x3C;uninitalized&#x3E;</code><span>&#x20;via&#x20;</span><b>TDZ</b><span>.&#x20;</span><b>Block</b><b>-scoped</b><span>.</span></cite></li></ol>
     
     </small></Tooltip>)
 }

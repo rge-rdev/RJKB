@@ -16,7 +16,7 @@ export default function PreviewcjkuRFeESZocZTTdE(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>bigint</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Numeric&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;integer&#x20;with&#x20;</span><b>arbitrary&#x20;precision</b><span>&#x20;to&#x20;store&#x20;numbers&#x20;&#x3E;&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/Number/Number-Static-Property/NumberMAXSAFEINTEGER"><code>Number.MAX_SAFE_INTEGER</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Numeric&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;integer&#x20;with&#x20;</span><b>arbitrary&#x20;precision</b><span>&#x20;to&#x20;store&#x20;numbers&#x20;&#x3E;&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper/Number/Number-Static-Property/NumberMAXSAFEINTEGER"><code>Number.MAX_SAFE_INTEGER</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

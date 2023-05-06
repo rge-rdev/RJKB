@@ -16,7 +16,7 @@ export default function Previewzv95xQiRxFtddM4dg(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Autoboxing</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><span>Wrapper</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive"><span>Primitive</span></Link><span>&#x20;to&#x20;share&#x20;methods&#x20;&#x26;&#x20;properties</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><span>Wrapper</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive"><span>Primitive</span></Link><span>&#x20;to&#x20;share&#x20;methods&#x20;&#x26;&#x20;properties</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 7 times</cite>

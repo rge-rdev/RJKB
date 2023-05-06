@@ -16,7 +16,7 @@ export default function PreviewYAAD6nfQ8SwnQmMTs(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>null</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;rep&#x20;</span><b>absence</b><span>&#x20;of&#x20;any&#x20;value;&#x20;explicitly&#x20;empty</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;rep&#x20;</span><b>absence</b><span>&#x20;of&#x20;any&#x20;value;&#x20;explicitly&#x20;empty</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 16 times</cite>

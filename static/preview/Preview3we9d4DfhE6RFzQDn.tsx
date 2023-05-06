@@ -16,7 +16,7 @@ export default function Preview3we9d4DfhE6RFzQDn(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Math</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>&#x20;with&#x20;built-in&#x20;mathematical&#x20;constants&#x20;&#x26;&#x20;functions</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>&#x20;with&#x20;built-in&#x20;mathematical&#x20;constants&#x20;&#x26;&#x20;functions</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

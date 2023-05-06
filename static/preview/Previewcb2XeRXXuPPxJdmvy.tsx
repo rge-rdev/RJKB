@@ -16,7 +16,7 @@ export default function Previewcb2XeRXXuPPxJdmvy(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>readdirSync()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs"><code>fs</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/Synchronous-Code/Sync"><span>Sync</span></Link><span>&#x20;read&#x20;dir&#x20;content</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs"><code>fs</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><span>Sync</span></Link><span>&#x20;read&#x20;dir&#x20;content</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewLPb3hYsw2bhgDek9B(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>snake_case</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>underscore_case</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(convention)&#x20;to&#x20;name&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Unique-Identifier-created-to-reference-Primitive-Variable/Identifier"><span>Identifier</span></Link><span>&#x20;by&#x20;concatenate&#x20;words&#x20;via&#x20;</span><code>_</code><span>&#x20;delimiter</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(convention)&#x20;to&#x20;name&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value/Stored-in-EC-in-Call-Stack/Unique-Identifier-created-to-reference-Primitive-Variable/Identifier"><span>Identifier</span></Link><span>&#x20;by&#x20;concatenate&#x20;words&#x20;via&#x20;</span><code>_</code><span>&#x20;delimiter</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

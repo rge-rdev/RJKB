@@ -16,7 +16,7 @@ export default function PreviewPifKftkBeRCDGsqrp(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Directive</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement"><span>Statement</span></Link><span>&#x20;to&#x20;direct&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compilation-vs-Interpretation/CPUs-only-understand-binary-therefore-all-code-must-be-eventually-converted-into-machine-code/Source-Code-can-be-converted-into-Machine-Code-by-either-compilation-or-interpretation/Compiler"><span>Compiler</span></Link><span>/</span><Link to="/wiki/CSS/CSS-Stack/Sass/Preprocessor"><span>Preprocessor</span></Link><span>&#x20;behavior</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement"><span>Statement</span></Link><span>&#x20;to&#x20;direct&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compiler"><span>Compiler</span></Link><span>/</span><Link to="/wiki/CSS/CSS-Stack/Sass/Preprocessor"><span>Preprocessor</span></Link><span>&#x20;behavior</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 7 times</cite>

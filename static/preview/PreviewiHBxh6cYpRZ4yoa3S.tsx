@@ -16,7 +16,7 @@ export default function PreviewiHBxh6cYpRZ4yoa3S(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Zero&#x20;Dependency</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Zero&#x20;Deps&#x20;</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>vanilla&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>/</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language"><span>Programming&#x20;Language</span></Link><span>/</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Executable"><code>Binary</code></Link><span>&#x20;</span><Link to="/wiki/JS/Library"><span>Library</span></Link><span>&#x20;to&#x20;run&#x20;out-of-box&#x20;w/o&#x20;req&#x20;external&#x20;</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>of&#x20;vanilla&#x20;(</span><Link to="/wiki/JS"><span>JS</span></Link><span>/</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language"><span>Programming&#x20;Language</span></Link><span>/</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Executable"><code>Binary</code></Link><span>)&#x20;</span><Link to="/wiki/JS/Library"><span>Library</span></Link><span>&#x20;to&#x20;run&#x20;out-of-box&#x20;w/o&#x20;req&#x20;external&#x20;</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

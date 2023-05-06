@@ -16,7 +16,7 @@ export default function PreviewokDYphNZAsR69SRb8(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>unlinkSync()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs"><code>`fs`</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><code>Static Method</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/Synchronous-Code/Sync"><code>Sync</code></Link><span>&#x20;remove&#x20;file/Symbolic&#x20;Link&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs"><code>`fs`</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><code>Static Method</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><code>Sync</code></Link><span>&#x20;remove&#x20;file/Symbolic&#x20;Link&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

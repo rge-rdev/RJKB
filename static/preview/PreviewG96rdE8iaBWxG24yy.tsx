@@ -16,7 +16,7 @@ export default function PreviewG96rdE8iaBWxG24yy(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Commit&#x20;Phase</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;apply&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;change&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;(in&#x20;one&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Asynchronous-Programming/Synchronous-Code/Sync"><span>Sync</span></Link><span>&#x20;shot)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;apply&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;change&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;(in&#x20;one&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><span>Sync</span></Link><span>&#x20;shot)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

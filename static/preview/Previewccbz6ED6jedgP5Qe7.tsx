@@ -16,7 +16,7 @@ export default function Previewccbz6ED6jedgP5Qe7(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>brotli-webpack-plugin</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Plugin"><span>Plugin</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression"><code>Compress</code></Link><span>&#x20;(js|css|html|svg)&#x20;bundle&#x20;assets&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/brotli"><span>brotli</span></Link><span>&#x20;|&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/zlib"><span>zlib</span></Link><span>&#x20;|&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/iltorb"><span>iltorb</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/Build-Tool/Webpack/Webpack-Plugin"><span>Webpack&#x20;Plugin</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression"><code>Compress</code></Link><span>&#x20;(js|css|html|svg)&#x20;bundle&#x20;assets&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/brotli"><span>brotli</span></Link><span>&#x20;|&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/zlib"><span>zlib</span></Link><span>&#x20;|&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/iltorb"><span>iltorb</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

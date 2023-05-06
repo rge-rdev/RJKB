@@ -16,7 +16,7 @@ export default function PreviewGkw4MoKjNZjpeZ4vR(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>let</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><code>Declare</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Value-of-Primitive-is-immutable-unlike-the-variable-assigned-to-it/immutable/mutable"><span>mutable</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Block-Scope"><span>Block&#x20;Scope</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><code>Declare</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Value-of-Primitive-is-immutable-unlike-the-variable-assigned-to-it/immutable/mutable"><span>mutable</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Block-Scope"><span>Block&#x20;Scope</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

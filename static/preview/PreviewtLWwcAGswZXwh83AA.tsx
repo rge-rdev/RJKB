@@ -16,7 +16,7 @@ export default function PreviewtLWwcAGswZXwh83AA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>function</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>fn</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>func</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>callable&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Block"><span>Block</span></Link><span>&#x20;of&#x20;code&#x20;to&#x20;perform&#x20;action&#x20;or&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>callable&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Block"><span>Block</span></Link><span>&#x20;of&#x20;code&#x20;to&#x20;perform&#x20;action&#x20;or&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 73 times</cite>

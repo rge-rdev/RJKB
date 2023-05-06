@@ -16,7 +16,7 @@ export default function PreviewcWFSKHBrqioPGG5oA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>symbol</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/Value-of-Primitive-is-immutable-unlike-the-variable-assigned-to-it/immutable"><span>immutable</span></Link><span>&#x20;constant&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;unique&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;property&#x20;keys</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/Value-of-Primitive-is-immutable-unlike-the-variable-assigned-to-it/immutable"><span>immutable</span></Link><span>&#x20;constant&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;unique&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;property&#x20;keys</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 6 times</cite>

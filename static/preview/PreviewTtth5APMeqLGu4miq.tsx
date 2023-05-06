@@ -16,7 +16,7 @@ export default function PreviewTtth5APMeqLGu4miq(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Function&#x20;Execution&#x20;Context</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC"><span>EC</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Function-Scope"><span>Function&#x20;Scope</span></Link><span>&#x20;code&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC"><span>EC</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Function-Scope"><span>Function&#x20;Scope</span></Link><span>&#x20;code&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

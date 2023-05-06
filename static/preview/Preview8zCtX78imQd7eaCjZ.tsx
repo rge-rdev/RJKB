@@ -16,7 +16,7 @@ export default function Preview8zCtX78imQd7eaCjZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Script</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Scripts</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;fragment&#x20;run&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link><span>&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;fragment&#x20;run&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link><span>&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 8 times</cite>

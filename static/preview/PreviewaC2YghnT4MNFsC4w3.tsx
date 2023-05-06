@@ -16,7 +16,7 @@ export default function PreviewaC2YghnT4MNFsC4w3(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Arrow&#x20;Function</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Arrow&#x20;Fn</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Arrow</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>compact&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/function/Anon-Function"><span>Anon&#x20;Function</span></Link><span>&#x20;w/o&#x20;bind&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/VE/FAV/Args-Object"><span>Args&#x20;Object</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>compact&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/function/Anon-Function"><span>Anon&#x20;Function</span></Link><span>&#x20;w/o&#x20;bind&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VE/FAV/Args-Object"><span>Args&#x20;Object</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function Preview7HeoZd7S42MEq9WQT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Boolean&#x20;Context</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>whether&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Coercion"><code>Coerces</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Conditional-Statement/Boolean-Context/Truthy"><span>Truthy</span></Link><span>&#x20;||&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Conditional-Statement/Boolean-Context/Falsy"><span>Falsy</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>whether&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Coercion"><code>Coerces</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Conditional-Statement/Boolean-Context/Truthy"><span>Truthy</span></Link><span>&#x20;||&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Conditional-Statement/Boolean-Context/Falsy"><span>Falsy</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

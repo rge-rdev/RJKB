@@ -16,7 +16,7 @@ export default function Previewi7RyjJ9m94LgRhPuh(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Primitive</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Primitive&#x20;Value</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Primitive&#x20;Type</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Primitives&#x20;</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>non-</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;base&#x20;data-type&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/UNNBBSS"><span>UNNBBSS</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>non-</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;base&#x20;data-type&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value/UNNBBSS"><span>UNNBBSS</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 21 times</cite>

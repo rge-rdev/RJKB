@@ -16,7 +16,7 @@ export default function PreviewtriW26dR54KoXidJd(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Initializer</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value/Stored-in-EC-in-Call-Stack/Value"><span>Value</span></Link><span>&#x20;assigned&#x20;to&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/enum/Enum-Member"><span>Enum&#x20;Member</span></Link><span>&#x20;name&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;assigned&#x20;to&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/enum/Enum-Member"><span>Enum&#x20;Member</span></Link><span>&#x20;name&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

@@ -20,7 +20,7 @@ export default function PreviewjLrxjBKvr9WeHCDAF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Safari</span><span>&nbsp;↔&nbsp;</span><span>default&#x20;Apple&#x20;OS&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>,&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Every-Browser-implements-own-JS-Engine/Webkit"><span>Webkit</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Safari</span><span>&nbsp;↔&nbsp;</span><span>default&#x20;Apple&#x20;OS&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>,&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Browser-Vendor-Engines/Webkit"><span>Webkit</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

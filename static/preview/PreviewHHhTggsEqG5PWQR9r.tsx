@@ -16,7 +16,7 @@ export default function PreviewHHhTggsEqG5PWQR9r(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Factory&#x20;Function</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;(w/o&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/new"><code>new</code></Link><span>)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;(w/o&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/new"><code>new</code></Link><span>)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

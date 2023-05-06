@@ -16,7 +16,7 @@ export default function Previewe2ftLRqbHNBe9u59Z(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Loop</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow"><span>Control&#x20;Flow</span></Link><span>&#x20;to&#x20;repeat&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Block"><span>Block</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Compilation-vs-Interpretation/CPUs-only-understand-binary-therefore-all-code-must-be-eventually-converted-into-machine-code/Source-Code-can-be-converted-into-Machine-Code-by-either-compilation-or-interpretation/JIT/JIT-Compilation-flow/Execution"><span>Execution</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow"><span>Control&#x20;Flow</span></Link><span>&#x20;to&#x20;repeat&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Block"><span>Block</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT/JIT-Compilation-flow/Execution"><span>Execution</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

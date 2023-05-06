@@ -16,7 +16,7 @@ export default function Preview7NNKB5BnpGSZJMzvD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>number</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/How-memory-allocated-to-Primitive-Reference-values/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/number/FP64"><span>FP64</span></Link><span>&#x20;numeric&#x20;data&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/number/FP64"><span>FP64</span></Link><span>&#x20;numeric&#x20;data&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 19 times</cite>
