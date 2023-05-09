@@ -28,7 +28,7 @@ const Feature = lazy(() => import("./Feature"))
 type FeatureItem = {
   title: string
   SVG?: React.ComponentType<React.ComponentProps<"svg">>
-  img_url?: string
+  img_url?: [string, string]
   alt?: string
   vid_path?: string
   poster?: string
@@ -40,7 +40,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "🥇 SSG over SSG",
-    img_url: `${DrawRJSSGColorV2_288avif}, ${DrawRJSSGColorV2_288webp}`,
+    img_url: [`${DrawRJSSGColorV2_288avif}`, `${DrawRJSSGColorV2_288webp}`],
     alt: "Diagram of SSG Converting JSON into MDX & TSX via Node.js",
     vid_path: "/vid/RJKB_SSG_CLI_350.mp4",
     poster: "/vid/RJKB_SSG_CLI_350.webp",
@@ -59,7 +59,10 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "🥇 Hover Link Previews",
-    img_url: `${DrawHoverPreviewColor_288avif}, ${DrawHoverPreviewColor_288webp}`,
+    img_url: [
+      `${DrawHoverPreviewColor_288avif}`,
+      `${DrawHoverPreviewColor_288webp}`,
+    ],
     alt: "RJKB Doc Links show preview page on hover",
     vid_path: "/vid/RJKB_hover_preview_iphone_116.mp4",
     poster: "/vid/RJKB_hover_preview_iphone_116.webp",
@@ -88,7 +91,10 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "🥇 Self-hosted Search",
-    img_url: `${DrawRJKBTypesenseSearchColor_288avif}, ${DrawRJKBTypesenseSearchColor_288webp}`,
+    img_url: [
+      `${DrawRJKBTypesenseSearchColor_288avif}`,
+      `${DrawRJKBTypesenseSearchColor_288webp}`,
+    ],
     alt: "RJKB Doc Links show preview page on hover",
     vid_path: "/vid/RJKB_docker_compose_up_350.mp4",
     poster: "/vid/RJKB_docker_compose_up_350.webp",
@@ -124,7 +130,10 @@ const FeatureList: FeatureItem[] = [
   //Docusaurus-SVGs
   {
     title: "👨‍🎓 Fullstack wiki",
-    img_url: `${IconDocusaurusProfColor_384avif}, ${IconDocusaurusProfColor_384webp}`,
+    img_url: [
+      `${IconDocusaurusProfColor_384avif}`,
+      `${IconDocusaurusProfColor_384webp}`,
+    ],
     alt: "RJKB is a fullstack wiki made with Docusaurus",
     description: (
       <>
@@ -142,7 +151,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "💪 Unbreaking Docusaurus",
-    img_url: `${IconDocusaurusHurt_384avif}, ${IconDocusaurusHurt_384webp}`,
+    img_url: [`${IconDocusaurusHurt_384avif}`, `${IconDocusaurusHurt_384webp}`],
     alt: "Docusaurus can't scale well with too many pages",
     description: (
       <>
@@ -161,7 +170,10 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "🐱‍🐉 Docusaurus SSG",
-    img_url: `${DrawDocusaurusStackColor_384avif}, ${DrawDocusaurusStackColor_384webp}`,
+    img_url: [
+      `${DrawDocusaurusStackColor_384avif}`,
+      `${DrawDocusaurusStackColor_384webp}`,
+    ],
     alt: "Docusaurus comes prepacked with features",
     description: (
       <>

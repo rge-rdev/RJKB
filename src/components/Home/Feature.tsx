@@ -9,7 +9,7 @@ import kebabCase from "lodash/kebabCase"
 type FeatureItem = {
   title: string
   SVG?: React.ComponentType<React.ComponentProps<"svg">>
-  img_url?: string
+  img_url?: [string, string]
   alt?: string
   vid_path?: string
   poster?: string
@@ -48,12 +48,18 @@ export default function Feature({
           />
         )}
         {img_url && !vid_path && (
-          <img
-            loading={`${lazy ? "lazy" : "eager"}`}
-            alt={alt}
-            srcSet={img_url}
-            className={`items-center ${config?.h ? "h-64" : "h-48 w-48"}`}
-          />
+          <picture>
+            <source
+              srcSet={img_url[0]}
+              type="image/avif"
+            />
+            <img
+              loading={`${lazy ? "lazy" : "eager"}`}
+              alt={alt}
+              src={img_url[1]}
+              className={`items-center ${config?.h ? "h-64" : "h-48 w-48"}`}
+            />
+          </picture>
         )}
         {vid_path && !img_url && (
           <Video
@@ -77,12 +83,18 @@ export default function Feature({
                 verticalAlign: "top",
               }}
             >
-              <img
-                loading={`${lazy ? "lazy" : "eager"}`}
-                alt={alt}
-                srcSet={img_url}
-                className="h-36 w-36 items-center"
-              />
+              <picture>
+                <source
+                  srcSet={img_url[0]}
+                  type="image/avif"
+                />
+                <img
+                  loading={`${lazy ? "lazy" : "eager"}`}
+                  alt={alt}
+                  src={img_url[1]}
+                  className="h-36 w-36 items-center"
+                />
+              </picture>
             </div>
             <div
               className={`${
