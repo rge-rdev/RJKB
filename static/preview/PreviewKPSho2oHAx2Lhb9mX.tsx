@@ -16,7 +16,7 @@ export default function PreviewKPSho2oHAx2Lhb9mX(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Wrapper</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>wrap</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Wraps</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Wrapping</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Wrapper&#x20;Function</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Wrapper&#x20;Fn</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;to&#x20;wrap&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Principles-of-OOP/Encapsulation"><code>Encapsulate</code></Link><span>&#x20;data&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;to&#x20;wrap&#x20;&#x26;&#x20;</span><span>&#x20;data&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 21 times</cite>

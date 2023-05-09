@@ -20,7 +20,7 @@ export default function PreviewHC6mDYE6RgZubWfYf(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span ><code>ref</code></span><span>&#x20;vs&#x20;</span><span ><code>findDOMNode()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>StrictMode&#x20;API</code></span><span>&#x20;will&#x20;flag/warn&#x20;use&#x20;of&#x20;</span><span ><code>findDOMNode()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>findDOMNode()</code></span><span>&#x20;only&#x20;work&#x20;on&#x20;mounted&#x20;</span><span ><span>FC</span></span><span>&#x20;</span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>use&#x20;</span><span>&#x20;vs&#x20;</span><span ><code>findDOMNode()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>StrictMode&#x20;API</code></span><span>&#x20;will&#x20;flag/warn&#x20;use&#x20;of&#x20;</span><span ><code>findDOMNode()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>findDOMNode()</code></span><span>&#x20;only&#x20;work&#x20;on&#x20;mounted&#x20;</span><span ><span>FC</span></span><span>&#x20;</span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

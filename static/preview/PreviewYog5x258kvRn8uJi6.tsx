@@ -20,7 +20,7 @@ export default function PreviewYog5x258kvRn8uJi6(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>this&#x20;Arrow</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword/this-is-dynamic-and-depends-on-how-function-is-called-and-value-is-only-assigned-when-function-is-called/this-Arrow/lexical-this-keyword"><span>lexical&#x20;this&#x20;keyword</span></Link><span>&#x20;&#x1F449;&#x20;</span><code>&#x3C;surrounding&#x20;function&#x3E;</code><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>this&#x20;Arrow</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword/this-Arrow/lexical-this-keyword"><span>lexical&#x20;this&#x20;keyword</span></Link><span>&#x20;&#x1F449;&#x20;</span><code>&#x3C;surrounding&#x20;function&#x3E;</code><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

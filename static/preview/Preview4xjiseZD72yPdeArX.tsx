@@ -16,7 +16,7 @@ export default function Preview4xjiseZD72yPdeArX(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Array</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Objects-Prototypal-Inheritance-Methods-to-Prototype-Constructor-Function/Prototype"><span>Prototype</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Array"><span>Array</span></Link><span>&#x20;data&#x20;type</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope/Global-Object"><span>Global&#x20;Object</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype"><span>Prototype</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Array"><span>Array</span></Link><span>&#x20;data&#x20;type</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

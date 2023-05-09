@@ -8,10 +8,13 @@ import {
   make_mdx,
   make_plaintext,
   LOG_CLI_PROGRESS,
+  id_to_tags,
 } from "../utility"
 import { uptime } from "process"
-import { kebabCase } from "lodash"
-const {MAP_SIZE,DOCS_BASE} = require("dotenv").config().parsed
+import uniq from "lodash/uniq"
+import kebabCase from "lodash/kebabCase"
+import startCase from "lodash/startCase"
+const { MAP_SIZE, DOCS_BASE } = require("dotenv").config().parsed
 
 export const rem: Rem_DB = rem_json as Rem_DB
 
@@ -124,15 +127,29 @@ export const root_child_map = new Map(
   root.map((doc) => [doc._id, doc.children])
 )
 
-// export const map_parent = new Map(map.map((doc) => [id, doc.parent]))
-
+export const map_children: Map<string, string[]> = new Map()
 export function getChildren(id: string) {
-  const children = map_all.get(id)?.children
-  // console.log(children)
-  return children
+  // check child is NOT KWSN4xHJXyvxWX2Px aka Sources OR Color Highlight
+  // check child !== Sources or Highlight!
+  const map_child = map_children.get(id)
+  if (map_child) return map_child
+  if (!map_child) {
+    const children = map_all.get(id)?.children?.filter(
+      (child_id) =>
+        map_all.get(child_id)?.key[0]?._id !== "KWSN4xHJXyvxWX2Px" && // Sources
+        map_all.get(child_id)?.key[0]?._id !== "AvyJPAFLACRPsmBGW" && // Status
+        map_all.get(child_id)?.key[1]?._id !== "AvyJPAFLACRPsmBGW" && // Status
+        map_all.get(child_id)?.key[0] !== "contains:" && // wtf is contains: ?!
+        map_all.get(child_id)?.key[1]?._id !== id && // wtf is contains: idid - seems like pointless circular self-refercing?!
+        map_all.get(child_id)?.key[0]?._id !== "RHoPcFwuXHTt89FK6" // Color
+    )
+    if (children) map_children.set(id, children)
+    // console.log(children)
+    return children
+  }
 }
 
-export function hasChildren(id: string){
+export function hasChildren(id: string) {
   return Boolean(getChildren(id)?.length)
 }
 
@@ -159,7 +176,9 @@ export const map_all_parents = new Map(
       "⏳ 🔎 ",
       "✅ MAP",
       map_all_parents_init_time,
-      `${i+1} doc IDs mapped to parent in ${(uptime()-map_all_parents_init_time).toFixed(2)}s`
+      `${i + 1} doc IDs mapped to parent in ${(
+        uptime() - map_all_parents_init_time
+      ).toFixed(2)}s`
     )
 
     return [
@@ -180,7 +199,9 @@ export const map_all_refs_ID_array = new Map(
       "⏳ 🔎 ",
       "✅ MAP",
       map_all_refs_init_time,
-      `${i+1} refs mapped to Doc ID in ${(uptime()-map_all_refs_init_time).toFixed(2)}s`
+      `${i + 1} refs mapped to Doc ID in ${(
+        uptime() - map_all_refs_init_time
+      ).toFixed(2)}s`
     )
 
     return [
@@ -194,19 +215,19 @@ export function getRefIDs(id: string) {
   return map_all_refs_ID_array.get(id)
 }
 
-export function hasRefs(id: string){
+export function hasRefs(id: string) {
   return Boolean(map_all_refs_ID_array.get(id)?.length)
 }
 
 /**Check if doc has any other docs referencing it - either as a link or child
  * use @function isLeaf to skip /docs render to stop the painful docusaurus scaling death
  * use @function isLeaf to skip link generation
- * 
+ *
  * @param id doc UID
- * @returns @boolean 
+ * @returns @boolean
  */
 
-export function isLeaf(id: string){
+export function isLeaf(id: string) {
   const no_refs = !hasRefs(id)
   const no_children = !hasChildren(id)
   return no_refs && no_children
@@ -232,7 +253,7 @@ export const root_main_topics = root.filter(
     doc._id === "bcxqhqezdr3iRjhNq" ||
     doc._id === "bcxqhqezdr3iRjhNq" ||
     doc._id === "9izw8RoFY6epyxXYK"
-    //|| doc._id === "5jxvqtuiTvhdhxys7" // disable AI/ML
+  //|| doc._id === "5jxvqtuiTvhdhxys7" // disable AI/ML
 )
 
 export const root_main_topic_ids = root_main_topics.map((doc) => doc._id)
@@ -432,9 +453,7 @@ function return_anchor_from_parent(path: string) {
     /(\/)([a-zA-Z0-9-]+)$/,
     "#" +
       kebabCase(
-        path.match(/([a-zA-Z0-9-]+)$/)
-          ? path.match(/([a-zA-Z0-9-]+)$/)![0]
-          : ""
+        path.match(/([a-zA-Z0-9-]+)$/) ? path.match(/([a-zA-Z0-9-]+)$/)![0] : ""
       )
   )
 }
@@ -452,18 +471,33 @@ export const path_map: Map<string, string> = new Map()
 export function get_path_from_id(id: string) {
   const leaf = isLeaf(id)
   const path = path_map.get(id)
-  if(!path) return path
-  const anchor_path = !leaf  ? path : return_anchor_from_parent(path)
+  if (!path) return path
+  const anchor_path = !leaf ? path : return_anchor_from_parent(path)
   return anchor_path
 }
 
 export const map_alias_ids: Map<string, string[]> = new Map()
 export const map_alias_slugs: Map<string, string[]> = new Map()
+export const map_all_tags_to_ids: Map<string, string[]> = new Map()
+export const map_id_to_tags: Map<string, string[]> = new Map()
 export function getAliasIDs(id: string) {
   return map_alias_ids.get(id) || []
 }
 export function getAliasSlugs(id: string) {
   return map_alias_slugs.get(id) || []
+}
+export function getTagIds(tag: string) {
+  return map_all_tags_to_ids.get(tag)
+}
+export function getNonOrphanTags(id: string) {
+  const tags = map_id_to_tags.get(id)
+  if (!tags) return []
+  tags.forEach((tag) => {
+    const ids = getTagIds(tag)?.filter((id) => !isLeaf(id))
+    if (ids?.length === 1) map_all_tags_to_ids.set(tag, [id])
+  })
+
+  return tags.filter((tag) => getTagIds(tag)!.length > 1)
 }
 
 let num_aliases = 0
@@ -471,13 +505,41 @@ let num_aliases = 0
 const map_path_to_id_time = uptime()
 let num_paths_mapped_to_id = 0
 let num_child_slugs = 0
+let num_tags = 0
+
+function map_to_tags(id: string, dirpath: string) {
+  const doc_tag = startCase(id_to_key_slug(id))
+  const hasTags = Boolean(id_to_tags(id)?.length)
+  let init_tags = hasTags
+    ? [...(id_to_tags(id) as string[]), doc_tag]
+    : [doc_tag]
+  const prev_slugs = dirpath.split("/").slice(2)
+  let tags = uniq(
+    [...prev_slugs, ...init_tags, doc_tag]
+      .map((str) => startCase(str))
+      .filter((tag) => tag.length < 30 && tag.length > 0)
+  )
+  map_id_to_tags.set(id, tags)
+  tags.forEach((tag) => {
+    num_tags += 1
+    const hasTag = map_all_tags_to_ids.get(tag)
+    //screw up logic here to purposely fallback to previous tags with orphans
+    if (hasTag) {
+      let p = map_all_tags_to_ids.get(tag)
+      if (!p) return
+      map_all_tags_to_ids.set(tag, [...p, id])
+    }
+    if (!hasTag) map_all_tags_to_ids.set(tag, [id])
+  })
+}
 
 ;(function loop_dirs_to_make_sure_path_maps_set_up_first() {
   root_main_topic_ids.forEach((id: string, i: number) => {
     const doc_slug = id_to_key_slug(id)
     const dirpath = `/${DOCS_BASE}/${doc_slug}`
-    path_map.set(id, dirpath)
     // console.log(dirpath)
+    path_map.set(id, dirpath)
+    map_to_tags(id, dirpath)
     num_paths_mapped_to_id += 1
     LOG_CLI_PROGRESS(
       num_paths_mapped_to_id,
@@ -487,7 +549,8 @@ let num_child_slugs = 0
       "⏳",
       "✅ MAP",
       map_path_to_id_time,
-      `${num_aliases} keys mapped to ${num_child_slugs} aliases`
+      `${num_aliases} keys mapped to ${num_child_slugs} aliases `,
+      `${num_tags} tags parsed`
     )
     const children = getChildren(id)
     if (children)
@@ -515,8 +578,11 @@ function loop_child_to_make_sure_path_maps_set_up_first(
       "⏳",
       "✅ MAP",
       map_path_to_id_time,
-      `${num_aliases} keys mapped to ${num_child_slugs} aliases`
+      `${num_aliases} keys mapped to ${num_child_slugs} aliases `,
+      `${num_tags} tags parsed`
     )
+
+    map_to_tags(id, dirpath)
 
     // FUCK - don't forget the RECURSION layer!!
     const children = getChildren(id)
@@ -566,6 +632,13 @@ process.stdout.write(
 // console.dir(id_to_mdx("HWLTjZrhernsLocy7")) // 'JS'
 // console.dir(id_to_mdx("5jxvqtuiTvhdhxys7")) // 'AI/ML'
 // console.dir(id_to_mdx("65wxDaND8qaAd8G4g")) // '`yarn add PKG@latest`'
+
+// const az = getTagIds("A Z")
+// const abc = getTagIds("Accessor")
+// console.log(az)
+// az?.forEach(x=>console.log(isLeaf(x)))
+// console.log(abc)
+// abc?.forEach(x=>console.log(isLeaf(x)))
 
 // process.exit()
 

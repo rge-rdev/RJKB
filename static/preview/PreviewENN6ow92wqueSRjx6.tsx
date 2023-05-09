@@ -16,7 +16,7 @@ export default function PreviewENN6ow92wqueSRjx6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Framework</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Frameworks</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>set&#x20;of&#x20;methods&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Principles-of-OOP/Abstraction"><code>Abstract</code></Link><span>&#x20;design/structure&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>set&#x20;of&#x20;methods&#x20;to&#x20;</span><span>&#x20;design/structure&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

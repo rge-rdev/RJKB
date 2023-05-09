@@ -16,7 +16,7 @@ export default function Previewxw9NYRFFX8Hnxv4PC(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Document</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Interfaces-are-provided-as-API-to-JavaScript-to-allow-it-to-manipulate-the-DOM-API/DOM-Interface"><span>DOM&#x20;Interface</span></Link><span>&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Root"><span>Root</span></Link><span>&#x20;of&#x20;document</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Interface"><span>DOM&#x20;Interface</span></Link><span>&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Root"><span>Root</span></Link><span>&#x20;of&#x20;document</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 21 times</cite>

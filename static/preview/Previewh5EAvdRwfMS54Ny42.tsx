@@ -16,7 +16,7 @@ export default function Previewh5EAvdRwfMS54Ny42(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Anon&#x20;Function</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Anon&#x20;Fn</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Anonymous&#x20;Function</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Lambda&#x20;Function</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Lambda&#x20;Expression</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Lambda&#x20;Fn</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Lambda</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function"><code>function</code></Link><span>&#x20;w/o&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value/Stored-in-EC-in-Call-Stack/Unique-Identifier-created-to-reference-Primitive-Variable/Identifier"><span>Identifier</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function"><code>function</code></Link><span>&#x20;w/o&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Identifier"><span>Identifier</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

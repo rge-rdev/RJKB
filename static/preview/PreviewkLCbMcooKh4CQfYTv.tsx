@@ -20,7 +20,7 @@ export default function PreviewkLCbMcooKh4CQfYTv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Definition/VDOM/Fiber"><code>Fiber</code></Link><span>&#x20;is&#x20;used&#x20;in&#x20;new&#x20;</span><Link to="/wiki/React/React-Definition/VDOM/Diffing/VDOM-Diffing-Flow/Reconciliation-of-VDOM-vs-DOM-API/Reconciliation"><span>Reconciliation</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><span>Algorithm</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/React/React-Versions/React-16"><span>React&#x20;16</span></Link><span>+;&#x20;deprecates&#x20;older&#x20;</span><Link to="/wiki/React/React-Definition/VDOM/Fiber/Fiber-is-used-in-new-Reconciliation-Algorithm-for-React-16-deprecates-older-Stack-Reconciler-algorithm/Stack-Reconciler"><span>Stack&#x20;Reconciler</span></Link><span>&#x20;algorithm</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><code>Fiber</code></span><span>&#x20;is&#x20;used&#x20;in&#x20;new&#x20;</span><span ><span>Reconciliation</span></span><span>&#x20;</span><span ><span>Algorithm</span></span><span>&#x20;for&#x20;</span><span ><span>React&#x20;16</span></span><span>+;&#x20;deprecates&#x20;older&#x20;</span><span ><span>Stack&#x20;Reconciler</span></span><span>&#x20;algorithm</span></cite></li></ol>
     
     </small></Tooltip>)
 }

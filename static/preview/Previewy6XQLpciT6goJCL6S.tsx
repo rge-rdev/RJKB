@@ -20,7 +20,7 @@ export default function Previewy6XQLpciT6goJCL6S(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VE/Functions-can-access-variables-outside-VE-via-Scope-Chain/Hoisting/Hoisting-differs-per-variable-type/Hoisting-let-const-variables/TDZ"><span>TDZ</span></Link><span>&#x20;was&#x20;added&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript/ECMAScript-versions/ES6"><span>ES6</span></Link><span>&#x20;to&#x20;make&#x20;it&#x20;easier&#x20;to&#x20;avoid&#x20;&#x26;&#x20;catch&#x20;errors</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>ReferenceError</code></span><span>&#x20;thrown&#x20;when&#x20;attempt&#x20;to&#x20;access&#x20;let/const&#x20;variable&#x20;in&#x20;</span><span ><span>TDZ</span></span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/ECMAScript/ECMAScript-versions/ES6"><span>ES6</span></Link><span>&#x20;add&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VE/Hoisting/TDZ"><span>TDZ</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Block-Scope"><span>Block&#x20;Scope</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>ReferenceError</code></span><span>&#x20;thrown&#x20;when&#x20;attempt&#x20;to&#x20;access&#x20;let/const&#x20;variable&#x20;in&#x20;</span><span ><span>TDZ</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

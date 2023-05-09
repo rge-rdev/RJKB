@@ -20,7 +20,7 @@ export default function PreviewMW9K96HfYg59TTmgy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x22;sourcemap&#x22;:&#x20;true</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;create&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/Initialize-project-folder-to-run-with-TS/tsconfigjson/compilerOptions/Emit/sourcemap-true/map"><code>.map</code></Link><span>&#x20;ext&#x20;for&#x20;debug</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x22;sourcemap&#x22;:&#x20;true</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;create&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/TSC-commands/tsconfigjson/compilerOptions/Emit/sourcemap-true/map"><code>.map</code></Link><span>&#x20;ext&#x20;for&#x20;debug</span></cite></li></ol>
     
     </small></Tooltip>)
 }

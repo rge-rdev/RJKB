@@ -16,7 +16,7 @@ export default function PreviewPFH6TizvWX32XwZ3f(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Global&#x20;Variable</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Global&#x20;Variables</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><code>Declare</code></Link><span>&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link>&#x20;or&#x20;<Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-Execution-Context/Top-Level-Code"><span>Top-Level&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><code>Declare</code></Link><span>&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scope/Global-Scope"><span>Global&#x20;Scope</span></Link>&#x20;or&#x20;<Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Global-EC/Top-Level-Code"><span>Top-Level&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

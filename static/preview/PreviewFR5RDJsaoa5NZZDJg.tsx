@@ -20,7 +20,7 @@ export default function PreviewFR5RDJsaoa5NZZDJg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>draw.io</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>use&#x20;visual&#x20;tools&#x20;like&#x20;</span><span ><span>draw.io</span></span><span>&#x20;to&#x20;plan&#x20;app&#x20;component&#x20;structure&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>draw.io</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><em>sort</em><span>&#x20;into&#x20;</span><span ><span>Component&#x20;Hierarchy</span></span><span>&#x20;by&#x20;</span><b>logical&#x20;data&#x20;flow</b><span>&#x20;-&#x20;use&#x20;visual&#x20;tools&#x20;like&#x20;</span><span ><span>draw.io</span></span><span>&#x20;to&#x20;plan&#x20;app&#x20;component&#x20;structure&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

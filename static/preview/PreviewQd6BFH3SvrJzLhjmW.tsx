@@ -20,7 +20,7 @@ export default function PreviewQd6BFH3SvrJzLhjmW(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>combine&#x20;</span><span ><span>Short-Circuiting</span></span><span>&#x20;with&#x20;</span><span ><span>Component</span></span><span>s&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Use&#x20;</span><span ><span>Truthy</span></span><span>-</span><span ><span>Falsy</span></span><span>&#x20;for&#x20;optional&#x20;rendering&#x20;-&#x20;combine&#x20;</span><span ><span>Short-Circuiting</span></span><span>&#x20;with&#x20;</span><span ><span>Component</span></span><span>s&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

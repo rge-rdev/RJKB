@@ -20,7 +20,7 @@ export default function PreviewtmZ3CbitnbdTq9hbp(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>useDispatch()</code><span>&nbsp;↔&nbsp;</span><span>redux&#x20;hook&#x20;to&#x20;manually&#x20;dispatch&#x20;action&#x20;creator.&#x20;replace&#x20;by&#x20;</span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit/useAppDispatch"><code>useAppDispatch()</code></Link><span>&#x20;for&#x20;TS</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>useDispatch()</code><span>&nbsp;↔&nbsp;</span><span>redux&#x20;hook&#x20;to&#x20;manually&#x20;dispatch&#x20;action&#x20;creator.&#x20;replace&#x20;by&#x20;</span><span ><code>useAppDispatch()</code></span><span>&#x20;for&#x20;TS</span></cite></li></ol>
     
     </small></Tooltip>)
 }

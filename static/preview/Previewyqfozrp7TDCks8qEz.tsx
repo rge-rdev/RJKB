@@ -20,7 +20,7 @@ export default function Previewyqfozrp7TDCks8qEz(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>can&#x20;return&#x20;another&#x20;fetch&#x20;request&#x20;or&#x20;</span><span ><span>AJAX</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>XMLHttpRequest</code><span>&nbsp;↔&nbsp;</span><span>legacy&#x20;</span><span ><span>Interface</span></span><span>&#x20;for&#x20;old-school&#x20;</span><span ><span>AJAX</span></span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>XMLHttpRequest</code><span>&nbsp;↔&nbsp;</span><span>legacy&#x20;</span><span ><span>Interface</span></span><span>&#x20;for&#x20;old-school&#x20;</span><span ><span>AJAX</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>anything&#x20;returned&#x20;from&#x20;</span><span ><code>.then()</code></span><span>&#x20;</span><span ><span>Handler</span></span><span>&#x20;</span><span ><span>Callback&#x20;Function</span></span><span>,&#x20;will&#x20;be&#x20;</span><span ><span>Consume</span></span><span>d&#x20;as&#x20;</span><span ><span>Argument</span></span><span>&#x20;in&#x20;next&#x20;chained&#x20;promise&#x20;-&#x20;can&#x20;return&#x20;another&#x20;fetch&#x20;request&#x20;or&#x20;</span><span ><span>AJAX</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

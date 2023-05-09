@@ -20,7 +20,7 @@ export default function PreviewtQAR39hRZSuLw3QcD(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>react-instantsearch</code><span>&nbsp;↔&nbsp;</span><span>react&#x20;wrapper&#x20;for&#x20;algolia&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/Algolia/instantsearch"><code>instantsearch</code></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>typesense-instantseach-adapter</code><span>&nbsp;↔&nbsp;</span><span>helper&#x20;to&#x20;connect&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/Algolia/instantsearch"><code>instantsearch</code></Link><span>&#x20;UI&#x20;library&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/typesense"><code>typesense</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>react-instantsearch</code><span>&nbsp;↔&nbsp;</span><span>react&#x20;wrapper&#x20;for&#x20;algolia&#x20;</span><span ><code>instantsearch</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>typesense-instantseach-adapter</code><span>&nbsp;↔&nbsp;</span><span>helper&#x20;to&#x20;connect&#x20;</span><span ><code>instantsearch</code></span><span>&#x20;UI&#x20;library&#x20;to&#x20;</span><span ><code>typesense</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

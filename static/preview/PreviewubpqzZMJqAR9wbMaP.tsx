@@ -16,7 +16,7 @@ export default function PreviewubpqzZMJqAR9wbMaP(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Node</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Nodes</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Interfaces-are-provided-as-API-to-JavaScript-to-allow-it-to-manipulate-the-DOM-API/DOM-Interface"><span>DOM&#x20;Interface</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Abstract-Class"><span>Abstract&#x20;Class</span></Link><span>&#x20;upon&#x20;which&#x20;every&#x20;member&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree"><span>DOM&#x20;Tree</span></Link><span>&#x20;are&#x20;based</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Interface"><span>DOM&#x20;Interface</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Abstract-Class"><span>Abstract&#x20;Class</span></Link><span>&#x20;upon&#x20;which&#x20;every&#x20;member&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree"><span>DOM&#x20;Tree</span></Link><span>&#x20;are&#x20;based</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 30 times</cite>

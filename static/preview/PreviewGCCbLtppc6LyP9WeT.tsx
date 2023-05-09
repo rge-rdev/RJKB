@@ -20,7 +20,7 @@ export default function PreviewGCCbLtppc6LyP9WeT(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>clearInterval()</code><span>&nbsp;↔&nbsp;</span><code>(id:&#x20;number):&#x20;void</code><span>&#x20;to&#x20;clear&#x20;a&#x20;timer&#x20;with&#x20;</span><span ><code>setInterval()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>ref</code></span><span>&#x20;can&#x20;be&#x20;used&#x20;to&#x20;keep&#x20;hold&#x20;of&#x20;timer&#x20;IDs&#x20;(</span><span ><code>setTimeout()</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>setInterval()</code></span><span>)&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>clearInterval()</code><span>&nbsp;↔&nbsp;</span><code>(id:&#x20;number):&#x20;void</code><span>&#x20;to&#x20;clear&#x20;a&#x20;timer&#x20;with&#x20;</span><span ><code>setInterval()</code></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>&#x20;can&#x20;be&#x20;used&#x20;to&#x20;keep&#x20;hold&#x20;of&#x20;timer&#x20;IDs&#x20;(</span><span ><code>setTimeout()</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>setInterval()</code></span><span>)&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

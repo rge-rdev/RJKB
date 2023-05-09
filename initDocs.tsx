@@ -17,13 +17,9 @@ import {
   hasRefs,
   hasChildren,
   isLeaf,
+  getNonOrphanTags,
 } from "./src/data/"
-import {
-  id_to_mdx,
-  id_to_plaintext,
-  id_to_tags,
-  LOG_CLI_PROGRESS,
-} from "./src/utility"
+import { id_to_mdx, id_to_plaintext, LOG_CLI_PROGRESS } from "./src/utility"
 import kebabCase from "lodash/kebabCase"
 import startCase from "lodash/startCase"
 import escapeRegExp from "lodash/escapeRegExp"
@@ -45,6 +41,8 @@ const {
   TS_PUT_REQS,
   TS_PUT_DELAY,
   DOCS_BASE,
+  SLUG_SIZE,
+  LOG,
 } = require("dotenv").config().parsed
 
 let debug_keywords: any[] = []
@@ -61,6 +59,9 @@ let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
 let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
 
 const __DOC_LENGTH = +MAP_SIZE //8457
+
+// console.log(getChildren("yHKRvfAwL7TJRS6Rg"))
+// process.exit()
 
 /**
  * recursive dir & md docs init loop
@@ -121,28 +122,11 @@ function generate_mdx_page_from_id(
   if (value_mdx_newLine && value_mdx_code && !value_mdx_link)
     value_mdx = `\`\`\`tsx\n\n${value_mdx}\n\n\`\`\`\n`
 
-  const hasTags = Boolean(id_to_tags(id)?.length)
-  let init_tags = hasTags
-    ? [...(id_to_tags(id) as string[]), title_yaml]
-    : [title_yaml]
-
   const alias_ids = getAliasIDs(id) // return string[] | []
   const alias_slugs = getAliasSlugs(id).filter((slug) => slug.length > 0) // return string[] | []
   //! use filepath to infer parent tags from path
-  const prev_slugs = filepath
-    .split("/")
-    .slice(1, -2)
-    .map((str) => str.replace(/-/g, " ").trim())
-  let tags = uniq(
-    [
-      ...prev_slugs,
-      // ...alias_slugs, // disable alias-slugs for tags
-      ...init_tags,
-    ]
-      .filter((tag) => tag.length < 30)
-      .map((str) => startCase(str))
-      .filter((str) => str.length > 0)
-  )
+
+  let tags = getNonOrphanTags(id) || []
 
   //! new quirk discovered - \abc === abc as a tag - which was the cause of the duplicate route error - docusaurus won't render backslash
   //! quirk "Unicode/other escape" === "Unicode other escape" as a tag!
@@ -162,13 +146,13 @@ function generate_mdx_page_from_id(
       (s) => typeof s !== "undefined" && s && s.length > 0
     )
   )
-  tags = uniqWith(tags, (a, b) => kebabCase(a) === kebabCase(b))
-  map_all_tags.set(id, tags)
+  // tags = uniqWith(tags, (a, b) => kebabCase(a) === kebabCase(b))
+  // map_all_tags.set(id, tags)
   //! DEDUP tags but KEEP dup for max SEO
 
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
-  num_tags += tags.length
+  if (tags) num_tags += tags.length
   const description =
     title_yaml +
     (alias_slugs.length
@@ -645,6 +629,7 @@ async function generate_id_redirect(alias_path: string, redirect_path: string) {
 
 // push arrays to debug & keep track of appended slugs & paths
 let slug_key_arr = [""]
+let long_slugs_arr: string[] = []
 slug_key_arr.pop()
 let __plaintext__id_array = [""]
 __plaintext__id_array.pop()
@@ -707,6 +692,9 @@ async function loop_docs_mkdir(
         // console.table(slug_key_arr)
         const slug_key_mdx = slug_key_arr.join("\n")
         // await fs.outputFile(`test/slug-keys.mdx`, slug_key_mdx)
+        process.stdout.write(
+          `output ${long_slugs_arr.length} url slugs over ${SLUG_SIZE} chars to test/slug-keys.mdx`
+        )
         fs.outputFileSync(`test/slug-keys.mdx`, slug_key_mdx)
       } catch (error) {}
     }
@@ -815,10 +803,20 @@ async function loop_docs_mkdir(
       Boolean(slug_key.match(/^contains-/)) //! Shave off 180 "contains:" type docs //!recall that : was swapped for - by slugify!
     // slug_key.length > 15 //! BEFORE: 7187 Files, 6418 Folders --> AFTER >20: 4,522 Files, 3,970 Folders --> <15 3,574 Files, 3,167 Folders
     //? How to embed template literal inside regex experssion ?    Boolean(slug_key.match(/^contains:${parent_slug}/))
-    if (id === "jJfERuHx5ENeC9ax9") skip_next = true // Skip !BUGS
+    // if (id === "jJfERuHx5ENeC9ax9") skip_next = true // Skip !BUGS
     if (skip_next) num_skipped += 1
     if (omit_check && slug_key && !skip_next)
       __plaintext__id_array.push(`__${slug_key}__${id}`)
+    if (num > __DOC_LENGTH * 0.975 && LOG === "YES")
+      process.stdout.write(`${num} - ${__DOC_LENGTH}\n`)
+    if (!skip_next && slug_key && debug_slug && slug_key.length > +SLUG_SIZE)
+      long_slugs_arr.push(slug_key)
+    if (num === __DOC_LENGTH && debug_slug) {
+      try {
+        const long_slugs_mdx = long_slugs_arr.join("\n")
+        fs.outputFileSync(`test/long-slugs.mdx`, long_slugs_mdx)
+      } catch (error) {}
+    }
     if (num === __DOC_LENGTH && omit_check) {
       try {
         // console.table(slug_key_arr)

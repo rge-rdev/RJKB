@@ -20,7 +20,7 @@ export default function Previewdr63k3v2jHWFvypCe(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Decorator</span></span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Classical&#x20;OOP&#x20;patterns&#x20;ported&#x20;over&#x20;to&#x20;</span><span ><span>TS</span></span><span>&#x20;include&#x20;</span><span ><span>Singleton</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>Decorator</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -20,7 +20,7 @@ export default function Preview7jGAYSmEpfwLyKSbs(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>(a|b|c)</code><span>&nbsp;↔&nbsp;</span><span ><span>RegExp&#x20;Syntax</span></span><span>&#x20;to&#x20;</span><span ><span>Group</span></span><span>&#x20;to&#x20;</span><b>alternatives</b><span>&#x20;</span><span ><code>|</code></span><span>&#x20;delimit&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>(</code><code>?:</code><code>abc)</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Language/regex"><span>regex</span></Link><span>&#x20;</span>Non-Capturing&#x20;<Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Group"><span>Group</span></Link><span>to&#x20;prevent&#x20;grouping&#x20;reference</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>(a|b|c)</code><span>&nbsp;↔&nbsp;</span><span ><span>RegExp&#x20;Syntax</span></span><span>&#x20;to&#x20;</span><span ><span>Group</span></span><span>&#x20;to&#x20;</span><b>alternatives</b><span>&#x20;</span><span ><code>|</code></span><span>&#x20;delimit&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>(</code><code>?:</code><code>abc)</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Language/regex"><span>regex</span></Link><span>&#x20;</span>Non-Capturing&#x20;<Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Group"><span>Group</span></Link><span>to&#x20;prevent&#x20;grouping&#x20;reference</span></cite></li></ol>
     
     </small></Tooltip>)
 }

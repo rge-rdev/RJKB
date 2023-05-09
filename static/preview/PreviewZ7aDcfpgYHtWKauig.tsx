@@ -16,7 +16,7 @@ export default function PreviewZ7aDcfpgYHtWKauig(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Flag</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span>optional&#x20;modifier<span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;to&#x20;config&#x20;how&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Assertion"><span>Assertion</span></Link>&#x20;behave&#x20;on&#x20;patterns<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span>optional&#x20;modifier<span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;to&#x20;config&#x20;how&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Assertion"><span>Assertion</span></Link>&#x20;behave&#x20;on&#x20;patterns<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 16 times</cite>

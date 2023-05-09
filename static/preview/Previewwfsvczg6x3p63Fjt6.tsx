@@ -20,7 +20,7 @@ export default function Previewwfsvczg6x3p63Fjt6(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>broader&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/Dedupe"><span>Dedupe</span></Link><span>&#x20;definition&#x20;incl&#x20;to&#x20;eliminate&#x20;duplicate&#x20;copies&#x20;of&#x20;data&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>React&#x20;now&#x20;extends&#x20;</span><span ><code>Fetch&#x20;API</code></span><span>&#x20;to&#x20;allow&#x20;auto&#x20;</span><span ><code>Deduping</code></span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>broader&#x20;</span><span ><span>Dedupe</span></span><span>&#x20;definition&#x20;incl&#x20;to&#x20;eliminate&#x20;duplicate&#x20;copies&#x20;of&#x20;data&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>React&#x20;now&#x20;extends&#x20;</span><span ><code>Fetch&#x20;API</code></span><span>&#x20;to&#x20;allow&#x20;auto&#x20;</span><span ><code>Deduping</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

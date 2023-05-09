@@ -20,7 +20,7 @@ export default function PreviewNLuErg8PejLxo5xH3(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>delegate&#x20;compiling/transpiling&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Assembly-language/Web-Assembly/WASM"><span>WASM</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>delegate&#x20;compiling/transpiling&#x20;to&#x20;</span><span ><span>WASM</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

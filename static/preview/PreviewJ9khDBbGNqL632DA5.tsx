@@ -20,7 +20,7 @@ export default function PreviewJ9khDBbGNqL632DA5(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;can&#x20;just&#x20;pass&#x20;full&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;as&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/props"><code>props</code></Link><span>&#x20;instead&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/Component-Lifecycle/Render-Props"><span>Render&#x20;Props</span></Link></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>FC</span></span><span>&#x20;can&#x20;just&#x20;pass&#x20;full&#x20;</span><span ><span>FC</span></span><span>&#x20;as&#x20;</span><span ><code>props</code></span><span>&#x20;instead&#x20;of&#x20;</span><span ><span>Render&#x20;Props</span></span><span>&#x20;-&#x20;to&#x20;simply/optimize&#x20;data&#x20;flow&#x20;for&#x20;readability</span></cite></li></ol>
     
     </small></Tooltip>)
 }

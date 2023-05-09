@@ -20,7 +20,7 @@ export default function PreviewLtHGicmXXEfXni5Ft(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>parameters</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;contorl&#x20;storybook&#x20;feature/addon,&#x20;via&#x20;</span><Link to="/wiki/React/React-Stack/storybook/setup-storybook/storybook/storybook-previewjs/e/parameters/actions"><code>actions</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>sb&#x20;parameters</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;control&#x20;storybook&#x20;feature/addon,&#x20;via&#x20;</span><Link to="/wiki/React/React-Stack/storybook/setup-storybook/storybook/storybook-previewjs/sb-parameters/actions"><code>actions</code></Link><span>&#x20;</span><CodeBlock language="jsx">{`import "../src/index.css" // import global css\n\nexport const parameters = {\n  actions: {  argTypesRegex: "^on[A-Z].*"},\n  controls: {\n    matchers: {\n      color: /(background|color)\$/i,\n      date: /Date\$/\n    }\n  }\n}`}</CodeBlock></cite></li></ol>
     
     </small></Tooltip>)
 }

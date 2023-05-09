@@ -20,7 +20,7 @@ export default function Previewj9F8JYAk5T7YZCXPn(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT"><span>JIT</span></Link><span>&#x20;Processes&#x20;(ie&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT/JIT-Compilation-flow/Parsing"><span>Parsing</span></Link><span>,&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT/JIT-Compilation-flow/Compilation"><span>Compilation</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT/JIT-Compilation-flow/Optimisation"><span>Optimisation</span></Link><span>)&#x20;occur&#x20;inside&#x20;</span><b>special&#x20;</b><Link to="/wiki/Computer-Science/Computer-Language/Computer/Hardware/CPU/Thread"><span>Thread</span></Link><span>&#x20;within&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>JIT</span></span><span>&#x20;Processes&#x20;(ie&#x20;</span><span ><span>Parsing</span></span><span>,&#x20;</span><span ><span>Compilation</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>Optimisation</span></span><span>)&#x20;occur&#x20;inside&#x20;</span><b>special&#x20;</b><span ><span>Thread</span></span><span>&#x20;within&#x20;</span><span ><span>JS&#x20;Engine</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

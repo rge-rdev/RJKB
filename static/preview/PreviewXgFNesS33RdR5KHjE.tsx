@@ -16,7 +16,7 @@ export default function PreviewXgFNesS33RdR5KHjE(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>.catch()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Chain"><span>Chain</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/First-Class-Functions/First-Class-Functions-can-be-passed-into-returned-from-other-functions/Higher-Order-Function/Callback-Function"><code>Callback</code></Link><span>&#x20;to&#x20;handle&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise"><code>Promise</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Error"><code>Error</code></Link><span>&#x20;propagation</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Chain"><span>Chain</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/First-Class-Functions/Higher-Order-Function/Callback-Function"><code>Callback</code></Link><span>&#x20;to&#x20;handle&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise"><code>Promise</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Error"><code>Error</code></Link><span>&#x20;propagation</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

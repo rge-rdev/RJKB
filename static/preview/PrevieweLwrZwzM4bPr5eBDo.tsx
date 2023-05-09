@@ -20,7 +20,7 @@ export default function PrevieweLwrZwzM4bPr5eBDo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Most&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;render&#x20;60&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/Component-Lifecycle/Most-Browser-render-60-FPS-will-drop-frames-if-React-takes-longer-than-16ms-to-render/FPS"><span>FPS</span></Link><span>&#x20;&#x26;&#x20;will&#x20;drop&#x20;frames&#x20;if&#x20;React&#x20;takes&#x20;longer&#x20;than&#x20;~16ms&#x20;to&#x20;render!</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Most&#x20;</span><span ><span>Browser</span></span><span>&#x20;render&#x20;60&#x20;</span><span ><span>FPS</span></span><span>&#x20;&#x26;&#x20;will&#x20;drop&#x20;frames&#x20;if&#x20;React&#x20;takes&#x20;longer&#x20;than&#x20;~16ms&#x20;to&#x20;render!</span></cite></li></ol>
     
     </small></Tooltip>)
 }

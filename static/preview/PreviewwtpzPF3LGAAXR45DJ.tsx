@@ -20,7 +20,7 @@ export default function PreviewwtpzPF3LGAAXR45DJ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>errors&#x20;</span><b>propagate</b><span>&#x20;down&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Chain"><span>Chain</span></Link><span>&#x20;until&#x20;caught,&#x20;else&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Exception-Handling/catch/errors-propagate-down-Chain-until-caught-else-Silent-Fail/Silent-Fail"><span>Silent&#x20;Fail</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>errors&#x20;</span><b>propagate</b><span>&#x20;down&#x20;</span><span ><span>Chain</span></span><span>&#x20;until&#x20;caught,&#x20;else&#x20;</span><span ><span>Silent&#x20;Fail</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

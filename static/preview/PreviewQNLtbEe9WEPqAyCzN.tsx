@@ -16,7 +16,7 @@ export default function PreviewQNLtbEe9WEPqAyCzN(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Object.create()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;to&#x20;manually&#x20;link&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;to&#x20;another&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Objects-Prototypal-Inheritance-Methods-to-Prototype-Constructor-Function/Prototype/proto"><code>__proto__</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;to&#x20;manually&#x20;link&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;to&#x20;another&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype/proto"><code>__proto__</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function Preview93Xq4c7MsgpjTMzyK(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>createSlice()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit"><code>RTK API fn</code></Link><span>&#x20;to&#x20;input&#x20;&#x7B;&#x20;</span><code>initialState</code><span>,&#x20;</span><code>reducers</code><span>&#x20;object,&#x20;</span><code>name</code><span>&#x20;of&#x20;slice&#x7D;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit"><code>RTK API fn</code></Link><span>&#x20;to&#x20;setup&#x20;slice&#x20;state&#x20;with&#x20;input&#x20;&#x7B;&#x20;</span><code>initialState</code><span>,&#x20;</span><code>reducers</code><span>&#x20;object,&#x20;</span><code>name</code><span>&#x7D;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

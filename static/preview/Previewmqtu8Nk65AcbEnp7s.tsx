@@ -16,7 +16,7 @@ export default function Previewmqtu8Nk65AcbEnp7s(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Heap&#x20;Space</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Space</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Spaces</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Chrome/V8"><span>V8</span></Link><span>&#x20;organize&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap"><span>Heap</span></Link><span>&#x20;into&#x20;</span>&#x20;Page<span>&#x20;regions&#x20;to&#x20;work&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/High-Level/Garbage-Collection"><code>Garbage Collector</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Chrome/V8"><span>V8</span></Link><span>&#x20;organize&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap"><span>Heap</span></Link><span>&#x20;into&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap/Heap-Space/Memory-Page"><code>Page</code></Link><span>&#x20;regions&#x20;to&#x20;work&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/High-Level/Garbage-Collection"><code>Garbage Collector</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 6 times</cite>

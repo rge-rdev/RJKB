@@ -16,7 +16,7 @@ export default function PreviewbZCs7RSonDS48NWhp(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Event&#x20;Handler</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/First-Class-Functions/First-Class-Functions-can-be-passed-into-returned-from-other-functions/Higher-Order-Function/Callback-Function"><code>Callback</code></Link><span>&#x20;to&#x20;run&#x20;in&#x20;response&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event"><code>Event</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event/Signal"><span>Signal</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/First-Class-Functions/Higher-Order-Function/Callback-Function"><code>Callback</code></Link><span>&#x20;to&#x20;run&#x20;in&#x20;response&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event"><code>Event</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event/Signal"><span>Signal</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -20,7 +20,7 @@ export default function PreviewvsW6WmWzarsc38MGe(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>RTCDataChannel</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/WebRTC-API"><code>WebRTC</code></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API/Interface"><span>Interface</span></Link><span>&#x20;to&#x20;set&#x20;up&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/P2P"><span>P2P</span></Link><span>&#x20;data&#x20;channel&#x20;to&#x20;file-share</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>WebRTC</code></span><span>&#x20;requires&#x20;IP&#x20;exposure&#x20;in&#x20;order&#x20;to&#x20;work&#x20;&#x26;&#x20;will&#x20;bypass&#x20;encrypted&#x20;tunnels!&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>RTCDataChannel</code><span>&nbsp;↔&nbsp;</span><span ><code>WebRTC</code></span><span>&#x20;</span><span ><span>Interface</span></span><span>&#x20;to&#x20;set&#x20;up&#x20;</span><span ><span>P2P</span></span><span>&#x20;data&#x20;channel&#x20;to&#x20;file-share</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><code>WebRTC</code></span><span>&#x20;requires&#x20;IP&#x20;exposure&#x20;in&#x20;order&#x20;to&#x20;work&#x20;&#x26;&#x20;will&#x20;bypass&#x20;encrypted&#x20;tunnels!&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

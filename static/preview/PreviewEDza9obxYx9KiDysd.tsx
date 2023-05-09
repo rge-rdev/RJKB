@@ -20,7 +20,7 @@ export default function PreviewEDza9obxYx9KiDysd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>\n</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;back&#x20;ref&#x20;to&#x20;numbered&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Group/Capture-Group"><span>Capture&#x20;Group</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>\n</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;back&#x20;ref&#x20;to&#x20;numbered&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Group/Capture-Group"><span>Capture&#x20;Group</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

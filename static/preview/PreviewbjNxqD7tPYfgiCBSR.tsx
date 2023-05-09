@@ -20,7 +20,7 @@ export default function PreviewbjNxqD7tPYfgiCBSR(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>beta.pithus.org</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;analyze&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Android/APK"><span>APK</span></Link><span>&#x20;fingerprint/activity/permissions&#x20;&#x26;&#x20;list&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL/URL-Structure/Domain"><span>Domain</span></Link><span>&#x20;connects</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>beta.pithus.org</code><span>&nbsp;↔&nbsp;</span><span ><span>Dev&#x20;tool</span></span><span>&#x20;to&#x20;analyze&#x20;</span><span ><span>APK</span></span><span>&#x20;fingerprint/activity/permissions&#x20;&#x26;&#x20;list&#x20;</span><span ><span>Domain</span></span><span>&#x20;connects</span></cite></li></ol>
     
     </small></Tooltip>)
 }

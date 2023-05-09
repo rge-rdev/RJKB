@@ -20,7 +20,7 @@ export default function PreviewZnEyquqC6aMnNfMGf(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Hero</span><span>&nbsp;↔&nbsp;</span><span>large&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI/Common-UI-Types/Banner"><span>Banner</span></Link><span>&#x20;to&#x20;attract&#x20;user&#x20;attention&#x20;&#x26;&#x20;upsell&#x20;content&#x20;(ie&#x20;testimonials/highlights)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Hero</span><span>&nbsp;↔&nbsp;</span><span>large&#x20;</span><span ><span>Banner</span></span><span>&#x20;to&#x20;attract&#x20;user&#x20;attention&#x20;&#x26;&#x20;upsell&#x20;content&#x20;(ie&#x20;testimonials/highlights)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

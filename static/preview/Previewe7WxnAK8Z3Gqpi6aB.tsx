@@ -16,7 +16,7 @@ export default function Previewe7WxnAK8Z3Gqpi6aB(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Context&#x20;API</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-API"><span>React&#x20;API</span></Link><span>&#x20;to&#x20;fix&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Paradigms-ie-OOP-Procedural-Programming-Functional-Programming-are-used-to-organize-structure-Source-Code-avoid-Spaghetti-Code/Spaghetti-Code/Prop-Drilling"><span>Prop&#x20;Drilling</span></Link><span>,&#x20;share&#x20;global&#x20;data</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-API"><span>React&#x20;API</span></Link><span>&#x20;to&#x20;fix&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Spaghetti-Code/Prop-Drilling"><span>Prop&#x20;Drilling</span></Link><span>,&#x20;share&#x20;global&#x20;data</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

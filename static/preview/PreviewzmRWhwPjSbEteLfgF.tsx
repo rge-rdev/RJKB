@@ -16,7 +16,7 @@ export default function PreviewzmRWhwPjSbEteLfgF(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Prototype&#x20;Chain</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Series&#x20;of&#x20;links</b><span>&#x20;to&#x20;connect&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Objects-Prototypal-Inheritance-Methods-to-Prototype-Constructor-Function/Prototype"><span>Prototype</span></Link><span>;&#x20;to&#x20;mimic&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Principles-of-OOP/Inheritance"><span>Inheritance</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Series&#x20;of&#x20;links</b><span>&#x20;to&#x20;connect&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype"><span>Prototype</span></Link><span>;&#x20;to&#x20;mimic&#x20;</span><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

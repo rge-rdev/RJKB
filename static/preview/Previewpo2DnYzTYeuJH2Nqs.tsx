@@ -20,7 +20,7 @@ export default function Previewpo2DnYzTYeuJH2Nqs(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Abstract-Class/Object-Reference-that-cannot-be-created-containing-Abstract-Method/Object-Reference"><span>Object&#x20;Reference</span></Link><span>&#x20;that&#x20;cannot&#x20;be&#x20;created,&#x20;containing&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Abstract-Class/Object-Reference-that-cannot-be-created-containing-Abstract-Method/Abstract-Method"><span>Abstract&#x20;Method</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Object&#x20;Reference</span></span><span>&#x20;that&#x20;cannot&#x20;be&#x20;created,&#x20;containing&#x20;</span><span ><span>Abstract&#x20;Method</span></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

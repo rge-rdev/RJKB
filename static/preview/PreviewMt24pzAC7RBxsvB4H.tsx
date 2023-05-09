@@ -16,7 +16,7 @@ export default function PreviewMt24pzAC7RBxsvB4H(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>new</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator"><span>JS&#x20;Operator</span></Link><span>to&#x20;</span><b>call</b><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><span>Constructor&#x20;Function</span></Link><span>,&#x20;</span><b>assign</b><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;&#x26;&#x20;</span><b>link</b><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Objects-Prototypal-Inheritance-Methods-to-Prototype-Constructor-Function/Prototype"><span>Prototype</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator"><span>JS&#x20;Operator</span></Link><span>to&#x20;</span><b>call</b><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><span>Constructor&#x20;Function</span></Link><span>,&#x20;</span><b>assign</b><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;&#x26;&#x20;</span><b>link</b><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype"><span>Prototype</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 11 times</cite>

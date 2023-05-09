@@ -16,7 +16,7 @@ export default function PreviewN8NXshkZ9JZy8PYSL(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>blob</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>file-like&#x20;object&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Value-of-Primitive-is-immutable-unlike-the-variable-assigned-to-it/immutable"><span>immutable</span></Link><span>&#x20;raw&#x20;data</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>file-like&#x20;object&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/immutable"><span>immutable</span></Link><span>&#x20;raw&#x20;data</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function Preview7kFdiPK29gu4QuSBf(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Enhanced&#x20;Object&#x20;Literals</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/ECMAScript/ECMAScript-versions/ES6/ES2015"><span>ES2015</span></Link><span>&#x20;extends&#x20;base&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal"><span>Object&#x20;Literal</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/ECMAScript/ECMAScript-versions/ES6/Aliases/ES2015"><span>ES2015</span></Link><span>&#x20;extends&#x20;base&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal"><span>Object&#x20;Literal</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewWzm6aRb6r82BZS8hf(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Rest&#x20;Parameter</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b><code>&#x20;...&#x20;</code></b><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;prefix&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value/Stored-in-EC-in-Call-Stack/Unique-Identifier-created-to-reference-Primitive-Variable/Identifier"><span>Identifier</span></Link><span>&#x20;to&#x20;receive&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Array"><span>Array</span></Link><span>&#x20;with&#x20;arb&#x20;remaining&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument"><code>args</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b><code>&#x20;...&#x20;</code></b><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;prefix&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Identifier"><span>Identifier</span></Link><span>&#x20;to&#x20;receive&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Array"><span>Array</span></Link><span>&#x20;with&#x20;arb&#x20;remaining&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument"><code>args</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 10 times</cite>

@@ -20,7 +20,7 @@ export default function PreviewmGcrcsqArShJ6a8N8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Character&#x20;Class</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax"><span>RegExp&#x20;Syntax</span></Link><span>&#x20;</span><code>[]</code><span>&#x20;to&#x20;wrap&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Character-Class/Class-Range"><span>Class&#x20;Range</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/body-of-RegExp-expression-abc-inside-abc/Atom/Pattern-Character"><span>Pattern&#x20;Character</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Character&#x20;Class</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax"><span>RegExp&#x20;Syntax</span></Link><span>&#x20;</span><code>[]</code><span>&#x20;to&#x20;wrap&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Character-Class/Class-Range"><span>Class&#x20;Range</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-atom/Pattern-Character"><span>Pattern&#x20;Character</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

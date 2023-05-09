@@ -20,7 +20,7 @@ export default function PreviewjfoHFYTTGCY437shk(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>!inverse&#x20;</span><span ><code>_.escape(string)</code></span><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>_.unescape(string)</code><span>&nbsp;↔&nbsp;</span><span>return&#x20;</span><span ><code>string</code></span><span>&#x20;with&#x20;</span><span ><span>HTML&#x20;Entity</span></span><span>&#x20;convert&#x20;back&#x20;to&#x20;normal&#x20;chars&#x20;-&#x20;!inverse&#x20;</span><span ><code>_.escape(string)</code></span><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }
