@@ -68,11 +68,12 @@ function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
               // new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
             ],
             optimization: {
-              chunkIds: "size",
+              // SIZE for miniscule gains for worse ~50% WORSE caching recall!
+              chunkIds: "deterministic",
               emitOnErrors: true, //! force webpack to complete build with errors - including ones which will crash at runtime
-              mangleExports: "size",
+              mangleExports: "deterministic",
               mangleWasmImports: true,
-              moduleIds: "size",
+              moduleIds: "deterministic",
               innerGraph: true, // detect unused exports
               mergeDuplicateChunks: true, // dedup chunks with same modules
               removeEmptyChunks: true, // skip client optimizing step to speed up - BAD IDEA - 2X file output!
@@ -234,9 +235,7 @@ module.exports = async () => ({
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  // Used by docusaurus to set html lang meta tag + additional lang
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -381,7 +380,7 @@ module.exports = async () => ({
         },
       ],
       // Replace with your project's social card
-      image: "img/DrawRJKBSocialCard.webp",
+      image: "img/DrawRJKBSocialCardV2.webp",
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
@@ -465,9 +464,9 @@ module.exports = async () => ({
       },
       prism: {
         additionalLanguages: ["latex"], // @see blog post - it's dumb but you need to add one random additional language to prevent 25KB of crap appearing in your final production bundle!
-        // theme: (await import("./src/theme/DraculaLight.mjs")).default,
-        // darkTheme: (await import("./src/theme/DraculaDark.mjs")).default,
-        theme: require("prism-react-renderer/themes/github").default,
+        // theme: require("prism-react-renderer/themes/github").default,
+        //! DEFAULT lightTheme is sh!t contrast - using docusaurus theme for now
+        theme: (await import("./src/theme/lightTheme.mjs")).default,
         darkTheme: require("prism-react-renderer/themes/dracula").default,
       },
       //! add new liveCodeBlock theme here
