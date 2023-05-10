@@ -465,9 +465,10 @@ module.exports = async () => ({
       prism: {
         additionalLanguages: ["latex"], // @see blog post - it's dumb but you need to add one random additional language to prevent 25KB of crap appearing in your final production bundle!
         // theme: require("prism-react-renderer/themes/github").default,
+        // darkTheme: require("prism-react-renderer/themes/dracula").default,
         //! DEFAULT lightTheme is sh!t contrast - using docusaurus theme for now
         theme: (await import("./src/theme/lightTheme.mjs")).default,
-        darkTheme: require("prism-react-renderer/themes/dracula").default,
+        darkTheme: (await import("./src/theme/darkTheme.mjs")).default,
       },
       //! add new liveCodeBlock theme here
       liveCodeBlock: {
