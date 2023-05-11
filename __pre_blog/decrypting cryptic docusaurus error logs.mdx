@@ -1,0 +1,26 @@
+## ReferenceError: sidebar is not defined
+
+```bash title="You get this error despite having defined sidebars.js AND including all specified docs pages"
+ReferenceError: sidebar is not defined
+[ERROR] Unable to build website for locale en.
+
+● Client █████████████████████████ cache (99%) shutdown IdleFileCachePlugin
+ process pending cache items
+
+● Server █████████████████████████ cache (99%) shutdown IdleFileCachePlugin
+ resolve build dependencies
+
+[ERROR] Error: Failed to compile with errors.
+    at C:\Users\Z\react-dev\rjdb-map\node_modules\@docusaurus\core\lib\webpack\utils.js:180:24
+    at C:\Users\Z\react-dev\rjdb-map\node_modules\@docusaurus\core\node_modules\webpack\lib\MultiCompiler.js:554:14
+    at processQueueWorker (C:\Users\Z\react-dev\rjdb-map\node_modules\@docusaurus\core\node_modules\webpack\lib\MultiCompiler.js:491
+:6)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+[INFO] Docusaurus version: 2.4.0
+Node version: v18.14.1
+
+```
+
+The solution to this was pretty underwhelming. It's due to bad caching - likely from a prior erroneous build.
+
+Wipe your .docusaurus .cache

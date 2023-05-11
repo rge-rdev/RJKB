@@ -1,0 +1,57 @@
+## MDX backtick dedup
+
+```tsx title="utility fn to dedup backticks BUT NOT backticks used for mdx codeblocks"
+function remove_middle_backticks(str: string) {
+  return str.replace(/(?<=^`.*)`(?=.*`)/g, "")
+}
+```
+
+## MDX bold dedup
+
+mdx-loader (v1) can not detect and parse redundant `**` syntax when directly adjancent ie `****`.
+
+A simple way to fix this is to omit all instances of `****` - via a simple regex helper function.
+
+```tsx title="utility to dedup/concatenate **** mdx bold syntax"
+function remove_middle_backticks(str: string) {
+  return str.replace(/\*{4}/g, "")
+}
+```
+
+This would effectively concatenate the redundant bold tags:
+
+```
+**lots****of****redundant****tags**
+
+becomes
+
+**lots of redundant tags**
+```
+
+however, the above would also affect other content where `****` is intentional in other contexts which are not meant to be parsed as markdown - ie `/****` in codeblocks, which are common in some of my snippets.
+
+## MDX Unsafe JSX Escape
+
+````tsx title="Deprecated List of regex patterns used in attempt to safely escape preview links but exclude <a>, <b>, <u> & other <span>"
+/(?<!\\)(?<!span)(?<!\[<span data-tooltip-id="preview__[a-zA-Z0-9]+")(>)/g
+
+/(?<!`[ ]*)(?<=(?:[A-Za-z-_0-9\.]*)<[/]?(?:(?:[!ac-tv-zAC-TV-Z<>_ ]{1}?(?:[a-zA-Z0-9<>_ ]{1,})?)?)[/]?)((?<!span)>)(?![ ]*`)/g
+
+/(?<!(?:!?`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*```(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[/]?(?:[ac-tv-zAC-TV-Z<>_ ]{1}?[a-zA-Z0-9<>_ ]{2,})?[/]?>)(?!(?:[ ]*`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
+
+/(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs
+
+/.*(?=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n)|(?<=\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span><\/>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-\/]+)\)\n).*/g
+
+/(?<!\`( )*)(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zzAC-TV-Z\<\>_ ]{1})?([a-zA-Z\<\>_ ]{2,})?)[\/]?>)(?!( )*\`)/g
+
+/(?<!\`)(([A-Za-z-_0-9\.]*)<[\/]?([ac-tv-zzAC-TV-Z\<\>_ ]+)[\/]?>)(?!\`)/g
+
+/(?<!\`)(?<=)([a-zA-Z-_0-9\.]*)<[\/]?(([a-z_]+)([^b]{1}|[^u]{1}))[\/]?>(?!\`)/g
+````
+
+In the end, opt for simpler but more inaccurate escape for `>`. Unfortunately, will also affect (already safely escaped) tags inside codeblocks, `<code>`, etc
+
+```tsx title=""
+
+```

@@ -1,0 +1,13 @@
+In order to dissect Docusaurus and find out where all the bloat in main.js is coming from - you need to install BundleAnalyzerPlugin for Webpack.
+
+However, I have found that for larger builds - 1000 /docs pages+ - the build will mysteriously crash (without a single meaningful helpful error log) when loading BundleAnalyzerPlugin.
+
+## Bundle Analyzer overview of main.js parsed production components
+
+1. .docusaurus
+2. @docusaurus - 257.11KB
+   - @core/lib/client - 64.32KB
+   - theme-classic/lib -97.22KB
+   - theme-common/lib - 77.03KB
+3. react-dom - 129.98KB
+4. prism-renderer-react - 137.62KB

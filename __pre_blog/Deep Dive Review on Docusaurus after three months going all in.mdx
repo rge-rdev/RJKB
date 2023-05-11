@@ -1,0 +1,41 @@
+---
+slug: programmatically-generating-mdx-docs-for-docusaurus
+title: Programmatically Generating Mdx Docs for Docusaurus
+description: 2023-04-29 Programmatically generating mdx docs for docusaurus
+authors: rge.rdev
+tags: [Docusaurus, JS, TS, React]
+---
+
+Docusaurus is very convenient for a small >1000 page documentation site.
+
+## Docusaurus breaks down with large numbers of pages
+
+Docusaurus really does not scale well with large number of pages. See more here.
+
+Assuming your build doesn't crash prematurely, then prepare to face a huge
+
+## MDX is premature and a pain in the ASCII
+
+For SIMPLE, non-programmatically generated content - it's probably perfectly fine. But it will be horrendously optimized.
+
+Using MDX on programmatically generated pages (with mixed JSX and code snippets) has been a royal pain. This problem is compounded by docusaurus freezing its dependencies at MDX v1, due to (some relatively minor) breaking changes in MDX v2.
+
+All the mdx-loader boils down to is simply: Syntactic sugar over React.createElement calls. Pass one single illegal character into mdx and you can enjoy a tedious goose chase up the broken call stack.
+
+The worst issues lie with `<CodeBlock>` mdx syntax - and it took a lot of brutal trial and error to find
+
+Some major annoyances I've discovered along the way include:
+
+- Table of Contents - generation ONLY works on MDX documents with PURE plain markdown headers
+
+  - Apart from a few exceptions,
+
+-
+
+## It's the Docusaurus way, or the highway (to hell)
+
+Docusaurus is not for ideal for someone who wants to deeply customize layouts and components - it's a massive hassle. Swizzling is really far more work and effort, than simply patching the modules directly from the source.
+
+I'm never a fan of learning another CSS class-based library. But Infima sucks on several fronts.
+
+I'm sure Facebook has a great (private) internal documentation for Infima

@@ -1,0 +1,11 @@
+## The Journey Begins
+
+Some time ago, my primary knowledge base tool, Remnote, catastrophically crashed and wiped out all my notes. With no backup since 3 months ago, a _nauseating_ number of notes were permanently lost. This app often crashed before, but after I confirmed that it write the database to the disk - I had assumed it would be safe - especially since it had recovered countless times before. So what changed this time?
+
+From what I can gather, the app runs on Electron and caches the database as IndexedDB in memory, whilst also writing this to disk at `AppData/Roaming/RemNote`. However, after this crash, there was nothing there. It turns out that the main hard disk hard ran out of space - due to a huge chunk of the hard disk being filled up during use by Audacity when I was working on audio encoding. Similar future crashes would also result from multimedia encoding, file compression, or building multiple Docker images in succession - clearly leaving 10GB spare space was not enough!
+
+## A Disastrous 2.0 Release
+
+My RemNote desktop version is frozen at 1.7.6 and will likely remain so indefinitely - as I have completely lost confidence in their app's stability. Their v2 release ended up bricking access to my notes repeatedly for **over a dozen releases**. After upgrading, the app would display a never-ending infinite spinner indicating that it was importing the database. Some users even got this plus a graphic of a dog, as if mocking them. I was not alone in these problems, with lots of the community leaving in droves.
+
+Fortunately, due to my traumatic experience detailed above, I had taken the extra precaution of backing up regularly.
