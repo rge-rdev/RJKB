@@ -16,7 +16,7 @@ export default function PreviewqXaxHswpoTZw8AXzH(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>state</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span>persistent&#x20;<b>Snapshot</b><span>&#x20;of&#x20;</span><b>info</b><span>that&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/App"><span>App</span></Link><span>&#x20;can&#x20;access&#x20;</span><em>at&#x20;given&#x20;</em><b><em>point&#x20;in&#x20;time</em></b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>persistent&#x20;Snapshot</b><span>&#x20;of&#x20;</span><b>info</b><span>that&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/App"><span>App</span></Link><span>&#x20;can&#x20;access&#x20;</span><em>at&#x20;given&#x20;</em><b><em>point&#x20;in&#x20;time</em></b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 61 times</cite>

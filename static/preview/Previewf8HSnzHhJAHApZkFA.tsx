@@ -16,7 +16,7 @@ export default function Previewf8HSnzHhJAHApZkFA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Paradigm</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Paradigms</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Programming&#x20;Paradigm</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Coding&#x20;Paradigm</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span>approach/mindset<span>&#x20;of&#x20;</span><b>coding&#x20;s</b><b>tyle</b><span>,&#x20;</span><b>s</b><b>tructure</b><span>&#x26;&#x20;</span><b>t</b><b>echnique</b><span>&#x20;to&#x20;write&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>approach/mindset&#x20;of&#x20;</span><b>coding&#x20;style</b><span>,&#x20;</span><b>structure&#x20;</b><span>&#x26;&#x20;</span><b>technique</b><span>&#x20;to&#x20;write&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 27 times</cite>

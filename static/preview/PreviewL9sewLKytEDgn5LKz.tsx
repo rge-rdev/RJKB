@@ -20,7 +20,7 @@ export default function PreviewL9sewLKytEDgn5LKz(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Pseudo-Class</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector"><span>Simple&#x20;Selector</span></Link><span>&#x20;</span><b><code>&#x20;:&#x20;</code></b><span>&#x20;postfix&#x20;to&#x20;</span><b>match&#x20;</b><b>special&#x20;state</b><span>&#x20;of&#x20;</span><b>selected&#x20;element(s)</b><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Pseudo-Class</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/CSS/CSS-Syntax/Selector/Simple-Selector"><span>Simple&#x20;Selector</span></Link><span>&#x20;</span><b><code>&#x20;:&#x20;</code></b><span>&#x20;postfix&#x20;to&#x20;</span><b>match&#x20;special&#x20;state</b><span>&#x20;of&#x20;</span><b>selected&#x20;element(s)</b><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

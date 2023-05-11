@@ -16,7 +16,7 @@ export default function Preview3scDR6gTBuyjBTSJD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Hyperlink</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>link</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>web&#x20;link</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Reference&#x20;link</b><b>&#x20;to&#x20;navigate</b><span>&#x20;to&#x20;</span>documents&#x20;or&#x20;element&#x20;(within&#x20;document)<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Reference&#x20;link&#x20;to&#x20;navigate</b><span>&#x20;to&#x20;</span>documents&#x20;or&#x20;element&#x20;(within&#x20;document)<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

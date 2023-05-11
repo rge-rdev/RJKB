@@ -16,7 +16,7 @@ export default function PreviewiS6KLA4bFAHES9BJk(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Abstract&#x20;Resource</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>any&#x20;</span><b>abstract/conceptual</b><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Page/Web-Resource"><span>Web&#x20;Resource</span></Link><span>&#x20;</span><b>not&#x20;</b><b>network&#x20;retrievable</b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>any&#x20;</span><b>abstract/conceptual</b><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Page/Web-Resource"><span>Web&#x20;Resource</span></Link><span>&#x20;</span><b>not&#x20;network&#x20;retrievable</b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

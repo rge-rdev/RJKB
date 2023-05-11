@@ -16,7 +16,7 @@ export default function PreviewQjBLrPAyQxkxakP6b(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>FOSS</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>FOSS</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Free&#x20;Open&#x20;Source&#x20;Software</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS/Permissive-License"><span>Permissive&#x20;License</span></Link><span>&#x20;to&#x20;</span><b>allow&#x20;mod/redis</b><b>&#x20;w/o&#x20;commercial&#x20;limit</b><span>&#x20;&#x26;&#x20;expose&#x20;ALL&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS/Permissive-License"><span>Permissive&#x20;License</span></Link><span>&#x20;to&#x20;</span><b>allow&#x20;mod/redis&#x20;w/o&#x20;commercial&#x20;limit</b><span>&#x20;&#x26;&#x20;expose&#x20;ALL&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 23 times</cite>

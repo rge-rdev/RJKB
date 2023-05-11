@@ -16,7 +16,7 @@ export default function Previewu4khKXqtDyt3cZ2rT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Strict&#x20;Mode</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>opt-in</b><b>variant</b><span>&#x20;of&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>&#x20;with&#x20;more&#x20;restrictive&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><span>Semantic</span></Link>&#x20;&#x26;&#x20;rules<span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JS-Compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>opt-in&#x20;variant</b><span>&#x20;of&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>&#x20;with&#x20;more&#x20;restrictive&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><span>Semantic</span></Link>&#x20;&#x26;&#x20;rules<span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JS-Compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 6 times</cite>

@@ -20,7 +20,7 @@ export default function Preview6xRBzgBL6QzZjZEQM(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>JS&#x20;doesn&#x27;t&#x20;support&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Character-Class/JS-doesnt-support-punct-space-blank/punct"><code>[:punct:]</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Character-Class/JS-doesnt-support-punct-space-blank/space"><code>[:space:]</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Character-Class/JS-doesnt-support-punct-space-blank/blank"><code>[:blank:]</code></Link><span>&#x20;!</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>JS&#x20;doesn&#x27;t&#x20;support&#x20;</span><span ><code>[:punct:]</code></span><span>&#x20;</span><span ><code>[:space:]</code></span><span>&#x20;</span><span ><code>[:blank:]</code></span><span>&#x20;!</span></cite></li></ol>
     
     </small></Tooltip>)
 }

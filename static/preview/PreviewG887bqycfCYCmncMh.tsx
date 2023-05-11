@@ -14,7 +14,7 @@ export default function PreviewG887bqycfCYCmncMh(){
 >
   <small>
     <dfn>
-      <dt><code className="react-tooltip__dt"><span>React</span></code></dt>
+      <dt><code className="react-tooltip__dt"><span>React</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>React.js</span></code></dt>
       <dd>
         <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Definition/Minimalist"><span>Minimalist</span></Link><span>&#x20;</span><Link to="/wiki/JS/Library"><span>Library</span></Link><span>&#x20;to&#x20;build&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/App"><span>App</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Declarative"><span>Declarative</span></Link><span>&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture"><span>Component&#x20;Based&#x20;Architecture</span></Link><span>&#x20;</span></span></blockquote>
       </dd>

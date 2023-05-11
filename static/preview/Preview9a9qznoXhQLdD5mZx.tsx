@@ -16,7 +16,7 @@ export default function Preview9a9qznoXhQLdD5mZx(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>--noImplicitThis</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;flag&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x20;to&#x20;throw&#x20;error&#x20;when&#x20;</span><b>type&#x20;of&#x20;</b><b><code>this</code></b><span>&#x20;unclear&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;flag&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x20;to&#x20;throw&#x20;error&#x20;when&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/this-keyword"><em><code>this</code></em><span>&#x20;keyword</span></Link><span>&#x20;unclear&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

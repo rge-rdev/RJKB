@@ -16,7 +16,7 @@ export default function Previewat2N5AEa9Dt2cJS7J(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>undefined</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;&#x22;</span><b><em>not&#x20;</em></b><b><em>initialized</em></b><span>&#x22;&#x20;or&#x20;&#x22;</span><b><em>not&#x20;</em></b><b><em>existing</em></b><span>&#x22;&#x20;(for&#x20;object&#x20;property)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Primitive-Value"><span>Primitive&#x20;Value</span></Link><span>&#x20;to&#x20;rep&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;&#x22;</span><b><em>not&#x20;initialized</em></b><span>&#x22;&#x20;or&#x20;&#x22;</span><b><em>not&#x20;existing</em></b><span>&#x22;&#x20;(for&#x20;object&#x20;property)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 20 times</cite>

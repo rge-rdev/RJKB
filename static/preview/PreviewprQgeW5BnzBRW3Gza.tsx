@@ -20,7 +20,7 @@ export default function PreviewprQgeW5BnzBRW3Gza(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Dictionary</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/interface/Dictionary/ASU"><span>ASU</span></Link><span>&#x20;</span><b>arbitrary</b><span>&#x20;#&#x20;properties&#x20;with&#x20;</span><b>same&#x20;type</b><b>&#x20;&#x26;&#x20;</b><b>unknown&#x20;names</b><span>&#x20;(at&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Compile-Time"><span>Compile&#x20;Time</span></Link><span>)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Dictionary</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/interface/Dictionary/ASU"><span>ASU</span></Link><span>&#x20;</span><b>arbitrary</b><span>&#x20;#&#x20;properties&#x20;with&#x20;</span><b>same&#x20;type&#x20;&#x26;&#x20;unknown&#x20;names</b><span>&#x20;(at&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Compile-Time"><span>Compile&#x20;Time</span></Link><span>)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewDKWcH2GNL2Pontz2G(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Composable</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>property</em><span>)&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;(or&#x20;any&#x20;general&#x20;entity)&#x20;being&#x20;</span><b>s</b><b>elf-contained</b><b>,&#x20;n</b><b>estable</b><b>&#x20;&#x26;&#x20;p</b><b>ortable</b><span>,&#x20;easily&#x20;</span><em>composed</em><span>&#x20;into&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Composable/Composite-Component"><span>Composite&#x20;Component</span></Link><span>s</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>property</em><span>)&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;(or&#x20;any&#x20;general&#x20;entity)&#x20;being&#x20;</span><b>self-contained,&#x20;nestable&#x20;&#x26;&#x20;portable</b><span>,&#x20;easily&#x20;</span><em>composed</em><span>&#x20;into&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Composable/Composite-Component"><span>Composite&#x20;Component</span></Link><span>s</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

@@ -16,7 +16,7 @@ export default function Previewr8RDGKQWALecSTa2F(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Global&#x20;Scope</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Top-Level&#x20;Scope</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Outside&#x20;any&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Block"><span>Block</span></Link><span>.&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><b>&#x20;access&#x20;</b><b>everywhere</b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Outside&#x20;any&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Block"><span>Block</span></Link><span>.&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><b>access&#x20;everywhere</b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 9 times</cite>
