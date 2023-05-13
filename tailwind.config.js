@@ -13,9 +13,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        "prism-dark": "url('/static/img/BgPrismDark.svg')",
-        "prism-light": "url('/static/img/BgPrismLight.svg')",
-        "circuit-light": "url('/static/img/BgCircuitLight.svg')",
+        // "prism-dark": "url('/static/img/BgPrismDark.svg')",
+        // "prism-light": "url('/static/img/BgPrismLight.svg')",
+        // "circuit-light": "url('/static/img/BgCircuitLight.svg')",
         "hex-blue": "url('/static/img/BgHexBlue.svg')",
       }),
       animation: {
