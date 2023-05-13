@@ -165,7 +165,7 @@ export function id_to_mdx(
   // const re_link_preview_mdx = /\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">(.*)<\/span>]\((\.\/|\/[a-zA-Z-]+[a-zA-Z-/]+)\)\n/g //? $1 = link_content $2 = path //use as delimiter
 
   if (preview || leaf)
-    re_unsafe_jsx = /(?<!\\)(?<!span)(?<!\[<span data-tooltip-id="preview__[a-zA-Z0-9]+")(>)/g
+    re_unsafe_jsx = /(?<!\\)(?<!span)(?<!\[<span data-tooltip-id="preview__[a-zA-Z0-9]+")(?<!=)(>)/g
   // /(?<!`[ ]*)(?<=(?:[A-Za-z-_0-9\.]*)<[/]?(?:(?:[!ac-tv-zAC-TV-Z<>_ ]{1}?(?:[a-zA-Z0-9<>_ ]{1,})?)?)[/]?)((?<!span)>)(?![ ]*`)/g
   // /(?<!(?:!?`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span>]\(|[ \n]*```(?:ts(?:x)?|js(?:x)?).*))((?:[A-Za-z-_0-9\.]*)<[/]?(?:[ac-tv-zAC-TV-Z<>_ ]{1}?[a-zA-Z0-9<>_ ]{2,})?[/]?>)(?!(?:[ ]*`|<span data-tooltip-id="preview__|(?:<\/span>)?\]\((?:\.|\/)))/gs
   // /(?<!(\`[ ]*|\[<span data-tooltip-id="preview__[a-zA-Z0-9]+">.*<\/span><\/>]\(|[ \n]*\`\`\`(ts(x)?|js(x)?).*))(([A-Za-z-_0-9\.]*)<[\/]?(([ac-tv-zAC-TV-Z\<\>_ ]{1}?[a-zA-Z0-9\<\>_ ]{2,})?)[\/]?>)(?!([ ]*\`|<span data-tooltip-id="preview__|(<\/span>)?(<\/>)?\]\((\.|\/)))/gs //! This missed out on capturing groups!
@@ -1207,3 +1207,5 @@ export function id_to_ref_mdx_jsx(id: string) {
 
   return ref_mdx
 }
+
+export function id_to_sources(id: string) {}
