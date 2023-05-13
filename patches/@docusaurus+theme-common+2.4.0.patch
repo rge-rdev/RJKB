@@ -1,0 +1,89 @@
+diff --git a/node_modules/@docusaurus/theme-common/lib/hooks/useCodeWordWrap.js b/node_modules/@docusaurus/theme-common/lib/hooks/useCodeWordWrap.js
+index 1813bff..6298cf6 100644
+--- a/node_modules/@docusaurus/theme-common/lib/hooks/useCodeWordWrap.js
++++ b/node_modules/@docusaurus/theme-common/lib/hooks/useCodeWordWrap.js
+@@ -1,3 +1,6 @@
++/**
++ * Patch Modifications Copyright(c) Roger Jiang
++ */
+ import { useState, useCallback, useEffect, useRef } from 'react';
+ import { useMutationObserver } from './useMutationObserver';
+ // Callback fires when the "hidden" attribute of a tabpanel changes
+@@ -51,6 +54,9 @@ export function useCodeWordWrap() {
+         setIsCodeScrollable(isScrollable);
+     }, [codeBlockRef]);
+     useTabBecameVisibleCallback(codeBlockRef, updateCodeIsScrollable);
++    useEffect(() => {
++        toggle();
++    }, []);
+     useEffect(() => {
+         updateCodeIsScrollable();
+     }, [isEnabled, updateCodeIsScrollable]);
+diff --git a/node_modules/@docusaurus/theme-common/lib/utils/generalUtils.js b/node_modules/@docusaurus/theme-common/lib/utils/generalUtils.js
+index b0ddacc..c63b5df 100644
+--- a/node_modules/@docusaurus/theme-common/lib/utils/generalUtils.js
++++ b/node_modules/@docusaurus/theme-common/lib/utils/generalUtils.js
+@@ -4,6 +4,9 @@
+  * This source code is licensed under the MIT license found in the
+  * LICENSE file in the root directory of this source tree.
+  */
++/**
++ * Patch Modifications Copyright(c) Roger Jiang
++ */
+ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+ /**
+  * Formats the page's title based on relevant site config and other contexts.
+@@ -11,8 +14,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+ export function useTitleFormatter(title) {
+     const { siteConfig } = useDocusaurusContext();
+     const { title: siteTitle, titleDelimiter } = siteConfig;
+-    return title?.trim().length
+-        ? `${title.trim()} ${titleDelimiter} ${siteTitle}`
+-        : siteTitle;
++    const title_tag = `${titleDelimiter} ${siteTitle}`
++    const title_length =title?.trim().length
++    return title_length
++      ? `${title.trim()}` + (title_length+title_tag.length <= 70 ? title_tag: "")
++      : siteTitle;
+ }
+ //# sourceMappingURL=generalUtils.js.map
+\ No newline at end of file
+diff --git a/node_modules/@docusaurus/theme-common/src/hooks/useCodeWordWrap.ts b/node_modules/@docusaurus/theme-common/src/hooks/useCodeWordWrap.ts
+index 12cf2ef..a3b789c 100644
+--- a/node_modules/@docusaurus/theme-common/src/hooks/useCodeWordWrap.ts
++++ b/node_modules/@docusaurus/theme-common/src/hooks/useCodeWordWrap.ts
+@@ -58,7 +58,7 @@ export function useCodeWordWrap(): {
+   readonly isCodeScrollable: boolean;
+   readonly toggle: () => void;
+ } {
+-  const [isEnabled, setIsEnabled] = useState(false);
++  const [isEnabled, setIsEnabled] = useState(true);
+   const [isCodeScrollable, setIsCodeScrollable] = useState<boolean>(false);
+   const codeBlockRef = useRef<HTMLPreElement>(null);
+ 
+diff --git a/node_modules/@docusaurus/theme-common/src/utils/generalUtils.ts b/node_modules/@docusaurus/theme-common/src/utils/generalUtils.ts
+index c6732b8..ef5c327 100644
+--- a/node_modules/@docusaurus/theme-common/src/utils/generalUtils.ts
++++ b/node_modules/@docusaurus/theme-common/src/utils/generalUtils.ts
+@@ -4,6 +4,9 @@
+  * This source code is licensed under the MIT license found in the
+  * LICENSE file in the root directory of this source tree.
+  */
++/**
++ * Patch Modifications Copyright(c) Roger Jiang
++ */
+ 
+ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+ 
+@@ -13,7 +16,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+ export function useTitleFormatter(title?: string | undefined): string {
+   const {siteConfig} = useDocusaurusContext();
+   const {title: siteTitle, titleDelimiter} = siteConfig;
+-  return title?.trim().length
+-    ? `${title.trim()} ${titleDelimiter} ${siteTitle}`
++  const title_tag = `${titleDelimiter} ${siteTitle}`
++  const title_length =title?.trim().length
++  return title_length
++    ? `${title.trim()}` + (title_length+title_tag.length <= 70 ? title_tag: "")
+     : siteTitle;
+ }
