@@ -51,7 +51,7 @@ index bf24b5b..542c90f 100644
        </DocusaurusContextProvider>
 diff --git a/node_modules/@docusaurus/core/lib/client/LazyRoute.ts b/node_modules/@docusaurus/core/lib/client/LazyRoute.ts
 new file mode 100644
-index 0000000..e2fd17c
+index 0000000..9120c4a
 --- /dev/null
 +++ b/node_modules/@docusaurus/core/lib/client/LazyRoute.ts
 @@ -0,0 +1,5 @@
@@ -61,3 +61,32 @@ index 0000000..e2fd17c
 +const RouteElement = () => renderRoutes(routes)
 +export default RouteElement
 \ No newline at end of file
+diff --git a/node_modules/@docusaurus/core/lib/webpack/templates/ssr.html.template.js b/node_modules/@docusaurus/core/lib/webpack/templates/ssr.html.template.js
+index 336e33f..8b52f65 100644
+--- a/node_modules/@docusaurus/core/lib/webpack/templates/ssr.html.template.js
++++ b/node_modules/@docusaurus/core/lib/webpack/templates/ssr.html.template.js
+@@ -5,6 +5,10 @@
+  * This source code is licensed under the MIT license found in the
+  * LICENSE file in the root directory of this source tree.
+  */
++/**
++ * Patch Modifications Copyright(c) Roger Jiang
++ */
++
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.default = `
+ <!DOCTYPE html>
+@@ -22,6 +26,13 @@ exports.default = `
+     <% it.scripts.forEach((script) => { %>
+       <link rel="preload" href="<%= it.baseUrl %><%= script %>" as="script">
+     <% }); %>
++    <link rel="preload" href="/assets/lazy-css/fira_code.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
++    <link rel="preload" href="/assets/lazy-css/tooltip.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
++    <link rel="preload" href="/assets/lazy-css/docsearch.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
++    <noscript><% it.stylesheets.forEach((stylesheet) => { %>
++      <link rel="stylesheet" href="<%= it.baseUrl %><%= stylesheet %>" />
++    <% }); %></noscript>
++    <script></script>
+   </head>
+   <body <%~ it.bodyAttributes %>>
+     <%~ it.preBodyTags %>
