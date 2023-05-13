@@ -43,7 +43,15 @@ function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
                 },
               ],
             },
-            plugins: [new BundleAnalyzerPlugin({ analyzerPort: "auto" })], // Enable for small dev mode tests to avoid prod crash
+            // plugins: [new BundleAnalyzerPlugin({ analyzerPort: "auto" })], // Enable for small dev mode tests to avoid prod crash
+            cache: {
+              type: "filesystem",
+              allowCollectingMemory: true,
+              buildDependencies: {
+                config: [__filename],
+              },
+              compression: "brotli",
+            },
           }
         : {
             plugins: [
@@ -219,7 +227,7 @@ module.exports = async () => ({
       },
     ],
   ],
-  title: "RJ KB",
+  title: "RJKB",
   tagline: "iFullstack.Dev",
   favicon: "img/RJKB.ico",
 
@@ -319,15 +327,15 @@ module.exports = async () => ({
           path: "blog",
           blogTitle: "iFullstack.Dev Blog",
           blogDescription: "iFullstack.Dev Blog",
-          blogSidebarCount: 20,
+          blogSidebarCount: 5,
           blogSidebarTitle: "Recent Posts",
           routeBasePath: "blog",
           tagsBasePath: "tags",
           archiveBasePath: "archive",
-          postsPerPage: 10,
+          postsPerPage: 5,
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+            defaultReadingTime({ content, options: { wordsPerMinute: 200 } }), // 300 too high!
           authorsMapPath: "authors.yml",
           feedOptions: {
             type: "all",
@@ -349,11 +357,34 @@ module.exports = async () => ({
           // update theme to resolve SCSS now instead of css
           customCss: require.resolve("./src/css/custom.css"),
         },
-        // ADDED sitemap-plugin
+        // sitemap-plugin
         sitemap: {
           changefreq: "daily",
-          priority: 0.5,
-          ignorePatterns: ["/tags/**"], //! Not working! tags still showing up!
+          priority: 1, // there's no way to config this for sub routes?!
+          // ${process.env.PROD_URL}/{wiki,blog}/tags/** // doesn't work?!
+          // ${process.env.PROD_BASE_URL}/{wiki,blog}/tags/** // doesn't work?!
+          ignorePatterns: [
+            //NOTHING WORKS!!
+            //   `${process.env.PROD_URL}/{wiki,blog}/tags/**`,
+            //   `${process.env.PROD_URL}/{wiki,blog}/tags/**`,
+            //   `${process.env.PROD_BASE_URL}/{wiki,blog}/tags/**`,
+            //   `${process.env.PROD_BASE_URL}/{wiki,blog}/tags/**`,
+            //   `${process.env.PROD_URL}/{wiki,blog}/tags/**/*`,
+            //   `${process.env.PROD_URL}/{wiki,blog}/tags/**/*`,
+            //   `${process.env.PROD_BASE_URL}/{wiki,blog}/tags/**/*`,
+            //   `${process.env.PROD_BASE_URL}/{wiki,blog}/tags/**/*`,
+            //   `ifullstack.dev/{wiki,blog}/tags/**/*`,
+            //   `ifullstack.dev/blog/tags/**/*`,
+            //   `ifullstack.dev/wiki/tags/**/*`,
+            //   `ifullstack.dev/blog/tags/**`,
+            //   `ifullstack.dev/wiki/tags/**`,
+            //   `https://ifullstack.dev/{wiki,blog}/tags/**/*`,
+            //   `https://ifullstack.dev/{wiki,blog}/tags/**`,
+            //   `https://ifullstack.dev/blog/tags/**/*`,
+            //   `https://ifullstack.dev/wiki/tags/**/*`,
+            //   `https://ifullstack.dev/blog/tags/**`,
+            //   `https://ifullstack.dev/wiki/tags/**`,
+          ], //?! Must include base_url!
           filename: "sitemap.xml",
         },
       }),
@@ -376,7 +407,7 @@ module.exports = async () => ({
         {
           name: "keywords",
           content:
-            "Fullstack, React, JS, dev, wiki, blog, code, examples, tutorial, tips, demo",
+            "Fullstack, Wiki, Dictionary, React, JS, dev, blog, code, examples, tutorial, tips, demo, docusaurus, RJKB",
         },
       ],
       // Replace with your project's social card
