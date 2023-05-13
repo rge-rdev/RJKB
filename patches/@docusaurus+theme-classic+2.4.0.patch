@@ -62,7 +62,7 @@ index e0486b8..c5bbd3b 100644
  import clsx from 'clsx';
  import {useThemeConfig, usePrismTheme} from '@docusaurus/theme-common';
 diff --git a/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js b/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js
-index 026df2c..3847ba2 100644
+index 026df2c..38ad0c3 100644
 --- a/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js
 +++ b/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js
 @@ -11,7 +11,7 @@ export default function DocItemMetadata() {
@@ -70,7 +70,7 @@ index 026df2c..3847ba2 100644
    return (
      <PageMetadata
 -      title={metadata.title}
-+      title={metadata.description}
++      title={frontMatter.meta_title}
        description={metadata.description}
        keywords={frontMatter.keywords}
        image={assets.image ?? frontMatter.image}
