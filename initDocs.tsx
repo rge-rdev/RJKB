@@ -20,8 +20,6 @@ import {
   getNonOrphanTags,
 } from "./src/data/"
 import { id_to_mdx, id_to_plaintext, LOG_CLI_PROGRESS } from "./src/utility"
-import kebabCase from "lodash/kebabCase"
-import startCase from "lodash/startCase"
 import escapeRegExp from "lodash/escapeRegExp"
 import uniq from "lodash/uniq"
 import uniqWith from "lodash/uniqWith"
@@ -59,9 +57,6 @@ let num_preview_refs = 0 //? # times a preview tsx was referenced by a mdx doc
 let num_doc_refs = 0 //? # times a doc was referenced inside a mdx doc as a main/child/ref
 
 const __DOC_LENGTH = +MAP_SIZE //8457
-
-// console.log(getChildren("yHKRvfAwL7TJRS6Rg"))
-// process.exit()
 
 /**
  * recursive dir & md docs init loop
@@ -146,20 +141,37 @@ function generate_mdx_page_from_id(
       (s) => typeof s !== "undefined" && s && s.length > 0
     )
   )
-  // tags = uniqWith(tags, (a, b) => kebabCase(a) === kebabCase(b))
   // map_all_tags.set(id, tags)
   //! DEDUP tags but KEEP dup for max SEO
 
   debug_keywords.push(keywords || "___NOTHING")
   debug_tags.push(tags)
   if (tags) num_tags += tags.length
-  const description =
-    title_yaml +
-    (alias_slugs.length
+  //?is "is" better than "=" for SEO? "=" makes more sense grammatically, and also should be what appears in the search results.
+  let description = `${title_yaml}${
+    alias_slugs.length
       ? ` aka ${alias_slugs.join(", ").replace(/!/g, "\\!")}` //? low priority to add & for last alias
-      : "") +
-    " = " + //?is "is" better than "=" for SEO? "=" makes more sense grammatically, and also should be what appears in the search results.
-    id_to_plaintext(id, "value")?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
+      : ""
+  }${
+    id_to_plaintext(id, "value")
+      ? " = " +
+        id_to_plaintext(id, "value")?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
+      : ""
+  }`.slice(0, 159) //? to appease our inferior bing overlords
+  if (description.length < 25)
+    description = `definition of ${description} | FullStack Dictionary` //? to appease our inferior bing overlords
+  let meta_title = `${title_yaml}${
+    alias_slugs.length
+      ? ` aka ${alias_slugs.join(", ").replace(/!/g, "\\!")}` //? low priority to add & for last alias
+      : ""
+  }${
+    id_to_plaintext(id, "value")
+      ? " = " +
+        id_to_plaintext(id, "value")?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
+      : ""
+  }`.slice(0, 69) //? to appease our inferior bing overlords
+  if (meta_title.length < 15)
+    meta_title = `definition of ${meta_title} | FullStack Dictionary` //? to appease our inferior bing overlords
   // const title_match_ref = `[\`${title}\`](`
   const alias_mdx_arr = alias_ids.map((id) =>
     id_to_mdx(id, "key", { safe: true })
@@ -242,7 +254,7 @@ function generate_mdx_page_from_id(
     const k_inlineCode = k?.match(/<code>.*<\/code>/)?.length
 
     let k_path = get_path_from_id(child_id)
-    const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
+    // const k_without_code = k?.[0] !== "`" && k?.[k.length - 1] !== "`"
 
     if (!k_code && (k_newLine || k_illegal) && !k_img && !k_link) {
       k = `\n\n\`\`\`tsx\n${k}\n\`\`\`` //! escape ` inside template literal too!
@@ -368,13 +380,18 @@ ${
   title && title !== null && title !== undefined ? `title: "${title_yaml}"` : ""
 }
 ${
+  meta_title && meta_title !== null && meta_title !== undefined
+    ? `meta_title: "${meta_title}"`
+    : ""
+}
+${
   description && description !== null && description !== undefined
     ? `description: "${description}"`
     : ""
 }
-tags: [${tags.map((w) => `\"${w}\"`).join(", ")}]${
+tags: [${tags.map((w) => `"${w}"`).join(", ")}]${
     keywords.length > 0
-      ? `\nkeywords: [${keywords.map((w) => `\"${w}\"`).join(", ")}]`
+      ? `\nkeywords: [${keywords.map((w) => `"${w}"`).join(", ")}]`
       : ""
   }${
     show_extra_debug_yaml
