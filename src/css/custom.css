@@ -40,15 +40,20 @@ article > header > h1 {
 
 .theme-doc-markdown > h1 + p,
 .theme-doc-markdown > h2 {
-  @apply w-fit rounded-2xl px-2 py-1 font-semibold shadow-md shadow-neutral-500 dark:shadow-[#25c2a0];
+  @apply w-fit rounded-r-2xl px-2 py-1 font-semibold shadow-md shadow-neutral-500 dark:shadow-[#25c2a0];
 }
 .theme-doc-markdown > h2 > a > code {
-  border-radius: 9999px;
+  /* border-radius: 9999px; */
+  background-color: inherit;
+  border-color: #25c2a0;
+  border-width: 1px;
 }
 .theme-doc-markdown > h2,
 .markdown > h2 {
   @apply bg-gradient-to-r from-[#d6d6d6] to-[#fff] dark:from-[#1b1b1d] dark:to-[#474748];
-  border-radius: 9999px;
+  /* border-radius: 9999px; */
+  border-top-right-radius: 1rem /* 16px */;
+  border-bottom-right-radius: 1rem /* 16px */;
 }
 
 .theme-doc-markdown > h1 > strong {
@@ -259,12 +264,6 @@ article > header > h1 {
 
 /* CodeBlock */
 
-[data-theme="light"] {
-  /* --docusaurus-highlighted-code-line-bg: #e8e8e8; */
-  /* --docusaurus-highlighted-code-line-bg: #4effd7; */
-  /* --docusaurus-highlighted-code-line-bg: #6cfdad; */
-  /* --docusaurus-highlighted-code-line-bg: hsl(150, 100%, 90%); */
-}
 [data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: #162f2f;
 }
@@ -279,7 +278,7 @@ article > header > h1 {
 }
 F [data-theme="light"] .codeBlockContainer {
   --prism-bgc: #e5fff9;
-  --docusaurus-highlighted-code-line-bg: hsl(150, 100%, 90%);
+  --docusaurus-highlighted-code-line-bg: #ccffe6;
 }
 
 [data-theme="dark"] .codeBlockContainer {
