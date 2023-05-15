@@ -102,7 +102,7 @@ export default function Slider({ top, bot, h, w }: SliderProps) {
   return (
     <div
       className="my-0"
-      style={{ width: "100%", height: "154px" }}
+      style={{ width: "100%", height: "154px", animation: "fadein 5s" }}
     >
       <div
         className="inline-block transform-gpu animate-slide-fast overflow-visible whitespace-nowrap"

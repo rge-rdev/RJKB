@@ -14,6 +14,14 @@ export default function Home(): JSX.Element {
       title="Search Everything FullStack in RJKB Wiki - Dictionary for Developers"
       description="FullStack Dev Wiki with Concise Definitions for EVERY Term/Concept/Code: Browse with ⚡fast instant-search, stylish hover-preview pages, seamless SPA navigation."
     >
+      <style>{`@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}`}</style>
       <HomeHeader />
       <HomepageFeatures />
     </Layout>
