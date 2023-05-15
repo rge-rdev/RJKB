@@ -83,6 +83,72 @@ export const getRoute = (id: string) => map_all_routes.get(id)
 
 const show_extra_debug_yaml = false
 
+const bing_max_title_limit = 70
+
+// I could programmatically generate the following with variant spacers but its far simpler/faster to just bash it out now
+//? Also, even though I should perhaps collocate utilities in src/utility - it seems neater to collocate helper here, especially since it's single-use
+const map_affix_title = new Map([
+  [5, "|RJKB"],
+  [6, "| RJKB"],
+  [7, " | RJKB"],
+  [8, "|Dev Wiki"],
+  [9, "| Dev Wiki"],
+  [10, " | Dev Wiki"],
+  [15, "|FullStack Wiki"],
+  [16, "| FullStack Wiki"],
+  [17, " | FullStack Wiki"],
+  [19, "|FullStack Dev Wiki"],
+  [20, "| FullStack Dev Wiki"],
+  [21, "|FullStack Dictionary"],
+  [22, "| FullStack Dictionary"],
+  [23, " | FullStack Dictionary"],
+  [25, "|FullStack Dev Dictionary"],
+  [26, "| FullStack Dev Dictionary"],
+  [30, "|FullStack Dev Wiki Dictionary"],
+  [31, "| FullStack Dev Wiki Dictionary"],
+  [32, " | FullStack Dev Wiki Dictionary"],
+])
+
+const map_affix_description = new Map([
+  [5, "|Wiki"],
+  [6, "| Wiki"],
+  [7, " | Wiki"],
+  [9, "|Dev Wiki"],
+  [10, "| Dev Wiki"],
+  [11, " | Dev Wiki"],
+  [13, "|web-Dev Wiki"],
+  [14, " |web-Dev Wiki"],
+  [15, "|FullStack Wiki"],
+  [16, "| FullStack Wiki"],
+  [17, " | FullStack Wiki"],
+  [18, " | Full-Stack Wiki"],
+  [21, "|FullStack Wiki by RJ"],
+  [22, " |FullStack Wiki by RJ"],
+  [23, " | FullStack Wiki by RJ"],
+  [24, "|FullStack Wiki by Roger"],
+  [25, " |FullStack Wiki by Roger"],
+  [26, "|FullStack Wiki by Roger J"],
+])
+// Unless the page is really thin on content - my name should not be plastered all over the head tags!
+
+function get_affix_title(
+  input_str: string,
+  _map: Map<number, string>,
+  bing_title_max_limit: number
+) {
+  const title_length = input_str.length
+  const min_tag_l = [..._map.keys()][0] // elegant solution to find min length from unordered map (assumes initial position is lowest num)
+  if (title_length - min_tag_l > bing_title_max_limit) return input_str
+  let title_space_remaining = bing_title_max_limit - title_length
+  let found = false
+  while (found === false && title_space_remaining > 0) {
+    const match = _map.get(title_space_remaining)
+    if (match) return input_str + match
+    if (!match) title_space_remaining -= 1
+  }
+  return input_str //fallback in case no string match was mapped
+}
+
 function generate_mdx_page_from_id(
   id: string,
   slug_key: string,
@@ -148,18 +214,6 @@ function generate_mdx_page_from_id(
   debug_tags.push(tags)
   if (tags) num_tags += tags.length
   //?is "is" better than "=" for SEO? "=" makes more sense grammatically, and also should be what appears in the search results.
-  let description = `${title_yaml}${
-    alias_slugs.length
-      ? ` aka ${alias_slugs.join(", ").replace(/!/g, "\\!")}` //? low priority to add & for last alias
-      : ""
-  }${
-    id_to_plaintext(id, "value")
-      ? " = " +
-        id_to_plaintext(id, "value")?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
-      : ""
-  }`.slice(0, 159) //? to appease our inferior bing overlords
-  if (description.length < 25)
-    description = `definition of ${description} | FullStack Dictionary` //? to appease our inferior bing overlords
   let meta_title = `${title_yaml}${
     alias_slugs.length
       ? ` aka ${alias_slugs.join(", ").replace(/!/g, "\\!")}` //? low priority to add & for last alias
@@ -169,9 +223,14 @@ function generate_mdx_page_from_id(
       ? " = " +
         id_to_plaintext(id, "value")?.replace(/"/g, `'`).replace(/\\/g, `&#92;`)
       : ""
-  }`.slice(0, 69) //? to appease our inferior bing overlords
+  }`.slice(0, 70) //? to appease our inferior bing overlords
+  const meta_title_prefix = "Define "
+  if (meta_title.length + meta_title_prefix.length <= bing_max_title_limit)
+    meta_title = meta_title_prefix + meta_title
+  if (meta_title.length < bing_max_title_limit - 5)
+    meta_title = get_affix_title(meta_title, map_affix_title, 70)
   if (meta_title.length < 15)
-    meta_title = `definition of ${meta_title} | FullStack Dictionary` //? to appease our inferior bing overlords
+    meta_title = `Define ${meta_title} | FullStack Wiki for Fullstack Devs` //? to appease our inferior bing overlords
   // const title_match_ref = `[\`${title}\`](`
   const alias_mdx_arr = alias_ids.map((id) =>
     id_to_mdx(id, "key", { safe: true })
@@ -374,6 +433,38 @@ function generate_mdx_page_from_id(
       // if (!k && v) return `\n\n${v}`
     })
     .filter((str) => str !== undefined)
+
+  const child_summary = getChildren(id)
+    ?.map(
+      (child_id) =>
+        id_to_plaintext(child_id, "key")
+          ?.trim()
+          .replace(/\\(?=[^0xu]{1})/g, "\\\\")
+          .replace(/\\(?=[0xu]{1})/g, `\\\\​`) //!<- ZERO-WIDTH SPACE!
+    )
+    ?.filter(
+      (c) =>
+        c && c !== "Aliases" && c !== "Size" && c !== "Status" && c.length > 0
+    )
+  let description = `${title_yaml}${
+    id_to_plaintext(id, "value")
+      ? " is defined as: " +
+        id_to_plaintext(id, "value")
+          ?.replace(/"/g, `'`)
+          .replace(/\\(?=[^0xu]{1})/g, `\\\\`)
+          .replace(/\\(?=[0xu]{1})/g, `\\\\​`) //!<- ZERO-WIDTH SPACE!
+          .trim()
+      : ""
+  }. Topics on: ${
+    child_summary ? child_summary.join(", ") : ""
+  }. Read more: ${tags.map((w) => `${w}`).join(", ")}`
+    .trim()
+    .replace(/"/g, "'")
+    .slice(0, 160) //? to appease our inferior bing overlords
+  description = get_affix_title(description, map_affix_description, 160)
+  //? .replace(/\\(?=[0xu]{1})/g, `\\\\\\\\`) to fix unicode literals to end up in meta description - but still pass through mdx-loader, other parsers, etc. Maybe simpler to just directly inject own string literals into <head> - but going to stick within confines of docusaurus for now.
+  //! \0 of \xxx comes out as \\0 & \\xxx in description - not great but acceptable.
+  //!! changed \0 to \​0 with ZERO-WIDTH SPACE! - still occupies one extra char but
 
   const output_mdx = `---
 ${
@@ -710,7 +801,7 @@ async function loop_docs_mkdir(
         const slug_key_mdx = slug_key_arr.join("\n")
         // await fs.outputFile(`test/slug-keys.mdx`, slug_key_mdx)
         process.stdout.write(
-          `output ${long_slugs_arr.length} url slugs over ${SLUG_SIZE} chars to test/slug-keys.mdx`
+          `output ${long_slugs_arr.length} url slugs over ${SLUG_SIZE} chars to test/slug-keys.mdx\n`
         )
         fs.outputFileSync(`test/slug-keys.mdx`, slug_key_mdx)
       } catch (error) {}
