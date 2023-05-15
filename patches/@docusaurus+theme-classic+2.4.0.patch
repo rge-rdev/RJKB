@@ -48,7 +48,7 @@ index 27adece..b5c0e33 100644
 -  border-radius: var(--ifm-code-border-radius);
 -}
 diff --git a/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/String.js b/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/String.js
-index e0486b8..c5bbd3b 100644
+index e0486b8..161f65f 100644
 --- a/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/String.js
 +++ b/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/String.js
 @@ -4,6 +4,9 @@
@@ -61,6 +61,151 @@ index e0486b8..c5bbd3b 100644
  import React from 'react';
  import clsx from 'clsx';
  import {useThemeConfig, usePrismTheme} from '@docusaurus/theme-common';
+@@ -19,7 +22,6 @@ import Line from '@theme/CodeBlock/Line';
+ import CopyButton from '@theme/CodeBlock/CopyButton';
+ import WordWrapButton from '@theme/CodeBlock/WordWrapButton';
+ import Container from '@theme/CodeBlock/Container';
+-import styles from './styles.module.css';
+ export default function CodeBlockString({
+   children,
+   className: blockClassName = '',
+@@ -55,8 +57,8 @@ export default function CodeBlockString({
+           !blockClassName.includes(`language-${language}`) &&
+           `language-${language}`,
+       )}>
+-      {title && <div className={styles.codeBlockTitle}>{title}</div>}
+-      <div className={styles.codeBlockContent}>
++      {title && <div className="codeBlockTitle">{title}</div>}
++      <div className="codeBlockContent">
+         <Highlight
+           {...defaultProps}
+           theme={prismTheme}
+@@ -67,12 +69,9 @@ export default function CodeBlockString({
+               /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+               tabIndex={0}
+               ref={wordWrap.codeBlockRef}
+-              className={clsx(className, styles.codeBlock, 'thin-scrollbar')}>
++              className="codeBlock thin-scrollbar">
+               <code
+-                className={clsx(
+-                  styles.codeBlockLines,
+-                  showLineNumbers && styles.codeBlockLinesWithNumbering,
+-                )}>
++                className={`codeBlockLines${showLineNumbers ? ` ${codeBlockLinesWithNumbering}`: ""}`}>
+                 {tokens.map((line, i) => (
+                   <Line
+                     key={i}
+@@ -87,15 +86,15 @@ export default function CodeBlockString({
+             </pre>
+           )}
+         </Highlight>
+-        <div className={styles.buttonGroup}>
++        <div className="buttonGroup">
+           {(wordWrap.isEnabled || wordWrap.isCodeScrollable) && (
+             <WordWrapButton
+-              className={styles.codeButton}
++              className="codeButton"
+               onClick={() => wordWrap.toggle()}
+               isEnabled={wordWrap.isEnabled}
+             />
+           )}
+-          <CopyButton className={styles.codeButton} code={code} />
++          <CopyButton className="codeButton" code={code} />
+         </div>
+       </div>
+     </Container>
+diff --git a/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/styles.module.css b/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/styles.module.css
+index 3760c53..e69de29 100644
+--- a/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/styles.module.css
++++ b/node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/Content/styles.module.css
+@@ -1,87 +0,0 @@
+-/**
+- * Copyright (c) Facebook, Inc. and its affiliates.
+- *
+- * This source code is licensed under the MIT license found in the
+- * LICENSE file in the root directory of this source tree.
+- */
+-
+-.codeBlockContent {
+-  position: relative;
+-  /* rtl:ignore */
+-  direction: ltr;
+-  border-radius: inherit;
+-}
+-
+-.codeBlockTitle {
+-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+-  font-size: var(--ifm-code-font-size);
+-  font-weight: 500;
+-  padding: 0.75rem var(--ifm-pre-padding);
+-  border-top-left-radius: inherit;
+-  border-top-right-radius: inherit;
+-}
+-
+-.codeBlock {
+-  --ifm-pre-background: var(--prism-background-color);
+-  margin: 0;
+-  padding: 0;
+-}
+-
+-.codeBlockTitle + .codeBlockContent .codeBlock {
+-  border-top-left-radius: 0;
+-  border-top-right-radius: 0;
+-}
+-
+-.codeBlockStandalone {
+-  padding: 0;
+-}
+-
+-.codeBlockLines {
+-  font: inherit;
+-  /* rtl:ignore */
+-  float: left;
+-  min-width: 100%;
+-  padding: var(--ifm-pre-padding);
+-}
+-
+-.codeBlockLinesWithNumbering {
+-  display: table;
+-  padding: var(--ifm-pre-padding) 0;
+-}
+-
+-@media print {
+-  .codeBlockLines {
+-    white-space: pre-wrap;
+-  }
+-}
+-
+-.buttonGroup {
+-  display: flex;
+-  column-gap: 0.2rem;
+-  position: absolute;
+-  /* rtl:ignore */
+-  right: calc(var(--ifm-pre-padding) / 2);
+-  top: calc(var(--ifm-pre-padding) / 2);
+-}
+-
+-.buttonGroup button {
+-  display: flex;
+-  align-items: center;
+-  background: var(--prism-background-color);
+-  color: var(--prism-color);
+-  border: 1px solid var(--ifm-color-emphasis-300);
+-  border-radius: var(--ifm-global-radius);
+-  padding: 0.4rem;
+-  line-height: 0;
+-  transition: opacity var(--ifm-transition-fast) ease-in-out;
+-  opacity: 0;
+-}
+-
+-.buttonGroup button:focus-visible,
+-.buttonGroup button:hover {
+-  opacity: 1 !important;
+-}
+-
+-:global(.theme-code-block:hover) .buttonGroup button {
+-  opacity: 0.4;
+-}
 diff --git a/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js b/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js
 index 026df2c..38ad0c3 100644
 --- a/node_modules/@docusaurus/theme-classic/lib/theme/DocItem/Metadata/index.js
