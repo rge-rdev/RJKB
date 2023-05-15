@@ -74,6 +74,7 @@ const FeatureList: FeatureItem[] = [
           className="text-cyan-900 dark:text-cyan-300"
           to="/features#-hover-link-previews"
           data-tooltip-id="preview__HWLTjZrhernsLocy7"
+          // data-tooltip-delay-show={150} //!forced by default to prevent spanning 1000+ identical delays!
           // data-tooltip-delay-hide={30000}
         >
           Hover Preview Pages
@@ -194,6 +195,7 @@ export default function RenderFeatures() {
         >
           <Feature
             key={props.title}
+            i={i}
             {...props}
           />
         </Suspense>

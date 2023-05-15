@@ -2,7 +2,7 @@
  * Copyright(c) Roger Jiang
  */
 
-import React from "react"
+import React, { useEffect, useRef, useState, useMemo } from "react"
 import Video from "../Video"
 import kebabCase from "lodash/kebabCase"
 
@@ -16,6 +16,34 @@ type FeatureItem = {
   config?: { inline?: boolean; w?: number; h?: number }
   description?: JSX.Element
   lazy?: boolean
+  i: number
+}
+
+function useIsInViewport(ref: any) {
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const [seen, setSeen] = useState(false)
+
+  const observer = useMemo(
+    () =>
+      new IntersectionObserver(([entry]) => {
+        if (seen) return
+        if (entry.isIntersecting) {
+          setSeen(true)
+          return setIsIntersecting(entry.isIntersecting)
+        }
+      }),
+    []
+  )
+
+  useEffect(() => {
+    observer.observe(ref.current)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [ref, observer, seen])
+
+  return isIntersecting
 }
 
 export default function Feature({
@@ -28,11 +56,24 @@ export default function Feature({
   poster,
   config,
   lazy,
+  i,
 }: FeatureItem) {
+  const ref_feat = useRef(null)
+  const feat_in_viewport = useIsInViewport(ref_feat)
+
   return (
     <div
       id={title}
+      ref={ref_feat}
       className="ml-0 box-border w-full flex-[0_0_100%] px-4 py-0 md:max-w-[50%] lg:max-w-[33.3333%]"
+      style={{
+        visibility: feat_in_viewport ? "visible" : "hidden",
+        position: "relative",
+        animation: feat_in_viewport ? `slideup ${1 + i * 0.25}s` : "none",
+        animationDelay: `${i * 0.1}s`,
+        transitionProperty: "all",
+        transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+      }}
     >
       <div
         className={`group m-1 flex justify-center ${
