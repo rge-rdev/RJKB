@@ -9,6 +9,7 @@ import Link from "@docusaurus/Link"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import { IconArrowDownCircleBlackSVG } from "../../../static/img/svg"
 const HomeLogoSlider = React.lazy(() => import("./HomeLogoSlider"))
+const HomeScrollButton = React.lazy(() => import("./HomeScrollButton"))
 
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
@@ -108,23 +109,11 @@ export default function HomepageHeader() {
         >
           <HomeLogoSlider />
         </React.Suspense>
-        <p className="fixed animate-fade-in-out text-cyan-300 opacity-0 dark:text-cyan-500">
-          Explore the Best Fullstack Knowledgebase
-        </p>
-        <div>
-          <Link
-            // className="button button--secondary button--lg hover:shadow-2xl"
-            className="animate-fade-in animate-pulse-2x"
-            to="#explore"
-            aria-label="button to scroll down to see site features"
-          >
-            <IconArrowDownCircleBlackSVG
-              id="explore"
-              height="4em"
-              className="active:overflow-hidden"
-            />
-          </Link>
-        </div>
+        <React.Suspense
+          fallback={<div style={{ height: "60px", width: "60px" }}></div>}
+        >
+          <HomeScrollButton />
+        </React.Suspense>
       </div>
     </header>
   )
