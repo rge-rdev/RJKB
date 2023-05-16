@@ -735,10 +735,13 @@ export function obj_to_mdx(
         }
       }
       if (el["i"] === "q") {
-        if (!id) return ""
-        const leaf = isLeaf(id)
+        // if (!id) return "" //! BAD type guard
+        const leaf = id && isLeaf(id)
         const tag = leaf ? "span" : "Link"
+        const el_id = el["_id"] //? presumably stands for "element" ID? or maybe element link ID?
+
         if (el["aliasId"]) {
+          // if (!id) return ""
           //! Rename to alias_id && doc_id_ref_by_alias to avoid future confusion!
           const alias_id = el["aliasId"] // look up alternative key for aliasId
           //! aliasId doesn't seem to link to any docs - perhaps used as ref handle for some other purpose?
@@ -803,9 +806,23 @@ export function obj_to_mdx(
           // output_str += `__ALIAS=${aliasId} - __ALIASKEY=${aliasKey} typeof __typealiasKey=${typeof aliasKey}`
           //TODO: get key from aliasId
         }
-        const el_id = el["_id"] //? presumably stands for "element" ID? or maybe element link ID?
         if (el_id === "2n8Gw7PvXGPcFQm7i") output_str += "" // "__Aliases"
         // if (!el["textOfDeletedRem"]) {
+        if (
+          el_id &&
+          typeof el["content"] === "boolean" &&
+          typeof el["pin"] === "boolean" &&
+          el["content"] === false &&
+          el["pin"] === false
+        ) {
+          const k = id_to_mdx(el_id)
+          if (!k) return ""
+          const url_show = k.slice(0, 20)
+          // return `<a href=${url_link}>${url_show}</a>`
+          if (k.match(/^(https:\/\/|http:\/\/|www\.[a-zA-Z0-9]{1})/)?.length)
+            return `[${url_show}](${k})`
+          //!!🔥🔥🔥 ONLY allow properly prefixed URLs into the mdx links!
+        }
         if (el_id !== "2n8Gw7PvXGPcFQm7i") {
           const find_doc = map.get(el_id) // return doc obj for link
           const find_key = find_doc?.key!
@@ -830,7 +847,9 @@ export function obj_to_mdx(
                 )}</span></${tag}>`
               : `[<span data-tooltip-id="${id_tooltip}">${make_mdx(
                   find_key
-                )}</span>](${path})`
+                )}</span>](${path})${
+                  el["content"] ? ` (${id_to_mdx(el_id, "value")})` : ""
+                }`
             if (id) setLinkIDtoMap(id, el_id)
           }
           // output_str += `[[<a href="#${el_id}">${make_mdx(find_key)}</a>]]`
