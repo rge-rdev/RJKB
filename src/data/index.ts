@@ -257,7 +257,7 @@ export const map_id_to_src_mdx = new Map(
         .map((url_id) => {
           const doc = getDoc(url_id)
           if (!doc) return undefined
-          const url_frag = doc.key[0]
+          const url_frag = doc.key[0].replace(/>/g, "​>") //!SP🔥
           const url_href = doc.crt?.b?.u?.s
           if (!url_frag || !url_href) return undefined
           return `[${url_frag}](${url_href})`
@@ -270,9 +270,9 @@ export const map_id_to_src_mdx = new Map(
 
     return [
       doc._id,
-      `\n\nSource${source_urls.length > 1 ? "s" : ""}:\n${source_urls.join(
+      `\nSource${source_urls.length > 1 ? "s" : ""}: ${source_urls.join(
         "\n"
-      )}`,
+      )}\n`,
     ]
   })
 )
