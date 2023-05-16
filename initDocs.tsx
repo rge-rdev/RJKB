@@ -18,6 +18,7 @@ import {
   hasChildren,
   isLeaf,
   getNonOrphanTags,
+  id_to_source_mdx,
 } from "./src/data/"
 import { id_to_mdx, id_to_plaintext, LOG_CLI_PROGRESS } from "./src/utility"
 import escapeRegExp from "lodash/escapeRegExp"
@@ -169,6 +170,7 @@ function generate_mdx_page_from_id(
     preview: true,
     // jsx: true,
   })
+  let title_source_mdx = id_to_source_mdx(id)
   //? KEEP TITLE & VALUE as plaintext && MARKDOWN - to allow docusaurus to add to TOC - ANY JSX will break this
 
   const value_mdx_newLine = value_mdx?.match(/([\n])+/g)?.length
@@ -281,6 +283,7 @@ function generate_mdx_page_from_id(
       if (k) return `<h2>${k}<span></h2>`
       if (!k) return ""
     }
+    const child_source = id_to_source_mdx(child_id)
     let skip_k = k?.length === 0 || k?.match(/^contains:/)?.length
 
     const k_code = k?.match(/^(```)/gm)?.length
@@ -346,7 +349,7 @@ function generate_mdx_page_from_id(
         k_code || k_illegal || k_newLine || k_img ? "" : "## "
       }${k}\n\n${
         v_code || v_newLine ? "" : "" //skip ## headers for value content? keep the value code/newline check for future use
-      }${v}\n\n`
+      }${v}\n\n${child_source}`
     }
     const recheck_code = k?.match(/^(```)/gm)?.length
     //.replace(/(\*\*_)?)(?=.*(\3\2))/g, "$1`")
@@ -357,9 +360,9 @@ function generate_mdx_page_from_id(
         ? `[${!k_bold_markup ? "`" : ""}${k.replace(/`/g, "")}${
             !k_bold_markup ? "`" : ""
           }](${k_path})\n\n`
-        : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n`
+        : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n${child_source}`
     }
-    if (!k && v) return `\n\n${v}`
+    if (!k && v) return `\n\n${v}${child_source}`
     return ""
   })
 
@@ -505,7 +508,9 @@ ${
       }](./) ${
         value_mdx ? `${value_mdx_newLine ? "\n\n" : " ↔ "}${value_mdx}` : ""
       }`
-}${alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""}${
+}${title_source_mdx}${
+    alias_slugs.length ? `\n\n *aka* ${alias_slugs.join(", ")}` : ""
+  }${
     child_text_array ? "\n\n" + child_text_array.join("") : ""
   }\n\n## References\n\n${
     ref_jsx

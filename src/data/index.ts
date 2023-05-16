@@ -82,6 +82,16 @@ process.stdout.write(
 //! Execute only when close to publishing or exposing original JSON!
 // fs.writeJSON("./src/data/new.JSON", rem)
 
+let num_docs_not_found = 0
+export function getDoc(id: string) {
+  const doc = map.get(id)
+  if (!doc) {
+    num_docs_not_found += 1
+    return //console.log(`ID: ${id} could not be found! ${num_docs_not_found}`)
+  }
+  return doc
+}
+
 /**
  * map = ID hash to document JSON
  * root = root-level nodes (n=1)
@@ -215,6 +225,68 @@ export function getRefIDs(id: string) {
   return map_all_refs_ID_array.get(id)
 }
 
+const map_all_src_init_time = uptime()
+export const map_id_to_src_mdx = new Map(
+  rem.docs.map((doc, i) => {
+    LOG_CLI_PROGRESS(
+      i,
+      docs_length,
+      "src",
+      "Map ID to href",
+      "⏳ 🔎 ",
+      "✅ MAP",
+      map_all_src_init_time,
+      `${i + 1} refs mapped to Doc ID in ${(
+        uptime() - map_all_src_init_time
+      ).toFixed(2)}s`
+    )
+
+    // return [doc._id, doc ? doc?.crt?.os?.os?.s : undefined]
+
+    // const url_frag = doc?.crt?.os?.os.s
+    const url_ids = doc?.crt?.os?.os?.v?.map((link) => link._id)
+    // const url_href = url_id && getDoc(url_id)?.crt?.b?.u?.s
+    // const url_href =
+    //   url_ids && url_ids.map((url_id) => getDoc(url_id)?.crt?.b?.u?.s)
+    // const url_frag = url_ids && url_ids.map((url_id) => getDoc(url_id)?.key[0])
+
+    // if (url_frag) console.log(url_ids, `[${url_frag}](${url_href})`)
+    const source_urls =
+      url_ids &&
+      url_ids
+        .map((url_id) => {
+          const doc = getDoc(url_id)
+          if (!doc) return undefined
+          const url_frag = doc.key[0]
+          const url_href = doc.crt?.b?.u?.s
+          if (!url_frag || !url_href) return undefined
+          return `[${url_frag}](${url_href})`
+        })
+        .filter((url) => url !== undefined)
+    // if (source_urls) console.log(source_urls)
+    // if (i === 8000) process.exit()
+
+    if (!source_urls) return [doc._id, undefined]
+
+    return [
+      doc._id,
+      `\n\nSource${source_urls.length > 1 ? "s" : ""}:\n${source_urls.join(
+        "\n"
+      )}`,
+    ]
+  })
+)
+
+export function id_to_src_mdx(id: string) {
+  return map_id_to_src_mdx.get(id)
+}
+
+export function id_to_source_mdx(id: string) {
+  const source_mdx = id_to_src_mdx(id)
+  if (!source_mdx) return ""
+  return source_mdx
+}
+
 export function hasRefs(id: string) {
   return Boolean(map_all_refs_ID_array.get(id)?.length)
 }
@@ -267,15 +339,7 @@ export const root_main_topic_ids = root_main_topics.map((doc) => doc._id)
  * @param id UID for doc in JSON DB
  * @returns doc object
  */
-let num_docs_not_found = 0
-export function getDoc(id: string) {
-  const doc = map.get(id)
-  if (!doc) {
-    num_docs_not_found += 1
-    return //console.log(`ID: ${id} could not be found! ${num_docs_not_found}`)
-  }
-  return doc
-}
+
 // added overload to fix type error on return type not being possibly both string and string[] - which prevented string chaining methods
 export function get_doc_plaintext(
   id: string,
