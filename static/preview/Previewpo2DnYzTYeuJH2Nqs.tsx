@@ -16,7 +16,7 @@ export default function Previewpo2DnYzTYeuJH2Nqs(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Abstract&#x20;Method</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Slot/Method"><span>Method</span></Link><span>&#x20;only&#x20;declared&#x20;w/o&#x20;implementation</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="method"><span>Method</span></Link><span>&#x20;only&#x20;declared&#x20;w/o&#x20;implementation</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

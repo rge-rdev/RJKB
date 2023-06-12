@@ -16,7 +16,7 @@ export default function PreviewpsgaNefTk3AzLZrQy(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>First-Class&#x20;Functions</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>of&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;equiv&#x20;to&#x20;regular&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>s</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>of&#x20;</span><Link to="function"><span>function</span></Link><span>&#x20;equiv&#x20;to&#x20;regular&#x20;</span><Link to="variable"><span>Variable</span></Link><span>s</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

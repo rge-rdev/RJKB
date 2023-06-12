@@ -20,7 +20,7 @@ export default function PreviewWeWtQHtjG9EfeD4C8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>EventEmitter</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/class"><code>class</code></Link><span>&#x20;constructor&#x20;to&#x20;create&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/events/EventEmitter/emitter"><code>emitter</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Classical-OOP-Concepts/Class/Instantiation/Instance"><span>Instance</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>EventEmitter</code><span>&nbsp;↔&nbsp;</span><Link to="class"><code>class</code></Link><span>&#x20;constructor&#x20;to&#x20;create&#x20;</span><Link to="emitter"><code>emitter</code></Link><span>&#x20;</span><Link to="instance"><span>Instance</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

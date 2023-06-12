@@ -16,7 +16,7 @@ export default function Previewy7qZcyGyjq5w54Bnq(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Redux&#x20;Middleware</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Middleware"><span>Middleware</span></Link><span>&#x20;to&#x20;enhance/override&#x20;store&#x20;methods</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="middleware"><span>Middleware</span></Link><span>&#x20;to&#x20;enhance/override&#x20;store&#x20;methods</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

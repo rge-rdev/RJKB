@@ -16,7 +16,7 @@ export default function Previews4dv5sg3p9sxvco2f(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>.concat()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;return&#x20;new&#x20;merged&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Array/Array"><code>Array</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;return&#x20;new&#x20;merged&#x20;</span><Link to="array_array"><code>Array</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

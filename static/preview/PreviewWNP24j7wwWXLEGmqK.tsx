@@ -20,7 +20,7 @@ export default function PreviewWNP24j7wwWXLEGmqK(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>No-Code</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm"><span>Paradigm</span></Link><span>)&#x20;buzzword&#x20;trend&#x20;to&#x20;separate&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/App/Business-Logic"><span>Business&#x20;Logic</span></Link><span>&#x20;from&#x20;hand-coding&#x20;skill,&#x20;via&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/No-Code/WYSIWYG"><span>WYSIWYG</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>No-Code</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="paradigm"><span>Paradigm</span></Link><span>)&#x20;buzzword&#x20;trend&#x20;to&#x20;separate&#x20;</span><Link to="business-logic"><span>Business&#x20;Logic</span></Link><span>&#x20;from&#x20;hand-coding&#x20;skill,&#x20;via&#x20;</span><Link to="wysiwyg"><span>WYSIWYG</span></Link><span>&#x20;</span><Link to="dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

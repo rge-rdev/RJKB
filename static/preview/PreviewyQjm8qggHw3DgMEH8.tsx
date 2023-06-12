@@ -16,7 +16,7 @@ export default function PreviewyQjm8qggHw3DgMEH8(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>.gitignore</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/git"><span>git</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/dotconfig"><code>dotconfig</code></Link><span>&#x20;to&#x20;list&#x20;file/dir&#x20;as&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Diff/Track/Untracked"><span>Untracked</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="git"><span>git</span></Link><span>&#x20;</span><Link to="dotconfig"><code>dotconfig</code></Link><span>&#x20;to&#x20;list&#x20;file/dir&#x20;as&#x20;</span><Link to="untracked"><span>Untracked</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

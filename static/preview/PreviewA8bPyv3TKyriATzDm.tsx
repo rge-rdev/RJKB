@@ -16,11 +16,11 @@ export default function PreviewA8bPyv3TKyriATzDm(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Communication&#x20;Endpoint</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/API/Interface"><span>Interface</span></Link><span>&#x20;exposed&#x20;communication&#x20;network</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="interface"><span>Interface</span></Link><span>&#x20;exposed&#x20;communication&#x20;network</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Supernode</span><span>&nbsp;↔&nbsp;</span><span>public&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node"><span>Network&#x20;Node</span></Link><span>&#x20;to&#x20;provide/communicate&#x20;info&#x20;to&#x20;other&#x20;nodes&#x20;-&#x20;to&#x20;act&#x20;as&#x20;both&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Redistribution-Point"><span>Redistribution&#x20;Point</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Database/Computer-Cluster/Network-Node/Communication-Endpoint"><span>Communication&#x20;Endpoint</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Supernode</span><span>&nbsp;↔&nbsp;</span><span>public&#x20;</span><Link to="network-node"><span>Network&#x20;Node</span></Link><span>&#x20;to&#x20;provide/communicate&#x20;info&#x20;to&#x20;other&#x20;nodes&#x20;-&#x20;to&#x20;act&#x20;as&#x20;both&#x20;</span><Link to="redistribution-point"><span>Redistribution&#x20;Point</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="communication-endpoint"><span>Communication&#x20;Endpoint</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

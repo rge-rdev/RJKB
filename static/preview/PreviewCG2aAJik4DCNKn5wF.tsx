@@ -16,7 +16,7 @@ export default function PreviewCG2aAJik4DCNKn5wF(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Memory&#x20;Leak</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>old&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>s&#x20;clogging&#x20;up&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap"><span>Heap</span></Link><span>;&#x20;left&#x20;behind,&#x20;not&#x20;removed&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>old&#x20;</span><Link to="value"><span>Value</span></Link><span>s&#x20;clogging&#x20;up&#x20;</span><Link to="heap"><span>Heap</span></Link><span>;&#x20;left&#x20;behind,&#x20;not&#x20;removed&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

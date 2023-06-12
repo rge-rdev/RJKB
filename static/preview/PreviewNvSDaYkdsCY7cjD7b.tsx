@@ -16,7 +16,7 @@ export default function PreviewNvSDaYkdsCY7cjD7b(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>:active</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/CSS/CSS-Syntax/Selector/Pseudo-Class"><span>Pseudo-Class</span></Link><span>&#x20;to&#x20;match&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;activate&#x20;by&#x20;user</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="pseudo-class"><span>Pseudo-Class</span></Link><span>&#x20;to&#x20;match&#x20;</span><Link to="htmlelement"><code>Element</code></Link><span>&#x20;activate&#x20;by&#x20;user</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewZnEyquqC6aMnNfMGf(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Banner</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;to&#x20;</span><b>promo</b><span>&#x20;content&#x20;to&#x20;inform/annoy&#x20;user&#x20;about&#x20;news/change/donations/ads</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="ui"><span>UI</span></Link><span>&#x20;to&#x20;</span><b>promo</b><span>&#x20;content&#x20;to&#x20;inform/annoy&#x20;user&#x20;about&#x20;news/change/donations/ads</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

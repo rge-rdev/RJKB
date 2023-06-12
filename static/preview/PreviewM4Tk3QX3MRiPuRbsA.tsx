@@ -16,7 +16,7 @@ export default function PreviewM4Tk3QX3MRiPuRbsA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Separation&#x20;of&#x20;Concerns</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Separation&#x20;of&#x20;Concern</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;</span><span>&#x20;(</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software"><span>Software</span></Link><span>)&#x20;into&#x20;dintinct&#x20;modular&#x20;sections&#x20;vs&#x20;purpose</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><Link to="paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;</span><Link to="encapsulation"><code>Encapsulate</code></Link><span>&#x20;(</span><Link to="software"><span>Software</span></Link><span>)&#x20;into&#x20;dintinct&#x20;modular&#x20;sections&#x20;vs&#x20;purpose/logic</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

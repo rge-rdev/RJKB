@@ -16,7 +16,7 @@ export default function PreviewCDBYM756G9DJCwk2Q(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>JWT</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>JWT</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>JSON&#x20;Web&#x20;Token</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><b><em>proposed&#x20;</em></b><em>standard</em><span>)&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/JSON"><span>JSON</span></Link><span>&#x20;as&#x20;passport&#x20;ID&#x20;to&#x20;securely&#x20;transfer&#x20;user&#x20;data&#x20;(</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Auth/JWT/HPS"><span>HPS</span></Link><span>)&#x20;over&#x20;web&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><b><em>proposed&#x20;</em></b><em>standard</em><span>)&#x20;</span><Link to="json"><span>JSON</span></Link><span>&#x20;as&#x20;passport&#x20;ID&#x20;to&#x20;securely&#x20;transfer&#x20;user&#x20;data&#x20;(</span><Link to="hps"><span>HPS</span></Link><span>)&#x20;over&#x20;web&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

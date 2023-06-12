@@ -16,7 +16,7 @@ export default function PreviewDomjc4eiwErEwMZx8(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>TypeError</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;when&#x20;can&#x20;not&#x20;perform&#x20;operation&#x20;due&#x20;to&#x20;unexpected&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="exception"><span>Exception</span></Link><span>&#x20;when&#x20;can&#x20;not&#x20;perform&#x20;operation&#x20;due&#x20;to&#x20;unexpected&#x20;</span><Link to="type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewCRu8s9H6Fw6zB5f9s(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Private&#x20;Tracker</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>invite-only&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent"><code>Torrent</code></Link><span>&#x20;to&#x20;enforce&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Share-Ratio"><span>Share&#x20;Ratio</span></Link><span>&#x20;&#x26;&#x20;strict&#x20;rules&#x20;(to&#x20;disallow&#x20;discovery&#x20;mechanisms)&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>invite-only&#x20;</span><Link to="bittorrent"><code>Torrent</code></Link><span>&#x20;to&#x20;enforce&#x20;</span><Link to="share-ratio"><span>Share&#x20;Ratio</span></Link><span>&#x20;&#x26;&#x20;strict&#x20;rules&#x20;(to&#x20;disallow&#x20;discovery&#x20;mechanisms)&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

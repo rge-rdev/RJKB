@@ -16,7 +16,7 @@ export default function PreviewZKwzqgz9Gt4MGNrPa(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>COPY</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;copy&#x20;new&#x20;files/dir&#x20;from&#x20;&#x3C;src&#x3E;&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Container"><code>Container</code></Link><span>&#x20;fs&#x20;&#x3C;dest&#x3E;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;copy&#x20;new&#x20;files/dir&#x20;from&#x20;&#x3C;src&#x3E;&#x20;to&#x20;</span><Link to="docker-container"><code>Container</code></Link><span>&#x20;fs&#x20;&#x3C;dest&#x3E;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

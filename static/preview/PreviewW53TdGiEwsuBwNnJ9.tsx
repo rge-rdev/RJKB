@@ -16,7 +16,7 @@ export default function PreviewW53TdGiEwsuBwNnJ9(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>JPEG&#x20;XL</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>proposed&#x20;next-gen&#x20;lossless&#x20;still&#x20;image&#x20;format&#x20;extends&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/JPEG"><span>JPEG</span></Link><span>&#x20;backwards&#x20;compat&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>proposed&#x20;next-gen&#x20;lossless&#x20;still&#x20;image&#x20;format&#x20;extends&#x20;</span><Link to="jpeg"><span>JPEG</span></Link><span>&#x20;backwards&#x20;compat&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

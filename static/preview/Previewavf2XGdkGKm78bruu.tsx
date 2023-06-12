@@ -16,7 +16,7 @@ export default function Previewavf2XGdkGKm78bruu(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>AMD&#x20;Module</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Async"><span>Async</span></Link><span>&#x20;</span><Link to="/wiki/JS/Library/Module"><span>Module</span></Link><span>&#x20;Definition&#x20;format&#x20;used&#x20;in&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="async"><span>Async</span></Link><span>&#x20;</span><Link to="module"><span>Module</span></Link><span>&#x20;Definition&#x20;format&#x20;used&#x20;in&#x20;</span><Link to="browser"><span>Browser</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

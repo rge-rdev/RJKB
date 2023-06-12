@@ -16,7 +16,7 @@ export default function PreviewqKLiKPYiNKQZYxdaA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>--hard</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>flag&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/reset"><code>reset</code></Link><span>&#x20;to&#x20;discard&#x20;all&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Diff"><span>Diff</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>flag&#x20;to&#x20;</span><Link to="reset"><code>reset</code></Link><span>&#x20;to&#x20;discard&#x20;all&#x20;</span><Link to="diff"><span>Diff</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

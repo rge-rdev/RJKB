@@ -16,7 +16,7 @@ export default function PreviewrW2jxkuh8sDGswTup(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Root&#x20;Layout</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>top-level&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/layouttsx"><code>layout.tsx</code></Link><span>&#x20;to&#x20;share&#x20;across&#x20;all&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><code>Pages</code></Link><span>&#x20;in&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/App"><span>App</span></Link><span>,&#x20;to&#x20;define&#x20;</span><Link to="/wiki/HTML/Metadata-Content/html"><code>&#x3C;html&#x3E;</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/HTML/Flow-Content/Sectioning-Content/Sectioning-Root/body"><code>&#x3C;body&#x3E;</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>top-level&#x20;</span><Link to="layout-tsx"><code>layout.tsx</code></Link><span>&#x20;to&#x20;share&#x20;across&#x20;all&#x20;</span><Link to="page"><code>Pages</code></Link><span>&#x20;in&#x20;</span><Link to="app"><span>App</span></Link><span>,&#x20;to&#x20;define&#x20;</span><Link to="html_metadata"><code>&#x3C;html&#x3E;</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="body"><code>&#x3C;body&#x3E;</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

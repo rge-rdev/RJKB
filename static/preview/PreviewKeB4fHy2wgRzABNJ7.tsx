@@ -16,7 +16,7 @@ export default function PreviewKeB4fHy2wgRzABNJ7(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Portal</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Portals</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-API/ReactDOM-API"><code>ReactDOM&#x20;API</code></Link><span>&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/Escape-Hatch"><span>Escape&#x20;Hatch</span></Link><span>&#x20;to&#x20;render&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/props/children"><code>children</code></Link><span>&#x20;outside&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Component-Hierarchy"><span>Component&#x20;Hierarchy</span></Link><span>&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Component-Hierarchy/Component-Relationship/Parent-Component"><span>Parent&#x20;Component</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="reactdom-api"><code>ReactDOM&#x20;API</code></Link><span>&#x20;</span><Link to="escape-hatch"><span>Escape&#x20;Hatch</span></Link><span>&#x20;to&#x20;render&#x20;</span><Link to="children"><code>children</code></Link><span>&#x20;outside&#x20;</span><Link to="component-hierarchy"><span>Component&#x20;Hierarchy</span></Link><span>&#x20;of&#x20;</span><Link to="parent-component"><span>Parent&#x20;Component</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

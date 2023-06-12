@@ -16,7 +16,7 @@ export default function PreviewyYQKdFfr5Rt7Z4thu(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;pre&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;to&#x20;display&#x20;</span><b>preformatted</b><span>&#x20;text&#x20;(as&#x20;literally&#x20;written&#x20;in&#x20;</span><Link to="/wiki/HTML"><span>HTML</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="htmlelement"><code>Element</code></Link><span>&#x20;to&#x20;display&#x20;</span><b>preformatted</b><span>&#x20;text&#x20;(as&#x20;literally&#x20;written&#x20;in&#x20;</span><Link to="html"><span>HTML</span></Link><span>&#x20;</span><Link to="source-code"><span>Source&#x20;Code</span></Link><span>)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

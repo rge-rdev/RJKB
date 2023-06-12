@@ -16,7 +16,7 @@ export default function PreviewjDtnTgaw99Y7FY79k(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Reference&#x20;Value</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>anything&#x20;!primitive&#x20;where&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;is&#x20;</span><b><em>passed&#x20;by&#x20;reference</em></b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>anything&#x20;!primitive&#x20;where&#x20;</span><Link to="value"><span>Value</span></Link><span>&#x20;is&#x20;</span><b><em>pass&#x20;by&#x20;reference</em></b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewSLcgPxbGexvv7Dvkh(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>1:Many</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>of&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/Data-Modelling/Data-Relationship"><span>Data&#x20;Relationship</span></Link><span>&#x20;where&#x20;one&#x20;field&#x20;can&#x20;match&#x20;many&#x20;values</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>one&#x20;field</b><span>&#x20;map&#x20;to&#x20;</span><b>many&#x20;values</b><span>&#x20;</span><Link to="data-relationship"><span>Data&#x20;Relationship</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

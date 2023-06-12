@@ -16,7 +16,7 @@ export default function Preview4LoZp7NGehfLhiLgb(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Move&#x20;Data&#x20;Fetch&#x20;to&#x20;Server-Side</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/Aliases/Next-13"><span>(&#x20;</span><em>Next&#x20;13</em><span>&#x20;)</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/Colocation"><code>Collocate</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch"><span>Data&#x20;Fetch</span></Link><span>&#x20;ops&#x20;in&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/Server-Component"><span>Server&#x20;Component</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><span>Sync</span></Link><span>&#x20;perf&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="next-13_aliases"><span>(&#x20;</span><em>Next&#x20;13</em><span>&#x20;)</span></Link><span>&#x20;to&#x20;</span><Link to="colocation"><code>Collocate</code></Link><span>&#x20;</span><Link to="data-fetch"><span>Data&#x20;Fetch</span></Link><span>&#x20;ops&#x20;in&#x20;</span><Link to="server-component"><span>Server&#x20;Component</span></Link><span>&#x20;for&#x20;</span><Link to="sync"><span>Sync</span></Link><span>&#x20;perf&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

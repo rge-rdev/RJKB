@@ -16,7 +16,7 @@ export default function Previewuiu6P7EQEnZRPp5nn(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Low-Level&#x20;API</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;with&#x20;more&#x20;granular&#x20;control&#x20;over&#x20;software&#x20;</span><Link to="/wiki/JS/Library/Module"><span>Module</span></Link><span>&#x20;or&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Hardware"><span>Hardware</span></Link><span>,&#x20;with&#x20;fewer&#x20;</span><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="api"><span>API</span></Link><span>&#x20;with&#x20;more&#x20;granular&#x20;control&#x20;over&#x20;software&#x20;</span><Link to="module"><span>Module</span></Link><span>&#x20;or&#x20;</span><Link to="hardware"><span>Hardware</span></Link><span>,&#x20;with&#x20;fewer&#x20;</span><Link to="abstraction"><span>Abstraction</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

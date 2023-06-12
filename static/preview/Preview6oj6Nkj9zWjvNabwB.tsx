@@ -16,7 +16,7 @@ export default function Preview6oj6Nkj9zWjvNabwB(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>JSON.parse()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/JSON/JSON-API-Static-Method"><Link to="/wiki/JS/JS-Language/Object/JSON"><code>JSON</code></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;</span></Link><span>&#x20;to&#x20;parse&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string"><code>string</code></Link>&#x20;into&#x20;JS&#x20;value<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="json-api-static-method"><Link to="json_object"><code>JSON</code></Link><span>&#x20;</span><Link to="api"><span>API</span></Link><span>&#x20;</span><Link to="static-method"><span>Static&#x20;Method</span></Link><span>&#x20;</span></Link><span>&#x20;to&#x20;parse&#x20;</span><Link to="string"><code>string</code></Link>&#x20;into&#x20;JS&#x20;value<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

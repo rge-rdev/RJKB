@@ -20,7 +20,7 @@ export default function Previewft5RZmTEBfXHfu9Rq(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Client&#x20;State</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;store&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Client"><span>Client</span></Link><span>&#x20;(</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>),&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/Client-State/TSC"><span>TSC</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Client&#x20;State</span><span>&nbsp;↔&nbsp;</span><Link to="state"><span>state</span></Link><span>&#x20;store&#x20;by&#x20;</span><Link to="client"><span>Client</span></Link><span>&#x20;(</span><Link to="browser"><span>Browser</span></Link><span>),&#x20;</span><Link to="tsc"><span>TSC</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

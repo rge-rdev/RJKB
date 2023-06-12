@@ -16,7 +16,7 @@ export default function PreviewCMnGrkphPHshZzzkK(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>this.state</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;initialize&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;in&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/CC"><span>CC</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;initialize&#x20;</span><Link to="state"><span>state</span></Link><span>&#x20;in&#x20;</span><Link to="cc"><span>CC</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

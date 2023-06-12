@@ -16,7 +16,7 @@ export default function PreviewuLGngyKpHdtteiwGQ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>export</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;export&#x20;</span><Link to="/wiki/JS/Library/Module"><span>Module</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;export&#x20;</span><Link to="module"><span>Module</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

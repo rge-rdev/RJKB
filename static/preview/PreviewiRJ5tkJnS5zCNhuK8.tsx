@@ -16,7 +16,7 @@ export default function PreviewiRJ5tkJnS5zCNhuK8(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>jQuery</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Library"><span>Library</span></Link><span>&#x20;to&#x20;simplify&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;manipulation&#x20;via&#x20;</span><b><code>$</code></b><span>&#x20;wrapper&#x20;around&#x20;</span><Link to="/wiki/HTML"><span>HTML</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="lib"><span>Lib</span></Link><span>&#x20;to&#x20;simplify&#x20;</span><Link to="dom-api"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;manipulation&#x20;via&#x20;</span><b><code>$</code></b><span>&#x20;wrapper&#x20;around&#x20;</span><Link to="html"><span>HTML</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

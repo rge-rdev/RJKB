@@ -16,7 +16,7 @@ export default function PreviewQfBCQMRyfP9L9SDXJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Client&#x20;State</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;store&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Client"><span>Client</span></Link><span>&#x20;(</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>),&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/Client-State/TSC"><span>TSC</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="state"><span>state</span></Link><span>&#x20;store&#x20;by&#x20;</span><Link to="client"><span>Client</span></Link><span>&#x20;(</span><Link to="browser"><span>Browser</span></Link><span>),&#x20;</span><Link to="tsc"><span>TSC</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

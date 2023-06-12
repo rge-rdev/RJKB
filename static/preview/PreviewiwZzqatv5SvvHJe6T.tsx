@@ -16,7 +16,7 @@ export default function PreviewiwZzqatv5SvvHJe6T(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Story&#x20;Parameter</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>static&#x20;named&#x20;metadata&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Story"><span>Story</span></Link><span>&#x20;to&#x20;control&#x20;beavior&#x20;of&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Storybook-Addon"><code>Storybook Addons</code></Link><span>/core&#x20;features&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>static&#x20;named&#x20;metadata&#x20;for&#x20;</span><Link to="story"><span>Story</span></Link><span>&#x20;to&#x20;control&#x20;beavior&#x20;of&#x20;</span><Link to="storybook-addon"><code>Storybook Addons</code></Link><span>/core&#x20;features&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

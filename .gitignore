@@ -22,6 +22,9 @@ docs/JS/TS/*
 !docs/React
 docs/React/*
 !docs/React/React.mdx
+!docs/4
+docs/4/*
+!docs/4/4.mdx
 
 # testing
 src/data/rem.json

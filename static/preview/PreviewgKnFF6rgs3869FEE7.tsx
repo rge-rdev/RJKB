@@ -16,7 +16,7 @@ export default function PreviewgKnFF6rgs3869FEE7(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Weighted&#x20;Edge</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Weighted&#x20;Edges</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Data-Structure/Graph/Edge"><span>Edge</span></Link><span>&#x20;with&#x20;extra&#x20;(numeric)&#x20;data&#x20;about&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Graph/Node"><span>Node</span></Link><span>&#x20;connection</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="edge_graph"><span>Edge</span></Link><span>&#x20;with&#x20;extra&#x20;(numeric)&#x20;data&#x20;about&#x20;</span><Link to="node_graph"><span>Node</span></Link><span>&#x20;connection</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

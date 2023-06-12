@@ -20,7 +20,7 @@ export default function Previewgcw7KtKgXAKrcP3b7(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Swarm</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Data-Structure/Database/Computer-Cluster"><code>Cluster </code></Link><span>&#x20;of&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Desktop/Docker-Engine"><span>Docker&#x20;Engine</span></Link><span>&#x20;run&#x20;in&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Desktop/Docker-Engine/Swarm/Swarm-Mode"><span>Swarm&#x20;Mode</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Swarm</span><span>&nbsp;↔&nbsp;</span><Link to="computer-cluster"><code>Cluster </code></Link><span>&#x20;of&#x20;</span><Link to="docker-engine"><span>Docker&#x20;Engine</span></Link><span>&#x20;run&#x20;in&#x20;</span><Link to="swarm-mode"><span>Swarm&#x20;Mode</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

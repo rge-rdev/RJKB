@@ -16,7 +16,7 @@ export default function PreviewMLSY4ZboDm3hFaY4R(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;main&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><span>Semantic</span></Link><span>&#x20;</span><b>Main&#x20;Content</b><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element/div"><code>&#x3C;div&#x3E;</code></Link><span>to&#x20;group&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element/div/article"><code>&#x3C;article&#x3E;</code></Link><span>&#x20;&#x26;&#x20;sub-content&#x20;elements</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="semantic"><span>Semantic</span></Link><span>&#x20;</span><b>Main&#x20;Content</b><span>&#x20;</span><Link to="div"><code>&#x3C;div&#x3E;</code></Link><span>to&#x20;group&#x20;</span><Link to="article"><code>&#x3C;article&#x3E;</code></Link><span>&#x20;&#x26;&#x20;sub-content&#x20;elements</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

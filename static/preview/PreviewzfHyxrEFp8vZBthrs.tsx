@@ -16,7 +16,7 @@ export default function PreviewzfHyxrEFp8vZBthrs(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Linked&#x20;List</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;keep&#x20;track&#x20;of&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Hook/Calling-Order"><span>Calling&#x20;Order</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;keep&#x20;track&#x20;of&#x20;</span><Link to="calling-order"><span>Calling&#x20;Order</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

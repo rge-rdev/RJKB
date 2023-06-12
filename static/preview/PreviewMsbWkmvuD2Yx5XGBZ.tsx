@@ -16,7 +16,7 @@ export default function PreviewMsbWkmvuD2Yx5XGBZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>events</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API"><span>Node&#x20;API</span></Link><span>&#x20;for&#x20;event&#x20;</span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="node-api"><span>Node&#x20;API</span></Link><span>&#x20;for&#x20;event&#x20;</span><Link to="api"><span>API</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

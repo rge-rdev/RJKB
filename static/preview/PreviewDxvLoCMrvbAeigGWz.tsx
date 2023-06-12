@@ -16,7 +16,7 @@ export default function PreviewDxvLoCMrvbAeigGWz(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>degit</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;clone&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Git-Repo"><span>Git&#x20;Repo</span></Link><span>,&#x20;auto&#x20;find&#x20;latest&#x20;commit,&#x20;download&#x20;ass&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/Archive/tar"><code>.tar</code></Link><span>&#x20;-&#x20;essentially&#x20;alias&#x20;for&#x20;</span><code>git&#x20;clone&#x20;--depth&#x20;1&#x20;_SOMEGITREPOURL</code><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;clone&#x20;</span><Link to="git-repo"><span>Git&#x20;Repo</span></Link><span>,&#x20;auto&#x20;find&#x20;latest&#x20;commit,&#x20;download&#x20;ass&#x20;</span><Link to="tar"><code>.tar</code></Link><span>&#x20;-&#x20;essentially&#x20;alias&#x20;for&#x20;</span><code>git&#x20;clone&#x20;--depth&#x20;1&#x20;_SOMEGITREPOURL</code><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

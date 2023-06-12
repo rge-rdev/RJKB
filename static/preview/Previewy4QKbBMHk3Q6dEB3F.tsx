@@ -16,7 +16,7 @@ export default function Previewy4QKbBMHk3Q6dEB3F(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Bridge&#x20;Authority</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Firefox/Tor-Browser/Tor-Circuit/Tor-Relay"><span>Tor&#x20;Relay</span></Link><span>&#x20;to&#x20;track&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Firefox/Tor-Browser/Bridge"><span>Bridge</span></Link><span>&#x20;list</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="tor-relay"><span>Tor&#x20;Relay</span></Link><span>&#x20;to&#x20;track&#x20;</span><Link to="bridge"><span>Bridge</span></Link><span>&#x20;list</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

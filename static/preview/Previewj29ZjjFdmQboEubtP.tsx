@@ -20,7 +20,7 @@ export default function Previewj29ZjjFdmQboEubtP(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Unix</span><span>&nbsp;↔&nbsp;</span><span>Bell&#x20;Labs&#x20;Dinosaur&#x20;inspire&#x20;OS&#x20;variants&#x20;ie&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Unix/GNU"><span>GNU</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Unix</span><span>&nbsp;↔&nbsp;</span><span>Bell&#x20;Labs&#x20;Dinosaur&#x20;inspire&#x20;OS&#x20;variants&#x20;ie&#x20;</span><Link to="gnu"><span>GNU</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewF4eRZpMHzHwcNedZp(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>.</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-atom/Metacharacter"><span>Metacharacter</span></Link><span>&#x20;to&#x20;match&#x20;any&#x20;character&#x20;(excl&#x20;</span>line&#x20;terminators<span>)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="metacharacter"><span>Metacharacter</span></Link><span>&#x20;to&#x20;match&#x20;any&#x20;character&#x20;(excl&#x20;</span>line&#x20;terminators<span>)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

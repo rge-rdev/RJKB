@@ -20,7 +20,7 @@ export default function PreviewKsN6FzgxYnpeE99NF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Fuzzy&#x20;Search</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Typo-Tolerance"><span>Typo&#x20;Tolerance</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine"><code>Search</code></Link><span>&#x20;to&#x20;allow&#x20;</span><b><em>approx</em></b><span>&#x20;match&#x20;to&#x20;string&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Fuzzy-Search/Edit-Distance"><span>Edit&#x20;Distance</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><code>Algo</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Fuzzy&#x20;Search</span><span>&nbsp;↔&nbsp;</span><Link to="typo-tolerance"><span>Typo&#x20;Tolerance</span></Link><span>&#x20;for&#x20;</span><Link to="search-engine"><code>Search</code></Link><span>&#x20;to&#x20;allow&#x20;</span><b><em>approx</em></b><span>&#x20;match&#x20;to&#x20;string&#x20;via&#x20;</span><Link to="edit-distance"><span>Edit&#x20;Distance</span></Link><span>&#x20;</span><Link to="algorithm"><code>Algo</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

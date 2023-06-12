@@ -16,7 +16,7 @@ export default function Preview3qJbWwfocRMbgrtAs(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>configureStore()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit"><code>RTK API fn</code></Link><span>&#x20;to&#x20;replace&#x20;createStore&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="reduxjs-toolkit"><code>RTK API fn</code></Link><span>&#x20;to&#x20;replace&#x20;createStore&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

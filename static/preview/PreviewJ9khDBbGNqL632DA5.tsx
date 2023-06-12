@@ -16,7 +16,7 @@ export default function PreviewJ9khDBbGNqL632DA5(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Render&#x20;Props</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Providing&#x20;function&#x20;as&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/props"><code>props</code></Link><span>&#x20;to&#x20;render&#x20;JSX</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Providing&#x20;function&#x20;as&#x20;</span><Link to="props"><code>props</code></Link><span>&#x20;to&#x20;render&#x20;JSX</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

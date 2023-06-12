@@ -20,7 +20,7 @@ export default function PreviewWD8aYPtQCbfw4NqRv(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>app.use()</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;use&#x20;</span><Link to="/wiki/JS/Nodejs/Express/Express-middleware"><span>Express&#x20;middleware</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>app.use()</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;</span><b>use</b><span>&#x20;</span><Link to="express-middleware"><span>Express&#x20;middleware</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewbeRcLJ4La8ShFBG3W(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Svelte</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Library/JS-Framework"><span>JS&#x20;Framework</span></Link><span>&#x20;to&#x20;serve&#x20;compile-time&#x20;UI&#x20;with&#x20;minimal&#x20;&#x22;surgical&#x22;&#x20;DOM&#x20;update&#x20;for&#x20;faster&#x20;runtime</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-framework"><span>JS&#x20;Framework</span></Link><span>&#x20;to&#x20;serve&#x20;compile-time&#x20;UI&#x20;with&#x20;minimal&#x20;&#x22;surgical&#x22;&#x20;DOM&#x20;update&#x20;for&#x20;faster&#x20;runtime</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,11 +16,11 @@ export default function Previewo9JfmSkWhLEXWTMpZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Copyleft</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License"><span>License</span></Link><span>&#x20;to&#x20;</span><b>allow&#x20;mod/redis</b><span>&#x20;AND&#x20;variants&#x20;must&#x20;</span><b>inherit</b><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License"><span>License</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="license"><span>License</span></Link><span>&#x20;to&#x20;</span><b>allow&#x20;mod/redis</b><span>&#x20;AND&#x20;variants&#x20;must&#x20;</span><b>inherit</b><span>&#x20;</span><Link to="license"><span>License</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>GPL2</span><span>&nbsp;↔&nbsp;</span><span>GNU&#x20;Public&#x20;License&#x20;ver&#x20;2&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/Copyleft"><span>Copyleft</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>GPL2</span><span>&nbsp;↔&nbsp;</span><span>GNU&#x20;Public&#x20;License&#x20;ver&#x20;2&#x20;</span><Link to="copyleft"><span>Copyleft</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

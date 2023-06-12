@@ -16,7 +16,7 @@ export default function PreviewPTEds7YnadyFc4WaF(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>title</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>name&#x20;of&#x20;component&#x20;to&#x20;display&#x20;in&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Storybook-features/Storybook-Concurrent-Explorer"><span>Storybook&#x20;Concurrent&#x20;Explorer</span></Link><span>&#x20;-&#x20;can&#x20;be&#x20;anything&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>name&#x20;of&#x20;component&#x20;to&#x20;display&#x20;in&#x20;</span><Link to="storybook-concurrent-explorer"><span>Storybook&#x20;Concurrent&#x20;Explorer</span></Link><span>&#x20;-&#x20;can&#x20;be&#x20;anything&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewmLMQp8TXprJp9J8fS(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>decorators</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;add&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><span>Wrapper</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Story"><code>Stories</code></Link><span>,&#x20;for&#x20;inline&#x20;CSS&#x20;||&#x20;</span><Link to="/wiki/React/React-API/Context-API/Context"><code>Context</code></Link><span>&#x20;</span><Link to="/wiki/React/React-API/Context-API/Provider"><code>Provider</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;add&#x20;</span><Link to="wrapper"><span>Wrapper</span></Link><span>&#x20;for&#x20;</span><Link to="story"><code>Stories</code></Link><span>,&#x20;for&#x20;inline&#x20;CSS&#x20;||&#x20;</span><Link to="context"><code>Context</code></Link><span>&#x20;</span><Link to="provider"><code>Provider</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

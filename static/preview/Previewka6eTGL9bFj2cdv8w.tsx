@@ -16,7 +16,7 @@ export default function Previewka6eTGL9bFj2cdv8w(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Map()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><code>Constructor</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Classical-OOP-Concepts/Class/Instantiation"><code>Instantiate</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/new"><code>new</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/map"><code>map</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="constructor-function"><code>Constructor</code></Link><span>&#x20;to&#x20;</span><Link to="instantiation"><code>Instantiate</code></Link><span>&#x20;</span><Link to="new"><code>new</code></Link><span>&#x20;</span><Link to="map"><code>map</code></Link><span>&#x20;</span><Link to="object"><span>Object</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

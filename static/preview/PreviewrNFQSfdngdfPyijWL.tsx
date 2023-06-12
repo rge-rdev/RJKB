@@ -16,7 +16,7 @@ export default function PreviewrNFQSfdngdfPyijWL(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Python</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/High-Level"><span>High-Level</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/General-Purpose"><span>General-Purpose</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Scripting-Language"><span>Scripting&#x20;Language</span></Link><span>&#x20;with&#x20;emphasis&#x20;on&#x20;code&#x20;readability&#x20;via&#x20;indentation</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="high-level"><span>High-Level</span></Link><span>&#x20;</span><Link to="general-purpose"><span>General-Purpose</span></Link><span>&#x20;</span><Link to="scripting-language"><span>Scripting&#x20;Language</span></Link><span>&#x20;with&#x20;emphasis&#x20;on&#x20;code&#x20;readability&#x20;via&#x20;indentation</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

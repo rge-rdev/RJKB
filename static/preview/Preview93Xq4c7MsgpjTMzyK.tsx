@@ -16,11 +16,11 @@ export default function Preview93Xq4c7MsgpjTMzyK(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>createSlice()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit"><code>RTK API fn</code></Link><span>&#x20;to&#x20;setup&#x20;slice&#x20;state&#x20;with&#x20;input&#x20;&#x7B;&#x20;</span><code>initialState</code><span>,&#x20;</span><code>reducers</code><span>&#x20;object,&#x20;</span><code>name</code><span>&#x7D;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="reduxjs-toolkit"><code>RTK API fn</code></Link><span>&#x20;to&#x20;setup&#x20;slice&#x20;state&#x20;with&#x20;input&#x20;&#x7B;&#x20;</span><code>initialState</code><span>,&#x20;</span><code>reducers</code><span>&#x20;object,&#x20;</span><code>name</code><span>&#x7D;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>extraReducers</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;allow&#x20;</span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit/createSlice"><code>createSlice()</code></Link><span>&#x20;to&#x20;respond&#x20;to&#x20;other&#x20;extenal&#x20;type&#x20;(action&#x20;type&#x20;not&#x20;generated&#x20;by&#x20;itself)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>extraReducers</code><span>&nbsp;↔&nbsp;</span><span>to&#x20;allow&#x20;</span><Link to="createslice"><code>createSlice()</code></Link><span>&#x20;to&#x20;respond&#x20;to&#x20;other&#x20;extenal&#x20;type&#x20;(action&#x20;type&#x20;not&#x20;generated&#x20;by&#x20;itself)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

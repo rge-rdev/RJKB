@@ -16,7 +16,7 @@ export default function PreviewastAkATkPmzHFuJT6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Tailwind&#x20;CSS&#x20;Intellisense</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>autocomplete,&#x20;hint&#x20;prompt,&#x20;error&#x20;highlight&#x20;for&#x20;</span><Link to="/wiki/CSS/CSS-Stack/CSS-Utility-Framework/Tailwind-CSS"><code>Tailwind</code></Link><span>&#x20;-&#x20;combine&#x20;with&#x20;extra&#x20;tailwind-prettier&#x20;plugin&#x20;to&#x20;auto&#x20;sort&#x20;class&#x20;names</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>autocomplete,&#x20;hint&#x20;prompt,&#x20;error&#x20;highlight&#x20;for&#x20;</span><Link to="tailwind-css"><code>Tailwind</code></Link><span>&#x20;-&#x20;combine&#x20;with&#x20;extra&#x20;tailwind-prettier&#x20;plugin&#x20;to&#x20;auto&#x20;sort&#x20;class&#x20;names</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -20,7 +20,7 @@ export default function PreviewPM3ZmsmZCN4Mc3378(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>fs</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API"><span>Node&#x20;API</span></Link><span>&#x20;to&#x20;interact&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS"><span>OS</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/File-System"><span>File&#x20;System</span></Link><span>&#x20;-&#x20;always&#x20;use&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/fs/fs-extra"><code>fs-extra</code></Link><span>&#x20;for&#x20;async&#x20;ops!</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>fs</code><span>&nbsp;↔&nbsp;</span><Link to="node-api"><span>Node&#x20;API</span></Link><span>&#x20;to&#x20;interact&#x20;with&#x20;</span><Link to="os"><span>OS</span></Link><span>&#x20;</span><Link to="file-system"><span>File&#x20;System</span></Link><span>&#x20;-&#x20;always&#x20;use&#x20;</span><Link to="fs-extra"><code>fs-extra</code></Link><span>&#x20;for&#x20;async&#x20;ops!</span></cite></li></ol>
     
     </small></Tooltip>)
 }

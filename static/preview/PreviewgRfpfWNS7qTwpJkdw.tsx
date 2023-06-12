@@ -16,7 +16,7 @@ export default function PreviewgRfpfWNS7qTwpJkdw(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Mutual&#x20;Recursion</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Design-Pattern"><span>Design&#x20;Pattern</span></Link><span>&#x20;for&#x20;two&#x20;functions&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow/Recursion"><code>Recusively</code></Link><span>&#x20;call&#x20;each&#x20;other</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="design-pattern"><span>Design&#x20;Pattern</span></Link><span>&#x20;for&#x20;two&#x20;functions&#x20;to&#x20;</span><Link to="recursion"><code>Recusively</code></Link><span>&#x20;call&#x20;each&#x20;other</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

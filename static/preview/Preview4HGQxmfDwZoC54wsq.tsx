@@ -16,7 +16,7 @@ export default function Preview4HGQxmfDwZoC54wsq(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>New-space</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Small&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap/Heap-Space"><span>Heap&#x20;Space</span></Link><span>&#x20;to&#x20;contain&#x20;most&#x20;objects,&#x20;independent&#x20;of&#x20;other&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap/Heap-Space"><code>Spaces</code></Link><span>,&#x20;for&#x20;fast&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/High-Level/Garbage-Collection"><span>Garbage-Collection</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Small&#x20;</span><Link to="heap-space"><span>Heap&#x20;Space</span></Link><span>&#x20;to&#x20;contain&#x20;most&#x20;objects,&#x20;independent&#x20;of&#x20;other&#x20;</span><Link to="heap-space"><code>Spaces</code></Link><span>,&#x20;for&#x20;fast&#x20;</span><Link to="garbage-collection"><span>Garbage-Collection</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

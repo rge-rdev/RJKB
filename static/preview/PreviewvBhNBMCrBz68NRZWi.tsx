@@ -16,7 +16,7 @@ export default function PreviewvBhNBMCrBz68NRZWi(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>prisma</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Data-Structure/Database/SQL/ORM"><span>ORM</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/Nodejs"><span>Node.js</span></Link><span>&#x20;+&#x20;</span><Link to="/wiki/JS/TS"><span>TS</span></Link><span>&#x20;to&#x20;data&#x20;model,&#x20;with&#x20;UI&#x20;to&#x20;view/mod&#x20;db</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="orm"><span>ORM</span></Link><span>&#x20;with&#x20;</span><Link to="node-js"><span>Node.js</span></Link><span>&#x20;+&#x20;</span><Link to="ts"><span>TS</span></Link><span>&#x20;to&#x20;data&#x20;model,&#x20;with&#x20;UI&#x20;to&#x20;view/mod&#x20;db</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

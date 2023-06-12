@@ -16,7 +16,7 @@ export default function PreviewgKSMxXyqsowSMdwXa(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>\n</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Back&#x20;Ref</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Back&#x20;Reference</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;back&#x20;ref&#x20;to&#x20;numbered&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Group/Capture-Group"><span>Capture&#x20;Group</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="regexp"><code>RegExp</code></Link><span>&#x20;back&#x20;ref&#x20;to&#x20;numbered&#x20;</span><Link to="capture-group"><span>Capture&#x20;Group</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function Preview4oWhygrjYYqehT2Th(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>PATCH</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/Request-Response-model/HTTP-Request"><code>Request</code></Link><span>&#x20;update&#x20;via&#x20;part&#x20;of&#x20;object&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/Request-Response-model/HTTP-Request"><code>Request</code></Link><span>&#x20;update&#x20;to&#x20;existing&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Page/Web-Resource"><code>Resource</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;</span><Link to="http-request"><code>Request</code></Link><span>&#x20;update&#x20;via&#x20;part&#x20;of&#x20;object&#x20;&#x26;&#x20;</span><Link to="http-request"><code>Request</code></Link><span>&#x20;update&#x20;to&#x20;existing&#x20;</span><Link to="web-resource"><code>Resource</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

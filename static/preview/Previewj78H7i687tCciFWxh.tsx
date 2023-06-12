@@ -16,7 +16,7 @@ export default function Previewj78H7i687tCciFWxh(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;s&#x3E;</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><code>&#x3C;strike&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Strikethrough</b><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;draw&#x20;line&#x20;through&#x20;text</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Strikethrough</b><span>&#x20;</span><Link to="inline-element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;draw&#x20;line&#x20;through&#x20;text</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

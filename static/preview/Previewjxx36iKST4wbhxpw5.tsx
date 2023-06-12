@@ -16,7 +16,7 @@ export default function Previewjxx36iKST4wbhxpw5(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>@apply</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;combine&#x20;(</span><Link to="/wiki/CSS/CSS-Stack/Sass/Sass-Language/Mixin"><span>Mixin</span></Link><span>)&#x20;multiple&#x20;utility&#x20;class&#x20;into&#x20;single&#x20;</span><Link to="/wiki/CSS/CSS-Stack/CSS-Utility-Framework/Semantic-CSS"><code>Semantic Class Name</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;combine&#x20;(</span><Link to="mixin_sass-language"><span>Mixin</span></Link><span>)&#x20;multiple&#x20;utility&#x20;class&#x20;into&#x20;single&#x20;</span><Link to="semantic-css"><code>Semantic Class Name</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function Preview9sE4fqodZRFobNBXA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>DNS&#x20;Propagation</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>time&#x20;to&#x20;spread&#x20;your&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/DNS"><span>DNS</span></Link><span>&#x20;settings&#x20;to&#x20;world-wide&#x20;server&#x20;network&#x20;cache</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>time&#x20;to&#x20;spread&#x20;your&#x20;</span><Link to="dns"><span>DNS</span></Link><span>&#x20;settings&#x20;to&#x20;world-wide&#x20;server&#x20;network&#x20;cache</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -20,7 +20,7 @@ export default function PreviewQhTqjKuEPTWJAxupZ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>export&#x20;default</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Library/Module/ES-Module/Named-Export"><span>Named&#x20;Export</span></Link><span>&#x20;with&#x20;default&#x20;name</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>export&#x20;default</code><span>&nbsp;↔&nbsp;</span><Link to="named-export"><span>Named&#x20;Export</span></Link><span>&#x20;with&#x20;default&#x20;name</span></cite></li></ol>
     
     </small></Tooltip>)
 }

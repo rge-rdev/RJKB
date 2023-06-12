@@ -20,7 +20,7 @@ export default function Preview49jnda5bKv2hwynKY(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Compression</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>process</em><span>)&#x20;to&#x20;reduce&#x20;file&#x20;size,&#x20;often&#x20;inside&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/Archive"><span>Archive</span></Link><span>&#x20;or&#x20;container</span></cite></li><li><cite className="react-tooltip__ref-list"><code>.tar</code><span>&nbsp;↔&nbsp;</span><span>(</span><em>format</em><span>)&#x20;tape&#x20;archive&#x20;tarball&#x20;file&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/Archive"><span>Archive</span></Link><span>&#x20;as&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression"><code>Uncompressed</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Compression</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>process</em><span>)&#x20;to&#x20;reduce&#x20;file&#x20;size,&#x20;often&#x20;inside&#x20;</span><Link to="archive"><span>Archive</span></Link><span>&#x20;or&#x20;container</span></cite></li><li><cite className="react-tooltip__ref-list"><code>.tar</code><span>&nbsp;↔&nbsp;</span><span>(</span><em>format</em><span>)&#x20;tape&#x20;archive&#x20;tarball&#x20;file&#x20;to&#x20;</span><Link to="archive"><span>Archive</span></Link><span>&#x20;as&#x20;</span><Link to="compression"><code>Uncompressed</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

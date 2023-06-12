@@ -16,7 +16,7 @@ export default function PreviewLTHp2hrorfhzT7xzM(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>/public/index.html</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>root&#x20;</span><Link to="/wiki/HTML"><span>HTML</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Page"><span>Web&#x20;Page</span></Link><span>&#x20;to&#x20;serve&#x20;App&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>,&#x20;</span><Link to="/wiki/JS/Nodejs/npm/packagejson/main/entry-point"><span>entry&#x20;point</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser"><span>Browser</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>root&#x20;</span><Link to="html"><span>HTML</span></Link><span>&#x20;</span><Link to="web-page"><span>Web&#x20;Page</span></Link><span>&#x20;to&#x20;serve&#x20;App&#x20;</span><Link to="component"><span>Component</span></Link><span>,&#x20;</span><Link to="entry-point"><span>entry&#x20;point</span></Link><span>&#x20;for&#x20;</span><Link to="browser"><span>Browser</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

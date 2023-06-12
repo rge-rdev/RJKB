@@ -16,7 +16,7 @@ export default function Preview8uh7anmAu7Lg7gPzt(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Alias</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Type&#x20;Alias</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>custom&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;to&#x20;</span><b>store&#x20;&#x26;&#x20;reuse</b><span>&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Type-Annotation"><span>Type&#x20;Annotation</span></Link><span>&#x20;&#x26;&#x20;improve&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code/Readability"><span>Readability</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>custom&#x20;</span><Link to="type"><span>Type</span></Link><span>&#x20;to&#x20;</span><b>store&#x20;&#x26;&#x20;reuse</b><span>&#x20;</span><Link to="type-annotation"><span>Type&#x20;Annotation</span></Link><span>&#x20;&#x26;&#x20;improve&#x20;</span><Link to="readability"><span>Readability</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

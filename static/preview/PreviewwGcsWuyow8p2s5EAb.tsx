@@ -16,7 +16,7 @@ export default function PreviewwGcsWuyow8p2s5EAb(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>recoil</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>react&#x20;state&#x20;management&#x20;lib&#x20;FB&#x20;experimental&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS"><span>FOSS</span></Link><span>&#x20;project&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>react&#x20;state&#x20;management&#x20;lib&#x20;FB&#x20;experimental&#x20;</span><Link to="foss"><span>FOSS</span></Link><span>&#x20;project&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewkLCbMcooKh4CQfYTv(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Stack&#x20;Reconciler</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>deprecated&#x20;</span><Link to="/wiki/React/React-Definition/VDOM/Diffing/VDOM-Diffing-Flow/Reconciliation-of-VDOM-vs-DOM-API/Reconciliation"><span>Reconciliation</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><span>Algorithm</span></Link><span>&#x20;used&#x20;for&#x20;</span><Link to="/wiki/React/React-Definition/VDOM"><span>VDOM</span></Link><span>&#x20;from&#x20;React&#x20;15.&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>deprecated&#x20;</span><Link to="reconciliation"><span>Reconciliation</span></Link><span>&#x20;</span><Link to="algorithm"><span>Algorithm</span></Link><span>&#x20;used&#x20;for&#x20;</span><Link to="vdom"><span>VDOM</span></Link><span>&#x20;from&#x20;React&#x20;15.&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

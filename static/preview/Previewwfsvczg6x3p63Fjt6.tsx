@@ -16,7 +16,7 @@ export default function Previewwfsvczg6x3p63Fjt6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Dedupe</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Deduplicate</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Deduping</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Deduplicating</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;prevent&#x20;duplicate&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request"><span>Network&#x20;Request</span></Link><span>,&#x20;avoid&#x20;fetch&#x20;same&#x20;data</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;prevent&#x20;duplicate&#x20;</span><Link to="http-request"><code>Reqs</code></Link><span>,&#x20;avoid&#x20;fetch&#x20;same&#x20;data</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

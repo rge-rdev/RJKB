@@ -16,7 +16,7 @@ export default function PreviewaforCR2EcZ5QBKfEC(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;progress&#x3E;&#x20;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Progress&#x20;Indicator</b><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;to&#x20;display&#x20;</span><b>loading&#x20;progress&#x20;bar</b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Progress&#x20;Indicator</b><span>&#x20;</span><Link to="htmlelement"><code>Element</code></Link><span>&#x20;to&#x20;display&#x20;</span><b>loading&#x20;progress&#x20;bar</b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

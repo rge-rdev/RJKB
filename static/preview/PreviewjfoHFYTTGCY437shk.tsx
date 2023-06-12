@@ -16,7 +16,7 @@ export default function PreviewjfoHFYTTGCY437shk(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>_.escape(string)</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>return&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string"><code>string</code></Link><span>&#x20;convert&#x20;into&#x20;</span><Link to="/wiki/HTML/HTML-Entity"><span>HTML&#x20;Entity</span></Link><span>&#x20;(</span><code>&#x26;</code><span>&#x20;</span><code>&#x3C;</code><span>&#x20;</span><code>&#x3E;</code><span>&#x20;</span><code>&#x22;</code><span>&#x20;</span><code>&#x27;</code><span>)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>return&#x20;</span><Link to="string"><code>string</code></Link><span>&#x20;convert&#x20;into&#x20;</span><Link to="html-entity"><span>HTML&#x20;Entity</span></Link><span>&#x20;(</span><code>&#x26;</code><span>&#x20;</span><code>&#x3C;</code><span>&#x20;</span><code>&#x3E;</code><span>&#x20;</span><code>&#x22;</code><span>&#x20;</span><code>&#x27;</code><span>)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

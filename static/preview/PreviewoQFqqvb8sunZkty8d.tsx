@@ -16,7 +16,7 @@ export default function PreviewoQFqqvb8sunZkty8d(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;Link&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/React-Router-FC"><span>React&#x20;Router&#x20;FC</span></Link><span>&#x20;to&#x20;provide&#x20;link&#x20;to&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/React-Router-FC/Routes/Route"><code>&#x3C;Route&#x3E;</code></Link><span>;&#x20;extends&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/a"><code>&#x3C;a&#x3E;</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="react-router-fc"><span>React&#x20;Router&#x20;FC</span></Link><span>&#x20;to&#x20;provide&#x20;link&#x20;to&#x20;</span><Link to="route_routes"><code>&#x3C;Route&#x3E;</code></Link><span>;&#x20;extends&#x20;</span><Link to="a"><code>&#x3C;a&#x3E;</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

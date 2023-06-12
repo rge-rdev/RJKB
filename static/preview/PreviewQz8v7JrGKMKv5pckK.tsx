@@ -16,7 +16,7 @@ export default function PreviewQz8v7JrGKMKv5pckK(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Callback&#x20;Hell</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Deep&#x20;nested&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/First-Class-Functions/Higher-Order-Function/Callback-Function"><code>Callback</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Spaghetti-Code"><code>🍜👨‍💻</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Deep&#x20;nested&#x20;</span><Link to="callback-function"><code>Callback</code></Link><span>&#x20;</span><Link to="spaghetti-code"><code>🍜👨‍💻</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewCEM5Ra7YDwkYiAMgg(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>component</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>name&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;import&#x20;name&#x20;-&#x20;must&#x20;matc&#x20;or&#x20;nothing&#x20;shows&#x20;in&#x20;</span><Link to="/wiki/React/React-Stack/storybook/Storybook-features/Storybook-Concurrent-Explorer"><span>Storybook&#x20;Concurrent&#x20;Explorer</span></Link><span>!&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>name&#x20;of&#x20;</span><Link to="fc"><span>FC</span></Link><span>&#x20;import&#x20;name&#x20;-&#x20;must&#x20;matc&#x20;or&#x20;nothing&#x20;shows&#x20;in&#x20;</span><Link to="storybook-concurrent-explorer"><span>Storybook&#x20;Concurrent&#x20;Explorer</span></Link><span>!&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

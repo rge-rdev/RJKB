@@ -16,7 +16,7 @@ export default function PreviewkkeAui7KhMfrZk9My(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Effect&#x20;Hook</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>typeof</em><span>)&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Hook"><span>Hook</span></Link><span>&#x20;to&#x20;run&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Effect-Hook/Effect"><span>Effect</span></Link><span>&#x20;inside&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;at&#x20;different&#x20;stages&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/Component-Lifecycle"><span>Component&#x20;Lifecycle</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>typeof</em><span>)&#x20;</span><Link to="hook"><span>Hook</span></Link><span>&#x20;to&#x20;run&#x20;</span><Link to="effect"><span>Effect</span></Link><span>&#x20;inside&#x20;</span><Link to="component"><span>Component</span></Link><span>&#x20;at&#x20;different&#x20;stages&#x20;of&#x20;</span><Link to="component-lifecycle"><span>Component&#x20;Lifecycle</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

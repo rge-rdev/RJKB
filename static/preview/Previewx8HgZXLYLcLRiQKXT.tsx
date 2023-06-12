@@ -16,7 +16,7 @@ export default function Previewx8HgZXLYLcLRiQKXT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>typeof</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator"><span>JS&#x20;Operator</span></Link><span>&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string"><code>string</code></Link><span>&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Operand"><span>Operand</span></Link><span>&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-operator"><span>JS&#x20;Operator</span></Link><span>&#x20;return&#x20;</span><Link to="string"><code>string</code></Link><span>&#x20;of&#x20;</span><Link to="operand"><span>Operand</span></Link><span>&#x20;</span><Link to="type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

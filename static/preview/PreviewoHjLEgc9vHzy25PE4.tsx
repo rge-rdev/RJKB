@@ -16,7 +16,7 @@ export default function PreviewoHjLEgc9vHzy25PE4(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Spidermonkey</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;to&#x20;power&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Firefox"><span>Firefox</span></Link><span>,&#x20;built&#x20;in&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/General-Purpose/C"><span>C++</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-engine"><span>JS&#x20;Engine</span></Link><span>&#x20;to&#x20;power&#x20;</span><Link to="firefox"><span>Firefox</span></Link><span>,&#x20;built&#x20;in&#x20;</span><Link to="c_gp"><span>C++</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

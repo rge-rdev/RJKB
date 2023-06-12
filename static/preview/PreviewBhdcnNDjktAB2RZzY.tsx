@@ -16,7 +16,7 @@ export default function PreviewBhdcnNDjktAB2RZzY(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>key</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/props"><code>`prop`</code></Link><span>&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string"><code>string</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/UID"><span>UID</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/React/React-Definition/VDOM"><span>VDOM</span></Link><span>&#x20;to&#x20;track/</span><Link to="/wiki/React/React-Definition/VDOM/Diffing"><code>Diff</code></Link><span>&#x20;list&#x20;elements</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="props"><code>`prop`</code></Link><span>&#x20;as&#x20;</span><Link to="string"><code>string</code></Link><span>&#x20;</span><Link to="uid"><span>UID</span></Link><span>&#x20;for&#x20;</span><Link to="vdom"><span>VDOM</span></Link><span>&#x20;to&#x20;track/</span><Link to="diffing"><code>Diff</code></Link><span>&#x20;list&#x20;elements</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

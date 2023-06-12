@@ -16,7 +16,7 @@ export default function PreviewrihMCxGG3NDPKH7Ey(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>View</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Design-Pattern/app-architecture-model/MVC"><span>MVC</span></Link><span>&#x20;component&#x20;to&#x20;visualize&#x20;data&#x20;(ie&#x20;input&#x20;forms&#x20;&#x26;&#x20;displayed&#x20;list)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="mvc"><span>MVC</span></Link><span>&#x20;component&#x20;to&#x20;visualize&#x20;data&#x20;(ie&#x20;input&#x20;forms&#x20;&#x26;&#x20;displayed&#x20;list)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

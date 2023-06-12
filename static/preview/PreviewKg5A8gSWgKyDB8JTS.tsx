@@ -16,7 +16,7 @@ export default function PreviewKg5A8gSWgKyDB8JTS(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>ElasticSearch</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>powerful&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine"><span>Search&#x20;Engine</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;notoriously&#x20;hard&#x20;to&#x20;set&#x20;up?!&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/General-Purpose"><code>GP</code></Link><span>&#x20;high&#x20;config&#x20;can&#x20;do&#x20;everything&#x20;but&#x20;complex</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>powerful&#x20;</span><Link to="search-engine"><span>Search&#x20;Engine</span></Link><span>&#x20;</span><Link to="api"><span>API</span></Link><span>&#x20;notoriously&#x20;hard&#x20;to&#x20;set&#x20;up?!&#x20;</span><Link to="general-purpose"><code>GP</code></Link><span>&#x20;high&#x20;config&#x20;can&#x20;do&#x20;everything&#x20;but&#x20;complex</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

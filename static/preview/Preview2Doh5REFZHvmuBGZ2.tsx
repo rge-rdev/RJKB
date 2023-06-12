@@ -16,7 +16,7 @@ export default function Preview2Doh5REFZHvmuBGZ2(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Time&#x20;Complexity</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm/Big-O-Notation/Order-Of-Complexity"><span>Order&#x20;Of&#x20;Complexity</span></Link><span>&#x20;inputs&#x20;scales&#x20;with&#x20;time&#x20;to&#x20;run&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><code>Algo</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="order-of-complexity"><span>Order&#x20;Of&#x20;Complexity</span></Link><span>&#x20;inputs&#x20;scales&#x20;with&#x20;time&#x20;to&#x20;run&#x20;</span><Link to="algorithm"><code>Algo</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

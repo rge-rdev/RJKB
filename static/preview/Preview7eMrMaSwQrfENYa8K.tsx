@@ -20,7 +20,7 @@ export default function Preview7eMrMaSwQrfENYa8K(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>JPEG&#x20;XL</span><span>&nbsp;↔&nbsp;</span><span>proposed&#x20;next-gen&#x20;lossless&#x20;still&#x20;image&#x20;format&#x20;extends&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/JPEG"><span>JPEG</span></Link><span>&#x20;backwards&#x20;compat&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>JPEG&#x20;XL</span><span>&nbsp;↔&nbsp;</span><span>proposed&#x20;next-gen&#x20;lossless&#x20;still&#x20;image&#x20;format&#x20;extends&#x20;</span><Link to="jpeg"><span>JPEG</span></Link><span>&#x20;backwards&#x20;compat&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

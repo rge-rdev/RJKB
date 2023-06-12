@@ -16,7 +16,7 @@ export default function Preview7yhJXN8jraXRe36Ga(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>History&#x20;Action</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL"><code>URL</code></Link><span>&#x20;change&#x20;to&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/RR-concepts/History-Locations/History-Stack"><span>History&#x20;Stack</span></Link><span>;&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/RR-concepts/History-Locations/History-Action/pop"><code>pop</code></Link><span>,&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/RR-concepts/History-Locations/History-Action/push"><code>push</code></Link><span>&#x20;or&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/react-router-v5/RR-concepts/History-Locations/History-Action/replace"><code>replace</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="url"><code>URL</code></Link><span>&#x20;change&#x20;to&#x20;</span><Link to="history-stack"><span>History&#x20;Stack</span></Link><span>;&#x20;</span><Link to="pop"><code>pop</code></Link><span>,&#x20;</span><Link to="push_history-action"><code>push</code></Link><span>&#x20;or&#x20;</span><Link to="replace"><code>replace</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

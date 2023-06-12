@@ -16,7 +16,7 @@ export default function Previewh5xe568rHLYDDMAFE(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Content&#x20;Repo</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Content&#x20;Repository</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Content&#x20;Store</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Data-Structure/Database"><code>DB </code></Link><span>&#x20;to&#x20;store/mod&#x20;digital&#x20;content,&#x20;for&#x20;search/serve,&#x20;</span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;to&#x20;link&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/CMS"><span>CMS</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="database"><code>DB </code></Link><span>&#x20;to&#x20;store/mod&#x20;digital&#x20;content,&#x20;for&#x20;search/serve,&#x20;</span><Link to="api"><span>API</span></Link><span>&#x20;to&#x20;link&#x20;</span><Link to="cms"><span>CMS</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

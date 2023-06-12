@@ -16,7 +16,7 @@ export default function PreviewnxCuKAXY3QJc9kfQ2(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>localForage</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Library"><span>Library</span></Link><span>&#x20;extends&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Web-Storage-API/localStorage"><code>localStorage</code></Link><span>&#x20;with&#x20;async&#x20;access&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="lib"><span>Lib</span></Link><span>&#x20;extends&#x20;</span><Link to="localstorage"><code>localStorage</code></Link><span>&#x20;with&#x20;async&#x20;access&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

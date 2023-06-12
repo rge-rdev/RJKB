@@ -16,7 +16,7 @@ export default function PreviewpPBFDRAurmD6Z8DHQ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Math.random()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Math/Math-Static-Method"><Link to="/wiki/JS/JS-Language/Object/Math"><code>Math</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/randomorg/Pseudorandom"><span>Pseudorandom</span></Link><span>&#x20;number&#x20;between&#x20;0&#x20;&#x26;&#x20;1</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="math-static-method"><Link to="math"><code>Math</code></Link><span>&#x20;</span><Link to="static-method"><span>Static&#x20;Method</span></Link></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="pseudorandom"><span>Pseudorandom</span></Link><span>&#x20;number&#x20;between&#x20;0&#x20;&#x26;&#x20;1</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

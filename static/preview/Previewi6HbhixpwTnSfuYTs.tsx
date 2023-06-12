@@ -16,7 +16,7 @@ export default function Previewi6HbhixpwTnSfuYTs(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Parameter&#x20;Default&#x20;Value</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;used&#x20;to&#x20;specify&#x20;default&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;for&#x20;a&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Function-Signature/Parameter"><span>Parameter</span></Link><span>&#x20;if&#x20;not&#x20;provided</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-syntax"><span>JS&#x20;Syntax</span></Link><span>&#x20;used&#x20;to&#x20;specify&#x20;default&#x20;</span><Link to="value"><span>Value</span></Link><span>&#x20;for&#x20;a&#x20;</span><Link to="parameter"><span>Parameter</span></Link><span>&#x20;if&#x20;not&#x20;provided</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

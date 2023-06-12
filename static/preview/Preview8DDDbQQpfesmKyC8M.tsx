@@ -16,7 +16,7 @@ export default function Preview8DDDbQQpfesmKyC8M(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>?</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Glob-Pattern"><code>Glob</code></Link><span>&#x20;to&#x20;match&#x20;single&#x20;char&#x20;only</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="glob-pattern"><code>Glob</code></Link><span>&#x20;to&#x20;match&#x20;single&#x20;char&#x20;only</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

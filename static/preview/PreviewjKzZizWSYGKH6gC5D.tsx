@@ -16,7 +16,7 @@ export default function PreviewjKzZizWSYGKH6gC5D(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;noscript&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>NoScript</b><span>&#x20;</span><Link to="/wiki/HTML/Metadata-Content"><span>Metadata&#x20;Content</span></Link><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;to&#x20;load&#x20;</span><b>fallback&#x20;content</b><span>&#x20;IF&#x20;script&#x20;disabled/fail&#x20;load</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>NoScript</b><span>&#x20;</span><Link to="metadata-content"><span>Metadata&#x20;Content</span></Link><span>&#x20;</span><Link to="htmlelement"><code>Element</code></Link><span>&#x20;to&#x20;load&#x20;</span><b>fallback&#x20;content</b><span>&#x20;IF&#x20;script&#x20;disabled/fail&#x20;load</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

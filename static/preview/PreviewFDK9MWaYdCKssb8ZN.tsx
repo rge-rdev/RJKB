@@ -20,7 +20,7 @@ export default function PreviewFDK9MWaYdCKssb8ZN(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>stack</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Error/Error-Properties/stack/Stack-Trace"><span>Stack&#x20;Trace</span></Link><span>/</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Browser-Runtime/Callback-Queue"><span>Callback&#x20;Queue</span></Link><span>&#x20;to&#x20;where&#x20;error&#x20;occur&#x20;at&#x20;</span><code>line:character&#x20;number&#x20;</code><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>stack</code><span>&nbsp;↔&nbsp;</span><Link to="stack-trace"><span>Stack&#x20;Trace</span></Link><span>/</span><Link to="callback-queue"><span>Callback&#x20;Queue</span></Link><span>&#x20;to&#x20;where&#x20;error&#x20;occur&#x20;at&#x20;</span><code>line:character&#x20;number&#x20;</code><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function Previewj9F8JYAk5T7YZCXPn(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Optimisation</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JS-Compiler/Optimization-Compiler"><span>Optimization&#x20;Compiler</span></Link><span>&#x20;recompiles&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;in&#x20;background&#x20;during&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JIT/JIT-Compilation-flow/Execution"><span>Execution</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;</span><Link to="optimization-compiler"><span>Optimization&#x20;Compiler</span></Link><span>&#x20;recompiles&#x20;</span><Link to="source-code"><code>Code</code></Link><span>&#x20;in&#x20;background&#x20;during&#x20;</span><Link to="execution"><span>Execution</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

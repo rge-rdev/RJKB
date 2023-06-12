@@ -16,7 +16,7 @@ export default function PreviewBmfJLsPDSkj8Qpopj(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>async&#x20;function</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><code>Declare</code></Link><span>&#x20;function&#x20;with&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Async/Asynchronous-Code"><span>Asynchronous&#x20;Code</span></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise"><code>Promise</code></Link><span>&#x20;&#x26;&#x20;allow&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword/await"><code>await</code></Link><span>&#x20;inside&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;</span><Link to="declaration"><code>Declare</code></Link><span>&#x20;function&#x20;with&#x20;</span><Link to="asynchronous-code"><span>Asynchronous&#x20;Code</span></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="promise"><code>Promise</code></Link><span>&#x20;&#x26;&#x20;allow&#x20;</span><Link to="await"><code>await</code></Link><span>&#x20;inside&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

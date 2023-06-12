@@ -16,7 +16,7 @@ export default function Preview6YaeNtPbLykPzZ8uM(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Network&#x20;Waterfall</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Waterfall</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Waterfall&#x20;Effect</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;load&#x20;data&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><code>Synchronous</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync/Blocking"><span>Blocking</span></Link><span>&#x20;stages</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;load&#x20;data&#x20;in&#x20;</span><Link to="sync"><code>Synchronous</code></Link><span>&#x20;</span><Link to="blocking"><span>Blocking</span></Link><span>&#x20;stages</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

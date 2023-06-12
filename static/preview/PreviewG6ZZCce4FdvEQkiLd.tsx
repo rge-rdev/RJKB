@@ -20,7 +20,7 @@ export default function PreviewG6ZZCce4FdvEQkiLd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>DLL&#x20;Hell</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Spaghetti-Code/Dependency-Hell"><span>Dependency&#x20;Hell</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Windows"><code>WinOS</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/OS/Windows/DLL"><span>DLL</span></Link><span>&#x20;compat&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>DLL&#x20;Hell</span><span>&nbsp;↔&nbsp;</span><Link to="dependency-hell"><span>Dependency&#x20;Hell</span></Link><span>&#x20;for&#x20;</span><Link to="windows"><code>WinOS</code></Link><span>&#x20;</span><Link to="dll"><span>DLL</span></Link><span>&#x20;compat&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

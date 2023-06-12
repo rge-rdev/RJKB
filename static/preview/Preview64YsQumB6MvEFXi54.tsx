@@ -16,7 +16,7 @@ export default function Preview64YsQumB6MvEFXi54(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>npm&#x20;config&#x20;delete&#x20;proxy</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;fix&#x20;</span><Link to="/wiki/JS/Nodejs/Node-error-codes/ETIMEOUT"><code>ETIMEOUT</code></Link><span>&#x20;when&#x20;unable&#x20;to&#x20;run&#x20;</span><code>npm&#x20;i</code><span>&#x20;due&#x20;to&#x20;connection&#x20;problems&#x20;(proxy,&#x20;dns,&#x20;etc)&#x20;-&#x20;or&#x20;better&#x20;yet&#x20;just&#x20;use&#x20;yarn&#x20;instead!</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;fix&#x20;</span><Link to="etimeout"><code>ETIMEOUT</code></Link><span>&#x20;when&#x20;unable&#x20;to&#x20;run&#x20;</span><code>npm&#x20;i</code><span>&#x20;due&#x20;to&#x20;connection&#x20;problems&#x20;(proxy,&#x20;dns,&#x20;etc)&#x20;-&#x20;or&#x20;better&#x20;yet&#x20;just&#x20;use&#x20;yarn&#x20;instead!</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

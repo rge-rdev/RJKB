@@ -16,11 +16,11 @@ export default function Previewn78GgJyAd5BMgZK7F(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Lexical</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>of&#x20;relating&#x20;to&#x20;words&#x20;(</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Expression"><span>Expression</span></Link><span>s&#x20;or&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>s)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>of&#x20;relating&#x20;to&#x20;words&#x20;(</span><Link to="expression"><span>Expression</span></Link><span>s&#x20;or&#x20;</span><Link to="variable"><span>Variable</span></Link><span>s)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>JS&#x20;Keyword</span><span>&nbsp;↔&nbsp;</span><span>reserved&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain/Scoping/Lexical-Scope/Lexical"><span>Lexical</span></Link><span>&#x20;word&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JS-Compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>JS&#x20;Keyword</span><span>&nbsp;↔&nbsp;</span><span>reserved&#x20;</span><Link to="lexical"><span>Lexical</span></Link><span>&#x20;word&#x20;for&#x20;</span><Link to="js-compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

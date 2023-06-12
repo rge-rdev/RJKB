@@ -20,7 +20,7 @@ export default function PreviewgFJEAugQruXdNaJsb(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Globbing</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><code>Algo</code></Link><span>&#x20;to&#x20;match&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm/Globbing/Wildcard-Character"><span>Wildcard&#x20;Character</span></Link><span>&#x20;pattern&#x20;ie&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Glob-Pattern"><code>Glob</code></Link><span>&#x20;||&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/regex"><span>regex</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Globbing</span><span>&nbsp;↔&nbsp;</span><Link to="algorithm"><code>Algo</code></Link><span>&#x20;to&#x20;match&#x20;</span><Link to="wildcard-character"><span>Wildcard&#x20;Character</span></Link><span>&#x20;pattern&#x20;ie&#x20;</span><Link to="glob-pattern"><code>Glob</code></Link><span>&#x20;||&#x20;</span><Link to="regex"><span>regex</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

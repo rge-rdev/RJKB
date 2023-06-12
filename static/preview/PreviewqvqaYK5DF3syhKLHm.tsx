@@ -16,7 +16,7 @@ export default function PreviewqvqaYK5DF3syhKLHm(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Babel</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/React/React-API/JSX/Transpile"><span>Transpile</span></Link><span>&#x20;</span><Link to="/wiki/React/React-API/JSX"><span>JSX</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/Library/Module/Polyfill"><span>Polyfill</span></Link><span>&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;</span><Link to="transpile"><span>Transpile</span></Link><span>&#x20;</span><Link to="jsx"><span>JSX</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="polyfill"><span>Polyfill</span></Link><span>&#x20;</span><Link to="js"><span>JS</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

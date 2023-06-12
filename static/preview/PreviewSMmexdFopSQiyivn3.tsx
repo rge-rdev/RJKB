@@ -16,7 +16,7 @@ export default function PreviewSMmexdFopSQiyivn3(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Horizontal&#x20;Scaling</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;add&#x20;more&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Hardware-Server"><span>Hardware&#x20;Server</span></Link><span>&#x20;instance&#x20;to&#x20;distribute&#x20;load&#x20;across&#x20;more&#x20;nodes&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;add&#x20;more&#x20;</span><Link to="hardware-server"><span>Hardware&#x20;Server</span></Link><span>&#x20;instances&#x20;to&#x20;distribute&#x20;load&#x20;across&#x20;more&#x20;nodes&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

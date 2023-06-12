@@ -16,7 +16,7 @@ export default function Preview8JbHzJyCXFjt6F3Ew(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Source&#x20;Control&#x20;Panel</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;show&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Staging"><span>Staging</span></Link><span>&#x20;changes&#x20;with&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code/Monaco-Editor/Diff-Editor"><span>Diff&#x20;Editor</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;show&#x20;</span><Link to="staging"><span>Staging</span></Link><span>&#x20;changes&#x20;with&#x20;</span><Link to="diff-editor"><span>Diff&#x20;Editor</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -20,7 +20,7 @@ export default function PreviewDqekx74hRsLuFWqeo(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>text-decoration</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/CSS/CSS-Syntax/CSS-Property"><span>CSS&#x20;Property</span></Link><span>&#x20;to&#x20;set&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/CSS-Property/text-decoration/Decorative-Line"><span>Decorative&#x20;Line</span></Link>s<span>&#x20;over&#x20;text</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>text-decoration</code><span>&nbsp;↔&nbsp;</span><Link to="css-property"><span>CSS&#x20;Property</span></Link><span>&#x20;to&#x20;set&#x20;</span><Link to="decorative-line"><span>Decorative&#x20;Line</span></Link>s<span>&#x20;over&#x20;text</span></cite></li></ol>
     
     </small></Tooltip>)
 }

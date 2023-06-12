@@ -16,7 +16,7 @@ export default function PreviewQvQxKkJBirEjAAbTT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Generics</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>generic&#x20;(algebraic)&#x20;placeholder&#x20;to&#x20;work&#x20;with&#x20;any&#x20;variety&#x20;of&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>s,&#x20;but&#x20;allow&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC/Type-Inference"><span>Type&#x20;Inference</span></Link><span>&#x20;to&#x20;catch&#x20;specific&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>generic&#x20;(algebraic)&#x20;placeholder&#x20;to&#x20;work&#x20;with&#x20;any&#x20;variety&#x20;of&#x20;</span><Link to="type"><span>Type</span></Link><span>s,&#x20;but&#x20;allow&#x20;</span><Link to="type-inference"><span>Type&#x20;Inference</span></Link><span>&#x20;to&#x20;catch&#x20;specific&#x20;</span><Link to="type"><span>Type</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -20,7 +20,7 @@ export default function PreviewAyiZNySLSe2G8hLPp(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Stage&#x20;1</span><span>&nbsp;↔&nbsp;</span><b>proposal&#x20;</b><span>stage,&#x20;to&#x20;select&#x20;</span><b><em>champions</em></b><span>&#x20;from&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript/TC39/TC39-Process/Stage-0"><code>Strawman Stage</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Stage&#x20;1</span><span>&nbsp;↔&nbsp;</span><b>proposal&#x20;</b><span>stage,&#x20;to&#x20;select&#x20;</span><b><em>champions</em></b><span>&#x20;from&#x20;</span><Link to="stage-0"><code>Strawman Stage</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

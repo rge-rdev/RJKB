@@ -16,7 +16,7 @@ export default function PreviewYaQ3Mbh5EFGj5TGCr(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>with</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;extend&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Scope-Chain"><span>Scope&#x20;Chain</span></Link><span>&#x20;of&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement"><span>Statement</span></Link><span>&#x20;.&#x20;</span>!Forbidden&#x20;in&#x20;<Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Directive/use-strict/Strict-Mode"><span>Strict&#x20;Mode</span></Link>!<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-keyword"><span>JS&#x20;Keyword</span></Link><span>&#x20;to&#x20;extend&#x20;</span><Link to="scope-chain"><span>Scope&#x20;Chain</span></Link><span>&#x20;of&#x20;</span><Link to="statement"><span>Statement</span></Link><span>&#x20;.&#x20;</span>!Forbidden&#x20;in&#x20;<Link to="strict-mode"><span>Strict&#x20;Mode</span></Link>!<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

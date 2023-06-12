@@ -20,7 +20,7 @@ export default function PreviewYTcT8wd9ZuxdAB76A(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>version</code><span>&nbsp;↔&nbsp;</span><span>current&#x20;version,&#x20;follows&#x20;</span><Link to="/wiki/JS/Nodejs/npm/packagejson/version/Semantic-Versioning"><span>Semantic&#x20;Versioning</span></Link><span>&#x20;for&#x20;Version&#x20;Management</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>version</code><span>&nbsp;↔&nbsp;</span><span>current&#x20;version,&#x20;follows&#x20;</span><Link to="semantic-versioning"><span>Semantic&#x20;Versioning</span></Link><span>&#x20;for&#x20;Version&#x20;Management</span></cite></li></ol>
     
     </small></Tooltip>)
 }

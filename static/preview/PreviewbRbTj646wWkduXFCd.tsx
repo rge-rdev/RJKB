@@ -16,7 +16,7 @@ export default function PreviewbRbTj646wWkduXFCd(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>sitemap</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Markup-Language/XML"><span>XML</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site"><code>Website</code></Link><span>&#x20;map&#x20;for&#x20;&#x1F916;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Web-Crawler"><span>Web&#x20;Crawler</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="xml"><span>XML</span></Link><span>&#x20;</span><Link to="web-site"><code>Website</code></Link><span>&#x20;map&#x20;for&#x20;&#x1F916;&#x20;</span><Link to="web-crawler"><span>Web&#x20;Crawler</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

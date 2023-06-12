@@ -16,7 +16,7 @@ export default function PreviewWG8qo4zQuNWsnd5xY(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>decodeURI()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;decode&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Data-URI"><code>URI</code></Link><span>&#x20;back&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string"><code>string</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;decode&#x20;</span><Link to="data-uri"><code>URI</code></Link><span>&#x20;back&#x20;to&#x20;</span><Link to="string"><code>string</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

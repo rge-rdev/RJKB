@@ -16,7 +16,7 @@ export default function PreviewkWPsdxqhQ4pd4FSb6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>pick</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>default</em><span>)&#x20;to&#x20;keep&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit"><span>Commit</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>default</em><span>)&#x20;to&#x20;keep&#x20;</span><Link to="commit"><span>Commit</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -20,7 +20,7 @@ export default function Previewp5pgK5hML2XvuBMQg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Functional&#x20;Programming</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;construct&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program"><code>Programs</code></Link><span>&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Functional-Programming/MCF"><span>MCF</span></Link><span>&#x20;(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/Imperative/Modular-Programming"><code>Modular </code></Link><span>&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/structure-of-component/Composable"><span>Composable</span></Link><span>)</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Functional&#x20;Programming</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;construct&#x20;</span><Link to="program"><code>Programs</code></Link><span>&#x20;as&#x20;</span><Link to="mcf"><span>MCF</span></Link><span>&#x20;(</span><Link to="modular-programming"><code>Modular </code></Link><span>&#x20;</span><Link to="composable"><span>Composable</span></Link><span>)</span></cite></li></ol>
     
     </small></Tooltip>)
 }

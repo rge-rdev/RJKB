@@ -16,7 +16,7 @@ export default function PreviewMH2or2JwdbJ6JZHop(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>_app.tsx</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;share&#x20;global&#x20;CSS&#x20;stylesheet</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="next-12"><span>(&#x20;</span><em>Next&#x20;12&#x20;</em><span>)</span></Link><span>&#x20;to&#x20;share&#x20;global&#x20;CSS&#x20;stylesheet,&#x20;layout&#x20;or&#x20;config</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function Previewvm5HyjFzakBrtJrPR(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Piece&#x20;Hash</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>unique&#x20;fingerprint&#x20;to&#x20;verify&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Piece"><code>Pieces</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>unique&#x20;fingerprint&#x20;to&#x20;verify&#x20;</span><Link to="piece"><code>Pieces</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

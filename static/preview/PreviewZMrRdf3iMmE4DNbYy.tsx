@@ -16,7 +16,7 @@ export default function PreviewZMrRdf3iMmE4DNbYy(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Ascendant</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>any&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Parent"><span>Parent</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node"><code>Node</code></Link><span>&#x20;(or&#x20;above&#x20;up&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Root"><span>Root</span></Link><span>)&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>any&#x20;</span><Link to="parent"><span>Parent</span></Link><span>&#x20;</span><Link to="node"><code>Node</code></Link><span>&#x20;(or&#x20;above&#x20;up&#x20;to&#x20;</span><Link to="root"><span>Root</span></Link><span>)&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

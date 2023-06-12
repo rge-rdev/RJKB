@@ -16,7 +16,7 @@ export default function Previewf2SYvnyc6tBxuiuQd(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>v8</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API"><span>Node&#x20;API</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/Chrome/V8"><span>V8</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine"><span>JS&#x20;Engine</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="node-api"><span>Node&#x20;API</span></Link><span>&#x20;for&#x20;</span><Link to="v-8"><span>V8</span></Link><span>&#x20;</span><Link to="js-engine"><span>JS&#x20;Engine</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

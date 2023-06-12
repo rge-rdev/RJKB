@@ -16,7 +16,7 @@ export default function Preview9e6MPcLFJ7vWoTSEs(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Test&#x20;Runner</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;run&#x20;</span><Link to="/wiki/Dev-tool/Test-Runner/Unit-Test"><span>Unit&#x20;Test</span></Link><span>&#x20;for&#x20;project</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;run&#x20;</span><Link to="unit-test"><span>Unit&#x20;Test</span></Link><span>&#x20;for&#x20;project</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

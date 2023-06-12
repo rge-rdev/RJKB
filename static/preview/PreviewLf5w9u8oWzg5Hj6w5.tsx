@@ -16,7 +16,7 @@ export default function PreviewLf5w9u8oWzg5Hj6w5(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Duplex</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/stream"><code>stream</code></Link><span>&#x20;=&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/stream/Writable"><code>Writable</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API/stream/Readable"><code>Readable</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="stream"><code>stream</code></Link><span>&#x20;=&#x20;</span><Link to="writable"><code>Writable</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="readable"><code>Readable</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

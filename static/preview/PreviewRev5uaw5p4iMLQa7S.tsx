@@ -16,7 +16,7 @@ export default function PreviewRev5uaw5p4iMLQa7S(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Websocket&#x20;Event</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/EventTarget/Event"><code>Event</code></Link><span>&#x20;from&#x20;websocket&#x20;can&#x20;be&#x20;listened&#x20;to&#x20;via&#x20;addEventListener()&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="event"><code>Event</code></Link><span>&#x20;from&#x20;websocket&#x20;can&#x20;be&#x20;listened&#x20;to&#x20;via&#x20;addEventListener()&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

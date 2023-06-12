@@ -20,7 +20,7 @@ export default function Previewy2GJbz5FApJvQiqJ4(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Node-instance-properties/textContent"><code>.textContent</code></Link><span>&#x20;differs&#x20;from&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Node-instance-properties/innerHTML"><code>.innerHTML</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><Link to="textcontent"><code>.textContent</code></Link><span>&#x20;differs&#x20;from&#x20;</span><Link to="innerhtml"><code>.innerHTML</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

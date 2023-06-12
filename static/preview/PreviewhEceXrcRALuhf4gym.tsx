@@ -16,7 +16,7 @@ export default function PreviewhEceXrcRALuhf4gym(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Language&#x20;Service</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>component&#x20;layer</b><span>&#x20;of&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x20;to&#x20;provide&#x20;</span><b>tool&#x20;integration</b><span>&#x20;with&#x20;</span><Link to="/wiki/Dev-tool/IDE"><span>IDE</span></Link><span>&#x20;for&#x20;more&#x20;</span><b>features</b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>component&#x20;layer</b><span>&#x20;of&#x20;</span><Link to="tsc_ts-def"><span>TSC</span></Link><span>&#x20;to&#x20;provide&#x20;</span><b>tool&#x20;integration</b><span>&#x20;with&#x20;</span><Link to="ide"><span>IDE</span></Link><span>&#x20;for&#x20;more&#x20;</span><b>features</b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

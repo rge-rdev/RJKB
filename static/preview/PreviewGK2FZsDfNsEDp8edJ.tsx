@@ -20,7 +20,7 @@ export default function PreviewGK2FZsDfNsEDp8edJ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>Streams&#x20;API</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API"><span>Web&#x20;API</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/Streaming"><code>Stream</code></Link><span>&#x20;raw&#x20;data&#x20;over&#x20;network,&#x20;w/o&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/Buffer"><span>Buffer</span></Link><span>/</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/blob"><span>blob</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>Streams&#x20;API</code><span>&nbsp;↔&nbsp;</span><Link to="web-api"><span>Web&#x20;API</span></Link><span>&#x20;to&#x20;</span><Link to="streaming"><code>Stream</code></Link><span>&#x20;raw&#x20;data&#x20;over&#x20;network,&#x20;w/o&#x20;</span><Link to="buffer"><span>Buffer</span></Link><span>/</span><Link to="blob"><span>blob</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function Preview2RNFkgXk8f4JbAxNu(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>react-redux</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>sub-library&#x20;with&#x20;</span><Link to="/wiki/React"><span>React</span></Link><span>&#x20;Binding&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/redux"><code>redux</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>sub-library&#x20;with&#x20;</span><Link to="react"><span>React</span></Link><span>&#x20;Binding&#x20;for&#x20;</span><Link to="redux"><code>redux</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

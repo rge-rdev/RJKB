@@ -16,7 +16,7 @@ export default function PreviewyW5LKaCrAgBDzBJa6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>AVIF</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>based&#x20;on&#x20;AV1&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Video-Format/ffmpeg/Codec"><span>Codec</span></Link><span>,&#x20;10-bit&#x20;color,&#x20;HDR,&#x20;chroma&#x20;4:4:4,&#x20;royalty-free,&#x20;current&#x20;king&#x20;albeit&#x20;low&#x20;support</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>based&#x20;on&#x20;AV1&#x20;</span><Link to="codec"><span>Codec</span></Link><span>,&#x20;10-bit&#x20;color,&#x20;HDR,&#x20;chroma&#x20;4:4:4,&#x20;royalty-free,&#x20;current&#x20;king&#x20;albeit&#x20;low&#x20;support</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

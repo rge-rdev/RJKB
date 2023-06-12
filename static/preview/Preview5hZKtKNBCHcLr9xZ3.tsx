@@ -16,7 +16,7 @@ export default function Preview5hZKtKNBCHcLr9xZ3(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>TTL</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Time&#x20;To&#x20;Live&#x20;length&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/HTTP-Caching"><code>Cache</code></Link><span>&#x20;record&#x20;on&#x20;recursive&#x20;server&#x20;vs&#x20;traffic&#x20;vs&#x20;content&#x20;update&#x20;frequency&#x20;vs&#x20;load&#x20;time</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Time&#x20;To&#x20;Live&#x20;length&#x20;to&#x20;</span><Link to="http-caching"><code>Cache</code></Link><span>&#x20;record&#x20;on&#x20;recursive&#x20;server&#x20;vs&#x20;traffic&#x20;vs&#x20;content&#x20;update&#x20;frequency&#x20;vs&#x20;load&#x20;time</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

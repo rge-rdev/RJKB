@@ -20,7 +20,7 @@ export default function Preview9cD75ccJJAPMZWLt8(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>npx</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/npm"><code>npm</code></Link><span>&#x20;</span><Link to="/wiki/JS/Nodejs/npm/npx/Package-Runner"><span>Package&#x20;Runner</span></Link><span>&#x20;sub-tool&#x20;to&#x20;execute&#x20;</span><Link to="/wiki/JS/Nodejs/npm/Package-Manager/Package"><span>Package</span></Link><span>&#x20;w/o&#x20;global&#x20;install</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>npx</code><span>&nbsp;↔&nbsp;</span><Link to="npm"><code>npm</code></Link><span>&#x20;</span><Link to="package-runner"><span>Package&#x20;Runner</span></Link><span>&#x20;sub-tool&#x20;to&#x20;execute&#x20;</span><Link to="package"><span>Package</span></Link><span>&#x20;w/o&#x20;global&#x20;install</span></cite></li></ol>
     
     </small></Tooltip>)
 }

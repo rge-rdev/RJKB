@@ -16,7 +16,7 @@ export default function PreviewunGY5ghXqF36BzgfR(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>axios</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>popular&#x20;library&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch"><span>Data&#x20;Fetch</span></Link><span>,&#x20;when&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Fetch-API"><code>Fetch&#x20;API</code></Link><span>&#x20;was&#x20;worse&#x20;-&#x20;now&#x20;no&#x20;longer&#x20;needed?!&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>popular&#x20;library&#x20;to&#x20;</span><Link to="data-fetch"><span>Data&#x20;Fetch</span></Link><span>,&#x20;when&#x20;</span><Link to="fetch-api"><code>Fetch&#x20;API</code></Link><span>&#x20;was&#x20;worse&#x20;-&#x20;now&#x20;no&#x20;longer&#x20;needed?!&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

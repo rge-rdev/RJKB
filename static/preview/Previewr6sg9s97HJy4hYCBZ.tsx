@@ -16,7 +16,7 @@ export default function Previewr6sg9s97HJy4hYCBZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>constructor()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/class"><code>class</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Slot/Method"><span>Method</span></Link><span>&#x20;to&#x20;pass&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument"><code>args</code></Link><span>&#x20;&#x26;&#x20;setup&#x20;new&#x20;new&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Classical-OOP-Concepts/Class/Instantiation/Instance"><span>Instance</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>special&#x20;</span><Link to="class"><code>class</code></Link><span>&#x20;</span><Link to="method"><span>Method</span></Link><span>&#x20;to&#x20;pass&#x20;</span><Link to="argument"><code>args</code></Link><span>&#x20;&#x26;&#x20;setup&#x20;new&#x20;new&#x20;</span><Link to="instance"><span>Instance</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewPfaad2j9YBAv5zPFQ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x22;noImplicitAny&#x22;:&#x20;true</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Exception-Handling/throw"><code>throw</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;when&#x20;any&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Function-Signature/Parameter"><span>Parameter</span></Link><span>&#x20;inferred&#x20;as&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/any"><code>any</code></Link></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;</span><Link to="throw"><code>throw</code></Link><span>&#x20;</span><Link to="exception"><span>Exception</span></Link><span>&#x20;when&#x20;any&#x20;</span><Link to="parameter"><span>Parameter</span></Link><span>&#x20;inferred&#x20;as&#x20;</span><Link to="any"><code>any</code></Link></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

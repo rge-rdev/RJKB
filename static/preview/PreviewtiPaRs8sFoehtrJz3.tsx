@@ -16,7 +16,7 @@ export default function PreviewtiPaRs8sFoehtrJz3(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>SFTP</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/SSH"><span>SSH</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/FTP"><span>FTP</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="ssh"><span>SSH</span></Link><span>&#x20;</span><Link to="ftp"><span>FTP</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

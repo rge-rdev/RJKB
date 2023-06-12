@@ -16,7 +16,7 @@ export default function PreviewkrHW7JSjXmM97Pjtm(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Monarch</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Library&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;Syntax&#x20;Highlight&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/JSON"><span>JSON</span></Link><span>&#x20;declaration</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Library&#x20;for&#x20;</span><Link to="source-code"><code>Code</code></Link><span>&#x20;Syntax&#x20;Highlight&#x20;via&#x20;</span><Link to="json"><span>JSON</span></Link><span>&#x20;declaration</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

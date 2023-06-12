@@ -16,7 +16,7 @@ export default function PreviewPC33hKZC75DDz8HTD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>ECS</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/AWS"><span>AWS</span></Link><span>&#x20;</span><b>E</b><span>lastic&#x20;</span><b>C</b><span>ontainer&#x20;</span><b>S</b><span>ervice&#x20;-&#x20;container&#x20;management&#x20;service&#x20;to&#x20;run&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Container"><span>Docker&#x20;Container</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="aws"><span>AWS</span></Link><span>&#x20;</span><b>E</b><span>lastic&#x20;</span><b>C</b><span>ontainer&#x20;</span><b>S</b><span>ervice&#x20;-&#x20;container&#x20;management&#x20;service&#x20;to&#x20;run&#x20;</span><Link to="docker-container"><span>Docker&#x20;Container</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

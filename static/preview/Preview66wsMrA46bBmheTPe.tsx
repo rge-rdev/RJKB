@@ -16,7 +16,7 @@ export default function Preview66wsMrA46bBmheTPe(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Plaintext</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>raw&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption"><code>Unencrypted</code></Link><span>&#x20;text&#x20;data</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>raw&#x20;</span><Link to="encryption"><code>Unencrypted</code></Link><span>&#x20;text&#x20;data</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

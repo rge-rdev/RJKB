@@ -16,7 +16,7 @@ export default function PreviewyFa5stJFmptNcxG5t(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>FLAC</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Free&#x20;Lossless&#x20;Audio&#x20;Codec&#x20;for&#x20;bit-perfect&#x20;audio&#x20;copy&#x20;with&#x20;lossless&#x20;compression.&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS"><span>FOSS</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM"><span>DRM</span></Link><span>-less.&#x20;metadata</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Free&#x20;Lossless&#x20;Audio&#x20;Codec&#x20;for&#x20;bit-perfect&#x20;audio&#x20;copy&#x20;with&#x20;lossless&#x20;compression.&#x20;</span><Link to="foss"><span>FOSS</span></Link><span>&#x20;</span><Link to="drm"><span>DRM</span></Link><span>-less.&#x20;metadata</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewuPcCMh4fX8pJMe9CG(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Bubble&#x20;Sort</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm/Sort-Algo"><span>Sort&#x20;Algo</span></Link><span>&#x20;to&#x20;iterate&#x20;elements,&#x20;compare&#x20;next&#x20;&#x26;&#x20;swap&#x20;index&#x20;position,&#x20;to&#x20;complete&#x20;sort&#x20;order&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="sort-algo"><span>Sort&#x20;Algo</span></Link><span>&#x20;to&#x20;iterate&#x20;elements,&#x20;compare&#x20;next&#x20;&#x26;&#x20;swap&#x20;index&#x20;position,&#x20;to&#x20;complete&#x20;sort&#x20;order&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PrevieweSHCBZMfQhLPeuv4k(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>//&#x20;@ts-</code><code>expect-error</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>tell&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x20;to&#x20;expect&#x20;&#x26;&#x20;suppress&#x20;static&#x20;error&#x20;on&#x20;next&#x20;line&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>tell&#x20;</span><Link to="tsc_ts-def"><span>TSC</span></Link><span>&#x20;to&#x20;expect&#x20;&#x26;&#x20;suppress&#x20;static&#x20;error&#x20;on&#x20;next&#x20;line&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

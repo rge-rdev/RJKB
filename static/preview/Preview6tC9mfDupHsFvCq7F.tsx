@@ -16,7 +16,7 @@ export default function Preview6tC9mfDupHsFvCq7F(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Singleton</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/TS/TS-Syntax"><span>TS&#x20;Syntax</span></Link><span>&#x20;Pattern&#x20;to&#x20;ensure&#x20;exactly&#x20;only&#x20;one&#x20;object&#x20;instance&#x20;of&#x20;a&#x20;class,&#x20;using&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Typed-Object/Typed-Classes/Private-Constructor"><span>Private&#x20;Constructor</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Static-Method"><span>Static&#x20;Method</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="ts-syntax"><span>TS&#x20;Syntax</span></Link><span>&#x20;Pattern&#x20;to&#x20;ensure&#x20;exactly&#x20;only&#x20;one&#x20;object&#x20;instance&#x20;of&#x20;a&#x20;class,&#x20;using&#x20;</span><Link to="private-constructor"><span>Private&#x20;Constructor</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="static-method"><span>Static&#x20;Method</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewQnFGxeJ7uEpZshfbu(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Runtime&#x20;Error</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;at&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/Runtime"><span>Runtime</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="exception"><span>Exception</span></Link><span>&#x20;at&#x20;</span><Link to="runtime"><span>Runtime</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

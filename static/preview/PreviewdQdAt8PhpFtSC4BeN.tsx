@@ -20,7 +20,7 @@ export default function PreviewdQdAt8PhpFtSC4BeN(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Admonitions&#x20;Callout&#x20;Blocks</span><span>&nbsp;↔&nbsp;</span><span>where&#x20;is&#x20;styling&#x20;for&#x20;</span><Link to="/wiki/React/React-Stack/docusaurus/Admonitions-Callout-Blocks/tip"><code>:::tip</code></Link><span>&#x20;and&#x20;</span><Link to="/wiki/React/React-Stack/docusaurus/Admonitions-Callout-Blocks/danger"><code>:::danger</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/docusaurus/Admonitions-Callout-Blocks/caution"><code>:::caution</code></Link><span>&#x20;defined?!&#x20;-&#x20;Callout&#x20;blocks&#x20;to&#x20;draw&#x20;extra&#x20;attention&#x20;to&#x20;specific&#x20;concepts</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Admonitions&#x20;Callout&#x20;Blocks</span><span>&nbsp;↔&nbsp;</span><span>where&#x20;is&#x20;styling&#x20;for&#x20;</span><Link to="tip"><code>:::tip</code></Link><span>&#x20;and&#x20;</span><Link to="danger"><code>:::danger</code></Link><span>&#x20;</span><Link to="caution"><code>:::caution</code></Link><span>&#x20;defined?!&#x20;-&#x20;Callout&#x20;blocks&#x20;to&#x20;draw&#x20;extra&#x20;attention&#x20;to&#x20;specific&#x20;concepts</span></cite></li></ol>
     
     </small></Tooltip>)
 }

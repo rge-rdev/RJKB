@@ -16,7 +16,7 @@ export default function Previewz2ucMbtywBYWW2xPo(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>void</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;to&#x20;rep&#x20;no&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/return"><code>return</code></Link><span>&#x20;value&#x20;from&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/function"><code>function</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="type"><span>Type</span></Link><span>&#x20;to&#x20;rep&#x20;no&#x20;</span><Link to="return"><code>return</code></Link><span>&#x20;value&#x20;from&#x20;</span><Link to="function_declare"><code>function</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

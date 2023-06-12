@@ -20,7 +20,7 @@ export default function PreviewvgAjyBLBpCDPgurG7(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Signature</span><span>&nbsp;↔&nbsp;</span><span>to&#x20;validate&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Auth/Security-Token"><code>Token</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Signature</span><span>&nbsp;↔&nbsp;</span><span>to&#x20;validate&#x20;</span><Link to="security-token"><code>Token</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

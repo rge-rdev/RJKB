@@ -20,7 +20,7 @@ export default function Preview3ojPtP7RvHEQGutQT(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Component&#x20;Based&#x20;Architecture</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;visualize&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;as&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;to&#x20;architect&#x20;(</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/DOS"><span>DOS</span></Link><span>)&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/App"><code>Apps</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Component&#x20;Based&#x20;Architecture</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;visualize&#x20;</span><Link to="ui"><span>UI</span></Link><span>&#x20;as&#x20;</span><Link to="component"><span>Component</span></Link><span>&#x20;to&#x20;architect&#x20;(</span><Link to="dos"><span>DOS</span></Link><span>)&#x20;</span><Link to="app"><code>Apps</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

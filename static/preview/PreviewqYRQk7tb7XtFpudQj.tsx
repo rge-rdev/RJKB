@@ -16,7 +16,7 @@ export default function PreviewqYRQk7tb7XtFpudQj(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Spread&#x20;Property</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Enhanced-Object-Literals"><span>Enhanced&#x20;Object&#x20;Literals</span></Link><span>&#x20;to&#x20;add&#x20;object&#x20;property&#x20;via&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Spread-Operator"><span>Spread&#x20;Operator</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="enhanced-object-literals"><span>Enhanced&#x20;Object&#x20;Literals</span></Link><span>&#x20;to&#x20;add&#x20;object&#x20;property&#x20;via&#x20;</span><Link to="spread-operator"><span>Spread&#x20;Operator</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

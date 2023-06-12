@@ -16,7 +16,7 @@ export default function Preview2GAJharxDY3xA3ieT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Waterfall&#x20;Chart</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Bar&#x20;Chart&#x20;to&#x20;visualize&#x20;cumulative&#x20;load&#x20;sequence&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><code>Synchronous</code></Link><span>&#x20;of&#x20;each&#x20;component</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Bar&#x20;Chart&#x20;to&#x20;visualize&#x20;cumulative&#x20;load&#x20;sequence&#x20;</span><Link to="sync"><code>Synchronous</code></Link><span>&#x20;of&#x20;each&#x20;component</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

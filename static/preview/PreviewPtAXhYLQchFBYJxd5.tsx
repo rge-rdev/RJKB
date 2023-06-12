@@ -20,7 +20,7 @@ export default function PreviewPtAXhYLQchFBYJxd5(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>EC</span><span>&nbsp;↔&nbsp;</span><span>Environ&#x20;to&#x20;run&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>,&#x20;to&#x20;contain&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VEST"><span>VEST</span></Link><span>,&#x20;to&#x20;fill&#x20;task&#x20;pipline&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack"><span>Call&#x20;Stack</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>EC</span><span>&nbsp;↔&nbsp;</span><span>Environ&#x20;to&#x20;run&#x20;</span><Link to="js"><span>JS</span></Link><span>,&#x20;to&#x20;contain&#x20;</span><Link to="vest"><span>VEST</span></Link><span>,&#x20;to&#x20;fill&#x20;task&#x20;pipline&#x20;in&#x20;</span><Link to="call-stack"><span>Call&#x20;Stack</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

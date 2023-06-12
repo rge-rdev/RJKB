@@ -16,7 +16,7 @@ export default function Previewi7DAbX8cdnz36qJ5n(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>useLayoutEffect()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-API/Hooks-API/Hook"><span>Hook</span></Link><span>&#x20;variant&#x20;of&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Effect-Hook/useEffect"><code>useEffect()</code></Link><span>,&#x20;to&#x20;call&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Effect-Hook/Effect"><span>Effect</span></Link><span>&#x20;as&#x20;soon&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link>&#x20;generated&#x20;<span>&#x20;BEFORE&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link>&#x20;repaints&#x20;to&#x20;<Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="hook"><span>Hook</span></Link><span>&#x20;variant&#x20;of&#x20;</span><Link to="useeffect"><code>useEffect()</code></Link><span>,&#x20;to&#x20;call&#x20;</span><Link to="effect"><span>Effect</span></Link><span>&#x20;as&#x20;soon&#x20;as&#x20;</span><Link to="dom-api"><span>DOM&#x20;API&#x20;</span></Link>&#x20;generated&#x20;<span>&#x20;BEFORE&#x20;</span><Link to="ui"><span>UI</span></Link>&#x20;repaints&#x20;to&#x20;<Link to="dom-api"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

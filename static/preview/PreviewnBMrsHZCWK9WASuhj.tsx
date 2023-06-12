@@ -16,7 +16,7 @@ export default function PreviewnBMrsHZCWK9WASuhj(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Kotlin</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>static&#x20;typed&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm"><span>Multi-paradigm</span></Link><span>&#x20;language&#x20;attempt&#x20;at&#x20;better&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Java"><span>Java</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/DX"><span>DX</span></Link><span>&#x20;features&#x20;(ie&#x20;type&#x20;inference,&#x20;null&#x20;safety&#x20;&#x26;&#x20;functional&#x20;pattern&#x20;-&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Java"><span>Java</span></Link><span>-interop)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>static&#x20;typed&#x20;</span><Link to="multi-paradigm"><span>Multi-paradigm</span></Link><span>&#x20;language&#x20;attempt&#x20;at&#x20;better&#x20;</span><Link to="java"><span>Java</span></Link><span>&#x20;with&#x20;</span><Link to="dx"><span>DX</span></Link><span>&#x20;features&#x20;(ie&#x20;type&#x20;inference,&#x20;null&#x20;safety&#x20;&#x26;&#x20;functional&#x20;pattern&#x20;-&#x20;</span><Link to="java"><span>Java</span></Link><span>-interop)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

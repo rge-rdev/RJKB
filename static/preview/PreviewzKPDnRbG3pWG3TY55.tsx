@@ -16,7 +16,7 @@ export default function PreviewzKPDnRbG3pWG3TY55(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>instanceof</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator"><span>JS&#x20;Operator</span></Link><span>&#x20;to&#x20;return&#x20;</span><code>boolean</code><span>&#x20;if&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm/OOP/Prototypal-Inheritance/Prototype/proto"><code>__proto__</code></Link><span>&#x20;(of&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><span>Constructor&#x20;Function</span></Link><span>)&#x20;exists&#x20;on&#x20;calling&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Operand"><span>Operand</span></Link><span>&#x27;s&#x20;</span><b>prototype&#x20;chain</b><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="js-operator"><span>JS&#x20;Operator</span></Link><span>&#x20;to&#x20;return&#x20;</span><code>boolean</code><span>&#x20;if&#x20;</span><Link to="proto"><code>__proto__</code></Link><span>&#x20;(of&#x20;</span><Link to="constructor-function"><span>Constructor&#x20;Function</span></Link><span>)&#x20;exists&#x20;on&#x20;calling&#x20;</span><Link to="operand"><span>Operand</span></Link><span>&#x27;s&#x20;</span><b>prototype&#x20;chain</b><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

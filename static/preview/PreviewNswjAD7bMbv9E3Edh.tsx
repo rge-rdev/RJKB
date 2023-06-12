@@ -16,7 +16,7 @@ export default function PreviewNswjAD7bMbv9E3Edh(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>git&#x20;add&#x20;.</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;</span><Link to="/wiki/Dev-tool/git/git-command/add"><code>add</code></Link><span>&#x20;all&#x20;files&#x20;in&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Working-Dir"><span>Working&#x20;Dir</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Staging"><span>Staging</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;</span><Link to="add_git-command"><code>add</code></Link><span>&#x20;all&#x20;files&#x20;in&#x20;</span><Link to="working-dir"><span>Working&#x20;Dir</span></Link><span>&#x20;to&#x20;</span><Link to="staging"><span>Staging</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

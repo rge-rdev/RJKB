@@ -16,7 +16,7 @@ export default function Previewtpu2Bpcbykx8ZSEkZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Promise.race()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;set&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise/Promiserace/Race-Condition"><span>Race&#x20;Condition</span></Link><span>&#x20;to&#x20;return&#x20;first&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise"><code>Promise</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise/Promise-Lifecycle/Settled"><span>Settled</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;set&#x20;</span><Link to="race-condition"><span>Race&#x20;Condition</span></Link><span>&#x20;to&#x20;return&#x20;first&#x20;</span><Link to="promise"><code>Promise</code></Link><span>&#x20;to&#x20;</span><Link to="settled"><span>Settled</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

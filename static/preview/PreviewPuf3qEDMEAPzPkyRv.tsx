@@ -16,7 +16,7 @@ export default function PreviewPuf3qEDMEAPzPkyRv(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Intellisense</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;autocomplete</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="source-code"><code>Code</code></Link><span>&#x20;autocomplete</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

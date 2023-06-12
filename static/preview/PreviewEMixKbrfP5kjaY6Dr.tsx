@@ -20,7 +20,7 @@ export default function PreviewEMixKbrfP5kjaY6Dr(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>brotli-webpack-plugin</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/Build-Tool/Webpack/Webpack-Plugin"><span>Webpack&#x20;Plugin</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression"><code>Compress</code></Link><span>&#x20;(js|css|html|svg)&#x20;bundle&#x20;assets&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/brotli"><span>brotli</span></Link><span>&#x20;|&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/zlib"><span>zlib</span></Link><span>&#x20;|&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Compression/iltorb"><span>iltorb</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>brotli-webpack-plugin</code><span>&nbsp;↔&nbsp;</span><Link to="webpack-plugin"><span>Webpack&#x20;Plugin</span></Link><span>&#x20;to&#x20;</span><Link to="compression"><code>Compress</code></Link><span>&#x20;(js|css|html|svg)&#x20;bundle&#x20;assets&#x20;with&#x20;</span><Link to="brotli"><span>brotli</span></Link><span>&#x20;|&#x20;</span><Link to="zlib"><span>zlib</span></Link><span>&#x20;|&#x20;</span><Link to="iltorb"><span>iltorb</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewhKyvNZiQFDaiBB9Sv(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>global</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>global&#x20;namespace&#x20;object&#x20;in&#x20;</span><Link to="/wiki/JS/Nodejs"><span>Node.js</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>global&#x20;namespace&#x20;object&#x20;in&#x20;</span><Link to="node-js"><span>Node.js</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

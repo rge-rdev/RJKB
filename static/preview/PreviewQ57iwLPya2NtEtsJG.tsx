@@ -16,7 +16,7 @@ export default function PreviewQ57iwLPya2NtEtsJG(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>HOC</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>HOC</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Higher-Order&#x20;Component</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;to&#x20;modify/enhance&#x20;other&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="component"><span>Component</span></Link><span>&#x20;to&#x20;modify/enhance&#x20;other&#x20;</span><Link to="component"><span>Component</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

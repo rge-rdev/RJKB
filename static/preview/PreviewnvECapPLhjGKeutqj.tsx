@@ -16,7 +16,7 @@ export default function PreviewnvECapPLhjGKeutqj(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Synthetic&#x20;Event</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Primitive/Autoboxing/Wrapper"><span>Wrapper</span></Link><span>&#x20;over&#x20;event&#x20;object&#x20;for&#x20;xplat&#x20;browser&#x20;compat</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="wrapper"><span>Wrapper</span></Link><span>&#x20;over&#x20;event&#x20;object&#x20;for&#x20;xplat&#x20;browser&#x20;compat</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

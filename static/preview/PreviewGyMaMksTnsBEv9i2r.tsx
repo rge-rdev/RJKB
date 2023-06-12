@@ -20,7 +20,7 @@ export default function PreviewGyMaMksTnsBEv9i2r(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>DevOps</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;iterate&#x20;product&#x20;smaller&#x20;faster&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/TBD"><span>TBD</span></Link><span>&#x20;steps&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/CI"><span>CI</span></Link><span>/</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/CD"><span>CD</span></Link><span>&#x20;integration</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>DevOps</span><span>&nbsp;↔&nbsp;</span><span>(</span><Link to="paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;</span><b>iterate&#x20;faster&#x20;</b><Link to="tbd"><span>TBD</span></Link><span>&#x20;smaller&#x20;steps&#x20;via&#x20;</span><Link to="ci"><span>CI</span></Link><span>/</span><Link to="cd"><span>CD</span></Link><span>&#x20;integration,&#x20;push&#x20;code&#x20;ASAFP</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewfrRdZxQTSPZXFmXPJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>[abc]</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Glob-Pattern"><code>Glob</code></Link><span>&#x20;to&#x20;match&#x20;ONE&#x20;char&#x20;in&#x20;set</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="glob-pattern"><code>Glob</code></Link><span>&#x20;to&#x20;match&#x20;ONE&#x20;char&#x20;in&#x20;set</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

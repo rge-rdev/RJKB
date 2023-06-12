@@ -16,7 +16,7 @@ export default function PreviewA6MwEm3RQ6aDcBwCD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>PascalCase</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>CapitalCase</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>UpperCamelCase</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(convention)&#x20;to&#x20;name&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Identifier"><span>Identifier</span></Link><span>&#x20;by&#x20;concatenate&#x20;words&#x20;capitalized&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(convention)&#x20;to&#x20;name&#x20;</span><Link to="identifier"><span>Identifier</span></Link><span>&#x20;by&#x20;concatenate&#x20;words&#x20;capitalized&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

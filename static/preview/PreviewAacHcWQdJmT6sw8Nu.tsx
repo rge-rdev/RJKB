@@ -16,7 +16,7 @@ export default function PreviewAacHcWQdJmT6sw8Nu(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>ts-node</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/CLI"><span>CLI</span></Link><span>&#x20;tool&#x20;for&#x20;</span><Link to="/wiki/JS/TS"><span>TS</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/JS/Nodejs/nodejs-commands/node/REPL"><span>REPL</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/Nodejs"><span>Node.js</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="cli"><span>CLI</span></Link><span>&#x20;tool&#x20;for&#x20;</span><Link to="ts"><span>TS</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="repl"><span>REPL</span></Link><span>&#x20;for&#x20;</span><Link to="node-js"><span>Node.js</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

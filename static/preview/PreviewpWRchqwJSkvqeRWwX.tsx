@@ -20,7 +20,7 @@ export default function PreviewpWRchqwJSkvqeRWwX(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>autoprefixer</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/Nodejs/npm"><code>npm</code></Link><span>&#x20;</span><Link to="/wiki/CSS/CSS-Stack/PostCSS/PostCSS-Plugin"><span>PostCSS&#x20;Plugin</span></Link><span>&#x20;to&#x20;parse&#x20;</span><Link to="/wiki/CSS"><span>CSS</span></Link><span>&#x20;&#x26;&#x20;handle&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/Vendor-Prefix"><span>Vendor&#x20;Prefix</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>autoprefixer</code><span>&nbsp;↔&nbsp;</span><Link to="npm"><code>npm</code></Link><span>&#x20;</span><Link to="postcss-plugin"><span>PostCSS&#x20;Plugin</span></Link><span>&#x20;to&#x20;parse&#x20;</span><Link to="css"><span>CSS</span></Link><span>&#x20;&#x26;&#x20;handle&#x20;</span><Link to="vendor-prefix"><span>Vendor&#x20;Prefix</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

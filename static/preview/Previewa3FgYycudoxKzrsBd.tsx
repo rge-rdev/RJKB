@@ -20,7 +20,7 @@ export default function Previewa3FgYycudoxKzrsBd(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Favicon</span><span>&nbsp;↔&nbsp;</span><span>Favorite&#x20;Icon.&#x20;Tiny&#x20;16x16&#x20;px&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/GIF"><span>GIF</span></Link><span>/</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/PNG"><span>PNG</span></Link><span>/</span><Link to="/wiki/Computer-Science/Data-Structure/Multimedia-Formats/Image-Format/ICO"><span>ICO</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Favicon</span><span>&nbsp;↔&nbsp;</span><span>Favorite&#x20;Icon.&#x20;Tiny&#x20;16x16&#x20;px&#x20;</span><Link to="gif"><span>GIF</span></Link><span>/</span><Link to="png"><span>PNG</span></Link><span>/</span><Link to="ico"><span>ICO</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

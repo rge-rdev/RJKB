@@ -16,7 +16,7 @@ export default function PreviewWorrERfFNvNQrydJ8(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>cors</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs"><span>Node.js</span></Link><span>&#x20;</span><Link to="/wiki/JS/Library/Module"><span>Module</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Browser/CORS"><span>CORS</span></Link><span>&#x20;to&#x20;open&#x20;up&#x20;</span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;so&#x20;accessible&#x20;by&#x20;other&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL/URL-Structure/Domain"><span>Domain</span></Link><span>s&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="node-js"><span>Node.js</span></Link><span>&#x20;</span><Link to="module"><span>Module</span></Link><span>&#x20;for&#x20;</span><Link to="cors"><span>CORS</span></Link><span>&#x20;to&#x20;open&#x20;up&#x20;</span><Link to="api"><span>API</span></Link><span>&#x20;so&#x20;accessible&#x20;by&#x20;other&#x20;</span><Link to="domain"><span>Domain</span></Link><span>s&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

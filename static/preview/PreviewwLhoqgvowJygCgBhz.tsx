@@ -16,7 +16,7 @@ export default function PreviewwLhoqgvowJygCgBhz(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Incremental&#x20;Adoption</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Incrementally&#x20;Adopt</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>feat</em><span>)&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-12"><span>Next&#x20;12</span></Link><span>&#x20;compat&#x20;with&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13"><span>Next&#x20;13</span></Link><span>,&#x20;can&#x20;migrate&#x20;individual&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><span>Page</span></Link><span>&#x20;from&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-12/pages"><code>/pages</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/app"><code>/app</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>feat</em><span>)&#x20;</span><Link to="next-12_next"><span>Next&#x20;12</span></Link><span>&#x20;compat&#x20;with&#x20;</span><Link to="next-13"><span>Next&#x20;13</span></Link><span>,&#x20;can&#x20;migrate&#x20;individual&#x20;</span><Link to="page"><span>Page</span></Link><span>&#x20;from&#x20;</span><Link to="pages_next-12"><code>/pages</code></Link><span>&#x20;to&#x20;</span><Link to="app_next-13"><code>/app</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

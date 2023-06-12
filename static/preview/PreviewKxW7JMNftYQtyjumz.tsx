@@ -16,7 +16,7 @@ export default function PreviewKxW7JMNftYQtyjumz(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Client&#x20;Side&#x20;Rendering</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>CSR</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Client&#x20;Side&#x20;Render</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;render&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Page"><span>Web&#x20;Page</span></Link><span>&#x20;dynamically&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/SPA/Thick-Client"><span>Thick&#x20;Client</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;render&#x20;</span><Link to="web-page"><span>Web&#x20;Page</span></Link><span>&#x20;dynamically&#x20;on&#x20;</span><Link to="thick-client"><span>Thick&#x20;Client</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

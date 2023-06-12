@@ -16,7 +16,7 @@ export default function PreviewGJboCy6RS9TXgip2f(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Layout&#x20;Shift</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>when&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;in&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API/DOM-Tree/Node-Hierachy/Node/Document/Viewport"><span>Viewport</span></Link><span>&#x20;changes&#x20;position&#x20;-&#x20;any&#x20;jitter&#x20;between&#x20;frames&#x20;-&#x20;indicate&#x20;visual&#x20;instability,&#x20;usually&#x20;unintentional&#x20;-&#x20;measure&#x20;by&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Web-Vitals/CLS"><span>CLS</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>when&#x20;</span><Link to="htmlelement"><code>Element</code></Link><span>&#x20;in&#x20;</span><Link to="viewport"><span>Viewport</span></Link><span>&#x20;changes&#x20;position&#x20;-&#x20;any&#x20;jitter&#x20;between&#x20;frames&#x20;-&#x20;indicate&#x20;visual&#x20;instability,&#x20;usually&#x20;unintentional&#x20;-&#x20;measure&#x20;by&#x20;</span><Link to="cls"><span>CLS</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

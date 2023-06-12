@@ -16,7 +16,7 @@ export default function PreviewdY9fedqXLoJBMPs5e(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>powercfg</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>power&#x20;config&#x20;</span><Link to="/wiki/Dev-tool/CLI/Shell"><span>Shell</span></Link><span>&#x20;to&#x20;inspect&#x20;battery/power&#x20;settings</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>power&#x20;config&#x20;</span><Link to="shell"><span>Shell</span></Link><span>&#x20;to&#x20;inspect&#x20;battery/power&#x20;settings</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

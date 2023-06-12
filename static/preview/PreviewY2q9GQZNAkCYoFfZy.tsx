@@ -1,0 +1,26 @@
+/**
+ * Copyright(c) Roger Jiang
+ */
+import React from "react"
+//@ts-ignore
+import CodeBlock from "@theme/CodeBlock"
+import { Link } from "react-router-dom"
+import { Tooltip } from "react-tooltip"
+export default function PreviewY2q9GQZNAkCYoFfZy(){
+  return (<Tooltip
+  id="preview__Y2q9GQZNAkCYoFfZy"
+  place="top"
+  clickable
+>
+  <small>
+    <dfn>
+      <dt><code className="react-tooltip__dt"><code>Res</code></code></dt>
+      <dd>
+        <blockquote className="react-tooltip__dd"><span><span>Response&#x20;</span><Link to="object"><span>Object</span></Link><span>,&#x20;2nd&#x20;</span><Link to="argument"><span>Argument</span></Link><span>&#x20;to&#x20;</span><Link to="handler_routing-instance-method-signature"><code>HANDLER</code></Link><span>&#x20;</span></span></blockquote>
+      </dd>
+    </dfn>
+    <cite className="react-tooltip__ref-header">Cited 1 time</cite>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span ><span>Online&#x20;API</span></span><span>&#x20;can&#x20;process&#x20;data&#x20;</span><span ><code>Reqs</code></span><span>&#x20;&#x26;&#x20;</span><span ><code>Res</code></span><span>&#x20;with&#x20;data</span></cite></li></ol>
+    
+    </small></Tooltip>)
+}

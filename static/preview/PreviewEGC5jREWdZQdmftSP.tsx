@@ -16,7 +16,7 @@ export default function PreviewEGC5jREWdZQdmftSP(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>rebase</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;rewrite&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit/Commit-History"><span>Commit&#x20;History</span></Link><span>&#x20;to&#x20;simplify/linearize&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Merge"><span>Merge</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;rewrite&#x20;</span><Link to="commit-history"><span>Commit&#x20;History</span></Link><span>&#x20;to&#x20;simplify/linearize&#x20;</span><Link to="merge_git-definition"><span>Merge</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

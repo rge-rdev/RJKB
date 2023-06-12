@@ -20,7 +20,7 @@ export default function PreviewjH9XntHbpp63FJdLJ(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>URL</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API/Interface"><span>Interface</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/URL/PCNE"><span>PCNE</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Site/Domain-Name/URL"><span>URL</span></Link><span>s</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>URL</code><span>&nbsp;↔&nbsp;</span><Link to="object"><span>Object</span></Link><span>&#x20;</span><Link to="interface"><span>Interface</span></Link><span>&#x20;to&#x20;</span><Link to="pcne"><span>PCNE</span></Link><span>&#x20;</span><Link to="url"><span>URL</span></Link><span>s</span></cite></li></ol>
     
     </small></Tooltip>)
 }

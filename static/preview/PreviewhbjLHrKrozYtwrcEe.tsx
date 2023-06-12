@@ -16,7 +16,7 @@ export default function PreviewhbjLHrKrozYtwrcEe(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>React&#x20;Scheduler</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-API/Suspense-API"><code>Concurrent Mode</code></Link><span>&#x20;intelligent&#x20;granular&#x20;scheduler&#x20;to&#x20;pause/run&#x20;task&#x20;by&#x20;priority&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="suspense-api"><code>Concurrent Mode</code></Link><span>&#x20;intelligent&#x20;granular&#x20;scheduler&#x20;to&#x20;pause/run&#x20;task&#x20;by&#x20;priority&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

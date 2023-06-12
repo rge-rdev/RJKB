@@ -16,7 +16,7 @@ export default function PreviewJT7TkieickABiiba4(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Large-object-space</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap/Heap-Space"><code>Space</code></Link><span>&#x20;to&#x20;contain&#x20;large&#x20;objects&#x20;above&#x20;size&#x20;limits&#x20;of&#x20;other&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap/Heap-Space"><code>Spaces</code></Link><span>.&#x20;Each&#x20;object&#x20;assign&#x20;</span><code>mmap</code><span>&#x27;d&#x20;region&#x20;of&#x20;memory.&#x20;Large&#x20;objects&#x20;never&#x20;moved&#x20;by&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/High-Level/Garbage-Collection"><code>Garbage Collector</code></Link><span>.</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="heap-space"><code>Space</code></Link><span>&#x20;to&#x20;contain&#x20;large&#x20;objects&#x20;above&#x20;size&#x20;limits&#x20;of&#x20;other&#x20;</span><Link to="heap-space"><code>Spaces</code></Link><span>.&#x20;Each&#x20;object&#x20;assign&#x20;</span><code>mmap</code><span>&#x27;d&#x20;region&#x20;of&#x20;memory.&#x20;Large&#x20;objects&#x20;never&#x20;moved&#x20;by&#x20;</span><Link to="garbage-collection"><code>Garbage Collector</code></Link><span>.</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

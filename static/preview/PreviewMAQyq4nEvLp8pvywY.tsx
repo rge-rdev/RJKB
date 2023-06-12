@@ -16,7 +16,7 @@ export default function PreviewMAQyq4nEvLp8pvywY(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Overload&#x20;Signature</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Function-Signature"><span>Function&#x20;Signature</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;annotations&#x20;but&#x20;w/o&#x20;implementation</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="function-signature"><span>Function&#x20;Signature</span></Link><span>&#x20;with&#x20;</span><Link to="type"><span>Type</span></Link><span>&#x20;annotations&#x20;but&#x20;w/o&#x20;implementation</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

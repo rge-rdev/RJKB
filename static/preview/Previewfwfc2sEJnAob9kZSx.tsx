@@ -16,7 +16,7 @@ export default function Previewfwfc2sEJnAob9kZSx(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Type&#x20;Cast</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>aka&#x20;type&#x20;conversion&#x20;of&#x20;one&#x20;type&#x20;to&#x20;another,&#x20;in&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/General-Purpose/C"><span>C</span></Link><span>/</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/General-Purpose/C"><span>C++</span></Link><span>&#x20;-&#x20;equiv&#x20;to&#x20;(implicit)&#x20;type&#x20;coersion&#x20;or&#x20;(explicit)&#x20;reassignment&#x20;in&#x20;JS</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>aka&#x20;type&#x20;conversion&#x20;of&#x20;one&#x20;type&#x20;to&#x20;another,&#x20;in&#x20;</span><Link to="c"><span>C</span></Link><span>/</span><Link to="c_gp"><span>C++</span></Link><span>&#x20;-&#x20;equiv&#x20;to&#x20;(implicit)&#x20;type&#x20;coersion&#x20;or&#x20;(explicit)&#x20;reassignment&#x20;in&#x20;JS</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

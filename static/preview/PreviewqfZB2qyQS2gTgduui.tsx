@@ -16,7 +16,7 @@ export default function PreviewqfZB2qyQS2gTgduui(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>@docusaurus/plugin-sitemap</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/docusaurus/docusaurus-features/docu-plugin"><span>docu&#x20;plugin</span></Link><span>&#x20;to&#x20;gen&#x20;sitemap&#x20;for&#x20;site&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/SEO"><span>SEO</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Web-Crawler"><span>Web&#x20;Crawler</span></Link><span>&#x20;|&#x20;pack&#x20;with&#x20;classic&#x20;preset&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="docu-plugin"><span>docu&#x20;plugin</span></Link><span>&#x20;to&#x20;gen&#x20;sitemap&#x20;for&#x20;site&#x20;for&#x20;</span><Link to="seo"><span>SEO</span></Link><span>&#x20;</span><Link to="web-crawler"><span>Web&#x20;Crawler</span></Link><span>&#x20;|&#x20;pack&#x20;with&#x20;classic&#x20;preset&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewJLp2HiGFnJS3YbLuZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Referential&#x20;Equality</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>s&#x20;equivalent&#x20;based&#x20;on&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Memory-Address"><span>Memory&#x20;Address</span></Link><b>&#x20;location</b><span>&#x20;NOT&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="object"><span>Object</span></Link><span>s&#x20;equivalent&#x20;based&#x20;on&#x20;</span><Link to="memory-address"><span>Memory&#x20;Address</span></Link><b>&#x20;location</b><span>&#x20;NOT&#x20;</span><Link to="value"><span>Value</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

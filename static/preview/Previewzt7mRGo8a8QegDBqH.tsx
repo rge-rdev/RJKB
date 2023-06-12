@@ -20,7 +20,7 @@ export default function Previewzt7mRGo8a8QegDBqH(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>UTF-8</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>standard</em><span>)&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string/UTF-8/Character-Encoding"><span>Character&#x20;Encoding</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Unicode</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>standard</em><span>)&#x20;most&#x20;popular&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string/UTF-8/Character-Encoding"><code>Character Set</code></Link><span>&#x20;with&#x20;most&#x20;language&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string/Character"><code>Chars</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>UTF-8</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>standard</em><span>)&#x20;</span><Link to="character-encoding"><span>Character&#x20;Encoding</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span>Unicode</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>standard</em><span>)&#x20;most&#x20;popular&#x20;</span><Link to="character-encoding"><code>Character Set</code></Link><span>&#x20;with&#x20;most&#x20;language&#x20;</span><Link to="character"><code>Chars</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

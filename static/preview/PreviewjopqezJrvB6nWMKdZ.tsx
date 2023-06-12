@@ -16,7 +16,7 @@ export default function PreviewjopqezJrvB6nWMKdZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Sloppy&#x20;Mode</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>default</em><span>)&#x20;non-</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Directive/use-strict/Strict-Mode"><span>Strict&#x20;Mode</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><code>Semantics</code></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JS-Compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>default</em><span>)&#x20;non-</span><Link to="strict-mode"><span>Strict&#x20;Mode</span></Link><span>&#x20;</span><Link to="semantic"><code>Semantics</code></Link><span>&#x20;for&#x20;</span><Link to="js-compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

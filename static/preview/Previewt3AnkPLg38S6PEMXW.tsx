@@ -20,7 +20,7 @@ export default function Previewt3AnkPLg38S6PEMXW(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>HTTP&#x20;Cookie</span><span>&nbsp;↔&nbsp;</span><span>data&#x20;sent&#x20;from&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Backend"><span>Backend</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Client"><span>Client</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/HTTP-Cookie/TPS"><span>TPS</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>HTTP&#x20;Cookie</span><span>&nbsp;↔&nbsp;</span><span>data&#x20;sent&#x20;from&#x20;</span><Link to="backend"><span>Backend</span></Link><span>&#x20;to&#x20;</span><Link to="client"><span>Client</span></Link><span>&#x20;to&#x20;</span><Link to="tps"><span>TPS</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

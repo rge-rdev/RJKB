@@ -16,7 +16,7 @@ export default function PreviewFe68cBJSdzWr8htsF(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>List</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Array"><code>Array</code></Link><span>&#x20;with&#x20;sequence&#x20;of&#x20;</span>same&#x20;<Link to="/wiki/JS/TS/TS-Syntax/Type"><span>Type</span></Link><span>&#x20;elements&#x20;&#x26;&#x20;</span>variable<span>&#x20;length</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="array_base-type"><code>Array</code></Link><span>&#x20;with&#x20;sequence&#x20;of&#x20;</span>same&#x20;<Link to="type"><span>Type</span></Link><span>&#x20;elements&#x20;&#x26;&#x20;</span>variable<span>&#x20;length</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

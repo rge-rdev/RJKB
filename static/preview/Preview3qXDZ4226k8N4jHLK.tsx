@@ -16,7 +16,7 @@ export default function Preview3qXDZ4226k8N4jHLK(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>head.tsx</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/Nextjs/Next-13/Aliases/Next-13"><span>(&#x20;</span><em>Next&#x20;13</em><span>&#x20;)</span></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><span>Page</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/Library/Module/ES-Module/export-default"><code>export&#x20;default</code></Link><span>&#x20;</span><Link to="/wiki/HTML/Metadata-Content/head"><code>&#x20;&#x3C;head&#x3E;</code></Link><span>&#x20;for&#x20;each&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><span>Page</span></Link><span>&#x20;Route</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="next-13_aliases"><span>(&#x20;</span><em>Next&#x20;13</em><span>&#x20;)</span></Link><span>&#x20;</span><Link to="page"><span>Page</span></Link><span>&#x20;to&#x20;</span><Link to="export-default"><code>export&#x20;default</code></Link><span>&#x20;</span><Link to="head_metadata"><code>&#x20;&#x3C;head&#x3E;</code></Link><span>&#x20;for&#x20;each&#x20;</span><Link to="page"><span>Page</span></Link><span>&#x20;Route</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

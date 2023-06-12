@@ -16,7 +16,7 @@ export default function PreviewAm4PkQi8K3qE43aQX(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>LSD</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>LSD</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Local&#x20;Service&#x20;Discovery</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>mechanism</em><span>)&#x20;to&#x20;discover&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Peer"><code>Peers</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Announce"><span>Announce</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/Bittorrent/Swarm"><span>Swarm</span></Link><span>&#x20;via&#x20;HTTP&#x20;over&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/UDP"><code>UDP</code></Link><span>-multicast&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>mechanism</em><span>)&#x20;to&#x20;discover&#x20;</span><Link to="peer"><code>Peers</code></Link><span>&#x20;</span><Link to="announce"><span>Announce</span></Link><span>&#x20;to&#x20;</span><Link to="swarm"><span>Swarm</span></Link><span>&#x20;via&#x20;HTTP&#x20;over&#x20;</span><Link to="udp"><code>UDP</code></Link><span>-multicast&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

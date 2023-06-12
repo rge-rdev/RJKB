@@ -16,7 +16,7 @@ export default function Previewm5djt2DL5f7KrwYCk(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>HTTP&#x20;Cookie</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Cookie</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>data&#x20;sent&#x20;from&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Backend"><span>Backend</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Server/Client"><span>Client</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Protocol/HTTP/HTTP-Cookie/TPS"><span>TPS</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>data&#x20;sent&#x20;from&#x20;</span><Link to="backend"><span>Backend</span></Link><span>&#x20;to&#x20;</span><Link to="client"><span>Client</span></Link><span>&#x20;to&#x20;</span><Link to="tps"><span>TPS</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

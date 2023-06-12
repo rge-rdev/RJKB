@@ -16,7 +16,7 @@ export default function Previewyen4KZfHFwS8Zw4jm(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Cloudflare</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Data-Structure/Database/Cloud-Storage/CDN"><span>CDN</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Web-Security/DDoS/DDoS-Protection"><span>DDoS&#x20;Protection</span></Link><span>&#x20;Service&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="cdn"><span>CDN</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="ddos-protection"><span>DDoS&#x20;Protection</span></Link><span>&#x20;Service&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewG2t9beqTAjwsfrXbg(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Unicode</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>standard</em><span>)&#x20;most&#x20;popular&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string/UTF-8/Character-Encoding"><code>Character Set</code></Link><span>&#x20;with&#x20;most&#x20;language&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/string/Character"><code>Chars</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>standard</em><span>)&#x20;most&#x20;popular&#x20;</span><Link to="character-encoding"><code>Character Set</code></Link><span>&#x20;with&#x20;most&#x20;language&#x20;</span><Link to="character"><code>Chars</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

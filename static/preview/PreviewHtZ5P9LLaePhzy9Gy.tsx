@@ -20,7 +20,7 @@ export default function PreviewHtZ5P9LLaePhzy9Gy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>VE</span><span>&nbsp;↔&nbsp;</span><span>container&#x20;for&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Call-Stack/EC/VE/FAV"><span>FAV</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>VE</span><span>&nbsp;↔&nbsp;</span><span>container&#x20;for&#x20;</span><Link to="fav"><span>FAV</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

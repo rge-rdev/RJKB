@@ -16,11 +16,11 @@ export default function Preview4xowAtDxmL5aM5MmC(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;tr&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Table&#x20;Row</b><span></span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element"><span>Block&#x20;Element</span></Link><span>&#x20;for&#x20;</span>each&#x20;cell&#x20;row&#x20;in&#x20;table<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Table&#x20;Row</b><span></span><Link to="block-element"><span>Block&#x20;Element</span></Link><span>&#x20;for&#x20;</span>each&#x20;cell&#x20;row&#x20;in&#x20;table<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;tbody&#x3E;</code><span>&nbsp;↔&nbsp;</span><b>Table&#x20;Body</b><span></span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element"><span>Block&#x20;Element</span></Link><span>&#x20;to&#x20;embed&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Block-Element/table/tbody/tr"><code>&#x3C;tr&#x3E;</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>&#x3C;tbody&#x3E;</code><span>&nbsp;↔&nbsp;</span><b>Table&#x20;Body</b><span></span><Link to="block-element"><span>Block&#x20;Element</span></Link><span>&#x20;to&#x20;embed&#x20;</span><Link to="tr"><code>&#x3C;tr&#x3E;</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

@@ -16,7 +16,7 @@ export default function PreviewPk4yB4TzRrQf2vuKA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Denormalization</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Embedding</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Denormalize</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Denormalizing</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Denormalization</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;embed&#x20;data&#x20;into&#x20;each&#x20;other&#x20;as&#x20;object&#x20;of&#x20;arrays&#x20;inside&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/MongoDB/MongoDB-Concepts/BSON"><span>BSON</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;embed&#x20;data&#x20;into&#x20;each&#x20;other&#x20;as&#x20;object&#x20;of&#x20;arrays&#x20;inside&#x20;</span><Link to="bson"><span>BSON</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

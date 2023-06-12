@@ -16,7 +16,7 @@ export default function PreviewrAP2Nch7X9zb7nfWx(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>bisect</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;walk&#x20;through&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit/Commit-History"><span>Commit&#x20;History</span></Link><span>&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm/Search-Algo/Binary-Search"><span>Binary&#x20;Search</span></Link><span>&#x20;to&#x20;find&#x20;good/bad&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit"><code>Commits</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;walk&#x20;through&#x20;</span><Link to="commit-history"><span>Commit&#x20;History</span></Link><span>&#x20;via&#x20;</span><Link to="binary-search"><span>Binary&#x20;Search</span></Link><span>&#x20;to&#x20;find&#x20;good/bad&#x20;</span><Link to="commit"><code>Commits</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewGjzXhuHCZaRahhXP4(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>XUL</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Markup-Language/XML"><span>XML</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Markup-Language/User-Interface-Markup-Language"><span>User&#x20;Interface&#x20;Markup&#x20;Language</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="xml"><span>XML</span></Link><span>&#x20;</span><Link to="user-interface-markup-language"><span>User&#x20;Interface&#x20;Markup&#x20;Language</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

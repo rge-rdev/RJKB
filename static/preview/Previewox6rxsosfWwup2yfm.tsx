@@ -20,7 +20,7 @@ export default function Previewox6rxsosfWwup2yfm(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Sorting</span><span>&nbsp;↔&nbsp;</span><span>feat&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Sorting/Promo"><span>Promo</span></Link><span>&#x20;or&#x20;serve&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine/Sorting/Geo-Search"><span>Geo-Search</span></Link><span>&#x20;for&#x20;specific&#x20;users&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Sorting</span><span>&nbsp;↔&nbsp;</span><span>feat&#x20;to&#x20;</span><Link to="promo"><span>Promo</span></Link><span>&#x20;or&#x20;serve&#x20;</span><Link to="geo-search"><span>Geo-Search</span></Link><span>&#x20;for&#x20;specific&#x20;users&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

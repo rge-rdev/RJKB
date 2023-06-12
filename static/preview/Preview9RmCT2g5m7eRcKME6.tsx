@@ -16,7 +16,7 @@ export default function Preview9RmCT2g5m7eRcKME6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;code&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Code</b><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;style&#x20;text&#x20;as&#x20;</span>fragment&#x20;of&#x20;<Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Code</b><span>&#x20;</span><Link to="inline-element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;style&#x20;text&#x20;as&#x20;</span>fragment&#x20;of&#x20;<Link to="source-code"><span>Source&#x20;Code</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

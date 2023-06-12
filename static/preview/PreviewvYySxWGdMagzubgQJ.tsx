@@ -16,7 +16,7 @@ export default function PreviewvYySxWGdMagzubgQJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Object.freeze()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Object/Object-Static-Method"><span>Object&#x20;Static&#x20;Method</span></Link><span>&#x20;to&#x20;make&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/immutable"><span>immutable</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="object-static-method"><span>Object&#x20;Static&#x20;Method</span></Link><span>&#x20;to&#x20;make&#x20;</span><Link to="object"><span>Object</span></Link><span>&#x20;</span><Link to="immutable"><span>immutable</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

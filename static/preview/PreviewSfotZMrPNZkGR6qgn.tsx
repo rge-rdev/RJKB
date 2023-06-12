@@ -16,7 +16,7 @@ export default function PreviewSfotZMrPNZkGR6qgn(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>hydrateRoot()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>variant&#x20;of&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/react-dom-client/react-dom-client-exports-2-Methods/createRoot"><code>createRoot()</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/Hydrate"><span>Hydrate</span></Link><span>&#x20;container&#x20;render&#x20;by&#x20;</span><Link to="/wiki/React/React-API/ReactDOM-API/react-dom-server/ReactDOMServer"><code>ReactDOMServer</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>variant&#x20;of&#x20;</span><Link to="createroot"><code>createRoot()</code></Link><span>&#x20;to&#x20;</span><Link to="hydrate"><span>Hydrate</span></Link><span>&#x20;container&#x20;render&#x20;by&#x20;</span><Link to="reactdomserver"><code>ReactDOMServer</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

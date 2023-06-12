@@ -20,7 +20,7 @@ export default function PreviewJFNeTM42iKMt2zz5j(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>firebase/app</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/API/Online-API/Firebase/Firebase-SDK"><span>Firebase&#x20;SDK</span></Link><span>&#x20;to&#x20;init&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/Firebase/Firebase-Concepts/Firebase-Project/Firebase-App"><span>Firebase&#x20;App</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>firebase/auth</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/Dev-tool/API/Online-API/Firebase/Firebase-SDK"><span>Firebase&#x20;SDK</span></Link><span>&#x20;to&#x20;access&#x20;firebase&#x20;auth&#x20;service</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>firebase/app</code><span>&nbsp;↔&nbsp;</span><Link to="firebase-sdk"><span>Firebase&#x20;SDK</span></Link><span>&#x20;to&#x20;init&#x20;</span><Link to="firebase-app"><span>Firebase&#x20;App</span></Link><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><code>firebase/auth</code><span>&nbsp;↔&nbsp;</span><Link to="firebase-sdk"><span>Firebase&#x20;SDK</span></Link><span>&#x20;to&#x20;access&#x20;firebase&#x20;auth&#x20;service</span></cite></li></ol>
     
     </small></Tooltip>)
 }

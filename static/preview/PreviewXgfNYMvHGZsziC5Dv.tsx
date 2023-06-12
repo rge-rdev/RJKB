@@ -16,7 +16,7 @@ export default function PreviewXgfNYMvHGZsziC5Dv(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Lazy&#x20;Initial&#x20;value</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;pass&#x20;as&#x20;</span><Link to="/wiki/JS/TS/TS-Syntax/Type/Base-Type/Function-Type/Function-Overload/Function-Signature/Parameter"><span>Parameter</span></Link><span>&#x20;into&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Stateful-Hook/useState"><code>useState()</code></Link><span>,&#x20;to&#x20;assign&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/return"><code>return</code></Link><span>&#x20;value&#x20;as&#x20;</span><Link to="/wiki/React/React-Stack/redux/Redux-Pattern/Initial-State"><span>Initial&#x20;State</span></Link><span>&#x20;value,&#x20;on&#x20;first-call&#x20;only</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="function"><span>function</span></Link><span>&#x20;pass&#x20;as&#x20;</span><Link to="parameter"><span>Parameter</span></Link><span>&#x20;into&#x20;</span><Link to="usestate"><code>useState()</code></Link><span>,&#x20;to&#x20;assign&#x20;</span><Link to="return"><code>return</code></Link><span>&#x20;value&#x20;as&#x20;</span><Link to="initial-state"><span>Initial&#x20;State</span></Link><span>&#x20;value,&#x20;on&#x20;first-call&#x20;only</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

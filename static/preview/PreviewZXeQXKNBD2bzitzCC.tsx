@@ -16,7 +16,7 @@ export default function PreviewZXeQXKNBD2bzitzCC(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Streams&#x20;API</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Streams</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Stream</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API"><span>Web&#x20;API</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/Streaming"><code>Stream</code></Link><span>&#x20;raw&#x20;data&#x20;over&#x20;network,&#x20;w/o&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/Buffer"><span>Buffer</span></Link><span>/</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/Streams-API/blob"><span>blob</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="web-api"><span>Web&#x20;API</span></Link><span>&#x20;to&#x20;</span><Link to="streaming"><code>Stream</code></Link><span>&#x20;raw&#x20;data&#x20;over&#x20;network,&#x20;w/o&#x20;</span><Link to="buffer"><span>Buffer</span></Link><span>/</span><Link to="blob"><span>blob</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

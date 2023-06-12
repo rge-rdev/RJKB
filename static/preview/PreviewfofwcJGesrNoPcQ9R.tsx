@@ -16,7 +16,7 @@ export default function PreviewfofwcJGesrNoPcQ9R(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>log</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;print&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit/Commit-History"><span>Commit&#x20;History</span></Link><span>&#x20;with&#x20;SHA&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/UID"><span>UID</span></Link><span>,&#x20;timestamp&#x20;&#x26;&#x20;msg&#x20;name</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;print&#x20;</span><Link to="commit-history"><span>Commit&#x20;History</span></Link><span>&#x20;with&#x20;SHA&#x20;</span><Link to="uid"><span>UID</span></Link><span>,&#x20;timestamp&#x20;&#x26;&#x20;msg&#x20;name</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

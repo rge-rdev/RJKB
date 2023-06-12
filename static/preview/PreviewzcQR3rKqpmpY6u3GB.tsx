@@ -16,7 +16,7 @@ export default function PreviewzcQR3rKqpmpY6u3GB(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Kernel</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Middleware"><span>Middleware</span></Link><span>&#x20;to&#x20;connect&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Hardware"><span>Hardware</span></Link><span>&#x20;resource&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software"><span>Software</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="middleware"><span>Middleware</span></Link><span>&#x20;to&#x20;connect&#x20;</span><Link to="hardware"><span>Hardware</span></Link><span>&#x20;resource&#x20;to&#x20;</span><Link to="software"><span>Software</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -20,7 +20,7 @@ export default function PreviewHb8BSqCQv3B4H6eaH(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Baseline&#x20;Compiler</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/JS-Compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;to&#x20;transform&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;into&#x20;unoptimized&#x20;executable&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Bytecode"><span>Bytecode</span></Link><span>/</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Machine-Code"><span>Machine&#x20;Code</span></Link><span>&#x20;ASAP&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Baseline&#x20;Compiler</span><span>&nbsp;↔&nbsp;</span><Link to="js-compiler"><span>JS&#x20;Compiler</span></Link><span>&#x20;to&#x20;transform&#x20;</span><Link to="source-code"><code>Code</code></Link><span>&#x20;into&#x20;unoptimized&#x20;executable&#x20;</span><Link to="bytecode"><span>Bytecode</span></Link><span>/</span><Link to="machine-code"><span>Machine&#x20;Code</span></Link><span>&#x20;ASAP&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

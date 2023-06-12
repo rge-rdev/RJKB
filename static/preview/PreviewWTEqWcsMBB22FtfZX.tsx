@@ -16,7 +16,7 @@ export default function PreviewWTEqWcsMBB22FtfZX(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>TS&#x20;Playground</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>online&#x20;editor&#x20;for&#x20;</span><Link to="/wiki/JS/TS"><span>TS</span></Link><span>,&#x20;full&#x20;feature&#x20;</span><Link to="/wiki/Dev-tool/IDE"><span>IDE</span></Link></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>online&#x20;editor&#x20;for&#x20;</span><Link to="ts"><span>TS</span></Link><span>,&#x20;full&#x20;feature&#x20;</span><Link to="ide"><span>IDE</span></Link></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

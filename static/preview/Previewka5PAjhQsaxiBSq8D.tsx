@@ -16,7 +16,7 @@ export default function Previewka5PAjhQsaxiBSq8D(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Command&#x20;Pallete</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>terminal&#x20;to&#x20;access&#x20;</span><Link to="/wiki/Dev-tool/IDE/VS-Code"><code>VSCode</code></Link><span>&#x20;commands,&#x20;switch&#x20;file</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>terminal&#x20;to&#x20;access&#x20;</span><Link to="vs-code"><code>VSCode</code></Link><span>&#x20;commands,&#x20;switch&#x20;file</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

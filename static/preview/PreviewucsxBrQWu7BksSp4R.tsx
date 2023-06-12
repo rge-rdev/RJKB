@@ -16,7 +16,7 @@ export default function PreviewucsxBrQWu7BksSp4R(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>^</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Assertion"><span>Assertion</span></Link><span>&#x20;to&#x20;</span>negate<span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Character-Class"><span>Character&#x20;Class</span></Link><span>&#x20;or&#x20;only&#x20;match&#x20;</span>start<span>&#x20;of&#x20;line&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="regexp"><code>RegExp</code></Link><span>&#x20;</span><Link to="assertion"><span>Assertion</span></Link><span>&#x20;to&#x20;</span>negate<span>&#x20;</span><Link to="character-class"><span>Character&#x20;Class</span></Link><span>&#x20;or&#x20;only&#x20;match&#x20;</span>start<span>&#x20;of&#x20;line&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

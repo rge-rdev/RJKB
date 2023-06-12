@@ -20,7 +20,7 @@ export default function PreviewqL6brqJs3mMQkGSGF(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>ECMAScript</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>standard</em><span>)&#x20;Formal&#x20;</span><b>specification</b><span>&#x20;for&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>,&#x20;set&#x20;by&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript/ECMA-International"><span>ECMA&#x20;International</span></Link><span>,&#x20;evolve&#x20;by&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript/TC39"><span>TC39</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>ECMAScript</span><span>&nbsp;↔&nbsp;</span><span>(</span><em>standard</em><span>)&#x20;Formal&#x20;</span><b>specification</b><span>&#x20;for&#x20;</span><Link to="js"><span>JS</span></Link><span>,&#x20;set&#x20;by&#x20;</span><Link to="ecma-international"><span>ECMA&#x20;International</span></Link><span>,&#x20;evolve&#x20;by&#x20;</span><Link to="tc-39"><span>TC39</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

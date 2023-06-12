@@ -16,7 +16,7 @@ export default function PreviewbjMxR4anSbZJTh4ZR(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>git&#x20;remote</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;print&#x20;list&#x20;of&#x20;all&#x20;remote&#x20;connected&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Git-Repo"><span>Git&#x20;Repo</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;print&#x20;list&#x20;of&#x20;all&#x20;remote&#x20;connected&#x20;</span><Link to="git-repo"><span>Git&#x20;Repo</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

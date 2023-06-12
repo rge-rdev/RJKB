@@ -16,7 +16,7 @@ export default function PreviewtQAR39hRZSuLw3QcD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>instantsearch</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;lib&#x20;for&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/Algolia"><span>Algolia</span></Link><span>&#x20;-&#x20;vanilla/</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Framework"><span>Framework</span></Link><span>&#x20;variants&#x20;-&#x20;compat&#x20;with&#x20;</span><Link to="/wiki/Dev-tool/API/Online-API/typesense"><code>typesense</code></Link><span>!&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="ui"><span>UI</span></Link><span>&#x20;lib&#x20;for&#x20;</span><Link to="algolia"><span>Algolia</span></Link><span>&#x20;-&#x20;vanilla/</span><Link to="framework"><span>Framework</span></Link><span>&#x20;variants&#x20;-&#x20;compat&#x20;with&#x20;</span><Link to="typesense"><code>typesense</code></Link><span>!&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

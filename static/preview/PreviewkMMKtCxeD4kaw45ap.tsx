@@ -20,7 +20,7 @@ export default function PreviewkMMKtCxeD4kaw45ap(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>fly&#x20;vol</code><span>&nbsp;↔&nbsp;</span><span>alias:[volume|volumes]&#x20;to&#x20;manage&#x20;volume&#x20;mounts&#x20;for&#x20;fly&#x20;app,&#x20;to&#x20;persist&#x20;local&#x20;storage&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/flyio/flyctl/fly-m"><code>Fly Machine</code></Link><span>;&#x20;NVMe&#x20;slice</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>fly&#x20;vol</code><span>&nbsp;↔&nbsp;</span><span>alias:[volume|volumes]&#x20;to&#x20;manage&#x20;volume&#x20;mounts&#x20;for&#x20;fly&#x20;app,&#x20;to&#x20;persist&#x20;local&#x20;storage&#x20;on&#x20;</span><Link to="fly-m"><code>Fly Machine</code></Link><span>;&#x20;NVMe&#x20;slice</span></cite></li></ol>
     
     </small></Tooltip>)
 }

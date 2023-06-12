@@ -16,7 +16,7 @@ export default function PreviewH6PozH8PFdHmSvB8d(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>DuckDuckGo</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>mostly&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS"><span>FOSS</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/Search-Engine"><span>Search&#x20;Engine</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>mostly&#x20;</span><Link to="foss"><span>FOSS</span></Link><span>&#x20;</span><Link to="search-engine"><span>Search&#x20;Engine</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

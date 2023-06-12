@@ -16,7 +16,7 @@ export default function PreviewL2kdHBWGoccPJoexT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>pnpm</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/npm/Package-Manager"><span>Package&#x20;Manager</span></Link><span>&#x20;to&#x20;minimize&#x20;disk&#x20;space&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Symbolic-Link"><code>Symbolic Links</code></Link><span>&#x20;.&#x20;!shit&#x20;not&#x20;worth&#x20;it!!</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="package-manager"><span>Package&#x20;Manager</span></Link><span>&#x20;to&#x20;minimize&#x20;disk&#x20;space&#x20;via&#x20;</span><Link to="symbolic-link"><code>Symbolic Links</code></Link><span>&#x20;.&#x20;!shit&#x20;not&#x20;worth&#x20;it!!</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewH2iTtapWyZubWENMC(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Object&#x20;Reference</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Link&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;as&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Value/Memory-Address"><span>Memory&#x20;Address</span></Link><span>&#x20;pointer&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JS-Engine/Heap"><span>Heap</span></Link><span>&#x20;location</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Link&#x20;to&#x20;</span><Link to="object"><span>Object</span></Link><span>&#x20;as&#x20;</span><Link to="memory-address"><span>Memory&#x20;Address</span></Link><span>&#x20;pointer&#x20;to&#x20;</span><Link to="heap"><span>Heap</span></Link><span>&#x20;location</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

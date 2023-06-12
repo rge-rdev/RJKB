@@ -16,7 +16,7 @@ export default function PreviewtEhJ5Nvtq5xtEoK9K(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Time-Travel</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>feat</em><span>)&#x20;to&#x20;revisit&#x20;</span><Link to="/wiki/React/React-Stack/redux"><code>redux</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;history&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>feat</em><span>)&#x20;to&#x20;revisit&#x20;</span><Link to="redux"><code>redux</code></Link><span>&#x20;</span><Link to="state"><span>state</span></Link><span>&#x20;history&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

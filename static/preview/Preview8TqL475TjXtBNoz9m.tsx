@@ -16,7 +16,7 @@ export default function Preview8TqL475TjXtBNoz9m(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;button&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Interactive&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>Element</code></Link><span>&#x20;to&#x20;user&#x20;trigger&#x20;programmable&#x20;action</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Interactive&#x20;</span><Link to="htmlelement"><code>Element</code></Link><span>&#x20;to&#x20;user&#x20;trigger&#x20;programmable&#x20;action</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

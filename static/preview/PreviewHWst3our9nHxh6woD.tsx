@@ -16,7 +16,7 @@ export default function PreviewHWst3our9nHxh6woD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>react-query</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack"><code>React Lib</code></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/react-query/FCS"><span>FCS</span></Link><span>&#x20;data&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="react-stack"><code>React Lib</code></Link><span>&#x20;</span><Link to="fcs"><span>FCS</span></Link><span>&#x20;data&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

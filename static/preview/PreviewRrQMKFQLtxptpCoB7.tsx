@@ -16,7 +16,7 @@ export default function PreviewRrQMKFQLtxptpCoB7(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Set()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Function/Constructor-Function"><code>Constructor</code></Link><span>&#x20;to&#x20;convert&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Spread-Operator/iterable"><span>iterable</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument"><code>arg</code></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Language/Object/set"><code>set</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="constructor-function"><code>Constructor</code></Link><span>&#x20;to&#x20;convert&#x20;</span><Link to="iterable"><span>iterable</span></Link><span>&#x20;</span><Link to="argument"><code>arg</code></Link><span>&#x20;to&#x20;</span><Link to="set_object"><code>set</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

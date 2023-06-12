@@ -16,7 +16,7 @@ export default function PreviewMsEbrPaPd5BbHhWKd(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Backing&#x20;Instance</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;(created&#x20;in&#x20;memory)&#x20;to&#x20;store&#x20;&#x26;&#x20;access&#x20;data</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="object"><span>Object</span></Link><span>&#x20;(created&#x20;in&#x20;memory)&#x20;to&#x20;store&#x20;&#x26;&#x20;access&#x20;data</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

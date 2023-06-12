@@ -16,7 +16,7 @@ export default function PreviewbK8DaZucuSNvmqtW6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>EC2</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/AWS"><span>AWS</span></Link><span>&#x20;instance&#x20;optimize&#x20;for&#x20;compute/mem/storage/gpu</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="aws"><span>AWS</span></Link><span>&#x20;instance&#x20;optimize&#x20;for&#x20;compute/mem/storage/gpu</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewJfYJg5v3ch7v3TFW4(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Apache&#x20;2.0</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>similar&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS/MIT-License"><span>MIT&#x20;License</span></Link><span>&#x20;+&#x20;legalese&#x20;to&#x20;restrict&#x20;right&#x20;to&#x20;use&#x20;creator&#x20;trademark&#x20;&#x26;&#x20;must&#x20;specify&#x20;significant&#x20;mods</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>similar&#x20;to&#x20;</span><Link to="mit-license"><span>MIT&#x20;License</span></Link><span>&#x20;+&#x20;legalese&#x20;to&#x20;restrict&#x20;right&#x20;to&#x20;use&#x20;creator&#x20;trademark&#x20;&#x26;&#x20;must&#x20;specify&#x20;significant&#x20;mods</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

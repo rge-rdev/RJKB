@@ -16,7 +16,7 @@ export default function Preview2b6b5AbsK4Aesx655(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>jq</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/CLI"><span>CLI</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;work&#x20;JSON&#x20;.&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/General-Purpose/C"><span>C</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Executable"><code>Binary</code></Link><span>&#x20;</span><Link to="/wiki/JS/Library/Zero-Dependency"><code>Zero Deps </code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="cli"><span>CLI</span></Link><span>&#x20;</span><Link to="dev-tool"><span>Dev&#x20;tool</span></Link><span>&#x20;to&#x20;work&#x20;JSON&#x20;.&#x20;</span><Link to="zero-deps"><span>Zero&#x20;Deps</span></Link><span>&#x20;</span><Link to="c"><span>C</span></Link><span>&#x20;</span><Link to="executable"><code>Binary</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewtHgPkZf2Fe83RzXaS(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Stripe</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Payment&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/REST/RESTful-API"><span>RESTful&#x20;API</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/SaaS"><span>SaaS</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Payment&#x20;</span><Link to="restful-api"><span>RESTful&#x20;API</span></Link><span>&#x20;</span><Link to="saas"><span>SaaS</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

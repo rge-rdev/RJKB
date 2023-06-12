@@ -16,7 +16,7 @@ export default function Preview9wG5Yb6g7CzEg2SYJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>DevOps</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;iterate&#x20;product&#x20;smaller&#x20;faster&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/TBD"><span>TBD</span></Link><span>&#x20;steps&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/CI"><span>CI</span></Link><span>/</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/CD"><span>CD</span></Link><span>&#x20;integration</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><Link to="paradigm"><span>Paradigm</span></Link><span>)&#x20;to&#x20;</span><b>iterate&#x20;faster&#x20;</b><Link to="tbd"><span>TBD</span></Link><span>&#x20;smaller&#x20;steps&#x20;via&#x20;</span><Link to="ci"><span>CI</span></Link><span>/</span><Link to="cd"><span>CD</span></Link><span>&#x20;integration,&#x20;push&#x20;code&#x20;ASAFP</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

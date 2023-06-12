@@ -16,7 +16,7 @@ export default function PreviewfywADHBbzM3NdrctL(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>GPL2</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>GNU&#x20;Public&#x20;License&#x20;ver&#x20;2&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/Copyleft"><span>Copyleft</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>GNU&#x20;Public&#x20;License&#x20;ver&#x20;2&#x20;</span><Link to="copyleft"><span>Copyleft</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

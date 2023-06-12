@@ -16,7 +16,7 @@ export default function PreviewWwvJhfWScyfj9jzmS(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>TC39&#x20;Process</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>4-stage&#x20;review&#x20;process&#x20;(</span><Link to="/wiki/JS/JS-Definition/ECMAScript/TC39/TC39-Process/SPDCF"><span>SPDCF</span></Link><span>)&#x20;to&#x20;independently&#x20;design&#x20;&#x26;&#x20;test&#x20;new&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript"><span>ECMAScript</span></Link><span>&#x20;features</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>4-stage&#x20;review&#x20;process&#x20;(</span><Link to="spdcf"><span>SPDCF</span></Link><span>)&#x20;to&#x20;independently&#x20;design&#x20;&#x26;&#x20;test&#x20;new&#x20;</span><Link to="ecmascript"><span>ECMAScript</span></Link><span>&#x20;features</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewwjNHc84HYsgfk9kJQ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>.json()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Async/async"><code>async</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Chain"><span>Chain</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/Literal/Object-Literal/Slot/Method"><span>Method</span></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Promise"><code>Promise</code></Link><span>&#x20;parse&#x20;as&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/JSON"><span>JSON</span></Link><span>&#x20;format</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="async_async"><code>async</code></Link><span>&#x20;</span><Link to="chain"><span>Chain</span></Link><span>&#x20;</span><Link to="method"><span>Method</span></Link><span>&#x20;to&#x20;return&#x20;</span><Link to="promise"><code>Promise</code></Link><span>&#x20;parse&#x20;as&#x20;</span><Link to="json"><span>JSON</span></Link><span>&#x20;format</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

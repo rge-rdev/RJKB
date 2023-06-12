@@ -16,7 +16,7 @@ export default function Previewsnd833JdboNybEK83(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;Routes&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/React-Router-FC"><span>React&#x20;Router&#x20;FC</span></Link><span>&#x20;to&#x20;intelligently&#x20;handle&#x20;multiple&#x20;</span><Link to="/wiki/React/React-Stack/react-router-dom/React-Router-API/React-Router-FC/Routes/Route"><code>&#x3C;Route&#x3E;</code></Link><span>,&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Nest-Route"><code>Nested Routes</code></Link><span>,&#x20;etc&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="react-router-fc"><span>React&#x20;Router&#x20;FC</span></Link><span>&#x20;to&#x20;auto-handle&#x20;multiple&#x20;</span><Link to="route_routes"><code>&#x3C;Route&#x3E;</code></Link><span>,&#x20;</span><Link to="nest-route"><code>Nested Routes</code></Link><span>,&#x20;etc&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

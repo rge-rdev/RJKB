@@ -16,7 +16,7 @@ export default function PreviewrDsFXEYKAK8LDTbm4(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Docker&#x20;Compose</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>tool&#x20;to&#x20;define&#x20;how&#x20;</span><b>to&#x20;run</b><span>&#x20;docker&#x20;app&#x20;</span><Link to="/wiki/Dev-tool/Docker/Docker-Container"><code>Container</code></Link><span>&#x20;via&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Markup-Language/YAML"><span>YAML</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>tool&#x20;to&#x20;define&#x20;how&#x20;</span><b>to&#x20;run</b><span>&#x20;docker&#x20;app&#x20;</span><Link to="docker-container"><code>Container</code></Link><span>&#x20;via&#x20;</span><Link to="yaml"><span>YAML</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewfHP3aCpQAzfXuhFJP(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;input&#x3E;</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Input&#x20;Form&#x20;Element</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Input&#x20;Element</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Form&#x20;Input</b><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;</span>accept&#x20;user&#x20;input&#x20;via&#x20;form&#x20;<Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Form&#x20;Input</b><span>&#x20;</span><Link to="inline-element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;</span>accept&#x20;user&#x20;input&#x20;via&#x20;form&#x20;<Link to="ui"><span>UI</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

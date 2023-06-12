@@ -16,7 +16,7 @@ export default function Preview5z5KqWsE9SFXtEQWW(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Memo()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React"><span>React</span></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/Function/function"><span>function</span></Link><span>&#x20;from&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Memoizing-Hook/useMemo"><code>useMemo()</code></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/API"><span>API</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/Memoization"><span>Memoization</span></Link><span>&#x20;of&#x20;any&#x20;function&#x20;
+        <blockquote className="react-tooltip__dd"><span><Link to="react"><span>React</span></Link><span>&#x20;</span><Link to="function"><span>function</span></Link><span>&#x20;from&#x20;</span><Link to="usememo"><code>useMemo()</code></Link><span>&#x20;</span><Link to="api"><span>API</span></Link><span>&#x20;for&#x20;</span><Link to="memoization"><span>Memoization</span></Link><span>&#x20;of&#x20;any&#x20;function&#x20;
 !snippet&#x20;for&#x20;addition</span><CodeBlock language="tsx">{`import {memo} \nconst add = (a, b) => a + b;\nconst memAdd = memo(add)`}</CodeBlock></span></blockquote>
       </dd>
     </dfn>

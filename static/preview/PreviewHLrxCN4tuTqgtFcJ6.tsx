@@ -16,7 +16,7 @@ export default function PreviewHLrxCN4tuTqgtFcJ6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Hashbang</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Shebang</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Directive"><span>Directive</span></Link><span>&#x20;to&#x20;specify&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Runtime-Environment"><code>Runtime</code></Link><span>&#x20;via&#x20;first-line&#x20;code:&#x20;</span><code>#!/usr/bin/env&#x20;node</code><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="directive"><span>Directive</span></Link><span>&#x20;to&#x20;specify&#x20;</span><Link to="runtime-environment"><code>Runtime</code></Link><span>&#x20;via&#x20;first-line&#x20;code:&#x20;</span><code>#!/usr/bin/env&#x20;node</code><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewFR5RDJsaoa5NZZDJg(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>draw.io</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/DRM/License/FOSS"><span>FOSS</span></Link><span>&#x20;Desktop&#x20;client&#x20;built&#x20;on&#x20;</span><Link to="/wiki/JS/Library/JS-Framework/Electron"><span>Electron</span></Link><span>,&#x20;</span><Link to="/wiki/JS"><span>JS</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/Dev-tool/CLI/Shell"><span>Shell</span></Link><span>&#x20;-&#x20;can&#x27;t&#x20;view&#x20;or&#x20;edit&#x20;plain&#x20;SVGs?!&#x20;-&#x20;diagrams&#x20;saved&#x20;as&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Markup-Language/XML"><span>XML</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="foss"><span>FOSS</span></Link><span>&#x20;Desktop&#x20;client&#x20;built&#x20;on&#x20;</span><Link to="electron"><span>Electron</span></Link><span>,&#x20;</span><Link to="js"><span>JS</span></Link><span>&#x20;&#x26;&#x20;</span><Link to="shell"><span>Shell</span></Link><span>&#x20;-&#x20;can&#x27;t&#x20;view&#x20;or&#x20;edit&#x20;plain&#x20;SVGs?!&#x20;-&#x20;diagrams&#x20;saved&#x20;as&#x20;</span><Link to="xml"><span>XML</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

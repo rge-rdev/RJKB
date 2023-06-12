@@ -20,7 +20,7 @@ export default function PreviewEdjG2fNjhgPmkZy5R(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>useSelector()</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-Stack/redux/OLD-Redux-API"><span>OLD&#x20;Redux&#x20;API</span></Link><span>&#x20;</span><Link to="/wiki/React/React-API/Hooks-API/Library-Hook"><span>Library&#x20;Hook</span></Link><span>&#x20;to&#x20;select&#x20;</span><Link to="/wiki/JS/JS-Definition/Multi-paradigm/Concurrency-Model/Sync"><span>Sync</span></Link><span>&#x20;derived&#x20;piece&#x20;of&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;from&#x20;redux&#x20;store.&#x20;replace&#x20;by&#x20;</span><Link to="/wiki/React/React-Stack/redux/reduxjs-toolkit/useAppSelector"><code>useAppSelector()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>useSelector()</code><span>&nbsp;↔&nbsp;</span><Link to="old-redux-api"><span>OLD&#x20;Redux&#x20;API</span></Link><span>&#x20;</span><Link to="library-hook"><span>Library&#x20;Hook</span></Link><span>&#x20;to&#x20;</span><b>select</b><span>&#x20;piece&#x20;of&#x20;</span><Link to="state"><span>state</span></Link><span>&#x20;from&#x20;</span><Link to="redux-store"><span>Redux&#x20;Store</span></Link><span>.&#x20;rep&#x20;by&#x20;</span><Link to="useappselector"><code>useAppSelector()</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

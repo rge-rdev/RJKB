@@ -16,7 +16,7 @@ export default function PreviewjgxYfse5CuqZp9sh2(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>nodemon</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Aliases/Node-DevTool"><span>Node&#x20;DevTool</span></Link><span>&#x20;to&#x20;monitor&#x20;&#x26;&#x20;recompile&#x20;changes&#x20;in&#x20;code&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="node-devtool"><span>Node&#x20;DevTool</span></Link><span>&#x20;to&#x20;monitor&#x20;&#x26;&#x20;recompile&#x20;changes&#x20;in&#x20;code&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

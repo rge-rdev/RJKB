@@ -20,7 +20,7 @@ export default function Preview88Wxm98tTPrRRXZWB(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Server&#x20;State</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/state"><span>state</span></Link><span>&#x20;store&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Backend"><span>Backend</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/Server-State/RASP"><span>RASP</span></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Server&#x20;State</span><span>&nbsp;↔&nbsp;</span><Link to="state"><span>state</span></Link><span>&#x20;store&#x20;on&#x20;</span><Link to="backend"><span>Backend</span></Link><span>&#x20;</span><Link to="rasp"><span>RASP</span></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

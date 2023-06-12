@@ -16,7 +16,7 @@ export default function PreviewEDW2uvL6DduiXCH4j(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;Head&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Stack/Nextjs/Next-12/Aliases/Next-12"><span>(&#x20;</span><em>Next&#x20;12&#x20;</em><span>)</span></Link><span>&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/FC"><span>FC</span></Link><span>&#x20;extends&#x20;</span><Link to="/wiki/HTML/Metadata-Content/head"><code>&#x20;&#x3C;head&#x3E;</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="next-12"><span>(&#x20;</span><em>Next&#x20;12&#x20;</em><span>)</span></Link><span>&#x20;</span><Link to="fc"><span>FC</span></Link><span>&#x20;extends&#x20;</span><Link to="head_metadata"><code>&#x20;&#x3C;head&#x3E;</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

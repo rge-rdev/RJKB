@@ -16,7 +16,7 @@ export default function PreviewQ4NdQTHEk3BcoABMu(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Class&#x20;Selector</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><code>.myClass</code><span>&#x20;</span><Link to="/wiki/CSS/CSS-Syntax/Selector"><span>Selector</span></Link><span>&#x20;to&#x20;match&#x20;any&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement"><code>HTMLElement</code></Link><span>&#x20;with&#x20;</span><code>class</code><span>&#x20;attribute</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><code>.myClass</code><span>&#x20;</span><Link to="selector"><span>Selector</span></Link><span>&#x20;to&#x20;match&#x20;any&#x20;</span><Link to="htmlelement"><code>HTMLElement</code></Link><span>&#x20;with&#x20;</span><code>class</code><span>&#x20;attribute</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

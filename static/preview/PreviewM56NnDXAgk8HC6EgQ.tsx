@@ -16,7 +16,7 @@ export default function PreviewM56NnDXAgk8HC6EgQ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Docker&#x20;Hub</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Dev-tool/Docker/Docker-Container-Image"><code>Docker Image</code></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Git-Repo"><code>Repo</code></Link><span>,&#x20;</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/CI"><span>CI</span></Link><span>/</span><Link to="/wiki/Computer-Science/Design-Pattern/DevOps/CD"><span>CD</span></Link><span>&#x20;triggers/</span><Link to="/wiki/Dev-tool/Webhook"><span>Webhook</span></Link><span>,&#x20;</span><Link to="/wiki/Dev-tool/git/github"><span>github</span></Link><span>&#x20;integration</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="docker-container-image"><code>Docker Image</code></Link><span>&#x20;</span><Link to="git-repo"><code>Repo</code></Link><span>,&#x20;</span><Link to="ci"><span>CI</span></Link><span>/</span><Link to="cd"><span>CD</span></Link><span>&#x20;triggers/</span><Link to="webhook"><span>Webhook</span></Link><span>,&#x20;</span><Link to="github"><span>github</span></Link><span>&#x20;integration</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

@@ -16,7 +16,7 @@ export default function PreviewBBe4L8avzJQS5aGXx(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>On-demand&#x20;Revalidation</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>feat</em><span>)&#x20;to&#x20;manually&#x20;purge&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Request/Data-Fetch/HTTP-Caching"><code>HTTP Cache</code></Link><span>&#x20;for&#x20;specific&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/Pre-render/ISR"><span>ISR</span></Link><span>&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Concepts/File-System-Router/Page"><span>Page</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>feat</em><span>)&#x20;to&#x20;manually&#x20;purge&#x20;</span><Link to="http-caching"><code>HTTP Cache</code></Link><span>&#x20;for&#x20;specific&#x20;</span><Link to="isr"><span>ISR</span></Link><span>&#x20;</span><Link to="page"><span>Page</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

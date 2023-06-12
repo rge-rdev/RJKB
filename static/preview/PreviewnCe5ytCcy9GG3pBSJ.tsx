@@ -16,7 +16,7 @@ export default function PreviewnCe5ytCcy9GG3pBSJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>.env</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>environment&#x20;variable&#x20;</span><Link to="/wiki/Dev-tool/dotconfig"><code>dotconfig</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>environment&#x20;variable&#x20;</span><Link to="dotconfig"><code>dotconfig</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

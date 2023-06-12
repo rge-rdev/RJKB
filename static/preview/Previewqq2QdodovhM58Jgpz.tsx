@@ -16,7 +16,7 @@ export default function Previewqq2QdodovhM58Jgpz(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Child&#x20;Component</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;nest&#x20;within&#x20;</span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component"><span>Component</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="component"><span>Component</span></Link><span>&#x20;nest&#x20;within&#x20;</span><Link to="component"><span>Component</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

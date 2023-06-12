@@ -16,7 +16,7 @@ export default function PreviewhEXd5JbDFyw6udAjA(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>node</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>start&#x20;</span><Link to="/wiki/JS/Nodejs/nodejs-commands/node/REPL"><span>REPL</span></Link><span>&#x20;</span><Link to="/wiki/Dev-tool/CLI/Terminal"><span>Terminal</span></Link><span>&#x20;for&#x20;</span><Link to="/wiki/JS/Nodejs"><span>Node.js</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>start&#x20;</span><Link to="repl"><span>REPL</span></Link><span>&#x20;</span><Link to="terminal"><span>Terminal</span></Link><span>&#x20;for&#x20;</span><Link to="node-js"><span>Node.js</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

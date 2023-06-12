@@ -16,7 +16,7 @@ export default function Preview9jrLaaao4SmCHXBrt(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>StrictMode&#x20;API</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-API"><span>React&#x20;API</span></Link><span>&#x20;to&#x20;highlight&#x20;potential&#x20;problems&#x20;ie&#x20;unsafe&#x20;lifecycles,&#x20;deprecated&#x20;legacy&#x20;API,&#x20;etc</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="react-api"><span>React&#x20;API</span></Link><span>&#x20;to&#x20;highlight&#x20;potential&#x20;problems&#x20;ie&#x20;unsafe&#x20;lifecycles,&#x20;deprecated&#x20;legacy&#x20;API,&#x20;etc</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

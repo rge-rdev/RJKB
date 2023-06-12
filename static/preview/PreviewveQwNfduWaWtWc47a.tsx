@@ -20,7 +20,7 @@ export default function PreviewveQwNfduWaWtWc47a(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>req&#x20;swizzle&#x20;to&#x20;customize?!</span><span>&nbsp;↔&nbsp;</span><span>req&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Swizzling"><span>Swizzling</span></Link><span>&#x20;to&#x20;reconfig&#x20;certain&#x20;UI&#x20;-&#x20;to&#x20;eject&#x20;theme&#x20;under&#x20;new&#x20;dir&#x20;src/theme&#x20;to&#x20;customize&#x20;-&#x20;pain&#x20;in&#x20;the&#x20;A!</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>req&#x20;swizzle&#x20;to&#x20;customize?!</span><span>&nbsp;↔&nbsp;</span><span>req&#x20;</span><Link to="swizzling"><span>Swizzling</span></Link><span>&#x20;to&#x20;reconfig&#x20;certain&#x20;UI&#x20;-&#x20;to&#x20;eject&#x20;theme&#x20;under&#x20;new&#x20;dir&#x20;src/theme&#x20;to&#x20;customize&#x20;-&#x20;pain&#x20;in&#x20;the&#x20;A!</span></cite></li></ol>
     
     </small></Tooltip>)
 }

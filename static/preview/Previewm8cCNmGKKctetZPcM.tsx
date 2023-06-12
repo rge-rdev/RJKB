@@ -16,7 +16,7 @@ export default function Previewm8cCNmGKKctetZPcM(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>fly&#x20;vol</code></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Fly&#x20;Volume</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Fly&#x20;Volumes</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>alias:[volume|volumes]&#x20;to&#x20;manage&#x20;volume&#x20;mounts&#x20;for&#x20;fly&#x20;app,&#x20;to&#x20;persist&#x20;local&#x20;storage&#x20;on&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Node/Cloud-Platform/flyio/flyctl/fly-m"><code>Fly Machine</code></Link><span>;&#x20;NVMe&#x20;slice</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>alias:[volume|volumes]&#x20;to&#x20;manage&#x20;volume&#x20;mounts&#x20;for&#x20;fly&#x20;app,&#x20;to&#x20;persist&#x20;local&#x20;storage&#x20;on&#x20;</span><Link to="fly-m"><code>Fly Machine</code></Link><span>;&#x20;NVMe&#x20;slice</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

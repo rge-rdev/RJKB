@@ -16,7 +16,7 @@ export default function PreviewPGjc4az5ENqGpkujF(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Mount</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Mounted</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Mounting</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;add&#x20;</span><Link to="/wiki/Dev-tool/API/Interface/UI"><span>UI</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API/DOM-API"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;add&#x20;</span><Link to="ui"><span>UI</span></Link><span>&#x20;to&#x20;</span><Link to="dom-api"><span>DOM&#x20;API&#x20;</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewKFHCFFGJQAG4LaXhD(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>import.meta</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>return&#x20;</span><Link to="/wiki/JS/JS-Language/Object"><span>Object</span></Link><span>&#x20;with&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Metadata"><span>Metadata</span></Link><span>&#x20;for&#x20;current&#x20;</span><Link to="/wiki/JS/Library/Module"><span>Module</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>return&#x20;</span><Link to="object"><span>Object</span></Link><span>&#x20;with&#x20;</span><Link to="metadata"><span>Metadata</span></Link><span>&#x20;for&#x20;current&#x20;</span><Link to="module"><span>Module</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

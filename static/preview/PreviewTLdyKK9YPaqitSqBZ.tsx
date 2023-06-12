@@ -16,7 +16,7 @@ export default function PreviewTLdyKK9YPaqitSqBZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Swift</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/Multi-paradigm"><span>Multi-paradigm</span></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Compiled-Language"><code>Compiled</code></Link><span>&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language"><span>Programming&#x20;Language</span></Link><span>&#x20;to&#x20;build&#x20;apple&#x20;native&#x20;apps,&#x20;succeed&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Interoperability"><code>Interop</code></Link><span>&#x20;Objective-C</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="multi-paradigm"><span>Multi-paradigm</span></Link><span>&#x20;</span><Link to="compiled-language"><code>Compiled</code></Link><span>&#x20;</span><Link to="programming-language"><span>Programming&#x20;Language</span></Link><span>&#x20;to&#x20;build&#x20;apple&#x20;native&#x20;apps,&#x20;succeed&#x20;&#x26;&#x20;</span><Link to="interoperability"><code>Interop</code></Link><span>&#x20;Objective-C</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

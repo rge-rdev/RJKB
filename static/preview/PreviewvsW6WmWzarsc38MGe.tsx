@@ -16,7 +16,7 @@ export default function PreviewvsW6WmWzarsc38MGe(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>WebRTC&#x20;API</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>WebRTC</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>Web&#x20;Real-Time&#x20;Communication</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Definition/JavaScript-Runtime/Platform-API/Web-API"><span>Web&#x20;API</span></Link><span>&#x20;to&#x20;enable&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App"><code>Web Apps</code></Link><span>&#x20;to&#x20;directly&#x20;capture/stream&#x20;media&#x20;to&#x20;host&#x20;for&#x20;live&#x20;video/voice-chat&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/P2P"><span>P2P</span></Link><span>&#x20;file&#x20;sharing</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="web-api"><span>Web&#x20;API</span></Link><span>&#x20;to&#x20;enable&#x20;</span><Link to="web-app"><code>Web Apps</code></Link><span>&#x20;to&#x20;directly&#x20;capture/stream&#x20;media&#x20;to&#x20;host&#x20;for&#x20;live&#x20;video/voice-chat&#x20;&#x26;&#x20;</span><Link to="p-2-p"><span>P2P</span></Link><span>&#x20;file&#x20;sharing</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

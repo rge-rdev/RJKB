@@ -16,7 +16,7 @@ export default function PreviewacEG95Bh3YwpjmNTv(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Hoisting</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Hoisted</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>mechanism</em><span>)&#x20;to&#x20;access&#x20;</span><Link to="/wiki/JS/JS-Language/Primitive/undefined/Argument/Variable"><span>Variable</span></Link><span>&#x20;before&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration"><span>Declaration</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>mechanism</em><span>)&#x20;to&#x20;access&#x20;</span><Link to="variable"><span>Variable</span></Link><span>&#x20;before&#x20;</span><Link to="declaration"><span>Declaration</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

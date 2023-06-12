@@ -16,11 +16,11 @@ export default function PreviewBvJTekgyLo8nszLgc(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x3C;time&#x3E;</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/time/datetime"><code>datetime</code></Link><span>&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/General-Computing-Concepts/Syntax/Semantic"><span>Semantic</span></Link><span>&#x20;mark&#x20;date&#x20;for&#x20;machine-compat&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="datetime"><code>datetime</code></Link><span>&#x20;</span><Link to="inline-element"><span>Inline&#x20;Element</span></Link><span>&#x20;to&#x20;</span><Link to="semantic"><span>Semantic</span></Link><span>&#x20;mark&#x20;date&#x20;for&#x20;machine-compat&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>datetime</code><span>&nbsp;↔&nbsp;</span><Link to="/wiki/HTML/Flow-Content/HTML-Attribute"><code>Attribute</code></Link><span>&#x20;to&#x20;set&#x20;machine-readable&#x20;</span><Link to="/wiki/HTML/Flow-Content/HTMLElement/Inline-Element/time"><code>&#x3C;time&#x3E;</code></Link><span>&#x20;string&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>datetime</code><span>&nbsp;↔&nbsp;</span><Link to="html-attribute"><code>Attribute</code></Link><span>&#x20;to&#x20;set&#x20;machine-readable&#x20;</span><Link to="time"><code>&#x3C;time&#x3E;</code></Link><span>&#x20;string&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

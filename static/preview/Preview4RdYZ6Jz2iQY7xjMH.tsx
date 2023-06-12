@@ -20,7 +20,7 @@ export default function Preview4RdYZ6Jz2iQY7xjMH(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>TC39&#x20;Process</span><span>&nbsp;↔&nbsp;</span><span>4-stage&#x20;review&#x20;process&#x20;(</span><Link to="/wiki/JS/JS-Definition/ECMAScript/TC39/TC39-Process/SPDCF"><span>SPDCF</span></Link><span>)&#x20;to&#x20;independently&#x20;design&#x20;&#x26;&#x20;test&#x20;new&#x20;</span><Link to="/wiki/JS/JS-Definition/ECMAScript"><span>ECMAScript</span></Link><span>&#x20;features</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>TC39&#x20;Process</span><span>&nbsp;↔&nbsp;</span><span>4-stage&#x20;review&#x20;process&#x20;(</span><Link to="spdcf"><span>SPDCF</span></Link><span>)&#x20;to&#x20;independently&#x20;design&#x20;&#x26;&#x20;test&#x20;new&#x20;</span><Link to="ecmascript"><span>ECMAScript</span></Link><span>&#x20;features</span></cite></li></ol>
     
     </small></Tooltip>)
 }

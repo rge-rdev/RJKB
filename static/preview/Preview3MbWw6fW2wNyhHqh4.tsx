@@ -16,7 +16,7 @@ export default function Preview3MbWw6fW2wNyhHqh4(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Guard&#x20;Clause</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Statement/Control-Flow"><span>Control&#x20;Flow</span></Link><span>&#x20;condition&#x20;to&#x20;trigger&#x20;early&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Declaration/return"><code>return</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="control-flow"><span>Control&#x20;Flow</span></Link><span>&#x20;condition&#x20;to&#x20;trigger&#x20;early&#x20;</span><Link to="return"><code>return</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

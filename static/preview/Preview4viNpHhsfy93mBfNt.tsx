@@ -16,7 +16,7 @@ export default function Preview4viNpHhsfy93mBfNt(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>path</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/Node-Stack/Node-API"><span>Node&#x20;API</span></Link><span>&#x20;for&#x20;</span>tools&#x20;to&#x20;work&#x20;with&#x20;paths<span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="node-api"><span>Node&#x20;API</span></Link><span>&#x20;for&#x20;</span>tools&#x20;to&#x20;work&#x20;with&#x20;paths<span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

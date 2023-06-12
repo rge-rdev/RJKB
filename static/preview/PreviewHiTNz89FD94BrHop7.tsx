@@ -16,7 +16,7 @@ export default function PreviewHiTNz89FD94BrHop7(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Non-exception&#x20;Failures</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><b>Unexpected&#x20;behavior</b><span>&#x20;which&#x20;doesn&#x27;t&#x20;throw&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception"><span>Exception</span></Link><span>&#x20;(in&#x20;default&#x20;JavaScript)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><b>Unexpected&#x20;behavior</b><span>&#x20;which&#x20;doesn&#x27;t&#x20;throw&#x20;</span><Link to="exception"><span>Exception</span></Link><span>&#x20;(in&#x20;default&#x20;JavaScript)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

@@ -16,7 +16,7 @@ export default function PreviewpJjuPphh3TbxpZhSY(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>squash</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;combine&#x20;multi&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit"><code>Commits</code></Link><span>&#x20;into&#x20;single&#x20;name&#x20;</span><Link to="/wiki/Dev-tool/git/git-definition/Commit"><span>Commit</span></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;combine&#x20;multi&#x20;</span><Link to="commit"><code>Commits</code></Link><span>&#x20;into&#x20;single&#x20;name&#x20;</span><Link to="commit"><span>Commit</span></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

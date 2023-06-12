@@ -16,7 +16,7 @@ export default function PreviewPuqtKeXJwH3PJARZj(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Redirect</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software/Domain/Web-Dev/Web-App/Client-Routing/Routing"><code>Re-route</code></Link><span>&#x20;to&#x20;another&#x20;page</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;</span><Link to="routing"><code>Re-route</code></Link><span>&#x20;to&#x20;another&#x20;page</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

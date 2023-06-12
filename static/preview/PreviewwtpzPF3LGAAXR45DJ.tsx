@@ -16,7 +16,7 @@ export default function PreviewwtpzPF3LGAAXR45DJ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Silent&#x20;Fail</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Error&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Exception-Handling/throw"><code>throw</code></Link><span>n&#x20;in&#x20;async&#x20;code&#x20;MISSING&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Exception-Handling/catch"><code>.catch()</code></Link></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Error&#x20;</span><Link to="throw"><code>throw</code></Link><span>n&#x20;in&#x20;async&#x20;code&#x20;MISSING&#x20;</span><Link to="catch"><code>.catch()</code></Link></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

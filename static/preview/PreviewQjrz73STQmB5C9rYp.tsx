@@ -16,7 +16,7 @@ export default function PreviewQjrz73STQmB5C9rYp(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>/node_modules</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>dir&#x20;with&#x20;all&#x20;</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;&#x26;&#x20;their&#x20;sub-</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;&#x26;&#x20;their&#x20;sub-sub-</span><Link to="/wiki/JS/Library/Module/Dependency"><code>Deps</code></Link><span>&#x20;&#x26;&#x20;...&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>dir&#x20;with&#x20;all&#x20;</span><Link to="dependency"><code>Deps</code></Link><span>&#x20;&#x26;&#x20;their&#x20;sub-</span><Link to="dependency"><code>Deps</code></Link><span>&#x20;&#x26;&#x20;their&#x20;sub-sub-</span><Link to="dependency"><code>Deps</code></Link><span>&#x20;&#x26;&#x20;...&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

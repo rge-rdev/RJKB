@@ -16,7 +16,7 @@ export default function PrevieweHExya79z4dYxH43z(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>Object.is()</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/Object/Object-Static-Method"><span>Object&#x20;Static&#x20;Method</span></Link><span>&#x20;to&#x20;check&#x20;if&#x20;equality&#x20;of&#x20;two&#x20;values,&#x20;with&#x20;even&#x20;greater&#x20;strictness&#x20;than&#x20;</span><Link to="/wiki/JS/JS-Language/JS-Syntax/JS-Operator/Comparison-Operator/Equality-Operator/"><code>===</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="object-static-method"><span>Object&#x20;Static&#x20;Method</span></Link><span>&#x20;to&#x20;check&#x20;if&#x20;equality&#x20;of&#x20;two&#x20;values,&#x20;with&#x20;even&#x20;greater&#x20;strictness&#x20;than&#x20;</span><Link to="_67m"><code>===</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 4 times</cite>

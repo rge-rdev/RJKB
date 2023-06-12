@@ -16,7 +16,7 @@ export default function Preview6xRBzgBL6QzZjZEQM(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>[:space:]</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/Object/RegExp"><code>RegExp</code></Link><span>&#x20;</span><Link to="/wiki/JS/JS-Language/Object/RegExp/RegExp-Syntax/regexp-body/Character-Class"><span>Character&#x20;Class</span></Link><span>&#x20;to&#x20;</span><b>match</b><span>&#x20;</span><b>space</b><span>&#x20;char</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="regexp"><code>RegExp</code></Link><span>&#x20;</span><Link to="character-class"><span>Character&#x20;Class</span></Link><span>&#x20;to&#x20;</span><b>match</b><span>&#x20;</span><b>space</b><span>&#x20;char</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

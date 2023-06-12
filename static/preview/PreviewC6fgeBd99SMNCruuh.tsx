@@ -16,7 +16,7 @@ export default function PreviewC6fgeBd99SMNCruuh(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>yarn</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/Nodejs/npm/Package-Manager"><span>Package&#x20;Manager</span></Link><span>,&#x20;faster&#x20;than&#x20;</span><Link to="/wiki/JS/Nodejs/npm"><code>npm</code></Link><span>,&#x20;more&#x20;reliable&#x20;for&#x20;old&#x20;projects,&#x20;prettier&#x20;CLI&#x20;ASCII&#x20;art&#x20;UI,&#x20;by&#x20;FB.&#x20;Update:&#x20;it&#x27;s&#x20;better&#x20;than&#x20;npm&#x20;for&#x20;sure!</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="package-manager"><span>Package&#x20;Manager</span></Link><span>,&#x20;faster&#x20;than&#x20;</span><Link to="npm"><code>npm</code></Link><span>,&#x20;more&#x20;reliable&#x20;for&#x20;old&#x20;projects,&#x20;prettier&#x20;CLI&#x20;ASCII&#x20;art&#x20;UI,&#x20;by&#x20;FB.&#x20;Update:&#x20;it&#x27;s&#x20;better&#x20;than&#x20;npm&#x20;for&#x20;sure!</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 5 times</cite>

@@ -20,7 +20,7 @@ export default function Preview9LKS9aumANA2k9z6E(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>X</span><span>&nbsp;↔&nbsp;</span><span>(</span><span ><span>Flag</span></span><span>)&#x20;discover&#x20;from&#x20;</span><span ><span>PeX</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>Private&#x20;Tracker</span></span><span>&#x20;bans&#x20;</span><span ><span>DHT</span></span><span>,&#x20;</span><span ><span>PeX</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>LSD</span></span><span>&#x20;</span><span ><span>Peer</span></span><span>-discovery&#x20;for&#x20;kill&#x20;privacy&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>X</code><span>&nbsp;↔&nbsp;</span><span>(</span><span ><span>Flag</span></span><span>)&#x20;discover&#x20;from&#x20;</span><span ><span>PeX</span></span><span>&#x20;</span></cite></li><li><cite className="react-tooltip__ref-list"><span ><span>Private&#x20;Tracker</span></span><span>&#x20;bans&#x20;</span><span ><span>DHT</span></span><span>,&#x20;</span><span ><span>PeX</span></span><span>&#x20;&#x26;&#x20;</span><span ><span>LSD</span></span><span>&#x20;</span><span ><span>Peer</span></span><span>-discovery&#x20;for&#x20;kill&#x20;privacy&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }

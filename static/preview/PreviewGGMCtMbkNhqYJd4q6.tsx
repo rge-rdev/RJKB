@@ -16,7 +16,7 @@ export default function PreviewGGMCtMbkNhqYJd4q6(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>AssertionError</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/JS/JS-Language/JS-Syntax/Exception/Error"><code>Error</code></Link><span>&#x20;thrown&#x20;by&#x20;</span><Link to="/wiki/JS/Nodejs/Node-Stack/assert"><code>assert</code></Link><span>&#x20;</span><Link to="/wiki/JS/Library/Module"><span>Module</span></Link><span>&#x20;for&#x20;failure&#x20;of&#x20;assertion</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="error"><code>Error</code></Link><span>&#x20;thrown&#x20;by&#x20;</span><Link to="assert"><code>assert</code></Link><span>&#x20;</span><Link to="module"><span>Module</span></Link><span>&#x20;for&#x20;failure&#x20;of&#x20;assertion</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

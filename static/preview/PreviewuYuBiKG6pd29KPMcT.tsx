@@ -16,7 +16,7 @@ export default function PreviewuYuBiKG6pd29KPMcT(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Semantic&#x20;Web</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Web&#x20;3.0</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW/W3C"><span>W3C</span></Link><span>&#x20;vision&#x20;to&#x20;encode&#x20;</span><Link to="/wiki/Computer-Science/Computer-Network/Network-Scope/Internet/WWW"><span>WWW</span></Link><span>&#x20;for&#x20;full&#x20;machine-readability</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="w-3-c"><span>W3C</span></Link><span>&#x20;vision&#x20;to&#x20;encode&#x20;</span><Link to="www"><span>WWW</span></Link><span>&#x20;for&#x20;full&#x20;machine-readability</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

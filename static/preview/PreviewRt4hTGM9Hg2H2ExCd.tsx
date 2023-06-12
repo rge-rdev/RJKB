@@ -16,7 +16,7 @@ export default function PreviewRt4hTGM9Hg2H2ExCd(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>&#x22;lib&#x22;:&#x20;[]</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>to&#x20;set&#x20;which&#x20;default&#x20;objects&#x20;&#x26;&#x20;features&#x20;</span><Link to="/wiki/JS/TS/TS-Definition/TSC"><span>TSC</span></Link><span>&#x20;knows</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>to&#x20;set&#x20;which&#x20;default&#x20;objects&#x20;&#x26;&#x20;features&#x20;</span><Link to="tsc_ts-def"><span>TSC</span></Link><span>&#x20;knows</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>

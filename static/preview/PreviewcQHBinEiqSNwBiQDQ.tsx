@@ -16,7 +16,7 @@ export default function PreviewcQHBinEiqSNwBiQDQ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>Dead&#x20;Code&#x20;Elimination</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Eliminate&#x20;Dead&#x20;Code</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;remove&#x20;unused&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Programming-Language/Source-Code"><code>Code</code></Link><span>&#x20;</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>(</span><em>process</em><span>)&#x20;to&#x20;remove&#x20;unused&#x20;</span><Link to="source-code"><code>Code</code></Link><span>&#x20;</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 3 times</cite>

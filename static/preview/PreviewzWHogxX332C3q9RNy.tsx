@@ -20,7 +20,7 @@ export default function PreviewzWHogxX332C3q9RNy(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Specificity</span><span>&nbsp;↔&nbsp;</span><Link to="/wiki/CSS"><span>CSS</span></Link><span>&#x20;Weight&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Program/Algorithm"><span>Algorithm</span></Link><span>&#x20;to&#x20;determine&#x20;which&#x20;</span><Link to="/wiki/CSS/CSS-Definition/Style-Rule"><span>Style&#x20;Rule</span></Link><span>&#x20;clash&#x20;to&#x20;apply;&#x20;by&#x20;</span><Link to="/wiki/CSS/CSS-Definition/Cascade/Specificity/IICE"><span>IICE</span></Link><span>&#x20;order</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><span>Specificity</span><span>&nbsp;↔&nbsp;</span><Link to="css"><span>CSS</span></Link><span>&#x20;Weight&#x20;</span><Link to="algorithm"><span>Algorithm</span></Link><span>&#x20;to&#x20;determine&#x20;which&#x20;</span><Link to="style-rule"><span>Style&#x20;Rule</span></Link><span>&#x20;clash&#x20;to&#x20;apply;&#x20;by&#x20;</span><Link to="iice"><span>IICE</span></Link><span>&#x20;order</span></cite></li></ol>
     
     </small></Tooltip>)
 }

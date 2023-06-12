@@ -16,7 +16,7 @@ export default function PreviewLnYy2kqokFEXpWxxX(){
     <dfn>
       <dt><code className="react-tooltip__dt"><span>PGP</span></code><em>&#x20;aka&#x20;</em><code className="italic font-bold"><span>Pretty&#x20;Good&#x20;Privacy</span></code><span>&#x2C;&#x20;</span><code className="italic font-bold"><span>PGP</span></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><span>Popular&#x20;</span><Link to="/wiki/Computer-Science/Computer-Language/Computer/Software"><span>Software</span></Link><span>&#x20;to&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption"><code>Encrypt</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="/wiki/Computer-Science/Data-Structure/Encryption/Ciphertext/Signing"><code>Sign</code></Link><span>&#x20;data&#x20;via&#x20;public&#x20;key&#x20;fingerprint</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><span>Popular&#x20;</span><Link to="software"><span>Software</span></Link><span>&#x20;to&#x20;</span><Link to="encryption"><code>Encrypt</code></Link><span>&#x20;&#x26;&#x20;</span><Link to="signing"><code>Sign</code></Link><span>&#x20;data&#x20;via&#x20;public&#x20;key&#x20;fingerprint</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 2 times</cite>

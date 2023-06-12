@@ -16,7 +16,7 @@ export default function PreviewamkqahnoQzv29KqXZ(){
     <dfn>
       <dt><code className="react-tooltip__dt"><code>unoptimized</code></code></dt>
       <dd>
-        <blockquote className="react-tooltip__dd"><span><Link to="/wiki/React/React-Definition/Component-Based-Architecture/Component/props"><code>`prop`</code></Link><span>&#x20;to&#x20;set&#x20;</span><Link to="/wiki/React/React-Stack/Nextjs/Next-Component/Image"><code>&#x3C;Image&#x3E;</code></Link><span>&#x20;to&#x20;serve&#x20;unoptimized&#x20;Image&#x20;Element&#x20;(for&#x20;compat&#x20;with&#x20;</span><Link to="/wiki/React/React-Stack/storybook"><code>storybook</code></Link><span>)</span></span></blockquote>
+        <blockquote className="react-tooltip__dd"><span><Link to="props"><code>`prop`</code></Link><span>&#x20;to&#x20;set&#x20;</span><Link to="image"><code>&#x3C;Image&#x3E;</code></Link><span>&#x20;to&#x20;serve&#x20;unoptimized&#x20;Image&#x20;Element&#x20;(for&#x20;compat&#x20;with&#x20;</span><Link to="storybook"><code>storybook</code></Link><span>)</span></span></blockquote>
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
