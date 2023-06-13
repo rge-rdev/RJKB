@@ -40,6 +40,7 @@ bfg-1.14.0.jar
 .docusaurus
 .cache-loader
 wiki_entry_uid.js
+mangle_js.bat
 
 # misc
 .DS_Store
