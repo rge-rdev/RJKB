@@ -1,12 +1,7 @@
 ---
 slug: features
-title: Features
-authors:
-  name: Roger Jiang
-  title: Aspiring Fullstack Enginner
-  url: https://github.com/rgerdev
-  image_url: https://source.unsplash.com/200x200/?coding
-tags: [JS, TS, React]
+title: Features Highlights & Roadmap
+description: List of feature highlights - roadmap, changelog & description for ifullstack.dev
 ---
 
 # Features List of RJKB
@@ -101,6 +96,14 @@ Hashing out all doc objects from the JSON input greatly improved efficiency, in 
   - ✅ Dark/light variants
 
 - ✅ Selectively render hover previews only for descriptions - and not headings - to avoid duplicating content that's already visible on the page
+
+- ✅ patch-package `react-tooltip` to default to 150ms delay to show tooltip, to reduce accidental triggers when moving mouse across screen. Opt for patch at source, to prevent thousands of duplicate `data-tooltip-delay-show` props showing up in html
+
+- 🚧 🐌Low priority: fix Hover Previews for mobile. Some touchscreen devices still trigger previews after pressing and holding down link - but not same instant seamless browsing experience vs mouse.
+
+  - 💡 add mobile-only JS to trigger preview ontouchdown (after >500ms) - trigger navigate if link held for less.
+
+  - 💡 add mobile-only JS to tap once for preview, tap twice for navigate? Will be annoying if user wanted to navigate initially, instead of looking for preview.
 
 - ❌ render Preview FC directly into doc MDX - works but
 
@@ -248,6 +251,12 @@ node -e "console.log(require('v8').getHeapStatistics().total_available_size / 10
 - ✅ fix lazy loading order for media assets on homepage
 
 - ✅ deprecate buggy `@docusaurus/plugin-ideal-image` in favor of custom node.js + sharp script
+
+## 🥇 SEO Optimization
+
+- ✅ home metadata title, desciption, Keywords
+
+- ✅ wiki (docs) metadata title, desciption, Keywords
 
 ## 🥇 RegExp Insanity
 
