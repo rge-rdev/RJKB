@@ -39,6 +39,7 @@ bfg-1.14.0.jar
 # Generated files
 .docusaurus
 .cache-loader
+wiki_entry_uid.js
 
 # misc
 .DS_Store

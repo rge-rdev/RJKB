@@ -9,8 +9,13 @@ const TerserPlugin = require("terser-webpack-plugin")
 require("dotenv").config()
 const CompressionPlugin = require("compression-webpack-plugin")
 
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin
+//prettier-ignore
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
+
+// const webpack = require("webpack")
+
+// const wiki_entry_uid = "4/3mr" //require("./wiki_entry_uid.js").uid
+const wiki_entry_uid = require("./wiki_entry_uid.js").id
 
 //@ts-ignore
 /** @type {import('@docusaurus/types').Plugin} */
@@ -440,7 +445,9 @@ module.exports = async () => ({
           //LTR
           {
             type: "doc",
-            docId: "JS/JS",
+            // docId: "JS/JS",
+            // docId: "JS/3l7",
+            docId: wiki_entry_uid,
             position: "left",
             label: "Wiki",
           },
