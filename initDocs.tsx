@@ -469,6 +469,9 @@ function generate_mdx_page_from_id(
   //! \0 of \xxx comes out as \\0 & \\xxx in description - not great but acceptable.
   //!! changed \0 to \​0 with ZERO-WIDTH SPACE! - still occupies one extra char but
 
+  const id_min = getMinUID(id)
+  const slug = getUIDSlug(id)
+
   const output_mdx = `---
 ${
   title && title !== null && title !== undefined ? `title: "${title_yaml}"` : ""
@@ -498,6 +501,8 @@ filepath: "/${filepath}"
 route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"`
       : ""
   }
+slug: /${slug}
+id: ${id_min}
 ---
 
 ${
@@ -768,11 +773,16 @@ async function loop_docs_mkdir(
 
     const doc = getDoc(id)
     if (!doc) return
-    const slug_key = id_to_key_slug(id)
+    // const slug_key = id_to_key_slug(id)
+    const slug_key = id_to_min_slug(id)
+    const min_key = i.toString(36) //!
     if (!slug_key) return
-
-    const filepath = `${parent_path}/${slug_key}/${slug_key}.mdx`
-    const dirpath = `${parent_path}/${slug_key}`
+    const filepath = `${parent_path}/${min_key}/${min_key}.mdx` //? SAME dir/file.mdx is mandatory?!
+    const dirpath = `${parent_path}/${min_key}`
+    // const min_doc_slug = getMinUID(id)
+    // if (!min_doc_slug) return
+    // const filepath = `docs/${min_doc_slug}.mdx`
+    // const dirpath = `docs/${min_doc_slug}`
     // console.log(`create new file: ${filepath} at "${dirpath}" for ID: ${id}`)
     // console.log("filepath=", filepath)
     // console.log("dirpath=", dirpath)
@@ -844,7 +854,8 @@ async function loop_docs_mkdir(
         })
       }
       if (use_node_put_to_typesense_server) {
-        const parent_slug = id_to_key_slug(parent_id)?.toLowerCase()
+        // const parent_slug = id_to_key_slug(parent_id)?.toLowerCase()
+        const parent_slug = id_to_min_slug(parent_id)
         const parent_mdx = id_to_mdx(id, "key", { safe: true })
         const synonym_collection = `${parent_slug}-synonyms`
         const synonym_path = `${TYPESENSE_PROTOCOL}://${TYPESENSE_SERVER}:${TYPESENSE_PORT}/collections/${APPLICATION_ID}/synonyms/${synonym_collection}`
@@ -1009,9 +1020,20 @@ const init_mdx_map_time = uptime()
 ;(function () {
   root_main_topic_ids.forEach(async (id: string, i: number) => {
     const doc_slug = id_to_key_slug(id)
-    const dirpath = `docs/${doc_slug}` // LEAVE /docs filesys folder same
-    const filepath = `docs/${doc_slug}/${doc_slug}.mdx`
+    const min_key = i.toString(36) //!
+    const dirpath = `docs/${min_key}` // LEAVE /docs filesys folder same
+    const filepath = `docs/${min_key}/${min_key}.mdx`
     if (!doc_slug) return
+    // const min_doc_slug = getMinUID(id)
+    // if (!min_doc_slug) return
+    // const dirpath = `docs/${min_doc_slug}` // LEAVE /docs filesys folder same
+    // const filepath = `docs/${min_doc_slug}.mdx`
+    if (id === MAIN_UID) {
+      fs.outputFileSync(
+        "wiki_entry_uid.js",
+        `module.exports={id:"4/${getMinUID(id)}",path:"/${id_to_min_slug(id)}"}`
+      )
+    }
     try {
       const mdx = generate_mdx_page_from_id(id, doc_slug, filepath)
       await fs.outputFile(filepath, mdx).then(() => {

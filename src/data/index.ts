@@ -14,6 +14,7 @@ import { uptime } from "process"
 import uniq from "lodash/uniq"
 import kebabCase from "lodash/kebabCase"
 import startCase from "lodash/startCase"
+import minBy from "lodash/minBy"
 const { MAP_SIZE, DOCS_BASE } = require("dotenv").config().parsed
 
 export const rem: Rem_DB = rem_json as Rem_DB
@@ -366,6 +367,28 @@ export function get_doc_plaintext(id: string, val?: "key" | "value" | "both") {
   }
 }
 
+export function id_to_min_slug(id: string) {
+  const aliasIDs = getAliasIDs(id)
+  const key_text = kebabCase(
+    get_doc_plaintext(id, "key")?.toLowerCase().replace(".", "")
+  )
+  if (!aliasIDs.length) return key_text
+  const key_l = key_text.length
+  const slug_keys = [
+    ...aliasIDs
+      .map(
+        (id) =>
+          kebabCase(
+            get_doc_plaintext(id, "key")?.toLowerCase().replace(".", "")
+          ) || ""
+      )
+      .filter((k) => k.length > 0 && k.length < key_l),
+    key_text,
+  ]
+  return minBy(slug_keys, (k) => k.length)?.trim()
+  // return slug_keys.reduce((p, c) => (p.length < c.length ? p : c))
+}
+
 /**
  * KEEP _ as part of plaintext to retain for special terms such as __proto__
  * - separaters when next to _, ie delete -_ and _-
@@ -534,8 +557,12 @@ export const path_map: Map<string, string> = new Map()
  */
 export function get_path_from_id(id: string) {
   const leaf = isLeaf(id)
-  const path = path_map.get(id)
-  if (!path) return path
+  // const path = path_map.get(id)
+  //! ugly but due to docusaurus limitations, reducing filepath size will reduce bundle significantly
+  // const path = `./${DOCS_BASE}/${getMinUID(id)}` //? an easy fix to avoid this is to create docs/_UID/_UID.mdx - but that would also end up increasing the final bundle size due to the filepath length increasing. Which is better/worse? Slightly longer route or longer docs paths?!
+  // const path = getMinUID(id) && `${getMinUID(id)}` //? wow every KB counts, this really improves TBT on slow mobile huge 200KB big..
+  const path = getUIDSlug(id) && `${getUIDSlug(id)}` //? wikipedia style uid slug links - but this costs main bundle size due to bad docusaurus reliance on react-router-config
+  if (!path) return
   const anchor_path = !leaf ? path : return_anchor_from_parent(path)
   return anchor_path
 }
@@ -544,6 +571,7 @@ export const map_alias_ids: Map<string, string[]> = new Map()
 export const map_alias_slugs: Map<string, string[]> = new Map()
 export const map_all_tags_to_ids: Map<string, string[]> = new Map()
 export const map_id_to_tags: Map<string, string[]> = new Map()
+export const map_id_to_min_uid: Map<string, string> = new Map()
 export function getAliasIDs(id: string) {
   return map_alias_ids.get(id) || []
 }
@@ -562,6 +590,64 @@ export function getNonOrphanTags(id: string) {
   })
 
   return tags.filter((tag) => getTagIds(tag)!.length > 1)
+}
+export function getMinUID(id: string) {
+  return map_id_to_min_uid.get(id)
+}
+
+const map_id_to_uid_slug: Map<string, string> = new Map()
+const map_uid_slug_to_id: Map<string, string> = new Map()
+function id_to_uid_slug(id: string) {
+  return kebabCase(
+    get_doc_plaintext(id, "key")
+      ?.toLowerCase() // So that stylised
+      .replace(".", "-")
+    // .replace(/[^a-zA-Z0-9_-]/, "")//! fuck it, just leave the emojis in the urls!
+  ).replace(/^-|-$/, "") //? Why does lodash leave trailing hyphens in kebabCase ?!
+}
+/**It seems docusaurus is also using kebabCase somewhere and that ends up screwing up the slug_(_parent_topic) naming scheme
+ * TODO patch docusaurus with custom slugify fn to replace kebabCase to ignore `()`
+ *
+ * @param id
+ * @returns
+ */
+export function getUIDSlug(id: string) {
+  const map_slug = map_id_to_uid_slug.get(id)
+  if (map_slug) {
+    return map_slug
+  }
+  if (!map_slug) {
+    let slug = id_to_uid_slug(id)
+    const slug_clash = map_uid_slug_to_id.get(slug)
+    if (slug_clash) {
+      const parent_id = getParentId(id)
+      if (!parent_id) {
+        console.log(
+          `Could not locate parent ID (${parent_id}) for ${slug} ${id}`
+        )
+      }
+      let concat_slug = slug
+      if (parent_id) concat_slug += `_${id_to_min_slug(parent_id)}` //! Should be impossible for duplicate slugs to share common parent. Otherwise, I could always change this into a recursive (reverse) DFS search to locate a UID _slug affix, up the tree
+      //! Update: slugs become duplicates after kebabCase
+      const still_clash = map_uid_slug_to_id.get(concat_slug)
+      if (!still_clash) {
+        if (!map_id_to_uid_slug.get(id)) map_id_to_uid_slug.set(id, concat_slug)
+        if (!map_uid_slug_to_id.get(id)) map_uid_slug_to_id.set(concat_slug, id)
+        return concat_slug
+      }
+      if (still_clash) {
+        const hash_slug = slug + `_${getMinUID(id)}`
+        map_id_to_uid_slug.set(id, hash_slug)
+        map_uid_slug_to_id.set(hash_slug, id)
+        return hash_slug
+      }
+    }
+    if (!slug_clash) {
+      map_id_to_uid_slug.set(id, slug)
+      map_uid_slug_to_id.set(slug, id)
+      return slug
+    }
+  }
 }
 
 let num_aliases = 0
@@ -605,6 +691,7 @@ function map_to_tags(id: string, dirpath: string) {
     path_map.set(id, dirpath)
     map_to_tags(id, dirpath)
     num_paths_mapped_to_id += 1
+    map_id_to_min_uid.set(id, num_paths_mapped_to_id.toString(36))
     LOG_CLI_PROGRESS(
       num_paths_mapped_to_id,
       MAP_SIZE,
@@ -634,6 +721,7 @@ function loop_child_to_make_sure_path_maps_set_up_first(
 
     path_map.set(id, dirpath)
     num_paths_mapped_to_id += 1
+    map_id_to_min_uid.set(id, num_paths_mapped_to_id.toString(36))
     LOG_CLI_PROGRESS(
       num_paths_mapped_to_id,
       MAP_SIZE,
