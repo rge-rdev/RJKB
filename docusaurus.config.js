@@ -171,11 +171,35 @@ function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
               },
               compression: "brotli",
             },
-            // experiments: {
-            // outputModule: true,
-            // css: true,
-            // futureDefaults: true,
-            // },
+            // /*
+            output: {
+              asyncChunks: true,
+              // enabledChunkLoadingTypes: ["jsonp", "require"],
+              // enabledLibraryTypes: ["module"], //! Don't forget to enable experiments.outputModule !
+              environment: {
+                arrowFunction: true,
+                bigIntLiteral: true,
+                const: false,
+                // <w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|C:\Users\Z\react-
+                //No serializer registered for ConstDependency <w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 6 items } -> ConstDependency
+                destructuring: true,
+                dynamicImport: true,
+                forOf: true,
+                module: true,
+                optionalChaining: true,
+                templateLiteral: true,
+              },
+              // clean: false, // build outdir still gets wiped by default, so overrides this anyway
+              // compareBeforeEmit: true, //@see above clean
+              hashDigestLength: 16, // future ? 16:20 //
+              hashFunction: "xxhash64", // faster hash algo, future default
+            },
+            experiments: {
+              // outputModule: true,
+              // css: true,
+              // futureDefaults: true,
+            },
+            // */
           }
     },
   }
