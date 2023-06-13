@@ -318,8 +318,8 @@ module.exports = async () => ({
           // breadcrumbs: false,
           sidebarPath: require.resolve("./sidebars.js"),
           // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          showLastUpdateAuthor: false,
-          showLastUpdateTime: false,
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           // showLastUpdateAuthor: true, //! Will result in git history error
           // showLastUpdateTime: true, //? https://github.com/Seneca-CDOT/telescope/issues/3403
         },

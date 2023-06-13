@@ -19,6 +19,10 @@ import {
   isLeaf,
   getNonOrphanTags,
   id_to_source_mdx,
+  getMinUID,
+  getDateUpdated,
+  id_to_min_slug,
+  getUIDSlug,
 } from "./src/data/"
 import { id_to_mdx, id_to_plaintext, LOG_CLI_PROGRESS } from "./src/utility"
 import escapeRegExp from "lodash/escapeRegExp"
@@ -504,6 +508,9 @@ route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"`
   }
 slug: /${slug}
 id: ${id_min}
+last_update:
+  date: ${getDateUpdated(id)}
+  author: Roger Jiang
 ---
 
 ${

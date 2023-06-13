@@ -57,8 +57,9 @@ process.stdout.write(
         key !== "children" &&
         key !== "parent" &&
         key !== "crt" &&
-        key !== "references"
-        // key !== "createdAt"&&
+        key !== "references" &&
+        key !== "u"
+        //&& key !== "createdAt"
       )
         //@ts-ignore
         delete doc[key]
@@ -68,13 +69,11 @@ process.stdout.write(
     //   delete doc["subBlocks"];
     //   delete doc["portalsIn"];
     //   delete doc["createdAt"];
-    //   delete doc["u"];
     //   delete doc["srcRemId"];
     //   delete doc["srcRemC"];
     //   delete doc["portalsIn,prev"];
     //   delete doc["subBlocks,prev"];
     //   delete doc["children,prev"];
-    //   delete doc["references"];
     //   delete doc["preMigrationPortalsIn"];
   })
 })()
@@ -225,6 +224,31 @@ export const map_all_refs_ID_array = new Map(
     ]
   })
 )
+
+const map_all_date_updated_time = uptime()
+export const map_all_date_updated = new Map(
+  rem.docs.map((doc, i) => {
+    LOG_CLI_PROGRESS(
+      i,
+      docs_length,
+      "dates",
+      "Map ID to Update Date",
+      "⏳ 🔎 ",
+      "✅ Date",
+      map_all_date_updated_time,
+      `${i + 1} refs mapped to Doc ID in ${(
+        uptime() - map_all_date_updated_time
+      ).toFixed(2)}s`
+    )
+    if (!doc.u) return [doc._id, undefined]
+
+    // return [doc._id, Intl.DateTimeFormat("en-GB").format(new Date(doc.u))]
+    return [doc._id, doc.u]
+  })
+)
+export function getDateUpdated(id: string) {
+  return map_all_date_updated.get(id)
+}
 
 export function getRefIDs(id: string) {
   return map_all_refs_ID_array.get(id)
