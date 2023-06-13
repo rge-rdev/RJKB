@@ -278,6 +278,7 @@ function generate_mdx_page_from_id(
       jsx: child_jsx,
     })?.trim() //! No point showing preview for child keys since their values will be shown next here anyway!
     if (k) num_doc_refs += 1
+    if (k === "Status") return ""
     if (child_jsx) {
       if (k && v) return `<h2>${k}<span> ↔ </span>${v}</h2>`
       if (k) return `<h2>${k}<span></h2>`
@@ -828,7 +829,7 @@ async function loop_docs_mkdir(
     const use_node_put_to_typesense_server = TS_PUT_REQS === "YES"
     const axios_delay = +TS_PUT_DELAY
 
-    if (slug_key === "Aliases") {
+    if (slug_key === "Aliases" || slug_key === "aliases") {
       const parent_id = getParentId(id) || ""
 
       if (use_react_router_redirects) {
@@ -919,6 +920,7 @@ async function loop_docs_mkdir(
       slug_key === prev_slug || //! skip duplicate with parent & avoid clash with actual alias
       doc.type === 6 || //! Add "type 6" doc to skip list
       slug_key === "Aliases" || //! Defer Aliases logic to parent role during @function generate_mdx_page_from_id
+      slug_key === "aliases" ||
       slug_key === "Color" ||
       slug_key === "Status" ||
       slug_key === "Sources" ||

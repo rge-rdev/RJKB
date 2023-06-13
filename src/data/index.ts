@@ -142,6 +142,7 @@ export const map_children: Map<string, string[]> = new Map()
 export function getChildren(id: string) {
   // check child is NOT KWSN4xHJXyvxWX2Px aka Sources OR Color Highlight
   // check child !== Sources or Highlight!
+  // "_id": "3DoEsFv9SbtWE4azL" Size
   const map_child = map_children.get(id)
   if (map_child) return map_child
   if (!map_child) {
@@ -152,7 +153,10 @@ export function getChildren(id: string) {
         map_all.get(child_id)?.key[1]?._id !== "AvyJPAFLACRPsmBGW" && // Status
         map_all.get(child_id)?.key[0] !== "contains:" && // wtf is contains: ?!
         map_all.get(child_id)?.key[1]?._id !== id && // wtf is contains: idid - seems like pointless circular self-refercing?!
-        map_all.get(child_id)?.key[0]?._id !== "RHoPcFwuXHTt89FK6" // Color
+        map_all.get(child_id)?.key[0]?._id !== "RHoPcFwuXHTt89FK6" && // Color
+        map_all.get(child_id)?.key[0]?._id !== "3DoEsFv9SbtWE4azL" && // Size
+        // map_all.get(child_id)?.key[0]?._id !== "2n8Gw7PvXGPcFQm7i" && // Aliases // breaks alias search logic chain!
+        map_all.get(child_id)?.key[0]?._id !== "bEnCL9CFG9xTP8Lw9" // Status
     )
     if (children) map_children.set(id, children)
     // console.log(children)
