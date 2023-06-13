@@ -216,3 +216,103 @@ console.log("executing secondary .bat to rezip chunk assets...")
 setTimeout(() => {
   console.log(`output new archives to: ${js_file_br} & ${js_file_gz}`)
 }, 2000)
+
+// process.exit() // @terminate mangle script before chunks
+
+// mangle all the other runtime assets
+
+// const js_asset_basepath = "build/assets/js/"
+// console.log(fs.readdirSync(js_asset_basepath))
+const js_chunk_file = [...fs.readdirSync(js_asset_basepath)].filter((file) =>
+  file.match(/[a-z0-9]{4,8}(?<!main)\.[a-z0-9]{8}\.js$/)
+)
+
+//.filter((file) =>file.matchAll(/[a-z0-9]{4,8}(?<!main)\.[a-z0-9]{8}\.js$/))
+// console.log(js_chunk_file)
+// js_chunk_file.forEach((file) => console.log(js_asset_basepath + file))
+const re_description_bloat = /(?<=","description":")(.*)(?=","sidebar":"s"},")/g //!DANGER! massive size improvements but no effect on routing?! seems there really is a ton of pointless crap leftover by docusaurus
+// /(?<=","description":")([a-zA-Z0-9-+_~<^>{}=%$#* &@/'`\\\[\]?!|;:.,\(\)\/]+)(?=","sidebar":"s"},")/g
+
+let js_chunk_bat: string[] = []
+let js_chunk_zip_paths: string[] = []
+js_chunk_file.forEach((chunk_file) => {
+  const init_chunk_size = fs.statSync(js_asset_basepath + chunk_file).size
+  if (init_chunk_size > 1e5) {
+    const chunk_path = js_asset_basepath + chunk_file
+    let chunk_text = fs.readFileSync(chunk_path, {
+      encoding: "utf8",
+    })
+    const bloated = Boolean(chunk_text.match(re_description_bloat)?.length)
+    if (!bloated) return
+
+    console.log(
+      `${chunk_path}: ${(fs.statSync(chunk_path).size / 1000).toFixed(1)}KB`
+    )
+    chunk_text = chunk_text.replace(re_description_bloat, "")
+
+    fs.writeFileSync(chunk_path, chunk_text)
+
+    const final_chunk_size = fs.statSync(chunk_path).size
+
+    console.log(
+      `reduced ${((init_chunk_size - final_chunk_size) * 1e-3).toFixed(
+        1
+      )}KB by ${((1 - final_chunk_size / init_chunk_size) * 100).toFixed(
+        1
+      )}% to final bundle size of ${(final_chunk_size * 1e-6).toFixed(2)}MB`
+    )
+
+    const chunk_file_br = chunk_file + ".br"
+    const chunk_file_gz = chunk_file + ".gz"
+    const chunk_path_br = chunk_path + ".br"
+    const chunk_path_gz = chunk_path + ".gz"
+
+    js_chunk_zip_paths.push(chunk_file_br, chunk_file_gz)
+
+    fs.removeSync(chunk_path_br)
+    fs.removeSync(chunk_path_gz)
+
+    const js_chunk_bat_cmd = bloated
+      ? `if exist "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_path_br}" del "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_file_br}"
+if exist "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_path_gz}"  del "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_file_gz}" 
+"C:\\Program Files\\PeaZip\\res\\bin\\brotli\\brotli.exe" -9 --large_window=27 "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_file}"  -o "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_file_br}"
+"C:\\Program Files\\PeaZip\\res\\bin\\7z\\7z.exe" a -tgzip -mx9 -mfb=128 -sccUTF-8 -bb0 -bse0 -bsp2 "-wC:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\" "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_file_gz}" "C:\\Users\\Z\\react-dev\\rjdb-map\\build\\assets\\js\\${chunk_file}"`
+      : ""
+    js_chunk_bat.push(js_chunk_bat_cmd)
+  }
+})
+const temp_js_chunk_bat_path = "mangle_js_chunk.bat"
+
+fs.writeFileSync(
+  temp_js_chunk_bat_path,
+  js_chunk_bat.filter((cmd) => cmd.length > 0).join("\n")
+)
+
+exec(temp_js_chunk_bat_path)
+
+console.log("executing secondary .bat to rezip chunk assets...")
+setTimeout(() => {
+  console.log(`output new archives: ${js_chunk_zip_paths.join("\n")}`)
+}, 2000)
+
+/*
+const js_chunk_path = js_asset_basepath + js_chunk_file
+console.log(`js_chunk_file: ${js_chunk_file}`)
+console.log(`js_chunk_path: ${js_chunk_path}`)
+
+let js_chunk_text = fs.readFileSync(js_chunk_path, {
+  encoding: "utf8",
+})
+console.log(`js path path: ${js_chunk_path}`)
+const raw_js_chunk_size = fs.statSync(js_chunk_path).size
+console.log(`js chunk size: ${(raw_js_chunk_size * 1e-3).toFixed(1)}KB`)
+
+const re_description_bloat =
+  /(?<=","description":")([a-zA-Z0-9- :,\.\(\)\!\|\/]+)(?=","sidebar":"s")/g
+
+js_chunk_text = js_chunk_text.replace(re_description_bloat, "")
+
+const output_chunk_debug_path = "./mangled_js_chunk_output.js"
+
+fs.writeFileSync(output_chunk_debug_path, js_chunk_text) // useful to see file from root, disable for prod
+*/

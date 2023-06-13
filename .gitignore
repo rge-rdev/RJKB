@@ -41,6 +41,7 @@ bfg-1.14.0.jar
 .cache-loader
 wiki_entry_uid.js
 mangle_js.bat
+mangle_js_chunk.bat
 
 # misc
 .DS_Store
