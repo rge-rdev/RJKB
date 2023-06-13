@@ -77,6 +77,7 @@ function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
                 threshold: 5120,
                 minRatio: 0.8,
               }),
+              // new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }), //! full build ends up in infinite loop during chunk optimization?! Due to some sort of hash collision? Min # chars
               /** Bundle Analyzer crashes for larger docusaurus sites */
               // new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
             ],
@@ -305,7 +306,7 @@ module.exports = async () => ({
           target: "esnext",
         },
         module: {
-          type: isServer ? "commonjs" : "es6",
+          type: isServer ? "commonjs" : "es6", //! changing server module to nodenext majorly breaks docusaurus noscript mode - somewhere down the chain, html template generation completely fucks up. Gains for pure-js sites but not an option for me since I need noscript to efficiently run scraper to index site for cloud search. Pure pain to debug this one.
         },
       },
     }),
@@ -319,7 +320,7 @@ module.exports = async () => ({
         docs: {
           // routeBasePath: '/',
           routeBasePath: `/${process.env.DOCS_BASE}`,
-          // sidebarPath: false,
+          // sidebarPath: false, // does not improve bundle size much at all!!
           // breadcrumbs: false,
           sidebarPath: require.resolve("./sidebars.js"),
           // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
@@ -501,6 +502,7 @@ module.exports = async () => ({
         },
       },
       prism: {
+        //! MUST FIND WAY TO EXCLUDE LANGUAGES - IT'S FORCING ABOUT 70KB OF JUNK INTO THE MAIN BUNDLE!!
         additionalLanguages: ["latex"], // @see blog post - it's dumb but you need to add one random additional language to prevent 25KB of crap appearing in your final production bundle!
         // theme: require("prism-react-renderer/themes/github").default,
         // darkTheme: require("prism-react-renderer/themes/dracula").default,

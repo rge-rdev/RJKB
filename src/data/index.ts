@@ -301,7 +301,7 @@ export const map_id_to_src_mdx = new Map(
       doc._id,
       `\nSource${source_urls.length > 1 ? "s" : ""}: ${source_urls.join(
         "\n"
-      )}\n`,
+      )}\n\n`,
     ]
   })
 )
