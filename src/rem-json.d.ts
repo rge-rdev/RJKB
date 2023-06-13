@@ -49,7 +49,10 @@ export interface Rem_obj {
   references?: { q: RemID; f: "key" | "value" }[] | null // {}[]
   "references,prev"?: [] // always empty array?
   csb?: CSB_obj<RemID>
-  crt?: { b?: { u?: { s?: string } } } | null
+  crt?: {
+    b?: { u?: { s?: string } }
+    os?: { os: { _id: string; s: string; v: { i: "q"; _id: string }[] } } //? v always tuple?
+  } | null
   n?: 1 // n = 1 means root level
   forget?: null | boolean
 }
