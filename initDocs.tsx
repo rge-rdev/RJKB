@@ -46,6 +46,7 @@ const {
   DOCS_BASE,
   SLUG_SIZE,
   LOG,
+  MAIN_UID,
 } = require("dotenv").config().parsed
 
 let debug_keywords: any[] = []
@@ -362,10 +363,16 @@ function generate_mdx_page_from_id(
     if (k && !v && !skip_k) {
       const k_bold_markup = k.match(/(\*\*)(?=.*\*\*)/g)?.length
       return !recheck_code && !k_link && !k_img && !k_inlineCode && !k_leaf
-        ? `[${!k_bold_markup ? "`" : ""}${k.replace(/`/g, "")}${
-            !k_bold_markup ? "`" : ""
-          }](${k_path})\n\n`
-        : `${!k_img && !recheck_code ? "## " : ""}${k}\n\n${child_source}`
+        ? k_path
+          ? `[${!k_bold_markup ? "`" : ""}${k.replace(/`/g, "")}${
+              !k_bold_markup ? "`" : ""
+            }](${k_path})\n\n`
+          : `${!k_bold_markup ? "`" : ""}${k.replace(/`/g, "")}${
+              !k_bold_markup ? "`\n\n" : ""
+            }`
+        : `${
+            !k_img && !recheck_code && !k_leaf ? "## " : ""
+          }${k}\n\n${child_source}`
     }
     if (!k && v) return `\n\n${v}${child_source}`
     return ""
@@ -390,7 +397,7 @@ function generate_mdx_page_from_id(
 
       if (ref_jsx) {
         if (k) return `<li>${k}${v ? ` ↔ ${v}` : ""}</li>`
-        if (!k) return
+        if (!k) return ""
       }
 
       const k_code = k?.match(/^(```)/gm)?.length
@@ -501,7 +508,6 @@ tags: [${tags.map((w) => `"${w}"`).join(", ")}]${
 alias IDs: [${alias_ids.join(", ")}]
 aliases: [${alias_slugs.join(", ").replace(/!/g, "\\!")}]
 references: [${ref_ids_arr.join(", ")}]
-id: ${id}
 filepath: "/${filepath}"
 route: "http://localhost:3000/${filepath.split("/").slice(0, -1).join("/")}"`
       : ""
@@ -518,7 +524,7 @@ ${
     ? `${title}${value_mdx ? `\n\n${value_mdx}` : ""}`
     : `# [${
         title_illegal_unicode ? title_mdx : `\`${title_mdx?.trim()}\``
-      }](./) ${
+      }](${slug}) ${
         value_mdx ? `${value_mdx_newLine ? "\n\n" : " ↔ "}${value_mdx}` : ""
       }`
 }${title_source_mdx}${
