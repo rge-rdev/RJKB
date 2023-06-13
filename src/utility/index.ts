@@ -855,9 +855,11 @@ export function obj_to_mdx(
           // output_str += `[[<a href="#${el_id}">${make_mdx(find_key)}</a>]]`
         }
         if (el["textOfDeletedRem"]) {
-          output_str += `<del id=#${el_id}>${make_mdx(
-            el["textOfDeletedRem"]
-          )}</del>`
+          // deleted nodes are perhaps best skipped, ends up causing more bugs for mdx-loader with unsafe jsx (as literal content)
+          //prettier-ignore
+          // output_str += `<del id=#${el_id}>${make_mdx(el["textOfDeletedRem"])}</del>`
+          console.log(`${config?.id} has deleted nodes! Clean it up! Trace from: ${(el["textOfDeletedRem"] as string[])?.pop()}`) //TODO: FIX type defs for del - double-check it is actually always string[]
+          return ""
         }
       }
       //`files/`
