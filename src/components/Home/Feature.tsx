@@ -2,10 +2,15 @@
  * Copyright(c) Roger Jiang
  */
 
-import React, { useEffect, useRef, useState, useMemo } from "react"
-import Video from "../Video"
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  lazy,
+  Suspense,
+} from "react"
 import kebabCase from "lodash/kebabCase"
-import { block } from "million/react"
 
 type FeatureItem = {
   title: string
@@ -49,178 +54,7 @@ function useIsInViewport(ref: any) {
   return isIntersecting
 }
 
-const SVG_BLOCK = block(({ Svg }) => (
-  <Svg
-    className="h-48 w-48 items-center"
-    role="img"
-  />
-))
-
-const VIDEO_BLOCK = block(({ title, src: vid_path, poster }) => (
-  <Video
-    title={title}
-    src={vid_path}
-    poster={poster}
-    w={350}
-    className="max-w-full"
-  />
-))
-
-const PICTURE_BLOCK = block(({ img_url, loading, alt, className }) => (
-  <picture>
-    <source
-      srcSet={img_url[0]}
-      type="image/avif"
-    />
-    <img
-      loading={loading}
-      alt={alt}
-      src={img_url[1]}
-      className={className}
-    />
-  </picture>
-))
-
-const VIDEO_IMG_BLOCK = block(
-  ({
-    alt,
-    class_picture,
-    title,
-    vid_src,
-    img_src,
-    srcSet,
-    poster,
-    w,
-    pic_inline_css_w,
-    pic_inline_css_h,
-    vid_css,
-    vid_inline_css_w,
-    vid_inline_css_h,
-    loading,
-  }: any) => (
-    <div
-      className="block"
-      style={{ height: "260px", width: "366px" }}
-    >
-      <div
-        className={class_picture}
-        style={{
-          width: pic_inline_css_w,
-          height: pic_inline_css_h,
-          verticalAlign: "top",
-        }}
-      >
-        <picture>
-          <source
-            srcSet={srcSet}
-            type="image/avif"
-          />
-          <img
-            loading={loading}
-            alt={alt}
-            src={img_src}
-            className="h-36 w-36 items-center"
-          />
-        </picture>
-      </div>
-      <div
-        className={vid_css}
-        style={{
-          width: vid_inline_css_w,
-          height: vid_inline_css_h,
-        }}
-      >
-        <Video
-          title={title}
-          src={vid_src}
-          poster={poster}
-          w={w}
-          className="max-w-full"
-        />
-      </div>
-    </div>
-  )
-)
-
-function FEATURE_CONTENT({
-  title,
-  SVG: Svg,
-  img_url,
-  alt,
-  vid_path,
-  poster,
-  inline,
-  w,
-  h,
-  lazy,
-  i,
-}: FeatureItem) {
-  if (Svg) return <SVG_BLOCK Svg={Svg} />
-  if (img_url && !vid_path)
-    return (
-      <PICTURE_BLOCK
-        img_url={img_url}
-        loading={`${lazy ? "lazy" : "eager"}`}
-        alt={alt}
-        className={`items-center ${h ? "h-64" : "h-48 w-48"}`}
-      />
-    )
-  if (vid_path && !img_url)
-    return (
-      <VIDEO_BLOCK
-        title={title}
-        src={vid_path}
-        poster={poster}
-        w={350}
-      />
-    )
-  if (img_url && vid_path)
-    // yuck, this is refactor-hell but seems necessary since block() gives marginal TBT gains (on low-end mobile)
-    // all this bs is to ensure each block is completely deterministic
-    return (
-      <>
-        <VIDEO_IMG_BLOCK
-          class_picture={`${inline ? "inline-flex " : ""}text-center`}
-          title={title}
-          img_src={img_url[1]}
-          vid_src={vid_path}
-          poster={poster}
-          loading={`${lazy ? "lazy" : "eager"}`}
-          w={w || 350}
-          pic_inline_css_w={`${inline ? "144px" : "366px"}`}
-          pic_inline_css_h={`${inline ? "260px" : "144px"}`}
-          vid_css={`${inline ? "inline-flex " : ""}text-center px-2`}
-          vid_inline_css_w={`${w || (h && "132")}px`}
-          vid_inline_css_h={`${h ? h + "px" : "auto"}`}
-        />
-      </>
-    )
-  return null
-}
-
-function FEATURE_DESCRIPTION({
-  title,
-  description,
-}: {
-  title: string
-  description?: any
-}) {
-  return (
-    <div className="group h-auto w-auto px-4 text-center">
-      <h3 className="transform-gpu rounded-t-full bg-gradient-to-tr from-cyan-50/75 to-cyan-300/75 font-extrabold text-slate-900 shadow-inner shadow-teal-400 duration-1000 group-hover:to-cyan-50 dark:from-cyan-800/75 dark:text-cyan-100 dark:group-hover:to-emerald-700">
-        <span
-          className="text-neutral-900 dark:text-neutral-50"
-          id={kebabCase(title)}
-        >
-          {title}
-        </span>
-      </h3>
-      <p className="transform-gpu rounded-b-2xl bg-gradient-to-br from-teal-200/25 to-emerald-300/50 font-bold text-zinc-900 duration-1000 group-hover:rounded-b-3xl group-hover:rounded-t-xl group-hover:from-teal-50 group-hover:to-emerald-200/75 dark:from-teal-500/25 dark:text-cyan-100 dark:group-hover:from-teal-500/75 dark:group-hover:to-emerald-700/75">
-        {description}
-      </p>
-    </div>
-  )
-}
+const FEATURE_CONTENT = lazy(() => import("./FEATURE_CONTENT"))
 
 export default function Feature({
   title,
@@ -260,24 +94,37 @@ export default function Feature({
             : ""
         }`}
       >
-        <FEATURE_CONTENT
-          title={title}
-          SVG={Svg}
-          img_url={img_url}
-          alt={alt}
-          vid_path={vid_path}
-          poster={poster}
-          inline={inline}
-          w={w}
-          h={h}
-          lazy={lazy}
-          i={i}
-        />
+        <Suspense
+          fallback={<div className="group m-1 flex justify-center"></div>}
+        >
+          <FEATURE_CONTENT
+            title={title}
+            SVG={Svg}
+            img_url={img_url}
+            alt={alt}
+            vid_path={vid_path}
+            poster={poster}
+            inline={inline}
+            w={w}
+            h={h}
+            lazy={lazy}
+            i={i}
+          />
+        </Suspense>
       </div>
-      <FEATURE_DESCRIPTION
-        title={title}
-        description={description}
-      />
+      <div className="group h-auto w-auto px-4 text-center">
+        <h3 className="transform-gpu rounded-t-full bg-gradient-to-tr from-cyan-50/75 to-cyan-300/75 font-extrabold text-slate-900 shadow-inner shadow-teal-400 duration-1000 group-hover:to-cyan-50 dark:from-cyan-800/75 dark:text-cyan-100 dark:group-hover:to-emerald-700">
+          <span
+            className="text-neutral-900 dark:text-neutral-50"
+            id={kebabCase(title)}
+          >
+            {title}
+          </span>
+        </h3>
+        <p className="transform-gpu rounded-b-2xl bg-gradient-to-br from-teal-200/25 to-emerald-300/50 font-bold text-zinc-900 duration-1000 group-hover:rounded-b-3xl group-hover:rounded-t-xl group-hover:from-teal-50 group-hover:to-emerald-200/75 dark:from-teal-500/25 dark:text-cyan-100 dark:group-hover:from-teal-500/75 dark:group-hover:to-emerald-700/75">
+          {description}
+        </p>
+      </div>
     </div>
   )
 }
