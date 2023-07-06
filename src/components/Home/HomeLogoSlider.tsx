@@ -4,6 +4,7 @@
 
 import React from "react"
 import LogoSlider from "../LogoSlider"
+import { block } from "million/react"
 
 import {
   IconCodeEditorDiamondColorSVG,
@@ -128,7 +129,7 @@ const bot = [
   },
 ]
 
-export default function HomeLogoSlider() {
+export default block(function HomeLogoSlider() {
   return (
     <LogoSlider
       top={top}
@@ -136,4 +137,4 @@ export default function HomeLogoSlider() {
       h={60}
     />
   )
-}
+})

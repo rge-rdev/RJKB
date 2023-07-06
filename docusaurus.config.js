@@ -9,6 +9,8 @@ const TerserPlugin = require("terser-webpack-plugin")
 require("dotenv").config()
 const CompressionPlugin = require("compression-webpack-plugin")
 
+const million = require("million/compiler")
+
 //prettier-ignore
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 
@@ -49,6 +51,7 @@ function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
               ],
             },
             // plugins: [new BundleAnalyzerPlugin({ analyzerPort: "auto" })], // Enable for small dev mode tests to avoid prod crash
+            plugins: [million.webpack()],
             cache: {
               type: "filesystem",
               allowCollectingMemory: true,
@@ -80,6 +83,10 @@ function DOCUSAURUS_RJ_WEBPACK_PLUGIN(context, options) {
               // new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }), //! full build ends up in infinite loop during chunk optimization?! Due to some sort of hash collision? Min # chars
               /** Bundle Analyzer crashes for larger docusaurus sites */
               // new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
+              million.webpack({
+                // optimize: true, // breaks blocks, breaks [object Object]
+                // server: true, // crash page
+              }),
             ],
             optimization: {
               // SIZE for miniscule gains for worse ~50% WORSE caching recall!
@@ -418,6 +425,7 @@ module.exports = async () => ({
           filename: "sitemap.xml",
         },
       }),
+      // require.resolve("@docusaurus/core/lib/babel/preset"),
     ],
   ],
   themes: ["docusaurus-theme-search-typesense"],

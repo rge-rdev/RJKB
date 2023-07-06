@@ -11,8 +11,9 @@ import React, { useEffect, useState } from "react"
 import Link from "@docusaurus/Link"
 //@ts-ignore
 import { useColorMode } from "@docusaurus/theme-common"
+import { block } from "million/react"
 
-export default function HomeScrollButton() {
+export default block(function HomeScrollButton() {
   const [scrollUp, setScrollUp] = useState(false)
   const { isDarkTheme } = useColorMode()
 
@@ -72,4 +73,4 @@ export default function HomeScrollButton() {
       />
     </Link>
   )
-}
+})

@@ -4,6 +4,7 @@
 
 import React from "react"
 import startCase from "lodash/startCase"
+import { block } from "million/react"
 
 interface SliderProps {
   children?: React.ReactNode
@@ -98,7 +99,7 @@ function SliderRow({ MediaElements, config, h, w }: SliderRowProps) {
   )
 }
 
-export default function Slider({ top, bot, h, w }: SliderProps) {
+export default block(function Slider({ top, bot, h, w }: SliderProps) {
   return (
     <div
       className="my-0"
@@ -128,4 +129,4 @@ export default function Slider({ top, bot, h, w }: SliderProps) {
       </div>
     </div>
   )
-}
+})
