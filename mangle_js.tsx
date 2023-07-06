@@ -18,7 +18,7 @@ console.log(`main js path: ${js_path}`)
 const raw_js_size = fs.statSync(js_path).size
 console.log(`main js size: ${(raw_js_size * 1e-3).toFixed(1)}KB`)
 
-fs.writeFileSync("./test/raw_main.js", js_text) // backup for manual resets
+// fs.writeFileSync("./test/raw_main.js", js_text) // backup for manual resets
 
 const strip_license_reminder =
   /\/\*! For license information please see main.[a-z0-9]+.js.LICENSE.txt \*\/\n\(/
