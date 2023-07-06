@@ -32,7 +32,9 @@ type FeatureItem = {
   alt?: string
   vid_path?: string
   poster?: string
-  config?: { inline?: boolean; w?: number; h?: number }
+  inline?: boolean
+  w?: number
+  h?: number
   description?: JSX.Element
   lazy?: boolean
 }
@@ -66,7 +68,8 @@ const FeatureList: FeatureItem[] = [
     alt: "RJKB Doc Links show preview page on hover",
     vid_path: "/vid/RJKB_hover_preview_iphone_116.mp4",
     poster: "/vid/RJKB_hover_preview_iphone_116.webp",
-    config: { inline: true, h: 250 },
+    inline: true,
+    h: 250,
     description: (
       <>
         👉
