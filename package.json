@@ -71,6 +71,7 @@
   },
   "scripts": {
     "demo": "ts-node initDemo.tsx",
+    "demo-build": "yarn add ts-node && yarn && yarn demo && yarn idb",
     "upi": "yarn upgrade-interactive --latest",
     "upall": "yarn upgrade -D svgo @mdx-js/react webpack @svgr/webpack",
     "dt": "rm -r ./docs/* & ts-node initDocs.tsx",
