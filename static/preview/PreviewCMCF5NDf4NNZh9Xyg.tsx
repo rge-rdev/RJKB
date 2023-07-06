@@ -20,7 +20,7 @@ export default function PreviewCMCF5NDf4NNZh9Xyg(){
       </dd>
     </dfn>
     <cite className="react-tooltip__ref-header">Cited 1 time</cite>
-    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>router()</code><span>&nbsp;↔&nbsp;</span><Link to="imperative"><span>Imperative</span></Link><span>&#x20;fn&#x20;return&#x20;by&#x20;</span><Link to="userouter"><code>useRouter()</code></Link><span>&#x20;</span></cite></li></ol>
+    <ol className="font-semibold"><li><cite className="react-tooltip__ref-list"><code>router()</code><span>&nbsp;↔&nbsp;</span><Link to="imperative"><span>Imperative</span></Link><span>&#x20;fn&#x20;return&#x20;by&#x20;</span><Link to="userouter_next-13"><code>useRouter()</code></Link><span>&#x20;</span></cite></li></ol>
     
     </small></Tooltip>)
 }
