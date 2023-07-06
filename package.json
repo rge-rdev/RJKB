@@ -70,6 +70,7 @@
     "webpack-bundle-analyzer": "^4.8.0"
   },
   "scripts": {
+    "demo": "ts-node initDemo.tsx",
     "upi": "yarn upgrade-interactive --latest",
     "upall": "yarn upgrade -D svgo @mdx-js/react webpack @svgr/webpack",
     "dt": "rm -r ./docs/* & ts-node initDocs.tsx",

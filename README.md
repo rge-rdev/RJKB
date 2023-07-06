@@ -14,6 +14,12 @@ This public repo is intended to showcase the code for static MDX-based documenta
 $ yarn
 ```
 
+### To generate placeholder content for omitted content
+
+```
+yarn demo
+```
+
 ### To generate initial docs
 
 ```
