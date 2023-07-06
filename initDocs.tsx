@@ -778,7 +778,17 @@ async function loop_docs_mkdir(
   children: string[],
   skip?: boolean
 ) {
-  children.forEach(async (id) => {
+  children.forEach(async (id, i) => {
+    // Test if node reachable
+    if (id === "y5hFD38xf2fcXxRup") {
+      // if (id === "H5Cmy6FwRRqez2G9h") {
+      // "H5Cmy6FwRRqez2G9h",
+      // "8beEDK3gMvivxf4m5",
+      // "2Th3Qvp64zAFRbFsF",
+      // "HfY4t5utbQCSmnHmz"
+      console.log("REACHED")
+      process.exit()
+    }
     // console.log("Intializing dir for docs")
     const title = id_to_plaintext(id)
       ?.replace(/"/g, `'`)
