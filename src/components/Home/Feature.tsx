@@ -2,14 +2,9 @@
  * Copyright(c) Roger Jiang
  */
 
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useMemo,
-  lazy,
-  Suspense,
-} from "react"
+import React, { useEffect, useRef, useState, useMemo } from "react"
+import { block } from "million/react"
+import Video from "../Video"
 import kebabCase from "lodash/kebabCase"
 
 type FeatureItem = {
@@ -54,8 +49,12 @@ function useIsInViewport(ref: any) {
   return isIntersecting
 }
 
-const FEATURE_CONTENT = lazy(() => import("./FEATURE_CONTENT"))
-
+const SVG_BLOCK = block(({ Svg }) => (
+  <Svg
+    className="h-48 w-48 items-center"
+    role="img"
+  />
+))
 export default function Feature({
   title,
   SVG: Svg,
@@ -94,23 +93,74 @@ export default function Feature({
             : ""
         }`}
       >
-        <Suspense
-          fallback={<div className="group m-1 flex justify-center"></div>}
-        >
-          <FEATURE_CONTENT
+        {Svg && <SVG_BLOCK Svg={Svg} />}
+        {img_url && !vid_path && (
+          <picture>
+            <source
+              srcSet={img_url[0]}
+              type="image/avif"
+            />
+            <img
+              loading={`${lazy ? "lazy" : "eager"}`}
+              alt={alt}
+              src={img_url[1]}
+              className={`items-center ${h ? "h-64" : "h-48 w-48"}`}
+            />
+          </picture>
+        )}
+        {vid_path && !img_url && (
+          <Video
             title={title}
-            SVG={Svg}
-            img_url={img_url}
-            alt={alt}
-            vid_path={vid_path}
+            src={vid_path}
             poster={poster}
-            inline={inline}
-            w={w}
-            h={h}
-            lazy={lazy}
-            i={i}
+            w={350}
+            className="max-w-full"
           />
-        </Suspense>
+        )}
+        {img_url && vid_path && (
+          <div
+            className="block"
+            style={{ height: "260px", width: "366px" }}
+          >
+            <div
+              className={`${inline ? "inline-flex " : ""}text-center`}
+              style={{
+                width: `${inline ? "144px" : "366px"}`,
+                height: `${inline ? "260px" : "144px"}`,
+                verticalAlign: "top",
+              }}
+            >
+              <picture>
+                <source
+                  srcSet={img_url[0]}
+                  type="image/avif"
+                />
+                <img
+                  loading={`${lazy ? "lazy" : "eager"}`}
+                  alt={alt}
+                  src={img_url[1]}
+                  className="h-36 w-36 items-center"
+                />
+              </picture>
+            </div>
+            <div
+              className={`${inline ? "inline-flex " : ""}text-center px-2`}
+              style={{
+                width: `${w || (h && "132")}px`,
+                height: `${h ? h + "px" : "auto"}`,
+              }}
+            >
+              <Video
+                title={title}
+                src={vid_path}
+                poster={poster}
+                w={w || 350}
+                h={h}
+                className="max-w-full"
+              />
+            </div>
+          </div>
+        )}
       </div>
       <div className="group h-auto w-auto px-4 text-center">
         <h3 className="transform-gpu rounded-t-full bg-gradient-to-tr from-cyan-50/75 to-cyan-300/75 font-extrabold text-slate-900 shadow-inner shadow-teal-400 duration-1000 group-hover:to-cyan-50 dark:from-cyan-800/75 dark:text-cyan-100 dark:group-hover:to-emerald-700">

@@ -32,7 +32,7 @@ export default function HomepageHeader() {
             animation: "fadein 3s",
           }}
         >
-          Search the Best Developer Dictionary
+          Search the Best Dev Dictionary
         </h2>
         <React.Suspense
           fallback={<div style={{ width: "100%", height: "384px" }}></div>}
