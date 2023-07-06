@@ -455,15 +455,15 @@ module.exports = async () => ({
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
-      /*
+      // /*
       announcementBar: {
-        id: "TEST_BAR",
-        content: "Check out the self-hosted Typesense Search Engine ->",
+        id: "announcementBar",
+        content: `Code now public on <a target="_blank" rel="noopener noreferrer" href="https://github.com/rge-rdev/RJKB">GitHub</a>!`,
         backgroundColor: "#fafbfc",
         textColor: "#091E42",
         isCloseable: true,
       },
-      */
+      // */
       navbar: {
         // title: "", // Disable title to show only SVG Logo for home page return
         hideOnScroll: true,
