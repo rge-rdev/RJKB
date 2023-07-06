@@ -9,6 +9,9 @@
 /public
 /static/*
 !/static/preview
+!/static/img
+!/static/vid
+!/static/assets
 
 /blog
 docs/*
