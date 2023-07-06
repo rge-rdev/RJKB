@@ -3,7 +3,7 @@
  */
 
 export interface Rem_DB {
-  knowledgebaseid?: Owner_ID
+  knowledgebaseId?: Owner_ID
   name?: string
   exportDate?: string
   exportVersion?: number
