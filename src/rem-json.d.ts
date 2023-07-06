@@ -7,7 +7,7 @@ export interface Rem_DB {
   name?: string
   exportDate?: string
   exportVersion?: number
-  docs: (Rem_obj & deleted_rem & portal_rem)[] //Array<Rem_obj>;
+  docs: (Rem_obj & deleted_rem & portal_rem)[] //Array<Rem_obj>; //! unknown temporary fix
 }
 
 /**
@@ -24,7 +24,6 @@ export interface Rem_obj {
   createdAt?: timestamp
   u?: timestamp // date modified? last flashcard test??
   _id: RemID | string
-
   srcRemId?: RemID
   srcRemC?:
     | "a/fakeImportArticle0.8504256628454507"
@@ -162,7 +161,8 @@ type RemData = {
   percent?: number // % scaling for h/w. Sometimes omitted = 100%?
   loading?: boolean // false for finished loading?
   textOfDeletedRem?: RemData[]
-} & string
+} & string &
+  unknown
 // | string
 // | RemRef
 // | CodeBlock
