@@ -1037,13 +1037,13 @@ export function LOG_CLI_PROGRESS( //ORIGINAL SIMPLE FAST
       }${more ? `\n${more.join(" ")}` : ""}`
     )
     if (!more) {
-      process.stdout.cursorTo(0, 0)
-      process.stdout.clearLine(1)
+      process.stdout.cursorTo?.(0, 0)
+      process.stdout.clearLine?.(1)
     }
     if (more) {
-      process.stdout.moveCursor(-999, -1)
-      process.stdout.clearLine(1)
-      process.stdout.cursorTo(0)
+      process.stdout.moveCursor?.(-999, -1) // to fix annoying vercel-exclusive typeerror
+      process.stdout.clearLine?.(1)
+      process.stdout.cursorTo?.(0)
     }
   }
 }
