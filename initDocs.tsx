@@ -1090,3 +1090,24 @@ const init_mdx_map_time = uptime()
     }
   })
 })()
+
+if (0) {
+  // fill up placeholder nodes for demo json for public repo - but only 1 level deep from root nodes
+  let JSON_docs_array: string[] = []
+  ;(function () {
+    root_main_topic_ids.forEach(async (id: string, i: number) => {
+      const doc = getDoc(id)
+      if (doc) JSON_docs_array.push(JSON.stringify(doc))
+      const child_docs = getChildren(id)
+      child_docs?.forEach((id) => {
+        if (getDoc(id)) JSON_docs_array.push(JSON.stringify(getDoc(id)))
+      })
+    })
+  })()
+  console.log(JSON_docs_array.join(","))
+  fs.writeFileSync(
+    "./REM_JSON_DOCS.json",
+    `{"docs":[${JSON_docs_array.join(",")}]}`
+  )
+  process.exit()
+}
