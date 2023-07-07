@@ -1102,12 +1102,19 @@ if (0) {
       child_docs?.forEach((id) => {
         if (getDoc(id)) JSON_docs_array.push(JSON.stringify(getDoc(id)))
       })
+      const value_arr = doc?.value
+        ?.map((el) => (typeof el?._id === "string" ? el._id : ""))
+        .filter((el) => typeof el !== "undefined" && el.length > 0)
+      if (value_arr)
+        value_arr.forEach((id) => {
+          if (getDoc(id)) JSON_docs_array.push(JSON.stringify(getDoc(id)))
+        })
     })
   })()
-  console.log(JSON_docs_array.join(","))
+  console.log(uniq(JSON_docs_array).join(","))
   fs.writeFileSync(
     "./REM_JSON_DOCS.json",
-    `{"docs":[${JSON_docs_array.join(",")}]}`
+    `{"docs":[${uniq(JSON_docs_array).join(",")}]}`
   )
   process.exit()
 }
